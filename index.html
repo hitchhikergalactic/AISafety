@@ -19,10 +19,20 @@
             colors: {
               beige: {
                 light: '#F6EDE5',
-                dark: '#1a1614',
+                dark: '#1a1a1a',
               },
-              teal: '#00A896',
-              yellow: '#FFD60A',
+              primary: {
+                DEFAULT: '#E58C32', // Light mode orange
+                dark: '#F4A261',    // Dark mode orange
+              },
+              accent: {
+                DEFAULT: '#047857', // Light mode dark green
+                dark: '#10b981',    // Dark mode bright green
+              },
+              slate: {
+                900: '#2C3E50',
+                950: '#1a1a1a',
+              }
             }
           }
         }
@@ -62,7 +72,7 @@
 }
 </script>
 </head>
-  <body class="bg-[#F6EDE5] dark:bg-[#1a1614]">
+  <body class="bg-[#F6EDE5] dark:bg-[#1a1a1a] text-[#2C3E50] dark:text-[#e5e7eb]">
     <div id="root"></div>
   </body>
 </html>
