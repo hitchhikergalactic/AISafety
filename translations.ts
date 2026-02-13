@@ -8,7 +8,7 @@ export const translations = {
       contact: "Contacto",
     },
     hero: {
-      location: "Madrid, España",
+      location: "",
       h1: "Hub de IA Safety",
       h2: "Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA",
       ctaPrimary: "Únete al próximo evento",
@@ -39,7 +39,7 @@ export const translations = {
     },
     upcoming: {
       title: "Próximos Eventos",
-      eventTitle: "Primer Meetup: AI Safety Madrid",
+      eventTitle: "Primer Encuentro: IA Safety en Madrid",
       date: "📅 28 de abril, 2025 | ⏰ 19:00 - 21:00h",
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
@@ -69,7 +69,7 @@ export const translations = {
     },
     footer: {
       tagline: "Conectamos iniciativas locales",
-      copyright: "Copyright 2025 AI Safety Madrid",
+      copyright: "Copyright 2025 AI Safety España",
     }
   },
   en: {
@@ -81,7 +81,7 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      location: "Madrid, Spain",
+      location: "",
       h1: "AI Safety Hub",
       h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
       ctaPrimary: "Join the next event",
@@ -112,7 +112,7 @@ export const translations = {
     },
     upcoming: {
       title: "Upcoming Events",
-      eventTitle: "First Meetup: AI Safety Madrid",
+      eventTitle: "First Meeting: AI Safety in Madrid",
       date: "📅 April 28, 2025 | ⏰ 7:00 - 9:00 PM",
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Our first meetup to connect people interested in AI safety. Talks, networking and snacks. Join us!",
@@ -142,7 +142,7 @@ export const translations = {
     },
     footer: {
       tagline: "Connecting local initiatives",
-      copyright: "Copyright 2025 AI Safety Madrid",
+      copyright: "Copyright 2025 AI Safety Spain",
     }
   }
 };

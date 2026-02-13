@@ -53,7 +53,7 @@ const Navbar: React.FC<{
         <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
           <img 
             src="https://i.imgur.com/DFQgFDM.png" 
-            alt="AI Safety Madrid" 
+            alt="AI Safety" 
             className="h-[50px] w-auto block"
           />
         </a>
@@ -197,12 +197,7 @@ export default function App() {
         <div className="absolute bottom-[-10%] right-[-5%] w-[30vw] h-[30vw] bg-anthropic-blue/5 rounded-full blur-[80px] pointer-events-none"></div>
 
         <div className="max-w-[1400px] text-center z-10 animate-fade-in-up">
-          {/* UPDATED LOCATION BADGE: Bolder, Bilingual */}
-          <span className="inline-block px-[1.2rem] py-[0.6rem] rounded-full bg-anthropic-lightGray dark:bg-white/10 text-[1rem] font-sans font-extrabold uppercase tracking-[0.25em] text-anthropic-dark dark:text-anthropic-beige mb-10 border border-anthropic-midGray/40 shadow-sm transition-all duration-300">
-            {t.hero.location}
-          </span>
-          
-          {/* REFINED H1: Size adjusted to requested scale */}
+          {/* GIGANTE IMPACTFUL H1 */}
           <h1 className="mb-12 text-[clamp(3.6rem,7.2vw,6rem)] font-extrabold tracking-[-0.04em] leading-none text-anthropic-dark dark:text-anthropic-beige text-balance">
             {t.hero.h1}
           </h1>
@@ -423,7 +418,7 @@ export default function App() {
             method="POST" 
             className="max-w-xl mx-auto space-y-8 text-left"
           >
-            <input type="hidden" name="_subject" value="Nueva suscripción - AI Safety Madrid" />
+            <input type="hidden" name="_subject" value="Nueva suscripción - AI Safety España" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             
@@ -466,7 +461,7 @@ export default function App() {
                  <div className="w-10 h-10 bg-anthropic-orange rounded-xl flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
                    <Globe size={24} />
                  </div>
-                 IA Safety Madrid
+                 IA Safety
               </div>
               <p className="max-w-xs mx-auto md:mx-0 font-serif italic text-xl md:text-2xl leading-relaxed opacity-80">
                 {t.footer.tagline}
