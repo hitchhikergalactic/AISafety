@@ -142,9 +142,9 @@ const CollaborativeCard: React.FC<{ href: string, text: string }> = ({ href, tex
     href={href} 
     target="_blank" 
     rel="noopener noreferrer"
-    className="block p-8 rounded-anthro border border-anthropic-midGray/20 bg-white/40 dark:bg-white/5 text-center transition-all duration-500 hover:bg-white dark:hover:bg-white/10 group shadow-anthro-subtle hover:shadow-anthro-card"
+    className="block p-12 rounded-anthro border-2 border-anthropic-midGray/20 bg-white/40 dark:bg-white/5 text-center transition-all duration-400 hover:bg-white dark:hover:bg-white/10 hover:scale-[1.08] hover:border-anthropic-orange group shadow-anthro-subtle hover:shadow-anthro-elevated"
   >
-    <span className="font-sans font-bold text-lg md:text-xl text-anthropic-dark dark:text-anthropic-beige group-hover:text-anthropic-orange dark:group-hover:text-anthropic-orangeLight transition-colors tracking-tight">
+    <span className="font-sans font-bold text-2xl leading-[1.4] text-anthropic-dark dark:text-anthropic-beige group-hover:text-anthropic-orange dark:group-hover:text-anthropic-orangeLight transition-colors tracking-tight">
       {text}
     </span>
   </a>
@@ -282,7 +282,7 @@ export default function App() {
           <div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-anthropic-midGray/15 flex flex-col group transition-all duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)]">
             <div className="relative overflow-hidden h-[300px] md:h-[450px]">
               <img 
-                src="https://i.imgur.com/Ym0layS.jpeg" 
+                src="https://i.imgur.com/vF4Dz3Z.jpeg" 
                 alt={t.upcoming.eventTitle} 
                 className="w-full h-full object-cover object-center block group-hover:scale-105 transition-transform duration-1000"
               />
@@ -320,8 +320,8 @@ export default function App() {
 
       {/* 6. RED DE COLABORADORES - ID MANDATORY */}
       <Section id="collaborators" className="scroll-mt-32">
-        <h2 className="mb-24 text-center font-bold tracking-tight">{t.collaborators.title}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <h2 className="mb-16 text-center font-bold tracking-tight">{t.collaborators.title}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           <CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
           <CollaborativeCard href="https://www.enais.co/" text="ENAIS" />
           <CollaborativeCard href="https://bluedot.org/" text="BlueDot" />
