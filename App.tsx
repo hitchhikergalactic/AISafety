@@ -14,7 +14,8 @@ import {
   Sun,
   Moon,
   Users,
-  CheckCircle
+  CheckCircle,
+  Mail
 } from 'lucide-react';
 
 // --- Types ---
@@ -34,7 +35,7 @@ const Navbar: React.FC<{
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -48,27 +49,28 @@ const Navbar: React.FC<{
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-anthropic-beige/95 dark:bg-anthropic-dark/95 backdrop-blur-xl border-b border-anthropic-midGray/20 py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center relative">
-        <a href="#home" className="text-2xl font-serif font-bold text-anthropic-dark dark:text-anthropic-beige flex items-center gap-3 shrink-0 group transition-all">
-          <div className="w-10 h-10 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-anthro flex items-center justify-center text-anthropic-beige group-hover:opacity-90">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${scrolled ? 'bg-anthropic-beige/90 dark:bg-anthropic-dark/90 glass-nav border-b border-anthropic-midGray/10 py-4 shadow-sm' : 'bg-transparent py-8'}`}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center relative">
+        <a href="#home" className="text-xl md:text-2xl font-serif font-bold text-anthropic-dark dark:text-anthropic-beige flex items-center gap-3 shrink-0 group">
+          <div className="w-10 h-10 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-anthro flex items-center justify-center text-anthropic-beige group-hover:rotate-12 transition-transform duration-500">
             <Globe size={22} />
           </div>
-          <span className="tracking-tight hidden sm:inline">IA Safety Madrid</span>
+          <span className="tracking-tight hidden sm:inline group-hover:text-anthropic-orange transition-colors">IA Safety Madrid</span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-medium text-sm uppercase tracking-[0.15em]">
+        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-xs uppercase tracking-[0.2em] opacity-80">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="text-anthropic-dark dark:text-anthropic-beige hover:text-anthropic-orange dark:hover:text-anthropic-orangeLight transition-colors">
+            <a key={link.href} href={link.href} className="text-anthropic-dark dark:text-anthropic-beige hover:text-anthropic-orange dark:hover:text-anthropic-orangeLight transition-all duration-300 relative group overflow-hidden">
               {link.label}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-anthropic-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-5">
           <button 
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            className="p-2.5 rounded-full border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige hover:bg-anthropic-lightGray/50 dark:hover:bg-white/5 transition-all"
+            className="p-2.5 rounded-full border border-anthropic-midGray/20 text-anthropic-dark dark:text-anthropic-beige hover:bg-anthropic-lightGray dark:hover:bg-white/5 transition-all duration-300"
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
@@ -76,26 +78,34 @@ const Navbar: React.FC<{
 
           <button 
             onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-            className="px-4 py-1.5 rounded-anthro border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige hover:text-anthropic-orange font-sans font-bold text-xs uppercase tracking-widest transition-colors"
+            className="px-4 py-1.5 rounded-anthro border border-anthropic-midGray/20 text-anthropic-dark dark:text-anthropic-beige hover:border-anthropic-orange hover:text-anthropic-orange font-sans font-bold text-[10px] md:text-xs uppercase tracking-[0.15em] transition-all duration-300"
           >
             {lang === 'es' ? 'EN' : 'ES'}
           </button>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-anthropic-dark dark:text-anthropic-beige">
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-anthropic-dark dark:text-anthropic-beige p-2">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-anthropic-beige dark:bg-anthropic-dark border-t border-anthropic-midGray/10 py-12 px-8 flex flex-col gap-6 shadow-2xl animate-fade-in-up">
-          {navLinks.map(link => (
-            <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-3xl font-sans font-bold text-anthropic-dark dark:text-anthropic-beige">
+      {/* Mobile Menu */}
+      <div className={`lg:hidden fixed inset-0 top-0 bg-anthropic-beige dark:bg-anthropic-dark z-[-1] transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="pt-32 px-12 flex flex-col gap-8 h-full">
+          {navLinks.map((link, idx) => (
+            <a 
+              key={link.href} 
+              href={link.href} 
+              onClick={() => setIsOpen(false)} 
+              className="text-4xl font-sans font-bold text-anthropic-dark dark:text-anthropic-beige border-b border-anthropic-midGray/10 pb-4 flex justify-between items-center group"
+              style={{ transitionDelay: `${idx * 50}ms` }}
+            >
               {link.label}
+              <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity" size={32} />
             </a>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
@@ -103,10 +113,11 @@ const Navbar: React.FC<{
 const Section: React.FC<{ 
   id?: string, 
   className?: string, 
-  children: React.ReactNode 
-}> = ({ id, className = "", children }) => (
-  <section id={id} className={`py-24 md:py-40 px-8 scroll-mt-navbar ${className}`}>
-    <div className="max-w-6xl mx-auto">
+  children: React.ReactNode,
+  fullWidth?: boolean
+}> = ({ id, className = "", children, fullWidth = false }) => (
+  <section id={id} className={`py-28 md:py-48 px-6 md:px-12 scroll-mt-navbar ${className}`}>
+    <div className={fullWidth ? "w-full" : "max-w-7xl mx-auto"}>
       {children}
     </div>
   </section>
@@ -117,12 +128,12 @@ const PillarCard: React.FC<{
   title: string, 
   text: string 
 }> = ({ icon, title, text }) => (
-  <div className="bg-anthropic-lightGray/40 dark:bg-white/5 p-12 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle flex flex-col h-full transition-all hover:border-anthropic-midGray/30">
-    <div className="w-16 h-16 bg-anthropic-blue/10 dark:bg-anthropic-blueLight/10 text-anthropic-blue dark:text-anthropic-blueLight rounded-anthro flex items-center justify-center mb-8">
+  <div className="bg-white dark:bg-white/5 p-10 md:p-14 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle flex flex-col h-full group hover:shadow-anthro-card hover:border-anthropic-midGray/30 transition-all duration-500">
+    <div className="w-14 h-14 bg-anthropic-blue/10 dark:bg-anthropic-blueLight/10 text-anthropic-blue dark:text-anthropic-blueLight rounded-anthro flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
       {icon}
     </div>
-    <h3 className="mb-6 text-3xl md:text-4xl tracking-tight font-bold">{title}</h3>
-    <p className="text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-8 flex-grow leading-relaxed text-2xl font-serif italic">{text}</p>
+    <h3 className="mb-6 font-bold tracking-tight">{title}</h3>
+    <p className="text-anthropic-dark/80 dark:text-anthropic-beige/80 mb-0 flex-grow leading-relaxed text-xl md:text-2xl font-serif italic text-balance">{text}</p>
   </div>
 );
 
@@ -131,9 +142,9 @@ const CollaborativeCard: React.FC<{ href: string, text: string }> = ({ href, tex
     href={href} 
     target="_blank" 
     rel="noopener noreferrer"
-    className="block p-8 rounded-anthro border border-anthropic-midGray/20 bg-white/30 dark:bg-white/5 text-center transition-all hover:bg-anthropic-lightGray/60 dark:hover:bg-white/10 group shadow-anthro-subtle"
+    className="block p-8 rounded-anthro border border-anthropic-midGray/20 bg-white/40 dark:bg-white/5 text-center transition-all duration-500 hover:bg-white dark:hover:bg-white/10 group shadow-anthro-subtle hover:shadow-anthro-card"
   >
-    <span className="font-sans font-bold text-xl text-anthropic-dark dark:text-anthropic-beige group-hover:text-anthropic-orange dark:group-hover:text-anthropic-orangeLight transition-colors">
+    <span className="font-sans font-bold text-lg md:text-xl text-anthropic-dark dark:text-anthropic-beige group-hover:text-anthropic-orange dark:group-hover:text-anthropic-orangeLight transition-colors tracking-tight">
       {text}
     </span>
   </a>
@@ -142,7 +153,6 @@ const CollaborativeCard: React.FC<{ href: string, text: string }> = ({ href, tex
 export default function App() {
   const [lang, setLang] = useState<Language>(() => (localStorage.getItem('app_lang') as Language) || 'es');
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('app_theme') as Theme) || 'light');
-  const [subscribed, setSubscribed] = useState(false);
   const t = translations[lang];
 
   useEffect(() => {
@@ -159,136 +169,145 @@ export default function App() {
     }
   }, [theme]);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubscribed(true);
-  };
-
   return (
-    <div className="min-h-screen transition-colors duration-500">
+    <div className="min-h-screen transition-colors duration-500 selection:bg-anthropic-orange selection:text-white">
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
 
       {/* 1. HERO SECTION */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-32 pb-24 px-8">
-        <div className="max-w-6xl text-center animate-fade-in-up">
-          <span className="block text-[1.2rem] font-sans font-medium uppercase tracking-[0.05em] text-anthropic-midGray mb-6">
-            Madrid
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-8 overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-anthropic-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[30vw] h-[30vw] bg-anthropic-blue/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+        <div className="max-w-6xl text-center z-10 animate-fade-in-up">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-anthropic-lightGray/50 dark:bg-white/10 text-[0.85rem] font-sans font-bold uppercase tracking-[0.25em] text-anthropic-midGray mb-10 border border-anthropic-midGray/10">
+            Madrid, Spain
           </span>
-          <h1 className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold leading-[1.05] mb-[2rem] tracking-tight">
+          <h1 className="mb-[3rem] tracking-tighter text-balance">
             {t.hero.h1}
           </h1>
-          <p className="text-[clamp(1.5rem,3.5vw,2.2rem)] font-serif font-normal leading-[1.4] text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-[4rem] max-w-[1000px] mx-auto italic">
+          <p className="text-[clamp(1.5rem,4vw,2.4rem)] font-serif font-medium leading-[1.3] text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-[4.5rem] max-w-[950px] mx-auto italic text-balance">
             {t.hero.h2}
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="#events" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-xl hover:opacity-90 transition-all shadow-anthro-subtle flex items-center justify-center gap-3 anthro-hover">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a href="#events" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-white dark:text-anthropic-dark font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto">
               {t.hero.ctaPrimary}
               <ArrowRight size={24} />
             </a>
-            <a href="#newsletter" className="px-12 py-5 rounded-anthro border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue/5 dark:hover:bg-anthropic-blueLight/5 transition-all flex items-center justify-center anthro-hover">
+            <a href="#newsletter" className="px-12 py-5 rounded-anthro border-2 border-anthropic-blue/50 dark:border-anthropic-blueLight/50 text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue/5 dark:hover:bg-anthropic-blueLight/5 transition-all duration-300 w-full sm:w-auto flex items-center justify-center">
               {t.hero.ctaSecondary}
             </a>
           </div>
         </div>
       </section>
 
-      {/* 2. ¿POR QUÉ UN HUB DE SEGURIDAD EN IA? */}
-      <Section id="why" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
-        <div className="grid lg:grid-cols-2 gap-24 items-start">
+      {/* 2. WHY HUB SECTION */}
+      <Section id="why" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
           <div>
-            <h2 className="mb-12 font-bold">{t.why.title}</h2>
-            <div className="text-[clamp(1.5rem,4vw,2.2rem)] text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed max-w-[800px]">
-              <p className="italic">"{t.why.text}"</p>
+            <h2 className="mb-14 font-bold tracking-tight text-balance leading-[1.05]">{t.why.title}</h2>
+            <div className="text-[clamp(1.5rem,3.5vw,2.2rem)] text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed italic">
+              <p>"{t.why.text}"</p>
             </div>
           </div>
-          <div className="relative sticky top-32">
-            <div className="aspect-[4/3] bg-white/40 dark:bg-white/5 rounded-anthro overflow-hidden flex items-center justify-center border border-anthropic-midGray/20 shadow-anthro-subtle">
-               <Globe size={240} className="text-anthropic-orange/5 dark:text-anthropic-orangeLight/5" strokeWidth={0.2} />
+          <div className="relative group">
+            <div className="aspect-[1/1] max-w-[500px] mx-auto bg-anthropic-lightGray/40 dark:bg-white/5 rounded-3xl overflow-hidden flex items-center justify-center border border-anthropic-midGray/20 shadow-anthro-elevated relative">
+               <Globe size={280} className="text-anthropic-orange/10 dark:text-anthropic-orangeLight/10 group-hover:scale-110 transition-transform duration-1000" strokeWidth={0.5} />
+               <div className="absolute inset-0 bg-gradient-to-tr from-anthropic-orange/5 to-transparent"></div>
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-anthropic-dark dark:bg-anthropic-beige p-12 rounded-anthro shadow-2xl hidden xl:block max-w-[340px] border border-white/10 dark:border-black/5">
-              <p className="font-sans font-bold text-xl leading-tight text-anthropic-beige dark:text-anthropic-dark">
-                Comunidad local con visión global.
+            <div className="absolute -bottom-6 -left-6 bg-anthropic-dark dark:bg-anthropic-beige p-10 rounded-2xl shadow-anthro-elevated hidden xl:block max-w-[320px] border border-white/10 dark:border-black/5 animate-fade-in-up">
+              <p className="font-sans font-bold text-lg leading-snug text-anthropic-beige dark:text-anthropic-dark mb-0">
+                Una comunidad local con ambición global por la alineación.
               </p>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* 3. NUESTRA MISIÓN */}
-      <section className="bg-transparent py-40 text-center px-8">
+      {/* 3. MISSION STATEMENT */}
+      <section className="bg-transparent py-44 text-center px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-anthropic-green dark:text-anthropic-greenLight text-sm font-sans font-black uppercase tracking-[0.35em] mb-12">
+          <h2 className="text-anthropic-green dark:text-anthropic-greenLight text-xs font-sans font-black uppercase tracking-[0.5em] mb-14 opacity-80">
             {t.mission.title}
           </h2>
-          <p className="text-3xl md:text-[3rem] font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-tight">
+          <p className="text-[clamp(2rem,5.5vw,4rem)] font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-[1.1] text-balance">
             "{t.mission.text}"
           </p>
         </div>
       </section>
 
-      {/* 4. EL HUB EN ACCIÓN */}
+      {/* 4. PILLARS / HUB IN ACTION */}
       <Section id="pillars">
-        <h2 className="mb-24 text-center font-bold text-[clamp(2.5rem,6vw,4.5rem)]">{t.pillars.title}</h2>
-        <div className="grid md:grid-cols-3 gap-12">
+        <h2 className="mb-24 text-center font-bold tracking-tighter">{t.pillars.title}</h2>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           <PillarCard 
-            icon={<BookOpen size={36} />}
+            icon={<BookOpen size={32} />}
             title={t.pillars.education.title}
             text={t.pillars.education.text}
           />
           <PillarCard 
-            icon={<Calendar size={36} />}
+            icon={<Calendar size={32} />}
             title={t.pillars.events.title}
             text={t.pillars.events.text}
           />
           <PillarCard 
-            icon={<Globe size={36} />}
+            icon={<Users size={32} />}
             title={t.pillars.community.title}
             text={t.pillars.community.text}
           />
         </div>
       </Section>
 
-      {/* 5. PRÓXIMOS EVENTOS (REDESIGNED) */}
-      <Section id="events" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="mb-16 text-center font-bold">{t.upcoming.title}</h2>
+      {/* 5. FEATURED EVENT (April 28, 2025) */}
+      <Section id="events" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="mb-16 text-center font-bold tracking-tight">{t.upcoming.title}</h2>
           
-          <div className="rounded-[16px] shadow-2xl overflow-hidden border border-anthropic-midGray/15 flex flex-col">
-            {/* Header Image */}
-            <img 
-              src="https://i.imgur.com/Ym0layS.jpeg" 
-              alt={t.upcoming.eventTitle} 
-              className="w-full h-[400px] object-cover object-center block"
-            />
+          <div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-anthropic-midGray/15 flex flex-col group transition-all duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)]">
+            {/* Header Image with hover effect */}
+            <div className="relative overflow-hidden h-[300px] md:h-[450px]">
+              <img 
+                src="https://i.imgur.com/Ym0layS.jpeg" 
+                alt={t.upcoming.eventTitle} 
+                className="w-full h-full object-cover object-center block group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-anthropic-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
+            </div>
             
-            {/* Content Area with Gradient */}
-            <div className={`p-10 md:p-16 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[linear-gradient(135deg,#e89074,#d97757)]' : 'bg-[linear-gradient(135deg,#d97757,#c86847)]'}`}>
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">{t.upcoming.eventTitle}</h3>
+            {/* Content Area */}
+            <div className={`p-10 md:p-20 text-white text-center flex flex-col items-center gap-10 transition-all duration-500 ${theme === 'dark' ? 'bg-[linear-gradient(135deg,#e89074,#d97757)]' : 'bg-[linear-gradient(135deg,#d97757,#c86847)]'}`}>
+              <h3 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl tracking-tight text-balance">{t.upcoming.eventTitle}</h3>
               
-              <div className="space-y-4 font-sans font-bold text-lg md:text-xl uppercase tracking-wider opacity-95">
-                <p>{t.upcoming.date}</p>
-                <p>{t.upcoming.location}</p>
+              <div className="flex flex-col gap-4 font-sans font-extrabold text-sm md:text-base uppercase tracking-[0.2em] opacity-100 bg-white/10 px-8 py-6 rounded-2xl border border-white/20 backdrop-blur-md">
+                <p className="flex items-center justify-center gap-3 text-center">
+                  {t.upcoming.date}
+                </p>
+                <div className="h-px w-12 bg-white/30 mx-auto"></div>
+                <p className="flex items-center justify-center gap-3 text-center">
+                  {t.upcoming.location}
+                </p>
               </div>
 
-              <p className="text-2xl font-serif italic leading-relaxed max-w-2xl opacity-90">
+              <p className="text-2xl md:text-3xl font-serif italic leading-relaxed max-w-2xl opacity-90 text-balance">
                 "{t.upcoming.description}"
               </p>
 
               <a 
                 href="#newsletter" 
-                className="mt-4 px-12 py-5 rounded-[12px] bg-white text-anthropic-orange font-sans font-bold text-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
+                className="mt-6 px-14 py-6 rounded-anthro bg-white text-anthropic-orange font-sans font-extrabold text-xl md:text-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl flex items-center gap-4"
               >
                 {t.upcoming.cta}
+                <ArrowRight size={28} />
               </a>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* 6. RED DE COLABORADORES */}
+      {/* 6. COLLABORATORS NETWORK */}
       <Section id="network">
-        <h2 className="mb-24 text-center font-bold">{t.collaborators.title}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <h2 className="mb-24 text-center font-bold tracking-tight">{t.collaborators.title}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
           <CollaborativeCard href="https://www.enais.co/" text="ENAIS" />
           <CollaborativeCard href="https://bluedot.org/" text="BlueDot" />
@@ -298,40 +317,39 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 7. SOBRE ESTA INICIATIVA */}
-      <Section id="about" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10 flex justify-center">
-        <div className="max-w-[700px] w-full bg-white dark:bg-[#2A2A2A] p-12 md:p-16 rounded-[16px] shadow-anthro-subtle border border-anthropic-midGray/15 text-center transition-all hover:border-anthropic-midGray/30">
+      {/* 7. ABOUT INITIATIVE / OSMANI REDONDO */}
+      <Section id="about" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 flex justify-center">
+        <div className="max-w-[760px] w-full bg-white dark:bg-[#1a1a19] p-10 md:p-20 rounded-[32px] shadow-anthro-elevated border border-anthropic-midGray/10 text-center transition-all duration-500 hover:border-anthropic-orange/30 group">
           
-          {/* Foto circular arriba */}
-          <img 
-            src="https://i.imgur.com/Zgdo29Z.jpeg" 
-            alt="Osmani Redondo" 
-            className="w-[200px] h-[200px] rounded-full border-[4px] border-anthropic-orange dark:border-anthropic-orangeLight object-cover object-center mx-auto mb-6 block shadow-lg"
-          />
-
-          {/* Links discretos debajo de la foto */}
-          <div className="mb-8 flex justify-center gap-4 text-anthropic-midGray font-sans text-[0.95rem] font-bold uppercase tracking-widest">
-             <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="hover:underline no-underline transition-all">
-               LinkedIn
-             </a>
-             <span className="opacity-30">/</span>
-             <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:underline no-underline transition-all">
-               Blog
-             </a>
+          <div className="relative inline-block mb-10">
+            <img 
+              src="https://i.imgur.com/Zgdo29Z.jpeg" 
+              alt="Osmani Redondo" 
+              className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full border-[6px] border-anthropic-beige dark:border-anthropic-dark object-cover object-center mx-auto block shadow-2xl group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute -bottom-2 -right-2 bg-anthropic-orange w-12 h-12 rounded-full flex items-center justify-center text-white border-4 border-white dark:border-[#1a1a19] shadow-xl">
+              <CheckCircle size={20} />
+            </div>
           </div>
 
-          <h2 className="mb-10 font-bold text-4xl">{t.about.title}</h2>
+          <div className="mb-10 flex justify-center gap-6 text-anthropic-midGray font-sans text-xs font-black uppercase tracking-[0.35em] opacity-70">
+             <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="hover:text-anthropic-orange hover:underline transition-all">LinkedIn</a>
+             <span className="opacity-30">/</span>
+             <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-anthropic-orange hover:underline transition-all">Substack</a>
+          </div>
+
+          <h2 className="mb-12 font-bold text-4xl md:text-5xl tracking-tight">{t.about.title}</h2>
           
-          <div className="space-y-6 text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed italic mb-12">
+          <div className="space-y-8 text-xl md:text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed italic mb-16 text-balance">
             <p>{t.about.text1}</p>
             <p>{t.about.text2}</p>
           </div>
 
-          <div className="flex flex-col items-center gap-6 pt-10 border-t border-anthropic-midGray/10">
-            <p className="font-sans font-bold text-xl opacity-70">{t.about.joinCta}</p>
+          <div className="flex flex-col items-center gap-8 pt-14 border-t border-anthropic-midGray/10">
+            <p className="font-sans font-extrabold text-sm md:text-base uppercase tracking-[0.3em] opacity-60">{t.about.joinCta}</p>
             <a 
               href="#newsletter" 
-              className="px-8 py-3.2 rounded-[8px] border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue dark:hover:bg-anthropic-blueLight hover:text-white dark:hover:text-anthropic-dark transition-all"
+              className="px-[2rem] py-[0.8rem] rounded-[8px] border-2 border-anthropic-secondary dark:border-anthropic-secondaryLight text-anthropic-secondary dark:text-anthropic-secondaryLight font-sans font-black text-lg md:text-xl transition-all duration-300 hover:bg-anthropic-secondary dark:hover:bg-anthropic-secondaryLight hover:text-white dark:hover:text-anthropic-dark hover:scale-105"
             >
               {t.about.joinBtn}
             </a>
@@ -339,118 +357,131 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 8. FORMAMOS PARTE DE WOMEN4AIS */}
+      {/* 8. WOMEN4AIS */}
       <Section className="bg-transparent flex justify-center">
-        <div className="max-w-[700px] w-full bg-white dark:bg-[#2A2A2A] p-12 md:p-16 rounded-[16px] shadow-anthro-subtle border border-anthropic-midGray/15 text-center transition-all hover:border-anthropic-midGray/30 animate-fade-in-up">
-          <h2 className="mb-8 font-bold text-4xl">{t.women4ais.title}</h2>
-          <p className="text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed mb-12 italic">
+        <div className="max-w-[760px] w-full bg-white dark:bg-[#1a1a19] p-10 md:p-16 rounded-[32px] shadow-anthro-card border border-anthropic-midGray/10 text-center transition-all duration-500 hover:border-anthropic-orange/30 group">
+          <div className="w-16 h-16 bg-anthropic-orange/10 rounded-full flex items-center justify-center mx-auto mb-10 text-anthropic-orange">
+             <Globe size={32} />
+          </div>
+          <h2 className="mb-8 font-bold text-3xl md:text-4xl tracking-tight">{t.women4ais.title}</h2>
+          <p className="text-xl md:text-2xl text-anthropic-dark/80 dark:text-anthropic-beige/80 font-serif leading-relaxed mb-14 italic text-balance">
             {t.women4ais.text}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <a 
               href="https://www.instagram.com/womenaisafety" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-[8px] border-2 border-anthropic-orange dark:border-anthropic-orangeLight text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark shadow-sm"
+              className="px-8 py-4 rounded-[12px] border-2 border-anthropic-orange/30 dark:border-anthropic-orangeLight/30 text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-black text-base flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark hover:scale-105 shadow-sm"
             >
-              <span>📷</span> Instagram
+              <Instagram size={20} /> Instagram
             </a>
             <a 
               href="https://www.linkedin.com/company/women4ais" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-[8px] border-2 border-anthropic-orange dark:border-anthropic-orangeLight text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark shadow-sm"
+              className="px-8 py-4 rounded-[12px] border-2 border-anthropic-orange/30 dark:border-anthropic-orangeLight/30 text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-black text-base flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark hover:scale-105 shadow-sm"
             >
-              <span>💼</span> LinkedIn
+              <Linkedin size={20} /> LinkedIn
             </a>
           </div>
         </div>
       </Section>
 
-      {/* 9. ÚNETE AL HUB (Newsletter) */}
-      <Section id="newsletter">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="mb-8 font-bold">{t.subscribe.title}</h2>
-          <p className="text-3xl text-anthropic-dark/80 dark:text-anthropic-beige/80 mb-20 font-serif italic">{t.subscribe.subtitle}</p>
+      {/* 9. NEWSLETTER / SUBSCRIBE (Updated with FormSubmit) */}
+      <Section id="newsletter" className="bg-anthropic-dark dark:bg-black/40 text-anthropic-beige py-40">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <div className="inline-flex p-4 bg-anthropic-orange/20 rounded-2xl mb-12">
+            <Mail size={48} className="text-anthropic-orange" />
+          </div>
+          <h2 className="mb-8 font-bold tracking-tighter text-white">{t.subscribe.title}</h2>
+          <p className="text-2xl md:text-3xl text-anthropic-beige/70 mb-20 font-serif italic max-w-2xl mx-auto text-balance">{t.subscribe.subtitle}</p>
 
-          {subscribed ? (
-            <div className="bg-anthropic-green/5 p-20 rounded-anthro border-2 border-anthropic-green/30 flex flex-col items-center justify-center gap-8 animate-fade-in-up">
-              <CheckCircle className="text-anthropic-green" size={64} />
-              <p className="text-4xl font-sans font-bold text-anthropic-green tracking-tight">{t.subscribe.success}</p>
+          <form 
+            action="https://formsubmit.co/aisafetymadrid@proton.me" 
+            method="POST" 
+            className="max-w-xl mx-auto space-y-8 text-left"
+          >
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="Nueva suscripción - AI Safety Madrid" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            
+            <div className="space-y-4">
+              <label className="text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">{t.subscribe.name}</label>
+              <input 
+                type="text" 
+                name="name"
+                required 
+                placeholder={lang === 'es' ? "Nombre" : "Name"}
+                className="w-full px-8 py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-xl md:text-2xl placeholder:opacity-20"
+              />
             </div>
-          ) : (
-            <form onSubmit={handleSubscribe} className="bg-anthropic-lightGray/40 dark:bg-white/5 p-14 md:p-20 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle space-y-10 text-left">
-              <div className="space-y-4">
-                <label className="text-base font-sans font-bold text-anthropic-midGray uppercase tracking-[0.25em] block ml-2">{t.subscribe.name}</label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="Tu nombre"
-                  className="w-full px-8 py-6 rounded-anthro bg-white/60 dark:bg-anthropic-dark border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige focus:outline-none focus:ring-2 focus:ring-anthropic-orange/30 transition-all font-sans text-2xl placeholder:opacity-50"
-                />
-              </div>
-              <div className="space-y-4">
-                <label className="text-base font-sans font-bold text-anthropic-midGray uppercase tracking-[0.25em] block ml-2">{t.subscribe.email}</label>
-                <input 
-                  type="email" 
-                  required 
-                  placeholder="hola@ejemplo.com"
-                  className="w-full px-8 py-6 rounded-anthro bg-white/60 dark:bg-anthropic-dark border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige focus:outline-none focus:ring-2 focus:ring-anthropic-orange/30 transition-all font-sans text-2xl placeholder:opacity-50"
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full py-7 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-2xl hover:opacity-95 transition-all shadow-anthro-subtle mt-8 anthro-hover"
-              >
-                {t.subscribe.button}
-              </button>
-            </form>
-          )}
+            <div className="space-y-4">
+              <label className="text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">{t.subscribe.email}</label>
+              <input 
+                type="email" 
+                name="email"
+                required 
+                placeholder="Email"
+                className="w-full px-8 py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-xl md:text-2xl placeholder:opacity-20"
+              />
+            </div>
+            <button 
+              type="submit" 
+              className="w-full py-7 rounded-2xl bg-anthropic-orange text-white font-sans font-black text-xl md:text-2xl transition-all duration-300 shadow-[0_20px_40px_-10px_rgba(217,119,87,0.4)] hover:shadow-[0_30px_60px_-15px_rgba(217,119,87,0.6)] hover:-translate-y-1 active:scale-95 mt-6"
+            >
+              {t.subscribe.button}
+            </button>
+          </form>
         </div>
       </Section>
 
       {/* 10. FOOTER */}
-      <footer className="bg-anthropic-dark text-anthropic-beige/60 py-32 px-8 border-t border-white/5">
+      <footer className="bg-anthropic-dark text-anthropic-beige/40 py-32 px-8 border-t border-white/5 selection:bg-white/10 selection:text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-24 items-start">
-            <div className="text-center md:text-left space-y-10">
-              <div className="text-3xl font-serif font-bold text-anthropic-beige flex items-center justify-center md:justify-start gap-5 group">
-                 <Globe size={40} className="text-anthropic-orange" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-32 items-start">
+            <div className="text-center md:text-left space-y-12">
+              <div className="text-2xl md:text-3xl font-serif font-bold text-anthropic-beige flex items-center justify-center md:justify-start gap-4 group cursor-pointer">
+                 <div className="w-10 h-10 bg-anthropic-orange rounded-xl flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
+                   <Globe size={24} />
+                 </div>
                  IA Safety Madrid
               </div>
-              <p className="max-w-xs mx-auto md:mx-0 font-serif italic text-2xl leading-relaxed opacity-85">
+              <p className="max-w-xs mx-auto md:mx-0 font-serif italic text-xl md:text-2xl leading-relaxed opacity-80">
                 {t.footer.tagline}
               </p>
-              <div className="flex items-center justify-center md:justify-start gap-8">
-                <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="LinkedIn">
+              <div className="flex items-center justify-center md:justify-start gap-6">
+                <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="LinkedIn">
                   <Linkedin size={24} />
                 </a>
-                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Instagram">
+                <a href="https://www.instagram.com/womenaisafety" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="Instagram">
                   <Instagram size={24} />
                 </a>
-                <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Substack">
+                <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="Substack">
                   <Newspaper size={24} />
                 </a>
               </div>
             </div>
             
             <div className="flex flex-col items-center md:items-start gap-8 font-sans">
-              <h4 className="text-anthropic-beige font-bold uppercase text-xs tracking-[0.45em] mb-6 opacity-85">Explora</h4>
-              <a href="#home" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.home}</a>
-              <a href="#events" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.events}</a>
-              <a href="#newsletter" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.contact}</a>
+              <h4 className="text-white font-black uppercase text-[0.65rem] tracking-[0.5em] mb-4 opacity-100">{lang === 'es' ? 'Explora' : 'Explore'}</h4>
+              <a href="#home" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.home}</a>
+              <a href="#events" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.events}</a>
+              <a href="#newsletter" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.contact}</a>
+              <a href="#about" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.about}</a>
             </div>
 
-            <div className="text-center md:text-right flex flex-col items-center md:items-end gap-8 font-sans">
-              <h4 className="text-anthropic-beige font-bold uppercase text-xs tracking-[0.45em] mb-6 opacity-85">Comunidad</h4>
-              <p className="text-xl max-w-[280px] leading-relaxed opacity-75 font-serif italic">Conectamos el talento local con el debate global sobre seguridad de la IA.</p>
-              <div className="h-px w-28 bg-anthropic-orange/30 my-8"></div>
-              <p className="text-xs opacity-45 tracking-widest font-bold uppercase">&copy; {t.footer.copyright}</p>
+            <div className="text-center md:text-right flex flex-col items-center md:items-end gap-10 font-sans">
+              <h4 className="text-white font-black uppercase text-[0.65rem] tracking-[0.5em] mb-4 opacity-100">{lang === 'es' ? 'Comunidad' : 'Community'}</h4>
+              <p className="text-xl md:text-2xl max-w-[320px] leading-relaxed opacity-60 font-serif italic">Conectamos el talento local con el debate global sobre seguridad de la IA.</p>
+              <div className="h-px w-24 bg-anthropic-orange/40 my-4"></div>
+              <p className="text-[0.7rem] opacity-30 tracking-[0.3em] font-black uppercase">&copy; {t.footer.copyright}</p>
             </div>
           </div>
           
-          <div className="pt-16 border-t border-white/5 text-center">
-             <p className="text-xs font-sans tracking-[0.35em] uppercase opacity-25">Built for a human-aligned future.</p>
+          <div className="pt-20 border-t border-white/5 text-center">
+             <p className="text-[0.6rem] md:text-[0.7rem] font-sans tracking-[0.6em] uppercase opacity-20 font-black">Built for a human-aligned future.</p>
           </div>
         </div>
       </footer>

@@ -9,8 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Plus Jakarta Sans para Headings (Styrene A vibe) y Newsreader para Body (Tiempos vibe) -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -23,22 +22,26 @@
             colors: {
               anthropic: {
                 beige: '#faf9f5',
-                dark: '#141413',
+                dark: '#111110',
                 midGray: '#b0aea5',
-                lightGray: '#e8e6dc',
+                lightGray: '#eeede4',
                 orange: '#d97757',
                 blue: '#6a9bcc',
                 green: '#788c5d',
                 orangeLight: '#e89074',
                 blueLight: '#7dadd9',
                 greenLight: '#8fa06b',
+                secondary: '#9B6B4F',
+                secondaryLight: '#B8956A',
               }
             },
             borderRadius: {
-              'anthro': '14px',
+              'anthro': '16px',
             },
             boxShadow: {
-              'anthro-subtle': '0 1px 3px rgba(0,0,0,0.08)',
+              'anthro-subtle': '0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
+              'anthro-card': '0 12px 24px -10px rgba(0,0,0,0.08), 0 4px 10px -5px rgba(0,0,0,0.03)',
+              'anthro-elevated': '0 30px 60px -12px rgba(0,0,0,0.12), 0 18px 36px -18px rgba(0,0,0,0.08)',
             }
           }
         }
@@ -52,41 +55,71 @@
     <style>
       body {
         font-family: '"Newsreader"', serif;
-        font-size: 1.25rem; /* Aumentado de 1.125rem a 1.25rem (20px base) */
-        line-height: 1.7;    /* Interlineado más generoso */
+        font-size: 1.25rem; 
+        line-height: 1.65;
         scroll-behavior: smooth;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, .font-heading {
         font-family: '"Plus Jakarta Sans"', sans-serif;
-        line-height: 1.15;
+        line-height: 1.1;
         font-weight: 700;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.03em;
       }
-      h1 { font-size: clamp(3.5rem, 8vw, 6rem); }
-      h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
-      h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+      h1 { font-size: clamp(3.5rem, 9vw, 6.5rem); }
+      h2 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+      h3 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
       
       .scroll-mt-navbar {
-        scroll-margin-top: 96px;
+        scroll-margin-top: 100px;
       }
       
       @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(12px); }
+        from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
       .animate-fade-in-up {
-        animation: fadeInUp 0.4s ease-out forwards;
+        animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
       
+      .anthro-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
       .anthro-hover:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        filter: brightness(1.05);
       }
       
-      /* Optimización para lectura de párrafos largos */
       p {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.8rem;
+      }
+
+      /* Custom scrollbar for a clean UI */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf9f5;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #111110;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b0aea5;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97757;
+      }
+
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .text-balance {
+        text-wrap: balance;
       }
     </style>
   <script type="importmap">
@@ -100,7 +133,7 @@
 }
 </script>
 </head>
-  <body class="bg-anthropic-beige dark:bg-anthropic-dark text-anthropic-dark dark:text-anthropic-beige selection:bg-anthropic-orange/20">
+  <body class="bg-anthropic-beige dark:bg-anthropic-dark text-anthropic-dark dark:text-anthropic-beige selection:bg-anthropic-orange/20 overflow-x-hidden">
     <div id="root"></div>
   </body>
 </html>
