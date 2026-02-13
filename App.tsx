@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { translations } from './translations';
 import { 
@@ -41,21 +40,22 @@ const Navbar: React.FC<{
   }, []);
 
   const navLinks = [
-    { href: "#home", label: t.nav.home },
-    { href: "#why", label: t.nav.mission },
-    { href: "#events", label: t.nav.events },
-    { href: "#about", label: t.nav.about },
+    { href: "#hero", label: t.nav.home },
+    { href: "#mission", label: t.nav.mission },
+    { href: "#eventos", label: t.nav.events },
+    { href: "#sobre", label: t.nav.about },
     { href: "#newsletter", label: t.nav.contact },
   ];
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${scrolled ? 'bg-anthropic-beige/90 dark:bg-anthropic-dark/90 glass-nav border-b border-anthropic-midGray/10 py-4 shadow-sm' : 'bg-transparent py-8'}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center relative">
-        <a href="#home" className="text-xl md:text-2xl font-serif font-bold text-anthropic-dark dark:text-anthropic-beige flex items-center gap-3 shrink-0 group">
-          <div className="w-10 h-10 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-anthro flex items-center justify-center text-anthropic-beige group-hover:rotate-12 transition-transform duration-500">
-            <Globe size={22} />
-          </div>
-          <span className="tracking-tight hidden sm:inline group-hover:text-anthropic-orange transition-colors">IA Safety Madrid</span>
+        <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
+          <img 
+            src="https://i.imgur.com/DFQgFDM.png" 
+            alt="AI Safety Madrid" 
+            className="h-[50px] w-auto block"
+          />
         </a>
 
         <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-xs uppercase tracking-[0.2em] opacity-80">
@@ -116,7 +116,7 @@ const Section: React.FC<{
   children: React.ReactNode,
   fullWidth?: boolean
 }> = ({ id, className = "", children, fullWidth = false }) => (
-  <section id={id} className={`py-28 md:py-48 px-6 md:px-12 scroll-mt-navbar ${className}`}>
+  <section id={id} className={`py-28 md:py-48 px-6 md:px-12 scroll-mt-32 ${className}`}>
     <div className={fullWidth ? "w-full" : "max-w-7xl mx-auto"}>
       {children}
     </div>
@@ -169,28 +169,50 @@ export default function App() {
     }
   }, [theme]);
 
+  // CRITICAL: Precise Smooth scroll handler
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor?.hash) {
+        const element = document.querySelector(anchor.hash);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
     <div className="min-h-screen transition-colors duration-500 selection:bg-anthropic-orange selection:text-white">
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
 
-      {/* 1. HERO SECTION */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-8 overflow-hidden">
+      {/* 1. HERO SECTION - ID MANDATORY */}
+      <section id="hero" className="hero relative min-h-screen flex items-center justify-center pt-32 pb-24 px-8 overflow-hidden scroll-mt-32">
         {/* Subtle background decoration */}
         <div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-anthropic-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-[-10%] right-[-5%] w-[30vw] h-[30vw] bg-anthropic-blue/5 rounded-full blur-[80px] pointer-events-none"></div>
 
-        <div className="max-w-6xl text-center z-10 animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-anthropic-lightGray/50 dark:bg-white/10 text-[0.85rem] font-sans font-bold uppercase tracking-[0.25em] text-anthropic-midGray mb-10 border border-anthropic-midGray/10">
-            Madrid, Spain
+        <div className="max-w-[1400px] text-center z-10 animate-fade-in-up">
+          {/* UPDATED LOCATION BADGE: Bolder, Bilingual */}
+          <span className="inline-block px-[1.2rem] py-[0.6rem] rounded-full bg-anthropic-lightGray dark:bg-white/10 text-[1rem] font-sans font-extrabold uppercase tracking-[0.25em] text-anthropic-dark dark:text-anthropic-beige mb-10 border border-anthropic-midGray/40 shadow-sm transition-all duration-300">
+            {t.hero.location}
           </span>
-          <h1 className="mb-[3rem] tracking-tighter text-balance">
+          
+          {/* REFINED H1: Size adjusted to requested scale */}
+          <h1 className="mb-12 text-[clamp(3.6rem,7.2vw,6rem)] font-extrabold tracking-[-0.04em] leading-none text-anthropic-dark dark:text-anthropic-beige text-balance">
             {t.hero.h1}
           </h1>
+
           <p className="text-[clamp(1.5rem,4vw,2.4rem)] font-serif font-medium leading-[1.3] text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-[4.5rem] max-w-[950px] mx-auto italic text-balance">
             {t.hero.h2}
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="#events" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-white dark:text-anthropic-dark font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto">
+            <a href="#eventos" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-white dark:text-anthropic-dark font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto">
               {t.hero.ctaPrimary}
               <ArrowRight size={24} />
             </a>
@@ -201,8 +223,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 2. WHY HUB SECTION */}
-      <Section id="why" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10">
+      {/* 2. WHY HUB SECTION - ID MANDATORY */}
+      <Section id="why-hub" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 scroll-mt-32">
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
           <div>
             <h2 className="mb-14 font-bold tracking-tight text-balance leading-[1.05]">{t.why.title}</h2>
@@ -212,8 +234,7 @@ export default function App() {
           </div>
           <div className="relative group">
             <div className="aspect-[1/1] max-w-[500px] mx-auto bg-anthropic-lightGray/40 dark:bg-white/5 rounded-3xl overflow-hidden flex items-center justify-center border border-anthropic-midGray/20 shadow-anthro-elevated relative">
-               <Globe size={280} className="text-anthropic-orange/10 dark:text-anthropic-orangeLight/10 group-hover:scale-110 transition-transform duration-1000" strokeWidth={0.5} />
-               <div className="absolute inset-0 bg-gradient-to-tr from-anthropic-orange/5 to-transparent"></div>
+               <img src="https://i.imgur.com/wqT4oET.png" alt="AI Safety illustration" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-anthropic-dark dark:bg-anthropic-beige p-10 rounded-2xl shadow-anthro-elevated hidden xl:block max-w-[320px] border border-white/10 dark:border-black/5 animate-fade-in-up">
               <p className="font-sans font-bold text-lg leading-snug text-anthropic-beige dark:text-anthropic-dark mb-0">
@@ -224,8 +245,8 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 3. MISSION STATEMENT */}
-      <section className="bg-transparent py-44 text-center px-8">
+      {/* 3. MISSION STATEMENT - ID MANDATORY */}
+      <section id="mission" className="bg-transparent py-44 text-center px-8 scroll-mt-32">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-anthropic-green dark:text-anthropic-greenLight text-xs font-sans font-black uppercase tracking-[0.5em] mb-14 opacity-80">
             {t.mission.title}
@@ -236,8 +257,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. PILLARS / HUB IN ACTION */}
-      <Section id="pillars">
+      {/* 4. HUB IN ACTION - ID MANDATORY */}
+      <Section id="hub-action" className="scroll-mt-32">
         <h2 className="mb-24 text-center font-bold tracking-tighter">{t.pillars.title}</h2>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           <PillarCard 
@@ -258,13 +279,12 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 5. FEATURED EVENT (April 28, 2025) */}
-      <Section id="events" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10">
+      {/* 5. PRÓXIMOS EVENTOS - ID MANDATORY */}
+      <Section id="eventos" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 scroll-mt-32">
         <div className="max-w-5xl mx-auto">
           <h2 className="mb-16 text-center font-bold tracking-tight">{t.upcoming.title}</h2>
           
           <div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-anthropic-midGray/15 flex flex-col group transition-all duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)]">
-            {/* Header Image with hover effect */}
             <div className="relative overflow-hidden h-[300px] md:h-[450px]">
               <img 
                 src="https://i.imgur.com/Ym0layS.jpeg" 
@@ -274,7 +294,6 @@ export default function App() {
               <div className="absolute inset-0 bg-anthropic-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
             
-            {/* Content Area */}
             <div className={`p-10 md:p-20 text-white text-center flex flex-col items-center gap-10 transition-all duration-500 ${theme === 'dark' ? 'bg-[linear-gradient(135deg,#e89074,#d97757)]' : 'bg-[linear-gradient(135deg,#d97757,#c86847)]'}`}>
               <h3 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl tracking-tight text-balance">{t.upcoming.eventTitle}</h3>
               
@@ -304,8 +323,8 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 6. COLLABORATORS NETWORK */}
-      <Section id="network">
+      {/* 6. RED DE COLABORADORES - ID MANDATORY */}
+      <Section id="collaborators" className="scroll-mt-32">
         <h2 className="mb-24 text-center font-bold tracking-tight">{t.collaborators.title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
@@ -317,8 +336,8 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 7. ABOUT INITIATIVE / OSMANI REDONDO */}
-      <Section id="about" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 flex justify-center">
+      {/* 7. SOBRE ESTA INICIATIVA - ID MANDATORY */}
+      <Section id="sobre" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 flex justify-center scroll-mt-32">
         <div className="max-w-[760px] w-full bg-white dark:bg-[#1a1a19] p-10 md:p-20 rounded-[32px] shadow-anthro-elevated border border-anthropic-midGray/10 text-center transition-all duration-500 hover:border-anthropic-orange/30 group">
           
           <div className="relative inline-block mb-10">
@@ -348,7 +367,9 @@ export default function App() {
           <div className="flex flex-col items-center gap-8 pt-14 border-t border-anthropic-midGray/10">
             <p className="font-sans font-extrabold text-sm md:text-base uppercase tracking-[0.3em] opacity-60">{t.about.joinCta}</p>
             <a 
-              href="#newsletter" 
+              href="https://forms.gle/VwvP46yS6ZnzvZ6n7" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-[2rem] py-[0.8rem] rounded-[8px] border-2 border-anthropic-secondary dark:border-anthropic-secondaryLight text-anthropic-secondary dark:text-anthropic-secondaryLight font-sans font-black text-lg md:text-xl transition-all duration-300 hover:bg-anthropic-secondary dark:hover:bg-anthropic-secondaryLight hover:text-white dark:hover:text-anthropic-dark hover:scale-105"
             >
               {t.about.joinBtn}
@@ -357,8 +378,8 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 8. WOMEN4AIS */}
-      <Section className="bg-transparent flex justify-center">
+      {/* 8. WOMEN4AIS - ID MANDATORY */}
+      <Section id="women4ais" className="bg-transparent flex justify-center scroll-mt-32">
         <div className="max-w-[760px] w-full bg-white dark:bg-[#1a1a19] p-10 md:p-16 rounded-[32px] shadow-anthro-card border border-anthropic-midGray/10 text-center transition-all duration-500 hover:border-anthropic-orange/30 group">
           <div className="w-16 h-16 bg-anthropic-orange/10 rounded-full flex items-center justify-center mx-auto mb-10 text-anthropic-orange">
              <Globe size={32} />
@@ -388,8 +409,8 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 9. NEWSLETTER / SUBSCRIBE (Updated with FormSubmit) */}
-      <Section id="newsletter" className="bg-anthropic-dark dark:bg-black/40 text-anthropic-beige py-40">
+      {/* 9. NEWSLETTER - ID MANDATORY */}
+      <Section id="newsletter" className="bg-anthropic-dark dark:bg-black/40 text-anthropic-beige py-40 scroll-mt-32">
         <div className="max-w-4xl mx-auto text-center px-4">
           <div className="inline-flex p-4 bg-anthropic-orange/20 rounded-2xl mb-12">
             <Mail size={48} className="text-anthropic-orange" />
@@ -402,7 +423,6 @@ export default function App() {
             method="POST" 
             className="max-w-xl mx-auto space-y-8 text-left"
           >
-            {/* FormSubmit Configuration */}
             <input type="hidden" name="_subject" value="Nueva suscripción - AI Safety Madrid" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
@@ -466,10 +486,10 @@ export default function App() {
             
             <div className="flex flex-col items-center md:items-start gap-8 font-sans">
               <h4 className="text-white font-black uppercase text-[0.65rem] tracking-[0.5em] mb-4 opacity-100">{lang === 'es' ? 'Explora' : 'Explore'}</h4>
-              <a href="#home" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.home}</a>
-              <a href="#events" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.events}</a>
+              <a href="#hero" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.home}</a>
+              <a href="#eventos" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.events}</a>
+              <a href="#sobre" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.about}</a>
               <a href="#newsletter" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.contact}</a>
-              <a href="#about" className="hover:text-anthropic-orange transition-colors text-xl font-medium">{t.nav.about}</a>
             </div>
 
             <div className="text-center md:text-right flex flex-col items-center md:items-end gap-10 font-sans">

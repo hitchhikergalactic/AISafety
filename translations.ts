@@ -1,4 +1,3 @@
-
 export const translations = {
   es: {
     nav: {
@@ -9,7 +8,8 @@ export const translations = {
       contact: "Contacto",
     },
     hero: {
-      h1: "IA Safety",
+      location: "Madrid, España",
+      h1: "Hub de IA Safety",
       h2: "Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA",
       ctaPrimary: "Únete al próximo evento",
       ctaSecondary: "Suscríbete",
@@ -81,7 +81,8 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      h1: "AI Safety",
+      location: "Madrid, Spain",
+      h1: "AI Safety Hub",
       h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
       ctaPrimary: "Join the next event",
       ctaSecondary: "Subscribe",
