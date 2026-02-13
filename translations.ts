@@ -35,13 +35,14 @@ export const translations = {
       community: {
         title: "Comunidad",
         text: "Conexión entre investigadores, desarrolladores y personas que quieren contribuir a la seguridad en IA.",
-        extraLink: "Women4AIS",
       },
     },
     upcoming: {
       title: "Próximos Eventos",
-      placeholder: "Lanzamiento del Hub: Meetup Inicial",
-      details: "Fecha: Mayo 2025 | Hora: 19:00 | Lugar: Madrid Centro",
+      eventTitle: "Primer Meetup: AI Safety Madrid",
+      date: "📅 28 de abril, 2025 | ⏰ 19:00 - 21:00h",
+      location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
+      description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
       cta: "Reserva tu plaza",
     },
     collaborators: {
@@ -49,12 +50,14 @@ export const translations = {
     },
     about: {
       title: "Sobre esta iniciativa",
-      photoPlaceholder: "[Tu foto aquí]",
-      linkPlaceholder: "[LinkedIn / Web]",
-      text: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada. Fundada por un grupo de entusiastas locales, reúne a investigadores, desarrolladores y personas que quieren contribuir a la seguridad en IA.",
+      text1: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada.",
+      text2: "Impulsada por Osmani Redondo, reúne a personas de todos los perfiles interesadas en contribuir a la seguridad en IA.",
       joinCta: "¿Quieres formar parte?",
       joinBtn: "Únete",
-      testimonial: "'Necesitábamos esto' - Experto en IA",
+    },
+    women4ais: {
+      title: "Formamos parte de Women4AIS",
+      text: "Women4AIS construye una comunidad global en seguridad de IA donde todas las voces suman. Creemos que la diversidad de perspectivas hace este campo más fuerte. Si compartes esta visión, únete.",
     },
     subscribe: {
       title: "Únete al Hub",
@@ -104,13 +107,14 @@ export const translations = {
       community: {
         title: "Community",
         text: "Connecting researchers, developers, and people who want to contribute to AI safety.",
-        extraLink: "Women4AIS",
       },
     },
     upcoming: {
       title: "Upcoming Events",
-      placeholder: "Hub Launch: Initial Meetup",
-      details: "Date: May 2025 | Time: 19:00 | Location: Madrid Center",
+      eventTitle: "First Meetup: AI Safety Madrid",
+      date: "📅 April 28, 2025 | ⏰ 7:00 - 9:00 PM",
+      location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
+      description: "Our first meetup to connect people interested in AI safety. Talks, networking and snacks. Join us!",
       cta: "Book your spot",
     },
     collaborators: {
@@ -118,12 +122,14 @@ export const translations = {
     },
     about: {
       title: "About this initiative",
-      photoPlaceholder: "[Your photo here]",
-      linkPlaceholder: "[LinkedIn / Web]",
-      text: "This initiative arises to create a space to explore the technical and ethical challenges of advanced AI. Founded by a group of local enthusiasts, it brings together researchers, developers, and people who want to contribute to AI safety.",
+      text1: "This initiative emerges to create a space to explore the technical and ethical challenges of advanced AI.",
+      text2: "Led by Osmani Redondo, it brings together people from all backgrounds interested in contributing to AI safety.",
       joinCta: "Want to be part of it?",
-      joinBtn: "Join",
-      testimonial: "'We needed this' - AI Expert",
+      joinBtn: "Join us",
+    },
+    women4ais: {
+      title: "We're part of Women4AIS",
+      text: "Women4AIS builds a global AI safety community where every voice matters. We believe diversity of perspectives makes this field stronger. If you share this vision, join us.",
     },
     subscribe: {
       title: "Join the Hub",

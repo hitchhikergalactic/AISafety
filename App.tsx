@@ -44,7 +44,7 @@ const Navbar: React.FC<{
     { href: "#why", label: t.nav.mission },
     { href: "#events", label: t.nav.events },
     { href: "#about", label: t.nav.about },
-    { href: "#contact", label: t.nav.contact },
+    { href: "#newsletter", label: t.nav.contact },
   ];
 
   return (
@@ -101,7 +101,7 @@ const Navbar: React.FC<{
 };
 
 const Section: React.FC<{ 
-  id: string, 
+  id?: string, 
   className?: string, 
   children: React.ReactNode 
 }> = ({ id, className = "", children }) => (
@@ -115,26 +115,14 @@ const Section: React.FC<{
 const PillarCard: React.FC<{ 
   icon: React.ReactNode, 
   title: string, 
-  text: string, 
-  extraLink?: { text: string, href: string } 
-}> = ({ icon, title, text, extraLink }) => (
+  text: string 
+}> = ({ icon, title, text }) => (
   <div className="bg-anthropic-lightGray/40 dark:bg-white/5 p-12 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle flex flex-col h-full transition-all hover:border-anthropic-midGray/30">
     <div className="w-16 h-16 bg-anthropic-blue/10 dark:bg-anthropic-blueLight/10 text-anthropic-blue dark:text-anthropic-blueLight rounded-anthro flex items-center justify-center mb-8">
       {icon}
     </div>
-    <h3 className="mb-6 text-3xl md:text-4xl tracking-tight">{title}</h3>
+    <h3 className="mb-6 text-3xl md:text-4xl tracking-tight font-bold">{title}</h3>
     <p className="text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-8 flex-grow leading-relaxed text-2xl font-serif italic">{text}</p>
-    {extraLink && (
-      <a 
-        href={extraLink.href} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg uppercase tracking-widest hover:underline transition-all"
-      >
-        <Instagram size={20} />
-        {extraLink.text}
-      </a>
-    )}
   </div>
 );
 
@@ -180,7 +168,7 @@ export default function App() {
     <div className="min-h-screen transition-colors duration-500">
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
 
-      {/* HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-32 pb-24 px-8">
         <div className="max-w-6xl text-center animate-fade-in-up">
           <span className="block text-[1.2rem] font-sans font-medium uppercase tracking-[0.05em] text-anthropic-midGray mb-6">
@@ -197,14 +185,14 @@ export default function App() {
               {t.hero.ctaPrimary}
               <ArrowRight size={24} />
             </a>
-            <a href="#contact" className="px-12 py-5 rounded-anthro border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue/5 dark:hover:bg-anthropic-blueLight/5 transition-all flex items-center justify-center anthro-hover">
+            <a href="#newsletter" className="px-12 py-5 rounded-anthro border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue/5 dark:hover:bg-anthropic-blueLight/5 transition-all flex items-center justify-center anthro-hover">
               {t.hero.ctaSecondary}
             </a>
           </div>
         </div>
       </section>
 
-      {/* WHY SECTION - CONDENSED TO 1 PARAGRAPH */}
+      {/* 2. ¿POR QUÉ UN HUB DE SEGURIDAD EN IA? */}
       <Section id="why" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
@@ -226,19 +214,19 @@ export default function App() {
         </div>
       </Section>
 
-      {/* MISSION STRIP */}
+      {/* 3. NUESTRA MISIÓN */}
       <section className="bg-transparent py-40 text-center px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-anthropic-green dark:text-anthropic-greenLight text-sm font-sans font-black uppercase tracking-[0.35em] mb-12">
             {t.mission.title}
           </h2>
-          <p className="text-3xl md:text-[3.5rem] font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-tight">
+          <p className="text-3xl md:text-[3rem] font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-tight">
             "{t.mission.text}"
           </p>
         </div>
       </section>
 
-      {/* PILLARS SECTION - "El Hub en Acción" */}
+      {/* 4. EL HUB EN ACCIÓN */}
       <Section id="pillars">
         <h2 className="mb-24 text-center font-bold text-[clamp(2.5rem,6vw,4.5rem)]">{t.pillars.title}</h2>
         <div className="grid md:grid-cols-3 gap-12">
@@ -256,36 +244,48 @@ export default function App() {
             icon={<Globe size={36} />}
             title={t.pillars.community.title}
             text={t.pillars.community.text}
-            extraLink={{ text: t.pillars.community.extraLink, href: "https://www.instagram.com/womenaisafety" }}
           />
         </div>
       </Section>
 
-      {/* EVENTS SECTION */}
+      {/* 5. PRÓXIMOS EVENTOS (REDESIGNED) */}
       <Section id="events" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
-        <div className="bg-anthropic-beige dark:bg-anthropic-dark p-14 md:p-24 rounded-anthro border border-anthropic-midGray/20 shadow-anthro-subtle relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-bl-full -mr-40 -mt-40 opacity-5"></div>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="mb-16 text-center font-bold">{t.upcoming.title}</h2>
           
-          <h2 className="mb-16 font-bold">{t.upcoming.title}</h2>
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="flex-1">
-              <div className="mb-14">
-                <span className="text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-sm uppercase tracking-widest block mb-6">Próximamente</span>
-                <h3 className="text-5xl md:text-6xl mb-8 font-bold">{t.upcoming.placeholder}</h3>
-                <p className="text-3xl text-anthropic-dark/80 dark:text-anthropic-beige/80 font-serif italic leading-relaxed">{t.upcoming.details}</p>
+          <div className="rounded-[16px] shadow-2xl overflow-hidden border border-anthropic-midGray/15 flex flex-col">
+            {/* Header Image */}
+            <img 
+              src="https://i.imgur.com/Ym0layS.jpeg" 
+              alt={t.upcoming.eventTitle} 
+              className="w-full h-[400px] object-cover object-center block"
+            />
+            
+            {/* Content Area with Gradient */}
+            <div className={`p-10 md:p-16 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[linear-gradient(135deg,#e89074,#d97757)]' : 'bg-[linear-gradient(135deg,#d97757,#c86847)]'}`}>
+              <h3 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">{t.upcoming.eventTitle}</h3>
+              
+              <div className="space-y-4 font-sans font-bold text-lg md:text-xl uppercase tracking-wider opacity-95">
+                <p>{t.upcoming.date}</p>
+                <p>{t.upcoming.location}</p>
               </div>
-              <a href="#contact" className="inline-block px-14 py-6 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-2xl hover:opacity-90 transition-all shadow-anthro-subtle">
+
+              <p className="text-2xl font-serif italic leading-relaxed max-w-2xl opacity-90">
+                "{t.upcoming.description}"
+              </p>
+
+              <a 
+                href="#newsletter" 
+                className="mt-4 px-12 py-5 rounded-[12px] bg-white text-anthropic-orange font-sans font-bold text-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
+              >
                 {t.upcoming.cta}
               </a>
-            </div>
-            <div className="w-full lg:w-1/3 aspect-[4/5] bg-anthropic-lightGray/40 dark:bg-white/5 rounded-anthro border border-dashed border-anthropic-midGray/30 flex items-center justify-center text-anthropic-midGray font-sans italic p-10 text-center text-2xl">
-              Event Image Placeholder
             </div>
           </div>
         </div>
       </Section>
 
-      {/* NETWORK SECTION */}
+      {/* 6. RED DE COLABORADORES */}
       <Section id="network">
         <h2 className="mb-24 text-center font-bold">{t.collaborators.title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -298,39 +298,77 @@ export default function App() {
         </div>
       </Section>
 
-      {/* ABOUT SECTION */}
-      <Section id="about" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
-        <div className="grid lg:grid-cols-3 gap-20 items-start">
-          <div className="text-center">
-            <div className="w-64 h-64 mx-auto rounded-anthro border border-anthropic-midGray/15 flex items-center justify-center bg-white dark:bg-anthropic-dark text-anthropic-midGray shadow-anthro-subtle overflow-hidden mb-10 transition-transform hover:scale-[1.02]">
-              <Users size={96} className="opacity-10" />
-            </div>
-            <a href="#" className="text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold hover:underline transition-colors tracking-tight text-lg uppercase">{t.about.linkPlaceholder}</a>
-          </div>
-          <div className="lg:col-span-2">
-            <h2 className="mb-10 font-bold">{t.about.title}</h2>
-            <p className="text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 leading-relaxed mb-16 font-serif italic">
-              {t.about.text}
-            </p>
-            
-            <div className="bg-white/50 dark:bg-anthropic-dark p-12 rounded-anthro border-l-4 border-anthropic-orange dark:border-anthropic-orangeLight mb-16 shadow-anthro-subtle">
-              <p className="text-3xl md:text-4xl font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-snug">
-                {t.about.testimonial}
-              </p>
-            </div>
+      {/* 7. SOBRE ESTA INICIATIVA */}
+      <Section id="about" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10 flex justify-center">
+        <div className="max-w-[700px] w-full bg-white dark:bg-[#2A2A2A] p-12 md:p-16 rounded-[16px] shadow-anthro-subtle border border-anthropic-midGray/15 text-center transition-all hover:border-anthropic-midGray/30">
+          
+          {/* Foto circular arriba */}
+          <img 
+            src="https://i.imgur.com/Zgdo29Z.jpeg" 
+            alt="Osmani Redondo" 
+            className="w-[200px] h-[200px] rounded-full border-[4px] border-anthropic-orange dark:border-anthropic-orangeLight object-cover object-center mx-auto mb-6 block shadow-lg"
+          />
 
-            <div className="flex flex-col sm:flex-row items-center gap-10">
-              <p className="font-sans font-bold text-2xl">{t.about.joinCta}</p>
-              <a href="#contact" className="px-12 py-5 rounded-anthro border-2 border-anthropic-green dark:border-anthropic-greenLight text-anthropic-green dark:text-anthropic-greenLight font-sans font-bold hover:bg-anthropic-green hover:text-white dark:hover:bg-anthropic-greenLight dark:hover:text-anthropic-dark transition-all text-center text-2xl">
-                {t.about.joinBtn}
-              </a>
-            </div>
+          {/* Links discretos debajo de la foto */}
+          <div className="mb-8 flex justify-center gap-4 text-anthropic-midGray font-sans text-[0.95rem] font-bold uppercase tracking-widest">
+             <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="hover:underline no-underline transition-all">
+               LinkedIn
+             </a>
+             <span className="opacity-30">/</span>
+             <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:underline no-underline transition-all">
+               Blog
+             </a>
+          </div>
+
+          <h2 className="mb-10 font-bold text-4xl">{t.about.title}</h2>
+          
+          <div className="space-y-6 text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed italic mb-12">
+            <p>{t.about.text1}</p>
+            <p>{t.about.text2}</p>
+          </div>
+
+          <div className="flex flex-col items-center gap-6 pt-10 border-t border-anthropic-midGray/10">
+            <p className="font-sans font-bold text-xl opacity-70">{t.about.joinCta}</p>
+            <a 
+              href="#newsletter" 
+              className="px-8 py-3.2 rounded-[8px] border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue dark:hover:bg-anthropic-blueLight hover:text-white dark:hover:text-anthropic-dark transition-all"
+            >
+              {t.about.joinBtn}
+            </a>
           </div>
         </div>
       </Section>
 
-      {/* SUBSCRIBE SECTION */}
-      <Section id="contact">
+      {/* 8. FORMAMOS PARTE DE WOMEN4AIS */}
+      <Section className="bg-transparent flex justify-center">
+        <div className="max-w-[700px] w-full bg-white dark:bg-[#2A2A2A] p-12 md:p-16 rounded-[16px] shadow-anthro-subtle border border-anthropic-midGray/15 text-center transition-all hover:border-anthropic-midGray/30 animate-fade-in-up">
+          <h2 className="mb-8 font-bold text-4xl">{t.women4ais.title}</h2>
+          <p className="text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed mb-12 italic">
+            {t.women4ais.text}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a 
+              href="https://www.instagram.com/womenaisafety" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-[8px] border-2 border-anthropic-orange dark:border-anthropic-orangeLight text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark shadow-sm"
+            >
+              <span>📷</span> Instagram
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/women4ais" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-[8px] border-2 border-anthropic-orange dark:border-anthropic-orangeLight text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg flex items-center gap-3 transition-all hover:bg-anthropic-orange dark:hover:bg-anthropic-orangeLight hover:text-white dark:hover:text-anthropic-dark shadow-sm"
+            >
+              <span>💼</span> LinkedIn
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      {/* 9. ÚNETE AL HUB (Newsletter) */}
+      <Section id="newsletter">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="mb-8 font-bold">{t.subscribe.title}</h2>
           <p className="text-3xl text-anthropic-dark/80 dark:text-anthropic-beige/80 mb-20 font-serif italic">{t.subscribe.subtitle}</p>
@@ -371,7 +409,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* FOOTER */}
+      {/* 10. FOOTER */}
       <footer className="bg-anthropic-dark text-anthropic-beige/60 py-32 px-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-24 items-start">
@@ -384,13 +422,13 @@ export default function App() {
                 {t.footer.tagline}
               </p>
               <div className="flex items-center justify-center md:justify-start gap-8">
-                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="LinkedIn">
                   <Linkedin size={24} />
                 </a>
                 <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Instagram">
                   <Instagram size={24} />
                 </a>
-                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Substack">
+                <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Substack">
                   <Newspaper size={24} />
                 </a>
               </div>
@@ -400,7 +438,7 @@ export default function App() {
               <h4 className="text-anthropic-beige font-bold uppercase text-xs tracking-[0.45em] mb-6 opacity-85">Explora</h4>
               <a href="#home" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.home}</a>
               <a href="#events" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.events}</a>
-              <a href="#contact" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.contact}</a>
+              <a href="#newsletter" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.contact}</a>
             </div>
 
             <div className="text-center md:text-right flex flex-col items-center md:items-end gap-8 font-sans">
