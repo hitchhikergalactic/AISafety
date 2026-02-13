@@ -4,9 +4,6 @@ import { translations } from './translations';
 import { 
   BookOpen, 
   Calendar, 
-  Users, 
-  ExternalLink, 
-  CheckCircle, 
   Globe,
   ArrowRight,
   Menu,
@@ -15,7 +12,9 @@ import {
   Instagram,
   Newspaper,
   Sun,
-  Moon
+  Moon,
+  Users,
+  CheckCircle
 } from 'lucide-react';
 
 // --- Types ---
@@ -35,7 +34,7 @@ const Navbar: React.FC<{
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -49,56 +48,49 @@ const Navbar: React.FC<{
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#F6EDE5]/90 dark:bg-[#1a1a1a]/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-        {/* Logo */}
-        <a href="#home" className="text-xl font-bold text-primary dark:text-primary-dark flex items-center gap-2 shrink-0 group">
-          <div className="w-8 h-8 bg-primary dark:bg-primary-dark rounded-lg flex items-center justify-center text-[#F6EDE5] group-hover:scale-110 transition-transform">
-            <Globe size={20} />
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-anthropic-beige/95 dark:bg-anthropic-dark/95 backdrop-blur-xl border-b border-anthropic-midGray/20 py-4' : 'bg-transparent py-6'}`}>
+      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center relative">
+        <a href="#home" className="text-2xl font-serif font-bold text-anthropic-dark dark:text-anthropic-beige flex items-center gap-3 shrink-0 group transition-all">
+          <div className="w-10 h-10 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-anthro flex items-center justify-center text-anthropic-beige group-hover:opacity-90">
+            <Globe size={22} />
           </div>
-          <span className="hidden sm:inline">AI Safety Madrid</span>
+          <span className="tracking-tight hidden sm:inline">IA Safety Madrid</span>
         </a>
 
-        {/* Desktop Nav - Centered */}
-        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-medium text-sm uppercase tracking-[0.15em]">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="text-[#2C3E50] dark:text-[#e5e7eb] hover:text-primary dark:hover:text-primary-dark font-medium transition-colors">
+            <a key={link.href} href={link.href} className="text-anthropic-dark dark:text-anthropic-beige hover:text-anthropic-orange dark:hover:text-anthropic-orangeLight transition-colors">
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* Right Side - Toggles */}
-        <div className="flex items-center gap-3 sm:gap-4">
-          {/* Theme Toggle */}
+        <div className="flex items-center gap-4">
           <button 
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            className="p-2 rounded-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-800 text-[#2C3E50] dark:text-[#e5e7eb] hover:text-primary dark:hover:text-primary-dark transition-all"
+            className="p-2.5 rounded-full border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige hover:bg-anthropic-lightGray/50 dark:hover:bg-white/5 transition-all"
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
 
-          {/* Language Toggle */}
           <button 
             onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-            className="px-3 py-1 rounded-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-800 text-[#2C3E50] dark:text-[#e5e7eb] hover:border-primary dark:hover:border-primary-dark hover:text-primary dark:hover:text-primary-dark transition-all uppercase text-sm font-bold min-w-[45px]"
+            className="px-4 py-1.5 rounded-anthro border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige hover:text-anthropic-orange font-sans font-bold text-xs uppercase tracking-widest transition-colors"
           >
             {lang === 'es' ? 'EN' : 'ES'}
           </button>
 
-          {/* Mobile Menu Toggle */}
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-[#2C3E50] dark:text-[#e5e7eb] p-1">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-anthropic-dark dark:text-anthropic-beige">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#F6EDE5] dark:bg-[#1a1a1a] border-t border-slate-200 dark:border-slate-800 py-6 px-6 flex flex-col gap-4 shadow-xl">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-anthropic-beige dark:bg-anthropic-dark border-t border-anthropic-midGray/10 py-12 px-8 flex flex-col gap-6 shadow-2xl animate-fade-in-up">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-xl font-medium text-[#2C3E50] dark:text-[#e5e7eb]">
+            <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-3xl font-sans font-bold text-anthropic-dark dark:text-anthropic-beige">
               {link.label}
             </a>
           ))}
@@ -108,55 +100,60 @@ const Navbar: React.FC<{
   );
 };
 
-// --- Fix for Section component redeclaration and syntax errors on lines 111-120 ---
 const Section: React.FC<{ 
   id: string, 
   className?: string, 
   children: React.ReactNode 
 }> = ({ id, className = "", children }) => (
-  <section id={id} className={`py-20 md:py-32 px-6 scroll-mt-navbar ${className}`}>
-    <div className="max-w-5xl mx-auto">
+  <section id={id} className={`py-24 md:py-40 px-8 scroll-mt-navbar ${className}`}>
+    <div className="max-w-6xl mx-auto">
       {children}
     </div>
   </section>
 );
 
-const PillarCard: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-  <div className="bg-white dark:bg-[#2d2d2d] p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-primary/30 dark:hover:border-primary-dark/30 transition-all group">
-    <div className="w-12 h-12 bg-accent/10 dark:bg-accent-dark/10 text-accent dark:text-accent-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+const PillarCard: React.FC<{ 
+  icon: React.ReactNode, 
+  title: string, 
+  text: string, 
+  extraLink?: { text: string, href: string } 
+}> = ({ icon, title, text, extraLink }) => (
+  <div className="bg-anthropic-lightGray/40 dark:bg-white/5 p-12 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle flex flex-col h-full transition-all hover:border-anthropic-midGray/30">
+    <div className="w-16 h-16 bg-anthropic-blue/10 dark:bg-anthropic-blueLight/10 text-anthropic-blue dark:text-anthropic-blueLight rounded-anthro flex items-center justify-center mb-8">
       {icon}
     </div>
-    <h3 className="text-2xl font-bold text-[#2C3E50] dark:text-white mb-3">{title}</h3>
-    <p className="text-slate-600 dark:text-[#e5e7eb]/70 leading-relaxed">{text}</p>
+    <h3 className="mb-6 text-3xl md:text-4xl tracking-tight">{title}</h3>
+    <p className="text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-8 flex-grow leading-relaxed text-2xl font-serif italic">{text}</p>
+    {extraLink && (
+      <a 
+        href={extraLink.href} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-3 text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-lg uppercase tracking-widest hover:underline transition-all"
+      >
+        <Instagram size={20} />
+        {extraLink.text}
+      </a>
+    )}
   </div>
 );
 
-const CollaborativeLink: React.FC<{ href: string, text: string }> = ({ href, text }) => (
+const CollaborativeCard: React.FC<{ href: string, text: string }> = ({ href, text }) => (
   <a 
     href={href} 
     target="_blank" 
     rel="noopener noreferrer"
-    className="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-white/5 hover:bg-primary/10 dark:hover:bg-primary-dark/10 hover:border-primary dark:hover:border-primary-dark transition-all group"
+    className="block p-8 rounded-anthro border border-anthropic-midGray/20 bg-white/30 dark:bg-white/5 text-center transition-all hover:bg-anthropic-lightGray/60 dark:hover:bg-white/10 group shadow-anthro-subtle"
   >
-    <span className="font-medium text-[#2C3E50] dark:text-[#e5e7eb] group-hover:text-primary dark:group-hover:text-primary-dark">{text}</span>
-    <ExternalLink size={18} className="text-slate-400 group-hover:text-primary dark:group-hover:text-primary-dark" />
+    <span className="font-sans font-bold text-xl text-anthropic-dark dark:text-anthropic-beige group-hover:text-anthropic-orange dark:group-hover:text-anthropic-orangeLight transition-colors">
+      {text}
+    </span>
   </a>
 );
 
-// --- Main App ---
-
 export default function App() {
-  const [lang, setLang] = useState<Language>(() => {
-    const saved = localStorage.getItem('app_lang');
-    return (saved as Language) || 'es';
-  });
-
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('app_theme');
-    if (saved === 'dark' || saved === 'light') return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
-  
+  const [lang, setLang] = useState<Language>(() => (localStorage.getItem('app_lang') as Language) || 'es');
+  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('app_theme') as Theme) || 'light');
   const [subscribed, setSubscribed] = useState(false);
   const t = translations[lang];
 
@@ -174,173 +171,157 @@ export default function App() {
     }
   }, [theme]);
 
-  // Handle automatic dismissal of success message
-  useEffect(() => {
-    let timer: number | undefined;
-    if (subscribed) {
-      timer = window.setTimeout(() => {
-        setSubscribed(false);
-      }, 5000);
-    }
-    return () => {
-      if (timer) window.clearTimeout(timer);
-    };
-  }, [subscribed]);
-
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     setSubscribed(true);
   };
 
   return (
-    <div className="min-h-screen text-[#2C3E50] dark:text-[#e5e7eb] transition-colors duration-300">
+    <div className="min-h-screen transition-colors duration-500">
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
 
       {/* HERO SECTION */}
-      <section id="home" className="min-h-[90vh] flex items-center justify-center pt-20 px-6 bg-gradient-to-b from-[#F6EDE5] to-white dark:from-[#1a1a1a] dark:to-[#13100e]">
-        <div className="max-w-4xl text-center animate-fade-in-up">
-          {/* Madrid Subtitle - Discrete tag above H1 */}
-          <span className="block text-[0.9rem] uppercase tracking-[0.3em] text-accent dark:text-accent-dark font-bold mb-3 opacity-80">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-32 pb-24 px-8">
+        <div className="max-w-6xl text-center animate-fade-in-up">
+          <span className="block text-[1.2rem] font-sans font-medium uppercase tracking-[0.05em] text-anthropic-midGray mb-6">
             Madrid
           </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#2C3E50] dark:text-white mb-8 leading-[1.1]">
+          <h1 className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold leading-[1.05] mb-[2rem] tracking-tight">
             {t.hero.h1}
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-[#e5e7eb]/80 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-[clamp(1.5rem,3.5vw,2.2rem)] font-serif font-normal leading-[1.4] text-anthropic-dark/90 dark:text-anthropic-beige/90 mb-[4rem] max-w-[1000px] mx-auto italic">
             {t.hero.h2}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#events" className="px-8 py-4 rounded-full bg-primary dark:bg-primary-dark text-white font-bold text-lg hover:brightness-110 transition-all shadow-lg shadow-primary/20 dark:shadow-primary-dark/20 flex items-center justify-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="#events" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-xl hover:opacity-90 transition-all shadow-anthro-subtle flex items-center justify-center gap-3 anthro-hover">
               {t.hero.ctaPrimary}
-              <ArrowRight size={20} />
+              <ArrowRight size={24} />
             </a>
-            <a href="#contact" className="px-8 py-4 rounded-full border-2 border-accent dark:border-accent-dark text-accent dark:text-accent-dark font-bold text-lg hover:bg-accent hover:text-white dark:hover:bg-accent-dark dark:hover:text-[#1a1a1a] transition-all flex items-center justify-center">
+            <a href="#contact" className="px-12 py-5 rounded-anthro border-2 border-anthropic-blue dark:border-anthropic-blueLight text-anthropic-blue dark:text-anthropic-blueLight font-sans font-bold text-xl hover:bg-anthropic-blue/5 dark:hover:bg-anthropic-blueLight/5 transition-all flex items-center justify-center anthro-hover">
               {t.hero.ctaSecondary}
             </a>
           </div>
         </div>
       </section>
 
-      {/* WHY SECTION */}
-      <Section id="why" className="bg-white dark:bg-[#13100e]">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* WHY SECTION - CONDENSED TO 1 PARAGRAPH */}
+      <Section id="why" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] dark:text-white mb-8">
-              {t.why.title}
-            </h2>
-            <div className="space-y-6 text-lg text-slate-600 dark:text-[#e5e7eb]/70 leading-relaxed">
-              <p>{t.why.p1}</p>
-              <p>{t.why.p2}</p>
-              <p>{t.why.p3}</p>
+            <h2 className="mb-12 font-bold">{t.why.title}</h2>
+            <div className="text-[clamp(1.5rem,4vw,2.2rem)] text-anthropic-dark/90 dark:text-anthropic-beige/90 font-serif leading-relaxed max-w-[800px]">
+              <p className="italic">"{t.why.text}"</p>
             </div>
           </div>
-          <div className="relative">
-            <div className="aspect-square bg-[#F6EDE5] dark:bg-[#2d2d2d] rounded-3xl overflow-hidden shadow-inner flex items-center justify-center border border-slate-100 dark:border-slate-800">
-               <Globe size={180} className="text-primary/20 dark:text-primary-dark/10" strokeWidth={1} />
+          <div className="relative sticky top-32">
+            <div className="aspect-[4/3] bg-white/40 dark:bg-white/5 rounded-anthro overflow-hidden flex items-center justify-center border border-anthropic-midGray/20 shadow-anthro-subtle">
+               <Globe size={240} className="text-anthropic-orange/5 dark:text-anthropic-orangeLight/5" strokeWidth={0.2} />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-primary dark:bg-primary-dark p-8 rounded-2xl shadow-xl hidden lg:block max-w-[200px]">
-              <p className="font-bold text-lg leading-tight text-white dark:text-[#1a1a1a]">Comunidad local con visión global.</p>
+            <div className="absolute -bottom-10 -left-10 bg-anthropic-dark dark:bg-anthropic-beige p-12 rounded-anthro shadow-2xl hidden xl:block max-w-[340px] border border-white/10 dark:border-black/5">
+              <p className="font-sans font-bold text-xl leading-tight text-anthropic-beige dark:text-anthropic-dark">
+                Comunidad local con visión global.
+              </p>
             </div>
           </div>
         </div>
       </Section>
 
       {/* MISSION STRIP */}
-      <section className="bg-accent dark:bg-accent-dark py-20 text-center px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-primary dark:text-[#1a1a1a] text-sm font-black uppercase tracking-[0.2em] mb-6">{t.mission.title}</h2>
-          <p className="text-2xl md:text-4xl font-medium text-[#F6EDE5] dark:text-[#1a1a1a] leading-snug">
+      <section className="bg-transparent py-40 text-center px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-anthropic-green dark:text-anthropic-greenLight text-sm font-sans font-black uppercase tracking-[0.35em] mb-12">
+            {t.mission.title}
+          </h2>
+          <p className="text-3xl md:text-[3.5rem] font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-tight">
             "{t.mission.text}"
           </p>
         </div>
       </section>
 
-      {/* PILLARS SECTION */}
-      <Section id="pillars" className="dark:bg-[#13100e]">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] dark:text-white mb-16 text-center">
-          {t.pillars.title}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+      {/* PILLARS SECTION - "El Hub en Acción" */}
+      <Section id="pillars">
+        <h2 className="mb-24 text-center font-bold text-[clamp(2.5rem,6vw,4.5rem)]">{t.pillars.title}</h2>
+        <div className="grid md:grid-cols-3 gap-12">
           <PillarCard 
-            icon={<BookOpen size={24} />}
+            icon={<BookOpen size={36} />}
             title={t.pillars.education.title}
             text={t.pillars.education.text}
           />
           <PillarCard 
-            icon={<Calendar size={24} />}
+            icon={<Calendar size={36} />}
             title={t.pillars.events.title}
             text={t.pillars.events.text}
           />
           <PillarCard 
-            icon={<Users size={24} />}
+            icon={<Globe size={36} />}
             title={t.pillars.community.title}
             text={t.pillars.community.text}
+            extraLink={{ text: t.pillars.community.extraLink, href: "https://www.instagram.com/womenaisafety" }}
           />
         </div>
       </Section>
 
       {/* EVENTS SECTION */}
-      <Section id="events" className="bg-[#F6EDE5] dark:bg-[#1a1a1a]">
-        <div className="bg-white dark:bg-[#2d2d2d] p-10 md:p-16 rounded-[2rem] border-2 border-primary/20 dark:border-primary-dark/10 shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary dark:bg-primary-dark rounded-bl-full -mr-10 -mt-10 opacity-10"></div>
+      <Section id="events" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
+        <div className="bg-anthropic-beige dark:bg-anthropic-dark p-14 md:p-24 rounded-anthro border border-anthropic-midGray/20 shadow-anthro-subtle relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-anthropic-orange dark:bg-anthropic-orangeLight rounded-bl-full -mr-40 -mt-40 opacity-5"></div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] dark:text-white mb-10">
-            {t.upcoming.title}
-          </h2>
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <h2 className="mb-16 font-bold">{t.upcoming.title}</h2>
+          <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="flex-1">
-              <div className="mb-8">
-                <span className="text-primary dark:text-primary-dark font-bold text-lg block mb-2">Featured Event</span>
-                <h3 className="text-3xl font-bold mb-4 dark:text-white">{t.upcoming.placeholder}</h3>
-                <p className="text-xl text-slate-600 dark:text-[#e5e7eb]/70 mb-6">{t.upcoming.details}</p>
+              <div className="mb-14">
+                <span className="text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold text-sm uppercase tracking-widest block mb-6">Próximamente</span>
+                <h3 className="text-5xl md:text-6xl mb-8 font-bold">{t.upcoming.placeholder}</h3>
+                <p className="text-3xl text-anthropic-dark/80 dark:text-anthropic-beige/80 font-serif italic leading-relaxed">{t.upcoming.details}</p>
               </div>
-              <a href="#contact" className="inline-block px-10 py-5 rounded-full bg-primary dark:bg-primary-dark text-white dark:text-[#1a1a1a] font-bold text-xl hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+              <a href="#contact" className="inline-block px-14 py-6 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-2xl hover:opacity-90 transition-all shadow-anthro-subtle">
                 {t.upcoming.cta}
               </a>
             </div>
-            <div className="w-full md:w-1/3 aspect-video md:aspect-square bg-[#F6EDE5] dark:bg-[#1a1a1a] rounded-2xl flex items-center justify-center text-primary/30 italic border-2 border-dashed border-primary/20">
-              Poster Evento
+            <div className="w-full lg:w-1/3 aspect-[4/5] bg-anthropic-lightGray/40 dark:bg-white/5 rounded-anthro border border-dashed border-anthropic-midGray/30 flex items-center justify-center text-anthropic-midGray font-sans italic p-10 text-center text-2xl">
+              Event Image Placeholder
             </div>
           </div>
         </div>
       </Section>
 
       {/* NETWORK SECTION */}
-      <Section id="network" className="dark:bg-[#13100e]">
-        <h2 className="text-3xl font-bold text-[#2C3E50] dark:text-white mb-12 text-center">{t.collaborators.title}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <CollaborativeLink href="https://riesgosia.org/es/" text="Riesgos IA" />
-          <CollaborativeLink href="https://www.enais.co/" text="ENAIS" />
-          <CollaborativeLink href="https://bluedot.org/recursos" text="BlueDot" />
-          <CollaborativeLink href="https://www.aisafety.com/" text="AI Safety (.com)" />
-          <CollaborativeLink href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" />
+      <Section id="network">
+        <h2 className="mb-24 text-center font-bold">{t.collaborators.title}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
+          <CollaborativeCard href="https://www.enais.co/" text="ENAIS" />
+          <CollaborativeCard href="https://bluedot.org/" text="BlueDot" />
+          <CollaborativeCard href="https://www.aisafety.com/" text="AI Safety" />
+          <CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" />
+          <CollaborativeCard href="https://safeaigermany.org/" text="Safe AI Germany" />
         </div>
       </Section>
 
       {/* ABOUT SECTION */}
-      <Section id="about" className="bg-white dark:bg-[#1a1a1a]">
-        <div className="grid md:grid-cols-3 gap-12 items-start">
+      <Section id="about" className="bg-anthropic-lightGray/25 dark:bg-white/5 border-y border-anthropic-midGray/10">
+        <div className="grid lg:grid-cols-3 gap-20 items-start">
           <div className="text-center">
-            <div className="w-48 h-48 mx-auto rounded-full border-4 border-primary dark:border-primary-dark flex items-center justify-center bg-[#F6EDE5] dark:bg-[#2d2d2d] text-slate-400 font-bold mb-6 overflow-hidden shadow-lg">
-              <Users size={64} className="opacity-20" />
+            <div className="w-64 h-64 mx-auto rounded-anthro border border-anthropic-midGray/15 flex items-center justify-center bg-white dark:bg-anthropic-dark text-anthropic-midGray shadow-anthro-subtle overflow-hidden mb-10 transition-transform hover:scale-[1.02]">
+              <Users size={96} className="opacity-10" />
             </div>
-            <a href="#" className="text-primary dark:text-primary-dark font-bold hover:underline transition-colors">{t.about.linkPlaceholder}</a>
+            <a href="#" className="text-anthropic-orange dark:text-anthropic-orangeLight font-sans font-bold hover:underline transition-colors tracking-tight text-lg uppercase">{t.about.linkPlaceholder}</a>
           </div>
-          <div className="md:col-span-2">
-            <h2 className="text-3xl font-bold text-[#2C3E50] dark:text-white mb-6">{t.about.title}</h2>
-            <p className="text-lg text-slate-600 dark:text-[#e5e7eb]/70 leading-relaxed mb-8 italic">
+          <div className="lg:col-span-2">
+            <h2 className="mb-10 font-bold">{t.about.title}</h2>
+            <p className="text-2xl text-anthropic-dark/90 dark:text-anthropic-beige/90 leading-relaxed mb-16 font-serif italic">
               {t.about.text}
             </p>
             
-            <div className="bg-[#F6EDE5] dark:bg-[#2d2d2d] p-8 rounded-2xl border-l-4 border-primary dark:border-primary-dark mb-8">
-              <p className="text-xl font-medium text-[#2C3E50] dark:text-[#e5e7eb] italic">
+            <div className="bg-white/50 dark:bg-anthropic-dark p-12 rounded-anthro border-l-4 border-anthropic-orange dark:border-anthropic-orangeLight mb-16 shadow-anthro-subtle">
+              <p className="text-3xl md:text-4xl font-serif italic text-anthropic-dark dark:text-anthropic-beige leading-snug">
                 {t.about.testimonial}
               </p>
             </div>
 
-            <div className="flex items-center gap-6">
-              <p className="font-bold text-[#2C3E50] dark:text-[#e5e7eb]">{t.about.joinCta}</p>
-              <a href="#contact" className="px-6 py-2 rounded-full border-2 border-accent dark:border-accent-dark text-accent dark:text-accent-dark font-bold hover:bg-accent hover:text-white dark:hover:bg-accent-dark dark:hover:text-[#1a1a1a] transition-all">
+            <div className="flex flex-col sm:flex-row items-center gap-10">
+              <p className="font-sans font-bold text-2xl">{t.about.joinCta}</p>
+              <a href="#contact" className="px-12 py-5 rounded-anthro border-2 border-anthropic-green dark:border-anthropic-greenLight text-anthropic-green dark:text-anthropic-greenLight font-sans font-bold hover:bg-anthropic-green hover:text-white dark:hover:bg-anthropic-greenLight dark:hover:text-anthropic-dark transition-all text-center text-2xl">
                 {t.about.joinBtn}
               </a>
             </div>
@@ -348,40 +329,40 @@ export default function App() {
         </div>
       </Section>
 
-      {/* CONTACT / SUBSCRIBE SECTION */}
-      <Section id="contact" className="bg-[#F6EDE5] dark:bg-[#13100e]">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-[#2C3E50] dark:text-white mb-4">{t.subscribe.title}</h2>
-          <p className="text-lg text-slate-600 dark:text-[#e5e7eb]/70 mb-10">{t.subscribe.subtitle}</p>
+      {/* SUBSCRIBE SECTION */}
+      <Section id="contact">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="mb-8 font-bold">{t.subscribe.title}</h2>
+          <p className="text-3xl text-anthropic-dark/80 dark:text-anthropic-beige/80 mb-20 font-serif italic">{t.subscribe.subtitle}</p>
 
           {subscribed ? (
-            <div className="bg-white dark:bg-[#2d2d2d] p-8 rounded-3xl shadow-sm border-2 border-primary dark:border-primary-dark flex items-center justify-center gap-4 animate-fade-in-up">
-              <CheckCircle className="text-primary dark:text-primary-dark" size={32} />
-              <p className="text-xl font-bold text-primary dark:text-primary-dark">{t.subscribe.success}</p>
+            <div className="bg-anthropic-green/5 p-20 rounded-anthro border-2 border-anthropic-green/30 flex flex-col items-center justify-center gap-8 animate-fade-in-up">
+              <CheckCircle className="text-anthropic-green" size={64} />
+              <p className="text-4xl font-sans font-bold text-anthropic-green tracking-tight">{t.subscribe.success}</p>
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="bg-white dark:bg-[#2d2d2d] p-8 md:p-12 rounded-[2.5rem] shadow-xl space-y-4">
-              <div className="flex flex-col text-left gap-2">
-                <label className="text-sm font-bold text-slate-500 dark:text-[#e5e7eb]/50 ml-2 uppercase tracking-wide">{t.subscribe.name}</label>
+            <form onSubmit={handleSubscribe} className="bg-anthropic-lightGray/40 dark:bg-white/5 p-14 md:p-20 rounded-anthro border border-anthropic-midGray/15 shadow-anthro-subtle space-y-10 text-left">
+              <div className="space-y-4">
+                <label className="text-base font-sans font-bold text-anthropic-midGray uppercase tracking-[0.25em] block ml-2">{t.subscribe.name}</label>
                 <input 
                   type="text" 
                   required 
                   placeholder="Tu nombre"
-                  className="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-[#1a1a1a] border border-slate-200 dark:border-slate-800 text-[#2C3E50] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/30 dark:focus:ring-primary-dark/30 focus:border-primary dark:focus:border-primary-dark transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600"
+                  className="w-full px-8 py-6 rounded-anthro bg-white/60 dark:bg-anthropic-dark border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige focus:outline-none focus:ring-2 focus:ring-anthropic-orange/30 transition-all font-sans text-2xl placeholder:opacity-50"
                 />
               </div>
-              <div className="flex flex-col text-left gap-2">
-                <label className="text-sm font-bold text-slate-500 dark:text-[#e5e7eb]/50 ml-2 uppercase tracking-wide">{t.subscribe.email}</label>
+              <div className="space-y-4">
+                <label className="text-base font-sans font-bold text-anthropic-midGray uppercase tracking-[0.25em] block ml-2">{t.subscribe.email}</label>
                 <input 
                   type="email" 
                   required 
                   placeholder="hola@ejemplo.com"
-                  className="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-[#1a1a1a] border border-slate-200 dark:border-slate-800 text-[#2C3E50] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/30 dark:focus:ring-primary-dark/30 focus:border-primary dark:focus:border-primary-dark transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600"
+                  className="w-full px-8 py-6 rounded-anthro bg-white/60 dark:bg-anthropic-dark border border-anthropic-midGray/30 text-anthropic-dark dark:text-anthropic-beige focus:outline-none focus:ring-2 focus:ring-anthropic-orange/30 transition-all font-sans text-2xl placeholder:opacity-50"
                 />
               </div>
               <button 
                 type="submit" 
-                className="w-full py-5 rounded-2xl bg-primary dark:bg-primary-dark text-white dark:text-[#1a1a1a] font-bold text-xl hover:brightness-110 transition-all shadow-lg shadow-primary/20 mt-4"
+                className="w-full py-7 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-anthropic-beige dark:text-anthropic-dark font-sans font-bold text-2xl hover:opacity-95 transition-all shadow-anthro-subtle mt-8 anthro-hover"
               >
                 {t.subscribe.button}
               </button>
@@ -391,50 +372,47 @@ export default function App() {
       </Section>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-slate-400 py-20 px-6 border-t border-white/5">
+      <footer className="bg-anthropic-dark text-anthropic-beige/60 py-32 px-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-start">
-            {/* Brand, Tagline and Socials */}
-            <div className="text-center md:text-left space-y-6">
-              <div className="text-2xl font-bold text-white flex items-center justify-center md:justify-start gap-2 group">
-                 <Globe size={24} className="text-primary dark:text-primary-dark group-hover:rotate-12 transition-transform" />
-                 AI Safety Madrid
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-24 items-start">
+            <div className="text-center md:text-left space-y-10">
+              <div className="text-3xl font-serif font-bold text-anthropic-beige flex items-center justify-center md:justify-start gap-5 group">
+                 <Globe size={40} className="text-anthropic-orange" />
+                 IA Safety Madrid
               </div>
-              <p className="text-slate-400 max-w-xs mx-auto md:mx-0">
+              <p className="max-w-xs mx-auto md:mx-0 font-serif italic text-2xl leading-relaxed opacity-85">
                 {t.footer.tagline}
               </p>
-              <div className="flex items-center justify-center md:justify-start gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-slate-400" aria-label="LinkedIn">
-                  <Linkedin size={18} />
+              <div className="flex items-center justify-center md:justify-start gap-8">
+                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="LinkedIn">
+                  <Linkedin size={24} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-slate-400" aria-label="Instagram">
-                  <Instagram size={18} />
+                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Instagram">
+                  <Instagram size={24} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-slate-400" aria-label="Substack">
-                  <Newspaper size={18} />
+                <a href="#" className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-anthropic-beige transition-all border border-white/10" aria-label="Substack">
+                  <Newspaper size={24} />
                 </a>
               </div>
             </div>
             
-            {/* Quick Links */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <h4 className="text-white font-bold mb-2 uppercase text-sm tracking-widest">Links</h4>
-              <a href="#home" className="hover:text-primary transition-colors">{t.nav.home}</a>
-              <a href="#events" className="hover:text-primary transition-colors">{t.nav.events}</a>
-              <a href="#contact" className="hover:text-primary transition-colors">{t.nav.contact}</a>
+            <div className="flex flex-col items-center md:items-start gap-8 font-sans">
+              <h4 className="text-anthropic-beige font-bold uppercase text-xs tracking-[0.45em] mb-6 opacity-85">Explora</h4>
+              <a href="#home" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.home}</a>
+              <a href="#events" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.events}</a>
+              <a href="#contact" className="hover:text-anthropic-orange transition-colors text-xl">{t.nav.contact}</a>
             </div>
 
-            {/* Copyright / Info */}
-            <div className="text-center md:text-right flex flex-col items-center md:items-end gap-4">
-              <h4 className="text-white font-bold mb-2 uppercase text-sm tracking-widest">Comunidad</h4>
-              <p className="text-sm max-w-[200px]">Red local enfocada en la seguridad de la IA.</p>
-              <div className="h-px w-20 bg-slate-800 my-2"></div>
-              <p className="text-xs text-slate-500">&copy; {t.footer.copyright}</p>
+            <div className="text-center md:text-right flex flex-col items-center md:items-end gap-8 font-sans">
+              <h4 className="text-anthropic-beige font-bold uppercase text-xs tracking-[0.45em] mb-6 opacity-85">Comunidad</h4>
+              <p className="text-xl max-w-[280px] leading-relaxed opacity-75 font-serif italic">Conectamos el talento local con el debate global sobre seguridad de la IA.</p>
+              <div className="h-px w-28 bg-anthropic-orange/30 my-8"></div>
+              <p className="text-xs opacity-45 tracking-widest font-bold uppercase">&copy; {t.footer.copyright}</p>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/5 text-center">
-             <p className="text-xs text-slate-600">Built with care for the human future.</p>
+          <div className="pt-16 border-t border-white/5 text-center">
+             <p className="text-xs font-sans tracking-[0.35em] uppercase opacity-25">Built for a human-aligned future.</p>
           </div>
         </div>
       </footer>

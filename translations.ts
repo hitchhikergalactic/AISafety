@@ -9,16 +9,14 @@ export const translations = {
       contact: "Contacto",
     },
     hero: {
-      h1: "AI Safety: Hub de Seguridad en IA",
+      h1: "IA Safety",
       h2: "Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA",
       ctaPrimary: "Únete al próximo evento",
       ctaSecondary: "Suscríbete",
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
-      p1: "La Inteligencia Artificial está avanzando a un ritmo sin precedentes. A medida que los sistemas se vuelven más capaces y autónomos, asegurar que sus objetivos permanezcan alineados con los valores humanos es uno de los mayores retos técnicos y sociopolíticos de nuestro tiempo.",
-      p2: "AI Safety (Seguridad en IA) es el campo de investigación dedicado a prevenir riesgos catastróficos o existenciales derivados de sistemas de IA superinteligentes. No se trata solo de errores de software, sino de garantizar que el control humano sea robusto y duradero.",
-      p3: "Este hub nace en Madrid para centralizar el talento local, fomentar el debate técnico riguroso y servir de puente entre la investigación global y nuestra realidad social.",
+      text: "La IA avanzada presenta riesgos que van más allá de sesgos o privacidad. IA Safety trabaja para asegurar que estos sistemas permanezcan alineados con valores humanos y sean controlables a largo plazo. Este hub conecta a quienes quieren contribuir activamente a estas soluciones.",
     },
     mission: {
       title: "Nuestra Misión",
@@ -36,7 +34,8 @@ export const translations = {
       },
       community: {
         title: "Comunidad",
-        text: "Conexión entre investigadores, desarrolladores y personas que quieren contribuir.",
+        text: "Conexión entre investigadores, desarrolladores y personas que quieren contribuir a la seguridad en IA.",
+        extraLink: "Women4AIS",
       },
     },
     upcoming: {
@@ -79,16 +78,14 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      h1: "AI Safety: IA Safety Hub",
+      h1: "AI Safety",
       h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
       ctaPrimary: "Join the next event",
       ctaSecondary: "Subscribe",
     },
     why: {
       title: "Why an AI Safety Hub?",
-      p1: "Artificial Intelligence is advancing at an unprecedented pace. As systems become more capable and autonomous, ensuring their goals remain aligned with human values is one of the greatest technical and socio-political challenges of our time.",
-      p2: "AI Safety is the research field dedicated to preventing catastrophic or existential risks derived from superintelligent AI systems. It's not just about software bugs, but about ensuring human control is robust and lasting.",
-      p3: "This hub was born in Madrid to centralize local talent, foster rigorous technical debate, and serve as a bridge between global research and our social reality.",
+      text: "Advanced AI presents risks that go beyond bias or privacy. AI Safety works to ensure these systems remain aligned with human values and controllable in the long term. This hub connects those who want to actively contribute to these solutions.",
     },
     mission: {
       title: "Our Mission",
@@ -106,7 +103,8 @@ export const translations = {
       },
       community: {
         title: "Community",
-        text: "Connecting researchers, developers, and people who want to contribute.",
+        text: "Connecting researchers, developers, and people who want to contribute to AI safety.",
+        extraLink: "Women4AIS",
       },
     },
     upcoming: {

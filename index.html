@@ -4,40 +4,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Safety Madrid | Hub de Seguridad en IA - Comunidad y Eventos</title>
-    <meta name="description" content="Hub de AI Safety en Madrid. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA. Eventos, educación y recursos." />
-    <meta name="keywords" content="hub AI safety Madrid, seguridad IA, comunidad inteligencia artificial responsable" />
+    <title>IA Safety Madrid | Hub de Seguridad en IA</title>
+    <meta name="description" content="Hub de IA Safety en Madrid. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Plus Jakarta Sans para Headings (Styrene A vibe) y Newsreader para Body (Tiempos vibe) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+              serif: ['"Newsreader"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            },
             colors: {
-              beige: {
-                light: '#F6EDE5',
-                dark: '#1a1a1a',
-              },
-              primary: {
-                DEFAULT: '#E58C32', // Light mode orange
-                dark: '#F4A261',    // Dark mode orange
-              },
-              accent: {
-                DEFAULT: '#047857', // Light mode dark green
-                dark: '#10b981',    // Dark mode bright green
-              },
-              slate: {
-                900: '#2C3E50',
-                950: '#1a1a1a',
+              anthropic: {
+                beige: '#faf9f5',
+                dark: '#141413',
+                midGray: '#b0aea5',
+                lightGray: '#e8e6dc',
+                orange: '#d97757',
+                blue: '#6a9bcc',
+                green: '#788c5d',
+                orangeLight: '#e89074',
+                blueLight: '#7dadd9',
+                greenLight: '#8fa06b',
               }
+            },
+            borderRadius: {
+              'anthro': '14px',
+            },
+            boxShadow: {
+              'anthro-subtle': '0 1px 3px rgba(0,0,0,0.08)',
             }
           }
         }
       }
-      // Set initial theme
       if (localStorage.getItem('app_theme') === 'dark' || (!('app_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
       } else {
@@ -46,19 +51,42 @@
     </script>
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: '"Newsreader"', serif;
+        font-size: 1.25rem; /* Aumentado de 1.125rem a 1.25rem (20px base) */
+        line-height: 1.7;    /* Interlineado más generoso */
         scroll-behavior: smooth;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      .scroll-mt-navbar {
-        scroll-margin-top: 80px;
+      h1, h2, h3, .font-heading {
+        font-family: '"Plus Jakarta Sans"', sans-serif;
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: -0.02em;
       }
+      h1 { font-size: clamp(3.5rem, 8vw, 6rem); }
+      h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
+      h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+      
+      .scroll-mt-navbar {
+        scroll-margin-top: 96px;
+      }
+      
       @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
+        from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
       }
       .animate-fade-in-up {
-        animation: fadeInUp 0.6s ease-out forwards;
+        animation: fadeInUp 0.4s ease-out forwards;
+      }
+      
+      .anthro-hover:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+      
+      /* Optimización para lectura de párrafos largos */
+      p {
+        margin-bottom: 1.5rem;
       }
     </style>
   <script type="importmap">
@@ -72,7 +100,7 @@
 }
 </script>
 </head>
-  <body class="bg-[#F6EDE5] dark:bg-[#1a1a1a] text-[#2C3E50] dark:text-[#e5e7eb]">
+  <body class="bg-anthropic-beige dark:bg-anthropic-dark text-anthropic-dark dark:text-anthropic-beige selection:bg-anthropic-orange/20">
     <div id="root"></div>
   </body>
 </html>
