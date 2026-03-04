@@ -40,7 +40,7 @@ export const translations = {
     upcoming: {
       title: "Próximos Eventos",
       eventTitle: "Primer Encuentro: IA Safety en Madrid",
-      date: "📅 28 de abril, 2025 | ⏰ 19:00 - 21:00h",
+      date: "📅 28 de abril, 2026 | ⏰ 19:00 - 21:00h",
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
       cta: "Reserva tu plaza",
@@ -113,7 +113,7 @@ export const translations = {
     upcoming: {
       title: "Upcoming Events",
       eventTitle: "First Meeting: AI Safety in Madrid",
-      date: "📅 April 28, 2025 | ⏰ 7:00 - 9:00 PM",
+      date: "📅 April 28, 2026 | ⏰ 7:00 - 9:00 PM",
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Our first meetup to connect people interested in AI safety. Talks, networking and snacks. Join us!",
       cta: "Book your spot",
