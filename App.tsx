@@ -16,6 +16,7 @@ import {
   CheckCircle,
   Mail
 } from 'lucide-react';
+import logo from './ias_logo.svg';
 
 // --- Types ---
 type Language = 'es' | 'en';
@@ -52,9 +53,9 @@ const Navbar: React.FC<{
       <div className="max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative">
         <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
           <img 
-            src="https://raw.githubusercontent.com/hitchhikergalactic/AISafety/main/ias_logo_hade.svg" 
+            src={logo} 
             alt="AI Safety España" 
-            className="h-10 md:h-[50px] w-auto block dark:invert dark:brightness-110 bg-transparent"
+            className="h-10 md:h-[50px] w-auto block bg-transparent"
           />
         </a>
 
@@ -66,7 +67,6 @@ const Navbar: React.FC<{
             </a>
           ))}
         </div>
-
         <div className="flex items-center gap-2 md:gap-5">
           <button 
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
