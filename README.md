@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# aisafety.es
 
-# Run and deploy your AI Studio app
+Hub de AI Safety para el mundo hispanohablante. 
+Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA.
 
-This contains everything you need to run your app locally.
+🌐 [aisafety.es](https://aisafety.es)
 
-View your app in AI Studio: https://ai.studio/apps/32c31492-43a0-4fc6-8a09-b835410ffdcb
+## Sobre el proyecto
 
-## Run Locally
+aisafety.es es el primer hub nacional de AI Safety en España, parte del ecosistema español de seguridad en IA junto a AI Safety Barcelona. Conectamos investigadores, profesionales de política pública, estudiantes y ciudadanos que quieren contribuir a que la IA avanzada sea segura y beneficiosa para todos.
 
-**Prerequisites:**  Node.js
+## Stack
 
+- React + TypeScript
+- Tailwind CSS
+- Vite
+- FormSubmit (formularios)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Desarrollo local
+
+Requisitos: Node.js
+
+1. Instalar dependencias: `npm install`
+2. Ejecutar en local: `npm run dev`
+
+## Contacto
+
+aisafetymadrid@gmail.com
