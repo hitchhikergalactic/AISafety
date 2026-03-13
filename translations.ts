@@ -69,7 +69,7 @@ export const translations = {
     },
     footer: {
       tagline: "Parte del ecosistema global de AI Safety",
-      copyright: "Copyright 2025 IA Safety",
+      copyright: "Copyright 2026 IA Safety",
     }
   },
   en: {
@@ -142,7 +142,7 @@ export const translations = {
     },
     footer: {
       tagline: "Connecting local initiatives",
-      copyright: "Copyright 2025 AI Safety Spain",
+      copyright: "Copyright 2026 AI Safety",
     }
   }
 };
