@@ -454,55 +454,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 9. NEWSLETTER - ID MANDATORY */}
-      <Section id="newsletter" className="bg-anthropic-dark dark:bg-black/40 text-anthropic-beige py-24 md:py-40 scroll-mt-32">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <div className="inline-flex p-3 md:p-4 bg-anthropic-orange/20 rounded-2xl mb-8 md:mb-12">
-            <Mail size={32} className="text-anthropic-orange md:w-12 md:h-12" />
-          </div>
-          <h2 className="mb-6 md:mb-8 font-bold tracking-tighter text-white">{t.subscribe.title}</h2>
-          <p className="text-xl md:text-3xl text-anthropic-beige/70 mb-12 md:mb-20 font-serif italic max-w-2xl mx-auto text-balance">{t.subscribe.subtitle}</p>
-
-          <form 
-            action="https://formsubmit.co/aisafetymadrid@gmail.com" 
-            method="POST" 
-            className="max-w-xl mx-auto space-y-6 md:space-y-8 text-left"
-          >
-            <input type="hidden" name="_subject" value="Nueva suscripción - AI Safety España" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            
-            <div className="space-y-3 md:space-y-4">
-              <label className="text-[0.6rem] md:text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">{t.subscribe.name}</label>
-              <input 
-                type="text" 
-                name="name"
-                required 
-                placeholder={lang === 'es' ? "Nombre" : "Name"}
-                className="w-full px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-lg md:text-2xl placeholder:opacity-20"
-              />
-            </div>
-            <div className="space-y-3 md:space-y-4">
-              <label className="text-[0.6rem] md:text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">{t.subscribe.email}</label>
-              <input 
-                type="email" 
-                name="email"
-                required 
-                placeholder="Email"
-                className="w-full px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-lg md:text-2xl placeholder:opacity-20"
-              />
-            </div>
-            <button 
-              type="submit" 
-              className="w-full py-5 md:py-7 rounded-2xl bg-anthropic-orange text-white font-sans font-black text-lg md:text-2xl transition-all duration-300 shadow-[0_20px_40px_-10px_rgba(217,119,87,0.4)] hover:shadow-[0_30px_60px_-15px_rgba(217,119,87,0.6)] hover:-translate-y-1 active:scale-95 mt-4 md:mt-6"
-            >
-              {t.subscribe.button}
-            </button>
-          </form>
-        </div>
-      </Section>
-
-      {/* 10. FOOTER */}
+    {/* 10. FOOTER */}
       <footer className="bg-anthropic-dark text-anthropic-beige/40 py-16 md:py-32 px-4 md:px-8 border-t border-white/5 selection:bg-white/10 selection:text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 mb-16 md:mb-32 items-start">
