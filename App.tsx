@@ -377,7 +377,7 @@ export default function App() {
           <CollaborativeCard href="https://bluedot.org/" text="BlueDot" />
           <CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" />
           <CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" />
-          <CollaborativeCard href="https://safeaigermany.org/" text="Safe AI Germany" />
+          <CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" />
         </div>
       </Section>
 
