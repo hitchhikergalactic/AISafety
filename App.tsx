@@ -153,6 +153,7 @@ const CollaborativeCard: React.FC<{ href: string, text: string }> = ({ href, tex
 export default function App() {
   const [lang, setLang] = useState<Language>(() => (localStorage.getItem('app_lang') as Language) || 'es');
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('app_theme') as Theme) || 'light');
+  const [showModal, setShowModal] = useState(false);
   const t = translations[lang];
 
   useEffect(() => {
@@ -189,6 +190,54 @@ export default function App() {
   return (
     <div className="min-h-screen transition-colors duration-500 selection:bg-anthropic-orange selection:text-white">
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
+      {showModal && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setShowModal(false)}>
+    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div className="relative bg-anthropic-beige dark:bg-anthropic-dark rounded-[32px] p-8 md:p-14 max-w-md w-full shadow-anthro-elevated border border-anthropic-midGray/20 z-10" onClick={e => e.stopPropagation()}>
+      <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-anthropic-midGray hover:text-anthropic-orange transition-colors">
+        <X size={24} />
+      </button>
+      <h3 className="mb-2 font-bold tracking-tight text-2xl md:text-3xl">Reserva tu plaza</h3>
+      <p className="text-anthropic-dark/60 dark:text-anthropic-beige/60 font-serif italic mb-8 text-lg">28 de abril · Celonis · Madrid</p>
+      <form
+        action="https://formsubmit.co/aisafetymadrid@gmail.com"
+        method="POST"
+        className="space-y-6"
+      >
+        <input type="hidden" name="_subject" value="Nueva reserva - Primer Encuentro AI Safety Madrid" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="tipo" value="reserva_evento" />
+        <div className="space-y-3">
+          <label className="text-[0.6rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block">Nombre</label>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Tu nombre"
+            className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-anthropic-midGray/20 text-anthropic-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 transition-all font-sans text-lg"
+          />
+        </div>
+        <div className="space-y-3">
+          <label className="text-[0.6rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block">Email</label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="tu@email.com"
+            className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-anthropic-midGray/20 text-anthropic-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 transition-all font-sans text-lg"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full py-5 rounded-2xl bg-anthropic-orange text-white font-sans font-black text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95"
+        >
+          Reservar plaza →
+        </button>
+      </form>
+    </div>
+  </div>
+)}
 
       {/* 1. HERO SECTION - ID MANDATORY */}
       <section id="hero" className="hero relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden scroll-mt-32">
@@ -307,7 +356,8 @@ export default function App() {
               </p>
 
               <a 
-                href="#newsletter" 
+                href="#"
+                onClick={(e) => { e.preventDefault(); setShowModal(true); }} 
                 className="mt-4 md:mt-6 px-10 md:px-14 py-4 md:py-6 rounded-anthro bg-white text-anthropic-orange font-sans font-extrabold text-lg md:text-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl flex items-center gap-4"
               >
                 {t.upcoming.cta}
@@ -414,7 +464,7 @@ export default function App() {
           <p className="text-xl md:text-3xl text-anthropic-beige/70 mb-12 md:mb-20 font-serif italic max-w-2xl mx-auto text-balance">{t.subscribe.subtitle}</p>
 
           <form 
-            action="https://formsubmit.co/aisafetymadrid@proton.me" 
+            action="https://formsubmit.co/aisafetymadrid@gmail.com" 
             method="POST" 
             className="max-w-xl mx-auto space-y-6 md:space-y-8 text-left"
           >
