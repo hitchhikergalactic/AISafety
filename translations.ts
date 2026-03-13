@@ -141,7 +141,7 @@ export const translations = {
       success: "Thanks for subscribing!",
     },
     footer: {
-      tagline: "Part of the global AI Safety ecosystem,
+      tagline: "Part of the global AI Safety ecosystem",
       copyright: "Copyright 2026 AI Safety",
     }
   }
