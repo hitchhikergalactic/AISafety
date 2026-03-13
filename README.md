@@ -25,4 +25,4 @@ Requisitos: Node.js
 
 ## Contacto
 
-aisafetymadrid@gmail.com
+hola@aisafety.es
