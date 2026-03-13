@@ -258,7 +258,11 @@ export default function App() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="#eventos" className="px-12 py-5 rounded-anthro bg-anthropic-orange dark:bg-anthropic-orangeLight text-white dark:text-anthropic-dark font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto">
               {t.hero.ctaPrimary}
-              <ArrowRight size={24} />
+          <ArrowRight size={24} />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* 2. WHY HUB SECTION - ID MANDATORY */}
       <Section id="why-hub" className="bg-white/30 dark:bg-white/[0.02] border-y border-anthropic-midGray/10 scroll-mt-32">
