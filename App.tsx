@@ -414,7 +414,7 @@ export default function App() {
           <p className="text-xl md:text-3xl text-anthropic-beige/70 mb-12 md:mb-20 font-serif italic max-w-2xl mx-auto text-balance">{t.subscribe.subtitle}</p>
 
           <form 
-            action="https://formsubmit.co/aisafetymadrid@proton.me" 
+            action="https://formsubmit.co/aisafetymadrid@gmail.com" 
             method="POST" 
             className="max-w-xl mx-auto space-y-6 md:space-y-8 text-left"
           >
@@ -442,7 +442,39 @@ export default function App() {
                 className="w-full px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-lg md:text-2xl placeholder:opacity-20"
               />
             </div>
-            <button 
+            <button
+              <div className="space-y-3 md:space-y-4">
+  <label className="text-[0.6rem] md:text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">
+    {lang === 'es' ? 'Ciudad' : 'City'}
+  </label>
+  <input 
+    type="text" 
+    name="ciudad"
+    placeholder={lang === 'es' ? "Tu ciudad" : "Your city"}
+    className="w-full px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-lg md:text-2xl placeholder:opacity-20"
+  />
+</div>
+
+<div className="space-y-3 md:space-y-4">
+  <label className="text-[0.6rem] md:text-[0.7rem] font-sans font-black text-anthropic-orange uppercase tracking-[0.4em] block ml-1">
+    {lang === 'es' ? '¿A qué te dedicas?' : 'What do you do?'}
+  </label>
+  <select
+    name="perfil"
+    className="w-full px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-anthropic-orange/50 focus:border-transparent transition-all font-sans text-lg md:text-2xl appearance-none"
+  >
+    <option value="" disabled selected className="bg-anthropic-dark">
+      {lang === 'es' ? 'Selecciona...' : 'Select...'}
+    </option>
+    <option value="investigacion" className="bg-anthropic-dark">{lang === 'es' ? 'Investigación / Academia' : 'Research / Academia'}</option>
+    <option value="tecnologia" className="bg-anthropic-dark">{lang === 'es' ? 'Tecnología / Ingeniería' : 'Technology / Engineering'}</option>
+    <option value="politica" className="bg-anthropic-dark">{lang === 'es' ? 'Política pública / Derecho' : 'Public policy / Law'}</option>
+    <option value="comunicacion" className="bg-anthropic-dark">{lang === 'es' ? 'Comunicación / Periodismo' : 'Communication / Journalism'}</option>
+    <option value="emprendimiento" className="bg-anthropic-dark">{lang === 'es' ? 'Emprendimiento / Empresa' : 'Entrepreneurship / Business'}</option>
+    <option value="estudiante" className="bg-anthropic-dark">{lang === 'es' ? 'Estudiante' : 'Student'}</option>
+    <option value="otro" className="bg-anthropic-dark">{lang === 'es' ? 'Otro' : 'Other'}</option>
+  </select>
+</div>
               type="submit" 
               className="w-full py-5 md:py-7 rounded-2xl bg-anthropic-orange text-white font-sans font-black text-lg md:text-2xl transition-all duration-300 shadow-[0_20px_40px_-10px_rgba(217,119,87,0.4)] hover:shadow-[0_30px_60px_-15px_rgba(217,119,87,0.6)] hover:-translate-y-1 active:scale-95 mt-4 md:mt-6"
             >
