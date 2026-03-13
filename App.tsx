@@ -497,7 +497,7 @@ export default function App() {
   <div className="h-px w-24 bg-anthropic-orange/40 my-2 md:my-4"></div>
   <p className="text-[0.6rem] md:text-[0.7rem] opacity-30 tracking-[0.3em] font-black uppercase">&copy; {t.footer.copyright}</p>
 </div>
-          
+          </div>
           <div className="pt-20 border-t border-white/5 text-center">
              <p className="text-[0.6rem] md:text-[0.7rem] font-sans tracking-[0.6em] uppercase opacity-20 font-black">Built for a human-aligned future.</p>
           </div>
