@@ -492,7 +492,8 @@ export default function App() {
             </div>
 
             <div className="text-center md:text-right flex flex-col items-center md:items-end gap-6 md:gap-10 font-sans">
-              <h4 className="text-white font-black uppercase text-[0.6rem] md:text-[0.65rem] tracking-[0.5em] mb-2 md:mb-4 opacity-100">{lang === 'es' ? 'Conectamos el talento local con el debate global sobre seguridad de la IA.' : 'Connecting local talent with the global conversation on AI safety.'}</p>
+              <h4 className="text-white font-black uppercase text-[0.6rem] md:text-[0.65rem] tracking-[0.5em] mb-2 md:mb-4 opacity-100">{lang === 'es' ? 'Comunidad' : 'Community'}</h4>
+              <p className="text-lg md:text-2xl max-w-[320px] leading-relaxed opacity-60 font-serif italic">{lang === 'es' ? 'Conectamos el talento local con el debate global sobre seguridad de la IA.' : 'Connecting local talent with the global conversation on AI safety.'}</p>
               <div className="h-px w-24 bg-anthropic-orange/40 my-2 md:my-4"></div>
               <p className="text-[0.6rem] md:text-[0.7rem] opacity-30 tracking-[0.3em] font-black uppercase">&copy; {t.footer.copyright}</p>
             </div>
