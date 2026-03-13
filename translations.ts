@@ -51,7 +51,7 @@ export const translations = {
     about: {
       title: "Sobre esta iniciativa",
       text1: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada.",
-      text2: "Impulsada por Osmani Redondo, reúne a personas de todos los perfiles interesadas en contribuir a la seguridad en IA.",
+      text2: "Impulsada por Osmani Redondo, conecta investigadores, estudiantes, profesionales de política pública y cualquier persona curiosa sobre el futuro de la IA — Para el mundo hispanohablante.",
       joinCta: "¿Quieres formar parte?",
       joinBtn: "Únete",
     },
@@ -124,7 +124,7 @@ export const translations = {
     about: {
       title: "About this initiative",
       text1: "This initiative emerges to create a space to explore the technical and ethical challenges of advanced AI.",
-      text2: "Led by Osmani Redondo, it brings together people from all backgrounds interested in contributing to AI safety.",
+      text2: "Led by Osmani Redondo, it connects researchers, students, policy professionals and anyone curious about the future of AI — for the Spanish-speaking world.",
       joinCta: "Want to be part of it?",
       joinBtn: "Join us",
     },
