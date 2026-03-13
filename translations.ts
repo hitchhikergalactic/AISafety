@@ -68,8 +68,8 @@ export const translations = {
       success: "¡Gracias por suscribirte!",
     },
     footer: {
-      tagline: "Conectamos iniciativas locales",
-      copyright: "Copyright 2025 AI Safety España",
+      tagline: "Parte del ecosistema global de AI Safety",
+      copyright: "Copyright 2025 IA Safety",
     }
   },
   en: {
