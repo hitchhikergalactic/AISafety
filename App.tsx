@@ -517,10 +517,10 @@ export default function App() {
                 {t.footer.tagline}
               </p>
               <div className="flex items-center justify-center md:justify-start gap-4 md:gap-6">
-                <a href="https://www.linkedin.com/in/osmani" target="_blank" rel="noopener noreferrer" className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/aisafetyspain/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="LinkedIn">
                   <Linkedin size={20} className="md:w-6 md:h-6" />
                 </a>
-                <a href="https://www.instagram.com/womenaisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="Instagram">
+                <a href="https://www.instagram.com/aisafetyspain" target="_blank" rel="noopener noreferrer" className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="Instagram">
                   <Instagram size={20} className="md:w-6 md:h-6" />
                 </a>
                 <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-anthropic-orange hover:text-white transition-all duration-300 border border-white/5 hover:border-transparent" aria-label="Substack">
