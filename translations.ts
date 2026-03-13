@@ -16,7 +16,7 @@ export const translations = {
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
-      text: "La IA avanzada presenta riesgos que van más allá de sesgos o privacidad. IA Safety trabaja para asegurar que estos sistemas permanezcan alineados con valores humanos y sean controlables a largo plazo. Este hub conecta a quienes quieren contribuir activamente a estas soluciones.",
+      text: "Los modelos de IA se entrenan mayoritariamente en inglés y se desarrollan en Silicon Valley. 600 millones de hispanohablantes merecen una voz en esa conversación. Este hub es esa voz.",
     },
     mission: {
       title: "Nuestra Misión",
@@ -89,7 +89,7 @@ export const translations = {
     },
     why: {
       title: "Why an AI Safety Hub?",
-      text: "Advanced AI presents risks that go beyond bias or privacy. AI Safety works to ensure these systems remain aligned with human values and controllable in the long term. This hub connects those who want to actively contribute to these solutions.",
+      text: "AI models are mostly trained in English and developed in Silicon Valley. 600 million Spanish speakers deserve a voice in that conversation. This hub is that voice.",
     },
     mission: {
       title: "Our Mission",
