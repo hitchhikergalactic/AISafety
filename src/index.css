@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /* Esto hace que al hacer clic en el menú, la página se deslice suavemente */
+  scroll-behavior: smooth;
+}
+
+/* Evita que el Navbar tape el inicio de la sección cuando llegas */
+[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Clase extra para el efecto de desenfoque del menú que usamos en el código */
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

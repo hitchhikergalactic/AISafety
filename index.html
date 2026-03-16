@@ -22,31 +22,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
-              serif: ['"Newsreader"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+              sans: ['Overpass', 'sans-serif'],
+              serif: ['Alegreya', 'serif'],
             },
             colors: {
-              anthropic: {
-                beige: '#faf9f5',
-                dark: '#111110',
-                midGray: '#b0aea5',
-                lightGray: '#eeede4',
-                orange: '#d97757',
-                blue: '#6a9bcc',
-                green: '#788c5d',
-                orangeLight: '#e89074',
-                blueLight: '#7dadd9',
-                greenLight: '#8fa06b',
-                secondary: '#9B6B4F',
-                secondaryLight: '#B8956A',
-              }
+              principal: '#ff4500',
+              'secundarios-dark': '#333333',
+              'secundarios-light': '#f2f2f2',
+              'terciarios-green': '#aeef0f',
+              'terciarios-blue': '#0b0bf4',
+              'cuartos-yellow': '#ffc00b',
+              'cuartos-pink': '#ff5fc2',
+              'cuartos-purple': '#662d91',
             },
             borderRadius: {
               'anthro': '16px',
@@ -67,18 +61,20 @@
     </script>
     <style>
       body {
-        font-family: '"Newsreader"', serif;
+        font-family: 'Alegreya', serif;
         font-size: 1.125rem; 
         line-height: 1.65;
         scroll-behavior: smooth;
         transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         -webkit-font-smoothing: antialiased;
       }
+      h1, h2, h3, h4, h5, h6, .font-heading {
+        font-family: 'Overpass', sans-serif;
+      }
       @media (min-width: 768px) {
         body { font-size: 1.25rem; }
       }
       h1, h2, h3, .font-heading {
-        font-family: '"Plus Jakarta Sans"', sans-serif;
         line-height: 1.1;
         font-weight: 700;
         letter-spacing: -0.03em;
@@ -116,17 +112,17 @@
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #faf9f5;
+        background: #f2f2f2;
       }
       .dark ::-webkit-scrollbar-track {
-        background: #111110;
+        background: #333333;
       }
       ::-webkit-scrollbar-thumb {
-        background: #b0aea5;
+        background: #333333;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #d97757;
+        background: #ff4500;
       }
 
       .glass-nav {
@@ -150,8 +146,8 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-anthropic-beige dark:bg-anthropic-dark text-anthropic-dark dark:text-anthropic-beige selection:bg-anthropic-orange/20 overflow-x-hidden">
+  <body class="bg-secundarios-light dark:bg-secundarios-dark text-secundarios-dark dark:text-secundarios-light selection:bg-principal/20 overflow-x-hidden">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
