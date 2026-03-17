@@ -2,16 +2,16 @@ export const translations = {
   es: {
     nav: {
       home: "Inicio",
-      mission: "Misión",
-      events: "Eventos",
-      about: "Sobre nosotros",
-      contact: "Contacto",
+      mission: "/Sobre iaS",
+      events: "/Eventos",
+      about: "/Conocenos",
+      contact: "/Escribinos",
     },
     hero: {
       location: "",
       h1: "Hub de IA Safety",
       h2: "Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA",
-      ctaPrimary: "Únete al próximo evento",
+      ctaPrimary: "Nuestro próximo evento",
       ctaSecondary: "Suscríbete",
     },
     why: {
@@ -19,7 +19,7 @@ export const translations = {
       text: "Los modelos de IA se entrenan mayoritariamente en inglés y se desarrollan en Silicon Valley. 600 millones de hispanohablantes merecen una voz en esa conversación. Este hub es esa voz.",
     },
     mission: {
-      title: "Nuestra Misión",
+      title: "Sobre iaS",
       text: "Traducir, contextualizar y hacer accesibles los retos de seguridad en IA a nuestra realidad social y técnica.",
     },
     pillars: {
@@ -46,7 +46,7 @@ export const translations = {
       cta: "Reserva tu plaza",
     },
     collaborators: {
-      title: "Red de Colaboradores",
+      title: "Nuestra red de colaboradores",
     },
     about: {
       title: "Sobre esta iniciativa",

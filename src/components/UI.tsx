@@ -25,8 +25,8 @@ export const PillarCard: React.FC<{
     <div className="w-12 h-12 md:w-14 md:h-14 bg-terciarios-blue/10 dark:bg-terciarios-blueLight/10 text-terciarios-blue dark:text-terciarios-blueLight rounded-anthro flex items-center justify-center mb-8 md:mb-10 group-hover:scale-110 transition-transform duration-500">
       {icon}
     </div>
-    <h3 className="mb-4 md:mb-6 font-bold tracking-tight">{title}</h3>
-    <p className="text-secundarios-dark/80 dark:text-secundarios-light/80 mb-0 flex-grow leading-relaxed text-lg md:text-2xl font-serif italic text-balance">{text}</p>
+    <h3 className="mb-4 md:mb-6">{title}</h3>
+    <p className="text-secundarios-dark/80 dark:text-secundarios-light/80 mb-0 flex-grow leading-relaxed text-lg md:text-2xl font-serif text-balance">{text}</p>
   </div>
 );
 

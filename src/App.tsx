@@ -58,8 +58,8 @@ export default function App() {
             <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors">
               <X size={24} />
             </button>
-            <h3 className="mb-2 font-bold tracking-tight text-2xl md:text-3xl">Reserva tu plaza</h3>
-            <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif italic mb-8 text-lg">28 de abril · Celonis · Madrid</p>
+            <h3 className="mb-4 md:mb-6">Reserva tu plaza</h3>
+            <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-8 text-lg">28 de abril · Celonis · Madrid</p>
             <form action="https://formsubmit.co/aisafetymadrid@gmail.com" method="POST" className="space-y-6">
               <input type="text" name="name" required placeholder="Tu nombre" className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
               <input type="email" name="email" required placeholder="tu@email.com" className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
@@ -75,10 +75,10 @@ export default function App() {
       <section id="hero" className="hero relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden scroll-mt-32">
         <div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-principal/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="max-w-[1400px] text-center z-10 animate-fade-in-up">
-          <h1 className="mb-8 md:mb-12 text-[clamp(2.5rem,8vw,6rem)] font-extrabold tracking-[-0.04em] leading-none text-secundarios-dark dark:text-secundarios-light text-balance">
+          <h1 className="mb-8 md:mb-12 text-secundarios-dark dark:text-secundarios-light text-balance">
             {t.hero.h1}
           </h1>
-          <p className="text-[clamp(1.25rem,4vw,2.4rem)] font-serif font-medium leading-[1.3] text-secundarios-dark/90 dark:text-secundarios-light/90 mb-12 md:mb-[4.5rem] max-w-[950px] mx-auto italic text-balance">
+          <p className="text-[clamp(1.25rem,4vw,2.4rem)] font-serif font-medium leading-[1.3] text-secundarios-dark/90 dark:text-secundarios-light/90 mb-12 md:mb-[4.5rem] max-w-[950px] mx-auto text-balance">
             {t.hero.h2}
           </p>
           <a href="#eventos" className="px-12 py-5 rounded-anthro bg-principal dark:bg-principalLight text-white dark:text-secundarios-dark font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
@@ -91,9 +91,9 @@ export default function App() {
       <Section id="mission" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
           <div>
-            <h2 className="mb-8 md:mb-14 font-bold tracking-tight text-balance leading-[1.05]">{t.why.title}</h2>
-            <div className="text-[clamp(1.25rem,3.5vw,2.2rem)] text-secundarios-dark/90 dark:text-secundarios-light/90 font-serif leading-relaxed italic">
-              <p>"{t.why.text}"</p>
+            <h3 className="mb-4 md:mb-6">{t.why.title}</h3>
+            <div className="text-[clamp(1.25rem,3.5vw,2.2rem)] text-secundarios-dark/90 dark:text-secundarios-light/90 font-serif leading-relaxed">
+              <p>{t.why.text}</p>
             </div>
           </div>
           <div className="relative group">
@@ -106,7 +106,7 @@ export default function App() {
 
       {/* 4. PILLARS */}
       <Section id="hub-action">
-        <h2 className="mb-12 md:mb-24 text-center font-bold tracking-tighter">{t.pillars.title}</h2>
+        <h2 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h2>
         <div className="grid md:grid-cols-3 gap-6 md:gap-12">
           <PillarCard icon={<BookOpen size={32} />} title={t.pillars.education.title} text={t.pillars.education.text} />
           <PillarCard icon={<Calendar size={32} />} title={t.pillars.events.title} text={t.pillars.events.text} />
@@ -117,14 +117,14 @@ export default function App() {
       {/* 5. EVENTOS */}
       <Section id="eventos" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-12 md:mb-16 text-center font-bold tracking-tight">{t.upcoming.title}</h2>
+          <h2 className="mb-12 md:mb-24 text-center">{t.upcoming.title}</h2>
           <div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-secundarios-dark/15 flex flex-col group transition-all duration-500">
             <div className="relative overflow-hidden h-[250px] md:h-[450px]">
               <img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt={t.upcoming.eventTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
             </div>
             <div className={`p-8 md:p-20 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[#ff4500]' : 'bg-[#ff4500]'}`}>
-              <h3 className="text-3xl md:text-6xl font-bold leading-tight tracking-tight">{t.upcoming.eventTitle}</h3>
-              <p className="text-xl md:text-3xl font-serif italic opacity-90">{t.upcoming.description}</p>
+              <h3 className="mb-4 md:mb-6">{t.upcoming.eventTitle}</h3>
+              <p className="text-xl md:text-3xl font-serif opacity-90">{t.upcoming.description}</p>
               <button onClick={() => setShowModal(true)} className="mt-4 px-10 py-4 rounded-anthro bg-white text-principal font-sans font-extrabold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl flex items-center gap-4">
                 {t.upcoming.cta} <ArrowRight size={24} />
               </button>
@@ -135,7 +135,7 @@ export default function App() {
 
       {/* 6. COLABORADORES */}
       <Section id="sobre">
-        <h2 className="mb-12 md:mb-16 text-center font-bold tracking-tight">{t.collaborators.title}</h2>
+        <h2 className="mb-12 md:mb-24 text-center">{t.collaborators.title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
           <CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
           <CollaborativeCard href="https://www.enais.co/" text="ENAIS" />
@@ -152,7 +152,7 @@ export default function App() {
            <div className="flex flex-col md:flex-row justify-between items-center gap-12">
               <div className="space-y-4">
                 <div className="text-xl font-bold text-secundarios-light">IA Safety España</div>
-                <p className="max-w-xs font-serif italic text-lg">{t.footer.tagline}</p>
+                <p className="max-w-xs font-serif text-lg">{t.footer.tagline}</p>
               </div>
               <div className="flex gap-6">
                 <a href="https://linkedin.com" className="hover:text-white transition-colors"><Linkedin /></a>

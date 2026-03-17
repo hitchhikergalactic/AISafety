@@ -1,153 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IA Safety España | Hub de Seguridad en IA</title>
-    <meta name="description" content="Hub de IA Safety en España. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA." />
-    <meta name="google-site-verification" content="WkCE-fRxNDs_TgUk2CEVcDVK2AK4mfcDTa1A010svqA" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AI Safety España",
-      "url": "https://aisafety.es",
-      "description": "Hub de AI Safety en España. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA.",
-      "sameAs": [
-        "https://www.instagram.com/aisafetyspain/",
-        "https://bsky.app/profile/aisafetyspain.bsky.social"
-      ]
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Overpass', 'sans-serif'],
-              serif: ['Alegreya', 'serif'],
-            },
-            colors: {
-              principal: '#ff4500',
-              'secundarios-dark': '#333333',
-              'secundarios-light': '#f2f2f2',
-              'terciarios-green': '#aeef0f',
-              'terciarios-blue': '#0b0bf4',
-              'cuartos-yellow': '#ffc00b',
-              'cuartos-pink': '#ff5fc2',
-              'cuartos-purple': '#662d91',
-            },
-            borderRadius: {
-              'anthro': '16px',
-            },
-            boxShadow: {
-              'anthro-subtle': '0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
-              'anthro-card': '0 12px 24px -10px rgba(0,0,0,0.08), 0 4px 10px -5px rgba(0,0,0,0.03)',
-              'anthro-elevated': '0 30px 60px -12px rgba(0,0,0,0.12), 0 18px 36px -18px rgba(0,0,0,0.08)',
-            }
-          }
-        }
-      }
-      if (localStorage.getItem('app_theme') === 'dark' || (!('app_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    </script>
-    <style>
-      body {
-        font-family: 'Alegreya', serif;
-        font-size: 1.125rem; 
-        line-height: 1.65;
-        scroll-behavior: smooth;
-        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-font-smoothing: antialiased;
-      }
-      h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Overpass', sans-serif;
-      }
-      @media (min-width: 768px) {
-        body { font-size: 1.25rem; }
-      }
-      h1, h2, h3, .font-heading {
-        line-height: 1.1;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-      }
-      h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); }
-      h2 { font-size: clamp(1.8rem, 6vw, 3.8rem); }
-      h3 { font-size: clamp(1.4rem, 4vw, 2.4rem); }
-      
-      .scroll-mt-navbar {
-        scroll-margin-top: 100px;
-      }
-      
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in-up {
-        animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
-      
-      .anthro-hover {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .anthro-hover:hover {
-        transform: translateY(-2px);
-        filter: brightness(1.05);
-      }
-      
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IA Safety Madrid | Hub de Seguridad en IA</title>
+		<meta name="description" content="Hub de IA Safety en Madrid. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA." />
+		<meta name="google-site-verification" content="WkCE-fRxNDs_TgUk2CEVcDVK2AK4mfcDTa1A010svqA" />
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "AI Safety Madrid",
+			"url": "https://aisafety.es",
+			"description": "Hub de AI Safety en España. Comunidad que conecta expertos y público para reducir riesgos existenciales de la IA.",
+			"sameAs": [
+				"https://www.instagram.com/aisafetyspain/",
+				"https://bsky.app/profile/aisafetyspain.bsky.social"
+			]
+		}
+		</script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<script>
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: ['Overpass', 'sans-serif'],
+							serif: ['Alegreya', 'serif'],
+						},
+						colors: {
+							principal: '#ff4500',
+							'secundarios-dark': '#333333',
+							'secundarios-light': '#f2f2f2',
+							'terciarios-green': '#aeef0f',
+							'terciarios-blue': '#0b0bf4',
+							'cuartos-yellow': '#ffc00b',
+							'cuartos-pink': '#ff5fc2',
+							'cuartos-purple': '#662d91',
+						},
+						borderRadius: {
+							'anthro': '16px',
+						},
+						boxShadow: {
+							'anthro-subtle': '0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
+							'anthro-card': '0 12px 24px -10px rgba(0,0,0,0.08), 0 4px 10px -5px rgba(0,0,0,0.03)',
+							'anthro-elevated': '0 30px 60px -12px rgba(0,0,0,0.12), 0 18px 36px -18px rgba(0,0,0,0.08)',
+						}
+					}
+				}
+			}
+			if (localStorage.getItem('app_theme') === 'dark' || (!('app_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		</script>
+		<style>
+			/* body {
+				font-family: 'Alegreya', serif;
+				font-size: 1.125rem; 
+				line-height: 1.4;
+				scroll-behavior: smooth;
+				transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				-webkit-font-smoothing: antialiased;
+			} */
+		/* Párrafo estándar (Cuerpo) */
       p {
+        font-family: 'Alegreya', serif;
+        line-height: 1.6;
         margin-bottom: 1.8rem;
+        opacity: 0.9;
       }
-
-      /* Custom scrollbar for a clean UI */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f2f2f2;
-      }
-      .dark ::-webkit-scrollbar-track {
-        background: #333333;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333333;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #ff4500;
-      }
-
-      .glass-nav {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      .text-balance {
+      .bajada {
+        font-family: 'Alegreya', sans-serif;
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        line-height: 1.4;
+        font-weight: 300;
+        color: var(bg-secundarios-dark); 
+        margin-bottom: 2.5rem;
         text-wrap: balance;
       }
-    </style>
-  <script type="importmap">
+      .texto-small {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        opacity: 0.7;
+      }
+			@media (min-width: 768px) {
+				body { font-size: 1.25rem; }
+			}
+			h1, h2, h3, h4, h5, h6, .font-heading {
+			font-family: 'Overpass', sans-serif;
+			}
+			h1 {
+			font-family: 'Overpass', sans-serif !important;
+			font-weight: 800 !important;   
+			line-height: 1.0 !important;   
+			font-size: clamp(2.5rem, 8vw, 6.5rem) !important; 
+			letter-spacing: 0em !important;
+			}
+			h2 {
+			font-family: 'Overpass', sans-serif !important;
+			font-weight: 700 !important;   
+			line-height: 1.0 !important;   
+			font-size: clamp(1.8rem, 6vw, 3.8rem) !important; 
+			letter-spacing: 0em !important;
+			}
+			h3 {
+				font-family: 'Overpass', sans-serif !important;
+				font-weight: 500 !important;   
+				line-height: 1.1 !important;   
+				font-size: clamp(1.4rem, 4vw, 2.4rem) !important; 
+				letter-spacing: 0em !important;
+			}
+			h4 {
+				font-family: 'Overpass', sans-serif !important;
+				font-weight: 600 !important;   
+				line-height: 1.1 !important;   
+				font-size: clamp(1.1rem, 5vw, 1.5rem) !important; 
+				letter-spacing: 0em !important;
+			  text-transform: uppercase !important;
+			}
+			.scroll-mt-navbar {
+				scroll-margin-top: 100px;
+			}
+			
+			@keyframes fadeInUp {
+				from { opacity: 0; transform: translateY(20px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+			.animate-fade-in-up {
+				animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			}
+			
+			.anthro-hover {
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+			.anthro-hover:hover {
+				transform: translateY(-2px);
+				filter: brightness(1.05);
+			}
+			
+			p {
+				margin-bottom: 1.8rem;
+			}
+
+			/* Custom scrollbar for a clean UI */
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #f2f2f2;
+			}
+			.dark ::-webkit-scrollbar-track {
+				background: #333333;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #333333;
+				border-radius: 10px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #ff4500;
+			}
+
+			.glass-nav {
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+			}
+
+			.text-balance {
+				text-wrap: balance;
+			}
+		</style>
+	<script type="importmap">
 {
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
+	"imports": {
+		"react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+		"lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+		"react": "https://esm.sh/react@^19.2.4",
+		"react/": "https://esm.sh/react@^19.2.4/"
+	}
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-secundarios-light dark:bg-secundarios-dark text-secundarios-dark dark:text-secundarios-light selection:bg-principal/20 overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+	<body class="bg-secundarios-light dark:bg-secundarios-dark text-secundarios-dark dark:text-secundarios-light selection:bg-principal/20 overflow-x-hidden">
+		<div id="root"></div>
+		<script type="module" src="/src/index.tsx"></script>
+	</body>
 </html>
