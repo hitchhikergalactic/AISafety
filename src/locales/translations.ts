@@ -10,13 +10,13 @@ export const translations = {
     hero: {
       location: "",
       h1: "Hub de IA Safety",
-      h2: "Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA",
+      h2: "Construyendo una comunidad para comprender y reducir riesgos existenciales de sistemas avanzados de IA",
       ctaPrimary: "Nuestro próximo evento",
       ctaSecondary: "Suscríbete",
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
-      text: "Los modelos de IA se entrenan mayoritariamente en inglés y se desarrollan en Silicon Valley. 600 millones de hispanohablantes merecen una voz en esa conversación. Este hub es esa voz.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui magna, convallis iaculis condimentum vitae, auctor porttitor massa. Maecenas urna turpis, sollicitudin at ipsum ullamcorper, malesuada sollicitudin erat. Donec non nibh est. Sed vehicula viverra neque sed vulputate. Cras vulputate tellus quis libero laoreet, ac malesuada metus lacinia. Morbi elementum, diam non scelerisque mattis, magna erat rhoncus erat, a volutpat purus ex quis nulla. Morbi vehicula turpis non enim convallis.",
     },
     mission: {
       title: "Sobre iaS",
