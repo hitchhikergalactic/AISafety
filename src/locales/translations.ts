@@ -11,7 +11,7 @@ export const translations = {
       location: "",
       h1: "Hub de IA Safety",
       h2: "Construyendo una comunidad para comprender y reducir riesgos existenciales de sistemas avanzados de IA",
-      ctaPrimary: "Nuestro próximo evento",
+      ctaPrimary: "Quiero formar parte!",
       ctaSecondary: "Suscríbete",
     },
     why: {
@@ -40,10 +40,22 @@ export const translations = {
     upcoming: {
       title: "Próximos Eventos",
       eventTitle: "Primer Encuentro: IA Safety en Madrid",
-      date: "📅 28 de abril, 2026 | ⏰ 19:00 - 21:00h",
+      date: "28 de abril, 2026  | 19:00 - 21:00h",
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
       cta: "Reserva tu plaza",
+      dateShort: "28 de abril ~ Madrid",
+      bluedot: {
+        tag: "/ COMUNIDAD",
+        title: "Bluedot Impact Spain",
+        description:"Gente desde todos los rincones del mundo conectando sobre IA Safety en español. Conversaciones que necesitábamos tener en nuestro idioma.",
+        dateShort: "Meetup mensual de IA Safety "
+      },
+      readingGroup: {
+        tag: "/ DIVULGACIÓN",
+        title: "El desafío más grande de todos los tiempos",
+        description: "Nuestra directora Osmani ya está en Substack hablando de IA Safety.",
+      }
     },
     collaborators: {
       title: "Nuestra red",
@@ -60,12 +72,13 @@ export const translations = {
       text: "Women4AIS construye una comunidad global en seguridad de IA donde todas las voces suman. Creemos que la diversidad de perspectivas hace este campo más fuerte. Si compartes esta visión, únete.",
     },
     subscribe: {
-      title: "Únete al Hub",
-      subtitle: "Forma parte del hub de AI Safety. Recibe eventos, recursos y únete a la comunidad.",
+      title: "Forma parte de nuestra comunidad",
+      subtitle: "Recibi eventos, recursos y únete a la comunidad.",
       name: "Nombre",
       email: "Email",
       button: "Suscríbete",
-      success: "¡Gracias por suscribirte!",
+      text1: "Quiero ser parte del primer evento",
+      success: "¡Gracias sumarte!",
     },
     footer: {
       tagline: "Parte del ecosistema global de AI Safety",
@@ -117,6 +130,18 @@ export const translations = {
       location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Our first meetup to connect people interested in AI safety. Talks, networking and snacks. Join us!",
       cta: "Book your spot",
+      dateShort: "📅 April 28",
+      locationShort: "📍 Madrid",
+      bluedot: {
+        tag: "/ COMUNIDAD",
+        title: "Lorem Ipsum Bluedot",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      },
+      readingGroup: {
+        tag: "/ READING GROUP",
+        title: "Lorem Ipsum Reading",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      }
     },
     collaborators: {
       title: "Network of Collaborators",

@@ -8,6 +8,7 @@ import {
 // --- Import components ---
 import Navbar from './components/Navbar';
 import { Section, PillarCard, CollaborativeCard } from './components/UI';
+import BentoGrid from './components/BentoGrid';
 
 // --- Import assets (Logos Colaboradores) ---
 import logoRiesgosIA from './assets/logos__riesgos_ia.svg';
@@ -79,13 +80,11 @@ export default function App() {
 					</div>
 				</div>
 			)}
-
 			{/* 1. HERO SECTION */}
 			<section id="hero" className="hero relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden scroll-mt-32">
 				{/* Decoración de fondo */}
 				<div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-principal/5 rounded-full blur-[100px] pointer-events-none"></div>
 				<div className="max-w-[1400px] text-center z-10 animate-fade-in-up">
-					{/* El H1 ya toma el estilo del HTML */}
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
 					</h1>
@@ -101,7 +100,7 @@ export default function App() {
 				</div>
 			</section>
 				{/* 6. COLABORADORES */}
-				<Section id="sobre" className="!py-12 !md:py-24">
+				<Section id="sobre" className="!py-8 !md:py-16">
 					<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
 						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} />
@@ -113,7 +112,7 @@ export default function App() {
 					</div>
 				</Section>
 			{/* 2. WHY HUB SECTION */}
-			<Section id="mission" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
+			<Section id="mission" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10 !py-12 !md:py-32">
 				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					<div className="animate-fade-in-up">
 						<h4 className="mb-4">{t.why.title}</h4>
@@ -133,8 +132,7 @@ export default function App() {
 				</div>
 			</Section>
 			{/* 4. PILLARS SECTION */}
-			<Section id="hub-action">
-					{/* Título de la sección (Alegreya, Medium, Gris Oscuro/Claro) */}
+			{/* <Section id="hub-action">
 					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
 					<div className="grid md:grid-cols-3 gap-6 md:gap-12">
 						<PillarCard
@@ -153,25 +151,9 @@ export default function App() {
 							text={t.pillars.community.text}
 						/>
 					</div>
-				</Section>
-				{/* 5. EVENTOS */}
-				<Section id="eventos" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
-					<div className="max-w-5xl mx-auto">
-						<h2 className="mb-12 md:mb-24 text-center">{t.upcoming.title}</h2>
-						<div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-secundarios-dark/15 flex flex-col group transition-all duration-500">
-							<div className="relative overflow-hidden h-[250px] md:h-[450px]">
-								<img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt={t.upcoming.eventTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-							</div>
-							<div className={`p-8 md:p-20 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[#ff4500]' : 'bg-[#ff4500]'}`}>
-								<h3 className="mb-4 md:mb-6">{t.upcoming.eventTitle}</h3>
-								<p className="text-xl md:text-3xl font-serif opacity-90">{t.upcoming.description}</p>
-								<button onClick={() => setShowModal(true)} className="mt-4 px-10 py-4 rounded-anthro bg-white text-principal font-sans font-extrabold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl flex items-center gap-4">
-									{t.upcoming.cta} <ArrowRight size={24} />
-								</button>
-							</div>
-						</div>
-					</div>
-				</Section>
+				</Section> */}
+				{/* 5. EVENTOS - BENTO GRID */}
+				<BentoGrid t={t} onModalOpen={() => setShowModal(true)} />
 				{/* FOOTER */}
 				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-16 md:py-32 px-4 md:px-8 border-t border-white/5">
 					<div className="max-w-7xl mx-auto text-center md:text-left">
