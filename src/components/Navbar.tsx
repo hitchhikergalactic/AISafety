@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
   const navLinks = [
     { href: "#mission", label: t.nav.mission },
     { href: "#eventos", label: t.nav.events },
-    { href: "#sobre", label: t.nav.about },
+    { href: "#conocenos", label: t.nav.about },
     { href: "#newsletter", label: t.nav.contact },
   ];
 
