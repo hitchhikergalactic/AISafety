@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { translations } from './locales/translations';
-import { 
-	BookOpen, Calendar, Globe, ArrowRight, Linkedin, 
-	Instagram, Newspaper, Users, CheckCircle, X 
+import {
+	BookOpen, Calendar, Globe, ArrowRight, Linkedin,
+	Instagram, Newspaper, Users, CheckCircle, X
 } from 'lucide-react';
 
 // --- Import components ---
 import Navbar from './components/Navbar';
 import { Section, PillarCard, CollaborativeCard } from './components/UI';
+
+// --- Import assets (Logos Colaboradores) ---
+import logoRiesgosIA from './assets/logos__riesgos_ia.svg';
+import logoENAIS from './assets/logos__european_network_for_AI_safety.svg';
+import logoBlueDot from './assets/logos__bluedot_impact.svg';
+import logoAISafetyCom from './assets/logos__aisafety_com.svg';
+import logoAISafetyBCN from './assets/logos__ai_safety_barcelona.svg';
+import logoBAISH from './assets/logos__buenos_aires_AI_safety_hub.svg';
+
 // --- Types ---
 type Language = 'es' | 'en';
 type Theme = 'light' | 'dark';
@@ -47,7 +56,7 @@ export default function App() {
 
 	return (
 		<div className="min-h-screen transition-colors duration-500 selection:bg-principal selection:text-white">
-			
+
 			<Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
 
 			{/* MODAL DE RESERVA */}
@@ -91,6 +100,18 @@ export default function App() {
 					</a>
 				</div>
 			</section>
+				{/* 6. COLABORADORES */}
+				<Section id="sobre" className="!py-12 !md:py-24">
+					<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
+					<div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
+						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} />
+						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} />
+						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} />
+						<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} />
+						<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} />
+						<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} />
+					</div>
+				</Section>
 			{/* 2. WHY HUB SECTION */}
 			<Section id="mission" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
 				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -102,73 +123,59 @@ export default function App() {
 					</div>
 					<div className="relative group">
 						<div className="aspect-square max-w-[500px] mx-auto bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated transition-all duration-700">
-							<img 
-								src="https://i.imgur.com/wqT4oET.png" 
-								alt="AI Safety Madrid" 
-								className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+							<img
+								src="https://i.imgur.com/wqT4oET.png"
+								alt="AI Safety Madrid"
+								className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
 							/>
 						</div>
 					</div>
-
 				</div>
+			</Section>
 			{/* 4. PILLARS SECTION */}
 			<Section id="hub-action">
-				{/* Título de la sección (Alegreya, Medium, Gris Oscuro/Claro) */}
-				<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
-				<div className="grid md:grid-cols-3 gap-6 md:gap-12">
-					<PillarCard 
-						icon={<BookOpen size={32} />} 
-						title={t.pillars.education.title} 
-						text={t.pillars.education.text} 
-					/>
-					<PillarCard 
-						icon={<Calendar size={32} />} 
-						title={t.pillars.events.title} 
-						text={t.pillars.events.text} 
-					/>
-					<PillarCard 
-						icon={<Users size={32} />} 
-						title={t.pillars.community.title} 
-						text={t.pillars.community.text} 
-					/>
-				</div>
-			</Section>
-			{/* 5. EVENTOS */}
-			<Section id="eventos" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
-				<div className="max-w-5xl mx-auto">
-					<h2 className="mb-12 md:mb-24 text-center">{t.upcoming.title}</h2>
-					<div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-secundarios-dark/15 flex flex-col group transition-all duration-500">
-						<div className="relative overflow-hidden h-[250px] md:h-[450px]">
-							<img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt={t.upcoming.eventTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-						</div>
-						<div className={`p-8 md:p-20 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[#ff4500]' : 'bg-[#ff4500]'}`}>
-							<h3 className="mb-4 md:mb-6">{t.upcoming.eventTitle}</h3>
-							<p className="text-xl md:text-3xl font-serif opacity-90">{t.upcoming.description}</p>
-							<button onClick={() => setShowModal(true)} className="mt-4 px-10 py-4 rounded-anthro bg-white text-principal font-sans font-extrabold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl flex items-center gap-4">
-								{t.upcoming.cta} <ArrowRight size={24} />
-							</button>
+					{/* Título de la sección (Alegreya, Medium, Gris Oscuro/Claro) */}
+					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
+					<div className="grid md:grid-cols-3 gap-6 md:gap-12">
+						<PillarCard
+							icon={<BookOpen size={32} />}
+							title={t.pillars.education.title}
+							text={t.pillars.education.text}
+						/>
+						<PillarCard
+							icon={<Calendar size={32} />}
+							title={t.pillars.events.title}
+							text={t.pillars.events.text}
+						/>
+						<PillarCard
+							icon={<Users size={32} />}
+							title={t.pillars.community.title}
+							text={t.pillars.community.text}
+						/>
+					</div>
+				</Section>
+				{/* 5. EVENTOS */}
+				<Section id="eventos" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10">
+					<div className="max-w-5xl mx-auto">
+						<h2 className="mb-12 md:mb-24 text-center">{t.upcoming.title}</h2>
+						<div className="rounded-[24px] shadow-anthro-elevated overflow-hidden border border-secundarios-dark/15 flex flex-col group transition-all duration-500">
+							<div className="relative overflow-hidden h-[250px] md:h-[450px]">
+								<img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt={t.upcoming.eventTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+							</div>
+							<div className={`p-8 md:p-20 text-white text-center flex flex-col items-center gap-8 ${theme === 'dark' ? 'bg-[#ff4500]' : 'bg-[#ff4500]'}`}>
+								<h3 className="mb-4 md:mb-6">{t.upcoming.eventTitle}</h3>
+								<p className="text-xl md:text-3xl font-serif opacity-90">{t.upcoming.description}</p>
+								<button onClick={() => setShowModal(true)} className="mt-4 px-10 py-4 rounded-anthro bg-white text-principal font-sans font-extrabold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl flex items-center gap-4">
+									{t.upcoming.cta} <ArrowRight size={24} />
+								</button>
+							</div>
 						</div>
 					</div>
-				</div>
-			</Section>
-
-			{/* 6. COLABORADORES */}
-			<Section id="sobre">
-				<h2 className="mb-12 md:mb-24 text-center">{t.collaborators.title}</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
-					<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" />
-					<CollaborativeCard href="https://www.enais.co/" text="ENAIS" />
-					<CollaborativeCard href="https://bluedot.org/" text="BlueDot" />
-					<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" />
-					<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" />
-					<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" />
-				</div>
-			</Section>
-
-			{/* FOOTER */}
-			<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-16 md:py-32 px-4 md:px-8 border-t border-white/5">
-				<div className="max-w-7xl mx-auto text-center md:text-left">
-					 <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+				</Section>
+				{/* FOOTER */}
+				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-16 md:py-32 px-4 md:px-8 border-t border-white/5">
+					<div className="max-w-7xl mx-auto text-center md:text-left">
+						<div className="flex flex-col md:flex-row justify-between items-center gap-12">
 							<div className="space-y-4">
 								<div className="text-xl font-bold text-secundarios-light">IA Safety España</div>
 								<p className="max-w-xs font-serif text-lg">{t.footer.tagline}</p>
@@ -177,12 +184,12 @@ export default function App() {
 								<a href="https://linkedin.com" className="hover:text-white transition-colors"><Linkedin /></a>
 								<a href="https://instagram.com" className="hover:text-white transition-colors"><Instagram /></a>
 							</div>
-					 </div>
-					 <div className="pt-16 mt-16 border-t border-white/5 text-center text-xs tracking-widest uppercase opacity-20">
+						</div>
+						<div className="pt-16 mt-16 border-t border-white/5 text-center text-xs tracking-widest uppercase opacity-20">
 							© {t.footer.copyright} · Built for a human-aligned future.
-					 </div>
-				</div>
-			</footer>
+						</div>
+					</div>
+				</footer>
 		</div>
 	);
 }

@@ -14,7 +14,6 @@ export const Section: React.FC<{
 		</div>
 	</section>
 );
-
 // Componente para las tarjetas de los 3 pilares
 export const PillarCard: React.FC<{ 
   icon: React.ReactNode; 
@@ -33,20 +32,28 @@ export const PillarCard: React.FC<{
     </p>
   </div>
 );
-
 // Componente para los enlaces a colaboradores (logos/nombres)
 export const CollaborativeCard: React.FC<{ 
 	href: string; 
-	text: string 
-}> = ({ href, text }) => (
+	text: string;
+	logo?: string;
+}> = ({ href, text, logo }) => (
 	<a 
 		href={href} 
 		target="_blank" 
 		rel="noopener noreferrer"
-		className="block p-8 md:p-12 rounded-anthro border-2 border-secundarios-dark/20 bg-white/40 dark:bg-white/5 text-center transition-all duration-400 hover:bg-white dark:hover:bg-white/10 hover:scale-[1.05] hover:border-principal group shadow-anthro-subtle hover:shadow-anthro-elevated"
+		className="flex items-center justify-center p-4 transition-transform duration-300 hover:scale-110 group min-h-[120px]"
 	>
-		<span className="font-sans font-bold text-xl md:text-2xl leading-[1.4] text-secundarios-dark dark:text-secundarios-light group-hover:text-principal dark:group-hover:text-principalLight transition-colors tracking-tight">
-			{text}
-		</span>
+		{logo ? (
+			<img 
+				src={logo} 
+				alt={text} 
+				className="max-h-24 w-auto"
+			/>
+		) : (
+			<span className="font-sans font-bold text-xl md:text-2xl leading-[1.4] text-secundarios-dark dark:text-secundarios-light group-hover:text-principal dark:group-hover:text-principalLight transition-colors tracking-tight">
+				{text}
+			</span>
+		)}
 	</a>
 );

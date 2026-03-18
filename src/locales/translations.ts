@@ -46,7 +46,7 @@ export const translations = {
       cta: "Reserva tu plaza",
     },
     collaborators: {
-      title: "Nuestra red de colaboradores",
+      title: "Nuestra red",
     },
     about: {
       title: "Sobre esta iniciativa",
