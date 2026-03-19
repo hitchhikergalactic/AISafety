@@ -23,7 +23,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
   }, []);
 
   return (
-    <section id="eventos" className="bg-gray-50 dark:bg-secundarios-dark/5 py-10 md:py-20 px-4 md:px-8">
+    <section id="eventos" className="py-10 md:py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           

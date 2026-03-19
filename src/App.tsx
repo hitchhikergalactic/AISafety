@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { translations } from './locales/translations';
 import {
-	BookOpen, Calendar, Globe, ArrowRight, X
+	BookOpen, Calendar, Globe, ArrowRight, X, User
 } from 'lucide-react';
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
 
 // --- Import components ---
@@ -19,7 +19,7 @@ import logoBlueDot from './assets/logos__bluedot_impact.svg';
 import logoAISafetyCom from './assets/logos__aisafety_com.svg';
 import logoAISafetyBCN from './assets/logos__ai_safety_barcelona.svg';
 import logoBAISH from './assets/logos__buenos_aires_AI_safety_hub.svg';
-import logo from './assets/ias_logo.svg';
+import logo from './assets/safety_id_logo_white_leyenda.svg';
 import osmani from './assets/osmani.jpeg';
 
 // --- Types ---
@@ -139,7 +139,7 @@ export default function App() {
 					</div>
 				</Section>
 			{/* 2. WHY HUB SECTION */}
-			<Section id="mission" className="bg-white/30 dark:bg-white/[0.02] border-y border-secundarios-dark/10 !py-12 !md:py-32">
+			<Section id="mission" className="border-y border-secundarios-dark/10 !py-12 !md:py-32">
 				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					<div className="animate-fade-in-up">
 						<h4 className="mb-4">{t.why.title}</h4>
@@ -183,9 +183,8 @@ export default function App() {
 				<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
 
 				{/* 7. ABOUT SECTION (CONOCENOS) */}
-				<Section id="conocenos" className="bg-white dark:bg-secundarios-dark/5 border-t border-secundarios-dark/10">
+				<Section id="conocenos" className="border-t border-secundarios-dark/10">
 					<div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
-						{/* Text Content */}
 						<div className="flex-1 space-y-6 text-center md:text-left">
 							<h4>{t.about.title}</h4>
 							<p>
@@ -227,6 +226,38 @@ export default function App() {
 						</div>
 					</div>
 				</Section>
+				{/* WOMEN4AIS SECTION */}
+				<section className="py-12 md:py-24 px-4 md:px-8">
+				  <div className="max-w-7xl mx-auto">
+					<div className="bg-cuartos-purple rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-anthro-elevated text-white overflow-hidden relative">
+					  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+					  
+					  <div className="flex-1 space-y-8 z-10">
+						<h3 className="text-white/90 md:text-5xl mb-6">{t.women4ais.title}</h3>
+						<p className="text-white/90 text-lg md:text-2xl font-serif max-w-2xl leading-relaxed">
+						  {t.women4ais.text}
+						</p>
+						<div className="flex items-center gap-4 pt-4">
+							<a href="https://www.women4aisafety.org/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
+								<Globe size={24} />
+							</a>
+							<a href="https://www.instagram.com/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
+								<FaInstagram size={24} />
+							</a>
+							<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
+								<FaLinkedin size={24} />
+							</a>
+						</div>
+					  </div>
+					  
+					  <div className="shrink-0 w-full md:w-auto flex justify-center z-10">
+						<div className="w-64 h-64 md:w-80 md:h-80 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 flex items-center justify-center overflow-hidden shadow-inner">
+							<User size={64} className="text-white/20" />
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</section>
 
 				{/* FOOTER */}
 				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-8 md:py-12 px-4 md:px-8 border-t border-white/5">
@@ -249,7 +280,7 @@ export default function App() {
 								<img 
 									src={logo} 
 									alt="IA Safety España" 
-									className="h-16 md:h-20 brightness-0 invert" 
+									className="h-16 md:h-20" 
 								/>
 							</div>
 						</div>
