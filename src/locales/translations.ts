@@ -20,7 +20,7 @@ export const translations = {
     },
     mission: {
       title: "Sobre iaS",
-      text: "Traducir, contextualizar y hacer accesibles los retos de seguridad en IA a nuestra realidad social y técnica.",
+      text: "IA Safety para entender el mundo de la IA como es, como podría ser y como nos gustaría que sea.",
     },
     pillars: {
       title: "El Hub en Acción",
@@ -64,8 +64,6 @@ export const translations = {
       title: "Sobre esta iniciativa",
       text1: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada.",
       text2: "Impulsada por Osmani Redondo, conecta investigadores, estudiantes, profesionales de política pública y cualquier persona curiosa sobre el futuro de la IA — desde España, para los 600 millones de hispanohablantes del mundo.",
-      joinCta: "¿Quieres formar parte?",
-      joinBtn: "Únete",
     },
     women4ais: {
       title: "Formamos parte de Women4AIS",

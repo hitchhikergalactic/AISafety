@@ -21,6 +21,7 @@ import logoAISafetyBCN from './assets/logos__ai_safety_barcelona.svg';
 import logoBAISH from './assets/logos__buenos_aires_AI_safety_hub.svg';
 import logo from './assets/safety_id_logo_white_leyenda.svg';
 import osmani from './assets/osmani.jpeg';
+import women4aisImg from './assets/original-aa4b526da371210b9104b913751e40d4.webp';
 
 // --- Types ---
 type Language = 'es' | 'en';
@@ -109,26 +110,25 @@ export default function App() {
 				</div>
 			)}
 			{/* 1. HERO SECTION */}
-			<section id="hero" className="hero relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden scroll-mt-32">
-				{/* Decoración de fondo */}
+			<section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden">
 				<div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-principal/5 rounded-full blur-[100px] pointer-events-none"></div>
-				<div className="max-w-[1400px] text-center z-10 animate-fade-in-up">
+				{/* CAMBIO: max-w-7xl mx-auto para alinear con el resto */}
+				<div className="max-w-7xl mx-auto text-center z-10 animate-fade-in-up w-full">
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
 					</h1>
-					<p className="bajada max-w-[950px] mx-auto">
-						{t.hero.h2}
-					</p>
-					{/* Botón CTA */}
-					<div className="mt-12 md:mt-16"></div>
-					<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="px-12 py-5 rounded-anthro bg-principal dark:bg-principal text-white dark:text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
-						{t.hero.ctaPrimary}
-					</button>
+					<p className="bajada max-w-[950px] mx-auto">{t.hero.h2}</p>
+					<div className="mt-12 md:mt-16">
+						<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="px-12 py-5 rounded-anthro bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
+							{t.hero.ctaPrimary}
+						</button>
+					</div>
 				</div>
 			</section>
-				{/* 6. COLABORADORES */}
-				<Section id="sobre" className="!py-8 !md:py-16">
-					<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
+				{/* 2. COLABORADORES */}
+				<section id="sobre" className="px-4 md:px-8 py-8 md:py-16">
+					<div className="max-w-7xl mx-auto">
+						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
 						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} />
 						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} />
@@ -137,10 +137,11 @@ export default function App() {
 						<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} />
 						<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} />
 					</div>
-				</Section>
-			{/* 2. WHY HUB SECTION */}
-			<Section id="mission" className="border-y border-secundarios-dark/10 !py-12 !md:py-32">
-				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+					</div>
+				</section>
+			{/* 3. WHY HUB SECTION */}
+			<section id="mission" className="px-4 md:px-8 py-12 md:py-32">
+				<div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					<div className="animate-fade-in-up">
 						<h4 className="mb-4">{t.why.title}</h4>
 						<div className="max-w-prose"> {/* 'prose' limita el ancho a unos 65 caracteres, ideal para lectura */}
@@ -157,7 +158,7 @@ export default function App() {
 						</div>
 					</div>
 				</div>
-			</Section>
+			</section>
 			{/* 4. PILLARS SECTION */}
 			{/* <Section id="hub-action">
 					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
@@ -179,13 +180,16 @@ export default function App() {
 						/>
 					</div>
 				</Section> */}
-				{/* 5. EVENTOS - BENTO GRID */}
-				<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
-
-				{/* 7. ABOUT SECTION (CONOCENOS) */}
-				<Section id="conocenos" className="border-t border-secundarios-dark/10">
-					<div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
-						<div className="flex-1 space-y-6 text-center md:text-left">
+				{/* 4. EVENTOS - BENTO GRID */}
+				<section id="eventos" className="px-4 md:px-8 py-12">
+					<div className="max-w-7xl mx-auto">
+						<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
+					</div>
+				</section>
+				{/* 5. CONOCENOS */}
+				<section id="conocenos" className="px-4 md:px-8 py-8 md:py-16">
+					<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
+						<div className="flex-1 max-w-xl space-y-6 text-center md:text-left">
 							<h4>{t.about.title}</h4>
 							<p>
 								{t.about.text1}
@@ -194,12 +198,6 @@ export default function App() {
 								{t.about.text2}
 							</p>
 							<div className="pt-4 flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start">
-								<button 
-									onClick={() => { setModalType('subscribe'); setShowModal(true); }} 
-									className="px-8 py-3 rounded-xl bg-principal text-white font-sans font-bold text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-2"
-								>
-									{t.hero.ctaPrimary}
-								</button>
 							</div>
 						</div>
 						{/* Image */}
@@ -225,11 +223,30 @@ export default function App() {
 							</div>
 						</div>
 					</div>
-				</Section>
-				{/* WOMEN4AIS SECTION */}
-				<section className="py-12 md:py-24 px-4 md:px-8">
-				  <div className="max-w-7xl mx-auto">
-					<div className="bg-cuartos-purple rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-anthro-elevated text-white overflow-hidden relative">
+				</section>
+
+				{/* 6. MANIFIESTO */}
+				<section id="manifiesto" className="px-4 md:px-8 py-12 md:py-24">
+					<div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
+						<div className="flex-[2] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-16 min-h-[400px] flex items-center">
+							<h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
+								{t.mission.text}
+							</h3>
+						</div>
+						<div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
+							<div>
+								<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md">
+									{t.hero.ctaPrimary}
+								</button>
+							</div>
+							<SocialFooter />
+						</div>
+					</div>
+				</section>
+				{/* 7. WOMEN4AIS */}
+				<section className="px-4 md:px-8 py-12 md:py-24">
+					<div className="max-w-7xl mx-auto">
+						<div className="bg-cuartos-purple rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white">
 					  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					  
 					  <div className="flex-1 space-y-8 z-10">
@@ -250,17 +267,18 @@ export default function App() {
 						</div>
 					  </div>
 					  
-					  <div className="shrink-0 w-full md:w-auto flex justify-center z-10">
-						<div className="w-64 h-64 md:w-80 md:h-80 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 flex items-center justify-center overflow-hidden shadow-inner">
-							<User size={64} className="text-white/20" />
+					  <div className="shrink-0 w-full md:w-auto flex justify-center">
+						<div className="w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-inner flex flex-col">
+							<img src={women4aisImg} alt="Women4AIS" className="w-full h-full object-cover" />
+							<div className="bg-white/10 px-4 py-3 text-center">
+								<p className="text-sm text-white/80">By Sandro Rybak</p>
+							</div>
 						</div>
-					  </div>
+						</div>
 					</div>
-				  </div>
+					</div>
 				</section>
-
-				{/* FOOTER */}
-				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-8 md:py-12 px-4 md:px-8 border-t border-white/5">
+				<footer id="newsletter" className="px-4 md:px-8 bg-secundarios-dark text-secundarios-light/40 py-12 border-t border-white/5">
 					<div className="max-w-7xl mx-auto text-center md:text-left">
 						<div className="flex flex-col-reverse md:flex-row justify-between items-center gap-12">
 							<div className="flex flex-col items-center md:items-start w-full md:w-auto">
