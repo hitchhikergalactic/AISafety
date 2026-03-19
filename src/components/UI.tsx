@@ -37,7 +37,9 @@ export const CollaborativeCard: React.FC<{
 	href: string; 
 	text: string;
 	logo?: string;
-}> = ({ href, text, logo }) => (
+	logoWhite?: string;
+	theme?: 'light' | 'dark';
+}> = ({ href, text, logo, logoWhite, theme }) => (
 	<a 
 		href={href} 
 		target="_blank" 
@@ -46,7 +48,7 @@ export const CollaborativeCard: React.FC<{
 	>
 		{logo ? (
 			<img 
-				src={logo} 
+				src={theme === 'dark' && logoWhite ? logoWhite : logo} 
 				alt={text} 
 				className="max-h-24 w-auto"
 			/>

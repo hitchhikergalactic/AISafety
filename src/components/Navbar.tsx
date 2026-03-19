@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import logo from '../assets/ias_logo.svg';
+import logoWhite from '../assets/ias_logo_white.svg';
 
 interface NavbarProps {
   lang: 'es' | 'en';
@@ -37,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
         {/* Logo */}
         <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
           <img 
-            src={logo} 
+            src={theme === 'dark' ? logoWhite : logo} 
             alt="AI Safety España" 
             className="h-10 md:h-[50px] w-auto block bg-transparent"
           />

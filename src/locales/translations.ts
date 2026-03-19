@@ -16,11 +16,16 @@ export const translations = {
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui magna, convallis iaculis condimentum vitae, auctor porttitor massa. Maecenas urna turpis, sollicitudin at ipsum ullamcorper, malesuada sollicitudin erat. Donec non nibh est. Sed vehicula viverra neque sed vulputate. Cras vulputate tellus quis libero laoreet, ac malesuada metus lacinia. Morbi elementum, diam non scelerisque mattis, magna erat rhoncus erat, a volutpat purus ex quis nulla. Morbi vehicula turpis non enim convallis.",
+      text: `Usas ChatGPT para todo. Funciona. Pero, ¿quién se asegura de que no te engañe o te discrimine? Eso es IA Safety.
+Hoy, la IA se desarrolla en Silicon Valley y se entrena en inglés. Para los 600 millones que hablamos español, eso significa más errores y menos representación.
+No es ciencia ficción. Es seguridad básica. Como un coche: no necesitas ser mecánico para exigir que tenga frenos. Alguien tiene que diseñarlos.
+Esta charla ya no es de expertos; es de todos.
+La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a participar.
+600 millones de personas necesitan una voz. Este hub es esa voz.`,
     },
     mission: {
       title: "Sobre iaS",
-      text: "IA Safety para entender el mundo de la IA como es, como podría ser y como nos gustaría que sea.",
+      text: "IA Safety para entender la inteligencia artificial como es, como podría llegar a ser y como nos gustaría que fuera.",
     },
     pillars: {
       title: "El Hub en Acción",
@@ -87,25 +92,30 @@ export const translations = {
   en: {
     nav: {
       home: "Home",
-      mission: "Mission",
-      events: "Events",
-      about: "About us",
-      contact: "Contact",
+      mission: "/About iaS",
+      events: "/Events",
+      about: "/About us",
+      contact: "/Contact us",
     },
     hero: {
       location: "",
       h1: "AI Safety Hub",
       h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
-      ctaPrimary: "Join the next event",
+      ctaPrimary: "Join the hub",
       ctaSecondary: "Subscribe",
     },
     why: {
       title: "Why an AI Safety Hub?",
-      text: "AI models are mostly trained in English and developed in Silicon Valley. 600 million Spanish speakers deserve a voice in that conversation. This hub is that voice.",
+      text: `You use ChatGPT for everything. It works. But who ensures it won't deceive you or discriminate against you? That's AI Safety.
+Today, AI is built in Silicon Valley and trained in English. For the 600 million Spanish speakers, that means more errors and less representation.
+It's not science fiction. It's basic safety. Like a car: you don't need to be a mechanic to demand it has brakes. Someone needs to design them.
+This conversation is no longer just for experts; it's for everyone. It's already hit prime time.
+AI has already changed the world. The question is whether Spanish speakers will watch from the outside or help design the rules.
+600 million people need a voice. This hub is that voice.`,
     },
     mission: {
       title: "Our Mission",
-      text: "To translate, contextualize, and make AI safety challenges accessible to our social and technical reality.",
+      text: "AI Safety: to understand AI as it is, as it could be, and as we want it to be.",
     },
     pillars: {
       title: "The Hub in Action",
@@ -125,21 +135,20 @@ export const translations = {
     upcoming: {
       title: "Upcoming Events",
       eventTitle: "First Meeting: AI Safety in Madrid",
-      date: "📅 April 28, 2026 | ⏰ 7:00 - 9:00 PM",
-      location: "📍 Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
-      description: "Our first meetup to connect people interested in AI safety. Talks, networking and snacks. Join us!",
+      date: "April 28, 2026 | 7:00 - 9:00 PM",
+      location: "Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
+      description: "Our first meetup to connect people interested in AI safety. There will be talks, networking and snacks. Join us!",
       cta: "Book your spot",
-      dateShort: "📅 April 28",
-      locationShort: "📍 Madrid",
+      dateShort: "April 28 ~ Madrid",
       bluedot: {
-        tag: "/ COMUNIDAD",
-        title: "Lorem Ipsum Bluedot",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        tag: "/ COMMUNITY",
+        title: "Bluedot Impact Spain",
+        description: "People from around the world connecting on AI Safety in Spanish. Conversations we needed to have in our language.",
       },
       readingGroup: {
-        tag: "/ READING GROUP",
-        title: "Lorem Ipsum Reading",
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        tag: "/ NEWSLETTER",
+        title: "The Greatest Challenge of Our Time",
+        description: "Our director Osmani is already writing about AI Safety on Substack.",
       }
     },
     collaborators: {
@@ -147,8 +156,8 @@ export const translations = {
     },
     about: {
       title: "About this initiative",
-      text1: "This initiative emerges to create a space to explore the technical and ethical challenges of advanced AI.",
-      text2: "Led by Osmani Redondo, it connects researchers, students, policy professionals and anyone curious about the future of AI — from Spain, for the 600 million Spanish speakers around the world.",
+      text1: "This initiative creates a space to explore the technical and ethical challenges of advanced AI from our own reality and perspective.",
+      text2: "Led by Osmani Redondo, it connects researchers, students, policy professionals, and anyone curious about AI's future — building a voice from Spain for 600 million Spanish speakers worldwide.",
       joinCta: "Want to be part of it?",
       joinBtn: "Join us",
     },
@@ -167,7 +176,8 @@ export const translations = {
     },
     footer: {
       tagline: "Part of the global AI Safety ecosystem",
-      copyright: "Copyright 2026 AI Safety",
+      copyright: "Copyright 2026 AI Safety · Built for a human-aligned future",
+      email: "hola@aisafety.es",
     }
   }
 };

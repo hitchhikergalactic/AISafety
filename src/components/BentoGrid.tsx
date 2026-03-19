@@ -69,7 +69,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                <div className="flex flex-col flex-grow">
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex flex-col">
-                      <span className="font-mono text-xs tracking-widest text-gray-500 uppercase mb-1">{t.upcoming.bluedot.tag}</span>
+                    <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.bluedot.tag}</span>
                     </div>
                     
                     {/* BOTÓN ACTUALIZADO PARA LUMA */}
@@ -82,11 +82,11 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                       <ArrowUpRight size={16} />
                     </a>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple">{t.upcoming.bluedot.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-4 mb-auto">
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.bluedot.title}</h4>
+                  <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.bluedot.description}
                   </p>
-                  <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium text-gray-500 dark:text-white">
                      <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.bluedot.dateShort}</h5>
                   </div>
                </div>
@@ -99,13 +99,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                </div>
                <div className="flex flex-col flex-grow">
                   <div className="flex justify-between items-start mb-2">
-                    <span className="font-mono text-xs tracking-widest text-gray-500 uppercase">{t.upcoming.readingGroup.tag}</span>
+                    <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.readingGroup.tag}</span>
                     <a href="https://osmaniredondo.substack.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white hover:bg-principal hover:text-white hover:border-principal transition-colors duration-300">
                       <ArrowUpRight size={16} />
                     </a>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple">{t.upcoming.readingGroup.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-4 mb-auto">
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.readingGroup.title}</h4>
+                  <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.readingGroup.description}
                   </p>
                </div>

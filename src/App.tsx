@@ -14,12 +14,19 @@ import SocialFooter from './components/SocialFooter';
 
 // --- Import assets (Logos Colaboradores) ---
 import logoRiesgosIA from './assets/logos__riesgos_ia.svg';
+import logoRiesgosIAWhite from './assets/logos__riesgos_ia_white.png';
 import logoENAIS from './assets/logos__european_network_for_AI_safety.svg';
+import logoENAISWhite from './assets/logos__european_network_for_AI_safety_white.svg';
 import logoBlueDot from './assets/logos__bluedot_impact.svg';
+import logoBlueDotWhite from './assets/logos__bluedot_impact_white.svg';
 import logoAISafetyCom from './assets/logos__aisafety_com.svg';
+import logoAISafetyComWhite from './assets/logos__aisafety_com_white.svg';
 import logoAISafetyBCN from './assets/logos__ai_safety_barcelona.svg';
+import logoAISafetyBCNWhite from './assets/logos__ai_safety_barcelona_white.svg';
 import logoBAISH from './assets/logos__buenos_aires_AI_safety_hub.svg';
+import logoBAISHWhite from './assets/logos__buenos_aires_AI_safety_hub_white.svg';
 import logo from './assets/safety_id_logo_white_leyenda.svg';
+import logoWhite from './assets/ias_logo_white.svg';
 import osmani from './assets/osmani.jpeg';
 import women4aisImg from './assets/original-aa4b526da371210b9104b913751e40d4.webp';
 
@@ -130,12 +137,12 @@ export default function App() {
 					<div className="max-w-7xl mx-auto">
 						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
-						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} />
-						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} />
-						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} />
-						<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} />
-						<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} />
-						<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} />
+						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} logoWhite={logoRiesgosIAWhite} theme={theme} />
+						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
+						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} theme={theme} />
+						<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} theme={theme} />
+						<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} theme={theme} />
+						<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} logoWhite={logoBAISHWhite} theme={theme} />
 					</div>
 					</div>
 				</section>
@@ -145,7 +152,7 @@ export default function App() {
 					<div className="animate-fade-in-up">
 						<h4 className="mb-4">{t.why.title}</h4>
 						<div className="max-w-prose"> {/* 'prose' limita el ancho a unos 65 caracteres, ideal para lectura */}
-							<p>{t.why.text}</p>
+							<p className="whitespace-pre-line">{t.why.text}</p>
 						</div>
 					</div>
 					<div className="relative group">
@@ -181,7 +188,7 @@ export default function App() {
 					</div>
 				</Section> */}
 				{/* 4. EVENTOS - BENTO GRID */}
-				<section id="eventos" className="px-4 md:px-8 py-12">
+			<section id="eventos" className="px-4 md:px-8 py-12 bg-white/20 dark:bg-white/5">
 					<div className="max-w-7xl mx-auto">
 						<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
 					</div>
@@ -296,7 +303,7 @@ export default function App() {
 							</div>
 							<div className="w-full md:w-auto flex justify-center md:justify-end mb-8 md:mb-0">
 								<img 
-									src={logo} 
+									src={theme === 'dark' ? logoWhite : logo} 
 									alt="IA Safety España" 
 									className="h-16 md:h-20" 
 								/>
