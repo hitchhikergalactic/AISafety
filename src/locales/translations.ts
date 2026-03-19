@@ -83,6 +83,7 @@ export const translations = {
     footer: {
       tagline: "Parte del ecosistema global de AI Safety",
       copyright: "Copyright 2026 IA Safety",
+      email: "hola@aisafety.es",
     }
   },
   en: {

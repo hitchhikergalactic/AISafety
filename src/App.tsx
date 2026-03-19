@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { translations } from './locales/translations';
 import {
-	BookOpen, Calendar, Globe, ArrowRight, Linkedin,
-	Instagram, Newspaper, Users, CheckCircle, X
+	BookOpen, Calendar, Globe, ArrowRight, X
 } from 'lucide-react';
+import { FaLinkedin } from "react-icons/fa";
+import { SiSubstack } from "react-icons/si";
 
 // --- Import components ---
 import Navbar from './components/Navbar';
 import { Section, PillarCard, CollaborativeCard } from './components/UI';
 import BentoGrid from './components/BentoGrid';
+import SocialFooter from './components/SocialFooter';
 
 // --- Import assets (Logos Colaboradores) ---
 import logoRiesgosIA from './assets/logos__riesgos_ia.svg';
@@ -120,7 +122,7 @@ export default function App() {
 					{/* Botón CTA */}
 					<div className="mt-12 md:mt-16"></div>
 					<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="px-12 py-5 rounded-anthro bg-principal dark:bg-principal text-white dark:text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
-						{t.hero.ctaPrimary} <ArrowRight size={24} />
+						{t.hero.ctaPrimary}
 					</button>
 				</div>
 			</section>
@@ -197,7 +199,7 @@ export default function App() {
 									onClick={() => { setModalType('subscribe'); setShowModal(true); }} 
 									className="px-8 py-3 rounded-xl bg-principal text-white font-sans font-bold text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-2"
 								>
-									{t.hero.ctaPrimary} <ArrowRight size={18} />
+									{t.hero.ctaPrimary}
 								</button>
 							</div>
 						</div>
@@ -215,12 +217,10 @@ export default function App() {
 								</div>
 								<div className="flex gap-4">
 									<a href="https://www.linkedin.com/in/osmani/" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-										<Linkedin size={28} />
+										<FaLinkedin size={28} />
 									</a>
 									<a href="https://substack.com/@osmaniredondo" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-										<svg width="24" height="28" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path d="M0 180.37h448V56H0v124.37zm0 184.26l224.23 125.79L448 364.63V233.1H0v131.53zm0-305.9V0h448v58.69H0z"/>
-										</svg>
+										<SiSubstack size={24} />
 									</a>
 								</div>
 							</div>
@@ -229,45 +229,31 @@ export default function App() {
 				</Section>
 
 				{/* FOOTER */}
-				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-6 md:py-12 px-4 md:px-8 border-t border-white/5">
+				<footer id="newsletter" className="bg-secundarios-dark text-secundarios-light/40 py-8 md:py-12 px-4 md:px-8 border-t border-white/5">
 					<div className="max-w-7xl mx-auto text-center md:text-left">
-						<div className="flex flex-col md:flex-row justify-between items-start gap-12">
-							<div className="space-y-6 flex flex-col items-center md:items-start">
-								{/* Logo en blanco y más grande (50% más) */}
+						<div className="flex flex-col-reverse md:flex-row justify-between items-center gap-12">
+							<div className="flex flex-col items-center md:items-start w-full md:w-auto">
+								<div className="bajada max-w-xs mb-6">{t.footer.tagline}</div>
+								<button 
+									onClick={() => { setModalType('subscribe'); setShowModal(true); }} 
+									className="px-10 py-4 rounded-xl bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-3 mb-8"
+								>
+									{t.hero.ctaPrimary}
+								</button>
+								<div className="mb-6">
+									<SocialFooter />
+								</div>
+								<h5 className="normal-case secundarios-light mb-4 italic">{t.footer.email}</h5>
+							</div>
+							<div className="w-full md:w-auto flex justify-center md:justify-end mb-8 md:mb-0">
 								<img 
 									src={logo} 
 									alt="IA Safety España" 
-									className="h-16 brightness-0 invert" 
+									className="h-16 md:h-20 brightness-0 invert" 
 								/>
-								<p className="max-w-xs font-serif text-lg text-balance mb-6">{t.footer.tagline}</p>
-								
-								<button 
-									onClick={() => { setModalType('subscribe'); setShowModal(true); }} 
-									className="px-8 py-3 rounded-xl bg-principal text-white font-sans font-bold text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-2"
-								>
-									{t.hero.ctaPrimary} <ArrowRight size={18} />
-								</button>
-
-								{/* Redes Sociales alineadas a la izquierda (en desktop) y más grandes */}
-								<div className="flex gap-6 mt-4">
-									<a href="https://linkedin.com" className="hover:text-white transition-colors">
-										<Linkedin size={36} />
-									</a>
-									<a href="https://instagram.com" className="hover:text-white transition-colors">
-										<Instagram size={36} />
-									</a>
-									<a href="https://discord.com" className="hover:text-white transition-colors" title="Discord">
-										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gamepad-2"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
-									</a>
-									<a href="https://substack.com" className="hover:text-white transition-colors" title="Substack">
-										<svg width="32" height="36" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path d="M0 180.37h448V56H0v124.37zm0 184.26l224.23 125.79L448 364.63V233.1H0v131.53zm0-305.9V0h448v58.69H0z"/>
-										</svg>
-									</a>
-								</div>
 							</div>
 						</div>
-						<div className="pt-16 mt-16 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
+						<div className="pt-8 mt-8 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
 							© {t.footer.copyright} · Built for a human-aligned future.
 						</div>
 					</div>

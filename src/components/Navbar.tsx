@@ -29,8 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light/90 dark:bg-secundarios-dark/90 glass-nav border-b border-secundarios-dark/10 py-3 md:py-4 shadow-sm' : 'bg-transparent py-4 md:py-8'}`}>
-      <div className="max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out`}>
+      {/* Background Layer with Backdrop Filter */}
+      <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light/90 dark:bg-secundarios-dark/90 glass-nav border-b border-secundarios-dark/10 shadow-sm' : 'bg-transparent'}`}></div>
+
+      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
         <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
           <img 
@@ -74,14 +77,14 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`lg:hidden fixed inset-0 top-0 bg-secundarios-light dark:bg-secundarios-dark z-[-1] transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="pt-24 px-6 flex flex-col gap-6 h-full overflow-y-auto">
+      <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
             <a 
               key={link.href} 
               href={link.href} 
               onClick={() => setIsOpen(false)} 
-              className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light border-b border-secundarios-dark/10 pb-4 flex justify-between items-center group"
+              className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principal border-b border-secundarios-dark/10 pb-4 flex justify-between items-center group transition-colors duration-300"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {link.label}
