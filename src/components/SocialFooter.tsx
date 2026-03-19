@@ -1,29 +1,25 @@
 import React from 'react';
 import { 
   FaInstagram, 
-  FaFacebookSquare, 
-  FaYoutube, 
+  FaDiscord, 
   FaLinkedin 
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 
 const SocialFooter = () => {
   return (
     <div className="flex items-center gap-6 text-3xl">
+      <a href="https://www.linkedin.com/company/aisafetyspain/" className="hover:text-white transition-colors" aria-label="LinkedIn">
+        <FaLinkedin />
+      </a>
+      <a href="https://discord.gg/z7uhQKhZKW" className="hover:text-white transition-colors" aria-label="Discord">
+        <FaDiscord />
+      </a>
+      <a href="https://substack.com/@osmaniredondo" className="hover:text-white transition-colors" aria-label="Substack">
+        <SiSubstack />
+      </a>
       <a href="https://instagram.com/aisafetyspain" className="hover:text-white transition-colors" aria-label="Instagram">
         <FaInstagram />
-      </a>
-      <a href="#" className="hover:text-white transition-colors" aria-label="Facebook">
-        <FaFacebookSquare />
-      </a>
-      <a href="#" className="hover:text-white transition-colors" aria-label="YouTube">
-        <FaYoutube />
-      </a>
-      <a href="https://twitter.com/aisafetyspain" className="hover:text-white transition-colors" aria-label="X (Twitter)">
-        <FaXTwitter />
-      </a>
-      <a href="https://linkedin.com" className="hover:text-white transition-colors" aria-label="LinkedIn">
-        <FaLinkedin />
       </a>
     </div>
   );

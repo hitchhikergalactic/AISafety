@@ -254,7 +254,7 @@ export default function App() {
 							</div>
 						</div>
 						<div className="pt-8 mt-8 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
-							© {t.footer.copyright} · Built for a human-aligned future.
+							© {t.footer.copyright}.
 						</div>
 					</div>
 				</footer>
