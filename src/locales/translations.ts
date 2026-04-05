@@ -4,8 +4,8 @@ export const translations = {
       home: "Inicio",
       mission: "/Sobre iaS",
       events: "/Eventos",
-      about: "/Conocenos",
-      contact: "/Escribinos",
+      about: "/Conócenos",
+      contact: "/Escríbenos",
     },
     hero: {
       location: "",
@@ -16,12 +16,12 @@ export const translations = {
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
-      text: `Usas ChatGPT para todo. Funciona. Pero, ¿quién se asegura de que no te engañe o te discrimine? Eso es IA Safety.
-Hoy, la IA se desarrolla en Silicon Valley y se entrena en inglés. Para los 600 millones que hablamos español, eso significa más errores y menos representación.
-No es ciencia ficción. Es seguridad básica. Como un coche: no necesitas ser mecánico para exigir que tenga frenos. Alguien tiene que diseñarlos.
-Esta charla ya no es de expertos; es de todos.
-La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a participar.
-600 millones de personas necesitan una voz. Este hub es esa voz.`,
+      text: `La IA más poderosa de la historia se está construyendo ahora. ¿Quién se asegura de que va en la dirección correcta? 
+      Eso es IA Safety. Y hoy esa conversación se tiene en inglés, en Silicon Valley, sin voces hispanohablantes.
+      Para los 636 millones que hablamos español eso significa más errores y menos representación.
+      Como un coche: no necesitas ser mecánico para exigir que tenga frenos. Pero alguien tiene que diseñarlos.
+      `,
+      text2:"aisafety.es existe para que esa conversación también sea nuestra.",
     },
     mission: {
       title: "Sobre iaS",
@@ -45,7 +45,7 @@ La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a partic
     upcoming: {
       title: "Próximos Eventos",
       eventTitle: "Primer Encuentro: IA Safety en Madrid",
-      date: "28 de abril, 2026  | 19:00 - 21:00h",
+      date: "28 de abril, 2026  | 19:30 - 21:30h",
       location: "Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
       cta: "Reserva tu plaza",
@@ -76,7 +76,7 @@ La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a partic
     },
     subscribe: {
       title: "Forma parte de nuestra comunidad",
-      subtitle: "Recibi eventos, recursos y únete a la comunidad.",
+      subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
       name: "Nombre",
       email: "Email",
       linkedin: "Linkedin",
@@ -106,12 +106,10 @@ La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a partic
     },
     why: {
       title: "Why an AI Safety Hub?",
-      text: `You use ChatGPT for everything. It works. But who ensures it won't deceive you or discriminate against you? That's AI Safety.
-Today, AI is built in Silicon Valley and trained in English. For the 600 million Spanish speakers, that means more errors and less representation.
-It's not science fiction. It's basic safety. Like a car: you don't need to be a mechanic to demand it has brakes. Someone needs to design them.
-This conversation is no longer just for experts; it's for everyone. It's already hit prime time.
-AI has already changed the world. The question is whether Spanish speakers will watch from the outside or help design the rules.
-600 million people need a voice. This hub is that voice.`,
+      text: `The most powerful AI in history is being built right now. Who ensures it's going in the right direction? That's AI Safety. And today that conversation happens in English, in Silicon Valley, without Spanish-speaking voices.
+For the 636 million of us who speak Spanish, that means more errors and less representation.
+Like a car: you don't need to be a mechanic to demand it has brakes. But someone has to design them.`,
+      text2: "aisafety.es exists so this conversation is ours too.",
     },
     mission: {
       title: "Our Mission",
@@ -135,7 +133,7 @@ AI has already changed the world. The question is whether Spanish speakers will 
     upcoming: {
       title: "Upcoming Events",
       eventTitle: "First Meeting: AI Safety in Madrid",
-      date: "April 28, 2026 | 7:00 - 9:00 PM",
+      date: "April 28, 2026 | 7:30 - 9:30 PM",
       location: "Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Our first meetup to connect people interested in AI safety. There will be talks, networking and snacks. Join us!",
       cta: "Book your spot",
