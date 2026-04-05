@@ -154,6 +154,7 @@ export default function App() {
 						<h4 className="mb-4">{t.why.title}</h4>
 						<div className="max-w-prose"> {/* 'prose' limita el ancho a unos 65 caracteres, ideal para lectura */}
 							<p className="whitespace-pre-line">{t.why.text}</p>
+							<p className="italic font-medium mt-4">{t.why.text2}</p>
 						</div>
 					</div>
 					<div className="relative group">
