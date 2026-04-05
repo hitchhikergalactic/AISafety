@@ -29,6 +29,7 @@ import logo from './assets/safety_id_logo_white_leyenda.svg';
 import logoWhite from './assets/ias_logo_white.svg';
 import osmani from './assets/osmani.jpeg';
 import women4aisImg from './assets/original-aa4b526da371210b9104b913751e40d4.webp';
+import fondoImg from './assets/fondo.png';
 
 // --- Types ---
 type Language = 'es' | 'en';
@@ -253,22 +254,22 @@ export default function App() {
 				{/* 7. WOMEN4AIS */}
 				<section className="px-4 md:px-8 py-12 md:py-24">
 					<div className="max-w-7xl mx-auto">
-						<div className="bg-cuartos-purple rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white">
+						<div className="rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white" style={{ backgroundImage: `url(${fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.9 }}>
 					  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					  
 					  <div className="flex-1 space-y-8 z-10">
-						<h3 className="text-white/90 md:text-5xl mb-6">{t.women4ais.title}</h3>
-						<p className="text-white/90 text-lg md:text-2xl font-serif max-w-2xl leading-relaxed">
+					<h3 className="text-secundarios-light dark:text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h3>
+					<p className="text-secundarios-light dark:text-secundarios-light text-lg md:text-2xl font-serif max-w-2xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
 						  {t.women4ais.text}
 						</p>
 						<div className="flex items-center gap-4 pt-4">
-							<a href="https://www.women4aisafety.org/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
+								<a href="https://www.women4aisafety.org/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
 								<Globe size={24} />
 							</a>
-							<a href="https://www.instagram.com/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
+								<a href="https://www.instagram.com/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
 								<FaInstagram size={24} />
 							</a>
-							<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
+								<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
 								<FaLinkedin size={24} />
 							</a>
 						</div>
@@ -278,7 +279,7 @@ export default function App() {
 						<div className="w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-inner flex flex-col">
 							<img src={women4aisImg} alt="Women4AIS" className="w-full h-full object-cover" />
 							<div className="bg-white/10 px-4 py-3 text-center">
-								<p className="text-sm text-white/80">By Sandro Rybak</p>
+								<p className="text-sm text-black/80">By Sandro Rybak</p>
 							</div>
 						</div>
 						</div>
