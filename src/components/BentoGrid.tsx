@@ -28,15 +28,15 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Tarjeta Grande (Izquierda) */}
-          <div className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-300 text-white">
+          <button 
+            onClick={onModalOpen}
+            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full"
+          >
             <div className="flex justify-between items-start mb-6">
               <span className="font-mono text-sm tracking-widest text-white/90 uppercase">{t.upcoming.bluedot.tag}</span>
-              <button 
-                onClick={onModalOpen}
-                className="w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300"
-              >
+              <div className="w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300">
                 <ArrowUpRight size={20} />
-              </button>
+              </div>
             </div>
             <div className="flex-grow flex flex-col">
               <div className="rounded-2xl overflow-hidden mb-6 aspect-video w-full bg-white/10">
@@ -56,33 +56,29 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                  <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.dateShort}</h5>
               </div>
             </div>
-          </div>
+          </button>
 
           {/* Columna Derecha - 2 Tarjetas Apiladas */}
           <div className="flex flex-col gap-6">
             
-            {/* --- TARJETA PEQUEÑA 1 (LA QUE MODIFICAMOS) --- */}
-            <div className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+            {/* --- TARJETA PEQUEÑA 1 --- */}
+            <a 
+              href="https://luma.com/event/evt-RUhCWGQQcMXDMri" 
+              data-luma-action="checkout"
+              data-luma-event-id="evt-RUhCWGQQcMXDMri"
+              className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
+            >
                <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                 <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover" />
+                 <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                </div>
-               <div className="flex flex-col flex-grow">
+               <div className="flex flex-col flex-grow relative">
                   <div className="flex justify-between items-start mb-2">
-                    <div className="flex flex-col">
                     <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.bluedot.tag}</span>
-                    </div>
-                    
-                    {/* BOTÓN ACTUALIZADO PARA LUMA */}
-                    <a 
-                      href="https://luma.com/event/evt-RUhCWGQQcMXDMri" 
-                      className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white hover:bg-principal hover:text-white hover:border-principal transition-colors duration-300"
-                      data-luma-action="checkout"
-                      data-luma-event-id="evt-RUhCWGQQcMXDMri"
-                    >
+                    <div className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors duration-300 flex-shrink-0">
                       <ArrowUpRight size={16} />
-                    </a>
+                    </div>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.bluedot.title}</h4>
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white group-hover:underline">{t.upcoming.bluedot.title}</h4>
                   <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.bluedot.description}
                   </p>
@@ -90,26 +86,31 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                      <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.bluedot.dateShort}</h5>
                   </div>
                </div>
-            </div>
+            </a>
 
-            {/* Tarjeta Pequeña 2 (Sin cambios) */}
-            <div className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+            {/* Tarjeta Pequeña 2 */}
+            <a 
+              href="https://osmaniredondo.substack.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
+            >
                <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                 <img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt="Recurso" className="w-full h-full object-cover" />
+                 <img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt="Recurso" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                </div>
-               <div className="flex flex-col flex-grow">
+               <div className="flex flex-col flex-grow relative">
                   <div className="flex justify-between items-start mb-2">
                     <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.readingGroup.tag}</span>
-                    <a href="https://osmaniredondo.substack.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white hover:bg-principal hover:text-white hover:border-principal transition-colors duration-300">
+                    <div className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors duration-300 flex-shrink-0">
                       <ArrowUpRight size={16} />
-                    </a>
+                    </div>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.readingGroup.title}</h4>
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white group-hover:underline">{t.upcoming.readingGroup.title}</h4>
                   <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.readingGroup.description}
                   </p>
                </div>
-            </div>
+            </a>
 
           </div>
         </div>
