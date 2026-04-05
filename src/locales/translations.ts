@@ -4,8 +4,8 @@ export const translations = {
       home: "Inicio",
       mission: "/Sobre iaS",
       events: "/Eventos",
-      about: "/Conocenos",
-      contact: "/Escribinos",
+      about: "/Conócenos",
+      contact: "/Escríbenos",
     },
     hero: {
       location: "",
@@ -45,7 +45,7 @@ La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a partic
     upcoming: {
       title: "Próximos Eventos",
       eventTitle: "Primer Encuentro: IA Safety en Madrid",
-      date: "28 de abril, 2026  | 19:00 - 21:00h",
+      date: "28 de abril, 2026  | 19:30 - 21:30h",
       location: "Celonis - Pl. de Manuel Gómez-Moreno, 2, Tetuán, Madrid",
       description: "Nuestro primer encuentro para conectar personas interesadas en seguridad de IA. Habrá charlas, networking y snacks. ¡Te esperamos!",
       cta: "Reserva tu plaza",
@@ -76,7 +76,7 @@ La IA ya cambió el mundo. La pregunta es si los hispanohablantes vamos a partic
     },
     subscribe: {
       title: "Forma parte de nuestra comunidad",
-      subtitle: "Recibi eventos, recursos y únete a la comunidad.",
+      subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
       name: "Nombre",
       email: "Email",
       linkedin: "Linkedin",
