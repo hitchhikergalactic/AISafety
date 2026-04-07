@@ -137,7 +137,7 @@ export default function App() {
 				<section id="sobre" className="px-4 md:px-8 py-8 md:py-16">
 					<div className="max-w-7xl mx-auto">
 						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
-					<div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
 						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} logoWhite={logoRiesgosIAWhite} theme={theme} />
 						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
 						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} theme={theme} />

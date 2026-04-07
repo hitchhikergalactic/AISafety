@@ -28,18 +28,18 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Tarjeta Grande (Izquierda) */}
-          <button 
-            onClick={onModalOpen}
-            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full"
+          <a 
+            href="https://luma.com/event/evt-UWEHRT5bDeLSYlv"
+            data-luma-action="checkout"
+            data-luma-event-id="evt-UWEHRT5bDeLSYlv"
+            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full relative"
           >
-            <div className="flex justify-between items-start mb-6">
-              <span className="font-mono text-sm tracking-widest text-white/90 uppercase">{t.upcoming.bluedot.tag}</span>
-              <div className="w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300">
-                <ArrowUpRight size={20} />
-              </div>
+            <span className="font-mono text-sm tracking-widest text-white/90 uppercase mb-6">{t.upcoming.bluedot.tag}</span>
+            <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300">
+              <ArrowUpRight size={20} />
             </div>
             <div className="flex-grow flex flex-col">
-              <div className="rounded-2xl overflow-hidden mb-6 aspect-video w-full bg-white/10">
+              <div className="rounded-2xl overflow-hidden mb-6 mt-10 aspect-video w-full bg-white/10">
                 <img 
                   src={eventImage} 
                   alt={t.upcoming.eventTitle} 
@@ -56,7 +56,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                  <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.dateShort}</h5>
               </div>
             </div>
-          </button>
+          </a>
 
           {/* Columna Derecha - 2 Tarjetas Apiladas */}
           <div className="flex flex-col gap-6">
@@ -78,7 +78,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                       <ArrowUpRight size={16} />
                     </div>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white group-hover:underline">{t.upcoming.bluedot.title}</h4>
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.bluedot.title}</h4>
                   <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.bluedot.description}
                   </p>
@@ -105,7 +105,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                       <ArrowUpRight size={16} />
                     </div>
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white group-hover:underline">{t.upcoming.readingGroup.title}</h4>
+                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.readingGroup.title}</h4>
                   <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.readingGroup.description}
                   </p>
