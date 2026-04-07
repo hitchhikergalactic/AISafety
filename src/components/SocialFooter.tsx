@@ -18,7 +18,7 @@ const SocialFooter = () => {
       <a href="https://substack.com/@osmaniredondo" className="hover:text-white transition-colors" aria-label="Substack">
         <SiSubstack />
       </a>
-      <a href="https://instagram.com/aisafetyspain" className="hover:text-white transition-colors" aria-label="Instagram">
+      <a href="https://www.instagram.com/aisafety_spain" className="hover:text-white transition-colors" aria-label="Instagram">
         <FaInstagram />
       </a>
     </div>
