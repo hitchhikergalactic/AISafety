@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { translations } from './locales/translations';
+import { parseText } from './utils/parseText';
 import {
 	BookOpen, Calendar, Globe, ArrowRight, X, User
 } from 'lucide-react';
@@ -200,7 +201,7 @@ export default function App() {
 					<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
 						<div className="flex-1 max-w-xl space-y-6 text-center md:text-left">
 							<h4>{t.about.title}</h4>
-							<p>
+							<p className="whitespace-pre-wrap">
 								{t.about.text1}
 							</p>
 							<p>
@@ -239,7 +240,7 @@ export default function App() {
 					<div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
 						<div className="flex-[2] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-16 min-h-[400px] flex items-center">
 							<h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
-								{t.mission.text}
+								{parseText(t.mission.text)}
 							</h3>
 						</div>
 						<div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
@@ -248,7 +249,9 @@ export default function App() {
 									{t.hero.ctaPrimary}
 								</button>
 							</div>
-							<SocialFooter />
+							<div className="flex justify-center">
+								<SocialFooter />
+							</div>
 						</div>
 					</div>
 				</section>
@@ -301,7 +304,12 @@ export default function App() {
 								<div className="mb-6">
 									<SocialFooter />
 								</div>
-								<h5 className="normal-case secundarios-light mb-4 italic">{t.footer.email}</h5>
+								<div className="text-sm leading-relaxed mb-1">
+									<p className="whitespace-pre-wrap">{parseText(t.footer.text1)}</p>
+								</div>
+								<a href={`mailto:${t.footer.email}`} className="normal-case text-principal hover:text-principal/80 transition-colors mb-4 font-medium">
+									{t.footer.email}
+								</a>
 							</div>
 							<div className="w-full md:w-auto flex justify-center md:justify-end mb-8 md:mb-0">
 								<img 

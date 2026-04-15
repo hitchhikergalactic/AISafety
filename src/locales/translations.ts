@@ -25,7 +25,7 @@ export const translations = {
     },
     mission: {
       title: "Sobre iaS",
-      text: "IA Safety para entender la inteligencia artificial como es, como podría llegar a ser y como nos gustaría que fuera.",
+      text: "**IA Safety** para entender la inteligencia artificial como es, como podría llegar a ser y como nos gustaría que fuera.",
     },
     pillars: {
       title: "El Hub en Acción",
@@ -86,6 +86,7 @@ export const translations = {
     footer: {
       tagline: "Parte del ecosistema global de AI Safety",
       copyright: "Copyright 2026 IA Safety · Built for a human-aligned future",
+      text1: "**Contacto**\nPreguntas, feedback o interesado en colaborar:",
       email: "hola@aisafety.es",
     }
   },
@@ -106,14 +107,12 @@ export const translations = {
     },
     why: {
       title: "Why an AI Safety Hub?",
-      text: `The most powerful AI in history is being built right now. Who ensures it's going in the right direction? That's AI Safety. And today that conversation happens in English, in Silicon Valley, without Spanish-speaking voices.
-For the 636 million of us who speak Spanish, that means more errors and less representation.
-Like a car: you don't need to be a mechanic to demand it has brakes. But someone has to design them.`,
-      text2: "aisafety.es exists so this conversation is ours too.",
+      text: `The most powerful AI systems in history are being built right now. Who makes sure they don’t cause catastrophic harm? That’s AI safety. Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.
+IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.`,
     },
     mission: {
       title: "Our Mission",
-      text: "AI Safety: to understand AI as it is, as it could be, and as we want it to be.",
+      text: "**AI safety**: understanding AI as it is, as it could be, and as we want it to be",
     },
     pillars: {
       title: "The Hub in Action",
@@ -154,14 +153,13 @@ Like a car: you don't need to be a mechanic to demand it has brakes. But someone
     },
     about: {
       title: "About this initiative",
-      text1: "This initiative creates a space to explore the technical and ethical challenges of advanced AI from our own reality and perspective.",
-      text2: "Led by Osmani Redondo, it connects researchers, students, policy professionals, and anyone curious about AI's future — building a voice from Spain for 600 million Spanish speakers worldwide.",
-      joinCta: "Want to be part of it?",
+      text1: `This initiative creates a space to engage seriously with the technical and governance challenges of advanced AI – alignment, control, and systemic risk – from a Spanish‑speaking context.\nLed by Osmani Redondo, It connects researchers, students, engineers, and policy professionals who want to:\n\t• understand the existential and catastrophic risks from advanced AI, and\n\t• either work directly on mitigating them, or generate better evidence about how these systems behave in Spanish.`,
+      text2:``,
       joinBtn: "Join us",
     },
     women4ais: {
       title: "We're part of Women4AIS",
-      text: "Women4AIS builds a global AI safety community where every voice matters. We believe diversity of perspectives makes this field stronger. If you share this vision, join us.",
+      text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
     },
     subscribe: {
       title: "Join the Hub",
@@ -174,7 +172,8 @@ Like a car: you don't need to be a mechanic to demand it has brakes. But someone
     },
     footer: {
       tagline: "Part of the global AI Safety ecosystem",
-      copyright: "Copyright 2026 AI Safety · Built for a human-aligned future",
+      copyright: "© 2026 AI Safety · Built for a human‑aligned future.",
+      text1:"**Contact**\nQuestions, feedback, or interested in collaborating:",
       email: "hola@aisafety.es",
     }
   }
