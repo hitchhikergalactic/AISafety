@@ -199,7 +199,7 @@ export default function App() {
 				{/* 5. CONOCENOS */}
 				<section id="conocenos" className="px-4 md:px-8 py-8 md:py-16">
 					<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
-						<div className="flex-1 max-w-xl space-y-6 text-center md:text-left">
+						<div className="flex-1 max-w-xl space-y-6 text-left">
 							<h4>{t.about.title}</h4>
 							<p className="whitespace-pre-wrap">
 								{t.about.text1}
