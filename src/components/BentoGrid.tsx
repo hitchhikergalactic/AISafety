@@ -63,9 +63,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
             
             {/* --- TARJETA PEQUEÑA 1 --- */}
             <a 
-              href="https://luma.com/event/evt-RUhCWGQQcMXDMri" 
+              href="https://luma.com/event/evt-0VE5ZoEm2vQFdXe"
               data-luma-action="checkout"
-              data-luma-event-id="evt-RUhCWGQQcMXDMri"
+              data-luma-event-id="evt-0VE5ZoEm2vQFdXe"
               className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
             >
                <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
