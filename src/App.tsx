@@ -137,7 +137,7 @@ export default function App() {
 				{/* 2. COLABORADORES */}
 				<section id="sobre" className="px-4 md:px-8 py-8 md:py-16">
 					<div className="max-w-7xl mx-auto">
-						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
+						<h2 className="h4-style mb-8 md:mb-12 text-center">{t.collaborators.title}</h2>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
 						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} logoWhite={logoRiesgosIAWhite} theme={theme} />
 						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
@@ -152,7 +152,7 @@ export default function App() {
 			<section id="mission" className="px-4 md:px-8 py-12 md:py-32">
 				<div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					<div className="animate-fade-in-up">
-						<h4 className="mb-4">{t.why.title}</h4>
+						<h2 className="h4-style mb-4">{t.why.title}</h2>
 						<div className="max-w-prose"> {/* 'prose' limita el ancho a unos 65 caracteres, ideal para lectura */}
 							<p className="whitespace-pre-line">{t.why.text}</p>
 							<p className="italic font-medium mt-4">{t.why.text2}</p>
@@ -200,7 +200,7 @@ export default function App() {
 				<section id="conocenos" className="px-4 md:px-8 py-8 md:py-16">
 					<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
 						<div className="flex-1 max-w-xl space-y-6 text-left">
-							<h4>{t.about.title}</h4>
+							<h2 className="h4-style">{t.about.title}</h2>
 							<p className="whitespace-pre-wrap">
 								{t.about.text1}
 							</p>
@@ -262,7 +262,7 @@ export default function App() {
 					  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					  
 					  <div className="flex-1 space-y-8 z-10">
-					<h3 className="text-secundarios-light dark:text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h3>
+					<h2 className="text-secundarios-light dark:text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h2>
 					<p className="text-secundarios-light dark:text-secundarios-light text-lg md:text-2xl font-serif max-w-2xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
 						  {t.women4ais.text}
 						</p>
