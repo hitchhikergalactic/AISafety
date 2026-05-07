@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
+import { LuMail, LuMapPin } from "react-icons/lu";
 
 // --- Import components ---
 import Navbar from './components/Navbar';
@@ -294,7 +295,7 @@ export default function App() {
 					<div className="max-w-7xl mx-auto text-center md:text-left">
 						<div className="flex flex-col-reverse md:flex-row justify-between items-center gap-12">
 							<div className="flex flex-col items-center md:items-start w-full md:w-auto">
-								<div className="bajada max-w-xs mb-6">{t.footer.tagline}</div>
+								<div className="bajada !text-secundarios-light max-w-xs mb-6">{t.footer.tagline}</div>
 								<button 
 									onClick={() => { setModalType('subscribe'); setShowModal(true); }} 
 									className="px-10 py-4 rounded-xl bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-3 mb-8"
@@ -304,11 +305,20 @@ export default function App() {
 								<div className="mb-6">
 									<SocialFooter />
 								</div>
-								<div className="text-sm leading-relaxed mb-1">
-									<p className="whitespace-pre-wrap">{parseText(t.footer.text1)}</p>
+								<div className="whitespace-pre-wrap mb-4">
+									<h5 className="!text-secundarios-light !mb-0">{t.footer.text1}</h5>
 								</div>
-								<a href={`mailto:${t.footer.email}`} className="normal-case text-principal hover:text-principal/80 transition-colors mb-4 font-medium">
-									{t.footer.email}
+								<a href={`mailto:${t.footer.email}`} className="inline-flex items-center gap-2 hover:!text-secundarios-light/80 transition-colors mb-1">
+									<h5 className="!text-secundarios-light !mb-0 inline-flex items-center gap-2">
+										<LuMail size={18} />
+										{t.footer.email}
+									</h5>
+								</a>
+								<a href={t.footer.dirUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:!text-secundarios-light/80 transition-colors mb-4">
+									<h5 className="!text-secundarios-light !mb-0 inline-flex items-center gap-2">
+										<LuMapPin size={18} />
+										{t.footer.dir}
+									</h5>
 								</a>
 							</div>
 							<div className="w-full md:w-auto flex justify-center md:justify-end mb-8 md:mb-0">

@@ -86,8 +86,10 @@ export const translations = {
     footer: {
       tagline: "Parte del ecosistema global de AI Safety",
       copyright: "Copyright 2026 IA Safety · Built for a human-aligned future",
-      text1: "**Contacto**\nPreguntas, feedback o interesado en colaborar:",
+      text1: "\nContacto\nPreguntas, feedback o interesado en colaborar:",
       email: "hola@aisafety.es",
+      dir:"Mad Tech Campus",
+      dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
     }
   },
   en: {
@@ -173,8 +175,10 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
     footer: {
       tagline: "Part of the global AI Safety ecosystem",
       copyright: "© 2026 AI Safety · Built for a human‑aligned future.",
-      text1:"**Contact**\nQuestions, feedback, or interested in collaborating:",
+      text1:"\nContact\nQuestions, feedback, or interested in collaborating:",
       email: "hola@aisafety.es",
+      dir: "Mad Tech Campus",
+      dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
     }
   }
 };
