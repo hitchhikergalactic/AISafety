@@ -28,13 +28,14 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Tarjeta Grande (Izquierda) */}
-          <a 
-            href="https://luma.com/event/evt-UWEHRT5bDeLSYlv"
-            data-luma-action="checkout"
-            data-luma-event-id="evt-UWEHRT5bDeLSYlv"
-            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full relative"
-          >
-            <span className="font-mono text-sm tracking-widest text-white/90 uppercase mb-6">{t.upcoming.bluedot.tag}</span>
+          <div 
+            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full relative">
+            {/* Future Luma links (commented for now):
+              href="https://luma.com/event/evt-UWEHRT5bDeLSYlv"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-UWEHRT5bDeLSYlv"
+            */}
+            <span className="font-mono text-sm tracking-widest text-white/90 uppercase mb-6">{t.upcoming.tag}</span>
             <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300">
               <ArrowUpRight size={20} />
             </div>
@@ -56,7 +57,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                  <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.dateShort}</h5>
               </div>
             </div>
-          </a>
+          </div>
 
           {/* Columna Derecha - 2 Tarjetas Apiladas */}
           <div className="flex flex-col gap-6">
