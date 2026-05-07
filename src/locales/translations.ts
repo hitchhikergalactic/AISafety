@@ -43,7 +43,7 @@ export const translations = {
       },
     },
     upcoming: {
-      tag: "/ PROXIMAMENTE",
+      tag: "/ PRÓXIMAMENTE",
       title: "Próximos Eventos",
       eventTitle: "Primer encuentro de W4AIAS",
       date: "",
