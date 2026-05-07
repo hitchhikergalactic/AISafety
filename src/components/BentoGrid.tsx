@@ -63,9 +63,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
             
             {/* --- TARJETA PEQUEÑA 1 --- */}
             <a 
-              href="https://luma.com/event/evt-0VE5ZoEm2vQFdXe"
+              href="https://luma.com/event/evt-CPNiAzx2NIYMgEd"
               data-luma-action="checkout"
-              data-luma-event-id="evt-0VE5ZoEm2vQFdXe"
+              data-luma-event-id="evt-CPNiAzx2NIYMgEd"
               className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
             >
                <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
@@ -82,8 +82,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
                     {t.upcoming.bluedot.description}
                   </p>
-                  <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium text-gray-500 dark:text-white">
-                     <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.bluedot.dateShort}</h5>
+                  <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium">
+                     <div className="flex font-medium font-heading text-secundarios-gray dark:text-white items-center gap-2 uppercase tracking-wider">
+                        {t.upcoming.bluedot.dateShort}
+                     </div>
                   </div>
                </div>
             </a>
