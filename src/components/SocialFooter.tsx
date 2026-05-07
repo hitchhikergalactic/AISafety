@@ -2,9 +2,10 @@ import React from 'react';
 import { 
   FaInstagram, 
   FaDiscord, 
-  FaLinkedin 
+  FaLinkedin
 } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
+import { LuMapPin } from "react-icons/lu";
 
 const SocialFooter = () => {
   return (
