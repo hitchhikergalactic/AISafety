@@ -45,7 +45,7 @@ export const translations = {
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
       title: "Próximos Eventos",
-      eventTitle: "Primer encuentro de W4AIAS",
+      eventTitle: "Primer encuentro de W4AIS",
       date: "",
       location: "",
       description: "La IA que se construye hoy decidirá cómo vivimos mañana. W4AIS nace para que más voces estén en esa conversación. Habrá charlas, networking y snacks. ¡Te esperamos!",
@@ -85,7 +85,7 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de AI Safety",
+      tagline: "Parte del ecosistema global de IA Safety",
       copyright: "Copyright 2026 IA Safety · Built for a human-aligned future",
       text1: "\nContacto\nPreguntas, feedback o interesado en colaborar:",
       email: "hola@aisafety.es",
