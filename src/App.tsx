@@ -15,8 +15,6 @@ import BentoGrid from './components/BentoGrid';
 import SocialFooter from './components/SocialFooter';
 
 // --- Import assets (Logos Colaboradores) ---
-import logoRiesgosIA from './assets/logos__riesgos_ia.svg';
-import logoRiesgosIAWhite from './assets/logos__riesgos_ia_white.png';
 import logoENAIS from './assets/logos__european_network_for_AI_safety.svg';
 import logoENAISWhite from './assets/logos__european_network_for_AI_safety_white.svg';
 import logoBlueDot from './assets/logos__bluedot_impact.svg';
@@ -140,7 +138,6 @@ export default function App() {
 					<div className="max-w-7xl mx-auto">
 						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
-						<CollaborativeCard href="https://riesgosia.org/es/" text="Riesgos IA" logo={logoRiesgosIA} logoWhite={logoRiesgosIAWhite} theme={theme} />
 						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
 						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} theme={theme} />
 						<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} theme={theme} />
