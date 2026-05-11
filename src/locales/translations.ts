@@ -49,7 +49,6 @@ export const translations = {
       date: "",
       location: "",
       description: "La IA que se construye hoy decidirá cómo vivimos mañana. W4AIS nace para que más voces estén en esa conversación. Habrá charlas, networking y snacks. ¡Te esperamos!",
-      cta: "Reserva tu plaza",
       dateShort: "Fecha disponible, muy pronto",
       bluedot: {
         tag: "/ COMUNIDAD",
