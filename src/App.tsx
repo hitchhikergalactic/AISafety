@@ -128,7 +128,7 @@ export default function App() {
 					<p className="bajada max-w-[950px] mx-auto">{t.hero.h2}</p>
 					<div className="mt-12 md:mt-16">
 						<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="px-12 py-5 rounded-anthro bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
-							{t.hero.ctaPrimary}
+							{t.hero.ctaSecondary}
 						</button>
 					</div>
 				</div>
@@ -147,26 +147,33 @@ export default function App() {
 					</div>
 				</section>
 			{/* 3. WHY HUB SECTION */}
-			<section id="mission" className="px-4 md:px-8 py-12 md:py-32">
-				<div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-					<div className="animate-fade-in-up">
-						<h4 className="mb-4">{t.why.title}</h4>
-						<div className="max-w-prose"> {/* 'prose' limita el ancho a unos 65 caracteres, ideal para lectura */}
-							<p className="whitespace-pre-line">{t.why.text}</p>
-							<p className="italic font-medium mt-4">{t.why.text2}</p>
+			<section id="mission" className="px-4 md:px-8 py-8 md:py-16">
+				{/* Usamos flex-col y md:flex-row con la misma separación (gap) que Conócenos */}
+				<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
+					
+					{/* TEXTO: Cambiado 'max-w-prose' por 'max-w-xl space-y-6' para clonar a Conócenos */}
+					<div className="animate-fade-in-up flex-1 max-w-xl space-y-6 text-left">
+						<h4>{t.why.title}</h4>
+						<p className="whitespace-pre-line">{t.why.text}</p>
+						<p className="italic font-medium">{t.why.text2}</p>
+					</div>
+					
+					{/* IMAGEN: Cambiado el contenedor para que ocupe el mismo tercio (w-full md:w-1/3) */}
+					<div className="w-full md:w-1/3 flex justify-center">
+						<div className="relative group w-full max-w-[500px] mx-auto">
+							<div className="aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated transition-all duration-700">
+								<img
+									src="https://i.imgur.com/wqT4oET.png"
+									alt="AI Safety Madrid"
+									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+								/>
+							</div>
 						</div>
 					</div>
-					<div className="relative group">
-						<div className="aspect-square max-w-[500px] mx-auto bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated transition-all duration-700">
-							<img
-								src="https://i.imgur.com/wqT4oET.png"
-								alt="AI Safety Madrid"
-								className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-							/>
-						</div>
-					</div>
+
 				</div>
 			</section>
+
 			{/* 4. PILLARS SECTION */}
 			{/* <Section id="hub-action">
 					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
@@ -189,7 +196,7 @@ export default function App() {
 					</div>
 				</Section> */}
 				{/* 4. EVENTOS - BENTO GRID */}
-			<section id="eventos" className="px-4 md:px-8 py-12 bg-white/20 dark:bg-white/5">
+			<section id="eventos">
 					<div className="max-w-7xl mx-auto">
 						<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
 					</div>

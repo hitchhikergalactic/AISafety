@@ -23,95 +23,142 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
   }, []);
 
   return (
-    <section id="eventos" className="py-10 md:py-20 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <section id="eventos" className="py-12 md:py-24 px-6">
+      <div className="max-w-[1100px] mx-auto">
+        
+        {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           
-          {/* Tarjeta Grande (Izquierda) */}
-          <div 
-            className="bg-principal rounded-3xl border border-principal p-6 md:p-8 flex flex-col h-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-white text-left cursor-pointer w-full relative">
-            {/* Future Luma links (commented for now):
-              href="https://luma.com/event/evt-UWEHRT5bDeLSYlv"
-              data-luma-action="checkout"
-              data-luma-event-id="evt-UWEHRT5bDeLSYlv"
-            */}
-            <span className="font-mono text-sm tracking-widest text-white/90 uppercase mb-6">{t.upcoming.tag}</span>
-            <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 h-10 rounded-lg border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-principal hover:border-white transition-colors duration-300">
-              <ArrowUpRight size={20} />
-            </div>
-            <div className="flex-grow flex flex-col">
-              <div className="rounded-2xl overflow-hidden mb-6 mt-10 aspect-video w-full bg-white/10">
+          {/* --- COLUMNA IZQUIERDA (2 Tarjetas: Hero + Secundaria) --- */}
+          <div className="flex flex-col gap-4 h-full">
+            
+            {/* TARJETA 1: Hero - Imagen */}
+            <div className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col flex-1 transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <span className="font-sans text-sm text-label-gray uppercase">
+                 {t.upcoming.tag}
+                </span>
+                <button className="w-8 h-8 border border-neutral-400 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors">
+                  <ArrowUpRight size={14} />
+                </button>
+              </div>
+              
+              <div className="mb-4 overflow-hidden bg-neutral-100 aspect-[3/2] rounded-md">
                 <img 
                   src={eventImage} 
-                  alt={t.upcoming.eventTitle} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  alt={t.upcoming.eventTitle}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <h4 className="mb-3 !text-white">
+              
+              <h4 className="text-base font-bold uppercase tracking-tight mb-2">
                 {t.upcoming.eventTitle}
               </h4>
-              <p className="text-white/90 text-lg mb-4 line-clamp-3">
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-4">
                 {t.upcoming.description}
               </p>
-              <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium text-white/80">
-                 <h5 className="flex items-center gap-2 uppercase tracking-wider">{t.upcoming.dateShort}</h5>
+              <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
+                {t.upcoming.dateShort.toUpperCase()}
+              </h5>
+            </div>
+
+            {/* TARJETA 2: Secundaria - Con Imagen y Texto (Innovation) */}
+            <div className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col flex-1 transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <span className="font-sans text-sm text-label-gray uppercase block">
+                  {t.upcoming.innovation.tag}
+                </span>
+                <button className="w-8 h-8 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors">
+                  <ArrowUpRight size={14} />
+                </button>
               </div>
+              <div className="mb-4 overflow-hidden bg-neutral-100 aspect-[3/2] rounded-md">
+                <img 
+                  src={eventImage}
+                  alt={t.upcoming.innovation.title}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h4 className="text-base font-bold uppercase tracking-tight mb-1">{t.upcoming.innovation.title}</h4>
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-4">{t.upcoming.innovation.description}</p>
+              <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
+                {t.upcoming.innovation.dateShort.toUpperCase()}
+              </h5>
             </div>
           </div>
 
-          {/* Columna Derecha - 2 Tarjetas Apiladas */}
-          <div className="flex flex-col gap-6">
+          {/* --- COLUMNA DERECHA (3 Tarjetas: Horizontal + Apaisada + Research) --- */}
+          <div className="flex flex-col gap-5 h-full">
             
-            {/* --- TARJETA PEQUEÑA 1 --- */}
+            {/* TARJETA 3: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
               href="https://luma.com/event/evt-CPNiAzx2NIYMgEd"
               data-luma-action="checkout"
               data-luma-event-id="evt-CPNiAzx2NIYMgEd"
-              className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
-               <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                 <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+               <div className="flex justify-between items-start mb-4">
+                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
+                  <button className="w-8 h-8 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors">
+                    <ArrowUpRight size={14} />
+                  </button>
                </div>
-               <div className="flex flex-col flex-grow relative">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.bluedot.tag}</span>
-                    <div className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors duration-300 flex-shrink-0">
-                      <ArrowUpRight size={16} />
-                    </div>
+               <div className="flex gap-4 flex-1">
+                  <div className="w-32 h-32 bg-neutral-100 overflow-hidden flex-shrink-0 rounded-md">
+                    <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.bluedot.title}</h4>
-                  <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
-                    {t.upcoming.bluedot.description}
-                  </p>
-                  <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm font-medium">
-                     <div className="flex font-medium font-heading text-secundarios-gray dark:text-white items-center gap-2 uppercase tracking-wider">
-                        {t.upcoming.bluedot.dateShort}
-                     </div>
+                  <div className="flex flex-col flex-1">
+                    <h4 className="text-base font-bold uppercase tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-4 lex-grow">{t.upcoming.bluedot.description}</p>
+                    <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
                </div>
             </a>
 
-            {/* Tarjeta Pequeña 2 */}
+            {/* TARJETA 4: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
               href="https://osmaniredondo.substack.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer group"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
-               <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                 <img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt="Recurso" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="flex justify-between items-start mb-4">
+                <span className="font-sans text-sm text-label-gray uppercase">
+                   {t.upcoming.readingGroup.tag}
+                </span>
+                <button className="w-8 h-8 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors">
+                  <ArrowUpRight size={14} />
+                </button>
+              </div>
+              <div className="aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
+                <img src="https://i.imgur.com/vF4Dz3Z.jpeg" alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+              </div>
+              <h4 className="text-base font-bold uppercase tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm line-clamp-2 flex-grow">{t.upcoming.readingGroup.description}</p>
+            </a>
+
+            {/* TARJETA 5: Research - Texto + Botón */}
+            <a 
+              href="https://luma.com/event/evt-CPNiAzx2NIYMgEd"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-CPNiAzx2NIYMgEd"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+            >
+               <div className="flex justify-between items-start mb-4">
+                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
+                  <button className="w-8 h-8 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors">
+                    <ArrowUpRight size={14} />
+                  </button>
                </div>
-               <div className="flex flex-col flex-grow relative">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="font-mono text-xs tracking-widest text-gray-500 dark:text-white uppercase">{t.upcoming.readingGroup.tag}</span>
-                    <div className="w-8 h-8 rounded-md border border-gray-200 dark:border-white/20 flex items-center justify-center text-gray-700 dark:text-white group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors duration-300 flex-shrink-0">
-                      <ArrowUpRight size={16} />
-                    </div>
+               <div className="flex gap-4 flex-1">
+                  <div className="w-32 h-32 bg-neutral-100 overflow-hidden flex-shrink-0 rounded-md">
+                    <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
-                  <h4 className="mb-2 !text-cuartos-purple dark:!text-white">{t.upcoming.readingGroup.title}</h4>
-                  <p className="text-gray-600 dark:text-white text-sm line-clamp-4 mb-auto">
-                    {t.upcoming.readingGroup.description}
-                  </p>
+                  <div className="flex flex-col flex-1">
+                    <h4 className="text-base font-bold uppercase tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-4 lex-grow">{t.upcoming.bluedot.description}</p>
+                    <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
+                  </div>
                </div>
             </a>
 

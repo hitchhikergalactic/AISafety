@@ -3,16 +3,16 @@ export const translations = {
     nav: {
       home: "Inicio",
       mission: "/Sobre iaS",
-      events: "/Eventos",
+      events: "/Ecosistema IAS",
       about: "/Conócenos",
       contact: "/Escríbenos",
     },
     hero: {
       location: "",
       h1: "Hub de IA Safety",
-      h2: "Construyendo una comunidad para comprender y reducir riesgos existenciales de sistemas avanzados de IA",
+      h2: "IAS es el referente de seguridad de IA en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura.",
       ctaPrimary: "¡Quiero formar parte!",
-      ctaSecondary: "Suscríbete",
+      ctaSecondary: "Orienta tu carrera hacia IA safety",
     },
     why: {
       title: "¿Por qué un Hub de Seguridad en IA?",
@@ -60,6 +60,17 @@ export const translations = {
         tag: "/ DIVULGACIÓN",
         title: "El desafío más grande de todos los tiempos",
         description: "Nuestra directora Osmani ya está en Substack hablando de IA Safety.",
+      },
+      innovation: {
+        tag: "/ INNOVACIÓN",
+        title: "Future of AI Safety",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        dateShort: "Meetup mensual de IA Safety "
+      },
+      research: {
+        tag: "/ INVESTIGACIÓN",
+        title: "Safety Research Initiative",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       }
     },
     collaborators: {
