@@ -98,6 +98,10 @@ export const translations = {
       title: "Formamos parte de Women4AIS",
       text: "Women4AIS construye una comunidad global en seguridad de IA donde todas las voces suman. Creemos que la diversidad de perspectivas hace este campo más fuerte. Si compartes esta visión, únete.",
     },
+    seminario: {
+      title: "Seminario IA Safety",
+      subtitle: "Descubre las charlas y expositores especializados en seguridad de IA",
+    },
     subscribe: {
       title: "Forma parte de nuestra comunidad",
       subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
@@ -214,8 +218,10 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
     women4ais: {
       title: "We're part of Women4AIS",
       text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
-    },
-    subscribe: {
+    },    seminario: {
+      title: "AI Safety Seminar",
+      subtitle: "Discover talks and speakers specialized in AI Safety",
+    },    subscribe: {
       title: "Join the Hub",
       subtitle: "Be part of the AI Safety Hub. Receive news about events, resources, and join the community.",
       name: "Name",
