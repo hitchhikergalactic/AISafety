@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { translations } from '../locales/translations';
 import { parseText } from '../utils/parseText';
 import {
-	BookOpen, Calendar, Globe, ArrowRight, X, User
+	Globe, ArrowRight, X
 } from 'lucide-react';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
@@ -10,7 +10,7 @@ import { LuMail, LuMapPin } from "react-icons/lu";
 
 // --- Import components ---
 import Navbar from '../components/Navbar';
-import { Section, PillarCard, CollaborativeCard } from '../components/UI';
+import { CollaborativeCard } from '../components/UI';
 import BentoGrid from '../components/BentoGrid';
 import SocialFooter from '../components/SocialFooter';
 import ImpactFigures from '../components/ImpactFigures';
