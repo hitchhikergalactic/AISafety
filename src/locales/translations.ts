@@ -47,7 +47,7 @@ export const translations = {
         text: "Recursos accesibles, traducciones de papers clave y guías para todos los niveles.",
       },
       events: {
-        title: "Eventos",
+        title: "Ecosistema IAS",
         text: "Meetups presenciales y virtuales, charlas con expertos, workshops técnicos.",
       },
       community: {

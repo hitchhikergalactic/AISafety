@@ -25,7 +25,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
   return (
     <section id="eventos" className="py-12 md:py-24 px-6">
       <div className="max-w-[1100px] mx-auto">
-        
+        <div className="max-w-9xl mx-auto md:gap-24 items-left justify-left mb-12"> 
+          <h4>{t.pillars.events.title}</h4>
+        </div>
+
         {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           

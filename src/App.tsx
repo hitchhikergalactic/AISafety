@@ -175,7 +175,6 @@ export default function App() {
 					/>
 				)}
 			</section>
-
 			{/* 4. PILLARS SECTION */}
 			{/* <Section id="hub-action">
 					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
@@ -198,10 +197,13 @@ export default function App() {
 					</div>
 				</Section> */}
 				{/* 4. EVENTOS - BENTO GRID */}
-			<section id="eventos">
-					<div className="max-w-7xl mx-auto">
-						<BentoGrid t={t} onModalOpen={() => { setModalType('event'); setShowModal(true); }} />
-					</div>
+				<section id="eventos">
+				<div className="max-w-7xl mx-auto">
+					<BentoGrid 
+					t={t} 
+					onModalOpen={() => { setModalType('event'); setShowModal(true); }} 
+					/>
+				</div>
 				</section>
 				{/* 5. CONOCENOS */}
 				<section id="conocenos" className="px-4 md:px-8 py-8 md:py-16">
