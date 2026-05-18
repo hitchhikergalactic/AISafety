@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import { Section, PillarCard, CollaborativeCard } from './components/UI';
 import BentoGrid from './components/BentoGrid';
 import SocialFooter from './components/SocialFooter';
+import ImpactFigures from './components/ImpactFigures';
 
 // --- Import assets (Logos Colaboradores) ---
 import logoENAIS from './assets/logos__european_network_for_AI_safety.svg';
@@ -120,7 +121,6 @@ export default function App() {
 			{/* 1. HERO SECTION */}
 			<section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden">
 				<div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-principal/5 rounded-full blur-[100px] pointer-events-none"></div>
-				{/* CAMBIO: max-w-7xl mx-auto para alinear con el resto */}
 				<div className="max-w-7xl mx-auto text-center z-10 animate-fade-in-up w-full">
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
@@ -148,17 +148,14 @@ export default function App() {
 				</section>
 			{/* 3. WHY HUB SECTION */}
 			<section id="mission" className="px-4 md:px-8 py-8 md:py-16">
-				{/* Usamos flex-col y md:flex-row con la misma separación (gap) que Conócenos */}
 				<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
 					
-					{/* TEXTO: Cambiado 'max-w-prose' por 'max-w-xl space-y-6' para clonar a Conócenos */}
 					<div className="animate-fade-in-up flex-1 max-w-xl space-y-6 text-left">
 						<h4>{t.why.title}</h4>
 						<p className="whitespace-pre-line">{t.why.text}</p>
 						<p className="italic font-medium">{t.why.text2}</p>
 					</div>
 					
-					{/* IMAGEN: Cambiado el contenedor para que ocupe el mismo tercio (w-full md:w-1/3) */}
 					<div className="w-full md:w-1/3 flex justify-center">
 						<div className="relative group w-full max-w-[500px] mx-auto">
 							<div className="aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated transition-all duration-700">
@@ -170,8 +167,13 @@ export default function App() {
 							</div>
 						</div>
 					</div>
-
 				</div>
+				{t.why.impactFigures && (
+					<ImpactFigures 
+						key={lang}
+						data={t.why.impactFigures} 
+					/>
+				)}
 			</section>
 
 			{/* 4. PILLARS SECTION */}

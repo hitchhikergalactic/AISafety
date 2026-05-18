@@ -22,6 +22,19 @@ export const translations = {
       Como un coche: no necesitas ser mecánico para exigir que tenga frenos. Pero alguien tiene que diseñarlos.
       `,
       text2:"aisafety.es existe para que esa conversación también sea nuestra.",
+      impactFigures: {
+        title: "Cifras que impactan",
+        item1: "+636M",
+        item1_1: "de personas hablan español en el mundo",
+        item2: "21",
+        item2_1: "países tienen el español como lengua oficial",
+        item3: "+50",
+        item3_1: "personas asisten a los seminarios mensuales de iaS",
+        item4: "1er",
+        item4_1: "nodo especializado en seguridad de la IA en español",
+        item5: "Abril 2026",
+        item5_1: "primer evento de IA Safety en Madrid"
+      }
     },
     mission: {
       title: "Sobre iaS",
@@ -120,8 +133,23 @@ export const translations = {
     },
     why: {
       title: "Why an AI Safety Hub?",
-      text: `The most powerful AI systems in history are being built right now. Who makes sure they don’t cause catastrophic harm? That’s AI safety. Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.
+      text: `The most powerful AI systems in history are being built right now. Who makes sure they don't cause catastrophic harm? That's AI safety. Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.
+
 IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.`,
+      text2: "The AI being built today will decide how we live tomorrow. Who ensures Spanish speakers are part of that conversation?",
+      impactFigures: {
+        title: "Impact Figures",
+        item1: "636M",
+        item1_1: "people speak Spanish worldwide",
+        item2: "21",
+        item2_1: "countries have Spanish as official language",
+        item3: "50+",
+        item3_1: "people attend iaS monthly seminars",
+        item4: "1st",
+        item4_1: "node specialized in AI Safety in Spanish",
+        item5: "April 2026",
+        item5_1: "first AI Safety event in Madrid"
+      }
     },
     mission: {
       title: "Our Mission",
@@ -155,11 +183,23 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
         tag: "/ COMMUNITY",
         title: "Bluedot Impact Spain",
         description: "People from around the world connecting on AI Safety in Spanish. Conversations we needed to have in our language.",
+        dateShort: "Monthly AI Safety meetup"
       },
       readingGroup: {
         tag: "/ NEWSLETTER",
         title: "The Greatest Challenge of Our Time",
         description: "Our director Osmani is already writing about AI Safety on Substack.",
+      },
+      innovation: {
+        tag: "/ INNOVATION",
+        title: "Future of AI Safety",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        dateShort: "Monthly AI Safety meetup"
+      },
+      research: {
+        tag: "/ RESEARCH",
+        title: "Safety Research Initiative",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       }
     },
     collaborators: {
