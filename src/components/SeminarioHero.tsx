@@ -7,13 +7,13 @@ interface SeminarioHeroProps {
 
 const SeminarioHero: React.FC<SeminarioHeroProps> = ({ t }) => {
   return (
-    <section className="mb-12 md:mb-16">
+    <section className="mb-10 md:mb-16">
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl mb-4 text-secundarios-dark dark:text-secundarios-light">
-          {t.seminario?.title || 'Seminario IA Safety'}
+        <h2 className="text-3xl md:text-4xl mb-2 text-secundarios-dark dark:text-secundarios-light">
+          {t.seminario.title}
         </h2>
         <p className="bajada max-w-[950px] mx-auto">
-          {t.seminario?.subtitle || 'Descubre las charlas y expositores especializados en seguridad de IA'}
+          {t.seminario.subtitle}
         </p>
       </div>
     </section>

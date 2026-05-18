@@ -10,6 +10,7 @@ import SocialFooter from '../components/SocialFooter';
 import { listaDeCharlas, Charla } from '../data/charlas';
 import logo from '../assets/safety_id_logo_white_leyenda.svg';
 import logoWhite from '../assets/ias_logo_white.svg';
+import headerImg from '../assets/header_bluedot_meetup.png';
 
 type Language = 'es' | 'en';
 type Theme = 'light' | 'dark';
@@ -40,6 +41,15 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
       {/* Barra de navegación global */}
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
       
+      {/* Header con imagen responsiva */}
+      <section className="w-full h-[280px] md:h-[375px] lg:h-[375px] overflow-hidden mt-24">
+        <img 
+          src={headerImg} 
+          alt="Bluedot Meetup Header" 
+          className="w-full h-full object-cover"
+        />
+      </section>
+      
       {/* Contenedor principal con margen superior para no quedar oculto por el Navbar flotante */}
       <div className="pt-28 md:pt-32 px-4 md:px-8">
         
@@ -47,7 +57,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
         <SeminarioHero t={t} />
 
         {/* Sección de la Grilla pasando el listado de datos real y el idioma activo */}
-        <section className="mb-12 md:mb-16">
+        <section className="mb-10 md:mb-16">
           <GrillaSeminario 
             charlas={listaDeCharlas}
             lang={lang} 

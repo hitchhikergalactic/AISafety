@@ -219,11 +219,13 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
     women4ais: {
       title: "We're part of Women4AIS",
       text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
-    },    seminario: {
+    },
+    seminario: {
       title: "AI Safety Seminar",
       submenu: "AI Safety Seminar",
       subtitle: "Discover talks and speakers specialized in AI Safety",
-    },    subscribe: {
+    },
+    subscribe: {
       title: "Join the Hub",
       subtitle: "Be part of the AI Safety Hub. Receive news about events, resources, and join the community.",
       name: "Name",
