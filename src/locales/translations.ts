@@ -100,6 +100,7 @@ export const translations = {
     },
     seminario: {
       title: "Seminario IA Safety",
+      submenu: "Seminario IA Safety",
       subtitle: "Descubre las charlas y expositores especializados en seguridad de IA",
     },
     subscribe: {
@@ -124,7 +125,7 @@ export const translations = {
     nav: {
       home: "Home",
       mission: "/About iaS",
-      events: "/Events",
+      events: "/Ecosistema ias",
       about: "/About us",
       contact: "/Contact us",
     },
@@ -220,6 +221,7 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
       text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
     },    seminario: {
       title: "AI Safety Seminar",
+      submenu: "AI Safety Seminar",
       subtitle: "Discover talks and speakers specialized in AI Safety",
     },    subscribe: {
       title: "Join the Hub",
