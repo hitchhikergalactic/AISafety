@@ -16,6 +16,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -27,7 +28,14 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
 
   const navLinks = [
     { href: "#mission", label: t.nav.mission, to: "/?section=mission" },
-    { href: "#eventos", label: t.nav.events, to: "/?section=eventos" },
+    { 
+      href: "#eventos", 
+      label: t.nav.events, 
+      to: "/?section=eventos",
+      sublinks: [
+        { label: t.seminario?.submenu, path: "/seminario-bluedot-spain" }
+      ]
+    },
     { href: "#conocenos", label: t.nav.about, to: "/?section=conocenos" },
     { href: "#newsletter", label: t.nav.contact, to: "/?section=newsletter" },
   ];
@@ -71,14 +79,39 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg tracking-wide opacity-80">
           {navLinks.map(link => (
-            <button 
-              key={link.href} 
-              onClick={() => handleNavClick(link.to, link.href.slice(1))}
-              className="text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principalLight transition-all duration-300 relative group overflow-hidden cursor-pointer bg-transparent border-none"
-            >
-              {link.label.toUpperCase()}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </button>
+            <div key={link.href} className="relative group">
+              <button 
+                onClick={() => {
+                  if (!link.sublinks) {
+                    handleNavClick(link.to, link.href.slice(1));
+                  } else {
+                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
+                  }
+                }}
+                className="text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principalLight transition-all duration-300 relative overflow-hidden cursor-pointer bg-transparent border-none"
+              >
+                {link.label.toUpperCase()}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              </button>
+              
+              {/* Submenu Dropdown */}
+              {link.sublinks && (
+                <div className="absolute left-0 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div className="bg-secundarios-light dark:bg-secundarios-dark border border-secundarios-dark/10 rounded-sm overflow-hidden">
+                    {link.sublinks.map((sublink, idx) => (
+                      <Link
+                        key={idx}
+                        to={sublink.path}
+                        onClick={() => setIsOpen(false)}
+                        className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
@@ -109,15 +142,41 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
       <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
-            <button 
-              key={link.href} 
-              onClick={() => handleNavClick(link.to, link.href.slice(1))}
-              className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principal border-b border-secundarios-dark/10 pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              {link.label.toUpperCase()}
-              <ArrowRight size={24} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-            </button>
+            <div key={link.href}>
+              <button 
+                onClick={() => {
+                  if (!link.sublinks) {
+                    handleNavClick(link.to, link.href.slice(1));
+                  } else {
+                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
+                  }
+                }}
+                className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full"
+                style={{ transitionDelay: `${idx * 50}ms` }}
+              >
+                {link.label.toUpperCase()}
+                <ArrowRight size={24} className={`opacity-40 group-hover:opacity-100 transition-all ${openSubmenu === link.href ? 'rotate-90' : ''}`} />
+              </button>
+              
+              {/* Mobile Submenu */}
+              {link.sublinks && openSubmenu === link.href && (
+                <div className="ml-4 flex flex-col gap-3 pb-4">
+                  {link.sublinks.map((sublink, subIdx) => (
+                    <Link
+                      key={subIdx}
+                      to={sublink.path}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setOpenSubmenu(null);
+                      }}
+                      className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors"
+                    >
+                      {sublink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>
