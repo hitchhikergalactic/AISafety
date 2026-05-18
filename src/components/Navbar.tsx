@@ -42,13 +42,16 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
 
   const handleNavClick = (to: string, sectionId: string) => {
     setIsOpen(false);
+    setOpenSubmenu(null);
     
     // Si ya estamos en home, solo scroll
     if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
     } else {
       // Si estamos en otra ruta, navega a home y luego scroll
       navigate('/');
@@ -57,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 100);
+      }, 300);
     }
   };
 
@@ -68,7 +71,15 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
 
       <div className={`max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
-        <Link to="/" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
+        <Link 
+          to="/" 
+          onClick={() => {
+            setIsOpen(false);
+            setOpenSubmenu(null);
+            window.scrollTo(0, 0);
+          }}
+          className="shrink-0 transition-opacity duration-300 hover:opacity-80"
+        >
           <img 
             src={theme === 'dark' ? logoWhite : logo} 
             alt="AI Safety España" 
@@ -85,6 +96,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
                   if (!link.sublinks) {
                     handleNavClick(link.to, link.href.slice(1));
                   } else {
+                    // Si tiene submenu, primero navega a la sección y luego alterna submenu
+                    handleNavClick(link.to, link.href.slice(1));
                     setOpenSubmenu(openSubmenu === link.href ? null : link.href);
                   }
                 }}
@@ -102,7 +115,11 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
                       <Link
                         key={idx}
                         to={sublink.path}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setOpenSubmenu(null);
+                          window.scrollTo(0, 0);
+                        }}
                         className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
                       >
                         {sublink.label}
@@ -148,6 +165,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
                   if (!link.sublinks) {
                     handleNavClick(link.to, link.href.slice(1));
                   } else {
+                    // Si tiene submenu, primero navega a la sección y luego alterna submenu
+                    handleNavClick(link.to, link.href.slice(1));
                     setOpenSubmenu(openSubmenu === link.href ? null : link.href);
                   }
                 }}
@@ -168,6 +187,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
                       onClick={() => {
                         setIsOpen(false);
                         setOpenSubmenu(null);
+                        window.scrollTo(0, 0);
                       }}
                       className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors"
                     >
