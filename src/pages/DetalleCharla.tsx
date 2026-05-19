@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import Navbar from '../components/Navbar';
 import CharlasSection from '../components/CharlasSection';
+import Footer from '../components/Footer';
 import { listaDeCharlas } from '../data/charlas'; //
 
 type Language = 'es' | 'en';
@@ -40,6 +41,11 @@ const DetalleCharla: React.FC<DetalleCharlaProps> = ({ lang, setLang, theme, set
       <main className="bg-secundarios-light dark:bg-secundarios-dark transition-colors duration-300">
         <CharlasSection charlaActivaProp={charlaActiva} lang={lang} />
       </main>
+      <Footer 
+        lang={lang} 
+        theme={theme} 
+        onSubscribeClick={() => {}}
+      />
     </>
   );
 };
