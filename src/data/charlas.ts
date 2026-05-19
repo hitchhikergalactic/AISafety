@@ -20,8 +20,8 @@ export interface Charla {
   id: string; // slug: nombre-charla
   tituloEs: string;
   tituloEn: string;
-  descripcionEs: string; // Contenido largo ES
-  descripcionEn: string; // Contenido largo EN
+  textoEs: string; // Contenido largo ES
+  textoEn: string; // Contenido largo EN
   descripcionCortaEs: string; // Versión corta para tarjetas ES
   descripcionCortaEn: string; // Versión corta para tarjetas EN
   imagen: string; // URL de imagen para la tarjeta
@@ -41,8 +41,8 @@ export const listaDeCharlas: Charla[] = [
     tituloEn: "INTRODUCTION TO AI SAFETY",
     descripcionCortaEs: "Una visión general de los principales desafíos en la seguridad de la inteligencia artificial.",
     descripcionCortaEn: "An overview of the main challenges in artificial intelligence security.",
-    descripcionEs: "En esta charla exploraremos los fundamentos de AI Safety, incluyendo alineación de valores, control de sistemas complejos y gobernanza de IA. Perfecto para principiantes.",
-    descripcionEn: "In this talk we will explore the fundamentals of AI Safety, including value alignment, control of complex systems, and AI governance. Perfect for beginners.",
+    textoEs: "En esta charla exploraremos los fundamentos de AI Safety, incluyendo alineación de valores, control de sistemas complejos y gobernanza de IA. Perfecto para principiantes.",
+    textoEn: "In this talk we will explore the fundamentals of AI Safety, including value alignment, control of complex systems, and AI governance. Perfect for beginners.",
     imagen: "https://i.imgur.com/wqT4oET.png",
     fecha: "2026-05-20",
     tags: ["AI Safety", "Principiantes"],
@@ -71,8 +71,8 @@ export const listaDeCharlas: Charla[] = [
     tituloEn: "AI GOVERNANCE AND COMPLEX SYSTEMS",
     descripcionCortaEs: "Estrategias para asegurar el control de sistemas de IA avanzados mediante marcos regulatorios.",
     descripcionCortaEn: "Strategies to ensure control of advanced AI systems through regulatory frameworks.",
-    descripcionEs: "Exploraremos marcos de gobernanza, políticas públicas y mejores prácticas para controlar sistemas de IA complejos. Incluye casos de estudio reales.",
-    descripcionEn: "We will explore governance frameworks, public policies and best practices for controlling complex AI systems. Includes real case studies.",
+    textoEs: "Exploraremos marcos de gobernanza, políticas públicas y mejores prácticas para controlar sistemas de IA complejos. Incluye casos de estudio reales.",
+    textoEn: "We will explore governance frameworks, public policies and best practices for controlling complex AI systems. Includes real case studies.",
     imagen: "https://i.imgur.com/vF4Dz3Z.jpeg",
     fecha: "2026-05-27",
     tags: ["Gobernanza", "Políticas"],
@@ -101,8 +101,8 @@ export const listaDeCharlas: Charla[] = [
     tituloEn: "VALUE ALIGNMENT IN LANGUAGE MODELS",
     descripcionCortaEs: "Técnicas avanzadas para alinear los objetivos de los modelos de IA con valores humanos.",
     descripcionCortaEn: "Advanced techniques for aligning AI model objectives with human values.",
-    descripcionEs: "Esta charla profundiza en metodologías técnicas para lograr alineación de valores, incluyendo RLHF, Constitutional AI y otros enfoques innovadores.",
-    descripcionEn: "This talk delves into technical methodologies for achieving value alignment, including RLHF, Constitutional AI and other innovative approaches.",
+    textoEs: "Esta charla profundiza en metodologías técnicas para lograr alineación de valores, incluyendo RLHF, Constitutional AI y otros enfoques innovadores.",
+    textoEn: "This talk delves into technical methodologies for achieving value alignment, including RLHF, Constitutional AI and other innovative approaches.",
     imagen: "https://i.imgur.com/wqT4oET.png",
     fecha: "2026-06-03",
     tags: ["Alineación", "Técnica"],
