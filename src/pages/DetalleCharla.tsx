@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import Navbar from '../components/Navbar';
@@ -22,6 +22,11 @@ const DetalleCharla: React.FC<DetalleCharlaProps> = ({ lang, setLang, theme, set
   const charlaActiva = charlaId 
     ? listaDeCharlas.find((c) => c.id === charlaId) || null //
     : listaDeCharlas[0] || null; //
+
+  // Scroll al inicio cuando se carga o cambia la charla
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [charlaId]);
 
   if (!charlaActiva) {
     return (
