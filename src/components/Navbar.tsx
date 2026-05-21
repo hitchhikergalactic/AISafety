@@ -27,7 +27,14 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
   }, []);
 
   const navLinks = [
-    { href: "#mission", label: t.nav.mission, to: "/?section=mission" },
+    { 
+      href: "#mission", 
+      label: t.nav.mission, 
+      to: "/?section=mission",
+      sublinks: [
+        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que_hacemos" }
+      ]
+    },
     { 
       href: "#eventos", 
       label: t.nav.events, 
