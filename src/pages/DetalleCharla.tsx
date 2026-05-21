@@ -19,7 +19,6 @@ interface DetalleCharlaProps {
 const DetalleCharla: React.FC<DetalleCharlaProps> = ({ lang, setLang, theme, setTheme }) => {
   const { charlaId } = useParams<{ charlaId: string }>(); //
   const t = translations[lang]; //
-
   const charlaActiva = charlaId 
     ? listaDeCharlas.find((c) => c.id === charlaId) || null //
     : listaDeCharlas[0] || null; //

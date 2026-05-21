@@ -39,7 +39,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang, onChar
               const tagText = lang === 'es' ? charla.tagEs : charla.tagEn;
               const tituloText = lang === 'es' ? charla.tituloEs : charla.tituloEn;
               const descripcionCortaText = lang === 'es' ? charla.descripcionCortaEs : charla.descripcionCortaEn;
-              const descripcionLargaText = lang === 'es' ? charla.descripcionEs : charla.descripcionEn;
+              const descripcionLargaText = lang === 'es' ? charla.descripcionCortaEs : charla.descripcionCortaEn;
 
               return (
                 <Link 

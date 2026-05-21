@@ -1,11 +1,9 @@
 export interface Expositor {
-  id: string; // slug para URL: nombre-apellido
+  id: string; // 
   nombre: string;
   apellido: string;
   tituloEs: string; // Título/puesto en Español
   tituloEn: string; // Título/puesto en Inglés
-  descripcionEs: string;
-  descripcionEn: string;
   imagen: string;
   bioEs: string;
   bioEn: string;
@@ -17,7 +15,7 @@ export interface Expositor {
 export interface Charla {
   tagEs: string;
   tagEn: string;
-  id: string; // slug: nombre-charla
+  id: string; // slug: nombre-charla url
   tituloEs: string;
   tituloEn: string;
   textoEs: string; // Contenido largo ES
@@ -53,8 +51,6 @@ export const listaDeCharlas: Charla[] = [
       apellido: "Pérez",
       tituloEs: "Researcher en AI Safety",
       tituloEn: "AI Safety Researcher",
-      descripcionEs: "Especialista en alineación de modelos de lenguaje con +5 años de experiencia.",
-      descripcionEn: "Specialist in language model alignment with +5 years of experience.",
       bioEs: "Juan es investigador con amplia experiencia en AI Safety, enfocado en técnicas de alineación y control de sistemas.",
       bioEn: "Juan is a researcher with extensive experience in AI Safety, focused on alignment techniques and system control.",
       imagen: "https://i.imgur.com/rodrigo.jpg",
@@ -83,8 +79,6 @@ export const listaDeCharlas: Charla[] = [
       apellido: "García",
       tituloEs: "Policy Expert en AI Governance",
       tituloEn: "AI Governance Policy Expert",
-      descripcionEs: "Experta en políticas y marcos regulatorios de inteligencia artificial a nivel europeo.",
-      descripcionEn: "Expert in artificial intelligence policies and regulatory frameworks at European level.",
       bioEs: "María trabaja en políticas de IA con organismos internacionales y gobiernos europeos.",
       bioEn: "María works on AI policies with international organizations and European governments.",
       imagen: "https://i.imgur.com/rodrigo.jpg",
@@ -113,8 +107,6 @@ export const listaDeCharlas: Charla[] = [
       apellido: "López",
       tituloEs: "ML Engineer en AI Alignment",
       tituloEn: "ML Engineer in AI Alignment",
-      descripcionEs: "Ingeniero de machine learning especializado en técnicas de alineación y seguridad.",
-      descripcionEn: "Machine learning engineer specialized in alignment and safety techniques.",
       bioEs: "Carlos tiene experiencia implementando sistemas de alineación en modelos de lenguaje de gran escala.",
       bioEn: "Carlos has experience implementing alignment systems in large-scale language models.",
       imagen: "https://i.imgur.com/rodrigo.jpg",

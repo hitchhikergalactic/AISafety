@@ -7,7 +7,6 @@ interface CharlasSectionProps {
   charlaActivaProp?: Charla;
   lang?: 'es' | 'en';
 }
-
 const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang = 'es' }) => {
   // Estado interno por si no se usa control por ruta externa
   const [charlaActivaState, setCharlaActivaState] = useState<Charla>(listaDeCharlas[0]);
@@ -32,7 +31,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
   const cuerpoTextoActivo = lang === 'es' ? charlaActiva.textoEs : charlaActiva.textoEn; //
   const { expositor } = charlaActiva; //
   const expositorTitulo = lang === 'es' ? expositor.tituloEs : expositor.tituloEn; //
-  const expositorBio = lang === 'es' ? (expositor.bioEs || expositor.descripcionEs) : (expositor.bioEn || expositor.descripcionEn); //
+  const expositorBio = lang === 'es' ? expositor.bioEs : expositor.bioEn; //
 
   return (
     <section className="w-full max-w-7xl mx-auto">
@@ -132,7 +131,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
       </div>
 
       {/* ====================================
-          SECCIÓN INFERIOR: OTRAS CHARLAS (Listado listo para tus tarjetas)
+          SECCIÓN INFERIOR: OTRAS CHARLAS (Listado listo para tarjetas)
           ==================================== */}
       <div className="px-6 md:px-12 lg:px-8 py-16 border-t border-secundarios-gray dark:border-zinc-800">     
         {/* Grid de 3 columnas */}
