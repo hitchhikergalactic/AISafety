@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { translations } from '../locales/translations';
 import { queHacemosContent } from '../data/quehacemos';
+import { parseText } from '../utils/parseText';
 
 type Language = 'es' | 'en';
 type Theme = 'light' | 'dark';
@@ -27,35 +28,33 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang, setLang, theme, setTheme 
     <>
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
       
-      <main className="pt-28 md:pt-32 px-4 md:px-8 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        <div className="max-w-7xl mx-auto">
+      <main className="pt-36 md:pt-44 px-8 md:px-20 lg:px-40 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
+        {/* Esta es la caja única contenedora que alinea todo al mismo ancho máximo */}
+        <div className="max-w-3xl mx-auto text-left w-full">
           
           {/* Hero Section */}
-          <section className="mb-20 md:mb-32">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-balance text-secundarios-dark dark:text-secundarios-light">
+          <section className="mb-20 md:mb-16">
+            <h4 className="text-secundarios-dark dark:text-white mb-6 text-balance">
               {content.heroTitle}
-            </h1>
-            <p className="text-lg md:text-xl text-secundarios-dark/70 dark:text-secundarios-light/70 font-serif max-w-3xl leading-relaxed">
-              {content.heroSubtitle}
+            </h4>
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light">
+              {parseText(content.heroSubtitle)}
             </p>
           </section>
 
           {/* Pillars Section */}
-          <section className="mb-20 md:mb-32">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-secundarios-dark dark:text-secundarios-light">
-              {content.pillarsTitle}
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <section className="mb-20 md:mb-16 w-full">
+            {/* Grid ajustado a 1 o 2 columnas para que quepa estéticamente en el max-w-4xl */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
               {content.pillars.map((pillar, idx) => (
                 <div 
                   key={idx} 
-                  className="p-8 rounded-lg border border-secundarios-dark/10 dark:border-white/10 bg-white dark:bg-white/5 hover:shadow-lg transition-all duration-300"
+                  className="p-8 rounded-md border border-secundarios-dark/10 dark:border-white/10 dark:bg-white/5 anthro-hover flex flex-col justify-start"
                 >
-                  <h3 className="text-xl font-bold mb-4 text-principal">
+                  <h5 className="mb-4 text-principal text-balance">
                     {pillar.title}
-                  </h3>
-                  <p className="text-secundarios-dark/70 dark:text-secundarios-light/70 leading-relaxed">
+                  </h5>
+                  <p className="text-secundarios-dark dark:text-white mb-0">
                     {pillar.description}
                   </p>
                 </div>
@@ -64,31 +63,17 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang, setLang, theme, setTheme 
           </section>
 
           {/* Impact Section */}
-          <section className="mb-20 md:mb-32 py-12 md:py-16 bg-principal/10 dark:bg-principal/5 rounded-lg p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-secundarios-dark dark:text-secundarios-light">
+          <section className="mb-20 md:mb-16">
+            <h4 className="text-secundarios-dark dark:text-secundarios-light mb-6 text-balance">
               {content.impactTitle}
-            </h2>
-            <p className="text-lg text-secundarios-dark/70 dark:text-secundarios-light/70 font-serif leading-relaxed max-w-3xl">
-              {content.impactDescription}
+            </h4>
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light">
+              {parseText(content.impactDescription)}
             </p>
           </section>
-
-          {/* CTA Section */}
-          <section className="mb-20 py-12 md:py-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-secundarios-dark dark:text-secundarios-light">
-              {content.ctaTitle}
-            </h2>
-            <p className="text-lg text-secundarios-dark/70 dark:text-secundarios-light/70 font-serif mb-8 max-w-2xl mx-auto">
-              {content.ctaDescription}
-            </p>
-            <button className="px-8 py-3 rounded-lg bg-principal text-white font-bold hover:bg-principal/90 transition-colors duration-300">
-              {content.ctaButton}
-            </button>
-          </section>
-
+          <section className="mb-20 md:mb-52"></section>
         </div>
       </main>
-
       <Footer lang={lang} theme={theme} onSubscribeClick={() => {}} />
     </>
   );

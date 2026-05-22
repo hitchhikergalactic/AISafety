@@ -11,9 +11,6 @@ export interface QueHacemosContent {
     pillars: Pilar[];
     impactTitle: string;
     impactDescription: string;
-    ctaTitle: string;
-    ctaDescription: string;
-    ctaButton: string;
   };
   en: {
     heroTitle: string;
@@ -22,83 +19,51 @@ export interface QueHacemosContent {
     pillars: Pilar[];
     impactTitle: string;
     impactDescription: string;
-    ctaTitle: string;
-    ctaDescription: string;
-    ctaButton: string;
   };
 }
 
 export const queHacemosContent: QueHacemosContent = {
   es: {
     heroTitle: "Qué hacemos",
-    heroSubtitle: "Trabajamos para construir una comunidad de hispanohablantes comprometida con la seguridad de la inteligencia artificial. Nuestras iniciativas abarcan educación, investigación, eventos y colaboración con expertos globales.",
-    pillarsTitle: "Nuestras principales iniciativas",
+    heroSubtitle: "**Talento y carreras**\nImpulsamos la especialización en IA Safety a través de seminarios, conferencias, círculos de análisis técnico y programas de formación avanzada. Eliminamos la barrera del idioma, democratizando el acceso a recursos y oportunidades críticas que, hasta ahora, solo estaban disponibles en inglés.\n\n**Evaluación e investigación**\nMapeamos la investigación existente y construimos alianzas institucionales para testar el comportamiento de los modelos actuales en español: sesgos, desinformación y fallos de seguridad. Producimos estudios orientados a la toma de decisiones para laboratorios, reguladores e investigadores.\n\n**Interfaz institucional**\nDesde España, colaboramos con universidades, reguladores y sociedad civil para comunicar los riesgos de la IA avanzada. Traducimos la evidencia técnica global a un lenguaje comprensible y trabajamos para que la voz del mundo hispanohablante influya en los debates internacionales de gobernanza.",
+    pillarsTitle: "Nuestras líneas de acción",
     pillars: [
       {
-        title: "Educación y Recursos",
-        description: "Generamos contenido accesible sobre IA Safety traducido al español. Ofrecemos guías, papers y recursos para personas en todos los niveles de expertise."
+        title: "Formar",
+        description: "Seminarios, grupos de lectura y programas estructurados para desarrollar las competencias que el campo de IA Safety necesita, en español"
       },
       {
-        title: "Eventos y Seminarios",
-        description: "Organizamos meetups mensuales, seminarios especializados y conferencias con investigadores de primera línea en seguridad de IA."
+        title: "Conectar",
+        description: "Parte del ecosistema global de IA Safety. Colaboramos con BlueDot Impact y la red internacional de hubs locales."
       },
       {
-        title: "Investigación Colaborativa",
-        description: "Conectamos talentos hispanohablantes con oportunidades de investigación en IA Safety y gobernanza de sistemas de IA avanzada."
-      },
-      {
-        title: "Comunidad Global",
-        description: "Formamos parte de redes internacionales como Women4AIS, ampliando la representación hispanohablante en la conversación global de IA Safety."
-      },
-      {
-        title: "Policy y Gobernanza",
-        description: "Contribuimos a la formulación de políticas públicas y marcos de gobernanza adaptados al contexto hispanohablante."
-      },
-      {
-        title: "Mentoría y Carrera",
-        description: "Acompañamos a profesionales que desean orientar su carrera hacia la seguridad de la IA, conectándolos con mentores y oportunidades."
+        title: "Gobernanza",
+        description: "Trabajamos con universidades, reguladores y sociedad civil para que el mundo hispanohablante influya en los debates internacionales sobre gobernanza de IA"
       }
     ],
-    impactTitle: "Por qué importa",
-    impactDescription: "La IA más poderosa de la historia se construye ahora. Los 636 millones de hispanohablantes merecemos estar en esa conversación. Sin voz propia, nuestros idiomas serán menos seguros, menos representados, menos considerados. Nuestra misión es cambiar eso.",
-    ctaTitle: "Únete a la comunidad",
-    ctaDescription: "Que seas investigador, estudiante, profesional o simplemente curioso sobre el futuro de la IA, aquí tienes un lugar.",
-    ctaButton: "Contacta con nosotros"
+    impactTitle: "Hacia dónde vamos",
+    impactDescription: "IAS construye el nodo de evidencia e incidencia que el español necesita:\n**Evidencia aplicada:** benchmarks de modelos y campañas de red-teaming para documentar fallos de seguridad específicos de nuestra lengua y cultura.\n**Política y gobernanza:** formamos el talento hispanohablante que el campo de AI Safety necesita y trabajamos para que el mundo hispanohablante tenga voz en las decisiones que van a determinar la trayectoria de la IA avanzada.\n**Talento técnico:** impulsamos a más hispanohablantes hacia roles de seguridad, alineamiento y política pública a nivel global.",
+  
   },
   en: {
     heroTitle: "What we do",
-    heroSubtitle: "We work to build a community of Spanish speakers committed to the safety of artificial intelligence. Our initiatives span education, research, events, and collaboration with global experts.",
-    pillarsTitle: "Our main initiatives",
+    heroSubtitle: "Train, connect, and work on governance. We foster the skills that the AI Safety field demands, integrating the Spanish-speaking world into the global ecosystem by collaborating with universities, regulators, and international networks like BlueDot Impact.",
+    pillarsTitle: "Our lines of action",
     pillars: [
       {
-        title: "Education and Resources",
-        description: "We generate accessible content about AI Safety translated to Spanish. We offer guides, papers, and resources for people at all levels of expertise."
+        title: "Talent and Careers",
+        description: "We drive specialization in AI Safety through seminars, conferences, technical analysis circles, and advanced training programs. We break down the language barrier, democratizing access to critical resources and opportunities that, until now, were only available in English."
       },
       {
-        title: "Events and Seminars",
-        description: "We organize monthly meetups, specialized seminars, and conferences with leading researchers in AI Safety."
+        title: "Evaluation and Research",
+        description: "We map existing research and build institutional alliances to test the behavior of current models in Spanish regarding biases, misinformation, and safety failures. We produce decision-oriented studies for labs, regulators, and researchers."
       },
       {
-        title: "Collaborative Research",
-        description: "We connect Spanish-speaking talent with research opportunities in AI Safety and governance of advanced AI systems."
-      },
-      {
-        title: "Global Community",
-        description: "We are part of international networks like Women4AIS, expanding Spanish-speaking representation in the global AI Safety conversation."
-      },
-      {
-        title: "Policy and Governance",
-        description: "We contribute to the formulation of public policies and governance frameworks adapted to the Spanish-speaking context."
-      },
-      {
-        title: "Mentorship and Career",
-        description: "We guide professionals who want to orient their careers towards AI Safety, connecting them with mentors and opportunities."
+        title: "Institutional Interface",
+        description: "Based in Spain, we collaborate with universities, regulators, and civil society to communicate the risks of advanced AI. We translate global technical evidence into accessible language and work to ensure the voice of the Spanish-speaking world influences international governance debates."
       }
     ],
-    impactTitle: "Why it matters",
-    impactDescription: "The most powerful AI systems in history are being built right now. The 636 million Spanish speakers deserve to be part of that conversation. Without our own voice, our languages will be less safe, less represented, less considered. Our mission is to change that.",
-    ctaTitle: "Join the community",
-    ctaDescription: "Whether you're a researcher, student, professional, or simply curious about the future of AI, you have a place here.",
-    ctaButton: "Contact us"
+    impactTitle: "Where we are heading (Vision)",
+    impactDescription: "IAS is building the evidence and advocacy hub that the Spanish language needs through three key pillars: 1) Applied evidence via model benchmarks and red-teaming campaigns to document safety flaws specific to our language and culture. 2) Policy and governance to ensure the Spanish-speaking world has a voice in the decisions shaping the trajectory of advanced AI. 3) Technical talent by guiding more Spanish speakers into safety, alignment, and public policy roles globally.",
   }
 };

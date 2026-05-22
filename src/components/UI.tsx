@@ -25,7 +25,6 @@ export const PillarCard: React.FC<{
     <div className="w-20 h-20 md:w-8 md:h-12 dark:bg-principal10 text-cuartos-purple dark:text-terciarios-blue rounded-anthro flex items-center justify-center mb-8 md:mb-10 group-hover:scale-110 transition-transform duration-500">
       {icon}
     </div>
-    {/* CAMBIO 1: Cambiamos h3 por h4 para que herede tu estilo (Naranja/Uppercase) */}
     <h4 className="mb-4 md:mb-6">{title}</h4>
     <p className="mb-0 flex-grow text-balance">
       {text}

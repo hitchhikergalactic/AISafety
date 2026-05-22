@@ -116,7 +116,6 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 			)}
 			{/* 1. HERO SECTION */}
 			<section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden">
-				<div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] bg-principal/5 rounded-full blur-[100px] pointer-events-none"></div>
 				<div className="max-w-7xl mx-auto text-center z-10 animate-fade-in-up w-full">
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
