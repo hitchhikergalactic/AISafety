@@ -42,26 +42,6 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang, setLang, theme, setTheme 
             </p>
           </section>
 
-          {/* Pillars Section */}
-          <section className="mb-20 md:mb-16 w-full">
-            {/* Grid ajustado a 1 o 2 columnas para que quepa estéticamente en el max-w-4xl */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-              {content.pillars.map((pillar, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-8 rounded-md border border-secundarios-dark/10 dark:border-white/10 dark:bg-white/5 anthro-hover flex flex-col justify-start"
-                >
-                  <h5 className="mb-4 text-principal text-balance">
-                    {pillar.title}
-                  </h5>
-                  <p className="text-secundarios-dark dark:text-white mb-0">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Impact Section */}
           <section className="mb-20 md:mb-16">
             <h4 className="text-secundarios-dark dark:text-secundarios-light mb-6 text-balance">

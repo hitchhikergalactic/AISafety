@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import { X } from 'lucide-react';
@@ -29,6 +29,18 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<'event' | 'subscribe'>('subscribe');
 
+  // Cargar script de Luma
+  useEffect(() => {
+    const scriptId = 'luma-checkout';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://embed.lu.ma/checkout-button.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   const handleCharlaClick = (charla: Charla) => {
     navigate(`/seminario-bluedot-spain/${charla.id}`);
   };
@@ -52,6 +64,18 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
         
         {/* Sección Hero con traducciones */}
         <SeminarioHero t={t} />
+
+        {/* Botón de Inscripciones */}
+        <div className="flex justify-center mb-12">
+          <a 
+            href="https://luma.com/event/evt-CPNiAzx2NIYMgEd"
+            data-luma-action="checkout"
+            data-luma-event-id="evt-CPNiAzx2NIYMgEd"
+            className="px-12 py-5 rounded-anthro bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-block"
+          >
+            {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
+          </a>
+        </div>
 
         {/* Sección de la Grilla pasando el listado de datos real y el idioma activo */}
         <section className="mb-10 md:mb-16">
@@ -90,7 +114,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
                 className="w-full px-4 py-3 rounded-xl border border-secundarios-dark/20 dark:border-white/10 bg-white dark:bg-white/5 text-secundarios-dark dark:text-white placeholder-secundarios-dark/40 focus:outline-none focus:ring-2 focus:ring-principal"
               />
               <button type="submit" className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors">
-                {t.subscribe.cta || 'Suscribirse'}
+                {t.subscribe.button}
               </button>
             </form>
           </div>

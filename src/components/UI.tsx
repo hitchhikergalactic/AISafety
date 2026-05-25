@@ -8,13 +8,12 @@ export const Section: React.FC<{
 	children: React.ReactNode;
 	fullWidth?: boolean;
 }> = ({ id, className = "", children, fullWidth = false }) => (
-	<section id={id} className={`py-16 md:py-48 px-4 md:px-12 scroll-mt-32 ${className}`}>
-		<div className={fullWidth ? "w-full" : "max-w-7xl mx-auto"}>
+	<section id={id} className={`py-8 md:py-24 px-4 md:px-8 scroll-mt-32 ${className}`}>
+		<div className={fullWidth ? "w-full" : "max-w-[1100px] mx-auto"}>
 			{children}
 		</div>
 	</section>
 );
-// Componente para las tarjetas de los 3 pilares
 export const PillarCard: React.FC<{ 
   icon: React.ReactNode; 
   title: string; 

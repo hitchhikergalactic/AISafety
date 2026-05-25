@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { translations } from '../locales/translations';
 import { parseText } from '../utils/parseText';
 import {
-	Globe, ArrowRight, X
+	Globe, ArrowRight, X, Calendar
 } from 'lucide-react';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
@@ -10,7 +10,7 @@ import { LuMail, LuMapPin } from "react-icons/lu";
 
 // --- Import components ---
 import Navbar from '../components/Navbar';
-import { CollaborativeCard } from '../components/UI';
+import { CollaborativeCard, Section } from '../components/UI';
 import BentoGrid from '../components/BentoGrid';
 import SocialFooter from '../components/SocialFooter';
 import Footer from '../components/Footer';
@@ -27,6 +27,8 @@ import logoAISafetyBCN from '../assets/logos__ai_safety_barcelona.svg';
 import logoAISafetyBCNWhite from '../assets/logos__ai_safety_barcelona_white.svg';
 import logoBAISH from '../assets/logos__buenos_aires_AI_safety_hub.svg';
 import logoBAISHWhite from '../assets/logos__buenos_aires_AI_safety_hub_white.svg';
+import logoMEXICO from '../assets/ai_safety_mexico.svg';
+import logoMEXICOWhite from '../assets/ai_safety_mexico_byn.svg';
 import logo from '../assets/safety_id_logo_white_leyenda.svg';
 import logoWhite from '../assets/ias_logo_white.svg';
 import osmani from '../assets/osmani.jpeg';
@@ -70,8 +72,8 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 	return (
 		<>
 			<Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
-
-			{/* MODAL DE RESERVA */}
+			
+			{/* MODAL */}
 			{showModal && (
 				<div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setShowModal(false)}>
 					<div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
@@ -82,26 +84,12 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 						<h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
 						<p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
 
-						{/* Event Details */}
-						{modalType === 'event' && (
-							<div className="mb-6 p-4 bg-white/50 dark:bg-white/5 rounded-2xl border border-secundarios-dark/10 text-sm space-y-1">
-								<p className="font-bold text-principal">{t.upcoming.eventTitle}</p>
-								<div className="flex items-center gap-2 opacity-80">
-									<Calendar size={14} />
-									<span>{t.upcoming.date}</span>
-								</div>
-								<div className="flex items-center gap-2 opacity-80">
-									<Globe size={14} />
-									<span>{t.upcoming.location}</span>
-								</div>
-							</div>
-						)}
 
 						<form action="https://formsubmit.co/aisafetymadrid@gmail.com" method="POST" className="space-y-4">
 							<input type="hidden" name="_subject" value={modalType === 'event' ? `Nuevo registro: ${t.upcoming.eventTitle}` : "Nuevo suscriptor"} />
 							<input type="hidden" name="_captcha" value="false" />
 							<input type="hidden" name="_template" value="table" />
-							{modalType === 'event' && <input type="hidden" name="evento_detalles" value={`${t.upcoming.eventTitle} - ${t.upcoming.date}`} />}
+							{modalType === 'event' && <input type="hidden" name="evento_detalles" value={t.upcoming.eventTitle} />}
 
 							<input type="text" name="name" required placeholder={t.subscribe.name} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
 							<input type="email" name="email" required placeholder={t.subscribe.email} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
@@ -114,52 +102,56 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					</div>
 				</div>
 			)}
+			
 			{/* 1. HERO SECTION */}
-			<section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 overflow-hidden">
-				<div className="max-w-7xl mx-auto text-center z-10 animate-fade-in-up w-full">
+			<Section 
+				id="hero" 
+				className="relative min-h-screen flex items-center justify-center pt-16 md:pt-32 pb-16 md:pb-24 overflow-hidden"
+			>
+				<div className="text-center z-10 animate-fade-in-up w-full">
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
 					</h1>
-					<p className="bajada max-w-[950px] mx-auto">{t.hero.h2}</p>
-					<div className="mt-12 md:mt-16">
-						<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="px-12 py-5 rounded-anthro bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-flex items-center gap-3">
-							{t.hero.ctaSecondary}
-						</button>
+					<p className="bajada max-w-[950px] mx-auto">{parseText(t.hero.h2)}</p>
+				</div>
+			</Section>
+
+			{/* 2. COLABORADORES */}
+			<Section id="sobre">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-center">
+					<div className="col-span-1">
+						<h4 className="mb-4 md:mb-12">{t.collaborators.title}</h4>
+						<p>{parseText(t.collaborators.text)}</p>
+					</div>
+					<div className="col-span-1 md:col-span-3">
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 items-center">
+							<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
+							<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} theme={theme} />
+							<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} theme={theme} />
+							<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} theme={theme} />
+							<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} logoWhite={logoBAISHWhite} theme={theme} />
+							<CollaborativeCard href="https://www.aismx.org/" text="MEXICO" logo={logoMEXICO} logoWhite={logoMEXICOWhite} theme={theme} />
+						</div>
 					</div>
 				</div>
-			</section>
-				{/* 2. COLABORADORES */}
-				<section id="sobre" className="px-4 md:px-8 py-8 md:py-16">
-					<div className="max-w-7xl mx-auto">
-						<h4 className="mb-8 md:mb-12 text-center">{t.collaborators.title}</h4>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 items-center">
-						<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} theme={theme} />
-						<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} theme={theme} />
-						<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} theme={theme} />
-						<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} theme={theme} />
-						<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} logoWhite={logoBAISHWhite} theme={theme} />
-					</div>
-					</div>
-				</section>
+			</Section>
 			{/* 3. WHY HUB SECTION */}
-			<section id="mission" className="px-4 md:px-8 py-8 md:py-16">
-				<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
-					
-					<div className="animate-fade-in-up flex-1 max-w-xl space-y-6 text-left">
+			<Section id="mission">
+				<div className="w-full flex flex-col md:flex-row gap-12 items-center justify-center">
+					<div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
 						<h4>{t.why.title}</h4>
-						<p className="whitespace-pre-line">{t.why.text}</p>
-						<p className="italic font-medium">{t.why.text2}</p>
+						<p className="whitespace-pre-line">{t.why.text1}</p>
+						<p className="bajada font-light">{t.why.text2}</p>
+						<p className="whitespace-pre-line">{t.why.text3}</p>
+						<p className="font-bold">{t.why.text4}</p>
 					</div>
-					
-					<div className="w-full md:w-1/3 flex justify-center">
-						<div className="relative group w-full max-w-[500px] mx-auto">
-							<div className="aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated transition-all duration-700">
-								<img
-									src="https://i.imgur.com/wqT4oET.png"
-									alt="AI Safety Madrid"
-									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-								/>
-							</div>
+					<div className="w-full md:w-1/2 flex justify-center">
+						<div className="relative group w-full aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated">
+							<img
+								src="https://i.imgur.com/wqT4oET.png"
+								alt="AI Safety Madrid"
+								className="w-full h-full object-cover group-hover:scale-105"
+							/>
 						</div>
 					</div>
 				</div>
@@ -169,139 +161,108 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 						data={t.why.impactFigures} 
 					/>
 				)}
-			</section>
-			{/* 4. PILLARS SECTION */}
-			{/* <Section id="hub-action">
-					<h3 className="mb-12 md:mb-24 text-center">{t.pillars.title}</h3>
-					<div className="grid md:grid-cols-3 gap-6 md:gap-12">
-						<PillarCard
-							icon={<BookOpen size={32} />}
-							title={t.pillars.education.title}
-							text={t.pillars.education.text}
-						/>
-						<PillarCard
-							icon={<Calendar size={32} />}
-							title={t.pillars.events.title}
-							text={t.pillars.events.text}
-						/>
-						<PillarCard
-							icon={<Users size={32} />}
-							title={t.pillars.community.title}
-							text={t.pillars.community.text}
-						/>
-					</div>
-				</Section> */}
-				{/* 4. EVENTOS - BENTO GRID */}
-				<section id="eventos">
-				<div className="max-w-7xl mx-auto">
-					<BentoGrid 
+			</Section>
+
+			{/* 4. EVENTOS - BENTO GRID */}
+			<Section id="eventos">
+				<BentoGrid 
 					t={t} 
 					onModalOpen={() => { setModalType('event'); setShowModal(true); }} 
-					/>
+				/>
+			</Section>
+
+			{/* 5. CONOCENOS */}
+			<Section id="conocenos">
+				<div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
+					<div className="flex-1 max-w-xl space-y-6 text-left">
+						<h4>{t.about.title}</h4>
+						<p className="whitespace-pre-wrap">{t.about.text1}</p>
+						<p>{t.about.text2}</p>
+					</div>
+					<div className="w-full md:w-1/3 flex justify-center">
+						<div className="flex flex-col gap-6 w-64 md:w-80">
+							<div className="relative group w-full aspect-square">
+								<div className="w-full h-full rounded-2xl overflow-hidden shadow-anthro-card relative z-10">
+									<img 
+										src={osmani} 
+										alt="Osmani Redondo" 
+										className="w-full h-full object-cover grayscale transition-all duration-500"
+									/>
+								</div>
+							</div>
+							<div className="flex gap-4">
+								<a href="https://www.linkedin.com/in/osmani/" className="text-secundarios-dark/40 hover:text-principal transition-colors">
+									<FaLinkedin size={28} />
+								</a>
+								<a href="https://substack.com/@osmaniredondo" className="text-secundarios-dark/40 hover:text-principal transition-colors">
+									<SiSubstack size={24} />
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				</section>
+			</Section>
 
-
-
-				{/* 5. CONOCENOS */}
-				<section id="conocenos" className="px-4 md:px-8 py-8 md:py-16">
-					<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
-						<div className="flex-1 max-w-xl space-y-6 text-left">
-							<h4>{t.about.title}</h4>
-							<p className="whitespace-pre-wrap">
-								{t.about.text1}
-							</p>
-							<p>
-								{t.about.text2}
-							</p>
-							<div className="pt-4 flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start">
-							</div>
+			{/* 6. MANIFIESTO */}
+			<Section id="manifiesto">
+				<div className="flex flex-col lg:flex-row gap-6">
+					<div className="flex-[2] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-16 min-h-[400px] flex items-center">
+						<h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
+							{parseText(t.mission.text)}
+						</h3>
+					</div>
+					<div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
+						<div>
+							<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md">
+								{t.hero.ctaSecondary}
+							</button>
 						</div>
-						{/* Image */}
-						<div className="w-full md:w-1/3 flex justify-center">
-							<div className="flex flex-col gap-6 w-64 md:w-80">
-								<div className="relative group w-full aspect-square">
-									<div className="w-full h-full rounded-2xl overflow-hidden shadow-anthro-card relative z-10">
-										<img 
-											src={osmani} 
-											alt="Osmani Redondo" 
-											className="w-full h-full object-cover grayscale transition-all duration-500"
-										/>
-									</div>
-								</div>
-								<div className="flex gap-4">
-									<a href="https://www.linkedin.com/in/osmani/" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-										<FaLinkedin size={28} />
-									</a>
-									<a href="https://substack.com/@osmaniredondo" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-										<SiSubstack size={24} />
-									</a>
-								</div>
-							</div>
+						<div className="flex justify-center">
+							<SocialFooter />
 						</div>
 					</div>
-				</section>
+				</div>
+			</Section>
 
-				{/* 6. MANIFIESTO */}
-				<section id="manifiesto" className="px-4 md:px-8 py-12 md:py-24">
-					<div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
-						<div className="flex-[2] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-16 min-h-[400px] flex items-center">
-							<h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
-								{parseText(t.mission.text)}
-							</h3>
-						</div>
-						<div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
-							<div>
-								<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md">
-									{t.hero.ctaPrimary}
-								</button>
-							</div>
-							<div className="flex justify-center">
-								<SocialFooter />
-							</div>
-						</div>
-					</div>
-				</section>
-				{/* 7. WOMEN4AIS */}
-				<section className="px-4 md:px-8 py-12 md:py-24">
-					<div className="max-w-7xl mx-auto">
-						<div className="rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white" style={{ backgroundImage: `url(${fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.9 }}>
-					  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-					  
-					  <div className="flex-1 space-y-8 z-10">
-					<h3 className="text-secundarios-light dark:text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h3>
-					<p className="text-secundarios-light dark:text-secundarios-light text-lg md:text-2xl font-serif max-w-2xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
-						  {t.women4ais.text}
+			{/* 7. WOMEN4AIS */}
+			<Section>
+				<div className="rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white relative overflow-hidden" style={{ backgroundImage: `url(${fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+					<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+					
+					<div className="flex-1 space-y-8 z-10">
+						<h3 className="text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h3>
+						<p className="text-secundarios-light text-lg md:text-2xl font-serif max-w-2xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
+							{t.women4ais.text}
 						</p>
 						<div className="flex items-center gap-4 pt-4">
-								<a href="https://www.women4aisafety.com/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
+							<a href="https://www.women4aisafety.com/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
 								<Globe size={24} />
 							</a>
-								<a href="https://www.instagram.com/womenaisafety/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
+							<a href="https://www.instagram.com/womenaisafety/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
 								<FaInstagram size={24} />
 							</a>
-								<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
+							<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
 								<FaLinkedin size={24} />
 							</a>
 						</div>
-					  </div>
-					  
-					  <div className="shrink-0 w-full md:w-auto flex justify-center">
+					</div>
+					
+					<div className="shrink-0 w-full md:w-auto flex justify-center">
 						<div className="w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-inner flex flex-col">
 							<img src={women4aisImg} alt="Women4AIS" className="w-full h-full object-cover" />
 							<div className="bg-white/10 px-4 py-3 text-center">
 								<p className="text-sm text-black/80">By Sandro Rybak</p>
 							</div>
 						</div>
-						</div>
 					</div>
-					</div>
-				</section>
-				<Footer 
-					lang={lang} 
-					theme={theme} 
-					onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
-				/>
+				</div>
+			</Section>
+
+			<Footer 
+				lang={lang} 
+				theme={theme} 
+				onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
+			/>
 		</>
 	);
 }

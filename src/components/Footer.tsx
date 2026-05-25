@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ lang, theme, onSubscribeClick }) => {
               onClick={onSubscribeClick}
               className="px-10 py-4 rounded-xl bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-3 mb-8"
             >
-              {t.hero.ctaPrimary}
+              {t.hero.ctaSecondary}
             </button>
             <div className="mb-6">
               <SocialFooter />

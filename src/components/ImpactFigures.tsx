@@ -68,9 +68,25 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 150
     <div className="text-4xl md:text-5xl font-black text-principal">
       {prefix}
       {displayValue}
-      {suffix}
+      {suffix && suffix !== 'M' && <sup>{suffix}</sup>}
+      {suffix === 'M' && <span>{suffix}</span>}
     </div>
   );
+};
+
+const formatOrdinal = (text: string) => {
+  const match = text.match(/^(\d+)(.*)$/);
+  if (match) {
+    const [, num, suffix] = match;
+    return (
+      <>
+        {num}
+        {suffix && suffix !== 'M' && <sup>{suffix}</sup>}
+        {suffix === 'M' && <span>{suffix}</span>}
+      </>
+    );
+  }
+  return <>{text}</>;
 };
 
 interface FadeInMilestoneProps {
@@ -107,7 +123,7 @@ const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ text, delay = 0 }) =>
         isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}
     >
-      {text}
+      {formatOrdinal(text)}
     </div>
   );
 };
@@ -142,14 +158,13 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
   }
 
   return (
-    <div className="mt-12 md:mt-12 space-y-6 max-w-7xl mx-auto px-8 md:px-24">
+    <div className="mt-16 md:mt-24 space-y-6 w-full">
       <h4 className="text-secundarios-dark dark:text-secundarios-light">{data.title}</h4>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, idx) => {
           const { target } = parseMetric(item.value);
           const isNumeric = target > 0;
-          // Item 5 (índice 4) ocupa 2 columnas en desktop
           const isLastItem = idx === 4;
 
           return (
