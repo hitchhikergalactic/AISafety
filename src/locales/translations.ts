@@ -71,10 +71,6 @@ export const translations = {
       title: "Red iaS",
       text: "Somos parte del ecosistema global de AI safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
-    about: {
-      title: "Sobre esta iniciativa",
-      text1: "Liderazgo Osmani Redondo es ingeniera de software, arquitecta cloud certificada y fundadora de iaS. Anteriormente arquitecta cloud en Telefónica Tech, lleva cinco meses construyendo el primer hub de AI safety en español. Dirige el seminario mensual de BlueDot Impact en español. Profesora invitada en UNAM México y Fundación SEPI Madrid.",
-    },
     women4ais: {
       title: "Women4AIS",
       text: "El campo de AI safety tiene un déficit de representación. Las mujeres están subrepresentadas en investigación, en gobernanza y en los equipos que están tomando las decisiones más importantes de nuestra era.\nW4IAS existe para cambiar eso en el mundo hispanohablante.\nOrganizamos eventos, creamos redes de apoyo profesional y conectamos a mujeres hispanohablantes con oportunidades en AI safety a nivel global."},
@@ -97,7 +93,7 @@ export const translations = {
       copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
       text1: "\n¿Tienes preguntas o quieres colaborar?",
       text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
-      email: "hola@aisafety.es ",
+      email: "hola@aisafety.es",
       dir:"Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
     }
@@ -172,18 +168,12 @@ export const translations = {
       }
     },
     collaborators: {
-      title: "Network of Collaborators",
-      text: "We are part of the global AI Safety ecosystem, collaborating closely with **BlueDot Impact** and the international network of local hubs.",
-    },
-    about: {
-      title: "About this initiative",
-      text1: `This initiative creates a space to engage seriously with the technical and governance challenges of advanced AI – alignment, control, and systemic risk – from a Spanish‑speaking context.\nLed by Osmani Redondo, It connects researchers, students, engineers, and policy professionals who want to:\n\t• understand the existential and catastrophic risks from advanced AI, and\n\t• either work directly on mitigating them, or generate better evidence about how these systems behave in Spanish.`,
-      text2: `From Spain, we work to ensure the Spanish-speaking world has a voice in the decisions shaping the future of AI.`,
-      joinBtn: "Join us",
+      title: "iaS Network",
+      text: "We are part of the global AI safety ecosystem, collaborating closely with **BlueDot Impact** and the international network of local hubs.",
     },
     women4ais: {
-      title: "We're part of Women4AIS",
-      text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
+      title: "Women4AIS",
+      text: "The AI safety field has a representation deficit. Women are underrepresented in research, in governance, and in the teams making the most important decisions of our era.\nW4AIS exists to change that in the Spanish-speaking world.\nWe organize events, create professional support networks, and connect Spanish-speaking women with opportunities in AI safety globally.",
     },
     seminario: {
       title: "AI Safety Seminar",

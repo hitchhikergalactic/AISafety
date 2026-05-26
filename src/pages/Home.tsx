@@ -170,36 +170,6 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					onModalOpen={() => { setModalType('event'); setShowModal(true); }} 
 				/>
 			</Section>
-			{/* 5. CONOCENOS */}
-			<Section id="conocenos">
-				<div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
-					<div className="flex-1 max-w-xl space-y-6 text-left">
-						<h4>{t.about.title}</h4>
-						<p className="whitespace-pre-wrap">{t.about.text1}</p>
-					</div>
-					<div className="w-full md:w-1/3 flex justify-center">
-						<div className="flex flex-col gap-6 w-64 md:w-80">
-							<div className="relative group w-full aspect-square">
-								<div className="w-full h-full rounded-2xl overflow-hidden shadow-anthro-card relative z-10">
-									<img 
-										src={osmani} 
-										alt="Osmani Redondo" 
-										className="w-full h-full object-cover grayscale transition-all duration-500"
-									/>
-								</div>
-							</div>
-							<div className="flex gap-4">
-								<a href="https://www.linkedin.com/in/osmani/" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-									<FaLinkedin size={28} />
-								</a>
-								<a href="https://substack.com/@osmaniredondo" className="text-secundarios-dark/40 hover:text-principal transition-colors">
-									<SiSubstack size={24} />
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</Section>
 			{/* 6. MANIFIESTO */}
 			<Section id="manifiesto">
 				<div className="flex flex-col lg:flex-row gap-6">

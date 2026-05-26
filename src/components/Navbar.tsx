@@ -32,7 +32,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
       label: t.nav.mission, 
       to: "/?section=mission",
       sublinks: [
-        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que_hacemos" }
+        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que_hacemos" },
+        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" }
       ]
     },
     { 
