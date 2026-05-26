@@ -117,7 +117,7 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 			</Section>
 
 			{/* 2. COLABORADORES */}
-			<Section id="sobre">
+			<Section id="conectar">
 				<div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-center">
 					<div className="col-span-1">
 						<h4 className="mb-4 md:mb-12">{t.collaborators.title}</h4>
@@ -170,14 +170,12 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					onModalOpen={() => { setModalType('event'); setShowModal(true); }} 
 				/>
 			</Section>
-
 			{/* 5. CONOCENOS */}
 			<Section id="conocenos">
 				<div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center justify-center">
 					<div className="flex-1 max-w-xl space-y-6 text-left">
 						<h4>{t.about.title}</h4>
 						<p className="whitespace-pre-wrap">{t.about.text1}</p>
-						<p>{t.about.text2}</p>
 					</div>
 					<div className="w-full md:w-1/3 flex justify-center">
 						<div className="flex flex-col gap-6 w-64 md:w-80">
@@ -202,7 +200,6 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					</div>
 				</div>
 			</Section>
-
 			{/* 6. MANIFIESTO */}
 			<Section id="manifiesto">
 				<div className="flex flex-col lg:flex-row gap-6">
@@ -229,19 +226,19 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 				<div className="rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white relative overflow-hidden" style={{ backgroundImage: `url(${fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 					<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					
-					<div className="flex-1 space-y-8 z-10">
-						<h3 className="text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h3>
-						<p className="text-secundarios-light text-lg md:text-2xl font-serif max-w-2xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
+					<div className="flex-1 space-y-2 z-10">
+						<h4 className="!text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h4>
+						<p className="text-secundarios-light text-lg md:text-1xl font-serif max-w-1xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
 							{t.women4ais.text}
 						</p>
 						<div className="flex items-center gap-4 pt-4">
-							<a href="https://www.women4aisafety.com/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
+							{/*<a href="https://www.women4aisafety.com/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Web">
 								<Globe size={24} />
 							</a>
 							<a href="https://www.instagram.com/womenaisafety/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="Instagram">
 								<FaInstagram size={24} />
-							</a>
-							<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-full hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
+							</a>*/}
+							<a href="https://www.linkedin.com/company/women4aisafety" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center bg-cuartos-purple rounded-md hover:bg-white text-white hover:text-cuartos-purple transition-all duration-300" aria-label="LinkedIn">
 								<FaLinkedin size={24} />
 							</a>
 						</div>
@@ -258,11 +255,13 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 				</div>
 			</Section>
 
-			<Footer 
-				lang={lang} 
-				theme={theme} 
-				onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
-			/>
+			<div id="footer">
+				<Footer 
+					lang={lang} 
+					theme={theme} 
+					onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
+				/>
+			</div>
 		</>
 	);
 }

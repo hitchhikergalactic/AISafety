@@ -43,8 +43,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
         { label: t.seminario?.submenu, path: "/seminario-bluedot-spain" }
       ]
     },
-    { href: "#conocenos", label: t.nav.about, to: "/?section=conocenos" },
-    { href: "#newsletter", label: t.nav.contact, to: "/?section=newsletter" },
+    { href: "#conectar", label: t.nav.about, to: "/?section=conectar" },
+    { href: "#footer", label: t.nav.contact, to: "/?section=footer" },
   ];
 
   const handleNavClick = (to: string, sectionId: string) => {

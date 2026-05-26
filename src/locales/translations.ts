@@ -73,20 +73,18 @@ export const translations = {
     },
     about: {
       title: "Sobre esta iniciativa",
-      text1: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada.",
-      text2: "Impulsada por Osmani Redondo, conecta investigadores, estudiantes, profesionales de política pública y cualquier persona curiosa sobre el futuro de la IA — desde España, para los 600 millones de hispanohablantes del mundo.",
+      text1: "Liderazgo Osmani Redondo es ingeniera de software, arquitecta cloud certificada y fundadora de iaS. Anteriormente arquitecta cloud en Telefónica Tech, lleva cinco meses construyendo el primer hub de AI safety en español. Dirige el seminario mensual de BlueDot Impact en español. Profesora invitada en UNAM México y Fundación SEPI Madrid.",
     },
     women4ais: {
-      title: "Formamos parte de Women4AIS",
-      text: "Women4AIS construye una comunidad global en seguridad de IA donde todas las voces suman. Creemos que la diversidad de perspectivas hace este campo más fuerte. Si compartes esta visión, únete.",
-    },
+      title: "Women4AIS",
+      text: "El campo de AI safety tiene un déficit de representación. Las mujeres están subrepresentadas en investigación, en gobernanza y en los equipos que están tomando las decisiones más importantes de nuestra era.\nW4IAS existe para cambiar eso en el mundo hispanohablante.\nOrganizamos eventos, creamos redes de apoyo profesional y conectamos a mujeres hispanohablantes con oportunidades en AI safety a nivel global."},
     seminario: {
       title: "Seminario IA safety",
       submenu: "Seminario IA safety",
       subtitle: "Descubre las charlas y expositores especializados en seguridad de IA",
     },
     subscribe: {
-      title: "Forma parte de nuestra comunidad",
+      title: "Forma parte de iaS",
       subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
       name: "Nombre",
       email: "Email",
@@ -97,7 +95,7 @@ export const translations = {
     footer: {
       tagline: "Parte del ecosistema global de IA safety · Currículo por BlueDot Impact",
       copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
-      text1: "¿Tienes preguntas o quieres colaborar?",
+      text1: "\n¿Tienes preguntas o quieres colaborar?",
       text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
       email: "hola@aisafety.es ",
       dir:"Mad Tech Campus",
