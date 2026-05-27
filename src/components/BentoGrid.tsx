@@ -162,7 +162,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.research.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-4 lex-grow">{t.upcoming.research.description}</p>
+                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 lex-grow">{t.upcoming.research.description}</p>
                   </div>
                </div>
             </a>

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuMail, LuGlobe } from 'react-icons/lu';
-import { listaDeCharlas, Charla } from '../data/charlas'; //
+import { listaDeCharlas, Charla } from '../data/charlas'; 
+import { parseText } from '../utils/parseText';
+
 
 interface CharlasSectionProps {
   charlaActivaProp?: Charla;
   lang?: 'es' | 'en';
 }
 const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang = 'es' }) => {
+  const navigate = useNavigate();
   // Estado interno por si no se usa control por ruta externa
   const [charlaActivaState, setCharlaActivaState] = useState<Charla>(listaDeCharlas[0]);
   const charlaActiva = charlaActivaProp || charlaActivaState;
@@ -34,11 +38,11 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
   const expositorBio = lang === 'es' ? expositor.bioEs : expositor.bioEn; //
 
   return (
-    <section className="w-full max-w-7xl mx-auto">
+    <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0">
       {/* ====================================
           SECCIÓN SUPERIOR: CHARLA ACTIVA
           ==================================== */}
-      <div className="px-6 md:px-12 lg:px-8 py-12 md:py-40">
+      <div className="px-6 md:px-12 lg:px-8 pt-60 pb-20 md:py-45">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* COLUMNA IZQUIERDA: DETALLES TEXTUALES */}
@@ -52,7 +56,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
             {/* Redes e íconos de contacto */}
             <div className="flex gap-6 items-center mb-8 text-2xl">
-              {expositor.linkedin && (
+              {expositor.linkedin.length > 0 && (
                 <a
                   href={expositor.linkedin}
                   target="_blank"
@@ -63,7 +67,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                   <FaLinkedin />
                 </a>
               )}
-              {expositor.email && (
+              {expositor.email.length > 0 && (
                 <a
                   href={`mailto:${expositor.email}`}
                   className="hover:text-principal transition-colors"
@@ -72,7 +76,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                   <LuMail />
                 </a>
               )}
-              {expositor.web && (
+              {expositor.web.length > 0 && (
                 <a
                   href={expositor.web}
                   target="_blank"
@@ -87,16 +91,19 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
             {/* Contenido/Cuerpo largo de la charla usando charlaActiva.textoEs/textoEn */}
             <div className="max-w-none mb-8">
-              <p>{cuerpoTextoActivo}</p>
+              <p>{parseText(cuerpoTextoActivo)}</p>
             </div>
 
-            <div className="border-t border-secundarios-gray dark:border-zinc-800 pt-8 mt-4">
+            <div className="border-t border-secundarios-black dark:border-zinc-800 pt-8 mt-4">
               <div>
-                <h5 className="mb-1">
+                <h5 className="mb-3">
                   {expositor.nombre} {expositor.apellido}
                 </h5>
-                <p className="texto-small mb-0 opacity-80">
-                  {expositorTitulo} — {expositorBio}
+                <p className="texto-small mb-1 opacity-80 mt-1">
+                  {parseText(expositorTitulo)}
+                </p>
+                <p className="texto-small mb-1 opacity-80 mt-2">
+                  {parseText(expositorBio)}
                 </p>
               </div>
             </div>
@@ -129,7 +136,6 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
         </div>
       </div>
-
       {/* ====================================
           SECCIÓN INFERIOR: OTRAS CHARLAS (Listado listo para tarjetas)
           ==================================== */}
@@ -140,10 +146,8 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
             <div key={charla.id}>
               <button
                 onClick={() => {
-                  if (!charlaActivaProp) {
-                    setCharlaActivaState(charla);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }
+                  navigate(`/seminario-bluedot-spain/${charla.id}`);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="group text-left flex flex-col justify-between h-full p-6 rounded-md border border-secundarios-gray dark:border-zinc-800 bg-transparent hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 w-full"
               >
@@ -165,7 +169,6 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                     {lang === 'es' ? charla.descripcionCortaEs : charla.descripcionCortaEn}
                   </p>
                 </div>
-
                 <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-principal">
                   <span>{charla.expositor.nombre} {charla.expositor.apellido}</span>
                 </div>

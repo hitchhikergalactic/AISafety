@@ -31,7 +31,7 @@ export const translations = {
         item4: "1er",
         item4_1: "nodo especializado en seguridad de la IA en español",
         item5: "Abril 2026",
-        item5_1: "primer evento de IA Safety en Madrid"
+        item5_1: "primer evento de IA safety en Madrid"
       }
     },
     mission: {
@@ -46,7 +46,7 @@ export const translations = {
       dateShort: "Muy pronto | Ubicación: Celonis Madrid",
       bluedot: {
         tag: "/ FORMACIÓN",
-        title: "Seminario de AI safety",
+        title: "Seminario de IA safety",
         description:"Junto a BlueDot realizamos un seminario mensual de IA safety. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer miércoles del mes"
       },
@@ -64,7 +64,7 @@ export const translations = {
       research: {
         tag: "/ DÍA CERO",
         title: "Primeros integrantes",
-        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en AI safety y ayuda a construir los cimientos en español.",
+        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en IA safety y ayuda a construir los cimientos en español.",
       }
     },
     collaborators: {
@@ -77,7 +77,7 @@ export const translations = {
     seminario: {
       title: "Seminario IA safety",
       submenu: "Seminario IA safety",
-      subtitle: "Descubre las charlas y expositores especializados en seguridad de IA",
+      subtitle: "Explora nuestros seminarios, aprende directamente de investigadores en IA safety y encuentra la orientación y el apoyo que tu carrera o proyecto necesitan para generar un impacto real.",
     },
     subscribe: {
       title: "Forma parte de iaS",
@@ -114,7 +114,7 @@ export const translations = {
       ctaSecondary: "Subscribe",
     },
     why: {
-      title: "Why an AI Safety Hub?",
+      title: "Why an AI safety Hub?",
       text1: "The most powerful AI systems in history are being built right now. Who makes sure they don't cause catastrophic harm? That's AI safety.",
       text2: "Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.",
       text3: "IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.",
@@ -128,9 +128,9 @@ export const translations = {
         item3: "50+",
         item3_1: "people attend iaS monthly seminars",
         item4: "1st",
-        item4_1: "node specialized in AI Safety in Spanish",
+        item4_1: "node specialized in AI safety in Spanish",
         item5: "April 2026",
-        item5_1: "first AI Safety event in Madrid"
+        item5_1: "first AI safety event in Madrid"
       }
     },
     mission: {
@@ -147,19 +147,19 @@ export const translations = {
       bluedot: {
         tag: "/ COMMUNITY",
         title: "Bluedot Impact Spain",
-        description: "People from around the world connecting on AI Safety in Spanish. Conversations we needed to have in our language.",
-        dateShort: "Monthly AI Safety meetup"
+        description: "People from around the world connecting on AI safety in Spanish. Conversations we needed to have in our language.",
+        dateShort: "Monthly AI safety meetup"
       },
       readingGroup: {
         tag: "/ NEWSLETTER",
         title: "The Greatest Challenge of Our Time",
-        description: "Our director Osmani is already writing about AI Safety on Substack.",
+        description: "Our director Osmani is already writing about AI safety on Substack.",
       },
       innovation: {
         tag: "/ INNOVATION",
-        title: "Future of AI Safety",
+        title: "Future of AI safety",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        dateShort: "Monthly AI Safety meetup"
+        dateShort: "Monthly AI safety meetup"
       },
       research: {
         tag: "/ RESEARCH",
@@ -178,11 +178,11 @@ export const translations = {
     seminario: {
       title: "AI Safety Seminar",
       submenu: "AI Safety Seminar",
-      subtitle: "Discover talks and speakers specialized in AI Safety",
+      subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
     },
     subscribe: {
       title: "Join the Hub",
-      subtitle: "Be part of the AI Safety Hub. Receive news about events, resources, and join the community.",
+      subtitle: "Be part of the AI safety Hub. Receive news about events, resources, and join the community.",
       name: "Name",
       email: "Email",
       linkedin: "LinkedIn",
@@ -191,7 +191,7 @@ export const translations = {
     },
     footer: {
       tagline: "Part of the global AI safety ecosystem",
-      copyright: "© 2026 AI Safety · Built for a human‑aligned future.",
+      copyright: "© 2026 AI safety · Built for a human‑aligned future.",
       text1:"\nContact\nQuestions, feedback, or interested in collaborating:",
       text2: "**AI safety in Spanish**\nThe reference hub for 650M people.",
       email: "hola@aisafety.es",

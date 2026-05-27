@@ -8,6 +8,7 @@ import GrillaSeminario from '../components/GrillaSeminario';
 import Footer from '../components/Footer';
 import { listaDeCharlas, Charla } from '../data/charlas';
 import headerImg from '../assets/header_bluedot_meetup.png';
+import { parseText } from '../utils/parseText';
 
 type Language = 'es' | 'en';
 type Theme = 'light' | 'dark';

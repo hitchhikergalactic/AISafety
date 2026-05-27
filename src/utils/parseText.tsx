@@ -8,7 +8,6 @@ export const parseText = (text: string | undefined): React.ReactNode => {
   const lines = text.split('\n');
   
   if (lines.length === 1) {
-    // Para una sola línea, retorna el contenido procesado directamente
     const lineContent = lines[0];
     return (
       <>

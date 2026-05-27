@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { Charla } from '../data/charlas';
+import { RiH5 } from 'react-icons/ri';
+import { parseText } from '../utils/parseText';
 
 type Language = 'es' | 'en';
 
@@ -24,13 +26,6 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang, onChar
     <section id="seminario-charlas" className="py-12 md:py-24 px-4 md:px-8">
       <div className="max-w-[1100px] mx-auto">
         
-        {/* Título de la sección adaptado al idioma de la web */}
-        <div className="max-w-9xl mx-auto md:gap-24 items-left justify-left mb-12"> 
-          <h4 className="text-xl font-bold uppercase tracking-tight">
-            {lang === 'es' ? 'Charlas del Seminario' : 'Seminar Talks'}
-          </h4>
-        </div>
-
         {/* Grilla regular de 3 columnas en Desktop, 2 en Tablet, 1 en Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
@@ -67,17 +62,17 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang, onChar
                     </div>
                     
                     {/* Título de la Charla */}
-                    <h4 className="text-base font-bold uppercase tracking-tight mb-1 leading-snug text-secundarios-dark dark:text-secundarios-light">
+                    <h4 className="text-base font-bold tracking-tight mb-1 leading-snug text-secundarios-dark dark:text-secundarios-light">
                       {tituloText}
                     </h4>
                     
                     {/* Expositor: Acceso limpio a las propiedades de nombre y apellido */}
-                    <p className="text-sm font-medium text-neutral-600 dark:text-neutral-300 mb-3">
+                    <h5 className=" uppercase font-bold font-medium text-neutral-600 dark:text-neutral-300 mb-3">
                       {charla.expositor.nombre} {charla.expositor.apellido}
-                    </p>
+                    </h5>
 
-                    {/* Copete / Descripción corta (usa el fallback de la versión larga traducida si no existe la corta) */}
-                    <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">
+                    {/* Copete / Descripción corta */}
+                    <p className="text-secundario-dark dark:text-secundario-light text-sm leading-relaxed line-clamp-6">
                       {descripcionCortaText || descripcionLargaText}
                     </p>
                   </div>

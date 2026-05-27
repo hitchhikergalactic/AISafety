@@ -30,7 +30,6 @@ export const PillarCard: React.FC<{
     </p>
   </div>
 );
-// Componente para los enlaces a colaboradores (logos/nombres)
 export const CollaborativeCard: React.FC<{ 
 	href: string; 
 	text: string;

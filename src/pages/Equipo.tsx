@@ -32,14 +32,15 @@ const Equipo: React.FC<EquipoProps> = ({ lang, setLang, theme, setTheme }) => {
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
       
       <main className="pt-36 md:pt-44 px-8 md:px-20 lg:px-40 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
+        
+        {/* CONTENEDOR MAESTRO: Limita el ancho de TODO el contenido a max-w-3xl */}
         <div className="max-w-3xl mx-auto text-left w-full">
           
-          {/* 1. Usamos flex-col-reverse para que en móvil el primer hijo (foto) baje y el segundo (texto) suba */}
+          {/* Primera Parte: Foto y Bio */}
           <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-start">
             
-            {/* COLUMNA DE LA FOTO: En móvil abajo, en escritorio a la izquierda */}
+            {/* COLUMNA DE LA FOTO */}
             <div className="flex flex-col items-center shrink-0 w-full md:w-auto mt-6 md:mt-12">
-              {/* Foto de Osmani */}
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-md overflow-hidden border-1 dark:border shadow-lg mb-4">
                 <img 
                   src={osmaniImg} 
@@ -47,8 +48,6 @@ const Equipo: React.FC<EquipoProps> = ({ lang, setLang, theme, setTheme }) => {
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Icono de LinkedIn justo debajo de la foto */}
               <a 
                 href="https://www.linkedin.com/in/osmani/" 
                 target="_blank" 
@@ -59,14 +58,11 @@ const Equipo: React.FC<EquipoProps> = ({ lang, setLang, theme, setTheme }) => {
               </a>
             </div>
 
-            {/* COLUMNA DEL TEXTO: En movile arriba, en escritorio a la derecha */}
+            {/* COLUMNA DEL TEXTO */}
             <div className="w-full md:flex-1">
-              {/* Título (Hero Title) */}
               <h4 className="text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
                 {content.heroTitle}
               </h4>
-              
-              {/* Subtítulo / Bio completa */}
               <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
                 {parseText(content.heroSubtitle)}
               </p>
@@ -74,20 +70,33 @@ const Equipo: React.FC<EquipoProps> = ({ lang, setLang, theme, setTheme }) => {
           </div>
 
           {/* Impact Section */}
-          <section className="mb-20 md:mb-52"></section>
-        </div>
-        {/* Sección de Contribución / Llamada a la acción */}
-<section className="mt-20 mb-20 md:mb-52 bg-white/30 dark:bg-white/5 p-8 rounded-2xl border border-secundarios-dark/10 dark:border-white/10">
-  <h3 className="text-xl md:text-2xl font-bold text-secundarios-dark dark:text-white mb-4 text-balance">
-    {content.joinTitle}
-  </h3>
-  <p className="text-small text-secundarios-dark dark:text-secundarios-light mb-4 leading-relaxed">
-    {parseText(content.joinSubtitle)}
-  </p>
-  <p className="text-small text-secundarios-dark/90 dark:text-secundarios-light/90 leading-relaxed font-light">
-    {content.joinContribute}
-  </p>
-</section>
+          <section className="mb-50 md:mb-52"></section>
+
+          {/* Sección de Contribución (Ahora alineada dentro del max-w-3xl) */}
+          <section className="mt-10 mb-20 md:mb-52 bg-white/30 dark:bg-white/5 p-8 rounded-md border border-secundarios-dark/10 dark:border-white/10">
+            <h4 className="text-xl md:text-2xl font-bold text-secundarios-dark dark:text-white mb-4 text-balance">
+              {content.joinTitle}
+            </h4>
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light mb-4 leading-relaxed">
+              {parseText(content.joinSubtitle)}
+            </p>
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed font-light">
+              {parseText(content.joinContribute)}
+            </p>
+            <div className="mt-6">
+            <a
+              href={content.linkBoton}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-principal text-white font-sans font-bold text-xl py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex shadow-sm"
+            >
+              {content.boton}
+            </a>
+          </div>
+          </section>
+
+        </div> 
+        
       </main>
       <Footer lang={lang} theme={theme} onSubscribeClick={() => {}} />
     </>

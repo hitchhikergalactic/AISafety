@@ -4,7 +4,7 @@ import { translations } from '../locales/translations';
 import Navbar from '../components/Navbar';
 import CharlasSection from '../components/CharlasSection';
 import Footer from '../components/Footer';
-import { listaDeCharlas } from '../data/charlas'; //
+import { listaDeCharlas } from '../data/charlas';
 
 type Language = 'es' | 'en';
 type Theme = 'light' | 'dark';

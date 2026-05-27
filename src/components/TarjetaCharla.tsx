@@ -9,7 +9,6 @@ interface TarjetaCharlaProps {
 
 /**
  * Componente que dibuja una tarjeta individual de charla
- * Template sin estilos específicos - será maquerrada después
  */
 const TarjetaCharla: React.FC<TarjetaCharlaProps> = ({ charla, onHover, onClick }) => {
   return (

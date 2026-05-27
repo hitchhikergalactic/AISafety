@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiH1 } from 'react-icons/hi2';
+import { parseText } from '../utils/parseText';
 
 interface SeminarioHeroProps {
   t: any;
@@ -13,7 +14,7 @@ const SeminarioHero: React.FC<SeminarioHeroProps> = ({ t }) => {
           {t.seminario.title}
         </h2>
         <p className="bajada max-w-[950px] mx-auto">
-          {t.seminario.subtitle}
+          {parseText(t.seminario.subtitle)}
         </p>
       </div>
     </section>
