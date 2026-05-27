@@ -30,6 +30,11 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<'event' | 'subscribe'>('subscribe');
 
+  // Scroll al inicio cuando se carga la página
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Cargar script de Luma
   useEffect(() => {
     const scriptId = 'luma-checkout';
