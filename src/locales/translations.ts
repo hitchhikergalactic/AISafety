@@ -69,7 +69,7 @@ export const translations = {
     },
     collaborators: {
       title: "Red iaS",
-      text: "Somos parte del ecosistema global de AI safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
+      text: "Somos parte del ecosistema global de IA safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
     women4ais: {
       title: "Women4AIS",
