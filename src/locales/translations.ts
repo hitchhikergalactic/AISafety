@@ -102,16 +102,16 @@ export const translations = {
     nav: {
       home: "Home",
       mission: "/About iaS",
-      events: "/Ecosistema ias",
-      about: "/About us",
+      events: "/Training",
+      about: "/Connect",
       contact: "/Contact us",
     },
     hero: {
       location: "",
-      h1: "AI safety Hub",
-      h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
-      ctaPrimary: "Join the hub",
-      ctaSecondary: "Subscribe",
+      h1: "AI Safety Hub",
+      h2: "**iaS** is the reference hub for AI safety in Spanish. We train and support professionals in their career development and back projects dedicated to building safer AI.",
+      ctaPrimary: "I want to understand what AI safety is",
+      ctaSecondary: "I want to be part of it!",
     },
     why: {
       title: "Why an AI safety Hub?",
@@ -156,15 +156,15 @@ export const translations = {
         description: "Our director Osmani is already writing about AI safety on Substack.",
       },
       innovation: {
-        tag: "/ INNOVATION",
-        title: "Future of AI safety",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        dateShort: "Monthly AI safety meetup"
+        tag: "/ TRAINING",
+        title: "AI Safety Strategy Course",
+        description: "The first specialized AI General Intelligence strategy program based on BlueDot Impact's curriculum. No technical requirements.",
+        dateShort: "Cohort-based | Available: October 2026"
       },
       research: {
-        tag: "/ RESEARCH",
-        title: "Safety Research Initiative",
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        tag: "/ ZERO DAY",
+        title: "Early Members",
+        description: "We're looking for commitment, not numbers. Join the first people interested in AI safety and help build the foundations in Spanish.",
       }
     },
     collaborators: {
