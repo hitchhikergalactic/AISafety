@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import eventImage from '../assets/eventos_Licencia_Unsplash.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
@@ -99,8 +100,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
           <div className="flex flex-col gap-5 h-full">
             
             {/* TARJETA 3: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
-            <a 
-              href="/seminario-bluedot-spain"
+            <Link 
+              to="/seminario-bluedot-spain"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
                <div className="flex justify-between items-start mb-4">
@@ -119,7 +120,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                     <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
                </div>
-            </a>
+            </Link>
 
             {/* TARJETA 4: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
