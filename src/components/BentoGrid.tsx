@@ -101,7 +101,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
             {/* TARJETA 3: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
               href="/seminario-bluedot-spain"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
@@ -109,13 +109,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                     <ArrowUpRight size={14} />
                   </button>
                </div>
-               <div className="flex gap-4 flex-1">
-                  <div className="w-32 h-32 bg-neutral-100 overflow-hidden flex-shrink-0 rounded-md">
+               <div className="flex flex-col md:flex-row gap-4 flex-1">
+                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
                     <img src={rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 lex-grow">{t.upcoming.bluedot.description}</p>
+                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{t.upcoming.bluedot.description}</p>
                     <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
                </div>
@@ -148,7 +148,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
               href="https://discord.com/invite/z7uhQKhZKW"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
@@ -156,13 +156,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                     <ArrowUpRight size={14} />
                   </button>
                </div>
-               <div className="flex gap-4 flex-1">
-                  <div className="w-32 h-32 bg-neutral-100 overflow-hidden flex-shrink-0 rounded-md">
+               <div className="flex flex-col md:flex-row gap-4 flex-1">
+                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
                     <img src={discord} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.research.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 lex-grow">{t.upcoming.research.description}</p>
+                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 flex-grow">{t.upcoming.research.description}</p>
                   </div>
                </div>
             </a>
