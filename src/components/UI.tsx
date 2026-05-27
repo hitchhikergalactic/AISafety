@@ -8,13 +8,12 @@ export const Section: React.FC<{
 	children: React.ReactNode;
 	fullWidth?: boolean;
 }> = ({ id, className = "", children, fullWidth = false }) => (
-	<section id={id} className={`py-16 md:py-48 px-4 md:px-12 scroll-mt-32 ${className}`}>
-		<div className={fullWidth ? "w-full" : "max-w-7xl mx-auto"}>
+	<section id={id} className={`py-8 md:py-24 px-8 md:px-8 scroll-mt-32 ${className}`}>
+		<div className={fullWidth ? "w-full" : "max-w-[1100px] mx-auto"}>
 			{children}
 		</div>
 	</section>
 );
-// Componente para las tarjetas de los 3 pilares
 export const PillarCard: React.FC<{ 
   icon: React.ReactNode; 
   title: string; 
@@ -25,14 +24,12 @@ export const PillarCard: React.FC<{
     <div className="w-20 h-20 md:w-8 md:h-12 dark:bg-principal10 text-cuartos-purple dark:text-terciarios-blue rounded-anthro flex items-center justify-center mb-8 md:mb-10 group-hover:scale-110 transition-transform duration-500">
       {icon}
     </div>
-    {/* CAMBIO 1: Cambiamos h3 por h4 para que herede tu estilo (Naranja/Uppercase) */}
     <h4 className="mb-4 md:mb-6">{title}</h4>
     <p className="mb-0 flex-grow text-balance">
       {text}
     </p>
   </div>
 );
-// Componente para los enlaces a colaboradores (logos/nombres)
 export const CollaborativeCard: React.FC<{ 
 	href: string; 
 	text: string;

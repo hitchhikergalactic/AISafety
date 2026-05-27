@@ -1,5 +1,6 @@
 // src/components/Navbar.tsx
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import logo from '../assets/ias_logo.svg';
 import logoWhite from '../assets/ias_logo_white.svg';
@@ -15,6 +16,9 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,11 +27,50 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
   }, []);
 
   const navLinks = [
-    { href: "#mission", label: t.nav.mission },
-    { href: "#eventos", label: t.nav.events },
-    { href: "#conocenos", label: t.nav.about },
-    { href: "#newsletter", label: t.nav.contact },
+    { 
+      href: "#mission", 
+      label: t.nav.mission, 
+      to: "/?section=mission",
+      sublinks: [
+        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que_hacemos" },
+        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" }
+      ]
+    },
+    { 
+      href: "#eventos", 
+      label: t.nav.events, 
+      to: "/?section=eventos",
+      sublinks: [
+        { label: t.seminario?.submenu, path: "/seminario-bluedot-spain" }
+      ]
+    },
+    { href: "#conectar", label: t.nav.about, to: "/?section=conectar" },
+    { href: "#footer", label: t.nav.contact, to: "/?section=footer" },
   ];
+
+  const handleNavClick = (to: string, sectionId: string) => {
+    setIsOpen(false);
+    setOpenSubmenu(null);
+    
+    // Si ya estamos en home, solo scroll
+    if (location.pathname === '/') {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    } else {
+      // Si estamos en otra ruta, navega a home y luego scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out`}>
@@ -36,21 +79,64 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
 
       <div className={`max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
-        <a href="#" className="shrink-0 transition-opacity duration-300 hover:opacity-80">
+        <Link 
+          to="/" 
+          onClick={() => {
+            setIsOpen(false);
+            setOpenSubmenu(null);
+            window.scrollTo(0, 0);
+          }}
+          className="shrink-0 transition-opacity duration-300 hover:opacity-80"
+        >
           <img 
             src={theme === 'dark' ? logoWhite : logo} 
             alt="AI Safety España" 
             className="h-10 md:h-[50px] w-auto block bg-transparent"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-xs uppercase tracking-[0.2em] opacity-80">
+        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg tracking-wide opacity-80">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principalLight transition-all duration-300 relative group overflow-hidden">
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
+            <div key={link.href} className="relative group">
+              <button 
+                onClick={() => {
+                  if (!link.sublinks) {
+                    handleNavClick(link.to, link.href.slice(1));
+                  } else {
+                    // Si tiene submenu, primero navega a la sección y luego alterna submenu
+                    handleNavClick(link.to, link.href.slice(1));
+                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
+                  }
+                }}
+                className="text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principalLight transition-all duration-300 relative overflow-hidden cursor-pointer bg-transparent border-none"
+              >
+                {link.label.toUpperCase()}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              </button>
+              
+              {/* Submenu Dropdown */}
+              {link.sublinks && (
+                <div className="absolute left-0 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div className="bg-secundarios-light dark:bg-secundarios-dark border border-secundarios-dark/10 rounded-sm overflow-hidden">
+                    {link.sublinks.map((sublink, idx) => (
+                      <Link
+                        key={idx}
+                        to={sublink.path}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setOpenSubmenu(null);
+                          window.scrollTo(0, 0);
+                        }}
+                        className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
@@ -81,16 +167,44 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
       <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
-            <a 
-              key={link.href} 
-              href={link.href} 
-              onClick={() => setIsOpen(false)} 
-              className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principal border-b border-secundarios-dark/10 pb-4 flex justify-between items-center group transition-colors duration-300"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              {link.label}
-              <ArrowRight size={24} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-            </a>
+            <div key={link.href}>
+              <button 
+                onClick={() => {
+                  if (!link.sublinks) {
+                    handleNavClick(link.to, link.href.slice(1));
+                  } else {
+                    // Si tiene submenu, primero navega a la sección y luego alterna submenu
+                    handleNavClick(link.to, link.href.slice(1));
+                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
+                  }
+                }}
+                className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal dark:hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full"
+                style={{ transitionDelay: `${idx * 50}ms` }}
+              >
+                {link.label.toUpperCase()}
+                <ArrowRight size={24} className={`opacity-40 group-hover:opacity-100 transition-all ${openSubmenu === link.href ? 'rotate-90' : ''}`} />
+              </button>
+              
+              {/* Mobile Submenu */}
+              {link.sublinks && openSubmenu === link.href && (
+                <div className="ml-4 flex flex-col gap-3 pb-4">
+                  {link.sublinks.map((sublink, subIdx) => (
+                    <Link
+                      key={subIdx}
+                      to={sublink.path}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setOpenSubmenu(null);
+                        window.scrollTo(0, 0);
+                      }}
+                      className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors"
+                    >
+                      {sublink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

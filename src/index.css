@@ -9,7 +9,7 @@ html {
 
 /* Evita que el Navbar tape el inicio de la sección cuando llegas */
 [id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 0px;
 }
 
 /* Clase extra para el efecto de desenfoque del menú que usamos en el código */

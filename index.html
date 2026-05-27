@@ -4,9 +4,11 @@
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="66ab54eb-84bb-4a7e-b165-4e423d010a45"></script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>AI Safety en Español | Hub de AI Safety</title>
-		<meta name="description" content="El hub de referencia en AI Safety para el mundo hispanohablante. Eventos, formación e investigación." />
+		<title>AI safety en español | Hub para hispanohablantes</title>
+		<meta name="description" content="Más de 650M de personas hablan español. El debate sobre AI safety ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global" />
 		<meta name="google-site-verification" content="WkCE-fRxNDs_TgUk2CEVcDVK2AK4mfcDTa1A010svqA" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://aisafety.es/" />
 		<link rel="icon" href="/favicon.ico?v=1" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1" />
@@ -15,12 +17,12 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "Organization",
-			"name": "AI Safety España",
+			"name": "AI safety España",
 			"url": "https://aisafety.es",
-			"description": "El hub de referencia en AI Safety para el mundo hispanohablante. Eventos, formación e investigación.",
+			"description": "Más de 650M de personas hablan español. El debate sobre AI safety ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global",
 			"sameAs": [
-				"https://www.instagram.com/aisafetyspain/",
-				"https://bsky.app/profile/aisafetyspain.bsky.social"
+				"https://www.instagram.com/aisafety_spain",
+				"https://www.linkedin.com/company/aisafetyspain/"
 			]
 		}
 		</script>
@@ -47,6 +49,7 @@
 							'cuartos-yellow': '#ffc00b',
 							'cuartos-pink': '#ff5fc2',
 							'cuartos-purple': '#662d91',
+							'label-gray': '#9ca3af',
 						},
 						borderRadius: {
 							'anthro': '16px',
@@ -66,16 +69,6 @@
 			}
 		</script>
 		<style>
-			/* body {
-				font-family: 'Alegreya', serif;
-				font-size: 1.125rem; 
-				line-height: 1.4;
-				scroll-behavior: smooth;
-				transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-				-webkit-font-smoothing: antialiased;
-			} */
-		/* Párrafo estándar (Cuerpo) */
-/* Párrafo estándar (Cuerpo) */
 			p {
 				font-family: 'Alegreya', serif !important;
 				line-height: 1.45 !important; 
@@ -91,19 +84,21 @@
 					line-height: 1.5 !important;
 				}
 			}
-      .bajada {
-        font-family: 'Alegreya', serif !important; 
-        font-size: clamp(1.5rem, 4vw, 2.3rem) !important;
-        line-height: 1.4 !important;
-        font-weight: 400 !important; 
-        color: inherit; 
-        margin-bottom: 2.5rem;
-        text-wrap: balance;
-        opacity: 0.8;
-      }
+			.bajada {
+			font-family: 'Alegreya', serif !important; 
+			/* El mínimo sube a 1.2rem y el escalado es más rápido (5vw) */
+			font-size: clamp(1.2rem, 5vw, 2.0rem) !important;
+			line-height: 1.4 !important;
+			font-weight: 400 !important; 
+			color: inherit; 
+			/* Reducimos un poco el margen en móvil para que no flote tanto */
+			margin-bottom: 1.8rem; 
+			text-wrap: balance;
+			opacity: 0.9; /* Un pelín más de opacidad ayuda a la legibilidad en pantallas chicas */
+		}
       .texto-small {
         font-family: 'Alegreya', serif !important;
-        font-size: 0.95rem !important;
+        font-size: 0.90rem !important;
         line-height: 1.4 !important;
         opacity: 0.7;
       }
@@ -116,7 +111,7 @@
 			h1 {
 				font-family: 'Overpass', sans-serif !important;
 				font-weight: 800 !important;   
-				line-height: 1.0 !important;   
+				line-height: 1.5 !important;   
 				font-size: clamp(2.5rem, 8vw, 6.5rem) !important; 
 				letter-spacing: 0em !important;
 			}
@@ -136,14 +131,14 @@
 			}
 			h4 {
 				font-family: 'Overpass', sans-serif !important;
-				font-weight: 600 !important;   
+				font-weight: 700 !important;   
 				line-height: 1.1 !important;
-				font-size: clamp(1.1rem, 5vw, 1.5rem) !important; 
-				text-transform: uppercase !important;
+				font-size: clamp(1.0rem, 5vw, 1.5rem) !important; 
+				text-transform:  !important;
 				/* Color principal (#ff4500) */
 				color: #ff4500 !important;
 				/* Espaciado entre letras: 0.05em a 0.1em es lo ideal para etiquetas en mayúsculas */
-				letter-spacing: 0.05em !important; 
+				letter-spacing: 0.00em !important; 
 				/* Opcional: un margen inferior constante para que respire la mancha de texto */
 				margin-bottom: 1rem !important;
       		}

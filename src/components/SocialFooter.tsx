@@ -4,6 +4,7 @@ import {
   FaDiscord, 
   FaLinkedin
 } from "react-icons/fa";
+import { FaRegCalendar } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import { LuMapPin } from "react-icons/lu";
 
@@ -18,6 +19,9 @@ const SocialFooter = () => {
       </a>
       <a href="https://substack.com/@osmaniredondo" className="hover:text-white transition-colors" aria-label="Substack">
         <SiSubstack />
+      </a>
+      <a href="https://luma.com/user/osmaniredondo" className="hover:text-white transition-colors" aria-label="Luma">
+        <FaRegCalendar />
       </a>
       <a href="https://www.instagram.com/aisafety_spain" className="hover:text-white transition-colors" aria-label="Instagram">
         <FaInstagram />

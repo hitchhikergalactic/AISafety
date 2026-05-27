@@ -3,80 +3,84 @@ export const translations = {
     nav: {
       home: "Inicio",
       mission: "/Sobre iaS",
-      events: "/Eventos",
-      about: "/Conócenos",
+      events: "/Formar",
+      about: "/Conectar",
       contact: "/Escríbenos",
     },
     hero: {
       location: "",
-      h1: "Hub de IA Safety",
-      h2: "Construyendo una comunidad para comprender y reducir riesgos existenciales de sistemas avanzados de IA",
-      ctaPrimary: "¡Quiero formar parte!",
-      ctaSecondary: "Suscríbete",
-    },
+      h1: "Hub de IA safety",
+      h2: "**iaS** es referente en seguridad de la inteligencia artificial en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura.",
+      ctaPrimary: "Quiero entender qué es AI safety",
+      ctaSecondary: "¡Quiero formar parte!",
+    }, 
     why: {
-      title: "¿Por qué un Hub de Seguridad en IA?",
-      text: `La IA más poderosa de la historia se está construyendo ahora. ¿Quién se asegura de que va en la dirección correcta? 
-      Eso es IA Safety. Y hoy esa conversación se tiene en inglés, en Silicon Valley, sin voces hispanohablantes.
-      Para los 636 millones que hablamos español eso significa más errores y menos representación.
-      Como un coche: no necesitas ser mecánico para exigir que tenga frenos. Pero alguien tiene que diseñarlos.
-      `,
-      text2:"aisafety.es existe para que esa conversación también sea nuestra.",
+      title: "¿Por qué un Hub de seguridad en IA en español?",
+      text1: 'Los laboratorios que desarrollan la IA más avanzada del mundo se encuentran principalmente en EE. UU., Reino Unido y China. Las decisiones sobre cómo se despliega, quién la controla y qué valores incorpora se toman, mayoritariamente, en inglés.',
+      text2: "Esto no es solo un detalle técnico: es un desafío de seguridad.",
+      text3: 'La investigación actual demuestra que los modelos de lenguaje son menos seguros en idiomas distintos al inglés. El español, oficial en 21 países y presente en todos los continentes, carece de un nodo propio que identifique estos fallos, los documente y traslade la evidencia a reguladores y desarrolladores.',
+      text4: 'iaS nace para ser ese nodo.',
+      impactFigures: {
+        title: "Cifras que impactan",
+        item1: "+650M",
+        item1_1: "de personas hablan español en el mundo",
+        item2: "21",
+        item2_1: "países tienen el español como lengua oficial",
+        item3: "%150",
+        item3_1: "de crecimiento en la asistencia a los seminarios mensuales",
+        item4: "1er",
+        item4_1: "nodo especializado en seguridad de la IA en español",
+        item5: "Abril 2026",
+        item5_1: "primer evento de IA safety en Madrid"
+      }
     },
     mission: {
       title: "Sobre iaS",
-      text: "**IA Safety** para entender la inteligencia artificial como es, como podría llegar a ser y como nos gustaría que fuera.",
-    },
-    pillars: {
-      title: "El Hub en Acción",
-      education: {
-        title: "Educación",
-        text: "Recursos accesibles, traducciones de papers clave y guías para todos los niveles.",
-      },
-      events: {
-        title: "Eventos",
-        text: "Meetups presenciales y virtuales, charlas con expertos, workshops técnicos.",
-      },
-      community: {
-        title: "Comunidad",
-        text: "Conexión entre investigadores, desarrolladores y personas que quieren contribuir a la seguridad en IA.",
-      },
+      text: "IA safety para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
       title: "Próximos Eventos",
       eventTitle: "Primer encuentro de W4AIS",
-      date: "",
-      location: "",
-      description: "La IA que se construye hoy decidirá cómo vivimos mañana. W4AIS nace para que más voces estén en esa conversación. Habrá charlas, networking y snacks. ¡Te esperamos!",
-      cta: "Reserva tu plaza",
-      dateShort: "Fecha disponible, muy pronto",
+      description: "La inteligencia artificial que construimos hoy decidirá nuestro mañana. W4AIS nace para integrar más voces en esta conversación.",
+      dateShort: "Muy pronto | Ubicación: Celonis Madrid",
       bluedot: {
-        tag: "/ COMUNIDAD",
-        title: "Bluedot Impact Spain",
-        description:"Gente desde todos los rincones del mundo conectando sobre IA Safety en español. Conversaciones que necesitábamos tener en nuestro idioma.",
-        dateShort: "Meetup mensual de IA Safety "
+        tag: "/ FORMACIÓN",
+        title: "Seminario de IA safety",
+        description:"Junto a BlueDot realizamos un seminario mensual de IA safety. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
+        dateShort: "Primer miércoles del mes"
       },
       readingGroup: {
-        tag: "/ DIVULGACIÓN",
+        tag: "/ SUBSTACK",
         title: "El desafío más grande de todos los tiempos",
-        description: "Nuestra directora Osmani ya está en Substack hablando de IA Safety.",
+        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis técnico sobre los fallos de seguridad de los modelos de lenguaje en español. Por Osmani Redondo.",
+      },
+      innovation: {
+        tag: "/ FORMACIÓN",
+        title: "Curso de Estrategia ante la Inteligencia Artificial General",
+        description:"El primer programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
+        dateShort: "Basado en cohortes. Sin requisitos técnicos | Disponible: Octubre 2026."
+      },
+      research: {
+        tag: "/ DÍA CERO",
+        title: "Primeros integrantes",
+        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en IA safety y ayuda a construir los cimientos en español.",
       }
     },
     collaborators: {
-      title: "Nuestra red",
-    },
-    about: {
-      title: "Sobre esta iniciativa",
-      text1: "Esta iniciativa surge para crear un espacio donde explorar los retos técnicos y éticos de la IA avanzada.",
-      text2: "Impulsada por Osmani Redondo, conecta investigadores, estudiantes, profesionales de política pública y cualquier persona curiosa sobre el futuro de la IA — desde España, para los 600 millones de hispanohablantes del mundo.",
+      title: "Red iaS",
+      text: "Somos parte del ecosistema global de AI safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
     women4ais: {
-      title: "Formamos parte de Women4AIS",
-      text: "Women4AIS construye una comunidad global en seguridad de IA donde todas las voces suman. Creemos que la diversidad de perspectivas hace este campo más fuerte. Si compartes esta visión, únete.",
+      title: "Women4AIS",
+      text: "El campo de AI safety tiene un déficit de representación. Las mujeres están subrepresentadas en investigación, en gobernanza y en los equipos que están tomando las decisiones más importantes de nuestra era.\nW4IAS existe para cambiar eso en el mundo hispanohablante.\nOrganizamos eventos, creamos redes de apoyo profesional y conectamos a mujeres hispanohablantes con oportunidades en AI safety a nivel global."},
+    seminario: {
+      title: "Seminario IA safety",
+      submenu: "Seminario IA safety",
+      subtitle: "Explora nuestros seminarios, aprende directamente de investigadores en IA safety y encuentra la orientación y el apoyo que tu carrera o proyecto necesitan para generar un impacto real.",
     },
     subscribe: {
-      title: "Forma parte de nuestra comunidad",
+      title: "Forma parte de iaS",
       subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
       name: "Nombre",
       email: "Email",
@@ -85,9 +89,10 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de IA Safety",
-      copyright: "Copyright 2026 IA Safety · Built for a human-aligned future",
-      text1: "\nContacto\nPreguntas, feedback o interesado en colaborar:",
+      tagline: "Parte del ecosistema global de IA safety · Currículo por BlueDot Impact",
+      copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
+      text1: "\n¿Tienes preguntas o quieres colaborar?",
+      text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
       email: "hola@aisafety.es",
       dir:"Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
@@ -97,77 +102,87 @@ export const translations = {
     nav: {
       home: "Home",
       mission: "/About iaS",
-      events: "/Events",
+      events: "/Ecosistema ias",
       about: "/About us",
       contact: "/Contact us",
     },
     hero: {
       location: "",
-      h1: "AI Safety Hub",
+      h1: "AI safety Hub",
       h2: "Building a community to understand and mitigate existential risks from advanced AI systems",
       ctaPrimary: "Join the hub",
       ctaSecondary: "Subscribe",
     },
     why: {
-      title: "Why an AI Safety Hub?",
-      text: `The most powerful AI systems in history are being built right now. Who makes sure they don’t cause catastrophic harm? That’s AI safety. Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.
-IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.`,
+      title: "Why an AI safety Hub?",
+      text1: "The most powerful AI systems in history are being built right now. Who makes sure they don't cause catastrophic harm? That's AI safety.",
+      text2: "Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.",
+      text3: "IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.",
+      text4: "The AI being built today will decide how we live tomorrow. Who ensures Spanish speakers are part of that conversation?",
+      impactFigures: {
+        title: "Impact Figures",
+        item1: "636M",
+        item1_1: "people speak Spanish worldwide",
+        item2: "21",
+        item2_1: "countries have Spanish as official language",
+        item3: "50+",
+        item3_1: "people attend iaS monthly seminars",
+        item4: "1st",
+        item4_1: "node specialized in AI safety in Spanish",
+        item5: "April 2026",
+        item5_1: "first AI safety event in Madrid"
+      }
     },
     mission: {
       title: "Our Mission",
       text: "**AI safety**: understanding AI as it is, as it could be, and as we want it to be",
     },
-    pillars: {
-      title: "The Hub in Action",
-      education: {
-        title: "Education",
-        text: "Accessible resources, translations of key papers, and guides for all levels.",
-      },
-      events: {
-        title: "Events",
-        text: "In-person and virtual meetups, expert talks, and technical workshops.",
-      },
-      community: {
-        title: "Community",
-        text: "Connecting researchers, developers, and people who want to contribute to AI safety.",
-      },
-    },
     upcoming: {
       tag: "/ UPCOMING",
       title: "Upcoming Events",
       eventTitle: "First W4AIS Encounter",
-      date: "",
-      location: "",
       description: "The AI being built today will decide how we live tomorrow. W4AIS is born so that more voices are part of that conversation. There will be talks, networking and snacks. We look forward to seeing you!",
       cta: "Book your spot",
       dateShort: "Date available very soon",
       bluedot: {
         tag: "/ COMMUNITY",
         title: "Bluedot Impact Spain",
-        description: "People from around the world connecting on AI Safety in Spanish. Conversations we needed to have in our language.",
+        description: "People from around the world connecting on AI safety in Spanish. Conversations we needed to have in our language.",
+        dateShort: "Monthly AI safety meetup"
       },
       readingGroup: {
         tag: "/ NEWSLETTER",
         title: "The Greatest Challenge of Our Time",
-        description: "Our director Osmani is already writing about AI Safety on Substack.",
+        description: "Our director Osmani is already writing about AI safety on Substack.",
+      },
+      innovation: {
+        tag: "/ INNOVATION",
+        title: "Future of AI safety",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        dateShort: "Monthly AI safety meetup"
+      },
+      research: {
+        tag: "/ RESEARCH",
+        title: "Safety Research Initiative",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       }
     },
     collaborators: {
-      title: "Network of Collaborators",
-    },
-    about: {
-      title: "About this initiative",
-      text1: `This initiative creates a space to engage seriously with the technical and governance challenges of advanced AI – alignment, control, and systemic risk – from a Spanish‑speaking context.\nLed by Osmani Redondo, It connects researchers, students, engineers, and policy professionals who want to:\n\t• understand the existential and catastrophic risks from advanced AI, and\n\t• either work directly on mitigating them, or generate better evidence about how these systems behave in Spanish.`,
-      text2:``,
-      joinBtn: "Join us",
+      title: "iaS Network",
+      text: "We are part of the global AI safety ecosystem, collaborating closely with **BlueDot Impact** and the international network of local hubs.",
     },
     women4ais: {
-      title: "We're part of Women4AIS",
-      text: "We’re part of Women4AIS, a global initiative to bring more and more diverse people into technical and governance work on AI safety – not as an end in itself, but because diverse perspectives are useful when you’re trying to stress‑test failure modes in complex systems. If you share this vision, join us.",
+      title: "Women4AIS",
+      text: "The AI safety field has a representation deficit. Women are underrepresented in research, in governance, and in the teams making the most important decisions of our era.\nW4AIS exists to change that in the Spanish-speaking world.\nWe organize events, create professional support networks, and connect Spanish-speaking women with opportunities in AI safety globally.",
+    },
+    seminario: {
+      title: "AI Safety Seminar",
+      submenu: "AI Safety Seminar",
+      subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
     },
     subscribe: {
       title: "Join the Hub",
-      subtitle: "Be part of the AI Safety Hub. Receive news about events, resources, and join the community.",
+      subtitle: "Be part of the AI safety Hub. Receive news about events, resources, and join the community.",
       name: "Name",
       email: "Email",
       linkedin: "LinkedIn",
@@ -175,9 +190,10 @@ IAS exists to help close that gap: by building a Spanish‑first, bilingual comm
       success: "Thanks for subscribing!",
     },
     footer: {
-      tagline: "Part of the global AI Safety ecosystem",
-      copyright: "© 2026 AI Safety · Built for a human‑aligned future.",
+      tagline: "Part of the global AI safety ecosystem",
+      copyright: "© 2026 AI safety · Built for a human‑aligned future.",
       text1:"\nContact\nQuestions, feedback, or interested in collaborating:",
+      text2: "**AI safety in Spanish**\nThe reference hub for 650M people.",
       email: "hola@aisafety.es",
       dir: "Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
