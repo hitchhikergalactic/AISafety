@@ -1,0 +1,23 @@
+Contact: security@aisafety.es
+Expires: 2027-05-27T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://aisafety.es/.well-known/security.txt
+Policy: https://aisafety.es/security-policy
+
+# Security Policy for aisafety.es
+# 
+# This file provides security researchers and the public with 
+# guidance on reporting security vulnerabilities responsibly.
+
+# Security Contact
+# Please email security@aisafety.es with details of any security issues
+# Include a description of the vulnerability, steps to reproduce, 
+# and potential impact.
+
+# Acknowledgments
+# We appreciate responsible disclosure and will acknowledge 
+# security researchers who report vulnerabilities responsibly.
+
+# Security Updates
+# Visit https://aisafety.es for the latest security information
+# Subscribe to our newsletter for important security announcements
