@@ -114,6 +114,16 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					</h1>
 					<p className="bajada max-w-[950px] mx-auto">{parseText(t.hero.h2)}</p>
 				</div>
+				<div className="max-w-2xl mx-auto">
+					<div className="flex flex-col md:flex-row gap-4 pt-12">
+						<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md">
+							{t.hero.ctaSecondary}
+						</button>
+						<button onClick={() => window.open('https://osmaniredondo.substack.com/', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md">
+							{t.hero.ctaPrimary}
+						</button>
+					</div>
+				</div>
 			</Section>
 
 			{/* 2. COLABORADORES */}
