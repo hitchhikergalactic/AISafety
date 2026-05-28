@@ -49,7 +49,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
+              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
                   src={eventImage} 
                   alt={t.upcoming.eventTitle}
@@ -80,7 +80,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
+              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
                   src={cursoAgi}
                   alt={t.upcoming.innovation.title}
@@ -137,7 +137,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
+              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img src={substack} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
