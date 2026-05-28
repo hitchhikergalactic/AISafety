@@ -207,7 +207,7 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					
 					<div className="flex-1 space-y-2 z-10">
-						<h4 className="!text-secundarios-light md:text-5xl mb-6 bg-principal/90 py-2 px-1 rounded inline-block">{t.women4ais.title}</h4>
+						<h4 className="!text-secundarios-light md:text-5xl mb-6 bg-cuartos-purple py-2 px-1 rounded inline-block">{t.women4ais.title}</h4>
 						<p className="text-secundarios-light text-lg md:text-1xl font-serif max-w-1xl leading-relaxed bg-principal/90 py-1 px-1 rounded">
 							{t.women4ais.text}
 						</p>
