@@ -114,7 +114,7 @@ export const translations = {
       ctaSecondary: "I want to be part of it!",
     },
     why: {
-        title: "Why an AI safety Hub in spanish?",
+        title: "Why an AI safety Hub in Spanish?",
         text1: "The laboratories developing the world's most advanced AI are primarily located in the US, the UK, and China. Decisions about how it is deployed, who controls it, and what values it incorporates are, for the most part, made in english.",
         text2: "This is not just a technical detail: it is a safety challenge.",
         text3: "Current research demonstrates that language models are less secure in languages other than english. Spanish, an official language in 21 countries and present on every continent, lacks its own node to identify these flaws, document them, and convey the evidence to regulators and developers.",
@@ -193,7 +193,7 @@ export const translations = {
       tagline: "Part of the global AI safety ecosystem Curriculum by BlueDot Impact",
       copyright: "© 2026 AI safety · Built for a human‑aligned future.",
       text1:"Questions, feedback,\nor interested in collaborating:",
-      text2: "**AI safety in spanish**\nThe reference hub for 650M people.",
+      text2: "**AI safety in Spanish**\nThe reference hub for 650M people.",
       email: "hola@aisafety.es",
       dir: "Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
