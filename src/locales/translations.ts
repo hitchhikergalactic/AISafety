@@ -121,7 +121,7 @@ export const translations = {
       text4: "The AI being built today will decide how we live tomorrow. Who ensures Spanish speakers are part of that conversation?",
       impactFigures: {
         title: "Impact Figures",
-        item1: "636M",
+        item1: "+650M",
         item1_1: "people speak Spanish worldwide",
         item2: "21",
         item2_1: "countries have Spanish as official language",
@@ -157,7 +157,7 @@ export const translations = {
       },
       innovation: {
         tag: "/ TRAINING",
-        title: "AI Safety Strategy Course",
+        title: "AGI Strategy",
         description: "The first specialized AI General Intelligence strategy program based on BlueDot Impact's curriculum. No technical requirements.",
         dateShort: "Cohort-based | Available: October 2026"
       },
