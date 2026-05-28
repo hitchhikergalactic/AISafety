@@ -39,7 +39,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
             <button 
               onClick={onModalOpen}
               type="button"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col flex-1 transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
@@ -49,7 +49,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="mb-4 overflow-hidden bg-neutral-100 aspect-[3/2] rounded-md">
+              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
                 <img 
                   src={eventImage} 
                   alt={t.upcoming.eventTitle}
@@ -70,7 +70,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
             <button 
               onClick={onModalOpen}
               type="button"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col flex-1 transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase block">
@@ -80,7 +80,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="mb-4 overflow-hidden bg-neutral-100 aspect-[3/2] rounded-md">
+              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
                 <img 
                   src={cursoAgi}
                   alt={t.upcoming.innovation.title}
@@ -127,7 +127,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
               href="https://osmaniredondo.substack.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
@@ -137,7 +137,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
                   <ArrowUpRight size={14} />
                 </button>
               </div>
-              <div className="aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
+              <div className="w-full md:w-40 md:h-40 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md mb-4">
                 <img src={substack} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
