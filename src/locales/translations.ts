@@ -89,7 +89,7 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de IA safety · Currículo por BlueDot Impact",
+      tagline: "Parte del ecosistema global de IA safety Currículo por BlueDot Impact",
       copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
       text1: "\n¿Tienes preguntas o quieres colaborar?",
       text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
@@ -190,10 +190,10 @@ export const translations = {
       success: "Thanks for subscribing!",
     },
     footer: {
-      tagline: "Part of the global AI safety ecosystem",
+      tagline: "Part of the global AI safety ecosystem Curriculum by BlueDot Impact",
       copyright: "© 2026 AI safety · Built for a human‑aligned future.",
-      text1:"\nContact\nQuestions, feedback, or interested in collaborating:",
-      text2: "**AI safety in Spanish**\nThe reference hub for 650M people.",
+      text1:"Questions, feedback,\nor interested in collaborating:",
+      text2: "**AI safety in spanish**\nThe reference hub for 650M people.",
       email: "hola@aisafety.es",
       dir: "Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
