@@ -36,7 +36,7 @@ export const translations = {
     },
     mission: {
       title: "Sobre iaS",
-      text: "IA safety para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
+      text: "**IA safety** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
@@ -89,7 +89,7 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de IA safety · Currículo por BlueDot Impact",
+      tagline: "Parte del ecosistema global de IA safety Currículo por BlueDot Impact",
       copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
       text1: "\n¿Tienes preguntas o quieres colaborar?",
       text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
@@ -108,25 +108,25 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "AI Safety Hub",
+      h1: "AI safety Hub",
       h2: "**iaS** is the reference hub for AI safety in Spanish. We train and support professionals in their career development and back projects dedicated to building safer AI.",
       ctaPrimary: "I want to understand what AI safety is",
       ctaSecondary: "I want to be part of it!",
     },
     why: {
-      title: "Why an AI safety Hub?",
-      text1: "The most powerful AI systems in history are being built right now. Who makes sure they don't cause catastrophic harm? That's AI safety.",
-      text2: "Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.",
-      text3: "IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.",
-      text4: "The AI being built today will decide how we live tomorrow. Who ensures Spanish speakers are part of that conversation?",
-      impactFigures: {
+        title: "Why an AI safety Hub in spanish?",
+        text1: "The laboratories developing the world's most advanced AI are primarily located in the US, the UK, and China. Decisions about how it is deployed, who controls it, and what values it incorporates are, for the most part, made in english.",
+        text2: "This is not just a technical detail: it is a safety challenge.",
+        text3: "Current research demonstrates that language models are less secure in languages other than english. Spanish, an official language in 21 countries and present on every continent, lacks its own node to identify these flaws, document them, and convey the evidence to regulators and developers.",
+        text4: "iaS was born to be that node.",
+    impactFigures: {
         title: "Impact Figures",
-        item1: "636M",
+        item1: "+650M",
         item1_1: "people speak Spanish worldwide",
         item2: "21",
         item2_1: "countries have Spanish as official language",
-        item3: "50+",
-        item3_1: "people attend iaS monthly seminars",
+        item3: "%150",
+        item3_1: "increase in attendance for the monthly seminars",
         item4: "1st",
         item4_1: "node specialized in AI safety in Spanish",
         item5: "April 2026",
@@ -157,7 +157,7 @@ export const translations = {
       },
       innovation: {
         tag: "/ TRAINING",
-        title: "AI Safety Strategy Course",
+        title: "AGI Strategy",
         description: "The first specialized AI General Intelligence strategy program based on BlueDot Impact's curriculum. No technical requirements.",
         dateShort: "Cohort-based | Available: October 2026"
       },
@@ -176,8 +176,8 @@ export const translations = {
       text: "The AI safety field has a representation deficit. Women are underrepresented in research, in governance, and in the teams making the most important decisions of our era.\nW4AIS exists to change that in the Spanish-speaking world.\nWe organize events, create professional support networks, and connect Spanish-speaking women with opportunities in AI safety globally.",
     },
     seminario: {
-      title: "AI Safety Seminar",
-      submenu: "AI Safety Seminar",
+      title: "AI safety Seminar",
+      submenu: "AI safety Seminar",
       subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
     },
     subscribe: {
@@ -190,10 +190,10 @@ export const translations = {
       success: "Thanks for subscribing!",
     },
     footer: {
-      tagline: "Part of the global AI safety ecosystem",
+      tagline: "Part of the global AI safety ecosystem Curriculum by BlueDot Impact",
       copyright: "© 2026 AI safety · Built for a human‑aligned future.",
-      text1:"\nContact\nQuestions, feedback, or interested in collaborating:",
-      text2: "**AI safety in Spanish**\nThe reference hub for 650M people.",
+      text1:"Questions, feedback,\nor interested in collaborating:",
+      text2: "**AI safety in spanish**\nThe reference hub for 650M people.",
       email: "hola@aisafety.es",
       dir: "Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
