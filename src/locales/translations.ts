@@ -108,7 +108,7 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "AI Safety Hub",
+      h1: "AI safety Hub",
       h2: "**iaS** is the reference hub for AI safety in Spanish. We train and support professionals in their career development and back projects dedicated to building safer AI.",
       ctaPrimary: "I want to understand what AI safety is",
       ctaSecondary: "I want to be part of it!",
@@ -176,8 +176,8 @@ export const translations = {
       text: "The AI safety field has a representation deficit. Women are underrepresented in research, in governance, and in the teams making the most important decisions of our era.\nW4AIS exists to change that in the Spanish-speaking world.\nWe organize events, create professional support networks, and connect Spanish-speaking women with opportunities in AI safety globally.",
     },
     seminario: {
-      title: "AI Safety Seminar",
-      submenu: "AI Safety Seminar",
+      title: "AI safety Seminar",
+      submenu: "AI safety Seminar",
       subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
     },
     subscribe: {

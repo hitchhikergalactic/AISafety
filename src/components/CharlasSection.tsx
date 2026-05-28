@@ -96,15 +96,15 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
             <div className="border-t border-secundarios-black dark:border-zinc-800 pt-8 mt-4">
               <div>
-                <h5 className="mb-3">
+                <h5 className="!text-principal texto-medium !font-bold mb-3">
                   {expositor.nombre} {expositor.apellido}
                 </h5>
-                <p className="texto-small mb-1 opacity-80 mt-1">
+                <h5 className="texto-medium mb-1 opacity-80 mt-1">
                   {parseText(expositorTitulo)}
-                </p>
-                <p className="texto-small mb-1 opacity-80 mt-2">
+                </h5>
+                <h5 className="texto-medium mb-1 opacity-80 mt-2">
                   {parseText(expositorBio)}
-                </p>
+                </h5>
               </div>
             </div>
           </div>
