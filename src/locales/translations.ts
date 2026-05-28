@@ -36,7 +36,7 @@ export const translations = {
     },
     mission: {
       title: "Sobre iaS",
-      text: "IA safety para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
+      text: "**IA safety** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
@@ -114,19 +114,19 @@ export const translations = {
       ctaSecondary: "I want to be part of it!",
     },
     why: {
-      title: "Why an AI safety Hub?",
-      text1: "The most powerful AI systems in history are being built right now. Who makes sure they don't cause catastrophic harm? That's AI safety.",
-      text2: "Today, most of the serious work and evaluation happens in English and is calibrated to English‑language behaviour. For the 636 million of us who use Spanish, this likely means models that are less reliable, less well‑audited, and systematically less safe in our language than in English.",
-      text3: "IAS exists to help close that gap: by building a Spanish‑first, bilingual community that can understand these risks, feed talent into global AI safety work, and generate better data about how advanced AI actually behaves in Spanish.",
-      text4: "The AI being built today will decide how we live tomorrow. Who ensures Spanish speakers are part of that conversation?",
-      impactFigures: {
+        title: "Why an AI safety Hub in spanish?",
+        text1: "The laboratories developing the world's most advanced AI are primarily located in the US, the UK, and China. Decisions about how it is deployed, who controls it, and what values it incorporates are, for the most part, made in english.",
+        text2: "This is not just a technical detail: it is a safety challenge.",
+        text3: "Current research demonstrates that language models are less secure in languages other than english. Spanish, an official language in 21 countries and present on every continent, lacks its own node to identify these flaws, document them, and convey the evidence to regulators and developers.",
+        text4: "iaS was born to be that node.",
+    impactFigures: {
         title: "Impact Figures",
         item1: "+650M",
         item1_1: "people speak Spanish worldwide",
         item2: "21",
         item2_1: "countries have Spanish as official language",
-        item3: "50+",
-        item3_1: "people attend iaS monthly seminars",
+        item3: "%150",
+        item3_1: "increase in attendance for the monthly seminars",
         item4: "1st",
         item4_1: "node specialized in AI safety in Spanish",
         item5: "April 2026",
