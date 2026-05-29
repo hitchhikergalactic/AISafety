@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, theme, setTheme, t }) =>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg tracking-wide opacity-80">
+        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg tracking-wide opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               <button 
