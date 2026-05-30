@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Charla } from '../data/charlas';
 import { RiH5 } from 'react-icons/ri';
 import { parseText } from '../utils/parseText';
+import undefinedImgur from '../assets/undefined_imgur.png';
 
 type Language = 'es' | 'en';
 
@@ -55,7 +56,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang, onChar
                     
                     <div className="mb-4 overflow-hidden bg-neutral-100 dark:bg-neutral-900 aspect-[3/2] rounded-md">
                       <img 
-                        src={charla.imagen || 'https://i.imgur.com/wqT4oET.png'} 
+                        src={charla.imagen || undefinedImgur} 
                         alt={tituloText}
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       />
