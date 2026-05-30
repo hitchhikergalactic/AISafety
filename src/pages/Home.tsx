@@ -34,6 +34,7 @@ import logoWhite from '../assets/ias_logo_white.svg';
 import osmani from '../assets/osmani.jpeg';
 import women4aisImg from '../assets/original-aa4b526da371210b9104b913751e40d4.webp';
 import fondoImg from '../assets/fondo.png';
+import undefinedImgur from '../assets/undefined_imgur.png';
 
 // --- Types ---
 type Language = 'es' | 'en';
@@ -158,7 +159,7 @@ export default function Home({ lang, setLang, theme, setTheme }: HomeProps) {
 					<div className="w-full md:w-1/2 flex justify-center">
 						<div className="relative group w-full aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated">
 							<img
-								src="https://i.imgur.com/wqT4oET.png"
+								src={undefinedImgur}
 								alt="AI Safety Madrid"
 								className="w-full h-full object-cover group-hover:scale-105"
 							/>
