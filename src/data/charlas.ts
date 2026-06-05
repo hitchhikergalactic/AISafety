@@ -76,7 +76,7 @@ export const listaDeCharlas: Charla[] = [
     fecha: "2026-02-04",
     tagsEs: ["Interpretabilidad", "AI Control", "Investigación Técnica", "Chain-of-Thought"],
     tagsEn: ["Interpretability", "AI Control", "Technical Research", "Chain-of-Thought"],
-    presentacion: "link",
+    presentacion: "https://arxiv.org/html/2505.23575v3",
     expositor: {
       id: "pablo-bernabeu",
       nombre: "Pablo",
