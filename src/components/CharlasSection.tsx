@@ -109,27 +109,17 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: ÚNICAMENTE LA IMAGEN SIN NADA AL REDEDOR */}
-          <div className="lg:col-span-5 w-full flex flex-col items-center lg:items-end lg:sticky lg:top-24">
-            <div className="w-full max-w-[420px] aspect-square rounded-md overflow-hidden bg-transparent">
-              {charlaActiva.imagen && (
-                <img
-                  src={charlaActiva.imagen}
-                  alt={tituloActivo}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
-
-            {/* Enlace para ver diapositivas */}
+          {/* COLUMNA DERECHA: BOTÓN DE DOCUMENTACIÓN */}
+          <div className="lg:col-span-5 w-full flex flex-col items-center lg:items-end">
+            {/* Enlace para ver documentación */}
             {charlaActiva.presentacion && (
               <a
                 href={charlaActiva.presentacion}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase tracking-widest font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
+                className="w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase tracking-widest font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
               >
-                {lang === 'es' ? 'Ver presentación de diapositivas' : 'View slides presentation'}
+                {lang === 'es' ? 'Ver documentación' : 'View documentation'}
               </a>
             )}
           </div>
