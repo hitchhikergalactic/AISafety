@@ -224,7 +224,7 @@ export const listaDeCharlas: Charla[] = [
     fecha: "2026-06-03",
     tagsEs: ["Gobernanza", "Sesgo Lingüístico", "Modelos de Lenguaje", "Diversidad Lingüística", "IA Safety"],
     tagsEn: ["Governance", "Linguistic Bias", "Language Models", "Linguistic Diversity", " AI Safety"],
-    presentacion: "/assets/seminario_disertantes/material_seminario_marina_hungria.pdf",
+    presentacion: "/material_seminario_marina_hungria.pdf",
     expositor: {
     id: "mariana-hungria",
     nombre: "Mariana",
