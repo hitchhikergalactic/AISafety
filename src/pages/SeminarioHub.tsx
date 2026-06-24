@@ -72,15 +72,23 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
         <SeminarioHero t={t} />
 
         {/* Botón de Inscripciones */}
-        <div className="flex justify-center mb-12">
+        <div className="max-w-2xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
           <a 
-            href="https://luma.com/event/evt-CPNiAzx2NIYMgEd"
+            href="https://luma.com/event/evt-qOVDBJ4bTMwjO6s"
             data-luma-action="checkout"
-            data-luma-event-id="evt-CPNiAzx2NIYMgEd"
-            className="px-12 py-5 rounded-anthro bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-anthro-card hover:shadow-anthro-elevated hover:-translate-y-1 inline-block"
+            data-luma-event-id="evt-qOVDBJ4bTMwjO6s"
+            className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md"
           >
             {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
           </a>
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSetVjkN1vyT4IlbAvPh7Xplas1a7RnecWA6o2QFmq17XP5-oA/viewform"
+            className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md"
+          >
+            {lang === 'es' ? 'Proponer charla' : 'Submit a proposal'}
+          </a>
+        </div>
         </div>
 
         {/* Sección de la Grilla pasando el listado de datos real y el idioma activo */}
