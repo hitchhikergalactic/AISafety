@@ -36,10 +36,11 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
           <div className="flex flex-col gap-4 h-full">
             
             {/* TARJETA 1: Hero - Imagen */}
-            <button 
-              onClick={onModalOpen}
-              type="button"
+            <a
+              href="https://luma.com/event/evt-3ywiDprEoIYRG1v"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-3ywiDprEoIYRG1v"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
@@ -65,7 +66,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, onModalOpen }) => {
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
                 {t.upcoming.dateShort.toUpperCase()}
               </h5>
-            </button>
+            </a>
             {/* TARJETA 2: Secundaria - Con Imagen y Texto (Innovation) */}
             <button 
               onClick={onModalOpen}
