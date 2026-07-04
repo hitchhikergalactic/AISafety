@@ -1,28 +1,43 @@
-# aisafety.es
+# Astro Starter Kit: Minimal
 
-Hub de AI Safety para el mundo hispanohablante. 
-Construyendo comunidad para entender y reducir riesgos existenciales de sistemas avanzados de IA.
+```sh
+npm create astro@latest -- --template minimal
+```
 
-🌐 [aisafety.es](https://aisafety.es)
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Sobre el proyecto
+## 🚀 Project Structure
 
-aisafety.es es el primer hub nacional de AI Safety en España, parte del ecosistema español de seguridad en IA junto a AI Safety Barcelona. Conectamos investigadores, profesionales de política pública, estudiantes y ciudadanos que quieren contribuir a que la IA avanzada sea segura y beneficiosa para todos.
+Inside of your Astro project, you'll see the following folders and files:
 
-## Stack
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-- React + TypeScript
-- Tailwind CSS
-- Vite
-- FormSubmit (formularios)
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Desarrollo local
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Requisitos: Node.js
+Any static assets, like images, can be placed in the `public/` directory.
 
-1. Instalar dependencias: `npm install`
-2. Ejecutar en local: `npm run dev`
+## 🧞 Commands
 
-## Contacto
+All commands are run from the root of the project, from a terminal:
 
-hola@aisafety.es
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

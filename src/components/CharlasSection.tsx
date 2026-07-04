@@ -1,41 +1,30 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuMail, LuGlobe } from 'react-icons/lu';
-import { listaDeCharlas, Charla } from '../data/charlas'; 
-import { parseText } from '../utils/parseText';
-
+import { listaDeCharlas } from '@data/charlas';
+import type { Charla } from '@data/charlas';
+import { parseText } from '@utils/parseText';
 
 interface CharlasSectionProps {
   charlaActivaProp?: Charla;
   lang?: 'es' | 'en';
 }
+
 const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang = 'es' }) => {
-  const navigate = useNavigate();
-  // Estado interno por si no se usa control por ruta externa
-  const [charlaActivaState, setCharlaActivaState] = useState<Charla>(listaDeCharlas[0]);
-  const charlaActiva = charlaActivaProp || charlaActivaState;
+  // Si no se provee charlaActivaProp, tomamos la primera de la lista
+  const charlaActiva = charlaActivaProp || listaDeCharlas[0];
   
   // Filtramos las charlas restantes para el listado inferior
   const otrasCharlas = listaDeCharlas.filter((c) => c.id !== charlaActiva.id);
+  const langPrefix = lang === 'es' ? '' : '/en';
 
-  // Formateador de fecha dinámico según el idioma activo
-  const formatFecha = (fechaStr: string) => {
-    if (!fechaStr) return '';
-    return new Date(fechaStr).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
-  // Selección dinámica de campos bilingües basados exactamente en tu interfaz
-  const tagActivo = lang === 'es' ? charlaActiva.tagEs : charlaActiva.tagEn; //
-  const tituloActivo = lang === 'es' ? charlaActiva.tituloEs : charlaActiva.tituloEn; //
-  const cuerpoTextoActivo = lang === 'es' ? charlaActiva.textoEs : charlaActiva.textoEn; //
-  const { expositor } = charlaActiva; //
-  const expositorTitulo = lang === 'es' ? expositor.tituloEs : expositor.tituloEn; //
-  const expositorBio = lang === 'es' ? expositor.bioEs : expositor.bioEn; //
+  // Selección dinámica de campos bilingües basados exactamente en la interfaz
+  const tagActivo = lang === 'es' ? charlaActiva.tagEs : charlaActiva.tagEn;
+  const tituloActivo = lang === 'es' ? charlaActiva.tituloEs : charlaActiva.tituloEn;
+  const cuerpoTextoActivo = lang === 'es' ? charlaActiva.textoEs : charlaActiva.textoEn;
+  const { expositor } = charlaActiva;
+  const expositorTitulo = lang === 'es' ? expositor.tituloEs : expositor.tituloEn;
+  const expositorBio = lang === 'es' ? expositor.bioEs : expositor.bioEn;
 
   return (
     <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0">
@@ -89,16 +78,17 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
               )}
             </div>
 
-            {/* Contenido/Cuerpo largo de la charla usando charlaActiva.textoEs/textoEn */}
+            {/* Contenido/Cuerpo largo de la charla */}
             <div className="max-w-none mb-8">
               <p>{parseText(cuerpoTextoActivo)}</p>
             </div>
+
             <div className="border-t border-secundarios-black dark:border-zinc-800 pt-8 mt-4">
               <div>
                 <h5 className="!text-principal texto-medium !font-bold mb-3">
                   {expositor.nombre} {expositor.apellido}
                 </h5>
-                <h5 className="texto-medium mb-1 mt-1">
+                <h5 className="texto-medium mb-1 opacity-80 mt-1">
                   {parseText(expositorTitulo)}
                 </h5>
                 <h5 className="texto-medium mb-1 opacity-80 mt-2">
@@ -125,20 +115,18 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
         </div>
       </div>
+      
       {/* ====================================
-          SECCIÓN INFERIOR: OTRAS CHARLAS (Listado listo para tarjetas)
+          SECCIÓN INFERIOR: OTRAS CHARLAS
           ==================================== */}
       <div className="px-6 md:px-12 lg:px-8 py-16 border-t border-secundarios-gray dark:border-zinc-800">     
         {/* Grid de 3 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otrasCharlas.map((charla) => (
             <div key={charla.id}>
-              <button
-                onClick={() => {
-                  navigate(`/seminario-bluedot-spain/${charla.id}`);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="group text-left flex flex-col justify-between h-full p-6 rounded-md border border-secundarios-gray dark:border-zinc-800 bg-transparent hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 w-full"
+              <a
+                href={`${langPrefix}/seminario-bluedot-spain/${charla.id}`}
+                className="group text-left flex flex-col justify-between h-full p-6 rounded-md border border-secundarios-gray dark:border-zinc-800 bg-transparent hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 w-full block"
               >
                 <div>
                   <div className="flex justify-between items-center mb-3">
@@ -161,7 +149,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                 <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-principal">
                   <span>{charla.expositor.nombre} {charla.expositor.apellido}</span>
                 </div>
-              </button>
+              </a>
             </div>
           ))}
         </div>

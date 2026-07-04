@@ -1,5 +1,5 @@
 import React from 'react';
-import { Charla } from '../data/charlas';
+import type { Charla } from '@data/charlas';
 
 interface TarjetaCharlaProps {
   charla: Charla;

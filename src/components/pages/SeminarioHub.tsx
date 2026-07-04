@@ -1,39 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { translations } from '../locales/translations';
+import { translations } from '@locales/translations';
 import { X } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import SeminarioHero from '../components/SeminarioHero';
-import GrillaSeminario from '../components/GrillaSeminario';
-import Footer from '../components/Footer';
-import { listaDeCharlas, Charla } from '../data/charlas';
-import headerImg from '../assets/header_bluedot_meetup.jpg';
-import { parseText } from '../utils/parseText';
+import Navbar from '@components/Navbar';
+import SeminarioHero from '@components/SeminarioHero';
+import GrillaSeminario from '@components/GrillaSeminario';
+import Footer from '@components/Footer';
+import { listaDeCharlas } from '@data/charlas';
+import headerImg from '@assets/header_bluedot_meetup.jpg';
 
 type Language = 'es' | 'en';
-type Theme = 'light' | 'dark';
 
 interface SeminarioHubProps {
   lang: Language;
-  setLang: (lang: Language) => void;
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
 }
 
 /**
  * Página: aisafety.es/seminario-bluedot-spain
  * Muestra la grilla principal de charlas del seminario con soporte multi-idioma.
  */
-const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTheme }) => {
-  const navigate = useNavigate();
+const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
   const t = translations[lang];
   const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState<'event' | 'subscribe'>('subscribe');
-
-  // Scroll al inicio cuando se carga la página
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   // Cargar script de Luma
   useEffect(() => {
@@ -47,25 +34,21 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
     }
   }, []);
 
-  const handleCharlaClick = (charla: Charla) => {
-    navigate(`/seminario-bluedot-spain/${charla.id}`);
-  };
-
   return (
     <>
       {/* Barra de navegación global */}
-      <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
+      <Navbar lang={lang} />
       
       {/* Header con imagen responsiva */}
       <section className="w-full h-[280px] md:h-[375px] lg:h-[375px] overflow-hidden mt-24">
         <img 
-          src={headerImg} 
+          src={headerImg.src || headerImg} 
           alt="Bluedot Meetup Header" 
           className="w-full h-full object-cover"
         />
       </section>
       
-      {/* Contenedor principal con margen superior para no quedar oculto por el Navbar flotante */}
+      {/* Contenedor principal */}
       <div className="pt-28 md:pt-32 px-4 md:px-8">
         
         {/* Sección Hero con traducciones */}
@@ -73,22 +56,24 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
 
         {/* Botón de Inscripciones */}
         <div className="max-w-2xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
-          <a 
-            href="https://luma.com/event/evt-fzRE7LUYiG5Bljy"
-            data-luma-action="checkout"
-            data-luma-event-id="evt-fzRE7LUYiG5Bljy"
-            className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md"
-          >
-            {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
-          </a>
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSetVjkN1vyT4IlbAvPh7Xplas1a7RnecWA6o2QFmq17XP5-oA/viewform"
-            className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md"
-          >
-            {lang === 'es' ? 'Proponer charla' : 'Submit a proposal'}
-          </a>
-        </div>
+          <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
+            <a 
+              href="https://luma.com/event/evt-qOVDBJ4bTMwjO6s"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-qOVDBJ4bTMwjO6s"
+              className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+            >
+              {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
+            </a>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSetVjkN1vyT4IlbAvPh7Xplas1a7RnecWA6o2QFmq17XP5-oA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+            >
+              {lang === 'es' ? 'Proponer charla' : 'Submit a proposal'}
+            </a>
+          </div>
         </div>
 
         {/* Sección de la Grilla pasando el listado de datos real y el idioma activo */}
@@ -96,7 +81,6 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
           <GrillaSeminario 
             charlas={listaDeCharlas}
             lang={lang} 
-            onCharlaClick={handleCharlaClick} 
           />
         </section>
 
@@ -111,7 +95,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setShowModal(false)}>
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
           <div className="relative bg-secundarios-light dark:bg-secundarios-dark rounded-[32px] p-8 md:p-14 max-w-2xl w-full shadow-anthro-elevated border border-secundarios-dark/20 z-10" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors">
+            <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors cursor-pointer">
               <X size={24} />
             </button>
             <h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
@@ -127,7 +111,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
                 required 
                 className="w-full px-4 py-3 rounded-xl border border-secundarios-dark/20 dark:border-white/10 bg-white dark:bg-white/5 text-secundarios-dark dark:text-white placeholder-secundarios-dark/40 focus:outline-none focus:ring-2 focus:ring-principal"
               />
-              <button type="submit" className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors">
+              <button type="submit" className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors cursor-pointer">
                 {t.subscribe.button}
               </button>
             </form>
@@ -138,8 +122,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang, setLang, theme, setTh
       {/* FOOTER */}
       <Footer 
         lang={lang} 
-        theme={theme} 
-        onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
+        onSubscribeClick={() => setShowModal(true)}
       />
     </>
   );
