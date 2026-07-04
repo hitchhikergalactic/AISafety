@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/que_hacemos",
+      "destination": "/que-hacemos",
+      "permanent": true
+    },
+    {
+      "source": "/que_hacemos/",
+      "destination": "/que-hacemos",
+      "permanent": true
+    }
+  ]
+}
