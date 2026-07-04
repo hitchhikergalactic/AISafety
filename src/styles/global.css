@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Overpass", sans-serif;
+  --font-serif: "Alegreya", serif;
+
+  --color-principal: #ff4500;
+  --color-secundarios-dark: #333333;
+  --color-secundarios-light: #f2f2f2;
+  --color-secundarios-gray: #e3e5e5;
+  --color-terciarios-green: #aeef0f;
+  --color-terciarios-blue: #0b0bf4;
+  --color-cuartos-yellow: #ffc00b;
+  --color-cuartos-pink: #ff5fc2;
+  --color-cuartos-purple: #662d91;
+  --color-label-gray: #9ca3af;
+
+  --radius-anthro: 16px;
+
+  --shadow-anthro-subtle: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-anthro-card: 0 12px 24px -10px rgba(0,0,0,0.08), 0 4px 10px -5px rgba(0,0,0,0.03);
+  --shadow-anthro-elevated: 0 30px 60px -12px rgba(0,0,0,0.12), 0 18px 36px -18px rgba(0,0,0,0.08);
+}
+
+/* ==========================================================================
+   Estilos globales heredados del index.html original
+   ========================================================================== */
+
+html {
+  /* Esto hace que al hacer clic en el menú, la página se deslice suavemente */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+}
+
+/* Evita que el Navbar tape el inicio de la sección cuando llegas */
+[id] {
+  scroll-margin-top: 0px;
+}
+
+p {
+  font-family: 'Alegreya', serif !important;
+  line-height: 1.45 !important; 
+  font-size: 1.15rem !important;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  text-wrap: pretty; 
+}
+
+/* En pantallas grandes, la mancha de texto puede ser más grande */
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem !important;
+    line-height: 1.5 !important;
+  }
+  body { 
+    font-size: 1.25rem; 
+  }
+}
+
+.bajada {
+  font-family: 'Alegreya', serif !important; 
+  /* El mínimo sube a 1.2rem y el escalado es más rápido (5vw) */
+  font-size: clamp(1.2rem, 5vw, 2.0rem) !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important; 
+  color: inherit; 
+  /* Reducimos un poco el margen en móvil para que no flote tanto */
+  margin-bottom: 1.8rem; 
+  text-wrap: balance;
+  opacity: 0.9; /* Un pelín más de opacidad ayuda a la legibilidad en pantallas chicas */
+}
+
+.texto-small {
+  font-family: 'Alegreya', serif !important;
+  font-size: 0.90rem !important;
+  line-height: 1.4 !important;
+  opacity: 0.7;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Overpass', sans-serif;
+}
+
+h1 {
+  font-family: 'Overpass', sans-serif !important;
+  font-weight: 800 !important;   
+  line-height: 1.5 !important;   
+  font-size: clamp(2.5rem, 8vw, 6.5rem) !important; 
+  letter-spacing: 0em !important;
+}
+
+h2 {
+  font-family: 'Overpass', sans-serif !important;
+  font-weight: 700 !important;   
+  line-height: 1.0 !important;   
+  font-size: clamp(1.8rem, 6vw, 3.8rem) !important; 
+  letter-spacing: 0em !important;
+}
+
+h3 {
+  font-family: 'Overpass', sans-serif !important;
+  font-weight: 500 !important;   
+  line-height: 1.1 !important;   
+  font-size: clamp(1.4rem, 4vw, 2.4rem) !important; 
+  letter-spacing: 0em !important;
+}
+
+h4 {
+  font-family: 'Overpass', sans-serif !important;
+  font-weight: 700 !important;   
+  line-height: 1.1 !important;
+  font-size: clamp(1.0rem, 5vw, 1.5rem) !important; 
+  /* Color principal (#ff4500) */
+  color: #ff4500 !important;
+  letter-spacing: 0.00em !important; 
+  margin-bottom: 1rem !important;
+}
+
+h5 {
+  font-family: 'Overpass', sans-serif !important;
+  font-weight: 400 !important;   
+  line-height: 1.5 !important;
+  font-size: clamp(0.9rem, 4vw, 1.1rem) !important; 
+  letter-spacing: 0.02em !important; 
+  margin-bottom: 0.8rem !important;
+}
+
+.scroll-mt-navbar {
+  scroll-margin-top: 100px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anthro-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anthro-hover:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Custom scrollbar for a clean UI */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #333333;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}

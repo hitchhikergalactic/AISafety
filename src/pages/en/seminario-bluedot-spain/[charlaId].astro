@@ -1,0 +1,21 @@
+---
+// src/pages/en/seminario-bluedot-spain/[charlaId].astro
+import Layout from '../../../layouts/Layout.astro';
+import DetalleCharla from '../../../components/pages/DetalleCharla.tsx';
+import { listaDeCharlas } from '../../../data/charlas';
+
+export async function getStaticPaths() {
+  return listaDeCharlas.map((charla) => ({
+    params: { charlaId: charla.id },
+  }));
+}
+
+const { charlaId } = Astro.params;
+const charla = listaDeCharlas.find((c) => c.id === charlaId);
+const title = charla ? `${charla.tituloEn} | AI safety Seminar` : "Talk Details | AI safety Seminar";
+const description = charla ? charla.descripcionCortaEn : "Details of the talk organized by AI Safety Spain.";
+---
+
+<Layout lang="en" title={title} description={description}>
+  {charlaId && <DetalleCharla lang="en" charlaId={charlaId} client:load />}
+</Layout>

@@ -1,0 +1,78 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: 'es' | 'en';
+}
+
+const { 
+  title = "AI safety en español | Hub para hispanohablantes", 
+  description = "Más de 650M de personas hablan español. El debate sobre AI safety ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global", 
+  lang = "es" 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="google-site-verification" content="WkCE-fRxNDs_TgUk2CEVcDVK2AK4mfcDTa1A010svqA" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://aisafety.es/" />
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico?v=1" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1" />
+    
+    <!-- Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="66ab54eb-84bb-4a7e-b165-4e423d010a45"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AI safety España",
+        "url": "https://aisafety.es",
+        "description": "Más de 650M de personas hablan español. El debate sobre AI safety ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global",
+        "sameAs": [
+          "https://www.instagram.com/aisafetyspanish",
+          "https://www.linkedin.com/company/aisafetyspanish/"
+        ]
+      }
+    </script>
+
+    <!-- Dark Mode Initial Script (prevents Flash of Light Theme) -->
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('app_theme')) {
+          return localStorage.getItem('app_theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const theme = getTheme();
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-secundarios-light dark:bg-secundarios-dark text-secundarios-dark dark:text-secundarios-light selection:bg-principal/20 overflow-x-hidden transition-colors duration-500 min-h-screen">
+    <slot />
+  </body>
+</html>
