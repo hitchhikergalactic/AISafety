@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuMail, LuGlobe } from 'react-icons/lu';
 import { listaDeCharlas } from '@data/charlas';
@@ -10,7 +10,37 @@ interface CharlasSectionProps {
   lang?: 'es' | 'en';
 }
 
+const getYoutubeVideoId = (url: string) => {
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname.includes('youtu.be')) {
+      return parsedUrl.pathname.split('/').filter(Boolean)[0] || '';
+    }
+
+    if (parsedUrl.searchParams.get('v')) {
+      return parsedUrl.searchParams.get('v') || '';
+    }
+
+    const shortsMatch = parsedUrl.pathname.match(/\/shorts\/([^/]+)/);
+    if (shortsMatch?.[1]) {
+      return shortsMatch[1];
+    }
+
+    const embedMatch = parsedUrl.pathname.match(/\/embed\/([^/]+)/);
+    if (embedMatch?.[1]) {
+      return embedMatch[1];
+    }
+  } catch {
+    return '';
+  }
+
+  return '';
+};
+
 const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang = 'es' }) => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   // Si no se provee charlaActivaProp, tomamos la primera de la lista
   const charlaActiva = charlaActivaProp || listaDeCharlas[0];
   
@@ -25,6 +55,11 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
   const { expositor } = charlaActiva;
   const expositorTitulo = lang === 'es' ? expositor.tituloEs : expositor.tituloEn;
   const expositorBio = lang === 'es' ? expositor.bioEs : expositor.bioEn;
+  const imagenDisertante = charlaActiva.imagen || expositor.imagen;
+  const videoYoutube = charlaActiva.videoYoutube?.trim();
+  const youtubeVideoId = videoYoutube ? getYoutubeVideoId(videoYoutube) : '';
+  const youtubeThumbnail = youtubeVideoId ? `https://img.youtube.com/vi/${youtubeVideoId}/hqdefault.jpg` : '';
+  const videoYoutubeEmbed = youtubeVideoId ? `https://www.youtube-nocookie.com/embed/${youtubeVideoId}?rel=0&modestbranding=1` : '';
 
   return (
     <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0">
@@ -100,6 +135,57 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
           {/* COLUMNA DERECHA: BOTÓN DE DOCUMENTACIÓN */}
           <div className="lg:col-span-5 w-full flex flex-col items-center lg:items-end">
+            {imagenDisertante && (
+              <div className="w-full max-w-[420px] mb-5 overflow-hidden rounded-md border border-secundarios-gray/10 dark:border-secundarios-gray/10 ">
+                <img
+                  src={imagenDisertante}
+                  alt={`${expositor.nombre} ${expositor.apellido}`}
+                  className="w-full aspect-[16/9] object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
+            {videoYoutubeEmbed && (
+              <div className="w-full max-w-[420px] mb-5 overflow-hidden rounded-md border border-secundarios-gray/10 dark:border-secundarios-gray/10 ">
+                {isVideoLoaded ? (
+                  <div className="relative w-full aspect-video">
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={videoYoutubeEmbed}
+                      title={`${expositor.nombre} ${expositor.apellido} - YouTube video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setIsVideoLoaded(true)}
+                    className="relative block w-full aspect-video text-left group"
+                    aria-label={lang === 'es' ? 'Reproducir video de YouTube' : 'Play YouTube video'}
+                  >
+                    <img
+                      src={youtubeThumbnail}
+                      alt={lang === 'es' ? 'Miniatura del video de YouTube' : 'YouTube video thumbnail'}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/20 transition-colors" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-principal shadow-lg transition-transform duration-200 group-hover:scale-105">
+                        <svg viewBox="0 0 24 24" className="h-8 w-8 rounded-md translate-x-0.1" aria-hidden="true">
+                          <path fill="currentColor" d="M8 5v14l11-7z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                )}
+              </div>
+            )}
+
             {/* Enlace para ver documentación */}
             {charlaActiva.presentacion && (
               <a
@@ -108,7 +194,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                 rel="noopener noreferrer"
                 className="w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase tracking-widest font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
               >
-                {lang === 'es' ? 'Ver documentación' : 'View documentation'}
+                {lang === 'es' ? 'Más información' : 'More information'}
               </a>
             )}
           </div>

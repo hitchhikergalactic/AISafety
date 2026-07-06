@@ -23,6 +23,7 @@ export interface Charla {
   descripcionCortaEs: string; // Versión corta para tarjetas ES
   descripcionCortaEn: string; // Versión corta para tarjetas EN
   imagen: string; // URL de imagen para la tarjeta
+  videoYoutube?: string; // URL de YouTube para embed opcional
   expositor: Expositor;
   fecha: string;
   tagsEs: string[]; // Si los tags son palabras clave fijas, podés traducirlos en el componente o duplicarlos
@@ -245,15 +246,16 @@ export const listaDeCharlas: Charla[] = [
     tagEn: "Career",
     tituloEs: "Carrera en IA safety: una historia personal desde Buenos Aires",
     tituloEn: "A career in AI safety: a personal story from Buenos Aires",
-    textoEs: "En esta charla, Eitan Sprejer compartirá su trayectoria personal en el campo de la seguridad en inteligencia artificial, desde sus inicios como estudiante de Física en la Universidad de Buenos Aires hasta convertirse en investigador a tiempo completo gracias a los programas AISAR Scholarships y Apart Lab Fellowship. Repasará su experiencia como cofundador de BAISH, la comunidad de IA safety más grande y consolidada de Latinoamérica, con financiación de Open Philanthropy y más de ciento cincuenta miembros, así como su papel en la fundación de LANAIS, la Red Latinoamericana de IA Safety. También hablará de sus investigaciones en persuasión en modelos de lenguaje y en monitorabilidad de chain of thought, ambas con trabajos publicados, además de su labor como profesor ayudante en los campamentos de ML4G y como facilitador de los cursos AISES del Center for AI Safety y AGI Strategy de BlueDot Impact, ofreciendo así una perspectiva honesta sobre cómo se construye una carrera en este campo cuando se empieza lejos de los polos tradicionales de investigación.",
-    textoEn: "In this talk, Eitan Sprejer will share his personal journey in the field of AI safety, from his beginnings as a Physics student at the University of Buenos Aires to becoming a full time researcher through the AISAR Scholarships programme and the Apart Lab Fellowship. He will walk through his experience as co-founder of BAISH, the largest and most established AI safety community in Latin America, with funding from Open Philanthropy and over one hundred and fifty members, as well as his role in founding LANAIS, the Latin American AI Safety Network. He will also discuss his research on LLM persuasion and on chain of thought monitorability, both with published work, together with his time as a teaching assistant at ML4G camps and as a facilitator for the Center for AI Safety's AISES course and BlueDot Impact's AGI Strategy course, offering an honest perspective on what it takes to build a career in this field when starting far from the traditional research hubs.",
+    textoEs: "En esta charla, Eitan Sprejer ha compartido su trayectoria personal en el campo de la IA safety, y ha señalado que casi nada de lo conseguido ha sucedido en aislamiento, siendo el establecimiento de contactos probablemente lo más importante que se puede estar haciendo para avanzar en este campo. Ha explicado que fundar BAISH, la red argentina de IA safety, ha sido una de las decisiones más importantes de su carrera, pues le ha conectado tanto con la red local como con la global, y a partir de ahí ha ofrecido su consejo para quien quiera abrirse camino en IA safety: acudir a eventos de la red local y, sobre todo, de la global, conectar con personas a través de contactos personales o mensajes en frío, ofrecer ayuda y construir cosas en público, pues estas son algunas de las acciones de mayor impacto que se pueden llevar a cabo para la propia carrera.",
+    textoEn: "In this talk, Eitan Sprejer shared his personal journey in AI safety, and noted that almost none of what he has achieved happened in isolation, with networking probably being the most important thing one can be doing to progress in this field. He explained that founding BAISH, Argentina's AI safety network, was one of the most important decisions of his career, as it connected him with both the local and global network, and from there he offered his advice for anyone looking to make their way in AI safety: attend events in the local network and, above all, the global one, connect with people through personal contacts or cold messages, offer help and build things in public, as these are some of the highest-impact actions one can take for one's own career.",
     descripcionCortaEs: "Eitan, investigador en seguridad de IA y cofundador de BAISH, cuenta cómo se construye una carrera en este campo desde Buenos Aires.",
     descripcionCortaEn: "Eitan, AI safety researcher and co-founder of BAISH, on building a career in this field from Buenos Aires.",
     imagen: "/seminario_disertantes/eitan_sprejer.jpg",
+    videoYoutube: "https://youtu.be/QgO8qcoPIvc",
     fecha: "2026-07-01",
     tagsEs: ["Seguridad de IA", "Carrera profesional", "Latinoamérica", "Interpretabilidad", "Evaluación de LLM"],
     tagsEn: ["AI safety", "Career", "Latin America", "Interpretability", "LLM evaluation"],
-    presentacion: "https://youtu.be/QgO8qcoPIvc",
+    presentacion: "/material-seminario-tesis-aisafety-eitan.pdf",
     expositor: {
     id: "eitan-sprejer",
     nombre: "Eitan",
@@ -266,6 +268,7 @@ export const listaDeCharlas: Charla[] = [
     linkedin: "https://www.linkedin.com/in/eitan-sprejer-574380204/",
     email: "",
     web: "https://eitan-sprejer.github.io/",
+    
 },
 },
 
