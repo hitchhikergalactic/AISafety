@@ -23,6 +23,7 @@ export interface Charla {
   descripcionCortaEs: string; // Versión corta para tarjetas ES
   descripcionCortaEn: string; // Versión corta para tarjetas EN
   imagen: string; // URL de imagen para la tarjeta
+  videoYoutube?: string; // URL de YouTube para embed opcional
   expositor: Expositor;
   fecha: string;
   tagsEs: string[]; // Si los tags son palabras clave fijas, podés traducirlos en el componente o duplicarlos
@@ -250,6 +251,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Eitan, investigador en seguridad de IA y cofundador de BAISH, cuenta cómo se construye una carrera en este campo desde Buenos Aires.",
     descripcionCortaEn: "Eitan, AI safety researcher and co-founder of BAISH, on building a career in this field from Buenos Aires.",
     imagen: "/seminario_disertantes/eitan_sprejer.jpg",
+    videoYoutube: "https://youtu.be/QgO8qcoPIvc",
     fecha: "2026-07-01",
     tagsEs: ["Seguridad de IA", "Carrera profesional", "Latinoamérica", "Interpretabilidad", "Evaluación de LLM"],
     tagsEn: ["AI safety", "Career", "Latin America", "Interpretability", "LLM evaluation"],
@@ -266,6 +268,7 @@ export const listaDeCharlas: Charla[] = [
     linkedin: "https://www.linkedin.com/in/eitan-sprejer-574380204/",
     email: "",
     web: "https://eitan-sprejer.github.io/",
+    
 },
 },
 
