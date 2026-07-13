@@ -58,9 +58,9 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
         <div className="max-w-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
             <a 
-              href="https://luma.com/event/evt-qOVDBJ4bTMwjO6s"
+              href="https://luma.com/event/evt-fzRE7LUYiG5Bljy"
               data-luma-action="checkout"
-              data-luma-event-id="evt-qOVDBJ4bTMwjO6s"
+              data-luma-event-id="evt-fzRE7LUYiG5Bljy"
               className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
             >
               {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
