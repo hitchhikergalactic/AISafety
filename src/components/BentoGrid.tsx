@@ -38,10 +38,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 1: Hero - Imagen */}
               <a
-              href="https://luma.com/event/evt-3ywiDprEoIYRG1v"
+              href="https://luma.com/event/evt-fCz8Gkmw1J2Y1pi"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
-              data-luma-action="checkout"
-              data-luma-event-id="evt-3ywiDprEoIYRG1v"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
