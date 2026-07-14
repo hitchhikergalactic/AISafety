@@ -41,7 +41,7 @@ export const translations = {
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
       title: "Próximos Eventos",
-      eventTitle: "Primer encuentro de W4AIS",
+      eventTitle: "Segundo encuentro de W4AIS",
       description: "La inteligencia artificial que construimos hoy decidirá nuestro mañana. W4AIS nace para integrar más voces en esta conversación. Te esperamos en nuestro primer encuentro.",
       dateShort: "8 de Julio | Evento online",
       bluedot: {
@@ -140,7 +140,7 @@ export const translations = {
     upcoming: {
       tag: "/ UPCOMING",
       title: "Upcoming Events",
-      eventTitle: "First W4AIS encounter",
+      eventTitle: "Second W4AIS session",
       description: "The AI being built today will decide how we live tomorrow. W4AIS is born so that more voices are part of that conversation. There will be talks, networking and snacks. We look forward to seeing you!",
       cta: "Book your spot",
       dateShort: "Online event: July 8",
