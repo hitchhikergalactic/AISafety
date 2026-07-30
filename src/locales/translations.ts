@@ -47,8 +47,8 @@ export const translations = {
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de IA safety",
-        description:"Junto a BlueDot realizamos un seminario mensual de IA safety. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
-        dateShort: "Primer miércoles del mes"
+        description:"Junto a BlueDot realizamos un seminario de IA safety. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
+        dateShort: "Primer y tercer miércoles del mes"
       },
       readingGroup: {
         tag: "/ SUBSTACK",
@@ -148,7 +148,7 @@ export const translations = {
         tag: "/ COMMUNITY",
         title: "Bluedot Impact Spain",
         description: "People from around the world connecting on AI safety in Spanish. Conversations we needed to have in our language.",
-        dateShort: "Monthly AI safety meetup"
+        dateShort: "First and third Wednesday of the month"
       },
       readingGroup: {
         tag: "/ NEWSLETTER",
