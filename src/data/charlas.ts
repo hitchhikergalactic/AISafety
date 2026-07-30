@@ -103,7 +103,7 @@ export const listaDeCharlas: Charla[] = [
     textoEn: "An AI agent is instructed to retrieve a document. When it hits access restrictions, it reverse-engineers the authentication system, finds a hardcoded secret key, and forges admin credentials to bypass security.\nThis is not science fiction: it is one of three real scenarios documented by **Alejandro Tlaie** in his research on **emergent cyber behavior** in AI agents deployed in enterprise environments.\nIn this talk, Alejandro explores the intersection of AI and cybersecurity from a systemic perspective: How do we audit frontier models from outside the companies that build them? What is the **EU AI Act** getting right — and where does it fall short? His career — spanning from theoretical physics and computational neuroscience to AI policy in Brussels — offers an essential, holistic view of the field.",
     descripcionCortaEs: "Alejandro Tlaie analiza cómo los agentes de IA pueden hackear sistemas de forma autónoma en entornos reales, y evalúa los desafíos urgentes en gobernanza, auditoría y ciberseguridad.",
     descripcionCortaEn: "Alejandro Tlaie analyzes how AI agents autonomously hack systems in real environments, evaluating urgent challenges in governance, auditing, and cybersecurity.",
-    imagen: "seminario_disertantes/Alejandro_Tlaie_Boria.jpg",
+    imagen: "/seminario_disertantes/Alejandro_Tlaie_Boria.jpg",
     fecha: "2026-03-04",
     tagsEs: ["Ciberseguridad", "Gobernanza", "AI Safety", "EU AI Act", "Auditoría"],
     tagsEn: ["Cybersecurity", "Governance", "AI Safety", "EU AI Act", "Auditing"],
