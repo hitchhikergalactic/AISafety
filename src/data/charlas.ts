@@ -281,6 +281,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Un análisis desde dentro de la industria sobre si los recientes episodios de restricción estatal marcan el inicio del control gubernamental de la IA de frontera.",
     descripcionCortaEn: "An industry insider's look at whether recent state restriction episodes mark the start of government control over frontier AI.",
     imagen: "/seminario_disertantes/Dani_Lupion.jpg",
+    videoYoutube:"https://www.youtube.com/watch?v=KHuADKlcXso",
     fecha: "2026-07-22",
     tagsEs: ["Gobernanza", "Regulación", "IA de frontera"],
     tagsEn: ["Governance", "Regulation", "Frontier AI"],
