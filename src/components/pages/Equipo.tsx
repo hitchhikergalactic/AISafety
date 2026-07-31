@@ -31,7 +31,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
             
             {/* Foto */}
             <div className="flex flex-col items-center shrink-0 w-full md:w-auto mt-6 md:mt-12">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-md overflow-hidden border-1 dark:border shadow-lg mb-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-md overflow-hidden shadow-lg mb-4">
                 <img 
                   src={osmaniImg.src || osmaniImg} 
                   alt="Osmani Redondo" 
