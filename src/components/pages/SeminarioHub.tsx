@@ -58,7 +58,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
         <div className="max-w-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
             <a 
-              href="https://luma.com/event/evt-fzRE7LUYiG5Bljy"
+              href="https://luma.com/event/evt-dT1lSi0z1O5U80k"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
