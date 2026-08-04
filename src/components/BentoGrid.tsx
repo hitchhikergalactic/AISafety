@@ -14,6 +14,7 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
+  const arrowButtonClass = "w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors shrink-0 ml-auto";
   
   // --- PASO 1: CARGAR EL SCRIPT DE LUMA ---
   useEffect(() => {
@@ -47,7 +48,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <span className="font-sans text-sm text-label-gray uppercase">
                  {t.upcoming.tag}
                 </span>
-                <button className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
+                <button className={arrowButtonClass}>
                   <ArrowUpRight size={14} />
                 </button>
               </div>
@@ -75,11 +76,11 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               type="button"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
             >
-              <div className="flex justify-between items-start mb-4">
-                <span className="font-sans text-sm text-label-gray uppercase block">
+              <div className="flex items-start justify-between gap-3 mb-4 w-full">
+                <span className="font-sans text-sm text-label-gray uppercase block flex-1">
                   {t.upcoming.innovation.tag}
                 </span>
-                <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
+                <span className={arrowButtonClass}>
                   <ArrowUpRight size={14} />
                 </span>
               </div>
