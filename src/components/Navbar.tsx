@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     document.documentElement.classList.toggle('dark', nextTheme === 'dark');
   };
 
-  const navLinks = [
+const navLinks = [
     { 
       href: "mission", 
       label: t.nav.mission, 
@@ -59,7 +59,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       href: "eventos", 
       label: t.nav.events, 
       sublinks: [
-        { label: t.seminario?.submenu, path: "/seminario-bluedot-spain" }
+        { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-spain" },
+        { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]
     },
     { href: "conectar", label: t.nav.about },

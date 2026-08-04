@@ -70,10 +70,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               </h5>
             </a>
             
-            {/* TARJETA 2: Secundaria - Con Imagen y Texto (Innovation) */}
-            <button 
-              onClick={onModalOpen}
-              type="button"
+            {/* TARJETA 2: Secundaria - Con Imagen y Texto (Curso Estrategia AGI) */}
+            <a 
+              href={`${langPrefix}/curso-estrategia-agi`}
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
             >
               <div className="flex items-start justify-between gap-3 mb-4 w-full">
@@ -97,9 +96,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
                 {t.upcoming.innovation.dateShort.toUpperCase()}
               </h5>
-            </button>
-          </div>
-
+            </a>
+            </div>
           {/* --- COLUMNA DERECHA (3 Tarjetas: Horizontal + Apaisada + Research) --- */}
           <div className="flex flex-col gap-5 h-full">
             
