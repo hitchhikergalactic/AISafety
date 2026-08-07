@@ -315,7 +315,7 @@ export const listaDeCharlas: Charla[] = [
     fecha: "2026-08-05",
     tagsEs: ["Sesgos algorítmicos", "IA responsable", "Modelos de lenguaje"],
     tagsEn: ["Algorithmic bias", "Responsible AI", "Language models"],
-    presentacion: "",
+    presentacion: "/SESGO-Robles-Bernal-Raigoso-Dulce.pdf",
     expositor: {
       id: "melissa-robles",
       nombre: "Melissa",
