@@ -14,7 +14,7 @@ const SocialFooter = () => {
       <a href="https://www.linkedin.com/company/aisafetyspanish/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
         <FaLinkedin />
       </a>
-      <a href="https://discord.gg/z7uhQKhZKW" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Discord">
+      <a href="https://discord.gg/gm6v9Cwa58" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Discord">
         <FaDiscord />
       </a>
       <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Substack">
