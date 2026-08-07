@@ -16,6 +16,35 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
   const t = translations[lang];
   const content = queHacemosContent[lang];
   const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const searchParams = new URLSearchParams();
+      formData.forEach((value, key) => {
+        searchParams.append(key, value.toString());
+      });
+
+      await fetch('https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: searchParams.toString(),
+      });
+
+      setIsSuccess(true);
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -71,30 +100,45 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors cursor-pointer">
               <X size={24} />
             </button>
-            <h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
-            <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
+            {isSuccess ? (
+              <div className="text-center py-8">
+                <h3 className="mb-4 text-principal">{t.subscribe.success}</h3>
+                <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif text-lg">
+                  {lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
+                </p>
+              </div>
+            ) : (
+              <>
+                <h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
+                <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
 
-            <form action="https://formsubmit.co/aisafetymadrid@gmail.com" method="POST" className="space-y-4">
-              <input type="hidden" name="_subject" value="Nuevo suscriptor desde QueHacemos" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input 
-                type="email" 
-                name="email" 
-                placeholder={lang === 'es' ? 'tu@email.com' : 'your@email.com'} 
-                required 
-                className="w-full px-4 py-3 rounded-xl border border-secundarios-dark/20 dark:border-white/10 bg-white dark:bg-white/5 text-secundarios-dark dark:text-white placeholder-secundarios-dark/40 focus:outline-none focus:ring-2 focus:ring-principal"
-              />
-              <button type="submit" className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors cursor-pointer">
-                {t.subscribe.button}
-              </button>
-            </form>
+                <form onSubmit={handleSubmit} action="https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec" method="POST" className="space-y-4">
+                  <input type="hidden" name="_subject" value="Nuevo suscriptor desde QueHacemos" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input 
+                    type="email" 
+                    name="email" 
+                    placeholder={lang === 'es' ? 'tu@email.com' : 'your@email.com'} 
+                    required 
+                    className="w-full px-4 py-3 rounded-xl border border-secundarios-dark/20 dark:border-white/10 bg-white dark:bg-white/5 text-secundarios-dark dark:text-white placeholder-secundarios-dark/40 focus:outline-none focus:ring-2 focus:ring-principal"
+                  />
+                  <button type="submit" disabled={isSubmitting} className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.subscribe.button}
+                  </button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       )}
 
       <Footer 
         lang={lang} 
-        onSubscribeClick={() => setShowModal(true)}
+        onSubscribeClick={() => {
+          setIsSuccess(false);
+          setIsSubmitting(false);
+          setShowModal(true);
+        }}
       />
     </>
   );

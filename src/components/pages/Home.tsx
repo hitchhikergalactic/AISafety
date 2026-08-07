@@ -41,7 +41,45 @@ interface HomeProps {
 export default function Home({ lang }: HomeProps) {
 	const [showModal, setShowModal] = useState(false);
 	const [modalType, setModalType] = useState<'event' | 'subscribe'>('event');
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
 	const t = translations[lang];
+
+	const openModal = (type: 'subscribe' | 'event') => {
+		setModalType(type);
+		setIsSuccess(false);
+		setIsSubmitting(false);
+		setShowModal(true);
+	};
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		if (modalType === 'subscribe') {
+			e.preventDefault();
+			setIsSubmitting(true);
+			try {
+				const formData = new FormData(e.currentTarget);
+				const searchParams = new URLSearchParams();
+				formData.forEach((value, key) => {
+					searchParams.append(key, value.toString());
+				});
+
+				await fetch('https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec', {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: searchParams.toString(),
+				});
+
+				setIsSuccess(true);
+			} catch (error) {
+				console.error("Error al enviar el formulario:", error);
+			} finally {
+				setIsSubmitting(false);
+			}
+		}
+	};
 
 	useEffect(() => {
 		const handleAnchorClick = (e: MouseEvent) => {
@@ -73,23 +111,39 @@ export default function Home({ lang }: HomeProps) {
 						<button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors cursor-pointer">
 							<X size={24} />
 						</button>
-						<h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
-						<p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
+						{isSuccess ? (
+							<div className="text-center py-8">
+								<h3 className="mb-4 text-principal">{t.subscribe.success}</h3>
+								<p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif text-lg">
+									{lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
+								</p>
+							</div>
+						) : (
+							<>
+								<h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
+								<p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
 
-						<form action="https://formsubmit.co/aisafetymadrid@gmail.com" method="POST" className="space-y-4">
-							<input type="hidden" name="_subject" value={modalType === 'event' ? `Nuevo registro: ${t.upcoming.eventTitle}` : "Nuevo suscriptor"} />
-							<input type="hidden" name="_captcha" value="false" />
-							<input type="hidden" name="_template" value="table" />
-							{modalType === 'event' && <input type="hidden" name="evento_detalles" value={t.upcoming.eventTitle} />}
+								<form 
+									onSubmit={handleSubmit}
+									action={modalType === 'subscribe' ? 'https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec' : 'https://formsubmit.co/aisafetymadrid@gmail.com'} 
+									method="POST" 
+									className="space-y-4"
+								>
+									<input type="hidden" name="_subject" value={modalType === 'event' ? `Nuevo registro: ${t.upcoming.eventTitle}` : "Nuevo suscriptor"} />
+									<input type="hidden" name="_captcha" value="false" />
+									<input type="hidden" name="_template" value="table" />
+									{modalType === 'event' && <input type="hidden" name="evento_detalles" value={t.upcoming.eventTitle} />}
 
-							<input type="text" name="name" required placeholder={t.subscribe.name} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
-							<input type="email" name="email" required placeholder={t.subscribe.email} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
-							<input type="text" name="linkedin" placeholder={t.subscribe.linkedin} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
-							
-							<button type="submit" className="w-full py-5 rounded-2xl bg-principal text-white font-sans font-black text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95 cursor-pointer">
-								{t.subscribe.button}
-							</button>
-						</form>
+									<input type="text" name="name" required placeholder={t.subscribe.name} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
+									<input type="email" name="email" required placeholder={t.subscribe.email} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
+									<input type="text" name="linkedin" placeholder={t.subscribe.linkedin} className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg" />
+									
+									<button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-2xl bg-principal text-white font-sans font-black text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+										{isSubmitting ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.subscribe.button}
+									</button>
+								</form>
+							</>
+						)}
 					</div>
 				</div>
 			)}
@@ -107,7 +161,7 @@ export default function Home({ lang }: HomeProps) {
 				</div>
 				<div className="max-w-2xl mx-auto">
 					<div className="flex flex-col md:flex-row gap-4 pt-12">
-						<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+						<button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
 							{t.hero.ctaSecondary}
 						</button>
 						<button onClick={() => window.open('https://osmaniredondo.substack.com/', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
@@ -170,7 +224,7 @@ export default function Home({ lang }: HomeProps) {
 				<BentoGrid 
 					t={t}
 					lang={lang}
-					onModalOpen={() => { setModalType('event'); setShowModal(true); }} 
+					onModalOpen={() => openModal('event')} 
 				/>
 			</Section>
 
@@ -184,7 +238,7 @@ export default function Home({ lang }: HomeProps) {
 					</div>
 					<div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
 						<div>
-							<button onClick={() => { setModalType('subscribe'); setShowModal(true); }} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md cursor-pointer">
+							<button onClick={() => openModal('subscribe')} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md cursor-pointer">
 								{t.hero.ctaSecondary}
 							</button>
 						</div>
@@ -226,7 +280,7 @@ export default function Home({ lang }: HomeProps) {
 			<div id="footer">
 				<Footer 
 					lang={lang} 
-					onSubscribeClick={() => { setModalType('subscribe'); setShowModal(true); }}
+					onSubscribeClick={() => openModal('subscribe')}
 				/>
 			</div>
 		</>

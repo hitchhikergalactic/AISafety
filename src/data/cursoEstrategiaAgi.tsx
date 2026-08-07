@@ -22,7 +22,7 @@ export const cursoEstrategiaAgiContent = {
       'Cómo orientar la IA hacia mejores escenarios',
       'Un marco estratégico para actuar con impacto',
     ],
-    note: '**BlueDot Impact** es el principal acelerador de talento para una IA segura. Desde **iaS** es referente en seguridad de la inteligencia artificial en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura',
+    note: '**BlueDot Impact** es el principal acelerador de talento para una IA segura. Desde **iaS** somos referente en seguridad de la inteligencia artificial en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura',
   },
   en: {
     eyebrow: 'TRAINING',

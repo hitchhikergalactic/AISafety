@@ -31,7 +31,7 @@ export const equipoContent: EquipoContent = {
   },
   en: {
     heroTitle: "Team",
-    heroSubtitle: "Leading **iaS** is **Osmani Redondo, a software engineer and certified cloud architect with experience at Telefónica Tech, who directs the development of the first AI safety hub in Spanish; she combines this work with directing BlueDot Impact's monthly Spanish-speaking seminar, her role as a guest professor at prestigious institutions such as UNAM in Mexico, and her participation as a partner at OdiseIA, the Observatory for the Social and Ethical Impact of AI",
+    heroSubtitle: "Leading **iaS** is **Osmani Redondo**, a software engineer and certified cloud architect with experience at Telefónica Tech, who directs the development of the first AI safety hub in Spanish; she combines this work with directing BlueDot Impact's monthly Spanish-speaking seminar, her role as a guest professor at prestigious institutions such as UNAM in Mexico, and her participation as a partner at OdiseIA, the Observatory for the Social and Ethical Impact of AI",
     joinTitle: "Do you want to build the future of AI safety in Spanish?",
     joinSubtitle: "**iaS** is an infrastructure under construction. We need people who see the problem and want to be part of the solution.",
     joinContribute: "**You can contribute in:** translation and adaptation of technical content, seminar and reading group facilitation, communication and social media, web development, research and documentation, and institutional relations.",
