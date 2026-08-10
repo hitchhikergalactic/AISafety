@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "Hub de IA safety",
+      h1: "Hub de seguridad de la IA",
       h2: "**iaS** es referente en seguridad de la inteligencia artificial en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura.",
       ctaPrimary: "Quiero entender qué es AI safety",
       ctaSecondary: "¡Quiero formar parte!",
@@ -43,7 +43,7 @@ export const translations = {
       title: "Próximos Eventos",
       eventTitle: "Un espacio para conectar",
       description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad, y sal con contactos dentro de la única red de AI safety que funciona íntegramente en español, sin necesidad de traducir lo que piensas para que se entienda.",
-      dateShort: "19 agosto| Evento online",
+      dateShort: "19 agosto | Evento online",
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de IA safety",
