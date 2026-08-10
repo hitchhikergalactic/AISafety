@@ -41,9 +41,9 @@ export const translations = {
     upcoming: {
       tag: "/ PRÓXIMAMENTE",
       title: "Próximos Eventos",
-      eventTitle: "Segundo encuentro de W4AIS",
-      description: "La inteligencia artificial que construimos hoy decidirá nuestro mañana. W4AIS nace para integrar más voces en esta conversación. Te esperamos en nuestro primer encuentro.",
-      dateShort: "29 de Julio | Evento online",
+      eventTitle: "Un espacio para conectar",
+      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad, y sal con contactos dentro de la única red de AI safety que funciona íntegramente en español, sin necesidad de traducir lo que piensas para que se entienda.",
+      dateShort: "19 agosto| Evento online",
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de IA safety",
@@ -139,32 +139,31 @@ export const translations = {
     },
     upcoming: {
       tag: "/ UPCOMING",
-      title: "Upcoming Events",
-      eventTitle: "Second W4AIS session",
-      description: "The AI being built today will decide how we live tomorrow. W4AIS is born so that more voices are part of that conversation. There will be talks, networking and snacks. We look forward to seeing you!",
-      cta: "Book your spot",
-      dateShort: "Online event: July 29",
+      title: "Upcoming events",
+      eventTitle: "A space to connect",
+      description: "Come with a question, a project you are building, or simply curiosity, and leave with connections inside the only AI safety network that works entirely in Spanish, without needing to translate what you think for it to be understood.",
+      dateShort: "August 19 | Online event",
       bluedot: {
-        tag: "/ COMMUNITY",
-        title: "Bluedot Impact Spain",
-        description: "People from around the world connecting on AI safety in Spanish. Conversations we needed to have in our language.",
+        tag: "/ TRAINING",
+        title: "AI safety seminar",
+        description: "Together with BlueDot, we run an AI safety seminar. A space to connect with experts from around the world. Essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month"
       },
       readingGroup: {
-        tag: "/ NEWSLETTER",
-        title: "The Greatest Challenge of Our Time",
-        description: "Our director Osmani is already writing about AI safety on Substack.",
+        tag: "/ SUBSTACK",
+        title: "The greatest challenge of all time",
+        description: "Why would an AI that does not understand Spanish be a systemic risk? Technical analysis of safety failures in language models in Spanish. By Osmani Redondo.",
       },
       innovation: {
         tag: "/ TRAINING",
-        title: "AGI Strategy",
-        description: "The first specialized AI General Intelligence strategy program based on BlueDot Impact's curriculum. No technical requirements.",
-        dateShort: "Cohort-based | Available: October 2026"
+        title: "Course on strategy for Artificial General Intelligence",
+        description: "The first specialized program on Artificial General Intelligence strategy based on the BlueDot Impact curriculum.",
+        dateShort: "Cohort-based. No technical requirements | Available: October 2026."
       },
       research: {
-        tag: "/ ZERO DAY",
-        title: "Early Members",
-        description: "We're looking for commitment, not numbers. Join the first people interested in AI safety and help build the foundations in Spanish.",
+        tag: "/ DAY ZERO",
+        title: "First members",
+        description: "We are not looking for quantity; we are looking for commitment. Join the first people interested in AI safety and help build the foundations in Spanish.",
       }
     },
     collaborators: {

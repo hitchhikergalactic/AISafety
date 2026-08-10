@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import eventImage from '../assets/eventos_Licencia_Unsplash.jpg';
+import eventImage from '../assets/ias_evento.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.png';
 import substack from '../assets/substack.jpeg';
@@ -38,7 +38,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 1: Hero - Imagen */}
               <a
-              href="https://luma.com/event/evt-fCz8Gkmw1J2Y1pi"
+              href="https://luma.com/event/evt-R8gnuFROQKgfnhk"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
               target="_blank"
               rel="noopener noreferrer"
