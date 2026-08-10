@@ -61,7 +61,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <h4 className="text-base font-bold  tracking-tight mb-2">
                 {t.upcoming.eventTitle}
               </h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-4">
+              <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
                 {t.upcoming.description}
               </p>
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
