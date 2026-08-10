@@ -11,7 +11,7 @@ import { SiSubstack } from "react-icons/si";
 const SocialFooter = () => {
   return (
     <div className="flex items-center gap-6 text-3xl">
-      <a href="https://www.linkedin.com/company/aisafetyspanish/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/company/seguridad-de-la-ia/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
         <FaLinkedin />
       </a>
       <a href="https://discord.gg/gm6v9Cwa58" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Discord">
@@ -23,10 +23,10 @@ const SocialFooter = () => {
       <a href="https://luma.com/user/osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Luma">
         <FaRegCalendar />
       </a>
-      <a href="https://www.youtube.com/@aisafetyspanish" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="YouTube">
+      <a href="https://www.youtube.com/@seguridad-de-la-ia" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="YouTube">
         <FaYoutube />
       </a>
-      <a href="https://www.instagram.com/aisafetyspanish" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
+      <a href="https://www.instagram.com/seguridad_de_la_ia" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
         <FaInstagram />
       </a>
     </div>
