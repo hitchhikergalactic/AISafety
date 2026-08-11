@@ -170,7 +170,7 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
           return (
             <div
               key={idx}
-              className={`p-6 rounded-md bg-white/40 dark:bg-white/5 border border-secundarios-dark/10 hover:border-principal/30 transition-all duration-300 space-y-3 ${
+              className={`p-6 rounded-md bg-white/40 dark:bg-white/5 border border-secundarios-dark/10 space-y-3 ${
                 isLastItem ? 'md:col-span-2' : ''
               }`}
             >
