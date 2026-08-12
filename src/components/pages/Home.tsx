@@ -27,6 +27,10 @@ import logoBAISH from '@assets/logos__buenos_aires_AI_safety_hub.svg';
 import logoBAISHWhite from '@assets/logos__buenos_aires_AI_safety_hub_white.svg';
 import logoMEXICO from '@assets/ai_safety_mexico.svg';
 import logoMEXICOWhite from '@assets/ai_safety_mexico_byn.svg';
+import logow4ias from '@assets/logos__w4ais.svg';
+import logow4iaswhite from '@assets/logos__w4ais-white.svg';
+import logoColombia from '@assets/logos__ai-safety-colombia.svg';
+import logoColombiawhite from '@assets/logos__ai-safaty-colombia-white.svg';
 import women4aisImg from '@assets/original-aa4b526da371210b9104b913751e40d4.webp';
 import fondoImg from '@assets/fondo.png';
 import undefinedImgur from '@assets/undefined_imgur.png';
@@ -157,7 +161,7 @@ export default function Home({ lang }: HomeProps) {
 					<h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
 						{t.hero.h1}
 					</h1>
-					<p className="bajada max-w-[950px] mx-auto">{parseText(t.hero.h2)}</p>
+					<p className="bajada c">{parseText(t.hero.h2)}</p>
 				</div>
 				<div className="max-w-2xl mx-auto">
 					<div className="flex flex-col md:flex-row gap-4 pt-12">
@@ -173,19 +177,21 @@ export default function Home({ lang }: HomeProps) {
 
 			{/* 2. COLABORADORES */}
 			<Section id="conectar">
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-center">
-					<div className="col-span-1">
-						<h4 className="mb-4 md:mb-12">{t.collaborators.title}</h4>
-						<p>{parseText(t.collaborators.text)}</p>
-					</div>
-					<div className="col-span-1 md:col-span-3">
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 items-center">
+				<div className='mx-auto max-w-2xl text-center'>
+					<h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
+					<p>{parseText(t.collaborators.text)}</p>
+				</div>
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-center">
+					<div className="col-span-1 md:col-span-5">
+						<div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-10 items-center">
 							<CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} />
 							<CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} />
 							<CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} />
 							<CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} />
 							<CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} logoWhite={logoBAISHWhite} />
 							<CollaborativeCard href="https://www.aismx.org/" text="MEXICO" logo={logoMEXICO} logoWhite={logoMEXICOWhite} />
+							<CollaborativeCard href="https://www.women4aisafety.com/" text="w4ias" logo={logow4ias} logoWhite={logow4iaswhite} />
+							<CollaborativeCard href="https://aisafetycolombia.org/" text="colombia" logo={logoColombia} logoWhite={logoColombiawhite} />
 						</div>
 					</div>
 				</div>
@@ -193,7 +199,7 @@ export default function Home({ lang }: HomeProps) {
 
 			{/* 3. WHY HUB SECTION */}
 			<Section id="mission">
-				<div className="w-full flex flex-col md:flex-row gap-12 items-center justify-center">
+				<div className="w-full flex flex-col md:flex-row gap-8 items-center justify-center">
 					<div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
 						<h4>{t.why.title}</h4>
 						<p className="whitespace-pre-line">{t.why.text1}</p>
@@ -202,11 +208,11 @@ export default function Home({ lang }: HomeProps) {
 						<p className="font-bold">{t.why.text4}</p>
 					</div>
 					<div className="w-full md:w-1/2 flex justify-center">
-						<div className="relative group w-full aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10 shadow-anthro-card hover:shadow-anthro-elevated">
+						<div className="relative group w-full aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10">
 							<img
 								src={undefinedImgur.src || undefinedImgur}
 								alt="AI Safety Madrid"
-								className="w-full h-full object-cover group-hover:scale-105"
+								className="w-full h-full object-cover"
 							/>
 						</div>
 					</div>
@@ -250,7 +256,7 @@ export default function Home({ lang }: HomeProps) {
 			</Section>
 
 			{/* 7. WOMEN4AIS */}
-			<Section>
+			{/*<Section>
 				<div className="rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 text-white relative overflow-hidden" style={{ backgroundImage: `url(${fondoImg.src || fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 					<div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 					
@@ -275,7 +281,7 @@ export default function Home({ lang }: HomeProps) {
 						</div>
 					</div>
 				</div>
-			</Section>
+			</Section>*/}
 
 			<div id="footer">
 				<Footer 

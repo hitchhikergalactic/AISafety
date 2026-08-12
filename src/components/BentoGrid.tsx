@@ -29,7 +29,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   }, []);
 
   return (
-    <section id="eventos" className="py-5 md:py-24 px-6">
+    <section id="eventos" className="py-4 md:py-10 px-5">
       <div className="">
         {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
