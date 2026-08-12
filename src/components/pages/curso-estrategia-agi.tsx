@@ -24,7 +24,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
             <h2 className="mb-8 leading-tight tracking-tight text-balance">
               {content.pageTitle}
             </h2>
-            <p className="mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
+            <p className="bajadapages mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
               {parseText(content.heroText)}
             </p>
 

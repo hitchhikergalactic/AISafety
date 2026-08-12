@@ -64,16 +64,27 @@ p {
 
 .bajada {
   font-family: 'Alegreya', serif !important; 
-  /* El mínimo sube a 1.2rem y el escalado es más rápido (5vw) */
   font-size: clamp(1.2rem, 5vw, 2.0rem) !important;
   line-height: 1.4 !important;
   font-weight: 400 !important; 
   color: inherit; 
-  /* Reducimos un poco el margen en móvil para que no flote tanto */
+  /* Reducimos un poco el margen en celular para que no flote tanto */
   margin-bottom: 1.8rem; 
   text-wrap: balance;
-  opacity: 0.9; /* Un pelín más de opacidad ayuda a la legibilidad en pantallas chicas */
+  opacity: 0.9; 
 }
+
+.bajadapages {
+  font-family: 'Alegreya', serif !important; 
+  font-size: clamp(1.0rem, 4vw, 1.5rem) !important;
+  line-height: 1.4 !important;
+  font-weight: 300 !important; 
+  color: inherit; 
+  margin-bottom: 1.8rem; 
+  text-wrap: balance;
+  opacity: 0.9; 
+}
+
 
 .texto-small {
   font-family: 'Alegreya', serif !important;
