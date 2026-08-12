@@ -35,31 +35,45 @@ const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
     return () => observer.disconnect();
   }, []);
 
+  // Función auxiliar para extraer de forma segura la URL como un string limpio
+  const getImageSrc = (img: any) => {
+    if (!img) return '';
+    if (typeof img === 'string') return img;
+    if (img.src && typeof img.src === 'string') return img.src;
+    if (img.default && typeof img.default === 'string') return img.default;
+    return '';
+  };
+
+  const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
+
   return (
     <footer className="px-4 md:px-8 bg-secundarios-dark text-secundarios-light/40 py-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto text-center md:text-left">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col-reverse md:flex-row gap-12 items-start justify-between">
             <div className="flex-1 items-center md:items-start w-full md:w-auto">
-              <p  className="bajada !text-secundarios-light max-w-xs mb-6 text-center md:text-left mx-auto md:mx-0">
+              <p className="bajada !text-secundarios-light max-w-xs mb-6 text-center md:text-left mx-auto md:mx-0">
                 {parseText(t.footer.text2)}
               </p>
-              <p  className="!text-secundarios-light max-w-xs mb-6 text-center md:text-left mx-auto md:mx-0">
+              <p className="!text-secundarios-light max-w-xs mb-6 text-center md:text-left mx-auto md:mx-0">
                 {parseText(t.footer.tagline)}
               </p>
               <button 
                 onClick={onSubscribeClick}
+                type="button"
                 className="w-full md:w-auto px-10 py-4 rounded-xl bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center md:inline-flex gap-3 mb-8 cursor-pointer"
               >
                 {t.hero.ctaSecondary}
               </button>
             </div>
             <div className="w-full md:w-auto flex flex-col items-center md:items-end gap-6">
-              <img 
-                src={theme === 'dark' ? (logoWhite.src || logoWhite) : (logo.src || logo)} 
-                alt="IA Safety España" 
-                className="h-16 md:h-20" 
-              />
+              {activeLogo && (
+                <img 
+                  src={activeLogo} 
+                  alt="IA Safety España" 
+                  className="h-16 md:h-20" 
+                />
+              )}
               <div>
                 <SocialFooter />
               </div>

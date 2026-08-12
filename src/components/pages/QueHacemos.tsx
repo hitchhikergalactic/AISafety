@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
+import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
 import { queHacemosContent } from '@data/quehacemos';
 import { parseText } from '@utils/parseText';
-import { X } from 'lucide-react';
 
 type Language = 'es' | 'en';
 
@@ -16,35 +16,6 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
   const t = translations[lang];
   const content = queHacemosContent[lang];
   const [showModal, setShowModal] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const formData = new FormData(e.currentTarget);
-      const searchParams = new URLSearchParams();
-      formData.forEach((value, key) => {
-        searchParams.append(key, value.toString());
-      });
-
-      await fetch('https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: searchParams.toString(),
-      });
-
-      setIsSuccess(true);
-    } catch (error) {
-      console.error("Error al enviar el formulario:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <>
@@ -92,51 +63,20 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
         </div>
       </main>
       
-      {/* MODAL DE SUSCRIPCIÓN */}
-      {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setShowModal(false)}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-          <div className="relative bg-secundarios-light dark:bg-secundarios-dark rounded-[32px] p-8 md:p-14 max-w-2xl w-full shadow-anthro-elevated border border-secundarios-dark/20 z-10" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setShowModal(false)} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors cursor-pointer">
-              <X size={24} />
-            </button>
-            {isSuccess ? (
-              <div className="text-center py-8">
-                <h3 className="mb-4 text-principal">{t.subscribe.success}</h3>
-                <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif text-lg">
-                  {lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
-                </p>
-              </div>
-            ) : (
-              <>
-                <h3 className="mb-2 md:mb-4">{t.subscribe.title}</h3>
-                <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif mb-6 text-lg text-balance">{t.subscribe.subtitle}</p>
-
-                <form onSubmit={handleSubmit} action="https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec" method="POST" className="space-y-4">
-                  <input type="hidden" name="_subject" value="Nuevo suscriptor desde QueHacemos" />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input 
-                    type="email" 
-                    name="email" 
-                    placeholder={lang === 'es' ? 'tu@email.com' : 'your@email.com'} 
-                    required 
-                    className="w-full px-4 py-3 rounded-xl border border-secundarios-dark/20 dark:border-white/10 bg-white dark:bg-white/5 text-secundarios-dark dark:text-white placeholder-secundarios-dark/40 focus:outline-none focus:ring-2 focus:ring-principal"
-                  />
-                  <button type="submit" disabled={isSubmitting} className="w-full py-3 rounded-xl bg-principal text-white font-bold hover:bg-principal/80 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                    {isSubmitting ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.subscribe.button}
-                  </button>
-                </form>
-              </>
-            )}
-          </div>
-        </div>
-      )}
+      <JoinModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        lang={lang}
+        title={t.subscribe.title}
+        subtitle={t.subscribe.subtitle}
+        action="https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec"
+        subject="Nuevo suscriptor desde QueHacemos"
+        successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
+      />
 
       <Footer 
         lang={lang} 
         onSubscribeClick={() => {
-          setIsSuccess(false);
-          setIsSubmitting(false);
           setShowModal(true);
         }}
       />

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
+import JoinModal from '@components/JoinModal';
 import { cursoEstrategiaAgiContent } from '@data/cursoEstrategiaAgi';
 import { parseText } from '@utils/parseText';
 
@@ -12,6 +13,11 @@ interface CursoEstrategiaAgiProps {
 
 const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
   const content = cursoEstrategiaAgiContent[lang];
+  const [showModal, setShowModal] = useState(false);
+
+  const openJoinModal = () => {
+    setShowModal(true);
+  };
 
   return (
     <>
@@ -68,7 +74,18 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
         </section>
       </main>
 
-      <Footer lang={lang} />
+      <JoinModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        lang={lang}
+        title={lang === 'es' ? 'Forma parte de iaS' : 'Join iaS'}
+        subtitle={lang === 'es' ? 'Recibe noticias sobre eventos, recursos y únete a la comunidad.' : 'Get updates about events, resources, and join the community.'}
+        action="https://formsubmit.co/aisafetymadrid@gmail.com"
+        subject={lang === 'es' ? 'Nuevo suscriptor desde Curso Estrategia AGI' : 'New subscriber from AGI Strategy Course'}
+        successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
+      />
+
+      <Footer lang={lang} onSubscribeClick={openJoinModal} />
     </>
   );
 };

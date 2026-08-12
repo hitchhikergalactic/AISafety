@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import { translations } from '../locales/translations';
@@ -46,7 +45,18 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     document.documentElement.classList.toggle('dark', nextTheme === 'dark');
   };
 
-const navLinks = [
+  // Función auxiliar para extraer de forma segura la URL como un string limpio
+  const getImageSrc = (img: any) => {
+    if (!img) return '';
+    if (typeof img === 'string') return img;
+    if (img.src && typeof img.src === 'string') return img.src;
+    if (img.default && typeof img.default === 'string') return img.default;
+    return '';
+  };
+
+  const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
+
+  const navLinks = [
     { 
       href: "mission", 
       label: t.nav.mission, 
@@ -69,8 +79,8 @@ const navLinks = [
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out`}>
-      {/* Background Layer with Backdrop Filter */}
-      <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light/90 dark:bg-secundarios-dark/90 glass-nav border-b border-secundarios-dark/10 shadow-sm' : 'bg-transparent'}`}></div>
+      {/* Background Layer sin opacidades reflejando tu cambio previo */}
+      <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
 
       <div className={`max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
@@ -82,11 +92,13 @@ const navLinks = [
           }}
           className="shrink-0 transition-opacity duration-300 hover:opacity-80"
         >
-          <img 
-            src={theme === 'dark' ? (logoWhite.src || logoWhite) : (logo.src || logo)} 
-            alt="AI Safety España" 
-            className="h-10 md:h-[50px] w-auto block bg-transparent"
-          />
+          {activeLogo && (
+            <img 
+              src={activeLogo} 
+              alt="AI Safety España" 
+              className="h-10 md:h-[50px] w-auto block bg-transparent"
+            />
+          )}
         </a>
 
         {/* Desktop Navigation */}
@@ -94,13 +106,11 @@ const navLinks = [
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
-                // Items con Submenú (no navegan directo en hover, se muestra dropdown)
                 <span className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer pb-2">
                   {link.label.toUpperCase()}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </span>
               ) : (
-                // Enlaces directos a secciones (Scroll smooth)
                 <a 
                   href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
                   className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer"
@@ -151,21 +161,34 @@ const navLinks = [
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-secundarios-dark dark:text-secundarios-light p-1.5 ml-1 cursor-pointer">
+          {/* Botón corregido con mayor área de click y soporte táctil rápido */}
+          <button 
+            onTouchStart={(e) => {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }}
+            onClick={() => setIsOpen(!isOpen)} 
+            className="lg:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
+            aria-label="Menu"
+          >
             {isOpen ? <X size={24} className="md:w-[28px] md:h-[28px]" /> : <Menu size={24} className="md:w-[28px] md:h-[28px]" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile & Tablet Menu Overlay */}
       <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
             <div key={link.href}>
               {link.sublinks ? (
                 <button 
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
+                  }}
                   onClick={() => setOpenSubmenu(openSubmenu === link.href ? null : link.href)}
-                  className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full"
+                  className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
                   {link.label.toUpperCase()}
@@ -175,7 +198,7 @@ const navLinks = [
                 <a 
                   href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block"
+                  className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
                   {link.label.toUpperCase()}
@@ -183,7 +206,7 @@ const navLinks = [
                 </a>
               )}
               
-              {/* Mobile Submenu */}
+              {/* Mobile/Tablet Submenu */}
               {link.sublinks && openSubmenu === link.href && (
                 <div className="ml-4 flex flex-col gap-3 pb-4">
                   {link.sublinks.map((sublink, subIdx) => (
@@ -194,7 +217,7 @@ const navLinks = [
                         setIsOpen(false);
                         setOpenSubmenu(null);
                       }}
-                      className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors"
+                      className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors block py-2 touch-manipulation"
                     >
                       {sublink.label}
                     </a>

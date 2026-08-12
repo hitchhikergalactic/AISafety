@@ -16,6 +16,15 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
   const arrowButtonClass = "w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors shrink-0 ml-auto";
   
+  // Función auxiliar para extraer de forma segura la URL de la imagen como un string
+  const getImageSrc = (img: any) => {
+    if (!img) return '';
+    if (typeof img === 'string') return img;
+    if (img.src && typeof img.src === 'string') return img.src;
+    if (img.default && typeof img.default === 'string') return img.default;
+    return '';
+  };
+
   // --- PASO 1: CARGAR EL SCRIPT DE LUMA ---
   useEffect(() => {
     const scriptId = 'luma-checkout';
@@ -38,7 +47,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           <div className="flex flex-col gap-4 h-full">
             
             {/* TARJETA 1: Hero - Imagen */}
-              <a
+            <a
               href="https://luma.com/event/evt-R8gnuFROQKgfnhk"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
               target="_blank"
@@ -54,7 +63,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
-                  src={eventImage.src || eventImage} 
+                  src={getImageSrc(eventImage)} 
                   alt={t.upcoming.eventTitle}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
@@ -85,7 +94,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
-                  src={cursoAgi.src || cursoAgi}
+                  src={getImageSrc(cursoAgi)}
                   alt={t.upcoming.innovation.title}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
@@ -97,7 +106,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 {t.upcoming.innovation.dateShort.toUpperCase()}
               </h5>
             </a>
-            </div>
+          </div>
+
           {/* --- COLUMNA DERECHA (3 Tarjetas: Horizontal + Apaisada + Research) --- */}
           <div className="flex flex-col gap-5 h-full">
             
@@ -114,7 +124,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                </div>
                <div className="flex flex-col md:flex-row gap-4 flex-1">
                   <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
-                    <img src={rodrigoImage.src || rodrigoImage} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={getImageSrc(rodrigoImage)} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
@@ -140,7 +150,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 </span>
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img src={substack.src || substack} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+                <img src={getImageSrc(substack)} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small line-clamp-4 flex-grow">{t.upcoming.readingGroup.description}</p>
@@ -161,7 +171,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                </div>
                <div className="flex flex-col md:flex-row gap-4 flex-1">
                   <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
-                    <img src={discord.src || discord} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={getImageSrc(discord)} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.research.title}</h4>
