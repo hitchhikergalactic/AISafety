@@ -20,7 +20,7 @@ const SocialFooter = () => {
       <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Substack">
         <SiSubstack />
       </a>
-      <a href="https://luma.com/user/osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Luma">
+      <a href="https://luma.com/iaS-SeguridadelaIA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Luma">
         <FaRegCalendar />
       </a>
       <a href="https://www.youtube.com/@seguridad-de-la-ia" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="YouTube">
