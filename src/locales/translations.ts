@@ -71,9 +71,6 @@ export const translations = {
       title: "Red iaS",
       text: "Somos parte del ecosistema global de IA safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
-    women4ais: {
-      title: "Women4AIS",
-      text: "El campo de AI safety tiene un déficit de representación. Las mujeres están subrepresentadas en investigación, en gobernanza y en los equipos que están tomando las decisiones más importantes de nuestra era.\nW4IAS existe para cambiar eso en el mundo hispanohablante.\nOrganizamos eventos, creamos redes de apoyo profesional y conectamos a mujeres hispanohablantes con oportunidades en AI safety a nivel global."},
     seminario: {
       title: "Seminario IA safety",
       submenu: "Seminario IA safety",
