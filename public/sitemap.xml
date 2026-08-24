@@ -1,45 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home -->
   <url>
     <loc>https://aisafety.es/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/"/>
   </url>
+  <url>
+    <loc>https://aisafety.es/en/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/"/>
+  </url>
+
+  <!-- Qué hacemos -->
   <url>
     <loc>https://aisafety.es/que-hacemos</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/que-hacemos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/que-hacemos"/>
   </url>
+  <url>
+    <loc>https://aisafety.es/en/que-hacemos</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/que-hacemos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/que-hacemos"/>
+  </url>
+
+  <!-- Equipo -->
   <url>
     <loc>https://aisafety.es/equipo</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/equipo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/equipo"/>
   </url>
+  <url>
+    <loc>https://aisafety.es/en/equipo</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/equipo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/equipo"/>
+  </url>
+
+  <!-- Curso Estrategia AGI -->
+  <url>
+    <loc>https://aisafety.es/curso-estrategia-agi</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/curso-estrategia-agi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/curso-estrategia-agi"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/curso-estrategia-agi</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/curso-estrategia-agi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/curso-estrategia-agi"/>
+  </url>
+
+  <!-- Seminario Bluedot Spain -->
   <url>
     <loc>https://aisafety.es/seminario-bluedot-spain</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain"/>
   </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain"/>
+  </url>
+
+  <!-- Charlas / Talks -->
+  <!-- 1. como-hacer-carrera-en-ai-safety -->
   <url>
     <loc>https://aisafety.es/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety"/>
   </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/como-hacer-carrera-en-ai-safety"/>
+  </url>
+
+  <!-- 2. cot-red-handed-monitorizar-pensamientos-ia -->
   <url>
     <loc>https://aisafety.es/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia"/>
   </url>
   <url>
-    <loc>https://aisafety.es/seminario-bluedot-spain/ai-x-cyber-risks</loc>
-    <lastmod>2026-05-27</lastmod>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/cot-red-handed-monitorizar-pensamientos-ia"/>
+  </url>
+
+  <!-- 3. ai-x-cyber-risks -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/ai-x-cyber-risks</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-x-cyber-risks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-x-cyber-risks"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/ai-x-cyber-risks</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-x-cyber-risks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-x-cyber-risks"/>
+  </url>
+
+  <!-- 4. ai-safety-latam -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/ai-safety-latam</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-safety-latam"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-safety-latam"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/ai-safety-latam</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-safety-latam"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-safety-latam"/>
+  </url>
+
+  <!-- 5. ai-safety-via-debate-capacidades-asimetricas -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/ai-safety-via-debate-capacidades-asimetricas"/>
+  </url>
+
+  <!-- 6. mythos-glasswing-zero-days-emergencia-ventana -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/mythos-glasswing-zero-days-emergencia-ventana"/>
+  </url>
+
+  <!-- 7. sesgo-linguistico-digital-gobernanza-ia -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/sesgo-linguistico-digital-gobernanza-ia"/>
+  </url>
+
+  <!-- 8. carrera-ia-safety-buenos-aires -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/carrera-ia-safety-buenos-aires</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/carrera-ia-safety-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/carrera-ia-safety-buenos-aires"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/carrera-ia-safety-buenos-aires</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/carrera-ia-safety-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/carrera-ia-safety-buenos-aires"/>
+  </url>
+
+  <!-- 9. mythos-fable-gpt-5-6-control-estatal-ia-frontera -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/mythos-fable-gpt-5-6-control-estatal-ia-frontera"/>
+  </url>
+
+  <!-- 10. detectando-sesgos-contextuales-en-modelos-de-lenguaje -->
+  <url>
+    <loc>https://aisafety.es/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
   </url>
 </urlset>
