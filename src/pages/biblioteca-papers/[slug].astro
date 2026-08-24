@@ -1,0 +1,63 @@
+---
+// src/pages/biblioteca-papers/[slug].astro
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DetallePaperWrapper from '../../components/pages/DetallePaperWrapper.tsx';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((paper) => ({
+    params: { slug: paper.id },
+    props: { paper },
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+---
+
+<Layout lang="es" title={`${paper.data.title} | Biblioteca de Papers | AI safety España`} description={paper.data.summary}>
+  <DetallePaperWrapper lang="es" paper={paper} client:load>
+    <Content />
+  </DetallePaperWrapper>
+</Layout>
+
+<style is:global>
+  /* Ajustar estilos específicos de la traducción del paper (Markdown) */
+  .markdown-body p {
+    margin-bottom: 0.85rem !important; /* Disminuye el espacio entre párrafos (el por defecto global de la web es 1.5rem) */
+    line-height: 1.6 !important;
+  }
+  
+  .markdown-body li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .markdown-body a {
+    color: #ff4500 !important; /* Color principal del tema */
+    text-decoration: underline;
+  }
+
+  .markdown-body .footnotes {
+    margin-top: 2.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--color-secundarios-gray);
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+</style>
+
