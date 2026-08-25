@@ -1,0 +1,14 @@
+---
+// src/pages/en/biblioteca-papers/[slug].astro
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((paper) => ({
+    params: { slug: paper.id },
+  }));
+}
+
+const { slug } = Astro.params;
+return Astro.redirect(`/biblioteca-papers/${slug}`);
+---

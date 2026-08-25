@@ -39,7 +39,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang }) => {
                 >
                   <div>
                     <div className="flex justify-between items-start mb-4">
-                      <span className="font-sans text-xs text-neutral-600 dark:text-neutral-400 uppercase tracking-wider">
+                      <span className="font-sans text-xs text-neutral-600 dark:text-neutral-400 uppercase">
                         {tagText || (lang === 'es' ? 'Seminario' : 'Seminar')}
                       </span>
                       <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black dark:group-hover:bg-white dark:group-hover:text-black transition-colors">
@@ -73,7 +73,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang }) => {
 
                   {/* Pie de la tarjeta */}
                   <div className="mt-6">
-                    <h5 className="text-xs text-neutral-400 uppercase tracking-wider">
+                    <h5 className="text-xs text-neutral-400 uppercase">
                       {charla.fecha 
                         ? new Date(charla.fecha).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US') 
                         : (lang === 'es' ? 'Por confirmar' : 'TBD')}

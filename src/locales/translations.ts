@@ -71,13 +71,23 @@ export const translations = {
       title: "Red iaS",
       text: "Somos parte del ecosistema global de IA safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
-    women4ais: {
-      title: "Women4AIS",
-      text: "El campo de AI safety tiene un déficit de representación. Las mujeres están subrepresentadas en investigación, en gobernanza y en los equipos que están tomando las decisiones más importantes de nuestra era.\nW4IAS existe para cambiar eso en el mundo hispanohablante.\nOrganizamos eventos, creamos redes de apoyo profesional y conectamos a mujeres hispanohablantes con oportunidades en AI safety a nivel global."},
     seminario: {
       title: "Seminario IA safety",
       submenu: "Seminario IA safety",
       subtitle: "Explora nuestros seminarios, aprende directamente de investigadores en IA safety y encuentra la orientación y el apoyo que tu carrera o proyecto necesitan para generar un impacto real.",
+    },
+    biblioteca: {
+      title: "Biblioteca abierta",
+      subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA. Espacio diseñado para formar profesionales en IA safety.",
+      originalPaper: "Ver paper original",
+      readTranslation: "Leer traducción al español",
+      traslationPaperUrl: "Leer traducción al español",
+      translationNotes: "Nota",
+      keywords: "Palabras clave",
+      noPapers: "No hay papers disponibles en la biblioteca en este momento.",
+      writtenBy: "Escrito por",
+      translatedBy: "Traducido por",
+      originalAuthors: "Investigadores",
     },
     subscribe: {
       title: "Forma parte de iaS",
@@ -178,6 +188,19 @@ export const translations = {
       title: "AI safety Seminar",
       submenu: "AI safety Seminar",
       subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
+    },
+    biblioteca: {
+      title: "Open access community library",
+      subtitle: "To keep everyone informed and empowered to act, we democratize access to AI safety research. A dedicated space to empower and train AI safety professionals.",
+      originalPaper: "Original Paper",
+      readTranslation: "Read Spanish Translation",
+      translationNotes: "Translation Notes",
+      keywords: "Keywords",
+      noPapers: "No papers available in the library at the moment.",
+      writtenBy: "By",
+      translatedBy: "Translated by",
+      originalAuthors: "Original authors",
+      traslationPaperUrl: "Read Spanish Translation"
     },
     subscribe: {
       title: "Join the Hub",
