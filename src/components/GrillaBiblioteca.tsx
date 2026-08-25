@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, BookOpen } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import undefinedImgur from '../assets/undefined_imgur.png';
 
 type Language = 'es' | 'en';
@@ -32,16 +32,13 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
   return (
     <section id="biblioteca-papers" className="py-8 md:py-16 px-4 md:px-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> 
           {papers.length > 0 ? (
             papers.map((paper) => {
               const {
                 title,
                 summary,
-                originalAuthors,
                 writtenBy,
-                translatedBy,
-                originalPaperUrl,
                 keywords,
                 image
               } = paper.data;
@@ -49,21 +46,31 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
               const paperImage = image || undefinedImgur.src || undefinedImgur;
 
               return (
-                <div 
+                <a 
                   key={paper.id}
-                  className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 flex flex-col justify-between bg-white dark:bg-neutral-950/30 shadow-sm hover:shadow-md transition-shadow"
+                  href={`/biblioteca-papers/${paper.slug || paper.id}`}
+                  /* Aumentamos el padding aquí con p-8 md:p-10 */
+                  className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-8 md:p-10 flex flex-col justify-between bg-white dark:bg-transparent shadow-sm hover:shadow-lg transition-all"
                 >
                   <div>
-                    {/* Palabras Clave / Etiquetas */}
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {keywords.slice(0, 3).map((keyword, idx) => (
-                        <span 
-                          key={idx}
-                          className="font-sans text-[10px] bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 px-2 py-0.5 rounded uppercase tracking-wider font-semibold"
-                        >
-                          {keyword}
-                        </span>
-                      ))}
+                    {/* Encabezado: Etiquetas (máximo 2) + Botón con Flecha */}
+                    <div className="flex justify-between items-start mb-4 gap-2">
+                      <div className="flex flex-wrap gap-2">
+                        {keywords.slice(0, 2).map((keyword, idx) => (
+                          <span 
+                            key={idx}
+                            className="font-sans text-xs text-neutral-600 dark:text-neutral-400 uppercase"
+                          >
+                            {keyword}
+                            {idx < Math.min(keywords.length, 2) - 1 && " •"}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Icono de Flecha animado al hover */}
+                      <span className="w-8 h-8 shrink-0 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center rounded-md group-hover:bg-black group-hover:text-white group-hover:border-black dark:group-hover:bg-white dark:group-hover:text-black transition-colors">
+                        <ArrowUpRight size={14} />
+                      </span>
                     </div>
 
                     {/* Imagen de Portada */}
@@ -81,18 +88,18 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
                     </h4>
 
                     {/* Resumen corto */}
-                    <p className="text-secundario-dark dark:text-secundario-light text-sm leading-relaxed line-clamp-4 mb-4">
+                    <p className="text-secundario-dark dark:text-secundario-light text-sm leading-relaxed line-clamp-6 mb-4">
                       {summary}
                     </p>
-
-                    {/* Traductores / Escritores */}
-                    <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3 mt-3 text-xs text-neutral-500 dark:text-neutral-400 space-y-1">
-                      <p>
-                        <strong>{t.biblioteca.writtenBy}:</strong> {writtenBy}
-                      </p>
-                    </div>
                   </div>
-                </div>
+
+                  {/* Traductores / Escritores */}
+                  <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3 mt-3 text-xs text-neutral-500 dark:text-neutral-400 space-y-1">
+                    <p>
+                      <strong>{t.biblioteca.writtenBy}:</strong> {writtenBy}
+                    </p>
+                  </div>
+                </a>
               );
             })
           ) : (

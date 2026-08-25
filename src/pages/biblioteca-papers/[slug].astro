@@ -1,31 +1,50 @@
 ---
-// src/pages/biblioteca-papers/[slug].astro
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import DetallePaperWrapper from '../../components/pages/DetallePaperWrapper.tsx';
 
+// 1. Forzar pre-renderizado estático por si la config global usa SSR
+export const prerender = true;
+
+// 2. Función dinámica getStaticPaths blindada para Astro 4 y Astro 5
 export async function getStaticPaths() {
   const papers = await getCollection('papers');
-  return papers.map((paper) => ({
-    params: { slug: paper.id },
-    props: { paper },
-  }));
+
+  // Si la colección está vacía o no encuentra archivos, retornamos array vacío limpiamente
+  if (!papers || papers.length === 0) {
+    console.warn('⚠️ No se encontraron papers en src/content/papers/');
+    return [];
+  }
+
+  return papers.map((paper) => {
+    // Obtenemos el slug limpiando posibles rutas o extensiones (compatibilidad Astro 4 / 5)
+    const rawId = paper.slug || paper.id;
+    const slug = rawId.split('/').pop()?.replace(/\.(md|mdx)$/, '') || rawId;
+
+    return {
+      params: { slug },
+      props: { paper },
+    };
+  });
 }
 
 const { paper } = Astro.props;
 const { Content } = await render(paper);
 ---
 
-<Layout lang="es" title={`${paper.data.title} | Biblioteca de Papers | AI safety España`} description={paper.data.summary}>
+<Layout 
+  lang="es" 
+  title={`${paper.data.title} | Biblioteca de Papers | AI safety España`} 
+  description={paper.data.summary}
+>
   <DetallePaperWrapper lang="es" paper={paper} client:load>
     <Content />
   </DetallePaperWrapper>
 </Layout>
 
 <style is:global>
-  /* Ajustar estilos específicos de la traducción del paper (Markdown) */
   .markdown-body p {
-    margin-bottom: 0.85rem !important; /* Disminuye el espacio entre párrafos (el por defecto global de la web es 1.5rem) */
+    margin-bottom: 0.85rem !important;
     line-height: 1.6 !important;
   }
   
@@ -33,31 +52,110 @@ const { Content } = await render(paper);
     margin-bottom: 0.4rem;
   }
   
+  /* === TÍTULOS MARKDOWN === */
+
+  /* Nivel 2 (##) — Título principal en color destacado */
   .markdown-body h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.45rem !important;      /* ~23px */
+    font-weight: 700 !important;
+    color: #ff4500 !important;          /* Color principal */
+    margin-top: 3.5rem !important;      /* Espacio anterior amplio */
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
   }
 
+  /* Nivel 3 (###) — Subtítulo 2pt más pequeño (~0.125rem) */
   .markdown-body h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
+    font-size: 1.325rem !important;     /* ~21px */
+    font-weight: 700 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Nivel 4 (####) — Subtítulo 2pt más pequeño que h3 (~0.125rem) */
+  .markdown-body h4 {
+    font-size: 1.2rem !important;       /* ~19px */
+    font-weight: 700 !important;
+    margin-top: 3.5rem !important;      /* Espacio amplio anterior (ej. Bibliografía) */
+    margin-bottom: 0.6rem !important;
   }
 
   .markdown-body a {
-    color: #ff4500 !important; /* Color principal del tema */
+    color: #ff4500 !important;
     text-decoration: underline;
   }
 
-  .markdown-body .footnotes {
-    margin-top: 2.5rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid var(--color-secundarios-gray);
-    font-size: 0.85rem;
-    opacity: 0.8;
+  /* === NOTAS AL PIE (FOOTNOTES) === */
+  
+  /* 1. Números superíndice dentro del texto del artículo */
+  .markdown-body sup {
+    font-size: 0.75em !important;
+    line-height: 0 !important;
+    position: relative;
+    vertical-align: super !important;
   }
+
+  .markdown-body sup a {
+    color: #ff4500 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    padding: 0 2px;
+  }
+
+  .markdown-body sup a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* 2. Lista de notas al pie en la parte inferior */
+  .markdown-body .footnotes {
+    margin-top: 2.5rem !important;
+    padding-top: 1.2rem !important;
+    border-top: 1px solid rgba(156, 163, 175, 0.3) !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Fuerza la visualización de la lista numerada en las notas */
+  .markdown-body .footnotes ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .markdown-body .footnotes li {
+    margin-bottom: 0.5rem !important;
+    display: list-item !important; /* Asegura el formato de elemento de lista con número */
+  }
+
+  /* Estilo del enlace de retorno (flecha ↩) */
+  .markdown-body .footnotes a.data-footnote-backref,
+  .markdown-body .footnotes a[href*="fnref"] {
+    color: #ff4500 !important;
+    font-weight: bold;
+    text-decoration: none !important;
+    margin-left: 0.3rem;
+  }
+  
+/* Oculta el texto original y lo reemplaza por "NOTAS AL PIE" con el color principal */
+.markdown-body .footnotes #footnote-label,
+.markdown-body .footnotes > h2 {
+  font-size: 0.75rem !important; /* Tamaño pequeño tipo etiqueta */
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+  visibility: hidden;
+  position: relative;
+}
+
+.markdown-body .footnotes #footnote-label::after,
+.markdown-body .footnotes > h2::after {
+  content: "Notas al pie";
+  text-transform: uppercase; 
+  letter-spacing: 0.00em; 
+  color: #ff4500 !important; 
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 </style>
 

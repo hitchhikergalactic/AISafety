@@ -192,7 +192,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                 href={charlaActiva.presentacion}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase tracking-widest font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
+                className="w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
               >
                 {lang === 'es' ? 'Más información' : 'More information'}
               </a>
@@ -219,7 +219,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                     <span className="texto-small font-bold text-principal">
                       {new Date(charla.fecha).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short' })}
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded bg-secundarios-gray dark:bg-zinc-800 text-label-gray">
+                    <span className="text-[10px] uppercase font-bold  px-2 py-0.5 rounded bg-secundarios-gray dark:bg-zinc-800 text-label-gray">
                       {lang === 'es' ? charla.tagEs : charla.tagEn}
                     </span>
                   </div>
@@ -232,7 +232,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                     {lang === 'es' ? charla.descripcionCortaEs : charla.descripcionCortaEn}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-principal">
+                <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase text-principal">
                   <span>{charla.expositor.nombre} {charla.expositor.apellido}</span>
                 </div>
               </a>
