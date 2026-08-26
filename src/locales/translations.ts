@@ -79,9 +79,9 @@ export const translations = {
     biblioteca: {
       title: "Biblioteca abierta",
       subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA. Espacio diseñado para formar profesionales en IA safety.",
-      originalPaper: "Ver paper original",
-      readTranslation: "Leer traducción al español",
-      traslationPaperUrl: "Leer traducción al español",
+      originalPaper: "Investigación publicación oficial",
+      readTranslation: "Investigación, traducción al español",
+      traslationPaperUrl: "Investigación, traducción al español",
       translationNotes: "Nota",
       keywords: "Palabras clave",
       noPapers: "No hay papers disponibles en la biblioteca en este momento.",

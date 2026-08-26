@@ -7,7 +7,7 @@ authorBio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi trist
 translatedBy: "Equipo iaS"
 originalPaperUrl: "https://ojs.aaai.org/index.php/AIES/article/view/36707/38845"
 traslationPaperUrl: "/SESGO-Spanish-Evaluation-of-Stereotypical-Generative-Output-ES.pdf"
-translationNote: "el presente documento corresponde a una traducción no oficial al español con la herramienta DeepL, a partir de una versión publicada en AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025)."
+translationNote: "el presente artículo acompaña la traducción no oficial al español de una investigación publicada en AAAI/ACM 'Conference on AI, Ethics, and Society (AIES 2025)'. La herramienta utilizada para la traducción es DeepL."
 keywords: ["Modelos de lenguaje masivos (MLM)", "Inteligencia artificial", "Sesgo algorítmico", "Sesgo lingüístico digital", "Procesamiento del lenguaje natural", "Español", "Diversidad lingüística", "América Latina", "Evaluación de sesgos", "Inteligencia artificial responsable"]
 image: "/biblioteca/imagen_sesgos.jpg"
 publishDate: 2024-03-15
