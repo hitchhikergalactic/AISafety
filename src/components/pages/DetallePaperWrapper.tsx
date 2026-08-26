@@ -71,7 +71,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
             <div className="mb-8">
               <a 
                 href="/biblioteca-papers" 
-                className="inline-flex items-center gap-2 text-neutral-500 hover:text-principal transition-colors text-sm font-semibold uppercase cursor-pointer font-sans"
+                className="inline-flex items-center gap-2 text-neutral-500 dark:text-secundarios-light hover:text-principal transition-colors text-sm font-semibold uppercase cursor-pointer font-sans"
               >
                 <ArrowLeft size={16} />
                 {lang === 'es' ? 'Volver a la biblioteca' : 'Back to library'}
@@ -82,9 +82,6 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
               
               {/* COLUMNA IZQUIERDA: CONTENIDO Y DETALLES */}
               <div className="lg:col-span-7 flex flex-col">
-                <h2 className="mb-8 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
-                  {title}
-                </h2>
 
                 {/* Notas de traducción */}
                 {(translationNote || summaryNote) && (
@@ -96,7 +93,9 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                     )}
                   </div>
                 )}
-
+                <h2 className="mb-8 my-12 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
+                  {title}
+                </h2>
                 {/* Contenido Markdown Renderizado */}
                 <div className="max-w-none mb-8">
                   <article className="prose dark:prose-invert max-w-none leading-relaxed font-serif">
@@ -150,7 +149,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                         href={traslationPaperUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full text-center px-6 py-3 border border-neutral-300 dark:border-neutral-700 rounded-md font-sans text-xs uppercase  font-bold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 cursor-pointer"
+                        className="w-full text-center px-6 py-3 border border-neutral-300 dark:border-neutral-700 rounded-md font-sans text-xs uppercase  font-bold hover:bg-principal hover:text-white dark:hover:bg-principal dark:hover:text-white transition-all duration-200 cursor-pointer"
                       >
                         {t.biblioteca.traslationPaperUrl}
                       </a>
