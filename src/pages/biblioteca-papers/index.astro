@@ -8,6 +8,6 @@ const allPapers = await getCollection('papers');
 const papers = allPapers.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 ---
 
-<Layout lang="es" title="Biblioteca de Papers | AI safety España" description="Explora papers científicos sobre seguridad de la IA traducidos y comentados por la comunidad de AI Safety España.">
+<Layout lang="es" title="Biblioteca abierta | AI safety España" description="Explora investigaciones sobre seguridad de la IA traducidos al español.">
   <BibliotecaHub lang="es" papers={papers} client:load />
 </Layout>

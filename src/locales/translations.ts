@@ -5,7 +5,7 @@ export const translations = {
       mission: "/Sobre iaS",
       events: "/Formar",
       about: "/Conectar",
-      contact: "/Escríbenos",
+      contact: "/Investigar",
     },
     hero: {
       location: "",
@@ -114,7 +114,7 @@ export const translations = {
       mission: "/About iaS",
       events: "/Training",
       about: "/Connect",
-      contact: "/Contact us",
+      contact: "/research",
     },
     hero: {
       location: "",
