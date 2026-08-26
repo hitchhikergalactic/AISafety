@@ -88,7 +88,7 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
                     </h4>
 
                     {/* Resumen corto */}
-                    <p className="text-secundario-dark dark:text-secundario-light text-sm leading-relaxed line-clamp-7 mb-4">
+                    <p className="text-secundario-dark dark:text-secundario-light text-sm leading-relaxed line-clamp-14 mb-4">
                       {summary}
                     </p>
                   </div>

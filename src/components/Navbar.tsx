@@ -74,7 +74,12 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       ]
     },
     { href: "conectar", label: t.nav.about },
-    { href: "footer", label: t.nav.contact },
+    { href: "footer",
+      label: t.nav.contact,
+      sublinks: [
+        { label: lang === 'es' ? "Radar de papers" : "Paper digest", path: "/biblioteca-papers" }
+      ]
+    },
   ];
 
   return (

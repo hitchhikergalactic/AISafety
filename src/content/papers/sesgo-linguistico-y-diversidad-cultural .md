@@ -1,16 +1,16 @@
 ---
 title: "Sesgo lingüístico y diversidad cultural en la evaluación de modelos de lenguaje"
-summary: "En septiembre de 2025, investigadoras de la Universidad de los Andes y NYU publicaron lo que no existía: una evaluación sistemática de cómo los grandes modelos de inteligencia artificial reproducen estereotipos cuando se les habla en español."
+summary: "Esta editorial reflexiona sobre cómo los sesgos de los modelos de lenguaje pueden afectar especialmente a quienes utilizamos la IA en español. A partir de los resultados de SESGO y del concepto de Sesgo Lingüístico Digital, se plantea cómo la representación desigual de las variedades del español y la falta de contexto cultural pueden llevar a estos sistemas a reproducir e incluso reforzar desigualdades ya existentes. Ante esta situación, se destaca la necesidad de desarrollar una IA que no solo hable español, sino que también sea capaz de representar la diversidad de quienes lo hablan."
 originalAuthors: ["Robles Melissa", "Catalina Bernal", "Denniss Raigoso", "Mateo Dulce Rubio"]
 writtenBy: "Lucía Kubusch Ramírez"
-authorBio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique dictum orci ac malesuada. Pellentesque sed finibus erat. In iaculis ante mauris, nec imperdiet sem elementum a. Vivamus tincidunt volutpat nisi nec tempus. Vestibulum enim leo, faucibus nec odio ac, convallis consequat augue. Sed a nulla viverra nisi tempor iaculis at non dolor. Donec ut metus in tellus varius iaculis quis non lorem. Pellentesque porttitor gravida elit ut convallis. Sed ipsum massa, mollis in bibendum vel, varius ut eros. Suspendisse."
+authorBio: "Jurista especializada en Derecho Tecnológico y graduada en Relaciones Internacionales y Derecho Internacional y Europeo, centra su interés en cómo la inteligencia artificial está transformando nuestras instituciones, derechos y sociedades. Su trabajo explora cuestiones de gobernanza, regulación y seguridad de la IA, así como los retos sociales y culturales asociados a su desarrollo. Actualmente participa en distintas iniciativas en este ámbito, desde una perspectiva que combina sus dimensiones jurídicas, sociales y éticas."
 translatedBy: "Equipo iaS"
 originalPaperUrl: "https://ojs.aaai.org/index.php/AIES/article/view/36707/38845"
 traslationPaperUrl: "/SESGO-Spanish-Evaluation-of-Stereotypical-Generative-Output-ES.pdf"
 translationNote: "el presente artículo acompaña la traducción no oficial al español de una investigación publicada en AAAI/ACM 'Conference on AI, Ethics, and Society (AIES 2025)'. La herramienta utilizada para la traducción es DeepL."
 keywords: ["Modelos de lenguaje masivos (MLM)", "Inteligencia artificial", "Sesgo algorítmico", "Sesgo lingüístico digital", "Procesamiento del lenguaje natural", "Español", "Diversidad lingüística", "América Latina", "Evaluación de sesgos", "Inteligencia artificial responsable"]
 image: "/biblioteca/imagen_sesgos.jpg"
-publishDate: 2024-03-15
+publishDate: 2026-08-25
 ---
 
 #### Resumen
