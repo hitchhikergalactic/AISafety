@@ -158,7 +158,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
 
             {/* TARJETA 5: Research - Texto + Botón */}
             <a 
-              href="https://discord.com/invite/z7uhQKhZKW"
+              href="https://discord.com/invite/gm6v9Cwa58"
               target="_blank"
               rel="noopener noreferrer"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
