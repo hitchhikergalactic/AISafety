@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import eventImage from '../assets/ias_evento.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.png';
-import substack from '../assets/substack.jpeg';
+import substack from 'public/biblioteca/imagen_sesgos.jpg';
 import cursoAgi from '../assets/curso_agi.jpg';
 
 interface BentoGridProps {
@@ -48,7 +48,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 1: Hero - Imagen */}
             <a
-              href="https://luma.com/event/evt-R8gnuFROQKgfnhk"
+              href="https://luma.com/iaS-SeguridadelaIA"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
               target="_blank"
               rel="noopener noreferrer"

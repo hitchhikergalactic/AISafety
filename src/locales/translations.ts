@@ -39,11 +39,11 @@ export const translations = {
       text: "**IA safety** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
-      tag: "/ PRÓXIMAMENTE",
+      tag: "/ AGENDA iaS",
       title: "Próximos Eventos",
-      eventTitle: "Un espacio para conectar",
-      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad, y sal con contactos dentro de la única red de AI safety que funciona íntegramente en español, sin necesidad de traducir lo que piensas para que se entienda.",
-      dateShort: "19 agosto | Evento online",
+      eventTitle: "Actividades iaS: eventos, charlas y capacitaciones",
+      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. La única red de AI safety que funciona íntegramente en español. Sigue en Luma nuestra agenda para participar de nuestras actividades.",
+      dateShort: "Calendario en luma",
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de IA safety",
@@ -53,7 +53,7 @@ export const translations = {
       readingGroup: {
         tag: "/ SUBSTACK",
         title: "El desafío más grande de todos los tiempos",
-        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis técnico sobre los fallos de seguridad de los modelos de lenguaje en español.",
+        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis sobre los fallos de seguridad de los modelos de lenguaje en español.",
       },
       innovation: {
         tag: "/ FORMACIÓN",
