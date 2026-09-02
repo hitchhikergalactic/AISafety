@@ -53,7 +53,7 @@ export const translations = {
       readingGroup: {
         tag: "/ SUBSTACK",
         title: "El desafío más grande de todos los tiempos",
-        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis técnico sobre los fallos de seguridad de los modelos de lenguaje en español. Por Osmani Redondo.",
+        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis técnico sobre los fallos de seguridad de los modelos de lenguaje en español.",
       },
       innovation: {
         tag: "/ FORMACIÓN",

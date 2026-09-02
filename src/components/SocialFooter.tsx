@@ -17,7 +17,7 @@ const SocialFooter = () => {
       <a href="https://discord.gg/gm6v9Cwa58" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Discord">
         <FaDiscord />
       </a>
-      <a href="https://substack.com/@osmaniredondo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Substack">
+      <a href="https://seguridaddelaia.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Substack">
         <SiSubstack />
       </a>
       <a href="https://luma.com/iaS-SeguridadelaIA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Luma">

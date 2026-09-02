@@ -109,7 +109,7 @@ export default function Home({ lang }: HomeProps) {
                         <button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaSecondary}
                         </button>
-                        <button onClick={() => window.open('https://osmaniredondo.substack.com/', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                        <button onClick={() => window.open('https://seguridaddelaia.substack.com/', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaPrimary}
                         </button>
                     </div>
