@@ -150,30 +150,30 @@ export const translations = {
     upcoming: {
       tag: "/ UPCOMING",
       title: "Upcoming events",
-      eventTitle: "A space to connect",
-      description: "Come with a question, a project you are building, or simply curiosity, and leave with connections inside the only AI safety network that works entirely in Spanish, without needing to translate what you think for it to be understood.",
-      dateShort: "August 19 | Online event",
+      eventTitle: "iaS activities: events, talks & training",
+      description: "Come with a question, a project in progress, or simply curiosity. Join the only AI safety network operating entirely in Spanish and follow our Luma calendar to take part in our activities.",
+      dateShort: "Calendar on Luma",
       bluedot: {
         tag: "/ TRAINING",
         title: "AI safety seminar",
-        description: "Together with BlueDot, we run an AI safety seminar. A space to connect with experts from around the world. Essential conversations about the future of technology in our language.",
+        description: "Together with BlueDot, we run an AI safety seminar — a space to connect with experts from around the world. Essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month"
       },
       readingGroup: {
         tag: "/ SUBSTACK",
-        title: "The greatest challenge of all time",
-        description: "Why would an AI that does not understand Spanish be a systemic risk? Technical analysis of safety failures in language models in Spanish. By Osmani Redondo.",
+        title: "The biggest challenge of all time",
+        description: "Why would an AI that does not understand Spanish be a systemic risk? Analysis of safety failures in Spanish-language language models.",
       },
       innovation: {
         tag: "/ TRAINING",
         title: "Course on strategy for Artificial General Intelligence",
-        description: "The first specialized program on Artificial General Intelligence strategy based on the BlueDot Impact curriculum.",
+        description: "The first specialized program on AGI strategy based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | Available: October 2026."
       },
       research: {
         tag: "/ DAY ZERO",
-        title: "First members",
-        description: "We are not looking for quantity; we are looking for commitment. Join the first people interested in AI safety and help build the foundations in Spanish.",
+        title: "Founding members",
+        description: "We are not looking for quantity — we are looking for commitment. Join the first people interested in AI safety and help build the foundations in Spanish.",
       }
     },
     collaborators: {
