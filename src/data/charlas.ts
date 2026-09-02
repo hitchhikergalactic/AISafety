@@ -312,6 +312,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Una charla sobre la detección de sesgos contextuales en modelos de lenguaje, con foco en el español.",
     descripcionCortaEn: "A talk on detecting contextual biases in language models, with a focus on Spanish.",
     imagen: "/seminario_disertantes/melissa_robles.jpg",
+    videoYoutube:"https://youtu.be/Ix1CyobqDxk?si=0ezJ5mY9jS8cXser",
     fecha: "2026-08-05",
     tagsEs: ["Sesgos algorítmicos", "IA responsable", "Modelos de lenguaje"],
     tagsEn: ["Algorithmic bias", "Responsible AI", "Language models"],
