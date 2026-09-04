@@ -59,7 +59,7 @@ Blodgett, Su Lin, Solon Barocas, Hal Daumé III y Hanna Wallach. "Language (Tech
 
 Muñoz-Basols, Javier, María del Mar Palomares Marín y Francisco Moreno Fernández. "El Sesgo Lingüístico Digital (SLD) en la inteligencia artificial: implicaciones para los modelos de lenguaje masivos en español." *Lengua y Sociedad* 23, n.º 2 (2024): 623–647. [https://doi.org/10.15381/lengsoc.v23i2.28665](https://doi.org/10.15381/lengsoc.v23i2.28665).
 
-Robles, Melissa, Catalina Bernal, Denniss Raigoso y Mateo Dulce Rubio. "SESGO: Spanish Evaluation of Stereotypical Generative Outputs." En *Proceedings of the Eighth AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025\)*, 2214–2226. 2025\.
+Robles Melissa, Catalina Bernal, Denniss Raigoso y Mateo Dulce Rubio. "SESGO: Spanish Evaluation of Stereotypical Generative Outputs." En *Proceedings of the Eighth AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025\)*, 2214–2226. 2025\.
 
 
 [^1]:  Emily M. Bender, Timnit Gebru, Angelina McMillan-Major y Shmargaret Shmitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", en *Proceedings of the Conference on Fairness, Accountability, and Transparency (FAccT '21)* (Nueva York: ACM, 2021).
