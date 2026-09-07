@@ -1,14 +1,157 @@
 ---
 // src/pages/en/biblioteca-papers/[slug].astro
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import DetallePaperWrapper from '../../../components/pages/DetallePaperWrapper.tsx';
+
+export const prerender = true;
 
 export async function getStaticPaths() {
-  const papers = await getCollection('papers');
-  return papers.map((paper) => ({
-    params: { slug: paper.id },
-  }));
+  const papers = await getCollection('papersEn');
+
+  if (!papers || papers.length === 0) {
+    console.warn('⚠️ No papers found in src/content/papers-en/');
+    return [];
+  }
+
+  return papers.map((paper) => {
+    const rawId = paper.slug || paper.id;
+    const slug = rawId.split('/').pop()?.replace(/\.(md|mdx)$/, '') || rawId;
+
+    return {
+      params: { slug },
+      props: { paper },
+    };
+  });
 }
 
-const { slug } = Astro.params;
-return Astro.redirect(`/biblioteca-papers/${slug}`);
+const { paper } = Astro.props;
+const { Content } = await render(paper);
 ---
+
+<Layout
+  lang="en"
+  title={`${paper.data.title} | Papers Library | AI safety España`}
+  description={paper.data.summary}
+>
+  <DetallePaperWrapper lang="en" paper={paper} client:load>
+    <Content />
+  </DetallePaperWrapper>
+</Layout>
+
+<style is:global>
+  .markdown-body p {
+    margin-bottom: 0.85rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .markdown-body li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* === MARKDOWN HEADINGS === */
+
+  /* Level 2 (##) — Main heading in accent color */
+  .markdown-body h2 {
+    font-size: 1.45rem !important;      /* ~23px */
+    font-weight: 700 !important;
+    color: #ff4500 !important;          /* Primary color */
+    margin-top: 3.5rem !important;      /* Large space before */
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Level 3 (###) — Subheading 2pt smaller (~0.125rem) */
+  .markdown-body h3 {
+    font-size: 1.325rem !important;     /* ~21px */
+    font-weight: 700 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Level 4 (####) — Subheading 2pt smaller than h3 (~0.125rem) */
+  .markdown-body h4 {
+    font-size: 1.2rem !important;       /* ~19px */
+    font-weight: 700 !important;
+    margin-top: 3.5rem !important;      /* Large space before (e.g. Bibliography) */
+    margin-bottom: 0.6rem !important;
+  }
+
+  .markdown-body a {
+    color: #ff4500 !important;
+    text-decoration: underline;
+  }
+
+  /* === FOOTNOTES === */
+
+  /* 1. Superscript numbers inline in the article text */
+  .markdown-body sup {
+    font-size: 0.75em !important;
+    line-height: 0 !important;
+    position: relative;
+    vertical-align: super !important;
+  }
+
+  .markdown-body sup a {
+    color: #ff4500 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    padding: 0 2px;
+  }
+
+  .markdown-body sup a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* 2. Footnote list at the bottom */
+  .markdown-body .footnotes {
+    margin-top: 2.5rem !important;
+    padding-top: 1.2rem !important;
+    border-top: 1px solid rgba(156, 163, 175, 0.3) !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Force numbered list display for footnotes */
+  .markdown-body .footnotes ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .markdown-body .footnotes li {
+    margin-bottom: 0.5rem !important;
+    display: list-item !important; /* Ensures numbered list-item formatting */
+  }
+
+  /* Backref arrow link style */
+  .markdown-body .footnotes a.data-footnote-backref,
+  .markdown-body .footnotes a[href*="fnref"] {
+    color: #ff4500 !important;
+    font-weight: bold;
+    text-decoration: none !important;
+    margin-left: 0.3rem;
+  }
+
+/* Hides the original text and replaces it with "FOOTNOTES" in the primary color */
+.markdown-body .footnotes #footnote-label,
+.markdown-body .footnotes > h2 {
+  font-size: 0.75rem !important; /* Small label-style size */
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+  visibility: hidden;
+  position: relative;
+}
+
+.markdown-body .footnotes #footnote-label::after,
+.markdown-body .footnotes > h2::after {
+  content: "Footnotes";
+  text-transform: uppercase;
+  letter-spacing: 0.00em;
+  color: #ff4500 !important;
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+</style>
