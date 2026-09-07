@@ -22,8 +22,8 @@ export interface EquipoContent {
 export const equipoContent: EquipoContent = {
   es: {
     heroTitle: "Equipo",
-    heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, ingeniera de software y arquitecta cloud certificada con experiencia en Telefónica Tech, que dirige el desarrollo del primer hub de IA safety en español; compagina esta labor con la dirección del seminario mensual de BlueDot Impact en habla hispana, su rol como profesora invitada en instituciones de prestigio como la UNAM de México, y su participación como socia del Observatorio del Impacto Social y Ético de la IA (OdiseIA)",
-    joinTitle: "¿Quieres construir el futuro de IA safety en español?",
+    heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, ingeniera de software y arquitecta cloud certificada con experiencia en Telefónica Tech, que dirige el desarrollo del primer hub de seguridad de la IA en español; compagina esta labor con la dirección del seminario mensual de BlueDot Impact en habla hispana, su rol como profesora invitada en instituciones de prestigio como la UNAM de México, y su participación como socia del Observatorio del Impacto Social y Ético de la IA (OdiseIA)",
+    joinTitle: "¿Quieres construir el futuro de la seguridad de la IA en español?",
     joinSubtitle: "**iaS** es una infraestructura en construcción. Necesitamos personas que vean el problema y quieran ser parte de la solución.",
     joinContribute: "**Puedes contribuir en:** traducción y adaptación de contenido técnico, facilitación de seminarios y grupos de lectura, comunicación y redes, desarrollo web, investigación y documentación, relaciones institucionales.",
     boton: "Quiero ser parte del equipo iaS ",

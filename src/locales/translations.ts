@@ -11,11 +11,11 @@ export const translations = {
       location: "",
       h1: "Hub de seguridad de la IA",
       h2: "**iaS** es referente en seguridad de la inteligencia artificial en español. Formamos y acompañamos a profesionales en la orientación de sus carreras y apoyamos proyectos dedicados a construir una IA más segura.",
-      ctaPrimary: "Quiero entender qué es AI safety",
+      ctaPrimary: "Quiero entender qué es la seguridad de la IA",
       ctaSecondary: "¡Quiero formar parte!",
     }, 
     why: {
-      title: "¿Por qué un Hub de seguridad en IA en español?",
+      title: "¿Por qué un Hub de seguridad de la IA en español?",
       text1: 'Los laboratorios que desarrollan la IA más avanzada del mundo se encuentran principalmente en EE. UU., Reino Unido y China. Las decisiones sobre cómo se despliega, quién la controla y qué valores incorpora se toman, mayoritariamente, en inglés.',
       text2: "Esto no es solo un detalle técnico: es un desafío de seguridad.",
       text3: 'La investigación actual demuestra que los modelos de lenguaje son menos seguros en idiomas distintos al inglés. El español, oficial en 21 países y presente en todos los continentes, carece de un nodo propio que identifique estos fallos, los documente y traslade la evidencia a reguladores y desarrolladores.',
@@ -31,23 +31,23 @@ export const translations = {
         item4: "1er",
         item4_1: "nodo especializado en seguridad de la IA en español",
         item5: "Abril 2026",
-        item5_1: "primer evento de IA safety en Madrid"
+        item5_1: "primer evento de seguridad de la IA en Madrid"
       }
     },
     mission: {
       title: "Sobre iaS",
-      text: "**IA safety** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
+      text: "**Seguridad de la IA** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
       tag: "/ AGENDA iaS",
       title: "Próximos Eventos",
       eventTitle: "Actividades iaS: eventos, charlas y capacitaciones",
-      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. La única red de AI safety que funciona íntegramente en español. Sigue en Luma nuestra agenda para participar de nuestras actividades.",
+      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. La única red de seguridad de la IA que funciona íntegramente en español. Sigue en Luma nuestra agenda para participar de nuestras actividades.",
       dateShort: "Calendario en luma",
       bluedot: {
         tag: "/ FORMACIÓN",
-        title: "Seminario de IA safety",
-        description:"Junto a BlueDot realizamos un seminario de IA safety. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
+        title: "Seminario de seguridad de la IA",
+        description:"Junto a BlueDot realizamos un seminario de seguridad de la IA. Un espacio para conectar con expertos de todo el mundo. Conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes"
       },
       readingGroup: {
@@ -64,21 +64,21 @@ export const translations = {
       research: {
         tag: "/ DÍA CERO",
         title: "Primeros integrantes",
-        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en IA safety y ayuda a construir los cimientos en español.",
+        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en seguridad de la IA y ayuda a construir los cimientos en español.",
       }
     },
     collaborators: {
       title: "Red iaS",
-      text: "Somos parte del ecosistema global de IA safety, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
+      text: "Somos parte del ecosistema global de seguridad de la IA, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
     },
     seminario: {
-      title: "Seminario IA safety",
-      submenu: "Seminario IA safety",
-      subtitle: "Explora nuestros seminarios, aprende directamente de investigadores en IA safety y encuentra la orientación y el apoyo que tu carrera o proyecto necesitan para generar un impacto real.",
+      title: "Seminario de seguridad de la IA",
+      submenu: "Seminario de seguridad de la IA",
+      subtitle: "Explora nuestros seminarios, aprende directamente de investigadores en seguridad de la IA y encuentra la orientación y el apoyo que tu carrera o proyecto necesitan para generar un impacto real.",
     },
     biblioteca: {
       title: "Biblioteca abierta",
-      subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA. Espacio diseñado para formar profesionales en IA safety.",
+      subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA. Espacio diseñado para formar profesionales en seguridad de la IA.",
       originalPaper: "Investigación publicación oficial",
       readTranslation: "Investigación, traducción al español",
       traslationPaperUrl: "Investigación, traducción al español",
@@ -99,10 +99,10 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de IA safety Currículo por BlueDot Impact",
-      copyright: "Copyright 2026 IA safety · Diseñado para un futuro que priorice a las personas",
+      tagline: "Parte del ecosistema global de seguridad de la IA Currículo por BlueDot Impact",
+      copyright: "Copyright 2026 seguridad de la IA · Diseñado para un futuro que priorice a las personas",
       text1: "\n¿Tienes preguntas o quieres colaborar?",
-      text2: "**IA safety en español**\nEl hub de referencia para 650M de personas.",
+      text2: "**Seguridad de la IA en español**\nEl hub de referencia para 650M de personas.",
       email: "hola@aisafety.es",
       dir:"Mad Tech Campus",
       dirUrl: "https://maps.app.goo.gl/MFAt6EwvW66XJ4wD8",
