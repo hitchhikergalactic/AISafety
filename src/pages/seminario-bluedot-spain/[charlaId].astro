@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 
 const { charlaId } = Astro.params;
 const charla = listaDeCharlas.find((c) => c.id === charlaId);
-const title = charla ? `${charla.tituloEs} | Seminario AI safety` : "Detalle de charla | Seminario AI safety";
-const description = charla ? charla.descripcionCortaEs : "Detalle de la charla organizada por AI Safety España.";
+const title = charla ? `${charla.tituloEs} | Seminario de seguridad de la IA` : "Detalle de charla | Seminario de seguridad de la IA";
+const description = charla ? charla.descripcionCortaEs : "Detalle de la charla organizada por Seguridad de la IA España.";
 ---
 
 <Layout lang="es" title={title} description={description}>
