@@ -22,16 +22,16 @@ export const translations = {
       text4: 'iaS nace para ser ese nodo.',
       impactFigures: {
         title: "Cifras que impactan",
-        item1: "+650M",
-        item1_1: "de personas hablan español en el mundo",
-        item2: "21",
-        item2_1: "países tienen el español como lengua oficial",
-        item3: "%150",
-        item3_1: "de crecimiento en la asistencia a los seminarios mensuales",
-        item4: "1er",
+        item1: { target: 9, prefix: '', suffix: '', animate: true as const },
+        item1_1: "sesiones mensuales de seguridad de la IA en español celebradas desde febrero de 2026",
+        item2: { target: 377, prefix: '', suffix: '', animate: true as const },
+        item2_1: "personas han asistido a nuestras sesiones mensuales",
+        item3: { target: 312, prefix: '', suffix: '', animate: true as const },
+        item3_1: "personas han vuelto a nuestras sesiones más de una vez",
+        item4: { display: "1er", animate: false as const },
         item4_1: "nodo especializado en seguridad de la IA en español",
-        item5: "Abril 2026",
-        item5_1: "primer evento de seguridad de la IA en Madrid"
+        item5: { display: "4,6/5", animate: false as const },
+        item5_1: "la valoración media que nos dan quienes asisten"
       }
     },
     mission: {
@@ -131,16 +131,16 @@ export const translations = {
         text4: "iaS was born to be that node.",
     impactFigures: {
         title: "Impact Figures",
-        item1: "+650M",
-        item1_1: "people speak Spanish worldwide",
-        item2: "21",
-        item2_1: "countries have Spanish as official language",
-        item3: "%150",
-        item3_1: "increase in attendance for the monthly seminars",
-        item4: "1st",
+        item1: { target: 9, prefix: '', suffix: '', animate: true as const },
+        item1_1: "monthly AI safety sessions in Spanish held since February 2026",
+        item2: { target: 377, prefix: '', suffix: '', animate: true as const },
+        item2_1: "people have attended our monthly sessions",
+        item3: { target: 312, prefix: '', suffix: '', animate: true as const },
+        item3_1: "people have returned to our sessions more than once",
+        item4: { display: "1st", animate: false as const },
         item4_1: "node specialized in AI safety in Spanish",
-        item5: "April 2026",
-        item5_1: "first AI safety event in Madrid"
+        item5: { display: "4.6/5", animate: false as const },
+        item5_1: "the average rating attendees give us"
       }
     },
     mission: {

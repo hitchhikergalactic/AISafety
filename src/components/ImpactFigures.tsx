@@ -1,71 +1,71 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const parseMetric = (text: string | number | undefined) => {
-  const safeText = text ? String(text) : '';
-  const numMatch = safeText.match(/\d+/);
-  
-  if (!numMatch) {
-    return { target: 0, prefix: '', suffix: safeText };
-  }
+interface AnimatedFigure {
+  animate: true;
+  target: number;
+  prefix?: string;
+  suffix?: string;
+}
 
-  const targetStr = numMatch[0];
-  const target = parseInt(targetStr, 10);
-  const index = safeText.indexOf(targetStr);
-  
-  const prefix = safeText.substring(0, index);
-  const suffix = safeText.substring(index + targetStr.length);
+interface StaticFigure {
+  animate: false;
+  display: string;
+}
 
-  return { target, prefix, suffix };
-};
+type FigureValue = AnimatedFigure | StaticFigure;
 
 interface AnimatedCounterProps {
-  value: string | number | undefined;
+  figure: AnimatedFigure;
   duration?: number;
 }
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 1500 }) => {
-  const [displayValue, setDisplayValue] = useState(0);
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ figure, duration = 1500 }) => {
+  const { target, prefix = '', suffix = '' } = figure;
+  // Arranca ya en el valor final: el HTML de build/SSR contiene el número real,
+  // no un 0 que solo se corrige tras hidratar.
+  const [displayValue, setDisplayValue] = useState(target);
+  const hasAnimatedRef = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
-  const startTimeRef = useRef<number | null>(null);
-
-  const { target, prefix, suffix } = parseMetric(value);
 
   useEffect(() => {
-    if (target === 0) {
-      setDisplayValue(0);
-      return;
-    }
+    const element = containerRef.current;
+    if (!element || target === 0 || hasAnimatedRef.current) return;
 
-    // Reset display value when value prop changes
-    setDisplayValue(0);
-    startTimeRef.current = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          setDisplayValue(0);
 
-    const animate = (timestamp: number) => {
-      if (startTimeRef.current === null) {
-        startTimeRef.current = timestamp;
-      }
+          let startTime: number | null = null;
+          const animate = (timestamp: number) => {
+            if (startTime === null) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            setDisplayValue(Math.floor(progress * target));
+            if (progress < 1) {
+              animationRef.current = requestAnimationFrame(animate);
+            }
+          };
 
-      const elapsed = timestamp - startTimeRef.current;
-      const progress = Math.min(elapsed / duration, 1);
+          animationRef.current = requestAnimationFrame(animate);
+          observer.unobserve(element);
+        }
+      },
+      { threshold: 0.2 }
+    );
 
-      setDisplayValue(Math.floor(progress * target));
-
-      if (progress < 1) {
-        animationRef.current = requestAnimationFrame(animate);
-      }
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
+    observer.observe(element);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      observer.disconnect();
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [value, target, duration]);
+  }, [target, duration]);
 
   return (
-    <div className="text-4xl md:text-5xl font-black text-principal">
+    <div ref={containerRef} className="text-4xl md:text-5xl font-black text-principal">
       {prefix}
       {displayValue}
       {suffix && suffix !== 'M' && <sup>{suffix}</sup>}
@@ -75,7 +75,9 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 150
 };
 
 const formatOrdinal = (text: string) => {
-  const match = text.match(/^(\d+)(.*)$/);
+  // Solo trata como "número + sufijo en superíndice" si el sufijo es puramente
+  // alfabético (ej. "1er"). Evita romper valores como "4,6/5".
+  const match = text.match(/^(\d+)([a-zA-Z]*)$/);
   if (match) {
     const [, num, suffix] = match;
     return (
@@ -90,11 +92,11 @@ const formatOrdinal = (text: string) => {
 };
 
 interface FadeInMilestoneProps {
-  text: string;
+  figure: StaticFigure;
   delay?: number;
 }
 
-const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ text, delay = 0 }) => {
+const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ figure, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -123,14 +125,14 @@ const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ text, delay = 0 }) =>
         isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}
     >
-      {formatOrdinal(text)}
+      {formatOrdinal(figure.display)}
     </div>
   );
 };
 
 interface ImpactFiguresData {
   title: string;
-  [key: string]: string | number | undefined;
+  [key: string]: string | FigureValue | undefined;
 }
 
 interface ImpactFiguresProps {
@@ -138,17 +140,18 @@ interface ImpactFiguresProps {
 }
 
 const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
-  const items = [];
+  const items: { value: FigureValue; description: string }[] = [];
 
   // Extract item1/item1_1, item2/item2_1, ..., item5/item5_1 pairs
   for (let i = 1; i <= 5; i++) {
     const itemKey = `item${i}`;
     const itemDescKey = `item${i}_1`;
-    
-    if (data[itemKey] !== undefined) {
+    const value = data[itemKey];
+
+    if (value !== undefined && typeof value === 'object') {
       items.push({
-        value: data[itemKey],
-        description: data[itemDescKey] || '',
+        value: value as FigureValue,
+        description: (data[itemDescKey] as string) || '',
       });
     }
   }
@@ -160,11 +163,9 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
   return (
     <div className="mt-16 md:mt-24 space-y-6 w-full">
       <h4 className="text-secundarios-dark dark:text-secundarios-light">{data.title}</h4>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, idx) => {
-          const { target } = parseMetric(item.value);
-          const isNumeric = target > 0;
           const isLastItem = idx === 4;
 
           return (
@@ -174,12 +175,12 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
                 isLastItem ? 'md:col-span-2' : ''
               }`}
             >
-              {isNumeric ? (
-                <AnimatedCounter value={item.value} duration={1500} />
+              {item.value.animate ? (
+                <AnimatedCounter figure={item.value} duration={1500} />
               ) : (
-                <FadeInMilestone text={String(item.value)} delay={idx * 100} />
+                <FadeInMilestone figure={item.value} delay={idx * 100} />
               )}
-              
+
               <p className="text-neutral-500 dark:text-white text-sm leading-relaxed line-clamp-4">
                 {item.description}
               </p>
