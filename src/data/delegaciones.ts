@@ -24,7 +24,7 @@ export const crearDelegacionContent = {
     titleDark: 'Lleva iaS',
     titleAccent: 'a tu ciudad',
     subtitle:
-      'Montar una delegación local de iaS es una de las formas más efectivas de multiplicar el impacto de la seguridad de la IA en el mundo hispanohablante. Ponemos a tu disposición todo lo necesario para empezar.',
+      'Crear una delegación local de iaS es una de las formas más efectivas de multiplicar el impacto de la seguridad de la IA en el mundo hispanohablante. Ponemos a tu disposición todo lo necesario para empezar.',
     aportesTitle: 'Lo que iaS aporta a las nuevas delegaciones',
     aportes: [
       'La marca iaS y su reconocimiento en la organización hispanohablante de seguridad de la IA',
