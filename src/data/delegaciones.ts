@@ -21,7 +21,7 @@ export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
 export const crearDelegacionContent = {
   es: {
     eyebrow: 'Crear una delegación',
-    titleDark: 'Trae iaS',
+    titleDark: 'Lleva iaS',
     titleAccent: 'a tu ciudad',
     subtitle:
       'Montar una delegación local de iaS es una de las formas más efectivas de multiplicar el impacto de la seguridad de la IA en el mundo hispanohablante. Ponemos a tu disposición todo lo necesario para empezar.',
