@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import { translations } from '../locales/translations';
+import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
 import logo from '../assets/ias_logo.svg';
 import logoWhite from '../assets/ias_logo_white.svg';
 
@@ -56,18 +57,20 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
-  const navLinks = [
-    { 
-      href: "mission", 
-      label: t.nav.mission, 
+  type Sublink = { separator: true; label?: undefined; path?: undefined } | { separator?: false; label: string; path: string };
+
+  const navLinks: { href: string; label: string; sublinks?: Sublink[] }[] = [
+    {
+      href: "mission",
+      label: t.nav.mission,
       sublinks: [
         { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
         { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" }
       ]
     },
-    { 
-      href: "eventos", 
-      label: t.nav.events, 
+    {
+      href: "eventos",
+      label: t.nav.events,
       sublinks: [
         { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-spain" },
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
@@ -79,6 +82,11 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       sublinks: [
         { label: lang === 'es' ? "Radar de papers" : "Paper digest", path: "/biblioteca-papers" }
       ]
+    },
+    {
+      href: "delegaciones",
+      label: delegacionesNavLabel[lang],
+      sublinks: delegacionesSublinks[lang]
     },
   ];
 
@@ -129,19 +137,23 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               {link.sublinks && (
                 <div className="absolute left-0 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="bg-secundarios-light dark:bg-secundarios-dark border border-secundarios-dark/10 rounded-sm overflow-hidden">
-                    {link.sublinks.map((sublink, idx) => (
-                      <a
-                        key={idx}
-                        href={`${langPrefix}${sublink.path}`}
-                        onClick={() => {
-                          setIsOpen(false);
-                          setOpenSubmenu(null);
-                        }}
-                        className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
-                      >
-                        {sublink.label}
-                      </a>
-                    ))}
+                    {link.sublinks.map((sublink, idx) =>
+                      sublink.separator ? (
+                        <div key={idx} className="h-px my-1 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
+                      ) : (
+                        <a
+                          key={idx}
+                          href={`${langPrefix}${sublink.path}`}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setOpenSubmenu(null);
+                          }}
+                          className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
+                        >
+                          {sublink.label}
+                        </a>
+                      )
+                    )}
                   </div>
                 </div>
               )}
@@ -214,19 +226,23 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               {/* Mobile/Tablet Submenu */}
               {link.sublinks && openSubmenu === link.href && (
                 <div className="ml-4 flex flex-col gap-3 pb-4">
-                  {link.sublinks.map((sublink, subIdx) => (
-                    <a
-                      key={subIdx}
-                      href={`${langPrefix}${sublink.path}`}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setOpenSubmenu(null);
-                      }}
-                      className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors block py-2 touch-manipulation"
-                    >
-                      {sublink.label}
-                    </a>
-                  ))}
+                  {link.sublinks.map((sublink, subIdx) =>
+                    sublink.separator ? (
+                      <div key={subIdx} className="h-px my-1 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
+                    ) : (
+                      <a
+                        key={subIdx}
+                        href={`${langPrefix}${sublink.path}`}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setOpenSubmenu(null);
+                        }}
+                        className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors block py-2 touch-manipulation"
+                      >
+                        {sublink.label}
+                      </a>
+                    )
+                  )}
                 </div>
               )}
             </div>
