@@ -27,6 +27,9 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
           <p className="max-w-2xl mx-auto text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
           </p>
+          <p className="max-w-2xl mx-auto text-principal font-bold text-lg md:text-xl leading-relaxed">
+            {content.subtitleHighlight}
+          </p>
 
           <div className="mt-12 bg-secundarios-gray dark:bg-white/5 rounded-anthro p-6 md:p-12 text-left">
             <div className="mb-10 md:mb-12">
