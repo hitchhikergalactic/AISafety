@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
-  type Sublink = { separator: true; label?: undefined; path?: undefined } | { separator?: false; label: string; path: string };
+  type Sublink = { separator: true; label?: undefined; path?: undefined; highlight?: undefined } | { separator?: false; label: string; path: string; highlight?: boolean };
 
   const navLinks: { href: string; label: string; sublinks?: Sublink[] }[] = [
     {
@@ -148,7 +148,11 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                             setIsOpen(false);
                             setOpenSubmenu(null);
                           }}
-                          className="block px-4 py-2 text-sm text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white transition-colors duration-300"
+                          className={`block px-4 py-2 text-sm transition-colors duration-300 ${
+                            sublink.highlight
+                              ? 'bg-principal text-white font-semibold hover:bg-principal/90'
+                              : 'text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white'
+                          }`}
                         >
                           {sublink.label}
                         </a>
@@ -237,7 +241,11 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                           setIsOpen(false);
                           setOpenSubmenu(null);
                         }}
-                        className="text-lg text-principal dark:text-principalLight hover:text-principal/80 font-semibold transition-colors block py-2 touch-manipulation"
+                        className={`text-lg font-semibold transition-colors block touch-manipulation ${
+                          sublink.highlight
+                            ? 'bg-principal text-white rounded-md px-3 py-2'
+                            : 'text-principal dark:text-principalLight hover:text-principal/80 py-2'
+                        }`}
                       >
                         {sublink.label}
                       </a>

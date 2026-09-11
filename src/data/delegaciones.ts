@@ -1,20 +1,20 @@
 export const delegacionesNavLabel = {
-  es: 'Delegaciones',
-  en: 'Chapters',
+  es: '/Delegaciones',
+  en: '/Chapters',
 } as const;
 
-type Sublink = { separator: true } | { separator?: false; label: string; path: string };
+type Sublink = { separator: true } | { separator?: false; label: string; path: string; highlight?: boolean };
 
 export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
   es: [
     { label: 'iaS Valencia (España)', path: '/delegaciones/valencia' },
     { separator: true },
-    { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion' },
+    { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true },
   ],
   en: [
     { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia' },
     { separator: true },
-    { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion' },
+    { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true },
   ],
 };
 
