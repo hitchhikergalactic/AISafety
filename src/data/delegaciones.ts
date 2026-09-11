@@ -87,7 +87,6 @@ export const delegacionValenciaContent = {
     title: 'iaS Valencia (España)',
     subtitle: 'El punto de encuentro de la seguridad de la IA en Valencia.',
     ctaLabel: 'Únete al Discord de iaS',
-    pillAbout: 'Sobre iaS',
     pillJoin: 'Únete y contacta',
     eventsTitle: 'Próximos eventos',
     eventsPlaceholder: 'Próximos eventos, consulta el calendario de Luma de la delegación.',
@@ -98,7 +97,6 @@ export const delegacionValenciaContent = {
     title: 'iaS Valencia (Spain)',
     subtitle: 'The meeting point for AI safety in Valencia.',
     ctaLabel: 'Join the iaS Discord',
-    pillAbout: 'About iaS',
     pillJoin: 'Join and get in touch',
     eventsTitle: 'Upcoming events',
     eventsPlaceholder: "Upcoming events — check the chapter's Luma calendar.",
@@ -107,6 +105,9 @@ export const delegacionValenciaContent = {
 } as const;
 
 export const discordInviteUrl = 'https://discord.com/invite/gm6v9Cwa58';
+
+export const valenciaJoinFormUrl =
+  'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form?prefill_City=Valencia';
 
 // Todavía no existe un calendario de Luma propio para la delegación de Valencia;
 // mientras tanto se enlaza a la cuenta general de iaS.

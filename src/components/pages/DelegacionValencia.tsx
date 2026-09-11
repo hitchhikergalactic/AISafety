@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
-import { delegacionValenciaContent, discordInviteUrl, lumaCalendarUrl } from '@data/delegaciones';
+import { delegacionValenciaContent, discordInviteUrl, lumaCalendarUrl, valenciaJoinFormUrl } from '@data/delegaciones';
 
 type Language = 'es' | 'en';
 
@@ -33,25 +33,20 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
             {content.subtitle}
           </p>
 
-          <a
-            href={discordInviteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-white font-bold hover:bg-principal/90 transition-all shadow-md"
-          >
-            {content.ctaLabel}
-          </a>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={`${langPrefix}/que-hacemos`}
-              className="rounded-full border border-secundarios-dark/20 px-6 py-2.5 font-sans text-sm font-bold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300"
+              href={discordInviteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full sm:w-auto"
             >
-              {content.pillAbout}
+              {content.ctaLabel}
             </a>
             <a
-              href={`${langPrefix}/#footer`}
-              className="rounded-full border border-secundarios-dark/20 px-6 py-2.5 font-sans text-sm font-bold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300"
+              href={valenciaJoinFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-secundarios-dark/20 px-8 py-4 font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300 w-full sm:w-auto"
             >
               {content.pillJoin}
             </a>
