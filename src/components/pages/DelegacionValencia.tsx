@@ -28,35 +28,26 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
           <h2 className="mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
             {content.title}
           </h2>
-          <p className="max-w-2xl mx-auto mb-3 text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
+          <p className="max-w-2xl mx-auto mb-8 text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
           </p>
 
-          <a
-            href={discordInviteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-8 inline-block font-sans text-sm font-semibold text-secundarios-dark/70 dark:text-secundarios-light/70 underline underline-offset-2 hover:text-principal transition-colors"
-          >
-            {content.discordLinkLabel}
-          </a>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={valenciaJoinFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-principal px-10 py-5 text-lg text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full sm:w-auto"
-            >
-              {content.formCtaLabel}
-            </a>
+          <div className="flex flex-col items-center gap-4">
             <a
               href={discordInviteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-secundarios-dark/20 px-6 py-3 text-sm font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center rounded-xl bg-principal px-10 py-5 text-lg text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full sm:w-auto"
             >
               {content.discordCtaLabel}
+            </a>
+            <a
+              href={valenciaJoinFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl border border-secundarios-dark/20 px-6 py-2.5 text-sm font-sans font-semibold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300 w-full sm:w-auto"
+            >
+              {content.formCtaLabel}
             </a>
           </div>
         </section>
