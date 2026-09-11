@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
-import { crearDelegacionContent, crearDelegacionFormUrl } from '@data/delegaciones';
+import { crearDelegacionContent, crearDelegacionMailto } from '@data/delegaciones';
 
 type Language = 'es' | 'en';
 
@@ -69,9 +69,7 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
 
           <div className="mt-12">
             <a
-              href={crearDelegacionFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={crearDelegacionMailto}
               className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-white font-bold hover:bg-principal/90 transition-all shadow-md"
             >
               {content.ctaLabel}

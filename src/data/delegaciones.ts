@@ -79,7 +79,8 @@ export const crearDelegacionContent = {
   },
 } as const;
 
-export const crearDelegacionFormUrl = 'https://airtable.com/PENDIENTE-sustituir-por-formulario-real';
+export const crearDelegacionMailto =
+  'mailto:hola@aisafety.es?subject=Quiero%20crear%20una%20delegación%20de%20iaS&body=Hola%2C%0A%0AMe%20gustaría%20crear%20una%20delegación%20de%20iaS%20en%20mi%20ciudad.%0A%0ACiudad%3A%20%0ANombre%3A%20%0A%C2%BFC%C3%B3mo%20nos%20has%20conocido%3F%3A%20%0A%C2%BFPor%20qu%C3%A9%20quieres%20crear%20una%20delegaci%C3%B3n%3F%3A%20';
 
 export const delegacionValenciaContent = {
   es: {
