@@ -72,11 +72,9 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
             <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed font-light">
               {parseText(content.joinContribute)}
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex justify-center">
               <a
                 href={content.linkBoton}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-block bg-principal text-white font-sans font-bold text-xl py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex shadow-sm cursor-pointer"
               >
                 {content.boton}
