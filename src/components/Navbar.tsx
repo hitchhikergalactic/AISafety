@@ -115,18 +115,18 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg opacity">
+        <div className="hidden lg:flex flex-wrap items-center justify-center gap-x-10 gap-y-3 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
-                <span className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer pb-2">
+                <span className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer pb-2 whitespace-nowrap">
                   {link.label.toUpperCase()}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </span>
               ) : (
-                <a 
+                <a
                   href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
-                  className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer"
+                  className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer whitespace-nowrap"
                 >
                   {link.label.toUpperCase()}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
