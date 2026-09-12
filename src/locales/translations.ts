@@ -63,8 +63,8 @@ export const translations = {
       },
       research: {
         tag: "/ DÍA CERO",
-        title: "Primeros integrantes",
-        description: "No buscamos cantidad, buscamos compromiso. Únete a las primeras personas interesadas en seguridad de la IA y ayuda a construir los cimientos en español.",
+        title: "Debate cómo hacer la IA más segura",
+        description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
       }
     },
     collaborators: {
@@ -172,8 +172,8 @@ export const translations = {
       },
       research: {
         tag: "/ DAY ZERO",
-        title: "Founding members",
-        description: "We are not looking for quantity — we are looking for commitment. Join the first people interested in AI safety and help build the foundations in Spanish.",
+        title: "Debate how to make AI safer",
+        description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
       }
     },
     collaborators: {
