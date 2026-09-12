@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { parseText } from '@utils/parseText';
 import eventImage from '../assets/ias_evento.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.png';
@@ -55,7 +56,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
-                 {t.upcoming.tag}
+                 {t.upcoming.tag}{lang === 'es' && <span className="normal-case"> iaS</span>}
                 </span>
                 <button className={arrowButtonClass}>
                   <ArrowUpRight size={14} />
@@ -72,7 +73,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 {t.upcoming.eventTitle}
               </h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
-                {t.upcoming.description}
+                {parseText(t.upcoming.description)}
               </p>
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
                 {t.upcoming.dateShort.toUpperCase()}
