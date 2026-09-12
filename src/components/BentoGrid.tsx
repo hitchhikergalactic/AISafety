@@ -129,7 +129,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                   </div>
                   <div className="flex flex-col flex-1">
                     <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{t.upcoming.bluedot.description}</p>
+                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{parseText(t.upcoming.bluedot.description)}</p>
                     <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
                </div>
