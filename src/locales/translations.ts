@@ -39,10 +39,10 @@ export const translations = {
       text: "**Seguridad de la IA** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
-      tag: "/ AGENDA iaS",
+      tag: "/ AGENDA",
       title: "Próximos Eventos",
-      eventTitle: "Actividades iaS: eventos, charlas y capacitaciones",
-      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. La única red de seguridad de la IA que funciona íntegramente en español. Sigue en Luma nuestra agenda para participar de nuestras actividades.",
+      eventTitle: "Actividades iaS: eventos, charlas y cursos",
+      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. Sigue en **Luma** nuestra agenda para participar de nuestras actividades.",
       dateShort: "Calendario en luma",
       bluedot: {
         tag: "/ FORMACIÓN",
@@ -150,8 +150,8 @@ export const translations = {
     upcoming: {
       tag: "/ UPCOMING",
       title: "Upcoming events",
-      eventTitle: "iaS activities: events, talks & training",
-      description: "Come with a question, a project in progress, or simply curiosity. Join the only AI safety network operating entirely in Spanish and follow our Luma calendar to take part in our activities.",
+      eventTitle: "iaS activities: events, talks & courses",
+      description: "Come with a question, a project in progress, or simply curiosity. Follow our **Luma** calendar to take part in our activities.",
       dateShort: "Calendar on Luma",
       bluedot: {
         tag: "/ TRAINING",
