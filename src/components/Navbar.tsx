@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
+import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
 
@@ -30,11 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
     // Initialize language path switcher
     const pathname = window.location.pathname;
-    if (lang === 'es') {
-      setTargetLangPath(pathname === '/' ? '/en/' : `/en${pathname}`);
-    } else {
-      setTargetLangPath((pathname === '/en' || pathname === '/en/') ? '/' : pathname.replace(/^\/en/, ''));
-    }
+    setTargetLangPath(rutaEnOtroIdioma(pathname, lang));
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lang]);
@@ -72,7 +69,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       sublinks: [
         { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
         { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" },
-        { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" }
+        { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" },
+        { label: lang === 'es' ? "Teoría del Cambio" : "Theory of Change", path: lang === 'es' ? "/teoria-del-cambio" : "/theory-of-change" }
       ]
     },
     {

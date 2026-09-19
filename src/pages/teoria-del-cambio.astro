@@ -1,0 +1,30 @@
+---
+// src/pages/teoria-del-cambio.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import DocumentPage from '../components/pages/DocumentPage.tsx';
+import { teoriaDelCambioContent } from '../data/teoria-del-cambio';
+
+const entry = await getEntry('teoriaDelCambio', 'es');
+const c = teoriaDelCambioContent.es;
+// Una sola fuente: el título, la descripción y el canonical del Markdown deben coincidir con los datos de la cabecera.
+if (entry!.data.title !== c.title || entry!.data.description !== c.subtitle || entry!.data.canonical !== c.canonical) {
+  throw new Error('teoria-del-cambio/es.md y src/data/teoria-del-cambio.ts no coinciden en título, descripción o canonical');
+}
+const { Content } = await render(entry!);
+const alternates = { es: teoriaDelCambioContent.es.canonical, en: teoriaDelCambioContent.en.canonical };
+---
+
+<Layout
+  lang="es"
+  title={c.seoTitle}
+  description={c.subtitle}
+  ogTitle={c.seoTitle}
+  ogDescription={c.subtitle}
+  canonicalUrl={c.canonical}
+  alternates={alternates}
+>
+  <DocumentPage lang="es" header={c} subject="Nuevo suscriptor desde Teoría del Cambio" client:load>
+    <Content />
+  </DocumentPage>
+</Layout>

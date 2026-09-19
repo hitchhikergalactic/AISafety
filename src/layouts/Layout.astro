@@ -8,6 +8,9 @@ interface Props {
   lang?: 'es' | 'en';
   ogTitle?: string;
   ogDescription?: string;
+  // URLs absolutas. Solo hacen falta cuando la ruta cambia de nombre entre idiomas; si no, se deducen de la ruta actual.
+  canonicalUrl?: string;
+  alternates?: { es: string; en: string };
 }
 
 const { 
@@ -15,10 +18,12 @@ const {
   description = "Más de 650M de personas hablan español. El debate sobre seguridad de la IA ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global", 
   lang = "es",
   ogTitle,
-  ogDescription
+  ogDescription,
+  canonicalUrl,
+  alternates
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://aisafety.es");
+const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, "https://aisafety.es");
 const esPath = (Astro.url.pathname === '/en' || Astro.url.pathname === '/en/')
   ? '/'
   : Astro.url.pathname.replace(/^\/en(?=\/|$)/, '');
@@ -27,8 +32,8 @@ const enPath = (Astro.url.pathname === '/' || Astro.url.pathname === '')
   : (Astro.url.pathname.startsWith('/en/') || Astro.url.pathname === '/en')
     ? Astro.url.pathname
     : `/en${Astro.url.pathname}`;
-const hreflangES = new URL(esPath, 'https://aisafety.es');
-const hreflangEN = new URL(enPath, 'https://aisafety.es');
+const hreflangES = alternates ? new URL(alternates.es) : new URL(esPath, 'https://aisafety.es');
+const hreflangEN = alternates ? new URL(alternates.en) : new URL(enPath, 'https://aisafety.es');
 ---
 
 <!DOCTYPE html>

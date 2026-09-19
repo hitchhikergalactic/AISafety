@@ -198,6 +198,7 @@ export const valenciaFooterColumns: Record<
       title: 'Documentos',
       links: [
         { label: 'Visión', href: '/vision' },
+        { label: 'Teoría del Cambio', href: '/teoria-del-cambio' },
         { label: 'Biblioteca abierta', href: '/biblioteca-papers' },
       ],
     },
@@ -230,6 +231,7 @@ export const valenciaFooterColumns: Record<
       title: 'Documents',
       links: [
         { label: 'Vision', href: '/vision' },
+        { label: 'Theory of Change', href: '/theory-of-change' },
         { label: 'Open library', href: '/biblioteca-papers' },
       ],
     },

@@ -12,7 +12,7 @@ export default defineConfig({
   site: 'https://aisafety.es',
   integrations: [react(), sitemap()],
 
-  // Mismo procesador de Markdown de siempre (Sätteri); el plugin solo actúa sobre src/content/vision/ (ver el propio plugin)
+  // Mismo procesador de Markdown de siempre (Sätteri); el plugin solo actúa sobre los documentos fundacionales (ver el propio plugin)
   markdown: {
     processor: satteri({ hastPlugins: [hastVision] })
   },
