@@ -202,29 +202,51 @@ h5 {
 }
 
 /* ==========================================================================
-   Documento (página Visión): Markdown renderizado con la estructura de la página
-   de visión de Safe AI Netherlands y solo tokens de iaS. Los !important compiten
-   con las reglas globales de h2, h3 y p, que también lo llevan.
+   Documento (páginas Visión y Teoría del Cambio): Markdown renderizado con la estructura
+   de la página de visión de Safe AI Netherlands y solo tokens de iaS. Los !important
+   compiten con las reglas globales de h2, h3 y p, que también lo llevan.
+
+   Espaciado: columna de 35rem (unos 70 caracteres por línea), cuerpo de 17 a 18 px con
+   interlineado 1,7 y un ritmo vertical generoso entre bloques. Los hijos reales del
+   artículo están dentro de <astro-slot> (display: contents), por eso el ritmo apunta a ellos.
    ========================================================================== */
 
 .doc-prose {
+  max-width: 35rem;
+  margin-inline: auto;
   color: var(--color-secundarios-dark);
 }
 .dark .doc-prose {
   color: var(--color-secundarios-light);
 }
 
-/* Ritmo vertical entre bloques (space-y-7 = 1.75rem) */
-.doc-prose > * + * {
-  margin-top: 1.75rem;
+/* Ritmo vertical: 1,25 em entre bloques; los elementos concretos lo ajustan más abajo */
+.doc-prose > * + *,
+.doc-prose > astro-slot > * + * {
+  margin-top: 1.25em;
 }
 
+/* Cuerpo */
 .doc-prose p {
   margin-bottom: 0;
-  line-height: 1.75 !important;
+  font-size: 1.0625rem !important;
+  line-height: 1.7 !important;
+}
+.doc-prose li {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+@media (min-width: 768px) {
+  .doc-prose p {
+    font-size: 1.125rem !important;
+  }
+  .doc-prose li {
+    font-size: 1.125rem;
+  }
 }
 
-/* Título del documento (el "# ..." del Markdown, que aquí es un h2: el h1 de la página va en la cabecera) */
+/* Título del documento (el "# ..." del Markdown, cuando lo hay: aquí es un h2, porque el h1 de la página va en la cabecera) */
 .doc-prose h2.doc-title {
   font-size: 2.25rem !important;
   line-height: 1.15 !important;
@@ -232,20 +254,19 @@ h5 {
   margin: 0;
 }
 
-/* Secciones: h2 separados por una regla horizontal */
+/* Secciones: h2 separados por una regla horizontal, con aire por encima */
 .doc-prose h2:not(.doc-title) {
   font-size: 1.5rem !important;
   line-height: 1.3 !important;
   font-weight: 700 !important;
-  padding-top: 1rem;
+  margin-top: 3rem;
   scroll-margin-top: 7rem;
 }
-
 .doc-prose h3 {
   font-size: 1.25rem !important;
   line-height: 1.35 !important;
   font-weight: 700 !important;
-  padding-top: 0.5rem;
+  margin-top: 2rem;
   scroll-margin-top: 7rem;
 }
 
@@ -264,9 +285,25 @@ h5 {
   }
 }
 
+/* Lo que sigue a un encabezado queda cerca de él */
+.doc-prose h2 + *,
+.doc-prose h3 + * {
+  margin-top: 1rem;
+}
+
 .doc-prose hr {
   border: 0;
   border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  margin-block: 2rem;
+}
+@media (min-width: 768px) {
+  .doc-prose hr {
+    margin-block: 2.5rem;
+  }
+}
+/* El aire de la sección lo da la regla: el h2 que la sigue no añade más */
+.doc-prose hr + h2:not(.doc-title) {
+  margin-top: 0;
 }
 
 .doc-prose strong {
@@ -285,7 +322,7 @@ h5 {
   text-decoration-color: var(--color-principal);
 }
 
-/* Listas: mismo cuerpo de texto que los párrafos */
+/* Listas: mismo cuerpo de texto que los párrafos; más aire entre los elementos largos (los marca el plugin de compilación) */
 .doc-prose ul,
 .doc-prose ol {
   padding-left: 1.5rem;
@@ -296,45 +333,59 @@ h5 {
 .doc-prose ol {
   list-style: decimal;
 }
-.doc-prose li {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  line-height: 1.75;
-}
 .doc-prose li + li {
-  margin-top: 0.75rem;
+  margin-top: 0.625em;
 }
-@media (min-width: 768px) {
-  .doc-prose li {
-    font-size: 1.25rem;
-  }
+.doc-prose li.item-largo + li,
+.doc-prose li + li.item-largo {
+  margin-top: 1.25em;
 }
 
 /* Tabla: en pantallas estrechas se desplaza dentro de su contenedor, sin desbordar la página */
 .doc-prose .table-wrap {
+  margin-block: 1.75rem;
   overflow-x: auto;
   border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
   border-radius: 1rem;
 }
+.doc-prose h2 + .table-wrap,
+.doc-prose h3 + .table-wrap {
+  margin-top: 1rem;
+}
+/* En escritorio la tabla es más ancha que la columna de texto (hasta 48rem), como el resto del sitio */
+@media (min-width: 55rem) {
+  .doc-prose .table-wrap {
+    margin-inline: -6.5rem;
+  }
+}
 .doc-prose table {
   width: 100%;
-  min-width: 40rem;
   border-collapse: collapse;
   font-family: var(--font-sans);
   font-size: 0.875rem;
   text-align: left;
 }
+/* Con tres columnas o más hace falta más anchura: se desplaza dentro del contenedor */
+.doc-prose table:has(th:nth-child(3)) {
+  min-width: 40rem;
+}
 .doc-prose thead {
   background: color-mix(in srgb, currentColor 6%, transparent);
 }
 .doc-prose th {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.75rem;
   font-weight: 600;
 }
 .doc-prose td {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.75rem;
   vertical-align: top;
   line-height: 1.5rem;
+}
+@media (min-width: 640px) {
+  .doc-prose th,
+  .doc-prose td {
+    padding-inline: 1rem;
+  }
 }
 .doc-prose tbody tr {
   border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
