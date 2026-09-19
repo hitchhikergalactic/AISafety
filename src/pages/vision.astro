@@ -1,0 +1,17 @@
+---
+// src/pages/vision.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import VisionPage from '../components/pages/VisionPage.tsx';
+import { visionContent } from '../data/vision';
+
+const entry = await getEntry('vision', 'es');
+const { Content } = await render(entry!);
+const c = visionContent.es;
+---
+
+<Layout lang="es" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
+  <VisionPage lang="es" client:load>
+    <Content />
+  </VisionPage>
+</Layout>

@@ -27,6 +27,24 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/que-hacemos"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/que-hacemos"/>
   </url>
+
+  <!-- Visión -->
+  <url>
+    <loc>https://aisafety.es/vision/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/vision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/vision/"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/vision/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/vision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/vision/"/>
+  </url>
   <url>
     <loc>https://aisafety.es/en/que-hacemos</loc>
     <lastmod>2026-08-24</lastmod>

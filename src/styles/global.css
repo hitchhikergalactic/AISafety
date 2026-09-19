@@ -200,3 +200,142 @@ h5 {
 .text-balance {
   text-wrap: balance;
 }
+
+/* ==========================================================================
+   Documento (página Visión): Markdown renderizado con la estructura de la página
+   de visión de Safe AI Netherlands y solo tokens de iaS. Los !important compiten
+   con las reglas globales de h2, h3 y p, que también lo llevan.
+   ========================================================================== */
+
+.doc-prose {
+  color: var(--color-secundarios-dark);
+}
+.dark .doc-prose {
+  color: var(--color-secundarios-light);
+}
+
+/* Ritmo vertical entre bloques (space-y-7 = 1.75rem) */
+.doc-prose > * + * {
+  margin-top: 1.75rem;
+}
+
+.doc-prose p {
+  margin-bottom: 0;
+  line-height: 1.75 !important;
+}
+
+/* Título del documento (el "# ..." del Markdown, que aquí es un h2: el h1 de la página va en la cabecera) */
+.doc-prose h2.doc-title {
+  font-size: 2.25rem !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  margin: 0;
+}
+
+/* Secciones: h2 separados por una regla horizontal */
+.doc-prose h2:not(.doc-title) {
+  font-size: 1.5rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  padding-top: 1rem;
+  scroll-margin-top: 7rem;
+}
+
+.doc-prose h3 {
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  padding-top: 0.5rem;
+  scroll-margin-top: 7rem;
+}
+
+@media (min-width: 768px) {
+  .doc-prose h2.doc-title {
+    font-size: 3rem !important;
+    line-height: 1.1 !important;
+  }
+  .doc-prose h2:not(.doc-title) {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+  .doc-prose h3 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+.doc-prose hr {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.doc-prose strong {
+  font-weight: 700;
+}
+
+.doc-prose a {
+  color: var(--color-principal);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-principal) 30%, transparent);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s;
+}
+.doc-prose a:hover {
+  text-decoration-color: var(--color-principal);
+}
+
+/* Listas: mismo cuerpo de texto que los párrafos */
+.doc-prose ul,
+.doc-prose ol {
+  padding-left: 1.5rem;
+}
+.doc-prose ul {
+  list-style: disc;
+}
+.doc-prose ol {
+  list-style: decimal;
+}
+.doc-prose li {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+.doc-prose li + li {
+  margin-top: 0.75rem;
+}
+@media (min-width: 768px) {
+  .doc-prose li {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tabla: en pantallas estrechas se desplaza dentro de su contenedor, sin desbordar la página */
+.doc-prose .table-wrap {
+  overflow-x: auto;
+  border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  border-radius: 1rem;
+}
+.doc-prose table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-align: left;
+}
+.doc-prose thead {
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+.doc-prose th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+.doc-prose td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  line-height: 1.5rem;
+}
+.doc-prose tbody tr {
+  border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+}
