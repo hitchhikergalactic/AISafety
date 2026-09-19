@@ -1,6 +1,7 @@
 import React from 'react';
 import { LuMail } from 'react-icons/lu';
 import Navbar from '@components/Navbar';
+import ProgramDetails from '@components/ProgramDetails';
 import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
 import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import { translations } from '@locales/translations';
@@ -50,7 +51,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
     content.programDetailLabels.format,
     content.programDetailLabels.certification,
     content.programDetailLabels.selection,
-  ];
+  ].map((label) => ({ label, value: content.programDetailPending }));
 
   // Cada programa reutiliza el texto ya publicado en el resto del sitio.
   // Los detalles (duración, carga...) solo se muestran en los programas con cohorte o calendario propio.
@@ -159,21 +160,12 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                   {parseText(program.description)}
                 </p>
                 {program.hasDetails && (
-                  <table className="w-full mb-6 font-sans text-sm">
-                    <caption className="sr-only">{content.programDetailsCaption}</caption>
-                    <tbody>
-                      {detailRows.map((label) => (
-                        <tr key={label} className="border-t border-secundarios-dark/10 dark:border-secundarios-light/10">
-                          <th scope="row" className="py-2 pr-4 text-left font-semibold text-secundarios-dark dark:text-secundarios-light">
-                            {label}
-                          </th>
-                          <td className="py-2 text-right text-secundarios-dark/60 dark:text-secundarios-light/60">
-                            {content.programDetailPending}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <ProgramDetails
+                    title={content.programDetailsCaption}
+                    rows={detailRows}
+                    showTitle={false}
+                    className="mb-6"
+                  />
                 )}
                 <a href={program.href} className={`${secondaryButton} md:w-full`}>
                   {content.programCtaLabel}
