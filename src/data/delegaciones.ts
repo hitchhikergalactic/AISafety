@@ -89,7 +89,37 @@ export const delegacionValenciaContent = {
     subtitle: 'El punto de encuentro de la seguridad de la IA en Valencia.',
     discordCtaLabel: 'Únete al Discord de iaS',
     formCtaLabel: 'Regístrate y contacta',
+    newsletterCtaLabel: 'Boletín de iaS',
+    anchorsAriaLabel: 'Secciones de la página',
+    anchors: {
+      eventos: 'Eventos',
+      programas: 'Programas',
+      sobreNosotros: 'Sobre nosotros',
+      unete: 'Únete y contacto',
+    },
     eventsTitle: 'Próximos eventos',
+    eventsArchiveLabel: 'Ver archivo completo',
+    eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
+    programsTitle: 'Programas',
+    programsIntro: 'Formación y recursos de seguridad de la IA en español.',
+    programDetailLabels: {
+      duration: 'Duración',
+      workload: 'Carga',
+      format: 'Formato',
+      certification: 'Certificación',
+      selection: 'Selección',
+    },
+    programDetailPending: 'En preparación',
+    programDetailsCaption: 'Detalles del programa',
+    programCtaLabel: 'Más información',
+    libraryTitle: 'Biblioteca abierta',
+    aboutTitle: 'Sobre nosotros',
+    aboutTeamLabel: 'Conoce al equipo',
+    aboutMissionLabel: 'Qué hacemos',
+    joinTitle: 'Únete y contacto',
+    joinIntro: 'Entra en la red de iaS, sigue nuestras novedades o escríbenos.',
+    contactCardTitle: 'Escríbenos',
+    contactCardText: 'Preguntas, propuestas o colaboraciones.',
   },
   en: {
     breadcrumbCurrent: 'Valencia',
@@ -97,14 +127,123 @@ export const delegacionValenciaContent = {
     subtitle: 'The meeting point for AI safety in Valencia.',
     discordCtaLabel: 'Join the iaS Discord',
     formCtaLabel: 'Sign up and get in touch',
+    newsletterCtaLabel: 'iaS newsletter',
+    anchorsAriaLabel: 'Page sections',
+    anchors: {
+      eventos: 'Events',
+      programas: 'Programs',
+      sobreNosotros: 'About us',
+      unete: 'Join and contact',
+    },
     eventsTitle: 'Upcoming events',
+    eventsArchiveLabel: 'See the full archive',
+    eventsContactText: 'Questions about an event? Write to us at',
+    programsTitle: 'Programs',
+    programsIntro: 'AI safety training and resources in Spanish.',
+    programDetailLabels: {
+      duration: 'Duration',
+      workload: 'Workload',
+      format: 'Format',
+      certification: 'Certification',
+      selection: 'Selection',
+    },
+    programDetailPending: 'In preparation',
+    programDetailsCaption: 'Program details',
+    programCtaLabel: 'Learn more',
+    libraryTitle: 'Open library',
+    aboutTitle: 'About us',
+    aboutTeamLabel: 'Meet the team',
+    aboutMissionLabel: 'What we do',
+    joinTitle: 'Join and contact',
+    joinIntro: 'Join the iaS network, follow our news or write to us.',
+    contactCardTitle: 'Write to us',
+    contactCardText: 'Questions, proposals or collaborations.',
   },
 } as const;
+
+export const contactEmail = 'hola@aisafety.es';
 
 export const discordInviteUrl = 'https://discord.com/invite/gm6v9Cwa58';
 
 export const valenciaJoinFormUrl =
   'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form?prefill_City=Valencia';
 
-// Calendario de Luma propio de la delegación de Valencia, embebido en la página.
-export const valenciaLumaCalendarEmbedUrl = 'https://luma.com/embed/calendar/cal-F2GQeMRijaLsJDp/events';
+// Boletín de iaS (Substack). Mismo enlace que usan el pie y la portada del sitio.
+export const substackUrl = 'https://seguridaddelaia.substack.com';
+
+// Calendario de Luma propio de la delegación de Valencia, embebido en la página (?lt=light = tema claro).
+export const valenciaLumaCalendarEmbedUrl = 'https://luma.com/embed/calendar/cal-F2GQeMRijaLsJDp/events?lt=light';
+
+// Calendario general de iaS en Luma: el de Valencia solo existe como embed, sin página pública.
+export const lumaAgendaUrl = 'https://luma.com/iaS-SeguridadelaIA';
+
+export const linkedinUrl = 'https://www.linkedin.com/company/seguridad-de-la-ia/';
+export const instagramUrl = 'https://www.instagram.com/seguridad_de_la_ia';
+export const youtubeUrl = 'https://www.youtube.com/@seguridad-de-la-ia';
+
+type FooterLink = { label: string; href: string; external?: boolean };
+
+// Pie de la página de Valencia. Las rutas internas (que empiezan por "/") reciben el prefijo de idioma al pintarlas.
+export const valenciaFooterColumns: Record<
+  'es' | 'en',
+  { title: string; links: FooterLink[] }[]
+> = {
+  es: [
+    {
+      title: 'Organización',
+      links: [
+        { label: 'Qué hacemos', href: '/que-hacemos' },
+        { label: 'Equipo', href: '/equipo' },
+      ],
+    },
+    {
+      title: 'Nodos',
+      links: delegacionesSublinks.es.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
+    },
+    {
+      title: 'Conectar',
+      links: [
+        { label: 'Discord', href: discordInviteUrl, external: true },
+        { label: 'Boletín en Substack', href: substackUrl, external: true },
+        { label: 'Agenda en Luma', href: lumaAgendaUrl, external: true },
+        { label: 'LinkedIn', href: linkedinUrl, external: true },
+        { label: 'Instagram', href: instagramUrl, external: true },
+        { label: 'YouTube', href: youtubeUrl, external: true },
+        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
+      ],
+    },
+    {
+      title: 'Documentos',
+      links: [{ label: 'Biblioteca abierta', href: '/biblioteca-papers' }],
+    },
+  ],
+  en: [
+    {
+      title: 'Organization',
+      links: [
+        { label: 'What we do', href: '/que-hacemos' },
+        { label: 'Team', href: '/equipo' },
+      ],
+    },
+    {
+      title: 'Chapters',
+      links: delegacionesSublinks.en.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
+    },
+    {
+      title: 'Connect',
+      links: [
+        { label: 'Discord', href: discordInviteUrl, external: true },
+        { label: 'Newsletter on Substack', href: substackUrl, external: true },
+        { label: 'Luma calendar', href: lumaAgendaUrl, external: true },
+        { label: 'LinkedIn', href: linkedinUrl, external: true },
+        { label: 'Instagram', href: instagramUrl, external: true },
+        { label: 'YouTube', href: youtubeUrl, external: true },
+        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
+      ],
+    },
+    {
+      title: 'Documents',
+      links: [{ label: 'Open library', href: '/biblioteca-papers' }],
+    },
+  ],
+};
