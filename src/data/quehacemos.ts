@@ -6,6 +6,9 @@ export interface QueHacemosContent {
     impactDescription: string;
     missionText: string;
     scrollHintLabel: string;
+    docsSectionId: string;
+    docsTitle: string;
+    docsLinkLabel: string;
   };
   en: {
     heroTitle: string;
@@ -14,6 +17,9 @@ export interface QueHacemosContent {
     impactDescription: string;
     missionText: string;
     scrollHintLabel: string;
+    docsSectionId: string;
+    docsTitle: string;
+    docsLinkLabel: string;
   };
 }
 
@@ -24,7 +30,10 @@ export const queHacemosContent: QueHacemosContent = {
     impactTitle: "Hacia dónde vamos",
     impactDescription: "**iaS** construye el nodo de evidencia e incidencia que el español necesita:\n\t**∙ Evidencia aplicada:** *benchmarks* de modelos y campañas de *red-teaming* para documentar fallos de seguridad específicos de nuestra lengua y cultura.\n\t**∙ Política y gobernanza: **formamos el talento hispanohablante que el campo de la seguridad de la IA necesita y trabajamos para que el mundo hispanohablante tenga voz en las decisiones que van a determinar la trayectoria de la IA avanzada.\n\t**∙ Talento técnico: **impulsamos a más hispanohablantes hacia roles de seguridad, alineamiento y política pública a nivel global.",
     missionText: "Nuestra misión es concienciar sobre todo el espectro de daños, existentes y potenciales, que puede causar la IA, contribuir a definir las prioridades de mitigación mediante un debate continuo y apoyar la puesta en práctica de soluciones eficaces.",
-    scrollHintLabel: "Ir a la siguiente sección"
+    scrollHintLabel: "Ir a la siguiente sección",
+    docsSectionId: "documentos-fundacionales",
+    docsTitle: "Documentos fundacionales",
+    docsLinkLabel: "Leer documento"
   },
   en: {
     heroTitle: "What we do",
@@ -32,6 +41,9 @@ export const queHacemosContent: QueHacemosContent = {
     impactTitle: "Where we are heading",
     impactDescription: "**iaS** is building the evidence and advocacy hub that Spanish needs:\n\t**∙ Applied evidence:** model benchmarks and red-teaming campaigns to document safety failures specific to our language and culture.\n\t**∙ Policy and governance:** we train Spanish-speaking talent that the AI safety field needs and work to ensure the Spanish-speaking world has a voice in decisions that will shape the trajectory of advanced AI.\n\t**∙ Technical talent:** we guide more Spanish speakers toward roles in safety, alignment, and public policy at the global level.",
     missionText: "Our mission is to raise awareness of the full spectrum of existing and potential harms from AI, inform mitigation priorities through ongoing discourse, and support the realization of effective solutions.",
-    scrollHintLabel: "Scroll to next section"
+    scrollHintLabel: "Scroll to next section",
+    docsSectionId: "foundational-documents",
+    docsTitle: "Foundational documents",
+    docsLinkLabel: "Read document"
   }
 };

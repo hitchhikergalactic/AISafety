@@ -47,8 +47,18 @@ const visionCollection = defineCollection({
   }),
 });
 
+const teoriaDelCambioCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/teoria-del-cambio' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    canonical: z.string().url(),
+  }),
+});
+
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
   vision: visionCollection,
+  teoriaDelCambio: teoriaDelCambioCollection,
 };

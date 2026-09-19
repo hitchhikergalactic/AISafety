@@ -3,22 +3,31 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
-import { visionContent } from '@data/vision';
 import { keepBrandCase } from '@utils/keepBrandCase';
 
 type Language = 'es' | 'en';
 
-interface VisionPageProps {
+interface DocumentHeader {
+  breadcrumbParent: string;
+  breadcrumbCurrent: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+}
+
+interface DocumentPageProps {
   lang: Language;
+  header: DocumentHeader;
+  // Asunto del formulario de suscripción del pie (identifica desde qué página se apuntó la persona)
+  subject: string;
   children: React.ReactNode;
 }
 
-// Página de un documento fundacional (aisafety.es/vision). Cabecera con migas, sobretítulo, H1 y subtítulo; debajo,
-// el documento en Markdown (children, ya renderizado en la compilación) en una columna centrada. Misma estructura
-// que la página de visión de Safe AI Netherlands, con los tokens de diseño de iaS.
-const VisionPage: React.FC<VisionPageProps> = ({ lang, children }) => {
+// Página de un documento fundacional (Visión, Teoría del Cambio...). Cabecera con migas, sobretítulo, H1 y subtítulo;
+// debajo, el documento en Markdown (children, ya renderizado en la compilación) en una columna centrada. Misma
+// estructura que la página de visión de Safe AI Netherlands, con los tokens de diseño de iaS.
+const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subject, children }) => {
   const t = translations[lang];
-  const content = visionContent[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
   const [showModal, setShowModal] = useState(false);
 
@@ -68,7 +77,7 @@ const VisionPage: React.FC<VisionPageProps> = ({ lang, children }) => {
         title={t.subscribe.title}
         subtitle={t.subscribe.subtitle}
         action="https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec"
-        subject="Nuevo suscriptor desde Visión"
+        subject={subject}
         successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
       />
 
@@ -77,4 +86,4 @@ const VisionPage: React.FC<VisionPageProps> = ({ lang, children }) => {
   );
 };
 
-export default VisionPage;
+export default DocumentPage;

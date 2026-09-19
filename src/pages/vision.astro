@@ -2,7 +2,7 @@
 // src/pages/vision.astro
 import { getEntry, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import VisionPage from '../components/pages/VisionPage.tsx';
+import DocumentPage from '../components/pages/DocumentPage.tsx';
 import { visionContent } from '../data/vision';
 
 const entry = await getEntry('vision', 'es');
@@ -11,7 +11,7 @@ const c = visionContent.es;
 ---
 
 <Layout lang="es" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
-  <VisionPage lang="es" client:load>
+  <DocumentPage lang="es" header={c} subject="Nuevo suscriptor desde Visión" client:load>
     <Content />
-  </VisionPage>
+  </DocumentPage>
 </Layout>
