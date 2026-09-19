@@ -187,12 +187,10 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
 
-          {/* Botón corregido con mayor área de click y soporte táctil rápido */}
+          {/* Área táctil de 44 px. Solo onClick: touch-manipulation ya evita el retardo del toque, y un onTouchStart
+              además haría que un solo toque abriera y cerrara el menú (React registra touchstart como pasivo, así que
+              su preventDefault no impide el clic posterior). */}
           <button 
-            onTouchStart={(e) => {
-              e.preventDefault();
-              setIsOpen(!isOpen);
-            }}
             onClick={() => setIsOpen(!isOpen)} 
             className="lg:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Menu"
@@ -209,10 +207,6 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
             <div key={link.href}>
               {link.sublinks ? (
                 <button 
-                  onTouchStart={(e) => {
-                    e.preventDefault();
-                    setOpenSubmenu(openSubmenu === link.href ? null : link.href);
-                  }}
                   onClick={() => setOpenSubmenu(openSubmenu === link.href ? null : link.href)}
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
