@@ -1,6 +1,6 @@
 ---
 title: "Visión de iaS"
-description: "Misión, alcance en el mundo hispano, pilares estratégicos y ambición a largo plazo de Inteligencia Artificial Segura (iaS) en materia de seguridad de la IA."
+description: "Misión, alcance en el mundo hispanohablante, pilares estratégicos y ambición a largo plazo de Inteligencia Artificial Segura (iaS) en materia de seguridad de la IA."
 ---
 
 # Visión de iaS
@@ -9,7 +9,7 @@ description: "Misión, alcance en el mundo hispano, pilares estratégicos y ambi
 
 ## Misión
 
-[iaS](/) existe para **concienciar sobre todo el espectro de daños, existentes y potenciales, que puede causar la IA, contribuir a definir las prioridades de mitigación mediante un debate continuo y apoyar la puesta en práctica de soluciones eficaces** en todo el mundo hispano, y lo hace íntegramente en español. Abordamos toda la gama de preocupaciones sobre la seguridad de la IA, desde daños a corto plazo como los deepfakes, la desinformación y la manipulación algorítmica de la salud mental, hasta riesgos a largo plazo como la pérdida de un control humano significativo sobre sistemas de IA cada vez más capaces, y todo lo que hay entre medias.
+[iaS](/) existe para **concienciar sobre todo el espectro de daños, existentes y potenciales, que puede causar la IA, contribuir a definir las prioridades de mitigación mediante un debate continuo y apoyar la puesta en práctica de soluciones eficaces** en todo el mundo hispanohablante, y lo hace íntegramente en español. Abordamos toda la gama de preocupaciones sobre la seguridad de la IA, desde daños a corto plazo como los deepfakes, la desinformación y la manipulación algorítmica de la salud mental, hasta riesgos a largo plazo como la pérdida de un control humano significativo sobre sistemas de IA cada vez más capaces, y todo lo que hay entre medias.
 
 ---
 
@@ -25,7 +25,7 @@ iaS nace para cerrar esa brecha.
 
 ## Quiénes somos
 
-Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispano. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 400 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
+Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 400 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
 
 iaS funciona con un equipo de personas voluntarias y cuenta con la mentoría de personas de otras organizaciones de seguridad de la IA; está construyendo una red de capítulos locales, con una [primera delegación en Valencia](/delegaciones/valencia), unidos bajo una misma marca, una misma misión y una infraestructura centralizada. Esta estructura está diseñada para crecer sin fricciones, desde unos pocos capítulos hasta muchos más.
 
@@ -33,7 +33,7 @@ iaS funciona con un equipo de personas voluntarias y cuenta con la mentoría de 
 
 ## Nuestra visión
 
-Imaginamos un mundo hispano donde la seguridad de la IA no sea una preocupación de nicho, sino una prioridad reconocida en las universidades, en los consejos de administración, en los gobiernos y en la conversación pública, y donde el idioma no sea una barrera.
+Imaginamos un mundo hispanohablante donde la seguridad de la IA no sea una preocupación de nicho, sino una prioridad reconocida en las universidades, en los consejos de administración, en los gobiernos y en la conversación pública, y donde el idioma no sea una barrera.
 
 En términos concretos, vemos lo siguiente:
 
@@ -41,7 +41,7 @@ En términos concretos, vemos lo siguiente:
 - **Cientos de personas al año** que completan cursos de seguridad de la IA en varios países.
 - **Grandes eventos internacionales**, como conferencias, hackatones y seminarios de personas expertas, junto con encuentros locales accesibles que dan la bienvenida a quienes llegan por primera vez.
 - Una **operación de contenidos profesional** que produzca material de alta calidad en español, tanto para la ciudadanía como para quienes desarrollan y regulan la IA.
-- **Capítulos locales prósperos** por todo el mundo hispano, cada uno con decenas o cientos de personas activas.
+- **Capítulos locales prósperos** por todo el mundo hispanohablante, cada uno con decenas o cientos de personas activas.
 - Una **cantera de talento** que lleve de forma fiable a las personas desde la curiosidad inicial hasta puestos de influencia en organismos públicos y de política tecnológica, laboratorios de IA de frontera, funciones de asesoramiento gubernamental, la academia y más allá.
 
 Todo ello con un único objetivo: asegurar que el desarrollo y la integración de la IA beneficien verdaderamente a toda la humanidad.
@@ -94,7 +94,7 @@ Cada pilar, cada miembro del equipo y cada capítulo contribuye a ampliar, forta
 
 ---
 
-## Una red en el mundo hispano
+## Una red en el mundo hispanohablante
 
 El modelo de capítulos es el vehículo mediante el cual nuestra visión escala. Una identidad central sólida aporta marca, infraestructura de gestión, recursos compartidos y guías operativas, mientras que los capítulos locales llevan a cabo sus propias actividades y establecen sus propias alianzas, con la ventaja decisiva de que *nunca tienen que partir de cero*.
 
@@ -110,6 +110,6 @@ Colaboramos con los hubs de [México](https://www.aismx.org/) y [Colombia](https
 
 iaS está al comienzo de su andadura, pero se apoya en una base ya construida: desde febrero de 2026 ha celebrado eventos regulares con más de 400 personas inscritas, con una valoración media de 4,63 sobre 5 en 51 valoraciones de las encuestas de satisfacción, y ha desarrollado un glosario bilingüe y un equipo de personas voluntarias.
 
-El mundo hispano suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
+El mundo hispanohablante suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
 
 iaS quiere ser ese movimiento.
