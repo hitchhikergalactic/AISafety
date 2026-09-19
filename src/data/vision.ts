@@ -8,7 +8,7 @@ export const visionContent = {
     eyebrow: 'Hacia dónde va iaS',
     title: 'Visión',
     subtitle:
-      'Misión, alcance en el mundo hispano, pilares estratégicos y ambición a largo plazo de Inteligencia Artificial Segura (iaS) en materia de seguridad de la IA.',
+      'Misión, alcance en el mundo hispanohablante, pilares estratégicos y ambición a largo plazo de Inteligencia Artificial Segura (iaS) en materia de seguridad de la IA.',
     canonical: 'https://aisafety.es/vision',
   },
   en: {
