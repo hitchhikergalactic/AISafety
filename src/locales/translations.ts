@@ -69,11 +69,11 @@ export const translations = {
         tag: "/ FORMACIÓN",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"El primer programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
-        dateShort: "Basado en cohortes. Sin requisitos técnicos | Presencial en Madrid | Disponible: Octubre 2026.",
+        dateShort: "Basado en cohortes. Sin requisitos técnicos | Presencial en **Madrid** | Disponible: Octubre 2026.",
         details: [
           { label: "Duración", value: "25 h" },
           { label: "Carga", value: "Unas 5 h a la semana durante 5 semanas" },
-          { label: "Formato", value: "Presencial, en Madrid" },
+          { label: "Formato", value: "Presencial, en **Madrid**" },
           { label: "Certificación", value: "Sí, certificado de iaS" },
           { label: "Selección", value: "Por solicitud, de 4 a 10 personas por cohorte" },
         ]
@@ -195,11 +195,11 @@ export const translations = {
         tag: "/ TRAINING",
         title: "Course on strategy for Artificial General Intelligence",
         description: "The first specialized program on AGI strategy based on the BlueDot Impact curriculum.",
-        dateShort: "Cohort-based. No technical requirements | In person in Madrid | Available: October 2026.",
+        dateShort: "Cohort-based. No technical requirements | In person in **Madrid** | Available: October 2026.",
         details: [
           { label: "Duration", value: "25 h" },
           { label: "Workload", value: "About 5 h per week for 5 weeks" },
-          { label: "Format", value: "In person, in Madrid" },
+          { label: "Format", value: "In person, in **Madrid**" },
           { label: "Certification", value: "Yes, iaS certificate" },
           { label: "Selection", value: "By application, 4 to 10 people per cohort" },
         ]
