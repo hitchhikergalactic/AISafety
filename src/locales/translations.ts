@@ -68,13 +68,14 @@ export const translations = {
       innovation: {
         tag: "/ FORMACIÓN",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
-        description:"El primer programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
+        description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | Presencial en **Madrid** | Disponible: Octubre 2026.",
         details: [
-          { label: "Duración", value: "25 h" },
-          { label: "Carga", value: "Unas 5 h a la semana durante 5 semanas" },
+          { label: "Duración", value: "25 h en total" },
+          { label: "Sesiones", value: "2 h presenciales a la semana durante 5 semanas" },
+          { label: "Estudio personal", value: "unas 3 h a la semana de lecturas y ejercicios" },
           { label: "Formato", value: "Presencial, en **Madrid**" },
-          { label: "Certificación", value: "Sí, certificado de iaS" },
+          { label: "Certificación", value: "Sí, certificado de iaS basado en el currículo de BlueDot Impact" },
           { label: "Selección", value: "Por solicitud, de 4 a 10 personas por cohorte" },
         ]
       },
@@ -194,13 +195,14 @@ export const translations = {
       innovation: {
         tag: "/ TRAINING",
         title: "Course on strategy for Artificial General Intelligence",
-        description: "The first specialized program on AGI strategy based on the BlueDot Impact curriculum.",
+        description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | In person in **Madrid** | Available: October 2026.",
         details: [
-          { label: "Duration", value: "25 h" },
-          { label: "Workload", value: "About 5 h per week for 5 weeks" },
+          { label: "Duration", value: "25 h in total" },
+          { label: "Sessions", value: "2 h in person per week for 5 weeks" },
+          { label: "Self-study", value: "about 3 h per week of readings and exercises" },
           { label: "Format", value: "In person, in **Madrid**" },
-          { label: "Certification", value: "Yes, iaS certificate" },
+          { label: "Certification", value: "Yes, iaS certificate based on the BlueDot Impact curriculum" },
           { label: "Selection", value: "By application, 4 to 10 people per cohort" },
         ]
       },

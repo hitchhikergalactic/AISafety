@@ -8,7 +8,7 @@ export const cursoEstrategiaAgiContent = {
   es: {
     eyebrow: 'FORMACIÓN',
     pageTitle: 'Curso de Estrategia ante la Inteligencia Artificial General',
-    heroText: 'El primer programa especializado en estrategia de Inteligencia Artificial General (AGI) basado en el currículo de **BlueDot Impact**.',
+    heroText: 'Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de **BlueDot Impact**.',
     inPersonNote: 'Esta primera cohorte es presencial y se celebra solo en **Madrid**.',
     formTitle: 'Inscripción AGI Strategy',
     formDescription: 'Completa el formulario para reservar tu plaza en este primer cohorte.',
@@ -28,7 +28,7 @@ export const cursoEstrategiaAgiContent = {
   en: {
     eyebrow: 'TRAINING',
     pageTitle: 'AGI Strategy Course',
-    heroText: 'The first specialized program on Artificial General Intelligence (AGI) strategy, based on the **BlueDot Impact** curriculum.',
+    heroText: 'Specialized program on Artificial General Intelligence (AGI) strategy, based on the **BlueDot Impact** curriculum.',
     inPersonNote: 'This first cohort is in person and takes place in **Madrid** only.',
     formTitle: 'Register AGI Strategy',
     formDescription: 'Complete the form to reserve your place in this first cohort.',

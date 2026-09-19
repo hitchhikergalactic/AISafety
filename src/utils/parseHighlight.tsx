@@ -1,4 +1,5 @@
 import React from 'react';
+import { emphasizeBrand } from './emphasizeBrand';
 
 // Resalta con el color de acento de iaS lo que va entre ** **. El texto visible no cambia: solo su aspecto.
 export const parseHighlight = (text: string): React.ReactNode =>
@@ -8,6 +9,6 @@ export const parseHighlight = (text: string): React.ReactNode =>
         {part.slice(2, -2)}
       </strong>
     ) : (
-      part
+      <React.Fragment key={i}>{emphasizeBrand(part)}</React.Fragment>
     )
   );

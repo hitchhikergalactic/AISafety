@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
+import { emphasizeBrand } from '@utils/emphasizeBrand';
 import ProgramDetails from '@components/ProgramDetails';
 import eventImage from '../assets/ias_evento.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
@@ -106,7 +107,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               </div>
               <h4 className="text-base font-bold tracking-tight mb-1">{t.upcoming.innovation.title}</h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-4">
-                  {t.upcoming.innovation.description}</p>
+                  {emphasizeBrand(t.upcoming.innovation.description)}</p>
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
                 {parseHighlight(t.upcoming.innovation.dateShort.toUpperCase())}
               </h5>
