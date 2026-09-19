@@ -6,10 +6,14 @@
 //  1. El "# Título" del archivo pasa a <h2 class="doc-title">: la página ya tiene su único <h1> en la cabecera.
 //  2. Las tablas se envuelven en un contenedor con scroll horizontal (en móvil no desbordan la página).
 //  3. Los enlaces externos se abren en una pestaña nueva.
-//  4. "BlueDot Impact" va en <strong class="font-bold">, el mismo elemento que los ** manuales del resto del sitio.
+//  4. Los elementos de lista largos llevan la clase item-largo.
+//  5. "BlueDot Impact" va en <strong class="font-bold">, el mismo elemento que los ** manuales del resto del sitio.
 //     Es idempotente: no vuelve a envolver lo que ya está dentro de <strong> o <b>.
 
 const BRAND = 'BlueDot Impact';
+
+// Caracteres a partir de los cuales un elemento de lista cuenta como largo
+const umbralLiLargo = 200;
 
 const isVisionFile = (ctx) => /[\\/]content[\\/](vision|teoria-del-cambio)[\\/]/.test(ctx.fileURL?.pathname ?? '');
 
@@ -49,6 +53,14 @@ export const hastVision = {
           properties: { className: ['table-wrap'], tabIndex: 0 },
           children: [],
         });
+      },
+    },
+    {
+      // Los elementos de lista largos (unas tres líneas o más) llevan una clase para darles más aire en CSS
+      filter: ['li'],
+      visit(node, ctx) {
+        if (!isVisionFile(ctx)) return;
+        if (ctx.textContent(node).length > umbralLiLargo) ctx.setProperty(node, 'class', 'item-largo');
       },
     },
     {
