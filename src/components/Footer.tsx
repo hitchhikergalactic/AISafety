@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { LuMail, LuMapPin } from 'react-icons/lu';
 import SocialFooter from './SocialFooter';
 import { translations } from '../locales/translations';
-import logo from '../assets/safety_id_logo_white_leyenda.svg';
-import logoWhite from '../assets/ias_logo_white.svg';
+import logo from '../assets/logo_blanco_con_leyenda.svg';
+import logoWhite from '../assets/logo-ias-blanco.svg';
 import { parseText } from '../utils/parseText';
 
 type Language = 'es' | 'en';
@@ -70,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
               {activeLogo && (
                 <img 
                   src={activeLogo} 
-                  alt="IA Safety España" 
+                  alt={lang === 'es' ? 'iaS · Seguridad de la IA' : 'iaS · AI safety'} 
                   className="h-16 md:h-20" 
                 />
               )}

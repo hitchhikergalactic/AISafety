@@ -118,7 +118,7 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "AI safety Hub",
+      h1: "Spanish-language AI safety Hub",
       h2: "**iaS** is the reference hub for AI safety in Spanish: we train and support professionals in their career development, and back projects dedicated to building **safer AI**.",
       ctaPrimary: "I want to understand what AI safety is",
       ctaSecondary: "I want to be part of it!",
