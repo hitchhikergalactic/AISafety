@@ -8,9 +8,18 @@ import { visionContent } from '../data/vision';
 const entry = await getEntry('vision', 'es');
 const { Content } = await render(entry!);
 const c = visionContent.es;
+const alternates = { es: visionContent.es.canonical, en: visionContent.en.canonical };
 ---
 
-<Layout lang="es" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
+<Layout
+  lang="es"
+  title={c.seoTitle}
+  description={c.subtitle}
+  ogTitle={c.seoTitle}
+  ogDescription={c.subtitle}
+  canonicalUrl={c.canonical}
+  alternates={alternates}
+>
   <DocumentPage lang="es" header={c} subject="Nuevo suscriptor desde Visión" client:load>
     <Content />
   </DocumentPage>

@@ -9,6 +9,7 @@ export const visionContent = {
     title: 'Visión',
     subtitle:
       'Misión, alcance en el mundo hispano, pilares estratégicos y ambición a largo plazo de Inteligencia Artificial Segura (iaS) en materia de seguridad de la IA.',
+    canonical: 'https://aisafety.es/vision',
   },
   en: {
     seoTitle: 'Vision | iaS',
@@ -18,5 +19,6 @@ export const visionContent = {
     title: 'Vision',
     subtitle:
       'Mission, reach across the Spanish-speaking world, strategic pillars and long-term ambition of Inteligencia Artificial Segura (iaS) on AI safety.',
+    canonical: 'https://aisafety.es/en/vision',
   },
 } as const;
