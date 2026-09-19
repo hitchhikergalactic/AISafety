@@ -45,37 +45,29 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
     { id: 'unete', label: content.anchors.unete },
   ];
 
-  const detailRows = [
-    content.programDetailLabels.duration,
-    content.programDetailLabels.workload,
-    content.programDetailLabels.format,
-    content.programDetailLabels.certification,
-    content.programDetailLabels.selection,
-  ].map((label) => ({ label, value: content.programDetailPending }));
-
-  // Cada programa reutiliza el texto ya publicado en el resto del sitio.
-  // Los detalles (duración, carga...) solo se muestran en los programas con cohorte o calendario propio.
+  // Cada programa reutiliza el texto y los detalles ya publicados en el resto del sitio.
+  // La biblioteca no lleva bloque de detalles: duración o certificación no aplican.
   const programs = [
     {
       id: 'seminario',
       title: t.seminario.title,
       description: t.upcoming.bluedot.description,
       href: `${langPrefix}/seminario-bluedot-spain`,
-      hasDetails: true,
+      details: t.upcoming.bluedot.details,
     },
     {
       id: 'curso',
       title: t.upcoming.innovation.title,
       description: t.upcoming.innovation.description,
       href: `${langPrefix}/curso-estrategia-agi`,
-      hasDetails: true,
+      details: t.upcoming.innovation.details,
     },
     {
       id: 'biblioteca',
       title: content.libraryTitle,
       description: t.biblioteca.subtitle,
       href: `${langPrefix}/biblioteca-papers`,
-      hasDetails: false,
+      details: null,
     },
   ];
 
@@ -159,13 +151,8 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                 <p className="flex-grow text-secundarios-dark/80 dark:text-secundarios-light/80">
                   {parseText(program.description)}
                 </p>
-                {program.hasDetails && (
-                  <ProgramDetails
-                    title={content.programDetailsCaption}
-                    rows={detailRows}
-                    showTitle={false}
-                    className="mb-6"
-                  />
+                {program.details && (
+                  <ProgramDetails title={t.upcoming.detailsTitle} rows={program.details} className="mb-6" />
                 )}
                 <a href={program.href} className={`${secondaryButton} md:w-full`}>
                   {content.programCtaLabel}
