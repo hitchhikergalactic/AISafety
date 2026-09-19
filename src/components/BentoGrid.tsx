@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { parseText } from '@utils/parseText';
+import ProgramDetails from '@components/ProgramDetails';
 import eventImage from '../assets/ias_evento.jpg';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.png';
@@ -15,6 +16,8 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
+  // "Más información" va como texto dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
+  const moreInfoClass = "mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal group-hover:underline";
   const arrowButtonClass = "w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors shrink-0 ml-auto";
   
   // Función auxiliar para extraer de forma segura la URL de la imagen como un string
@@ -106,6 +109,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
                 {t.upcoming.innovation.dateShort.toUpperCase()}
               </h5>
+              <div className="mt-auto pt-6">
+                <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.innovation.details} />
+                <span className={moreInfoClass}>
+                  {t.upcoming.moreInfo}
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </span>
+              </div>
             </a>
           </div>
 
@@ -132,6 +142,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                     <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{parseText(t.upcoming.bluedot.description)}</p>
                     <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
+               </div>
+               <div className="mt-auto pt-6">
+                  <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.bluedot.details} />
+                  <span className={moreInfoClass}>
+                    {t.upcoming.moreInfo}
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </span>
                </div>
             </a>
 

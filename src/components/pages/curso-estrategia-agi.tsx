@@ -54,7 +54,11 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               {parseText(content.note)}
             </p>
 
-            <div className="mt-10 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+            <p className="mt-10 mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
+              {content.inPersonNote}
+            </p>
+
+            <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
               <h5 className="!text-principal texto-medium !font-bold mb-3">{content.formTitle}</h5>
               <p className="mb-2 text-sm text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
                 {content.formDescription}

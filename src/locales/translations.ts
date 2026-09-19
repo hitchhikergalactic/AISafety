@@ -44,11 +44,21 @@ export const translations = {
       eventTitle: "Actividades iaS: eventos, charlas y cursos",
       description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. Sigue en **Luma** nuestra agenda para participar de nuestras actividades.",
       dateShort: "Calendario en luma",
+      detailsTitle: "Detalles del programa",
+      moreInfo: "Más información",
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de seguridad de la IA",
         description:"Junto a **BlueDot Impact** realizamos seminarios mensuales de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
-        dateShort: "Primer y tercer miércoles del mes"
+        dateShort: "Primer y tercer miércoles del mes",
+        details: [
+          { label: "Duración", value: "1 h" },
+          { label: "Frecuencia", value: "Primer y tercer miércoles de cada mes" },
+          { label: "Carga", value: "Sin preparación previa, solo ganas de aprender" },
+          { label: "Formato", value: "En línea" },
+          { label: "Certificación", value: "Sin certificado" },
+          { label: "Selección", value: "Inscripción abierta" },
+        ]
       },
       readingGroup: {
         tag: "/ SUBSTACK",
@@ -59,7 +69,14 @@ export const translations = {
         tag: "/ FORMACIÓN",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"El primer programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
-        dateShort: "Basado en cohortes. Sin requisitos técnicos | Disponible: Octubre 2026."
+        dateShort: "Basado en cohortes. Sin requisitos técnicos | Presencial en Madrid | Disponible: Octubre 2026.",
+        details: [
+          { label: "Duración", value: "25 h" },
+          { label: "Carga", value: "Unas 5 h a la semana durante 5 semanas" },
+          { label: "Formato", value: "Presencial, en Madrid" },
+          { label: "Certificación", value: "Sí, certificado de iaS" },
+          { label: "Selección", value: "Por solicitud, de 4 a 10 personas por cohorte" },
+        ]
       },
       research: {
         tag: "/ DÍA CERO",
@@ -153,11 +170,21 @@ export const translations = {
       eventTitle: "iaS activities: events, talks & courses",
       description: "Come with a question, a project in progress, or simply curiosity. Follow our **Luma** calendar to take part in our activities.",
       dateShort: "Calendar on Luma",
+      detailsTitle: "Program details",
+      moreInfo: "More information",
       bluedot: {
         tag: "/ TRAINING",
         title: "AI safety seminar",
         description: "Together with **BlueDot Impact**, we run monthly AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
-        dateShort: "First and third Wednesday of the month"
+        dateShort: "First and third Wednesday of the month",
+        details: [
+          { label: "Duration", value: "1 h" },
+          { label: "Frequency", value: "First and third Wednesday of each month" },
+          { label: "Workload", value: "No preparation needed, just a desire to learn" },
+          { label: "Format", value: "Online" },
+          { label: "Certification", value: "No certificate" },
+          { label: "Selection", value: "Open registration" },
+        ]
       },
       readingGroup: {
         tag: "/ SUBSTACK",
@@ -168,7 +195,14 @@ export const translations = {
         tag: "/ TRAINING",
         title: "Course on strategy for Artificial General Intelligence",
         description: "The first specialized program on AGI strategy based on the BlueDot Impact curriculum.",
-        dateShort: "Cohort-based. No technical requirements | Available: October 2026."
+        dateShort: "Cohort-based. No technical requirements | In person in Madrid | Available: October 2026.",
+        details: [
+          { label: "Duration", value: "25 h" },
+          { label: "Workload", value: "About 5 h per week for 5 weeks" },
+          { label: "Format", value: "In person, in Madrid" },
+          { label: "Certification", value: "Yes, iaS certificate" },
+          { label: "Selection", value: "By application, 4 to 10 people per cohort" },
+        ]
       },
       research: {
         tag: "/ DAY ZERO",
