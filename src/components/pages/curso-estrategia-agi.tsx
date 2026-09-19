@@ -4,6 +4,7 @@ import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { cursoEstrategiaAgiContent } from '@data/cursoEstrategiaAgi';
 import { parseText } from '@utils/parseText';
+import { parseHighlight } from '@utils/parseHighlight';
 
 type Language = 'es' | 'en';
 
@@ -55,7 +56,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
             </p>
 
             <p className="mt-10 mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
-              {content.inPersonNote}
+              {parseHighlight(content.inPersonNote)}
             </p>
 
             <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
