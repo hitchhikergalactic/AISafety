@@ -35,8 +35,11 @@ export const parseText = (text: string | undefined): React.ReactNode => {
         const lineContent = line.slice(tabCount * 1);
         
         return (
-          <div 
+          // <span> con display:block en vez de <div>: parseText se usa dentro de <p>, y un <div> dentro de un <p>
+          // es HTML inválido (el navegador cierra el <p> y React descarta el HTML del servidor al hidratar).
+          <span
             key={lineIdx}
+            className="block"
             style={{ 
               paddingLeft: `${tabCount * 1.5}rem`,
               marginBottom: lineIdx < lines.length - 1 ? '0.8rem' : '0'
@@ -52,7 +55,7 @@ export const parseText = (text: string | undefined): React.ReactNode => {
               }
               return null;
             })}
-          </div>
+          </span>
         );
       })}
     </>
