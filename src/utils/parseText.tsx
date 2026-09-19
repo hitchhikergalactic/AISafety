@@ -1,4 +1,5 @@
 import React from 'react';
+import { emphasizeBrand } from './emphasizeBrand';
 
 export const parseText = (text: string | undefined): React.ReactNode => {
   if (!text || text.trim() === '') {
@@ -15,9 +16,9 @@ export const parseText = (text: string | undefined): React.ReactNode => {
           if (part.startsWith('**') && part.endsWith('**')) {
             return <strong key={partIdx} className="font-bold">{part.slice(2, -2)}</strong>;
           } else if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
-            return <em key={partIdx} className="italic">{part.slice(1, -1)}</em>;
+            return <em key={partIdx} className="italic">{emphasizeBrand(part.slice(1, -1))}</em>;
           } else if (part) {
-            return <span key={partIdx}>{part}</span>;
+            return <span key={partIdx}>{emphasizeBrand(part)}</span>;
           }
           return null;
         })}
@@ -45,9 +46,9 @@ export const parseText = (text: string | undefined): React.ReactNode => {
               if (part.startsWith('**') && part.endsWith('**')) {
                 return <strong key={`${lineIdx}-${partIdx}`} className="font-bold">{part.slice(2, -2)}</strong>;
               } else if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
-                return <em key={`${lineIdx}-${partIdx}`} className="italic">{part.slice(1, -1)}</em>;
+                return <em key={`${lineIdx}-${partIdx}`} className="italic">{emphasizeBrand(part.slice(1, -1))}</em>;
               } else if (part) {
-                return <span key={`${lineIdx}-${partIdx}`}>{part}</span>;
+                return <span key={`${lineIdx}-${partIdx}`}>{emphasizeBrand(part)}</span>;
               }
               return null;
             })}
