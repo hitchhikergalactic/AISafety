@@ -163,7 +163,7 @@ export const delegacionValenciaContent = {
 
 export const contactEmail = 'hola@aisafety.es';
 
-export const discordInviteUrl = 'https://discord.com/invite/gm6v9Cwa58';
+export const discordInviteUrl = 'https://discord.gg/gm6v9Cwa58';
 
 export const valenciaJoinFormUrl =
   'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form?prefill_City=Valencia';
