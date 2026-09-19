@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
-import logo from '../assets/ias_logo.svg';
-import logoWhite from '../assets/ias_logo_white.svg';
+import logo from '../assets/logo-ias-color.svg';
+import logoWhite from '../assets/logo-ias-blanco.svg';
 
 interface NavbarProps {
   lang: 'es' | 'en';
@@ -54,6 +54,12 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     if (img.default && typeof img.default === 'string') return img.default;
     return '';
   };
+
+  // "iaS" es el nombre de la marca: se escribe siempre así, aunque el menú vaya en mayúsculas.
+  const renderNavLabel = (label: string) =>
+    label.split(/(iaS)/).map((part, i) =>
+      part === 'iaS' ? <span key={i} className="marca-ias">{part}</span> : part.toUpperCase()
+    );
 
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
@@ -108,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
           {activeLogo && (
             <img 
               src={activeLogo} 
-              alt="AI Safety España" 
+              alt={lang === 'es' ? 'iaS · Seguridad de la IA' : 'iaS · AI safety'} 
               className="h-10 md:h-[50px] w-auto block bg-transparent"
             />
           )}
@@ -120,7 +126,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
             <div key={link.href} className="relative group">
               {link.sublinks ? (
                 <span className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer pb-2 whitespace-nowrap">
-                  {link.label.toUpperCase()}
+                  {renderNavLabel(link.label)}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </span>
               ) : (
@@ -128,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                   href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
                   className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer whitespace-nowrap"
                 >
-                  {link.label.toUpperCase()}
+                  {renderNavLabel(link.label)}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-principal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </a>
               )}
@@ -212,7 +218,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
-                  {link.label.toUpperCase()}
+                  {renderNavLabel(link.label)}
                   <ArrowRight size={24} className={`opacity-40 group-hover:opacity-100 transition-all ${openSubmenu === link.href ? 'rotate-90' : ''}`} />
                 </button>
               ) : (
@@ -222,7 +228,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
-                  {link.label.toUpperCase()}
+                  {renderNavLabel(link.label)}
                   <ArrowRight size={24} className="opacity-40 group-hover:opacity-100 transition-all" />
                 </a>
               )}

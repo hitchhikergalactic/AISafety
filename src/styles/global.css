@@ -42,6 +42,16 @@ body {
   scroll-margin-top: 0px;
 }
 
+/* El nombre de la marca no se transforma nunca a mayúsculas ("iaS", no "IAS") */
+.marca-ias {
+  text-transform: none;
+}
+
+/* Secciones con barra de anclas: navbar + barra sticky no deben tapar el título */
+.scroll-mt-anchorbar {
+  scroll-margin-top: 9rem;
+}
+
 p {
   font-family: 'Alegreya', serif !important;
   line-height: 1.45 !important; 
