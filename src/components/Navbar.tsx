@@ -71,7 +71,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       label: t.nav.mission,
       sublinks: [
         { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
-        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" }
+        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" },
+        { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" }
       ]
     },
     {
@@ -218,7 +219,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 cursor-pointer bg-transparent border-none text-left w-full touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
-                  {renderNavLabel(link.label)}
+                  <span>{renderNavLabel(link.label)}</span>
                   <ArrowRight size={24} className={`opacity-40 group-hover:opacity-100 transition-all ${openSubmenu === link.href ? 'rotate-90' : ''}`} />
                 </button>
               ) : (
@@ -228,7 +229,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
-                  {renderNavLabel(link.label)}
+                  <span>{renderNavLabel(link.label)}</span>
                   <ArrowRight size={24} className="opacity-40 group-hover:opacity-100 transition-all" />
                 </a>
               )}

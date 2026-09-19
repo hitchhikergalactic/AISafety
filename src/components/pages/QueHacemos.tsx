@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
 import { queHacemosContent } from '@data/quehacemos';
-import { visionContent } from '@data/vision';
-import { keepBrandCase } from '@utils/keepBrandCase';
 import { parseText } from '@utils/parseText';
 
 type Language = 'es' | 'en';
@@ -18,8 +16,6 @@ interface QueHacemosProps {
 const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
   const t = translations[lang];
   const content = queHacemosContent[lang];
-  const vision = visionContent[lang];
-  const langPrefix = lang === 'es' ? '' : '/en';
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -32,7 +28,7 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             el margen inferior devuelve al contenido de debajo el espacio que tenía. */}
         <section
           id="mision"
-          className="relative -mx-8 md:-mx-20 lg:-mx-40 -mt-36 md:-mt-44 mb-16 md:mb-20 flex min-h-[100svh] items-center overflow-hidden"
+          className="relative -mx-8 md:-mx-20 lg:-mx-40 -mt-36 md:-mt-44 mb-36 md:mb-44 flex min-h-[100svh] items-center overflow-hidden"
         >
           <div
             aria-hidden="true"
@@ -49,41 +45,14 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             </p>
           </div>
           <a
-            href={`#${content.docsSectionId}`}
+            href="#contenido"
             aria-label={content.scrollHintLabel}
             className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce motion-reduce:animate-none rounded-full border p-3 transition-colors border-secundarios-dark/15 text-secundarios-dark/45 hover:border-principal/50 hover:text-principal dark:border-secundarios-light/20 dark:text-secundarios-light/50 dark:hover:border-principal/50 dark:hover:text-principal"
           >
             <ChevronDown size={20} aria-hidden="true" />
           </a>
         </section>
-
-        {/* Documentos fundacionales: debajo de la misión, como en Safe AI Netherlands. La tarjeta reutiliza los textos de la página de visión. */}
-        <section
-          id={content.docsSectionId}
-          className="scroll-mt-navbar mx-auto mb-20 md:mb-24 w-full max-w-3xl border-t border-secundarios-dark/15 dark:border-secundarios-light/15 pt-16"
-        >
-          <h2 className="!mb-10 text-center !text-2xl md:!text-3xl !leading-tight !font-bold text-secundarios-dark dark:text-secundarios-light">
-            {content.docsTitle}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <a
-              href={`${langPrefix}/vision`}
-              className="group flex h-full flex-col rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 shadow-anthro-subtle transition-all duration-300 hover:border-principal hover:shadow-anthro-card"
-            >
-              <span className="mb-3 font-sans text-xs font-semibold uppercase tracking-wider text-principal">{keepBrandCase(vision.eyebrow)}</span>
-              <h3 className="!mb-3 !font-sans !text-2xl !font-semibold !leading-tight text-secundarios-dark dark:text-secundarios-light transition-colors group-hover:text-principal">
-                {vision.title}
-              </h3>
-              <p className="!mb-6 flex-grow !font-sans !text-sm !leading-relaxed text-secundarios-dark/70 dark:text-secundarios-light/70">
-                {vision.subtitle}
-              </p>
-              <span className="mt-auto inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal">
-                {content.docsLinkLabel}
-                <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
-              </span>
-            </a>
-          </div>
-        </section>
+        <div id="contenido" className="scroll-mt-navbar" />
 
         <div className="max-w-3xl mx-auto text-left w-full">
           
