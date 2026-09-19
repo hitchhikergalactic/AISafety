@@ -6,12 +6,16 @@ interface Props {
   title?: string;
   description?: string;
   lang?: 'es' | 'en';
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
 const { 
   title = "Seguridad de la IA en español | Hub para hispanohablantes", 
   description = "Más de 650M de personas hablan español. El debate sobre seguridad de la IA ocurre en inglés. iaS forma talento y lleva la voz hispanohablante al debate global", 
-  lang = "es" 
+  lang = "es",
+  ogTitle,
+  ogDescription
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, "https://aisafety.es");
@@ -34,6 +38,8 @@ const hreflangEN = new URL(enPath, 'https://aisafety.es');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {ogTitle && <meta property="og:title" content={ogTitle} />}
+    {ogDescription && <meta property="og:description" content={ogDescription} />}
     <meta name="google-site-verification" content="WkCE-fRxNDs_TgUk2CEVcDVK2AK4mfcDTa1A010svqA" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL.toString()} />

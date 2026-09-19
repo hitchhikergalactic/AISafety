@@ -196,7 +196,10 @@ export const valenciaFooterColumns: Record<
     },
     {
       title: 'Documentos',
-      links: [{ label: 'Biblioteca abierta', href: '/biblioteca-papers' }],
+      links: [
+        { label: 'Visión', href: '/vision' },
+        { label: 'Biblioteca abierta', href: '/biblioteca-papers' },
+      ],
     },
   ],
   en: [
@@ -225,7 +228,10 @@ export const valenciaFooterColumns: Record<
     },
     {
       title: 'Documents',
-      links: [{ label: 'Open library', href: '/biblioteca-papers' }],
+      links: [
+        { label: 'Vision', href: '/vision' },
+        { label: 'Open library', href: '/biblioteca-papers' },
+      ],
     },
   ],
 };

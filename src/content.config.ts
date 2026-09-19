@@ -39,7 +39,16 @@ const papersEnCollection = defineCollection({
   }),
 });
 
+const visionCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/vision' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
+  vision: visionCollection,
 };
