@@ -1,4 +1,4 @@
-# AISafety
+# iaS
 
 Sitio web de **AI safety España**: un proyecto en español sobre seguridad de IA, formación, comunidad, eventos entro otros. El sitio está orientado a informar,formar, conectar a personas interesadas en el tema y publicar contenido bilingüe en español e inglés.
 
