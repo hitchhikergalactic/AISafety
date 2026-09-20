@@ -17,6 +17,13 @@ description: "Mission, reach across the Spanish-speaking world, strategic pillar
 
 Spanish is spoken by [650 million people, 520 million of them as a native language](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/espanol-crece-30-millones-hablantes-ano-5-anterior), and it is an official language in Europe, in the Americas and in Africa, where [Equatorial Guinea is the only country that has it as an official language](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/conferencia-del-jefe-del-estado-de-guinea-ecuatorial-en-el); yet the conversation, training and resources on AI safety are produced mostly in English. As AI systems transform everything around us, the risks grow in the same proportion; this is a monumental transition, and it is in our hands whether it is positive or negative, fair or unfair.
 
+<figure class="mapa-idioma">
+<img class="mapa-claro" src="/mapa-espanol-mundo-claro.webp" alt="World map showing Spanish as an official language in Spain, Latin America and Equatorial Guinea, and as an important or significant minority language in countries such as the United States, Canada, Brazil, Morocco and Australia." width="1600" height="821" loading="lazy" decoding="async">
+<img class="mapa-oscuro" src="/mapa-espanol-mundo-oscuro.webp" alt="" width="1600" height="821" loading="lazy" decoding="async">
+<div class="mapa-leyenda"><span class="mapa-oficial">Official or co-official language</span><span class="mapa-importante">Majority language or important minority (over 25%), not official</span><span class="mapa-significativa">Significant minority (under 25%, but more than 500,000 speakers)</span></div>
+<figcaption>Spanish in the world. Data: Instituto Cervantes yearbook, <em>El español en el mundo 2023</em>. Map: El Comandante, Wikimedia Commons (public domain, CC0), recolored by iaS.</figcaption>
+</figure>
+
 AI safety initiatives in Spanish are still few and, for the most part, work separately, so that many talented people who care about these issues do not find a clear path between curiosity and a meaningful contribution in their own language. We believe this language gap is not a matter of representation but a safety failure that can be measured, because AI systems do not behave the same way in every language.
 
 iaS was born to close that gap.
