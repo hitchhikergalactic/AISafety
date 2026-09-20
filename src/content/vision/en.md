@@ -110,6 +110,6 @@ We collaborate with the hubs in [Mexico](https://www.aismx.org/) and [Colombia](
 
 iaS is at the beginning of its journey, but it rests on a base that has already been built: since February 2026 it has held regular events with more than 400 people registered, with an average rating of 4.63 out of 5 across 51 ratings from satisfaction surveys, and it has developed a bilingual glossary and a team of volunteers.
 
-The Spanish-speaking world adds up to hundreds of millions of speakers and there is no reason why AI safety should not have a thriving, authoritative and impactful movement in Spanish.
+Spanish has hundreds of millions of speakers and there is no reason why AI safety should not have a thriving, authoritative and impactful movement in Spanish.
 
 iaS wants to be that movement.
