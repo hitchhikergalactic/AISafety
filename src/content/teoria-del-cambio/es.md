@@ -23,7 +23,7 @@ El español lo hablan más de 650 millones de personas, unas 520 millones como l
 
 iaS sostiene que el cambio duradero en seguridad de la IA en el mundo hispanohablante nace de tres elementos que consideramos insuficientes en español, a saber, evidencia propia, personas que entienden los riesgos y saben actuar, y una organización estable con la que instituciones y medios puedan hablar; la forma más eficaz de construirlos es una infraestructura común que opera íntegramente en español, que informa al público, que acompaña a las personas desde su primera exposición hasta una contribución concreta y que produce por el camino evidencia y contenido citables.
 
-En resumen: **si construimos en español la infraestructura que falta (formación, evidencia, red y presencia institucional) y hacemos fácil entrar en ella, produciremos las personas y el conocimiento que hacen la IA más segura para quienes viven en este idioma.**
+En resumen: **si construimos en español la infraestructura que falta (formación, evidencia, red y presencia institucional) y hacemos fácil entrar en ella, produciremos las personas y el conocimiento que hacen la IA más segura para todos.**
 
 ---
 
@@ -72,14 +72,14 @@ Cifras del CRM de iaS a 19 de septiembre de 2026; las personas del equipo no se 
 ### Resultados esperados
 
 1. **Una base de evidencia en español.** iaS documenta cómo fallan los sistemas de IA en este idioma y traslada esa evidencia a reguladores, desarrolladores y medios, que la citan como fuente.
-2. **Un itinerario de talento hispano.** Personas que pasan de su primera sesión a formarse, contribuir y trabajar en seguridad de la IA (política, investigación, industria o sociedad civil), sin que el idioma sea una barrera.
+2. **Un itinerario de talento.** Personas que pasan de su primera sesión a formarse, contribuir y trabajar en seguridad de la IA (política, investigación, industria o sociedad civil), sin que el idioma sea una barrera.
 3. **Mayor alfabetización y debate público en español.** La seguridad de la IA entra en la conversación de universidades, empresas y medios del mundo hispanohablante, y quienes participan en ella actúan con más criterio.
 4. **Una red de delegaciones.** El modelo probado en las sesiones en línea se replica en otras ciudades y países del mundo hispanohablante, empezando por Valencia, con marca, materiales y procedimientos compartidos.
 5. **Alianzas institucionales.** Universidades, administraciones, organizaciones de la sociedad civil y empresas recurren a iaS para formación, colaboración e interlocución sobre seguridad de la IA.
 
 ### Impacto
 
-**El desarrollo y el despliegue de la IA es seguro y justo también en español, y las personas que viven en este idioma participan en las decisiones que lo determinan.**
+**El desarrollo y el despliegue de la IA es seguro y justo también en español, y las personas que lo hablan participan en las decisiones que lo determinan.**
 
 ### Cómo lo medimos
 

@@ -23,7 +23,7 @@ Spanish is spoken by more than 650 million people, about 520 million of them as 
 
 iaS holds that lasting change in AI safety in the Spanish-speaking world comes from three elements that we consider insufficient in Spanish, namely, evidence of our own, people who understand the risks and know how to act, and a stable organization that institutions and media can talk to; the most effective way to build them is a common infrastructure that operates entirely in Spanish, that informs the public, that accompanies people from their first exposure to a concrete contribution and that produces citable evidence and content along the way.
 
-In short: **if we build in Spanish the infrastructure that is missing (training, evidence, network and institutional presence) and make it easy to enter, we will produce the people and the knowledge that make AI safer for those who live in this language.**
+In short: **if we build in Spanish the infrastructure that is missing (training, evidence, network and institutional presence) and make it easy to enter, we will produce the people and the knowledge that make AI safer for everyone.**
 
 ---
 
@@ -72,14 +72,14 @@ Figures from the iaS CRM as of September 19, 2026; team members are not counted 
 ### Expected outcomes
 
 1. **An evidence base in Spanish.** iaS documents how AI systems fail in this language and takes that evidence to regulators, developers and media, who cite it as a source.
-2. **A pathway for Spanish-speaking talent.** People who go from their first session to training, contributing and working in AI safety (policy, research, industry or civil society), without language being a barrier.
+2. **A pathway for talent.** People who go from their first session to training, contributing and working in AI safety (policy, research, industry or civil society), without language being a barrier.
 3. **Greater literacy and public debate in Spanish.** AI safety enters the conversation of universities, companies and media across the Spanish-speaking world, and those who take part in it act with better judgment.
 4. **A network of chapters.** The model proven in the online sessions is replicated in other cities and countries of the Spanish-speaking world, starting with Valencia, with a shared brand, materials and procedures.
 5. **Institutional partnerships.** Universities, administrations, civil society organizations and companies turn to iaS for training, collaboration and dialogue on AI safety.
 
 ### Impact
 
-**The development and deployment of AI is safe and fair in Spanish too, and the people who live in this language take part in the decisions that shape it.**
+**The development and deployment of AI is safe and fair in Spanish too, and the people who speak it take part in the decisions that shape it.**
 
 ### How we measure it
 

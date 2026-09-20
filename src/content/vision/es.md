@@ -110,6 +110,6 @@ Colaboramos con los hubs de [México](https://www.aismx.org/) y [Colombia](https
 
 iaS está al comienzo de su andadura, pero se apoya en una base ya construida: desde febrero de 2026 ha celebrado eventos regulares con más de 400 personas inscritas, con una valoración media de 4,63 sobre 5 en 51 valoraciones de las encuestas de satisfacción, y ha desarrollado un glosario bilingüe y un equipo de personas voluntarias.
 
-El mundo hispanohablante suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
+El español suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
 
 iaS quiere ser ese movimiento.
