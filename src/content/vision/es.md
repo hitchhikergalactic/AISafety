@@ -17,6 +17,13 @@ description: "Misión, alcance en el mundo hispanohablante, pilares estratégico
 
 El español lo hablan [650 millones de personas, 520 millones de ellas como lengua nativa](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/espanol-crece-30-millones-hablantes-ano-5-anterior), y es lengua oficial en Europa, en América y en África, donde [Guinea Ecuatorial es el único país que la tiene como lengua oficial](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/conferencia-del-jefe-del-estado-de-guinea-ecuatorial-en-el); sin embargo, la conversación, la formación y los recursos sobre seguridad de la IA se producen sobre todo en inglés. A medida que los sistemas de IA transforman todo lo que nos rodea, los riesgos crecen en la misma proporción; se trata de una transición monumental, y está en nuestra mano que sea positiva o negativa, justa o injusta.
 
+<figure class="mapa-idioma">
+<img class="mapa-claro" src="/mapa-espanol-mundo-claro.webp" alt="Mapa del mundo que colorea el español como lengua oficial en España, Hispanoamérica y Guinea Ecuatorial, y como minoría importante o significativa en países como Estados Unidos, Canadá, Brasil, Marruecos y Australia." width="1600" height="821" loading="lazy" decoding="async">
+<img class="mapa-oscuro" src="/mapa-espanol-mundo-oscuro.webp" alt="" width="1600" height="821" loading="lazy" decoding="async">
+<div class="mapa-leyenda"><span class="mapa-oficial">Lengua oficial</span><span class="mapa-importante">Lengua mayoritaria o minoría importante (más del 25%), sin ser oficial</span><span class="mapa-significativa">Minoría significativa (menos del 25%, pero más de 500.000 hablantes)</span></div>
+<figcaption>El español en el mundo. Datos: Anuario del Instituto Cervantes, <em>El español en el mundo 2023</em>. Mapa: El Comandante, Wikimedia Commons (dominio público, CC0), recolorado por iaS.</figcaption>
+</figure>
+
 Las iniciativas de seguridad de la IA en español son todavía pocas y trabajan, en buena medida, por separado, de modo que muchas personas con talento que se preocupan por estos temas no encuentran un camino claro entre la curiosidad y una contribución significativa en su propia lengua. Creemos que esta brecha lingüística no es una cuestión de representación, sino un fallo de seguridad que puede medirse, porque los sistemas de IA no se comportan igual en todos los idiomas.
 
 iaS nace para cerrar esa brecha.

@@ -390,3 +390,65 @@ h5 {
 .doc-prose tbody tr {
   border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
 }
+
+/* Mapa del idioma (figura con dos versiones, según el tema): en escritorio es más ancho que la columna de texto, como las tablas */
+.doc-prose .mapa-idioma {
+  margin-block: 2rem;
+}
+.doc-prose .mapa-idioma img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.doc-prose .mapa-idioma img.mapa-oscuro {
+  display: none;
+}
+.dark .doc-prose .mapa-idioma img.mapa-oscuro {
+  display: block;
+}
+.dark .doc-prose .mapa-idioma img.mapa-claro {
+  display: none;
+}
+@media (min-width: 55rem) {
+  .doc-prose .mapa-idioma {
+    margin-inline: -6.5rem;
+  }
+}
+.doc-prose .mapa-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+.doc-prose .mapa-leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.doc-prose .mapa-leyenda span::before {
+  content: '';
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.25rem;
+  background: var(--color-leyenda);
+}
+.doc-prose .mapa-oficial {
+  --color-leyenda: var(--color-principal);
+}
+.doc-prose .mapa-importante {
+  --color-leyenda: color-mix(in srgb, var(--color-principal) 55%, transparent);
+}
+.doc-prose .mapa-significativa {
+  --color-leyenda: color-mix(in srgb, var(--color-principal) 26%, transparent);
+}
+.doc-prose figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
