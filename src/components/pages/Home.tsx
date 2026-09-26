@@ -98,13 +98,13 @@ export default function Home({ lang }: HomeProps) {
             {/* 1. HERO SECTION */}
             <Section 
                 id="hero" 
-                className="relative flex items-center justify-center [&>div]:w-full pt-28 md:pt-40 pb-14 md:pb-14 overflow-hidden"
+                className="relative flex items-center justify-center [&>div]:w-full pt-28 md:pt-[146px] pb-14 md:pb-14 overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
                     <h1 className="mb-2 md:mb-3 !leading-[1.15] !text-[clamp(1.35rem,calc(5.8vw-0.25rem),3.9rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
                         {t.hero.h1}
                     </h1>
-                    <p className="bajada c !mb-0 !text-[clamp(1.05rem,3.9vw,1.55rem)] max-w-[46rem] mx-auto">{parseText(t.hero.h2)}</p>
+                    <p className="bajada c !mb-0 !text-[clamp(1.05rem,3.9vw,1.55rem)] max-w-[47rem] mx-auto">{parseText(t.hero.h2)}</p>
                 </div>
                 <div className="max-w-[50rem] mx-auto">
                     <div className="grid auto-rows-fr md:flex md:flex-row md:justify-center gap-3 md:gap-4 pt-6 md:pt-7">
