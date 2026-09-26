@@ -98,16 +98,16 @@ export default function Home({ lang }: HomeProps) {
             {/* 1. HERO SECTION */}
             <Section 
                 id="hero" 
-                className="relative min-h-screen flex items-center justify-center pt-16 md:pt-32 pb-16 md:pb-24 overflow-hidden"
+                className="relative min-h-[100svh] flex items-center justify-center pt-24 md:pt-32 pb-10 md:pb-16 overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
-                    <h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
+                    <h1 className="mb-2 md:mb-3 !leading-[1.15] text-secundarios-dark dark:text-secundarios-light text-balance">
                         {t.hero.h1}
                     </h1>
-                    <p className="bajada c">{parseText(t.hero.h2)}</p>
+                    <p className="bajada c !mb-0">{parseText(t.hero.h2)}</p>
                 </div>
                 <div className="max-w-2xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-4 pt-12">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-8">
                         <button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaSecondary}
                         </button>
@@ -115,6 +115,11 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaPrimary}
                         </button>
                     </div>
+                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-5 md:mt-6 flex flex-col items-center gap-1 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
+                        <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.supportedBy}</span>
+                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" className="h-20 md:h-28 -my-4 md:-my-5 w-auto dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" className="h-20 md:h-28 -my-4 md:-my-5 w-auto hidden dark:block" />
+                    </a>
                 </div>
             </Section>
 
