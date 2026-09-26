@@ -65,19 +65,19 @@ export const CollaborativeCard: React.FC<{
                             <img 
                                 src={logoSrc} 
                                 alt={text} 
-                                className="max-h-24 w-auto dark:hidden"
+                                className="max-h-24 max-w-full w-auto dark:hidden"
                             />
                             <img 
                                 src={logoWhiteSrc} 
                                 alt={text} 
-                                className="max-h-24 w-auto hidden dark:block"
+                                className="max-h-24 max-w-full w-auto hidden dark:block"
                             />
                         </>
                     ) : (
                         <img 
                             src={logoSrc} 
                             alt={text} 
-                            className="max-h-24 w-auto"
+                            className="max-h-24 max-w-full w-auto"
                         />
                     )}
                 </>
