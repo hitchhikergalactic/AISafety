@@ -32,6 +32,8 @@ import logow4ias from '@assets/logos__w4ais.svg';
 import logow4iaswhite from '@assets/logos__w4ais-white.svg';
 import logoColombia from '@assets/logos__ai-safety-colombia.svg';
 import logoColombiawhite from '@assets/logos__ai-safaty-colombia-white.svg';
+import logoLisboa from '@assets/logos__lisbon_ai_safety_hub.svg';
+import logoLisboaWhite from '@assets/logos__lisbon_ai_safety_hub_white.svg';
 import undefinedImgur from '@assets/undefined_imgur.png';
 
 type Language = 'es' | 'en';
@@ -122,18 +124,21 @@ export default function Home({ lang }: HomeProps) {
                     <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
                     <p>{parseText(t.collaborators.text)}</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-center">
-                    <div className="col-span-1 md:col-span-5">
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-10 items-center">
-                            {/* Devolvemos los objetos originales de Astro tal como los espera tu componente interno */}
-                            <CollaborativeCard href="https://www.enais.co/" text="ENAIS" logo={logoENAIS} logoWhite={logoENAISWhite} />
-                            <CollaborativeCard href="https://bluedot.org/" text="BlueDot" logo={logoBlueDot} logoWhite={logoBlueDotWhite} />
-                            <CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} />
-                            <CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} />
-                            <CollaborativeCard href="https://www.baish.com.ar/es" text="BAISH" logo={logoBAISH} logoWhite={logoBAISHWhite} />
-                            <CollaborativeCard href="https://www.aismx.org/" text="MEXICO" logo={logoMEXICO} logoWhite={logoMEXICOWhite} />
-                            <CollaborativeCard href="https://www.women4aisafety.com/" text="w4ias" logo={logow4ias} logoWhite={logow4iaswhite} />
-                            <CollaborativeCard href="https://aisafetycolombia.org/" text="colombia" logo={logoColombia} logoWhite={logoColombiawhite} />
+                {/* Primera fila: redes internacionales. Segunda fila: hubs locales iberoamericanos */}
+                <div className="flex flex-col gap-10 md:gap-16">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-10 items-center">
+                        <CollaborativeCard href="https://www.enais.co/" text="European Network for AI Safety" logo={logoENAIS} logoWhite={logoENAISWhite} />
+                        <CollaborativeCard href="https://bluedot.org/" text="BlueDot Impact" logo={logoBlueDot} logoWhite={logoBlueDotWhite} />
+                        <CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} />
+                        <CollaborativeCard href="https://www.women4aisafety.com/" text="Women4AISafety" logo={logow4ias} logoWhite={logow4iaswhite} />
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-2 md:gap-y-10 items-center">
+                        <CollaborativeCard href="https://www.aisafetybcn.org/" text="AI Safety Barcelona" logo={logoAISafetyBCN} logoWhite={logoAISafetyBCNWhite} />
+                        <CollaborativeCard href="https://www.lisbonaisafetyhub.org/" text="Lisbon AI Safety Hub" logo={logoLisboa} logoWhite={logoLisboaWhite} />
+                        <CollaborativeCard href="https://www.aismx.org/" text="AI Safety México" logo={logoMEXICO} logoWhite={logoMEXICOWhite} />
+                        <CollaborativeCard href="https://aisafetycolombia.org/" text="AI Safety Colombia" logo={logoColombia} logoWhite={logoColombiawhite} />
+                        <div className="col-span-2 md:col-span-1 justify-self-center w-1/2 md:w-full">
+                            <CollaborativeCard href="https://www.baish.com.ar/es" text="Buenos Aires AI Safety Hub" logo={logoBAISH} logoWhite={logoBAISHWhite} />
                         </div>
                     </div>
                 </div>
