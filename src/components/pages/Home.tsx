@@ -95,11 +95,10 @@ export default function Home({ lang }: HomeProps) {
                 hiddenFields={modalType === 'event' ? [{ name: 'evento_detalles', value: t.upcoming.eventTitle }] : []}
             />
             
-            {/* 1. HERO SECTION + franja de respaldo: juntos ocupan la primera pantalla */}
-            <div className="min-h-[100svh] flex flex-col">
+            {/* 1. HERO SECTION */}
             <Section 
                 id="hero" 
-                className="relative flex-1 flex items-center justify-center [&>div]:w-full pt-24 md:pt-32 pb-10 md:pb-12 overflow-hidden"
+                className="relative flex items-center justify-center [&>div]:w-full pt-28 md:pt-40 pb-14 md:pb-14 overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
                     <h1 className="mb-2 md:mb-3 !leading-[1.15] !text-[clamp(1.35rem,calc(5.8vw-0.25rem),3.9rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
@@ -109,24 +108,24 @@ export default function Home({ lang }: HomeProps) {
                 </div>
                 <div className="max-w-[50rem] mx-auto">
                     <div className="grid auto-rows-fr md:flex md:flex-row md:justify-center gap-3 md:gap-4 pt-6 md:pt-7">
-                        <button onClick={() => openModal('subscribe')} className="py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                        <button onClick={() => openModal('subscribe')} className="py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl border-2 border-principal bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaSecondary}
                         </button>
-                        <button onClick={() => window.open('https://seguridaddelaia.substack.com', '_blank')} className="py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                        <a href={lang === 'es' ? '/seminario-bluedot-spain' : '/en/seminario-bluedot-spain'} className="flex items-center justify-center text-center py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl border-2 border-secundarios-dark dark:border-secundarios-light bg-transparent text-secundarios-dark dark:text-secundarios-light no-underline font-bold hover:bg-secundarios-dark/5 dark:hover:bg-white/10 transition-all cursor-pointer">
                             {t.hero.ctaPrimary}
-                        </button>
+                        </a>
                     </div>
                 </div>
             </Section>
 
             {/* Franja de respaldo. Logo oficial sin tocar: el SVG trae margen transparente (lienzo 261×101), que se compensa con margen negativo */}
-            <div className="bg-[#e9e9e9] dark:bg-[#2b2b2b] border-y border-[#d9d9d9] dark:border-white/10">
-                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 py-8 md:py-10 flex flex-col items-center gap-2 md:gap-3 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
+            <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#d9d9d9] dark:border-white/10">
+                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 h-[92px] md:h-[100px] lg:h-[110px] flex flex-col items-center justify-center gap-2 lg:gap-2.5 text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80">
                     <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.supportedBy}</span>
-                    <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" className="w-[246px] h-auto -my-[29px] dark:hidden" />
-                    <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" className="w-[246px] h-auto -my-[29px] hidden dark:block" />
+                    {/* Logo visible: 200 px en móvil, 230 px en tableta, 260 px en escritorio */}
+                    <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" className="w-[237px] md:w-[272px] lg:w-[308px] h-auto -my-[31px] md:-my-[35px] lg:-my-[40px] dark:hidden" />
+                    <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" className="w-[237px] md:w-[272px] lg:w-[308px] h-auto -my-[31px] md:-my-[35px] lg:-my-[40px] hidden dark:block" />
                 </a>
-            </div>
             </div>
 
             {/* 2. COLABORADORES */}
