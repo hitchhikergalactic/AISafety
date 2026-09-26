@@ -10,8 +10,8 @@ export const translations = {
     hero: {
       location: "",
       h1: "Hub de seguridad de la IA",
-      h2: "**iaS** es el referente en seguridad de la inteligencia artificial en español: formamos y acompañamos a profesionales en la orientación de su carrera, y apoyamos proyectos dedicados a construir una **IA más segura**.",
-      ctaPrimary: "Quiero entender qué es la seguridad de la IA",
+      h2: "**iaS** es el referente en seguridad de la inteligencia artificial en español: formamos y acompañamos a profesionales en la orientación de su carrera, y apoyamos proyectos dedicados a construir una **IA más segura**.",
+      ctaPrimary: "Qué es la seguridad de la IA",
       ctaSecondary: "¡Quiero formar parte!",
       supportedBy: "Con el respaldo de",
     }, 
