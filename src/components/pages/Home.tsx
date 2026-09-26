@@ -100,28 +100,28 @@ export default function Home({ lang }: HomeProps) {
             {/* 1. HERO SECTION */}
             <Section 
                 id="hero" 
-                className="relative min-h-[100svh] flex items-center justify-center pt-24 md:pt-32 pb-10 md:pb-16 overflow-hidden"
+                className="relative min-h-[100svh] flex items-center justify-center [&>div]:w-full pt-24 md:pt-32 pb-10 md:pb-16 overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
-                    <h1 className="mb-2 md:mb-3 !leading-[1.15] text-secundarios-dark dark:text-secundarios-light text-balance">
+                    <h1 className="mb-2 md:mb-3 !leading-[1.15] !text-[clamp(1.35rem,calc(5.8vw-0.25rem),3.9rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
                         {t.hero.h1}
                     </h1>
-                    <p className="bajada c !mb-0">{parseText(t.hero.h2)}</p>
+                    <p className="bajada c !mb-0 !text-[clamp(1.05rem,3.9vw,1.55rem)] max-w-[46rem] mx-auto">{parseText(t.hero.h2)}</p>
                 </div>
-                <div className="max-w-2xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-8">
-                        <button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                <div className="max-w-[50rem] mx-auto">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-6 md:pt-7">
+                        <button onClick={() => openModal('subscribe')} className="flex-1 md:basis-0 py-3 px-5 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaSecondary}
                         </button>
-                        <button onClick={() => window.open('https://seguridaddelaia.substack.com', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                        <button onClick={() => window.open('https://seguridaddelaia.substack.com', '_blank')} className="flex-1 md:basis-0 py-3 px-5 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
                             {t.hero.ctaPrimary}
                         </button>
                     </div>
-                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-6 md:mt-8 flex flex-col items-center gap-2 md:gap-3 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
+                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-6 md:mt-7 flex flex-col items-center gap-2 md:gap-3 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
                         <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.supportedBy}</span>
-                        {/* En escritorio y tableta, mismo ancho que uno de los botones */}
-                        <img src={getImageSrc(logoBlueDotRecortado)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[calc(50%-0.5rem)] h-auto dark:hidden" />
-                        <img src={getImageSrc(logoBlueDotRecortadoWhite)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[calc(50%-0.5rem)] h-auto hidden dark:block" />
+                        {/* 328 px en escritorio y tableta */}
+                        <img src={getImageSrc(logoBlueDotRecortado)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[328px] h-auto dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotRecortadoWhite)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[328px] h-auto hidden dark:block" />
                     </a>
                 </div>
             </Section>
