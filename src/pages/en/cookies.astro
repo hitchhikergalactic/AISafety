@@ -1,0 +1,17 @@
+---
+// src/pages/en/cookies.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DocumentPage from '../../components/pages/DocumentPage.tsx';
+import { cookiesContent } from '../../data/cookies';
+
+const entry = await getEntry('cookies', 'en');
+const { Content } = await render(entry!);
+const c = cookiesContent.en;
+---
+
+<Layout lang="en" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
+  <DocumentPage lang="en" header={c} subject="Nuevo suscriptor desde Cookies" client:load>
+    <Content />
+  </DocumentPage>
+</Layout>

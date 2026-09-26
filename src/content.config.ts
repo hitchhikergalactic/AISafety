@@ -56,9 +56,18 @@ const teoriaDelCambioCollection = defineCollection({
   }),
 });
 
+const cookiesCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/cookies' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
   vision: visionCollection,
   teoriaDelCambio: teoriaDelCambioCollection,
+  cookies: cookiesCollection,
 };

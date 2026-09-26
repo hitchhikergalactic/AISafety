@@ -15,6 +15,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
   const t = translations[lang];
+  const langPrefix = lang === 'es' ? '' : '/en';
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -106,6 +107,10 @@ const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
         </div>
         <div className="pt-8 mt-8 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
           © {t.footer.copyright}.
+          <span className="mx-2" aria-hidden="true">·</span>
+          <a href={`${langPrefix}/cookies`} className="hover:text-principal transition-colors">
+            Cookies
+          </a>
         </div>
       </div>
     </footer>

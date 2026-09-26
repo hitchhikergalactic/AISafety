@@ -306,4 +306,22 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/seminario-bluedot-spain/detectando-sesgos-contextuales-en-modelos-de-lenguaje"/>
   </url>
+
+  <!-- Cookies -->
+  <url>
+    <loc>https://aisafety.es/cookies</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/cookies"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/cookies</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/cookies"/>
+  </url>
 </urlset>

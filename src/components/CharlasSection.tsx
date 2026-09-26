@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuMail, LuGlobe } from 'react-icons/lu';
 import { listaDeCharlas } from '@data/charlas';
@@ -39,8 +40,6 @@ const getYoutubeVideoId = (url: string) => {
 };
 
 const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang = 'es' }) => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   // Si no se provee charlaActivaProp, tomamos la primera de la lista
   const charlaActiva = charlaActivaProp || listaDeCharlas[0];
   
@@ -147,42 +146,16 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
             )}
 
             {videoYoutubeEmbed && (
-              <div className="w-full max-w-[420px] mb-5 overflow-hidden rounded-md border border-secundarios-gray/10 dark:border-secundarios-gray/10 ">
-                {isVideoLoaded ? (
-                  <div className="relative w-full aspect-video">
-                    <iframe
-                      className="absolute inset-0 h-full w-full"
-                      src={videoYoutubeEmbed}
-                      title={`${expositor.nombre} ${expositor.apellido} - YouTube video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setIsVideoLoaded(true)}
-                    className="relative block w-full aspect-video text-left group"
-                    aria-label={lang === 'es' ? 'Reproducir video de YouTube' : 'Play YouTube video'}
-                  >
-                    <img
-                      src={youtubeThumbnail}
-                      alt={lang === 'es' ? 'Miniatura del video de YouTube' : 'YouTube video thumbnail'}
-                      className="absolute inset-0 h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/20 transition-colors" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-principal shadow-lg transition-transform duration-200 group-hover:scale-105">
-                        <svg viewBox="0 0 24 24" className="h-8 w-8 rounded-md translate-x-0.1" aria-hidden="true">
-                          <path fill="currentColor" d="M8 5v14l11-7z" />
-                        </svg>
-                      </span>
-                    </div>
-                  </button>
-                )}
+              <div className="w-full max-w-[420px] mb-5">
+                <EmbedAlPulsar
+                  lang={lang}
+                  proveedor="youtube"
+                  src={videoYoutubeEmbed}
+                  title={`${expositor.nombre} ${expositor.apellido} - YouTube video`}
+                  miniatura={youtubeThumbnail}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  className="w-full aspect-video overflow-hidden rounded-md border border-secundarios-gray/10 dark:border-secundarios-gray/10"
+                />
               </div>
             )}
 
