@@ -13,7 +13,7 @@ export const translations = {
       h2: "**iaS** es el referente en seguridad de la inteligencia artificial en español: formamos y acompañamos a profesionales en la orientación de su carrera, y apoyamos proyectos dedicados a construir una **IA más segura**.",
       ctaPrimary: "Quiero entender qué es la seguridad de la IA",
       ctaSecondary: "¡Quiero formar parte!",
-      supportedBy: "Con el apoyo de",
+      supportedBy: "Con el respaldo de",
     }, 
     why: {
       title: "¿Por qué un Hub de seguridad de la IA en español?",
@@ -141,7 +141,7 @@ export const translations = {
       h2: "**iaS** is the reference hub for AI safety in Spanish: we train and support professionals in their career development, and back projects dedicated to building **safer AI**.",
       ctaPrimary: "I want to understand what AI safety is",
       ctaSecondary: "I want to be part of it!",
-      supportedBy: "Supported by",
+      supportedBy: "Backed by",
     },
     why: {
         title: "Why an AI safety Hub in Spanish?",

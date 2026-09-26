@@ -20,6 +20,8 @@ import logoENAIS from '@assets/logos__european_network_for_AI_safety.svg';
 import logoENAISWhite from '@assets/logos__european_network_for_AI_safety_white.svg';
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
 import logoBlueDotWhite from '@assets/logos__bluedot_impact_white.svg';
+import logoBlueDotRecortado from '@assets/logos__bluedot_impact_recortado.svg';
+import logoBlueDotRecortadoWhite from '@assets/logos__bluedot_impact_recortado_white.svg';
 import logoAISafetyCom from '@assets/logos__aisafety_com.svg';
 import logoAISafetyComWhite from '@assets/logos__aisafety_com_white.svg';
 import logoAISafetyBCN from '@assets/logos__ai_safety_barcelona.svg';
@@ -115,10 +117,11 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaPrimary}
                         </button>
                     </div>
-                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-5 md:mt-6 flex flex-col items-center gap-1 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
+                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-6 md:mt-8 flex flex-col items-center gap-2 md:gap-3 text-secundarios-dark dark:text-secundarios-light transition-opacity hover:opacity-80">
                         <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.supportedBy}</span>
-                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" className="h-20 md:h-28 -my-4 md:-my-5 w-auto dark:hidden" />
-                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" className="h-20 md:h-28 -my-4 md:-my-5 w-auto hidden dark:block" />
+                        {/* En escritorio y tableta, mismo ancho que uno de los botones */}
+                        <img src={getImageSrc(logoBlueDotRecortado)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[calc(50%-0.5rem)] h-auto dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotRecortadoWhite)} alt="BlueDot Impact" className="w-[72%] max-w-[260px] md:max-w-none md:w-[calc(50%-0.5rem)] h-auto hidden dark:block" />
                     </a>
                 </div>
             </Section>
