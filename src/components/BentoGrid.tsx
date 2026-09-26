@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
@@ -30,18 +30,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
     if (img.default && typeof img.default === 'string') return img.default;
     return '';
   };
-
-  // --- PASO 1: CARGAR EL SCRIPT DE LUMA ---
-  useEffect(() => {
-    const scriptId = 'luma-checkout';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://embed.lu.ma/checkout-button.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <section id="eventos" className="py-4 md:py-10 px-5">

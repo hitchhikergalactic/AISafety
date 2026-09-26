@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { translations } from '@locales/translations';
 import Navbar from '@components/Navbar';
 import SeminarioHero from '@components/SeminarioHero';
@@ -26,18 +26,6 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
   const openModal = () => {
     setShowModal(true);
   };
-
-  // Cargar script de Luma
-  useEffect(() => {
-    const scriptId = 'luma-checkout';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://embed.lu.ma/checkout-button.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <>

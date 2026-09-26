@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar';
 import ProgramDetails from '@components/ProgramDetails';
 import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
 import ValenciaFooter from '@components/valencia/ValenciaFooter';
+import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import {
@@ -113,16 +114,12 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
         <section id="eventos" className="scroll-mt-anchorbar w-full max-w-3xl mx-auto pt-16 md:pt-24 text-center">
           <h3 className={sectionTitle}>{content.eventsTitle}</h3>
           <div className="bg-secundarios-gray dark:bg-white/5 rounded-anthro p-4 md:p-10 flex justify-center">
-            <iframe
+            <EmbedAlPulsar
+              lang={lang}
+              proveedor="luma"
               src={valenciaLumaCalendarEmbedUrl}
-              width="600"
-              height="450"
-              frameBorder="0"
-              allowFullScreen
-              aria-hidden="false"
-              tabIndex={0}
               title={content.eventsTitle}
-              className="w-full max-w-[600px] h-[450px] rounded-anthro border border-secundarios-dark/15"
+              className="mx-auto w-full max-w-[600px] h-[450px] overflow-hidden rounded-anthro border border-secundarios-dark/15 bg-white dark:bg-white/5"
             />
           </div>
           <div className="mt-6 flex flex-col items-center gap-3">

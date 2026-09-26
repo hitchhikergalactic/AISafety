@@ -1,5 +1,6 @@
 // Plugin HAST de Sätteri (el procesador de Markdown de Astro 7) para los documentos fundacionales
-// (src/content/vision/ y src/content/teoria-del-cambio/).
+// (src/content/vision/ y src/content/teoria-del-cambio/) y la política de cookies (src/content/cookies/), que usan
+// la misma página (DocumentPage).
 // Se ejecuta al compilar, así que el HTML servido ya lo lleva, y solo actúa sobre esos archivos: no afecta a los
 // papers ni a ningún otro Markdown.
 //
@@ -15,7 +16,7 @@ const BRAND = 'BlueDot Impact';
 // Caracteres a partir de los cuales un elemento de lista cuenta como largo
 const umbralLiLargo = 200;
 
-const isVisionFile = (ctx) => /[\\/]content[\\/](vision|teoria-del-cambio)[\\/]/.test(ctx.fileURL?.pathname ?? '');
+const isVisionFile = (ctx) => /[\\/]content[\\/](vision|teoria-del-cambio|cookies)[\\/]/.test(ctx.fileURL?.pathname ?? '');
 
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 

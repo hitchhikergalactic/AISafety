@@ -69,6 +69,10 @@ const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang }) => {
 
         <div className="pt-8 mt-12 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
           © {t.footer.copyright}.
+          <span className="mx-2" aria-hidden="true">·</span>
+          <a href={`${langPrefix}/cookies`} className="hover:text-principal transition-colors">
+            Cookies
+          </a>
         </div>
       </div>
     </footer>

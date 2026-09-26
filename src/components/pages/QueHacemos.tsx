@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
+import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { translations } from '@locales/translations';
 import { queHacemosContent } from '@data/quehacemos';
 import { visionContent } from '@data/vision';
@@ -120,17 +121,15 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
 
           {/* Video Section */}
           <section className="mb-20 md:mb-16">
-            <div className="relative w-full aspect-video rounded-md overflow-hidden">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/SCLpMS6f1CE?si=CHZd9bh_TECN4exW"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+            <EmbedAlPulsar
+              lang={lang}
+              proveedor="youtube"
+              src="https://www.youtube-nocookie.com/embed/SCLpMS6f1CE?rel=0&modestbranding=1"
+              title="YouTube video player"
+              miniatura="https://img.youtube.com/vi/SCLpMS6f1CE/maxresdefault.jpg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="w-full aspect-video rounded-md overflow-hidden"
+            />
           </section>
 
           <section className="mb-20 md:mb-52"></section>
