@@ -20,8 +20,6 @@ import logoENAIS from '@assets/logos__european_network_for_AI_safety.svg';
 import logoENAISWhite from '@assets/logos__european_network_for_AI_safety_white.svg';
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
 import logoBlueDotWhite from '@assets/logos__bluedot_impact_white.svg';
-import heroIlustracion880 from '@assets/hero-ilustracion-880.webp';
-import heroIlustracion480 from '@assets/hero-ilustracion-480.webp';
 import logoAISafetyCom from '@assets/logos__aisafety_com.svg';
 import logoAISafetyComWhite from '@assets/logos__aisafety_com_white.svg';
 import logoAISafetyBCN from '@assets/logos__ai_safety_barcelona.svg';
@@ -97,56 +95,25 @@ export default function Home({ lang }: HomeProps) {
                 hiddenFields={modalType === 'event' ? [{ name: 'evento_detalles', value: t.upcoming.eventTitle }] : []}
             />
             
-            {/* 1. HERO SECTION: texto a la izquierda e ilustración a la derecha (debajo en tableta y móvil) */}
+            {/* 1. HERO SECTION */}
             <Section 
                 id="hero" 
-                className="relative flex items-center justify-center [&>div]:w-full pt-28 md:pt-[146px] pb-14 md:pb-16 overflow-hidden"
+                className="relative min-h-screen flex items-center justify-center pt-16 md:pt-32 pb-16 md:pb-24 overflow-hidden"
             >
-                <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] gap-10 lg:gap-14 items-center">
-                    <div className="text-left z-10 animate-fade-in-up">
-                        <span className="block mb-3 text-sm md:text-base font-semibold text-principal">{t.hero.eyebrow}</span>
-                        <h1 className="!mb-4 !leading-[1.1] !text-[clamp(1.75rem,calc(3.2vw+0.6rem),3.4rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
-                            {t.hero.h1}
-                        </h1>
-                        <p className="bajada !mb-0 !text-[clamp(1.05rem,calc(0.9vw+0.75rem),1.3rem)] !leading-[1.5] max-w-[38rem]">{parseText(t.hero.intro)}</p>
-
-                        <div className="grid auto-rows-fr md:flex md:flex-row md:justify-start gap-3 md:gap-4 pt-6 md:pt-7">
-                            <button onClick={() => openModal('subscribe')} className="py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl border-2 border-principal bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
-                                {t.hero.ctaSecondary}
-                            </button>
-                            <a href={lang === 'es' ? '/seminario-bluedot-spain' : '/en/seminario-bluedot-spain'} className="flex items-center justify-center text-center py-3 px-8 md:text-[1.0625rem] md:leading-snug lg:whitespace-nowrap rounded-2xl border-2 border-secundarios-dark dark:border-secundarios-light bg-transparent text-secundarios-dark dark:text-secundarios-light no-underline font-bold hover:bg-secundarios-dark/5 dark:hover:bg-white/10 transition-all cursor-pointer">
-                                {t.hero.ctaPrimary}
-                            </a>
-                        </div>
-
-                        {/* Prueba social: misma cifra que «Cifras que impactan» */}
-                        <span className="block mt-5 text-sm md:text-base text-secundarios-dark/70 dark:text-secundarios-light/70">
-                            {`${t.why.impactFigures.item2.target} ${t.why.impactFigures.item2_1}`}
-                        </span>
-
-                        {/* Respaldo. Logo oficial sin tocar: el SVG trae margen transparente (lienzo 261×101), que se compensa con margen negativo */}
-                        <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-3 text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80">
-                            <span className="whitespace-nowrap text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.supportedBy}</span>
-                            {/* Logo visible: 150 px */}
-                            <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={178} height={69} className="w-[178px] max-w-none h-auto -my-[23px] -mx-[14px] dark:hidden" />
-                            <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={178} height={69} className="w-[178px] max-w-none h-auto -my-[23px] -mx-[14px] hidden dark:block" />
-                        </a>
-                    </div>
-
-                    {/* Ilustración provisional hasta tener una foto de una sesión */}
-                    <div className="w-full max-w-[440px] mx-auto lg:mx-0 lg:justify-self-end">
-                        <img
-                            src={getImageSrc(heroIlustracion880)}
-                            srcSet={`${getImageSrc(heroIlustracion480)} 480w, ${getImageSrc(heroIlustracion880)} 880w`}
-                            sizes="(min-width: 1024px) 440px, (min-width: 768px) 440px, calc(100vw - 4rem)"
-                            width={880}
-                            height={880}
-                            alt=""
-                            fetchPriority="high"
-                            loading="eager"
-                            decoding="async"
-                            className="w-full h-auto aspect-square rounded-2xl object-cover"
-                        />
+                <div className="text-center z-10 animate-fade-in-up w-full">
+                    <h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
+                        {t.hero.h1}
+                    </h1>
+                    <p className="bajada c">{parseText(t.hero.h2)}</p>
+                </div>
+                <div className="max-w-2xl mx-auto">
+                    <div className="flex flex-col md:flex-row gap-4 pt-12">
+                        <button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                            {t.hero.ctaSecondary}
+                        </button>
+                        <button onClick={() => window.open('https://seguridaddelaia.substack.com', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                            {t.hero.ctaPrimary}
+                        </button>
                     </div>
                 </div>
             </Section>
