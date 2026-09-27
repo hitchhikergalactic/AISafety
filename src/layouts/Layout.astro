@@ -11,6 +11,8 @@ interface Props {
   // URLs absolutas. Solo hacen falta cuando la ruta cambia de nombre entre idiomas; si no, se deducen de la ruta actual.
   canonicalUrl?: string;
   alternates?: { es: string; en: string };
+  // Página sin versión en inglés: solo se anuncia la versión en español (sin hreflang en ni x-default)
+  soloEspanol?: boolean;
 }
 
 const { 
@@ -20,7 +22,8 @@ const {
   ogTitle,
   ogDescription,
   canonicalUrl,
-  alternates
+  alternates,
+  soloEspanol = false
 } = Astro.props;
 
 const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, "https://aisafety.es");
@@ -32,7 +35,7 @@ const enPath = (Astro.url.pathname === '/' || Astro.url.pathname === '')
   : (Astro.url.pathname.startsWith('/en/') || Astro.url.pathname === '/en')
     ? Astro.url.pathname
     : `/en${Astro.url.pathname}`;
-const hreflangES = alternates ? new URL(alternates.es) : new URL(esPath, 'https://aisafety.es');
+const hreflangES = alternates ? new URL(alternates.es) : soloEspanol ? canonicalURL : new URL(esPath, 'https://aisafety.es');
 const hreflangEN = alternates ? new URL(alternates.en) : new URL(enPath, 'https://aisafety.es');
 ---
 
@@ -49,8 +52,8 @@ const hreflangEN = alternates ? new URL(alternates.en) : new URL(enPath, 'https:
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL.toString()} />
     <link rel="alternate" hreflang="es" href={hreflangES.toString()} />
-    <link rel="alternate" hreflang="en" href={hreflangEN.toString()} />
-    <link rel="alternate" hreflang="x-default" href="https://aisafety.es/" />
+    {!soloEspanol && <link rel="alternate" hreflang="en" href={hreflangEN.toString()} />}
+    {!soloEspanol && <link rel="alternate" hreflang="x-default" href="https://aisafety.es/" />}
     
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico?v=2" />
@@ -80,6 +83,9 @@ const hreflangEN = alternates ? new URL(alternates.en) : new URL(enPath, 'https:
         ]
       }
     </script>
+
+    <!-- Etiquetas propias de cada página (datos estructurados, Open Graph...) -->
+    <slot name="head" />
 
     <!-- Dark Mode Initial Script (prevents Flash of Light Theme) -->
     <script is:inline>

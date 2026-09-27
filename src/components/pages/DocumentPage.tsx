@@ -4,6 +4,7 @@ import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
 import { keepBrandCase } from '@utils/keepBrandCase';
+import IndiceContenido, { type EntradaIndice } from '@components/IndiceContenido';
 
 type Language = 'es' | 'en';
 
@@ -22,13 +23,15 @@ interface DocumentPageProps {
   header: DocumentHeader;
   // Asunto del formulario de suscripción del pie (identifica desde qué página se apuntó la persona)
   subject: string;
+  // Índice de contenidos opcional (columna fija a la izquierda en escritorio; desplegable arriba en móvil)
+  indice?: { titulo: string; entradas: readonly EntradaIndice[] };
   children: React.ReactNode;
 }
 
 // Página de un documento fundacional (Visión, Teoría del Cambio...). Cabecera con migas, sobretítulo, H1 y subtítulo;
 // debajo, el documento en Markdown (children, ya renderizado en la compilación) en una columna centrada. Misma
 // estructura que la página de visión de Safe AI Netherlands, con los tokens de diseño de iaS.
-const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subject, children }) => {
+const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subject, indice, children }) => {
   const t = translations[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
   const [showModal, setShowModal] = useState(false);
@@ -65,11 +68,27 @@ const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subj
           </div>
         </header>
 
-        <div className="px-6 md:px-12 lg:px-8 py-20">
-          <div className="mx-auto max-w-3xl">
-            <article className="doc-prose">{children}</article>
+        {indice ? (
+          <div className="px-6 md:px-12 lg:px-8 py-20">
+            <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-12">
+              <aside className="hidden lg:block">
+                <IndiceContenido titulo={indice.titulo} entradas={indice.entradas} />
+              </aside>
+              <div>
+                <div className="mx-auto mb-12 max-w-[35rem] lg:hidden">
+                  <IndiceContenido.Movil titulo={indice.titulo} entradas={indice.entradas} />
+                </div>
+                <article className="doc-prose">{children}</article>
+              </div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="px-6 md:px-12 lg:px-8 py-20">
+            <div className="mx-auto max-w-3xl">
+              <article className="doc-prose">{children}</article>
+            </div>
+          </div>
+        )}
       </main>
 
       <JoinModal

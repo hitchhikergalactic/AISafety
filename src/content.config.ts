@@ -64,10 +64,20 @@ const cookiesCollection = defineCollection({
   }),
 });
 
+const queEsLaSeguridadDeLaIaCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/que-es-la-seguridad-de-la-ia' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    canonical: z.string().url(),
+  }),
+});
+
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
   vision: visionCollection,
   teoriaDelCambio: teoriaDelCambioCollection,
   cookies: cookiesCollection,
+  queEsLaSeguridadDeLaIa: queEsLaSeguridadDeLaIaCollection,
 };

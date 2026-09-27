@@ -4,6 +4,9 @@ export const rutasEsEn: Record<string, string> = {
   '/teoria-del-cambio': '/en/theory-of-change',
 };
 
+// Páginas que solo existen en español: el selector ES/EN lleva a la portada en inglés.
+const soloEnEspanol = new Set<string>(['/que-es-la-seguridad-de-la-ia']);
+
 const rutasEnEs: Record<string, string> = Object.fromEntries(Object.entries(rutasEsEn).map(([es, en]) => [en, es]));
 
 // Ruta equivalente en el otro idioma, para el selector ES/EN. `lang` es el idioma de la página actual.
@@ -12,6 +15,7 @@ export function rutaEnOtroIdioma(pathname: string, lang: 'es' | 'en'): string {
   const limpia = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 
   if (lang === 'es') {
+    if (soloEnEspanol.has(limpia)) return '/en/';
     const traducida = rutasEsEn[limpia];
     if (traducida) return traducida + barraFinal;
     return pathname === '/' ? '/en/' : `/en${pathname}`;
