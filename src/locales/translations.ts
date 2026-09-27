@@ -9,8 +9,11 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "Hub de seguridad de la IA",
+      eyebrow: "Hub de seguridad de la IA en español",
+      h1: "La IA es menos segura en español",
       h2: "**iaS** es el referente en seguridad de la inteligencia artificial en español: formamos y acompañamos a profesionales en la orientación de su carrera, y apoyamos proyectos dedicados a construir una **IA más segura**.",
+      // Párrafo del hero de la portada (h2 lo sigue usando la página de la Delegación de Valencia)
+      intro: "Los modelos de lenguaje fallan más en español que en inglés, y el debate para corregirlo ocurre casi por completo en inglés; en **iaS** formamos profesionales, apoyamos proyectos y llevamos la evidencia a reguladores y desarrolladores.",
       ctaPrimary: "Qué es la seguridad de la IA",
       ctaSecondary: "¡Quiero formar parte!",
       supportedBy: "Con el respaldo de",
@@ -137,9 +140,11 @@ export const translations = {
     },
     hero: {
       location: "",
-      h1: "Spanish-language AI safety Hub",
+      eyebrow: "The Spanish-language AI safety hub",
+      h1: "AI is less safe in Spanish",
       h2: "**iaS** is the reference hub for AI safety in Spanish: we train and support professionals in their career development, and back projects dedicated to building **safer AI**.",
-      ctaPrimary: "I want to understand what AI safety is",
+      intro: "Language models fail more often in Spanish than in English, yet the debate on how to fix this happens almost entirely in English. At **iaS** we train professionals, support projects and bring the evidence to regulators and developers.",
+      ctaPrimary: "What is AI safety",
       ctaSecondary: "I want to be part of it!",
       supportedBy: "Backed by",
     },
