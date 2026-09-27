@@ -57,11 +57,11 @@ Organizadas según los bloques de [Qué hacemos](/que-hacemos):
 
 | Indicador | Situación en la actualidad |
 | --- | --- |
-| Encuentros abiertos con asistencia registrada | 10 (9 sesiones y 1 encuentro social), de febrero a septiembre de 2026 |
-| Asistencias registradas | 404 |
-| Personas distintas que han asistido | Más de 250 |
+| Encuentros abiertos con asistencia registrada | 13 (12 sesiones y 1 encuentro social), de febrero a septiembre de 2026 |
+| Asistencias registradas | Al menos 919 |
+| Personas distintas que han asistido | 503 |
 | Personas con inscripción confirmada | 446 |
-| Personas que han vuelto | Cerca de 60 han asistido a dos o más encuentros y 30 a tres o más |
+| Personas que han vuelto | 416 han asistido a dos o más encuentros y 30 a tres o más |
 | Valoración media de los encuentros | 4,56 sobre 5, con 59 valoraciones, el 95% de ellas de 4 o 5 |
 | Personas en la base de contactos de iaS | 545 |
 | Curso de Estrategia ante la IAG | Primera cohorte presencial en Madrid, prevista para octubre de 2026 |
@@ -91,9 +91,9 @@ iaS prevé medir el cambio atribuible a sus actividades mediante formularios de 
 
 **El problema está documentado.** Los estudios multilingües como M-ALERT y la tabla comparativa de ODESIA (véase la sección 1) muestran diferencias de comportamiento y de efectividad entre idiomas; iaS no afirma que los modelos sean menos seguros en español en todos los casos, sino que esas diferencias existen y varían según la categoría de riesgo.
 
-**Hay demanda.** Desde febrero de 2026, los encuentros abiertos han reunido a más de 250 personas distintas, con 446 personas que han confirmado su inscripción al menos una vez, en torno a cien inscripciones confirmadas por sesión de mayo a julio y una valoración media de 4,56 sobre 5, con el 95% de las valoraciones en 4 o 5.
+**Hay demanda.** Desde febrero de 2026, los encuentros abiertos han reunido a 503 personas distintas, con 446 personas que han confirmado su inscripción al menos una vez, en torno a cien inscripciones confirmadas por sesión de mayo a julio y una valoración media de 4,56 sobre 5, con el 95% de las valoraciones en 4 o 5.
 
-**El formato retiene a una parte del público.** Cerca de 60 personas han asistido a dos o más encuentros (en torno a una quinta parte de quienes han venido) y 30 a tres o más, y la asistencia sobre inscripciones confirmadas en las sesiones en línea de febrero a julio ha oscilado entre el 35% y el 54%.
+**El formato retiene a una parte del público.** 416 personas han asistido a dos o más encuentros (más de cuatro de cada cinco de quienes han venido) y 30 a tres o más, y la asistencia sobre inscripciones confirmadas en las sesiones en línea de febrero a julio ha oscilado entre el 35% y el 54%.
 
 **Lo que aún no sabemos.** iaS lleva en marcha desde febrero de 2026, un plazo demasiado corto para observar transiciones profesionales; todavía no medimos el cambio contrafactual (qué habría hecho cada persona sin iaS), la captación mediante invitaciones directas desde Luma no ha producido asistencia, y la primera delegación, la de Valencia, está en fase inicial y no ofrece aún resultados que evaluar.
 
