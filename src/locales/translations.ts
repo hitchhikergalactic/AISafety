@@ -120,7 +120,7 @@ export const translations = {
       success: "¡Gracias sumarte!",
     },
     footer: {
-      tagline: "Parte del ecosistema global de seguridad de la IA Currículo por BlueDot Impact",
+      tagline: "Parte del ecosistema global de seguridad de la IA. Currículo de BlueDot Impact.",
       copyright: "Copyright 2026 seguridad de la IA · Diseñado para un futuro que priorice a las personas",
       text1: "\n¿Tienes preguntas o quieres colaborar?",
       text2: "**Seguridad de la IA**\nEl hub de referencia para 650M de personas.",
@@ -254,7 +254,7 @@ export const translations = {
       success: "Thanks for subscribing!",
     },
     footer: {
-      tagline: "Part of the global AI safety ecosystem Curriculum by BlueDot Impact",
+      tagline: "Part of the global AI safety ecosystem. Curriculum by BlueDot Impact.",
       copyright: "© 2026 AI safety · Built for a human‑aligned future.",
       text1:"Questions, feedback,\nor interested in collaborating:",
       text2: "**AI safety**\nThe reference hub for 650M people.",
