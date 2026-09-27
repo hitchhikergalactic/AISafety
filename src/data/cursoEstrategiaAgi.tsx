@@ -10,7 +10,7 @@ export const cursoEstrategiaAgiContent = {
     pageTitle: 'Curso de Estrategia ante la Inteligencia Artificial General',
     // Frase de entrada con enlace: el texto de «link» es el que se enlaza a «href»
     heroText: {
-      before: 'Programa especializado en estrategia de Inteligencia Artificial General organizado por **iaS** y basado en el temario de ',
+      before: 'Programa especializado en estrategia de Inteligencia Artificial General organizado por **iaS** y basado en el currículo de ',
       link: 'BlueDot Impact',
       href: 'https://bluedot.org/courses/agi-strategy',
       after: '.',
