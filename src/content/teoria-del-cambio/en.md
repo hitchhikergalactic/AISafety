@@ -60,7 +60,7 @@ Organized according to the blocks of [What we do](/en/que-hacemos):
 | Open events with recorded attendance | At least 13 (12 sessions and 1 or more social meetups), from February to September 2026 |
 | Recorded attendances | At least 919 |
 | Distinct people who have attended | 503 |
-| People with confirmed registration | More than 500 |
+| People with confirmed registration | More than 1,000 |
 | People who have come back | 416 have attended two or more events and at least 30 have attended three or more |
 | Average rating of the events | 4.56 out of 5, with 59 ratings, 95% of them 4 or 5 |
 | People in the iaS contact base | More than 545 |
@@ -91,7 +91,7 @@ iaS plans to measure the change attributable to its activities through entry and
 
 **The problem is documented.** Multilingual studies such as M-ALERT and the ODESIA comparison table (see section 1) show differences in behavior and effectiveness across languages; iaS does not claim that models are less safe in Spanish in every case, but that these differences exist and vary by risk category.
 
-**There is demand.** Since February 2026, the open events have brought together 503 distinct people, with more than 500 people who have confirmed their registration at least once, around one hundred confirmed registrations per session from May to July and an average rating of 4.56 out of 5, with 95% of the ratings at 4 or 5.
+**There is demand.** Since February 2026, the open events have brought together 503 distinct people, with more than 1,000 people who have confirmed their registration at least once, around one hundred confirmed registrations per session from May to July and an average rating of 4.56 out of 5, with 95% of the ratings at 4 or 5.
 
 **The format retains part of the audience.** 416 people have attended two or more events (more than four in five of those who have come) and at least 30 have attended three or more, and attendance over confirmed registrations at the online sessions from February to July has ranged between 35% and 54%.
 
