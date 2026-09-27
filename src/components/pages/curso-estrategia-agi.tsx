@@ -63,6 +63,14 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               {content.formatNote}
             </p>
 
+            <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
+              {content.startNowNote.before}
+              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                {content.startNowNote.link}
+              </a>
+              {content.startNowNote.after}
+            </p>
+
             <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
               <h5 className="!text-principal texto-medium !font-bold mb-3">{content.formTitle}</h5>
               <p className="mb-2 text-sm text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
