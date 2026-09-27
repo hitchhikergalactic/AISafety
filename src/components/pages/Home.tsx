@@ -95,28 +95,41 @@ export default function Home({ lang }: HomeProps) {
                 hiddenFields={modalType === 'event' ? [{ name: 'evento_detalles', value: t.upcoming.eventTitle }] : []}
             />
             
-            {/* 1. HERO SECTION */}
+            {/* 1. HERO SECTION + franja de patrocinio: juntos ocupan la primera pantalla */}
+            <div className="min-h-[100svh] flex flex-col">
             <Section 
                 id="hero" 
-                className="relative min-h-screen flex items-center justify-center pt-16 md:pt-32 pb-16 md:pb-24 overflow-hidden"
+                className="relative flex-1 flex items-center justify-center pt-[clamp(6rem,4rem+6vw,8rem)] md:pt-[clamp(6rem,4rem+6vw,8rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
-                    <h1 className="mb-2 md:mb-4 text-secundarios-dark dark:text-secundarios-light text-balance">
+                    <h1 className="mb-2 md:mb-4 !text-[clamp(1.25rem,calc(7vw-0.3rem),4.8rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
                         {t.hero.h1}
                     </h1>
-                    <p className="bajada c">{parseText(t.hero.h2)}</p>
+                    <p className="bajada c !leading-[clamp(1.5rem,0.9rem+2.9vw,2.8rem)] !mb-[clamp(0.75rem,0.25rem+1.5vw,1.8rem)]">{parseText(t.hero.h2)}</p>
                 </div>
                 <div className="max-w-2xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-4 pt-12">
-                        <button onClick={() => openModal('subscribe')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
-                            {t.hero.ctaSecondary}
-                        </button>
-                        <button onClick={() => window.open('https://seguridaddelaia.substack.com', '_blank')} className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)]">
+                        <a href="https://luma.com/iaS-SeguridadelaIA" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                            {t.hero.ctaSeminar}
+                        </a>
+                        {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
+                        <a href="https://seguridaddelaia.substack.com/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-bold no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
                             {t.hero.ctaPrimary}
-                        </button>
+                        </a>
                     </div>
                 </div>
             </Section>
+
+            {/* Franja de patrocinio. Logo sin recolorear: versión azul en claro y versión blanca oficial en oscuro.
+                El SVG trae margen transparente (lienzo 261×101), que se compensa con margen negativo */}
+            <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
+                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1.2vw,1.5rem)] flex flex-col items-center gap-[clamp(0.35rem,0.2rem+0.5vw,0.6rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
+                    <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
+                    <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] dark:hidden" />
+                    <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] hidden dark:block" />
+                </a>
+            </div>
+            </div>
 
             {/* 2. COLABORADORES */}
             <Section id="conectar">

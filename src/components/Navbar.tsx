@@ -6,6 +6,9 @@ import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
 
+// Marcador provisional: sustituir por la URL del formulario de ponentes
+const SPEAKER_FORM_URL = 'ENLACE-FORMULARIO-PONENTES';
+
 interface NavbarProps {
   lang: 'es' | 'en';
 }
@@ -120,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-wrap items-center justify-center gap-x-10 gap-y-3 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg opacity">
+        <div className="hidden xl:flex flex-nowrap w-max items-center justify-center gap-x-5 2xl:gap-x-6 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-base opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
@@ -172,6 +175,15 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
         {/* Actions (Theme + Lang + Mobile Toggle) */}
         <div className="flex items-center gap-2 md:gap-5">
+          <a
+            href={SPEAKER_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden xl:inline-flex items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+          >
+            {t.nav.speaker}
+          </a>
+
           <button 
             onClick={toggleTheme}
             className="p-2 md:p-2.5 rounded-full border border-secundarios-dark/20 text-secundarios-dark dark:text-secundarios-light hover:bg-secundarios-light dark:hover:bg-white/5 transition-all duration-300 cursor-pointer"
@@ -192,7 +204,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               su preventDefault no impide el clic posterior). */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="lg:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
+            className="xl:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Menu"
           >
             {isOpen ? <X size={24} className="md:w-[28px] md:h-[28px]" /> : <Menu size={24} className="md:w-[28px] md:h-[28px]" />}
@@ -201,7 +213,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       </div>
 
       {/* Mobile & Tablet Menu Overlay */}
-      <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`xl:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
             <div key={link.href}>
@@ -254,6 +266,15 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               )}
             </div>
           ))}
+          <a
+            href={SPEAKER_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="self-start mb-8 px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+          >
+            {t.nav.speaker}
+          </a>
         </div>
       </div>
     </nav>
