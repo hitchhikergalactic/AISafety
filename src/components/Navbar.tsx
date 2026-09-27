@@ -6,8 +6,8 @@ import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
 
-// Marcador provisional: sustituir por la URL del formulario de ponentes
-const SPEAKER_FORM_URL = 'ENLACE-FORMULARIO-PONENTES';
+// Formulario de Airtable para quien quiera ser ponente
+const SPEAKER_FORM_URL = 'https://airtable.com/appjg7pwM6YVmobZ6/pagXrhFIu7e0ltvdj/form';
 
 interface NavbarProps {
   lang: 'es' | 'en';
