@@ -8,8 +8,21 @@ export const cursoEstrategiaAgiContent = {
   es: {
     eyebrow: 'FORMACIÓN',
     pageTitle: 'Curso de Estrategia ante la Inteligencia Artificial General',
-    heroText: 'Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de **BlueDot Impact**.',
+    // Frase de entrada con enlace: el texto de «link» es el que se enlaza a «href»
+    heroText: {
+      before: 'Programa especializado en estrategia de Inteligencia Artificial General organizado por **iaS** y basado en el temario de ',
+      link: 'BlueDot Impact',
+      href: 'https://bluedot.org/courses/agi-strategy',
+      after: '.',
+    },
     inPersonNote: 'Esta primera cohorte es presencial y se celebra solo en **Madrid**.',
+    // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
+    startNowNote: {
+      before: 'Si quieres empezar ya, BlueDot ofrece ',
+      link: 'The Future of AI',
+      href: 'https://bluedot.org/courses/future-of-ai',
+      after: ', un curso gratuito y a tu ritmo, en inglés, que se completa en unas dos horas y no requiere solicitud.',
+    },
     formatNote: 'Cinco semanas, unas cinco horas por semana: unas tres horas de lectura y ejercicios por tu cuenta y una sesión en grupo de dos horas, presencial en Madrid, para debatir el contenido.',
     formTitle: 'Inscripción AGI Strategy',
     formDescription: 'Completa el formulario para reservar tu plaza en este primer cohorte.',
@@ -29,8 +42,19 @@ export const cursoEstrategiaAgiContent = {
   en: {
     eyebrow: 'TRAINING',
     pageTitle: 'AGI Strategy Course',
-    heroText: 'Specialized program on Artificial General Intelligence (AGI) strategy, based on the **BlueDot Impact** curriculum.',
+    heroText: {
+      before: 'Specialized program on Artificial General Intelligence (AGI) strategy, organized by **iaS** and based on the ',
+      link: 'BlueDot Impact',
+      href: 'https://bluedot.org/courses/agi-strategy',
+      after: ' curriculum.',
+    },
     inPersonNote: 'This first cohort is in person and takes place in **Madrid** only.',
+    startNowNote: {
+      before: 'If you want to get started now, BlueDot offers ',
+      link: 'The Future of AI',
+      href: 'https://bluedot.org/courses/future-of-ai',
+      after: ', a free, self-paced course that takes about two hours and requires no application.',
+    },
     formatNote: 'Five weeks, about five hours per week: around three hours of reading and written exercises on your own, plus a two-hour in-person group session in Madrid to discuss the content.',
     formTitle: 'Register AGI Strategy',
     formDescription: 'Complete the form to reserve your place in this first cohort.',

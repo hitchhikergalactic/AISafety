@@ -32,7 +32,11 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               {content.pageTitle}
             </h2>
             <p className="bajadapages mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
-              {parseText(content.heroText)}
+              {parseText(content.heroText.before)}
+              <a href={content.heroText.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                {content.heroText.link}
+              </a>
+              {content.heroText.after}
             </p>
 
             <div className="mb-8">
@@ -61,6 +65,14 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
 
             <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
               {content.formatNote}
+            </p>
+
+            <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
+              {content.startNowNote.before}
+              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                {content.startNowNote.link}
+              </a>
+              {content.startNowNote.after}
             </p>
 
             <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
