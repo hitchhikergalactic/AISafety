@@ -32,7 +32,11 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               {content.pageTitle}
             </h2>
             <p className="bajadapages mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
-              {parseText(content.heroText)}
+              {parseText(content.heroText.before)}
+              <a href={content.heroText.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                {content.heroText.link}
+              </a>
+              {content.heroText.after}
             </p>
 
             <div className="mb-8">

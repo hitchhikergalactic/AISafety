@@ -8,7 +8,13 @@ export const cursoEstrategiaAgiContent = {
   es: {
     eyebrow: 'FORMACIÓN',
     pageTitle: 'Curso de Estrategia ante la Inteligencia Artificial General',
-    heroText: 'Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de **BlueDot Impact**.',
+    // Frase de entrada con enlace: el texto de «link» es el que se enlaza a «href»
+    heroText: {
+      before: 'Programa especializado en estrategia de Inteligencia Artificial General organizado por **iaS** y basado en el temario de ',
+      link: 'BlueDot Impact',
+      href: 'https://bluedot.org/courses/agi-strategy',
+      after: '.',
+    },
     inPersonNote: 'Esta primera cohorte es presencial y se celebra solo en **Madrid**.',
     // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
     startNowNote: {
@@ -36,7 +42,12 @@ export const cursoEstrategiaAgiContent = {
   en: {
     eyebrow: 'TRAINING',
     pageTitle: 'AGI Strategy Course',
-    heroText: 'Specialized program on Artificial General Intelligence (AGI) strategy, based on the **BlueDot Impact** curriculum.',
+    heroText: {
+      before: 'Specialized program on Artificial General Intelligence (AGI) strategy, organized by **iaS** and based on the ',
+      link: 'BlueDot Impact',
+      href: 'https://bluedot.org/courses/agi-strategy',
+      after: ' curriculum.',
+    },
     inPersonNote: 'This first cohort is in person and takes place in **Madrid** only.',
     startNowNote: {
       before: 'If you want to get started now, BlueDot offers ',
