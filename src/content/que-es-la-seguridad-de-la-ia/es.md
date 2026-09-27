@@ -162,7 +162,7 @@ Si este texto te ha despertado el interés, la forma más directa de seguir es u
 | [Observatorio de Riesgos Catastróficos Globales](https://www.orcg.info/) | Análisis de riesgos y políticas públicas | Hispanohablante |
 | [Informe Internacional sobre la Seguridad de la IA](https://internationalaisafetyreport.org/publications) | Síntesis científica, con traducción al español | Internacional |
 | [BlueDot Impact](https://bluedot.org/) | Cursos de introducción a la alineación y la gobernanza | Internacional, en inglés |
-| 80,000 Hours | Guías de carrera en seguridad y gobernanza de la IA | Internacional, en inglés |
+| [80,000 Hours](https://80000hours.org/agi/) | Guías de carrera en seguridad y gobernanza de la IA | Internacional, en inglés |
 
 ---
 
