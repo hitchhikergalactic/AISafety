@@ -18,7 +18,7 @@ export const cursoEstrategiaAgiContent = {
     inPersonNote: 'Esta primera cohorte es presencial y se celebra solo en **Madrid**.',
     // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
     startNowNote: {
-      before: 'Si quieres empezar ya, BlueDot ofrece ',
+      before: 'Si quieres empezar ya, BlueDot Impact ofrece ',
       link: 'The Future of AI',
       href: 'https://bluedot.org/courses/future-of-ai',
       after: ', un curso gratuito y a tu ritmo, en inglés, que se completa en unas dos horas y no requiere solicitud.',
@@ -50,7 +50,7 @@ export const cursoEstrategiaAgiContent = {
     },
     inPersonNote: 'This first cohort is in person and takes place in **Madrid** only.',
     startNowNote: {
-      before: 'If you want to get started now, BlueDot offers ',
+      before: 'If you want to get started now, BlueDot Impact offers ',
       link: 'The Future of AI',
       href: 'https://bluedot.org/courses/future-of-ai',
       after: ', a free, self-paced course that takes about two hours and requires no application.',

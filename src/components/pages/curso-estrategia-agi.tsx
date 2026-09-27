@@ -68,7 +68,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
             </p>
 
             <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
-              {content.startNowNote.before}
+              {parseText(content.startNowNote.before)}
               <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
                 {content.startNowNote.link}
               </a>

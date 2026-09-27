@@ -36,7 +36,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
       <section className="w-full h-[280px] md:h-[375px] lg:h-[375px] overflow-hidden mt-24">
         <img 
           src={headerImageSrc}
-          alt="Bluedot Meetup Header" 
+          alt="BlueDot Impact Meetup Header" 
           className="w-full h-full object-cover"
         />
       </section>
