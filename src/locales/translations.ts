@@ -74,7 +74,8 @@ export const translations = {
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | Presencial en **Madrid** | Disponible: Octubre 2026.",
         details: [
-          { label: "Duración", value: "25 h en total" },
+          { label: "Duración", value: "5 semanas (25 h en total)" },
+          { label: "Dedicación", value: "Unas 5 horas por semana (3 h de lectura y ejercicios + 2 h de sesión en grupo presencial)" },
           { label: "Sesiones", value: "2 h presenciales a la semana durante 5 semanas" },
           { label: "Estudio personal", value: "unas 3 h a la semana de lecturas y ejercicios" },
           { label: "Formato", value: "Presencial, en **Madrid**" },
@@ -204,7 +205,8 @@ export const translations = {
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | In person in **Madrid** | Available: October 2026.",
         details: [
-          { label: "Duration", value: "25 h in total" },
+          { label: "Duration", value: "5 weeks (25 h in total)" },
+          { label: "Time commitment", value: "About 5 hours per week (3 h of reading and exercises + 2 h in-person group session)" },
           { label: "Sessions", value: "2 h in person per week for 5 weeks" },
           { label: "Self-study", value: "about 3 h per week of readings and exercises" },
           { label: "Format", value: "In person, in **Madrid**" },
