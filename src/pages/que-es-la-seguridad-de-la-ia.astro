@@ -1,0 +1,63 @@
+---
+// src/pages/que-es-la-seguridad-de-la-ia.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import DocumentPage from '../components/pages/DocumentPage.tsx';
+import { queEsLaSeguridadDeLaIaContent } from '../data/que-es-la-seguridad-de-la-ia';
+import { slugSinTildes } from '../utils/slugSinTildes.mjs';
+
+const entry = await getEntry('queEsLaSeguridadDeLaIa', 'es');
+const c = queEsLaSeguridadDeLaIaContent.es;
+// Una sola fuente: el título, la descripción y el canonical del Markdown deben coincidir con los datos de la cabecera.
+if (entry!.data.title !== c.title || entry!.data.description !== c.subtitle || entry!.data.canonical !== c.canonical) {
+  throw new Error('que-es-la-seguridad-de-la-ia/es.md y src/data/que-es-la-seguridad-de-la-ia.ts no coinciden en título, descripción o canonical');
+}
+const { Content, headings } = await render(entry!);
+// Índice: secciones (h2) y subsecciones (h3), con el mismo id sin tildes que les pone el plugin de Markdown
+const entradas = headings
+  .filter((h) => h.depth === 2 || h.depth === 3)
+  .map((h) => ({ depth: h.depth as 2 | 3, slug: slugSinTildes(h.text), text: h.text }));
+
+// Datos estructurados del artículo (schema.org), para buscadores
+const articuloJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: c.title,
+  description: c.subtitle,
+  inLanguage: 'es',
+  datePublished: c.datePublished,
+  mainEntityOfPage: c.canonical,
+  url: c.canonical,
+  keywords: c.keywords.join(', '),
+  author: { '@type': 'Organization', name: 'iaS', url: 'https://aisafety.es' },
+  publisher: { '@type': 'Organization', name: 'iaS', url: 'https://aisafety.es' },
+};
+---
+
+<Layout
+  lang="es"
+  title={c.seoTitle}
+  description={c.subtitle}
+  ogTitle={c.seoTitle}
+  ogDescription={c.subtitle}
+  canonicalUrl={c.canonical}
+  soloEspanol
+>
+  <Fragment slot="head">
+    <meta name="keywords" content={c.keywords.join(', ')} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={c.canonical} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content={c.datePublished} />
+    <script type="application/ld+json" set:html={JSON.stringify(articuloJsonLd)} />
+  </Fragment>
+  <DocumentPage
+    lang="es"
+    header={c}
+    subject="Nuevo suscriptor desde Qué es la seguridad de la IA"
+    indice={{ titulo: 'Contenido', entradas }}
+    client:load
+  >
+    <Content />
+  </DocumentPage>
+</Layout>
