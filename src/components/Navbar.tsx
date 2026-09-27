@@ -120,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-nowrap w-max items-center justify-center gap-x-6 xl:gap-x-8 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-base xl:text-lg opacity">
+        <div className="hidden lg:flex flex-wrap items-center justify-center gap-x-10 gap-y-3 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-lg opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
