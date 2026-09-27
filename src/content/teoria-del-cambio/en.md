@@ -63,7 +63,7 @@ Organized according to the blocks of [What we do](/en/que-hacemos):
 | People with confirmed registration | More than 1,000 |
 | People who have come back | 416 have attended two or more events and at least 30 have attended three or more |
 | Average rating of the events | 4.56 out of 5, with 59 ratings, 95% of them 4 or 5 |
-| People in the iaS contact base | More than 545 |
+| People in the iaS contact base | More than 1,000 |
 | AGI Strategy Course | First in-person cohort in Madrid, planned for October 2026 |
 | Chapters | 1 under way (Valencia) and 2 more requests to open, in Uruguay and in Argentina |
 

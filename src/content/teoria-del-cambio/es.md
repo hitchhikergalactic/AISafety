@@ -63,7 +63,7 @@ Organizadas según los bloques de [Qué hacemos](/que-hacemos):
 | Personas con inscripción confirmada | Más de 1000 |
 | Personas que han vuelto | 416 han asistido a dos o más encuentros y al menos 30 a tres o más |
 | Valoración media de los encuentros | 4,56 sobre 5, con 59 valoraciones, el 95% de ellas de 4 o 5 |
-| Personas en la base de contactos de iaS | Más de 545 |
+| Personas en la base de contactos de iaS | Más de 1000 |
 | Curso de Estrategia ante la IAG | Primera cohorte presencial en Madrid, prevista para octubre de 2026 |
 | Delegaciones | 1 en marcha (Valencia) y 2 solicitudes más de apertura, en Uruguay y en Argentina |
 
