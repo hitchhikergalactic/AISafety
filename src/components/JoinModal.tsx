@@ -119,7 +119,7 @@ const JoinModal: React.FC<JoinModalProps> = ({
                 className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg"
               />
 
-              <button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-2xl bg-principal text-white font-sans font-black text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+              <button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-2xl bg-principal text-white font-sans font-black text-[1.1875rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                 {isSubmitting ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.subscribe.button}
               </button>
 
@@ -128,7 +128,7 @@ const JoinModal: React.FC<JoinModalProps> = ({
                 {lang === 'es'
                   ? 'Al enviar el formulario, iaS tratará tus datos para gestionar tu inscripción y enviarte información sobre sus actividades. Puedes acceder a ellos, rectificarlos o suprimirlos escribiendo a hola@aisafety.es. Más información en la '
                   : 'By submitting this form, iaS will process your data to manage your registration and send you information about its activities. You can access, rectify or delete it by writing to hola@aisafety.es. More information in the '}
-                <a href={lang === 'es' ? '/privacidad' : '/en/privacidad'} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                <a href={lang === 'es' ? '/privacidad' : '/en/privacidad'} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto hover:underline">
                   {lang === 'es' ? 'política de privacidad' : 'privacy policy'}
                 </a>
                 .

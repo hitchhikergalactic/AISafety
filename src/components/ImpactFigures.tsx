@@ -181,7 +181,7 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
                 <FadeInMilestone figure={item.value} delay={idx * 100} />
               )}
 
-              <p className="text-neutral-500 dark:text-white text-sm leading-relaxed line-clamp-4">
+              <p className="text-neutral-600 dark:text-white text-sm leading-relaxed line-clamp-4">
                 {item.description}
               </p>
             </div>

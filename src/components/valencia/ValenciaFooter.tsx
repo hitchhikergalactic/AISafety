@@ -54,7 +54,7 @@ const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang }) => {
                           {...(link.external && !link.href.startsWith('mailto:')
                             ? { target: '_blank', rel: 'noopener noreferrer' }
                             : {})}
-                          className="text-secundarios-light/70 hover:text-principal transition-colors break-words"
+                          className="text-secundarios-light/80 hover:text-principal transition-colors break-words"
                         >
                           {link.label}
                         </a>

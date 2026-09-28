@@ -27,27 +27,27 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
       <main className="pt-36 md:pt-44 px-6 md:px-12 lg:px-8 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
         <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0 pb-20 md:pb-32">
           <div className="max-w-3xl text-left">
-            <h5 className="mb-4 uppercase text-principal">{content.eyebrow}</h5>
-            <h2 className="mb-8 leading-tight tracking-tight text-balance">
+            <h5 className="mb-4 uppercase text-principal-texto">{content.eyebrow}</h5>
+            <h1 className="como-h2 mb-8 leading-tight tracking-tight text-balance">
               {content.pageTitle}
-            </h2>
+            </h1>
             <p className="bajadapages mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
               {parseText(content.heroText.before)}
-              <a href={content.heroText.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+              <a href={content.heroText.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto hover:underline">
                 {content.heroText.link}
               </a>
               {content.heroText.after}
             </p>
 
             <div className="mb-8">
-              <h5 className="!text-principal texto-medium !font-bold mb-3">{content.whyTitle}</h5>
+              <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.whyTitle}</h5>
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
                 {parseText(content.whyText)}
               </p>
             </div>
 
             <div className="mb-8">
-              <h5 className="!text-principal texto-medium !font-bold mb-3">{content.listTitle}</h5>
+              <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.listTitle}</h5>
               <ul className="space-y-3 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed font-serif">
                 {content.items.map((item) => (
                   <li key={item}>• {item}</li>
@@ -69,14 +69,14 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
 
             <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
               {parseText(content.startNowNote.before)}
-              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto hover:underline">
                 {content.startNowNote.link}
               </a>
               {content.startNowNote.after}
             </p>
 
             <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
-              <h5 className="!text-principal texto-medium !font-bold mb-3">{content.formTitle}</h5>
+              <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.formTitle}</h5>
               <p className="mb-2 text-sm text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
                 {content.formDescription}
               </p>
@@ -84,7 +84,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
                 href="https://form.jotform.com/262144003863046"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-principal px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl bg-principal px-6 py-4 text-[1.1875rem] font-bold text-white transition hover:-translate-y-0.5"
               >
                 {content.formButtonLabel}
               </a>

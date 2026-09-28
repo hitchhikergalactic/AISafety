@@ -58,7 +58,7 @@ const { Content } = await render(paper);
   .markdown-body h2 {
     font-size: 1.45rem !important;      /* ~23px */
     font-weight: 700 !important;
-    color: #ff4500 !important;          /* Color principal */
+    color: var(--color-principal) !important;          /* Color principal */
     margin-top: 3.5rem !important;      /* Espacio anterior amplio */
     margin-bottom: 1rem !important;
     line-height: 1.3 !important;
@@ -82,7 +82,7 @@ const { Content } = await render(paper);
   }
 
   .markdown-body a {
-    color: #ff4500 !important;
+    color: var(--color-principal-texto) !important;
     text-decoration: underline;
   }
 
@@ -97,7 +97,7 @@ const { Content } = await render(paper);
   }
 
   .markdown-body sup a {
-    color: #ff4500 !important;
+    color: var(--color-principal-texto) !important;
     font-weight: 700 !important;
     text-decoration: none !important;
     padding: 0 2px;
@@ -130,7 +130,7 @@ const { Content } = await render(paper);
   /* Estilo del enlace de retorno (flecha ↩) */
   .markdown-body .footnotes a.data-footnote-backref,
   .markdown-body .footnotes a[href*="fnref"] {
-    color: #ff4500 !important;
+    color: var(--color-principal-texto) !important;
     font-weight: bold;
     text-decoration: none !important;
     margin-left: 0.3rem;
@@ -151,7 +151,7 @@ const { Content } = await render(paper);
   content: "Notas al pie";
   text-transform: uppercase; 
   letter-spacing: 0.00em; 
-  color: #ff4500 !important; 
+  color: var(--color-principal-texto) !important; 
   visibility: visible;
   position: absolute;
   left: 0;

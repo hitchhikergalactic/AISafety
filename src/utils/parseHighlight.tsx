@@ -5,7 +5,7 @@ import { emphasizeBrand } from './emphasizeBrand';
 export const parseHighlight = (text: string): React.ReactNode =>
   text.split(/(\*\*.*?\*\*)/g).map((part, i) =>
     part.startsWith('**') && part.endsWith('**') ? (
-      <strong key={i} className="font-bold text-principal">
+      <strong key={i} className="font-bold text-principal-texto">
         {part.slice(2, -2)}
       </strong>
     ) : (

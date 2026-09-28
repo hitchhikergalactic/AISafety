@@ -10,9 +10,9 @@ const SeminarioHero: React.FC<SeminarioHeroProps> = ({ t }) => {
   return (
     <section className="mb-10 md:mb-16">
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl mb-2 text-secundarios-dark dark:text-secundarios-light">
+        <h1 className="como-h2 text-3xl md:text-4xl mb-2 text-secundarios-dark dark:text-secundarios-light">
           {t.seminario.title}
-        </h2>
+        </h1>
         <p className="bajada max-w-[950px] mx-auto">
           {parseText(t.seminario.subtitle)}
         </p>

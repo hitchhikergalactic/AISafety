@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Charla } from '@data/charlas';
 import { ArrowUpRight } from 'lucide-react';
-import undefinedImgur from '../assets/undefined_imgur.png';
+import undefinedImgur from '../assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 
@@ -73,7 +73,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang }) => {
 
                   {/* Pie de la tarjeta */}
                   <div className="mt-6">
-                    <h5 className="text-xs text-neutral-400 uppercase">
+                    <h5 className="text-xs text-neutral-600 dark:text-neutral-400 uppercase">
                       {charla.fecha 
                         ? new Date(charla.fecha).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US') 
                         : (lang === 'es' ? 'Por confirmar' : 'TBD')}
@@ -84,7 +84,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang }) => {
             })
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <p className="text-neutral-600 dark:text-neutral-400">
                 {lang === 'es' ? 'No hay charlas disponibles' : 'No talks available'}
               </p>
             </div>

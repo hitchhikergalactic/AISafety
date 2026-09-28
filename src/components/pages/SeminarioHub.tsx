@@ -54,7 +54,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
               href="https://luma.com/iaS-SeguridadelaIA"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+              className="flex-1 py-4 text-[1.1875rem] rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
             >
               {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
             </a>
@@ -62,7 +62,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
               href="https://docs.google.com/forms/d/e/1FAIpQLSetVjkN1vyT4IlbAvPh7Xplas1a7RnecWA6o2QFmq17XP5-oA/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-4 rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+              className="flex-1 py-4 text-[1.1875rem] rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
             >
               {lang === 'es' ? 'Proponer charla' : 'Submit a proposal'}
             </a>

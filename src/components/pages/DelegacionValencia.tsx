@@ -24,7 +24,7 @@ interface DelegacionValenciaProps {
 }
 
 const primaryButton =
-  'inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-lg text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto md:whitespace-nowrap';
+  'inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-[1.1875rem] text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto md:whitespace-nowrap';
 
 const secondaryButton =
   'inline-flex items-center justify-center rounded-xl border border-secundarios-dark/20 dark:border-secundarios-light/30 px-6 py-2.5 text-sm font-sans font-semibold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-all duration-300 w-full md:w-auto md:whitespace-nowrap';
@@ -92,16 +92,16 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
 
       <main className="pt-36 md:pt-44 px-6 md:px-12 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
         <section className="w-full max-w-5xl mx-auto text-center pb-10 md:pb-14">
-          <nav aria-label="breadcrumb" className="mb-6 flex items-center justify-center gap-2 font-sans text-sm font-semibold text-secundarios-dark/50 dark:text-secundarios-light/50">
+          <nav aria-label="breadcrumb" className="mb-6 flex items-center justify-center gap-2 font-sans text-sm font-semibold text-secundarios-dark/75 dark:text-secundarios-light/75">
             <a href={langPrefix || '/'} className="hover:text-principal transition-colors">iaS</a>
             <span>/</span>
             <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
           </nav>
 
-          <h2 className="mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
+          <h1 className="como-h2 mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
             {content.title}
-          </h2>
-          <p className="max-w-2xl mx-auto mb-8 text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
+          </h1>
+          <p className="max-w-2xl mx-auto mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
           </p>
 
@@ -126,9 +126,9 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
             <a href={lumaAgendaUrl} target="_blank" rel="noopener noreferrer" className={`${secondaryButton} md:w-auto`}>
               {content.eventsArchiveLabel}
             </a>
-            <p className="!mb-0 text-secundarios-dark/70 dark:text-secundarios-light/70">
+            <p className="!mb-0 text-secundarios-dark/80 dark:text-secundarios-light/80">
               {content.eventsContactText}{' '}
-              <a href={`mailto:${contactEmail}`} className="font-sans font-semibold text-principal hover:underline">
+              <a href={`mailto:${contactEmail}`} className="font-sans font-semibold text-principal-texto hover:underline">
                 {contactEmail}
               </a>
             </p>
@@ -138,7 +138,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
         {/* Programas */}
         <section id="programas" className="scroll-mt-anchorbar w-full max-w-5xl mx-auto pt-20 md:pt-32 text-center">
           <h3 className={sectionTitle}>{content.programsTitle}</h3>
-          <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/70 dark:text-secundarios-light/70">
+          <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">
             {content.programsIntro}
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-left">
@@ -182,17 +182,17 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
             href={`mailto:${contactEmail}`}
             className={`${card} mt-10 mx-auto max-w-md flex items-center gap-4 p-6 text-left hover:shadow-anthro-card hover:border-principal transition-all duration-300`}
           >
-            <span className="shrink-0 flex h-12 w-12 items-center justify-center rounded-anthro bg-principal/10 text-principal">
+            <span className="shrink-0 flex h-12 w-12 items-center justify-center rounded-anthro bg-principal/10 text-principal-texto">
               <LuMail size={24} aria-hidden="true" />
             </span>
             <span className="min-w-0">
               <span className="block font-sans font-bold text-lg text-secundarios-dark dark:text-secundarios-light">
                 {content.contactCardTitle}
               </span>
-              <span className="block font-sans text-sm text-secundarios-dark/70 dark:text-secundarios-light/70 break-words">
+              <span className="block font-sans text-sm text-secundarios-dark/80 dark:text-secundarios-light/80 break-words">
                 {content.contactCardText}
               </span>
-              <span className="block font-sans text-sm font-semibold text-principal break-words">{contactEmail}</span>
+              <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{contactEmail}</span>
             </span>
           </a>
         </section>

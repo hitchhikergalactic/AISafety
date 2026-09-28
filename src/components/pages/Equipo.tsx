@@ -42,7 +42,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
                 href="https://www.linkedin.com/in/osmani/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2"
+                className="text-secundarios-dark/80 dark:text-secundarios-light/80 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2"
               >
                 <FaLinkedin className="w-7 h-7" />
               </a>
@@ -50,9 +50,9 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
 
             {/* Texto */}
             <div className="w-full md:flex-1">
-              <h4 className="text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
+              <h1 className="como-h4 text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
                 {content.heroTitle}
-              </h4>
+              </h1>
               <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
                 {parseText(content.heroSubtitle)}
               </p>

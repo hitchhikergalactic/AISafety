@@ -105,7 +105,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       {/* Background Layer sin opacidades reflejando tu cambio previo */}
       <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
 
-      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 flex justify-between items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
+      {/* Tres columnas (logo, enlaces, acciones): los enlaces se centran entre el logo y las acciones, nunca encima de ellas */}
+      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
         <a 
           href={lang === 'es' ? "/" : "/en/"}
@@ -125,7 +126,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden xl:flex flex-nowrap w-max items-center justify-center gap-x-5 2xl:gap-x-6 absolute left-1/2 -translate-x-1/2 font-sans font-semibold text-base opacity">
+        <div className="hidden xl:flex flex-nowrap items-center justify-center justify-self-center gap-x-5 2xl:gap-x-6 font-sans font-semibold text-base opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
@@ -176,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </div>
 
         {/* Actions (Theme + Lang + Mobile Toggle) */}
-        <div className="flex items-center gap-2 md:gap-5">
+        <div className="col-start-3 flex items-center justify-self-end gap-2 md:gap-5">
           <a
             href={SPEAKER_FORM_URL}
             target="_blank"
@@ -257,7 +258,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                         className={`text-lg font-semibold transition-colors block touch-manipulation ${
                           sublink.highlight
                             ? 'bg-principal text-white rounded-md px-3 py-2'
-                            : 'text-principal dark:text-principalLight hover:text-principal/80 py-2'
+                            : 'text-principal-texto dark:text-principalLight hover:text-principal/80 py-2'
                         }`}
                       >
                         {sublink.label}

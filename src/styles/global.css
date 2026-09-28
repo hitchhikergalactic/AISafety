@@ -15,7 +15,12 @@
   --color-cuartos-yellow: #ffc00b;
   --color-cuartos-pink: #ff5fc2;
   --color-cuartos-purple: #662d91;
-  --color-label-gray: #9ca3af;
+  /* Gris de etiquetas: más oscuro en modo claro para llegar a 4,5:1 (en oscuro se mantiene #9ca3af, ver .dark) */
+  --color-label-gray: #5f6673;
+  /* Naranja para texto pequeño: la marca (#ff4500) no llega a 4,5:1 como texto normal sobre los fondos del sitio;
+     este tono sí (modo claro; en oscuro se aclara, ver .dark). El texto grande (títulos, cifras), los fondos, los bordes
+     y los botones usan el naranja de iaS, --color-principal: al texto grande le basta 3:1 y #ff4500 lo cumple. */
+  --color-principal-texto: #ad2f00;
 
   --radius-anthro: 16px;
 
@@ -40,6 +45,12 @@ body {
 /* Evita que el Navbar tape el inicio de la sección cuando llegas */
 [id] {
   scroll-margin-top: 0px;
+}
+
+/* Modo oscuro: tonos de texto con contraste suficiente sobre fondo oscuro */
+.dark {
+  --color-principal-texto: #ff8a5c;
+  --color-label-gray: #9ca3af;
 }
 
 /* El nombre de la marca no se transforma nunca a mayúsculas ("iaS", no "IAS") */
@@ -124,6 +135,27 @@ h2 {
   letter-spacing: 0em !important;
 }
 
+/* Título principal de la página (<h1>, para buscadores y lectores de pantalla) con el mismo aspecto que un h2 o un h4.
+   Evita que cambie el diseño al pasar a <h1> los títulos que antes eran h2 o h4. */
+h1.como-h2 {
+  font-weight: 700 !important;
+  line-height: 1.0 !important;
+  font-size: clamp(1.8rem, 6vw, 3.8rem) !important;
+}
+h1.como-h2:not(.text-balance) {
+  text-wrap: wrap !important;
+}
+h1.como-h4 {
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  font-size: clamp(1.0rem, 5vw, 1.5rem) !important;
+  color: var(--color-principal) !important;
+  margin-bottom: 1rem !important;
+}
+h1.como-h4:not(.text-balance) {
+  text-wrap: wrap !important;
+}
+
 h3 {
   font-family: 'Overpass', sans-serif !important;
   font-weight: 500 !important;   
@@ -137,8 +169,8 @@ h4 {
   font-weight: 700 !important;   
   line-height: 1.1 !important;
   font-size: clamp(1.0rem, 5vw, 1.5rem) !important; 
-  /* Color principal (#ff4500) */
-  color: #ff4500 !important;
+  /* Naranja de iaS: los h4 son texto grande, que solo necesita 3:1 */
+  color: var(--color-principal) !important;
   letter-spacing: 0.00em !important; 
   margin-bottom: 1rem !important;
 }
@@ -311,7 +343,7 @@ h5 {
 }
 
 .doc-prose a {
-  color: var(--color-principal);
+  color: var(--color-principal-texto);
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--color-principal) 30%, transparent);

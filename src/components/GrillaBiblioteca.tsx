@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import undefinedImgur from '../assets/undefined_imgur.png';
+import undefinedImgur from '../assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 
@@ -94,7 +94,7 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
                   </div>
 
                   {/* Traductores / Escritores */}
-                  <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3 mt-3 text-xs text-neutral-500 dark:text-neutral-400 space-y-1">
+                  <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3 mt-3 text-xs text-neutral-600 dark:text-neutral-400 space-y-1">
                     <p>
                       <strong>{t.biblioteca.writtenBy}:</strong> {writtenBy}
                     </p>
@@ -104,7 +104,7 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
             })
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <p className="text-neutral-600 dark:text-neutral-400">
                 {t.biblioteca.noPapers}
               </p>
             </div>

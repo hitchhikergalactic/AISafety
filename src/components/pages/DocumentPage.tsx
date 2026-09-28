@@ -46,7 +46,7 @@ const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subj
             <div className="max-w-3xl">
               <nav
                 aria-label="breadcrumb"
-                className="mb-6 flex items-center gap-2 font-sans text-sm font-semibold text-secundarios-dark/50 dark:text-secundarios-light/50"
+                className="mb-6 flex items-center gap-2 font-sans text-sm font-semibold text-secundarios-dark/75 dark:text-secundarios-light/75"
               >
                 <a href={`${langPrefix}${content.breadcrumbParentHref ?? '/que-hacemos'}`} className="hover:text-principal transition-colors">
                   {content.breadcrumbParent}
@@ -55,13 +55,13 @@ const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subj
                 <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
               </nav>
 
-              <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal">
+              <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto !opacity-100">
                 {keepBrandCase(content.eyebrow)}
               </p>
               <h1 className="!mb-6 !text-5xl !leading-none !font-extrabold text-secundarios-dark dark:text-secundarios-light">
                 {content.title}
               </h1>
-              <p className="!mb-0 max-w-2xl !text-lg !leading-relaxed text-secundarios-dark/70 dark:text-secundarios-light/70">
+              <p className="!mb-0 max-w-2xl !text-lg !leading-relaxed text-secundarios-dark/80 dark:text-secundarios-light/80">
                 {content.subtitle}
               </p>
             </div>

@@ -35,7 +35,7 @@ const ProgramDetails: React.FC<ProgramDetailsProps> = ({ title, rows, showTitle 
           >
             {label}
           </th>
-          <td className="py-2 text-right align-top text-secundarios-dark/70 dark:text-secundarios-light/70">{parseHighlight(value)}</td>
+          <td className="py-2 text-right align-top text-secundarios-dark/80 dark:text-secundarios-light/80">{parseHighlight(value)}</td>
         </tr>
       ))}
     </tbody>

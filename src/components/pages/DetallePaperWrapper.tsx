@@ -4,7 +4,7 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { ArrowLeft } from 'lucide-react';
-import undefinedImgur from '@assets/undefined_imgur.png';
+import undefinedImgur from '@assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 
@@ -70,8 +70,8 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
             {/* Botón volver */}
             <div className="mb-8">
               <a 
-                href="/biblioteca-papers" 
-                className="inline-flex items-center gap-2 text-neutral-500 dark:text-secundarios-light hover:text-principal transition-colors text-sm font-semibold uppercase cursor-pointer font-sans"
+                href={lang === 'es' ? '/biblioteca-papers' : '/en/biblioteca-papers'}
+                className="inline-flex items-center gap-2 text-neutral-600 dark:text-secundarios-light hover:text-principal transition-colors text-sm font-semibold uppercase cursor-pointer font-sans"
               >
                 <ArrowLeft size={16} />
                 {lang === 'es' ? 'Volver a la biblioteca' : 'Back to library'}
@@ -87,15 +87,15 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                 {(translationNote || summaryNote) && (
                   <div className="space-y-3 mb-8">
                     {translationNote && (
-                      <div className="p-4 text-principal border border-bg-principal-dark dark:border-principal rounded-md font-sans">
+                      <div className="p-4 text-principal-texto border border-bg-principal-dark dark:border-principal rounded-md font-sans">
                         <strong>{t.biblioteca.translationNotes}:</strong> {translationNote}
                       </div>
                     )}
                   </div>
                 )}
-                <h2 className="mb-8 my-12 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
+                <h1 className="como-h2 mb-8 my-12 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
                   {title}
-                </h2>
+                </h1>
                 {/* Contenido Markdown Renderizado */}
                 <div className="max-w-none mb-8">
                   <article className="prose dark:prose-invert max-w-none leading-relaxed font-serif">
@@ -169,7 +169,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                   {/* Autores Originales */}
                   {originalAuthors && originalAuthors.length > 0 && (
                     <div className="pt-4 border-t border-neutral-200 dark:border-zinc-800 font-sans">
-                      <h6 className="text-xs uppercase font-bold text-neutral-400 mb-1 ">
+                      <h6 className="text-xs uppercase font-bold text-neutral-600 dark:text-neutral-400 mb-1 ">
                         {t.biblioteca.originalAuthors}
                       </h6>
                       <p className="text-sm font-medium text-secundarios-dark dark:text-secundarios-light">
@@ -181,7 +181,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                   {/* Palabras clave (Keywords) */}
                   {keywords && keywords.length > 0 && (
                     <div className="pt-4 border-t border-neutral-200 dark:border-zinc-800 font-sans">
-                      <h6 className="text-xs uppercase font-bold text-neutral-400 mb-3">
+                      <h6 className="text-xs uppercase font-bold text-neutral-600 dark:text-neutral-400 mb-3">
                         {t.biblioteca.keywords}
                       </h6>
                       <div className="flex flex-wrap gap-2">
