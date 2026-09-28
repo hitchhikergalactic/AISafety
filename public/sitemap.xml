@@ -324,4 +324,49 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/cookies"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/cookies"/>
   </url>
+
+  <!-- Qué es la seguridad de la IA (solo en español) -->
+  <url>
+    <loc>https://aisafety.es/que-es-la-seguridad-de-la-ia</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/que-es-la-seguridad-de-la-ia"/>
+  </url>
+
+  <!-- Privacidad -->
+  <url>
+    <loc>https://aisafety.es/privacidad</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/privacidad"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/privacidad</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/privacidad"/>
+  </url>
+
+  <!-- Aviso legal -->
+  <url>
+    <loc>https://aisafety.es/aviso-legal</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/aviso-legal</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/aviso-legal"/>
+  </url>
 </urlset>
