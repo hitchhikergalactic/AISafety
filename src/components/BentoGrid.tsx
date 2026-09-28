@@ -4,9 +4,9 @@ import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
 import { emphasizeBrand } from '@utils/emphasizeBrand';
 import ProgramDetails from '@components/ProgramDetails';
-import eventImage from '../assets/ias_evento.jpg';
+import eventImage from '../assets/ias_evento.webp';
 import rodrigoImage from '../assets/rodrigo.jpg';
-import discord from '../assets/discord.png';
+import discord from '../assets/discord.webp';
 import substack from 'public/biblioteca/imagen_sesgos.jpg';
 import cursoAgi from '../assets/curso_agi.jpg';
 

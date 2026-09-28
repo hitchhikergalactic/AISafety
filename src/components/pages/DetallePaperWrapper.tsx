@@ -4,7 +4,7 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { ArrowLeft } from 'lucide-react';
-import undefinedImgur from '@assets/undefined_imgur.png';
+import undefinedImgur from '@assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 

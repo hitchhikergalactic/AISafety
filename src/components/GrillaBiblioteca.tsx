@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import undefinedImgur from '../assets/undefined_imgur.png';
+import undefinedImgur from '../assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 

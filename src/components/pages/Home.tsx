@@ -34,7 +34,7 @@ import logoColombia from '@assets/logos__ai-safety-colombia.svg';
 import logoColombiawhite from '@assets/logos__ai-safaty-colombia-white.svg';
 import logoLisboa from '@assets/logos__lisbon_ai_safety_hub.svg';
 import logoLisboaWhite from '@assets/logos__lisbon_ai_safety_hub_white.svg';
-import undefinedImgur from '@assets/undefined_imgur.png';
+import undefinedImgur from '@assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 

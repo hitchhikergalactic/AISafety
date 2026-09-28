@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Charla } from '@data/charlas';
 import { ArrowUpRight } from 'lucide-react';
-import undefinedImgur from '../assets/undefined_imgur.png';
+import undefinedImgur from '../assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
 
