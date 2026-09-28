@@ -69,8 +69,10 @@ const JoinModal: React.FC<JoinModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    // Si la ventana no cabe en pantallas bajas, se desplaza en vertical en lugar de cortarse
+    <div className="fixed inset-0 z-[100] overflow-y-auto" onClick={onClose}>
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div className="flex min-h-full items-center justify-center px-4 py-6">
       <div className="relative bg-secundarios-light dark:bg-secundarios-dark rounded-[32px] p-8 md:p-14 max-w-2xl w-full shadow-anthro-elevated border border-secundarios-dark/20 z-10" onClick={(e) => e.stopPropagation()}>
         <button onClick={onClose} className="absolute top-6 right-6 text-secundarios-dark hover:text-principal transition-colors cursor-pointer" type="button">
           <X size={24} />
@@ -120,9 +122,21 @@ const JoinModal: React.FC<JoinModalProps> = ({
               <button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-2xl bg-principal text-white font-sans font-black text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-anthro-elevated active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                 {isSubmitting ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.subscribe.button}
               </button>
+
+              {/* Primera capa informativa de protección de datos; el detalle está en la política de privacidad */}
+              <p className="!mb-0 !text-sm !leading-relaxed text-secundarios-dark/60 dark:text-secundarios-light/60 font-sans text-center text-balance">
+                {lang === 'es'
+                  ? 'Al enviar el formulario, iaS tratará tus datos para gestionar tu inscripción y enviarte información sobre sus actividades. Puedes acceder a ellos, rectificarlos o suprimirlos escribiendo a hola@aisafety.es. Más información en la '
+                  : 'By submitting this form, iaS will process your data to manage your registration and send you information about its activities. You can access, rectify or delete it by writing to hola@aisafety.es. More information in the '}
+                <a href={lang === 'es' ? '/privacidad' : '/en/privacidad'} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                  {lang === 'es' ? 'política de privacidad' : 'privacy policy'}
+                </a>
+                .
+              </p>
             </form>
           </>
         )}
+      </div>
       </div>
     </div>
   );
