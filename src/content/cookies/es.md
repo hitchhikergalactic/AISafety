@@ -3,51 +3,22 @@ title: "Política de cookies"
 description: "Qué guarda aisafety.es en tu dispositivo, qué contenidos de terceros se cargan y cómo decides tú."
 ---
 
-Última actualización: 26 de septiembre de 2026.
+Fecha de entrada en vigor: 28 de septiembre de 2026 · Última actualización: 28 de septiembre de 2026
 
-## Qué son las cookies
+## 1. Qué son las cookies
 
-Las cookies y las tecnologías similares, como el almacenamiento local del navegador, guardan información en tu dispositivo y la recuperan mientras navegas. Esta página explica cuáles usa aisafety.es, de quién son y para qué sirven.
+Las cookies son pequeños archivos que una web guarda en tu navegador para recordar información sobre tu visita.
 
-## Quién es responsable
+## 2. Qué cookies usamos
 
-aisafety.es es el sitio de Inteligencia Artificial Segura (iaS). Para cualquier consulta sobre esta política, escríbenos a [hola@aisafety.es](mailto:hola@aisafety.es).
+Esta web no utiliza cookies publicitarias ni de seguimiento, y por eso no te mostramos ningún aviso de consentimiento; las estadísticas de visitas se obtienen con Umami, una herramienta que no instala cookies ni guarda información en tu dispositivo, y los datos que recoge son anónimos y agregados.
 
-## Qué guardamos en tu dispositivo
+## 3. Contenidos de terceros
 
-Solo una preferencia, y solo si la eliges tú:
+Algunos formularios o eventos se abren en servicios externos, como Jotform o Luma, que pueden usar sus propias cookies cuando accedes a ellos; en ese caso se aplican las políticas de esos servicios.
 
-| Nombre | Tipo | De quién | Para qué | Duración |
-| --- | --- | --- | --- | --- |
-| `app_theme` | Almacenamiento local del navegador | iaS | Recordar si elegiste el modo claro o el oscuro con el botón del menú | Hasta que la borres desde tu navegador |
+## 4. Cómo gestionar las cookies
 
-Se guarda cuando pulsas el botón de tema y no se usa para nada más. Al ser una preferencia que eliges tú, no necesita tu consentimiento.
+Puedes bloquear o eliminar las cookies desde la configuración de tu navegador, consultando la ayuda de [Chrome](https://support.google.com/chrome/answer/95647?hl=es), [Safari](https://support.apple.com/es-es/guide/safari/sfri11471/mac), [Firefox](https://support.mozilla.org/es/kb/Borrar%20cookies) o [Edge](https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09).
 
-## Contenidos de terceros que se cargan solo si pulsas
-
-Algunas páginas incluyen contenidos de otras empresas. Al abrir la página no se cargan: en su lugar ves un botón y un aviso. Si pulsas el botón, el contenido se carga y esa empresa guarda datos en tu dispositivo según su propia política. Pulsar el botón es tu forma de aceptarlo; si no pulsas, no se carga nada.
-
-| Contenido | Dónde | Empresa | Qué guarda al pulsar | Su política |
-| --- | --- | --- | --- | --- |
-| Vídeos | Qué hacemos y las fichas de las charlas del seminario | YouTube (Google), en su modo de privacidad mejorada (youtube-nocookie.com) | Datos en el almacenamiento local del navegador | [Política de privacidad de Google](https://policies.google.com/privacy?hl=es) |
-| Calendario de eventos | iaS Valencia | Luma | Cookies de Cloudflare, el servicio que usa Luma para detectar tráfico automatizado; una de ellas dura un año | [Política de privacidad de Luma](https://luma.com/privacy-policy) |
-
-Antes de pulsar, la miniatura de cada vídeo se descarga de los servidores de YouTube, sin cookies.
-
-Tu decisión vale para esa visita a la página: la próxima vez volverás a ver el botón.
-
-## Estadísticas de visitas
-
-Usamos Umami para contar visitas. Su código no instala cookies ni guarda datos en tu dispositivo.
-
-## Cómo borrar estos datos
-
-Puedes borrar la preferencia de tema y los datos que hayan guardado YouTube o Luma desde la configuración de tu navegador, en el apartado de cookies y datos de sitios. Ten en cuenta que, si aceptas contenidos de terceros, tienes que borrar sus datos desde las opciones del navegador o desde el sistema que ofrezca el propio tercero.
-
-## Transferencias internacionales
-
-Las transferencias de datos a terceros países que, en su caso, hagan Google y Luma se explican en sus políticas, enlazadas en la tabla de arriba.
-
-## Cambios en esta política
-
-Si cambian los contenidos de terceros o el uso que hacemos de estas tecnologías, actualizaremos esta página y su fecha.
+Consulta también nuestra [Política de privacidad](/privacidad).

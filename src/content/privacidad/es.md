@@ -3,65 +3,35 @@ title: "Política de privacidad"
 description: "Qué datos personales recoge aisafety.es, para qué los usamos, con quién los compartimos y cómo ejercer tus derechos."
 ---
 
-Última actualización: 28 de septiembre de 2026.
+Fecha de entrada en vigor: 28 de septiembre de 2026 · Responsable: iaS
 
-## Quién es responsable
+## 1. Quién es el responsable
 
-Los datos personales que se recogen en aisafety.es los trata Inteligencia Artificial Segura (iaS), una iniciativa en proceso de constitución como asociación sin ánimo de lucro.
+El responsable del tratamiento de tus datos es iaS, proyecto gestionado por Osmani Redondo con sede en MAD Tech Campus, Madrid; puedes escribirnos a [hola@aisafety.es](mailto:hola@aisafety.es) para cualquier cuestión relacionada con tus datos.
 
-- **Domicilio:** Mad Tech Campus, Madrid (España)
-- **Correo electrónico:** [hola@aisafety.es](mailto:hola@aisafety.es)
+## 2. Qué datos recogemos
 
-Para cualquier consulta sobre esta política o sobre tus datos, escríbenos a ese correo.
+Recogemos los datos que nos facilitas voluntariamente al rellenar nuestros formularios, inscribirte en un evento o escribirnos, como tu nombre, tu correo electrónico y la información que decidas incluir en tu mensaje o solicitud; también obtenemos estadísticas de visitas anónimas y agregadas, sin cookies ni identificación personal.
 
-## Qué datos tratamos, para qué y con qué base
+## 3. Para qué los usamos y con qué base
 
-Solo tratamos los datos que nos das tú, y solo para lo que se indica en cada caso:
+- Responder a tus mensajes y solicitudes, sobre la base de tu consentimiento.
+- Gestionar tu inscripción y participación en nuestros eventos y actividades, sobre la base de tu solicitud de participar.
+- Enviarte información sobre iaS, solo si nos lo has pedido, sobre la base de tu consentimiento, que puedes retirar en cualquier momento.
+- Conocer de forma agregada cómo se usa la web para mejorarla, sobre la base de nuestro interés legítimo.
 
-| Cuándo | Qué datos | Para qué | Base legal | Cuánto tiempo |
-| --- | --- | --- | --- | --- |
-| Te unes a la comunidad con el formulario «Forma parte de iaS» | Nombre, correo electrónico y perfil de LinkedIn | Enviarte noticias, recursos e invitaciones a las actividades de iaS | Tu consentimiento | Hasta que te des de baja o nos pidas que borremos tus datos |
-| Te inscribes a un evento desde la web | Nombre, correo electrónico y perfil de LinkedIn | Gestionar tu inscripción y enviarte la información del evento | Tu consentimiento | Hasta que te des de baja o nos pidas que borremos tus datos |
-| Te inscribes a una sesión en Luma | Los datos que Luma nos facilita como organizadores, como tu nombre y tu correo electrónico | Gestionar tu asistencia y enviarte la información de la sesión | Tu consentimiento al inscribirte | Hasta que nos pidas que borremos tus datos |
-| Solicitas plaza en el Curso de Estrategia ante la IA General | Los datos que incluyas en el formulario de inscripción | Valorar tu solicitud y gestionar tu plaza | Tu consentimiento y las medidas que pides antes de participar | Mientras dure la selección y el curso, y después hasta que nos pidas que los borremos |
-| Te ofreces como ponente | Los datos que incluyas en el formulario de ponentes | Valorar tu propuesta y contactar contigo | Tu consentimiento | Hasta que nos pidas que borremos tus datos |
-| Nos escribes | Tu correo electrónico y lo que nos cuentes | Responderte | Tu consentimiento | El tiempo necesario para atender tu mensaje |
-| Visitas la web | Datos técnicos de la visita, como la dirección IP, que registra el servidor, y datos agregados y anónimos de uso, sin cookies | Mantener la web segura y saber, en conjunto, qué páginas se visitan | Nuestro interés legítimo en que la web funcione bien | El plazo que fija cada proveedor |
+No vendemos ni cedemos tus datos a terceros con fines comerciales.
 
-No usamos tus datos para tomar decisiones automatizadas ni para elaborar perfiles, y no los vendemos.
+## 4. Quién más trata tus datos
 
-## Con quién compartimos tus datos
+Para funcionar usamos proveedores que tratan datos por cuenta nuestra: Vercel (alojamiento de la web), Google (recepción de formularios), FormSubmit y Jotform (formularios), Airtable (almacenamiento de inscripciones), Luma (gestión de eventos) y Umami (estadísticas anónimas); algunos de ellos están en Estados Unidos, por lo que la transferencia de datos se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.
 
-No cedemos tus datos a nadie, salvo obligación legal. Para prestar estos servicios usamos proveedores que los tratan por nuestra cuenta:
+## 5. Cuánto tiempo los conservamos
 
-| Proveedor | Para qué | Su política |
-| --- | --- | --- |
-| Google | Guardar las altas del formulario «Forma parte de iaS» y recibir el correo de las inscripciones | [Privacidad de Google](https://policies.google.com/privacy) |
-| FormSubmit | Enviarnos por correo las inscripciones a eventos | [Privacidad de FormSubmit](https://formsubmit.co/privacy.pdf) |
-| Luma | Gestionar las inscripciones a las sesiones | [Privacidad de Luma](https://luma.com/privacy-policy) |
-| Jotform | Formulario de inscripción al curso | [Privacidad de Jotform](https://www.jotform.com/privacy/) |
-| Airtable | Formulario de ponentes | [Privacidad de Airtable](https://www.airtable.com/company/privacy) |
-| Umami | Estadísticas de visitas agregadas y anónimas, sin cookies | [Privacidad de Umami](https://umami.is/privacy) |
-| Vercel | Alojamiento de la web | [Privacidad de Vercel](https://vercel.com/legal/privacy-policy) |
+Conservamos tus datos mientras sean necesarios para la finalidad para la que los recogimos y, como máximo, 2 años desde tu último contacto con nosotros, salvo que la ley obligue a conservarlos más tiempo o que nos pidas antes su supresión.
 
-Algunos de estos proveedores tienen su sede fuera del Espacio Económico Europeo, sobre todo en Estados Unidos. En ese caso, la transferencia de datos se ampara en las garantías que prevé el Reglamento General de Protección de Datos y que cada proveedor detalla en su política.
+## 6. Tus derechos
 
-Los enlaces a otros sitios, como Discord o Substack, te llevan a servicios con su propia política de privacidad, que se aplica cuando los usas.
+Puedes acceder a tus datos, rectificarlos, suprimirlos, oponerte a su tratamiento, solicitar su limitación o su portabilidad y retirar tu consentimiento en cualquier momento escribiendo a [hola@aisafety.es](mailto:hola@aisafety.es); si consideras que no hemos atendido correctamente tu solicitud, puedes presentar una reclamación ante la Agencia Española de Protección de Datos ([aepd.es](https://www.aepd.es/)).
 
-## Tus derechos
-
-Puedes pedirnos en cualquier momento que te digamos qué datos tuyos tenemos, que los corrijamos o que los borremos. También puedes oponerte a que los tratemos, pedir que limitemos su uso, pedir que te los entreguemos en un formato que puedas llevarte a otro servicio y retirar tu consentimiento, sin que eso afecte a lo que hayamos hecho antes.
-
-Para ejercer cualquiera de estos derechos, escríbenos a [hola@aisafety.es](mailto:hola@aisafety.es). Si crees que no hemos tratado bien tus datos, puedes reclamar ante la [Agencia Española de Protección de Datos](https://www.aepd.es/).
-
-## Menores de edad
-
-Esta web no está dirigida a menores de 14 años. Si tienes menos de 14 años, no nos envíes tus datos.
-
-## Cookies
-
-Esta web no instala cookies al abrirla. Todo lo relativo a cookies y a los contenidos de terceros que se cargan solo si pulsas está en la [política de cookies](/cookies).
-
-## Cambios en esta política
-
-Si cambiamos esta política, publicaremos aquí la nueva versión con su fecha de actualización.
+Para más información sobre cookies, consulta nuestra [Política de cookies](/cookies).

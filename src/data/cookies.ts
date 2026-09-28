@@ -3,21 +3,21 @@
 // actualizar a la vez esos textos y los avisos de aquí.
 export const cookiesContent = {
   es: {
-    seoTitle: 'Cookies | iaS',
+    seoTitle: 'Política de cookies | iaS',
     breadcrumbParent: 'Inicio',
     breadcrumbParentHref: '/',
     breadcrumbCurrent: 'Cookies',
-    eyebrow: 'Política de cookies',
-    title: 'Cookies',
+    eyebrow: 'Información legal',
+    title: 'Política de cookies',
     subtitle: 'Qué guarda este sitio en tu dispositivo, qué contenidos de terceros se cargan y cómo decides tú.',
   },
   en: {
-    seoTitle: 'Cookies | iaS',
+    seoTitle: 'Cookie policy | iaS',
     breadcrumbParent: 'Home',
     breadcrumbParentHref: '/',
     breadcrumbCurrent: 'Cookies',
-    eyebrow: 'Cookie policy',
-    title: 'Cookies',
+    eyebrow: 'Legal information',
+    title: 'Cookie policy',
     subtitle: 'What this site stores on your device, which third-party content it loads and how you decide.',
   },
 } as const;
