@@ -84,7 +84,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
                 href="https://form.jotform.com/262144003863046"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-principal px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl bg-principal px-6 py-4 text-[1.1875rem] font-bold text-white transition hover:-translate-y-0.5"
               >
                 {content.formButtonLabel}
               </a>

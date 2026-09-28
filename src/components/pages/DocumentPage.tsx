@@ -55,7 +55,7 @@ const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subj
                 <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
               </nav>
 
-              <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto">
+              <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto !opacity-100">
                 {keepBrandCase(content.eyebrow)}
               </p>
               <h1 className="!mb-6 !text-5xl !leading-none !font-extrabold text-secundarios-dark dark:text-secundarios-light">

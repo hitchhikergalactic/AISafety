@@ -22,7 +22,7 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
           <h5 className="mb-4 uppercase text-principal-texto">{content.eyebrow}</h5>
           <h1 className="como-h2 mb-6 leading-tight tracking-tight text-balance">
             <span className="text-secundarios-dark dark:text-secundarios-light">{content.titleDark}</span>{' '}
-            <span className="text-principal-texto">{content.titleAccent}</span>
+            <span className="text-principal">{content.titleAccent}</span>
           </h1>
           <p className="max-w-2xl mx-auto text-secundarios-dark/80 dark:text-secundarios-light/80 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
@@ -70,7 +70,7 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
           <div className="mt-12">
             <a
               href={crearDelegacionMailto}
-              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-white font-bold hover:bg-principal/90 transition-all shadow-md"
+              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-[1.1875rem] text-white font-bold hover:bg-principal/90 transition-all shadow-md"
             >
               {content.ctaLabel}
             </a>

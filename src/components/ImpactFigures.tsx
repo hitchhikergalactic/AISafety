@@ -65,7 +65,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ figure, duration = 15
   }, [target, duration]);
 
   return (
-    <div ref={containerRef} className="text-4xl md:text-5xl font-black text-principal-texto">
+    <div ref={containerRef} className="text-4xl md:text-5xl font-black text-principal">
       {prefix}
       {displayValue}
       {suffix && suffix !== 'M' && <sup>{suffix}</sup>}
@@ -121,7 +121,7 @@ const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ figure, delay = 0 }) 
   return (
     <div
       ref={ref}
-      className={`text-4xl md:text-5xl font-black text-principal-texto transform transition-all duration-700 ${
+      className={`text-4xl md:text-5xl font-black text-principal transform transition-all duration-700 ${
         isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}
     >

@@ -17,8 +17,9 @@
   --color-cuartos-purple: #662d91;
   /* Gris de etiquetas: más oscuro en modo claro para llegar a 4,5:1 (en oscuro se mantiene #9ca3af, ver .dark) */
   --color-label-gray: #5f6673;
-  /* Naranja para texto: la marca (#ff4500) no llega a 4,5:1 como texto sobre los fondos del sitio;
-     este tono sí (modo claro). En modo oscuro se aclara, ver .dark. Fondos, bordes y botones siguen en --color-principal. */
+  /* Naranja para texto pequeño: la marca (#ff4500) no llega a 4,5:1 como texto normal sobre los fondos del sitio;
+     este tono sí (modo claro; en oscuro se aclara, ver .dark). El texto grande (títulos, cifras), los fondos, los bordes
+     y los botones usan el naranja de iaS, --color-principal: al texto grande le basta 3:1 y #ff4500 lo cumple. */
   --color-principal-texto: #ad2f00;
 
   --radius-anthro: 16px;
@@ -48,7 +49,7 @@ body {
 
 /* Modo oscuro: tonos de texto con contraste suficiente sobre fondo oscuro */
 .dark {
-  --color-principal-texto: #ff9a73;
+  --color-principal-texto: #ff8a5c;
   --color-label-gray: #9ca3af;
 }
 
@@ -148,7 +149,7 @@ h1.como-h4 {
   font-weight: 700 !important;
   line-height: 1.1 !important;
   font-size: clamp(1.0rem, 5vw, 1.5rem) !important;
-  color: var(--color-principal-texto) !important;
+  color: var(--color-principal) !important;
   margin-bottom: 1rem !important;
 }
 h1.como-h4:not(.text-balance) {
@@ -168,8 +169,8 @@ h4 {
   font-weight: 700 !important;   
   line-height: 1.1 !important;
   font-size: clamp(1.0rem, 5vw, 1.5rem) !important; 
-  /* Naranja de texto (tono accesible del color principal) */
-  color: var(--color-principal-texto) !important;
+  /* Naranja de iaS: los h4 son texto grande, que solo necesita 3:1 */
+  color: var(--color-principal) !important;
   letter-spacing: 0.00em !important; 
   margin-bottom: 1rem !important;
 }

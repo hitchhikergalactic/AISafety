@@ -60,7 +60,7 @@ const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, tit
             <button
               type="button"
               onClick={() => setCargado(true)}
-              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-lg text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-[1.1875rem] text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
             >
               {textos.boton}
             </button>
@@ -69,7 +69,7 @@ const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, tit
       </div>
 
       {!cargado && (
-        <p className="!mt-3 !mb-0 !font-sans !text-xs !leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+        <p className="!mt-3 !mb-0 !opacity-100 !font-sans !text-xs !leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
           {textos.aviso}{' '}
           <a href={`${langPrefix}/cookies`} className="font-semibold text-principal-texto hover:underline">
             {embedsAlPulsar.masInfo[lang]}

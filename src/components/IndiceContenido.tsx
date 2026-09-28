@@ -54,7 +54,7 @@ const IndiceContenido: React.FC<IndiceContenidoProps> & { Movil: React.FC<Indice
 
   return (
     <nav aria-label={titulo} className="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-2">
-      <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto">{titulo}</p>
+      <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto !opacity-100">{titulo}</p>
       <Lista entradas={entradas} activa={activa} />
     </nav>
   );
