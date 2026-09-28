@@ -71,7 +71,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
           {/* COLUMNA IZQUIERDA: DETALLES TEXTUALES */}
           <div className="lg:col-span-7 flex flex-col">
             
-            <h5 className="mb-4 uppercase text-principal"> {tagActivo}</h5>
+            <h5 className="mb-4 uppercase text-principal-texto"> {tagActivo}</h5>
 
             <h1 className="como-h2 mb-8 leading-tight tracking-tight text-balance">
               {tituloActivo}
@@ -119,7 +119,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
 
             <div className="border-t border-secundarios-black dark:border-zinc-800 pt-8 mt-4">
               <div>
-                <h5 className="!text-principal texto-medium !font-bold mb-3">
+                <h5 className="!text-principal-texto texto-medium !font-bold mb-3">
                   {expositor.nombre} {expositor.apellido}
                 </h5>
                 <h5 className="texto-medium mb-1 opacity-80 mt-1">
@@ -189,7 +189,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
               >
                 <div>
                   <div className="flex justify-between items-center mb-3">
-                    <span className="texto-small font-bold text-principal">
+                    <span className="texto-small !opacity-100 font-bold text-principal-texto">
                       {new Date(charla.fecha).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short' })}
                     </span>
                     <span className="text-[10px] uppercase font-bold  px-2 py-0.5 rounded bg-secundarios-gray dark:bg-zinc-800 text-label-gray">
@@ -205,7 +205,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                     {lang === 'es' ? charla.descripcionCortaEs : charla.descripcionCortaEn}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase text-principal">
+                <div className="pt-4 border-t border-secundarios-gray dark:border-zinc-800 w-full flex justify-between items-center text-xs font-semibold uppercase text-principal-texto">
                   <span>{charla.expositor.nombre} {charla.expositor.apellido}</span>
                 </div>
               </a>

@@ -80,7 +80,7 @@ const JoinModal: React.FC<JoinModalProps> = ({
 
         {isSuccess ? (
           <div className="text-center py-8">
-            <h3 className="mb-4 text-principal">{t.subscribe.success}</h3>
+            <h3 className="mb-4 text-principal-texto">{t.subscribe.success}</h3>
             <p className="text-secundarios-dark/60 dark:text-secundarios-light/60 font-serif text-lg">
               {successMessage}
             </p>
@@ -128,7 +128,7 @@ const JoinModal: React.FC<JoinModalProps> = ({
                 {lang === 'es'
                   ? 'Al enviar el formulario, iaS tratará tus datos para gestionar tu inscripción y enviarte información sobre sus actividades. Puedes acceder a ellos, rectificarlos o suprimirlos escribiendo a hola@aisafety.es. Más información en la '
                   : 'By submitting this form, iaS will process your data to manage your registration and send you information about its activities. You can access, rectify or delete it by writing to hola@aisafety.es. More information in the '}
-                <a href={lang === 'es' ? '/privacidad' : '/en/privacidad'} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">
+                <a href={lang === 'es' ? '/privacidad' : '/en/privacidad'} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto hover:underline">
                   {lang === 'es' ? 'política de privacidad' : 'privacy policy'}
                 </a>
                 .

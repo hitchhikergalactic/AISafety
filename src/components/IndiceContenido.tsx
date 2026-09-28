@@ -35,8 +35,8 @@ const Lista: React.FC<{ entradas: readonly EntradaIndice[]; activa: string | nul
               depth === 3 ? 'pl-7' : 'pl-3'
             } ${
               esActiva
-                ? 'border-principal font-semibold text-principal'
-                : 'border-secundarios-dark/10 text-secundarios-dark/70 dark:border-secundarios-light/10 dark:text-secundarios-light/70'
+                ? 'border-principal font-semibold text-principal-texto'
+                : 'border-secundarios-dark/10 text-secundarios-dark/80 dark:border-secundarios-light/10 dark:text-secundarios-light/80'
             }`}
           >
             {text}
@@ -54,7 +54,7 @@ const IndiceContenido: React.FC<IndiceContenidoProps> & { Movil: React.FC<Indice
 
   return (
     <nav aria-label={titulo} className="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-2">
-      <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal">{titulo}</p>
+      <p className="!mb-3 !font-sans !text-sm !font-semibold uppercase tracking-widest text-principal-texto">{titulo}</p>
       <Lista entradas={entradas} activa={activa} />
     </nav>
   );
@@ -70,7 +70,7 @@ const IndiceContenidoMovil: React.FC<IndiceContenidoProps> = ({ titulo, entradas
       onToggle={(e) => setAbierto((e.currentTarget as HTMLDetailsElement).open)}
       className="group rounded-xl border border-secundarios-dark/10 bg-white/70 dark:border-white/10 dark:bg-white/5"
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 font-sans text-sm font-semibold uppercase tracking-widest text-principal [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 font-sans text-sm font-semibold uppercase tracking-widest text-principal-texto [&::-webkit-details-marker]:hidden">
         {titulo}
         <ChevronDown size={18} className="transition-transform group-open:rotate-180" aria-hidden="true" />
       </summary>

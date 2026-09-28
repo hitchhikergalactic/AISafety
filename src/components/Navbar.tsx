@@ -257,7 +257,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                         className={`text-lg font-semibold transition-colors block touch-manipulation ${
                           sublink.highlight
                             ? 'bg-principal text-white rounded-md px-3 py-2'
-                            : 'text-principal dark:text-principalLight hover:text-principal/80 py-2'
+                            : 'text-principal-texto dark:text-principalLight hover:text-principal/80 py-2'
                         }`}
                       >
                         {sublink.label}

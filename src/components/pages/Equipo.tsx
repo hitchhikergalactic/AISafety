@@ -42,7 +42,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
                 href="https://www.linkedin.com/in/osmani/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2"
+                className="text-secundarios-dark/80 dark:text-secundarios-light/80 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2"
               >
                 <FaLinkedin className="w-7 h-7" />
               </a>

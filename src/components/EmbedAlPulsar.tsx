@@ -48,7 +48,7 @@ const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, tit
             )}
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-principal shadow-lg transition-transform duration-200 group-hover:scale-105">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-principal-texto shadow-lg transition-transform duration-200 group-hover:scale-105">
                 <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
                   <path fill="currentColor" d="M8 5v14l11-7z" />
                 </svg>
@@ -69,9 +69,9 @@ const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, tit
       </div>
 
       {!cargado && (
-        <p className="!mt-3 !mb-0 !font-sans !text-xs !leading-snug text-secundarios-dark/70 dark:text-secundarios-light/70">
+        <p className="!mt-3 !mb-0 !font-sans !text-xs !leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
           {textos.aviso}{' '}
-          <a href={`${langPrefix}/cookies`} className="font-semibold text-principal hover:underline">
+          <a href={`${langPrefix}/cookies`} className="font-semibold text-principal-texto hover:underline">
             {embedsAlPulsar.masInfo[lang]}
           </a>
         </p>

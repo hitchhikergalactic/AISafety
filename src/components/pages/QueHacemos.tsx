@@ -62,7 +62,7 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
           <a
             href={`#${content.docsSectionId}`}
             aria-label={content.scrollHintLabel}
-            className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce motion-reduce:animate-none rounded-full border p-3 transition-colors border-secundarios-dark/15 text-secundarios-dark/45 hover:border-principal/50 hover:text-principal dark:border-secundarios-light/20 dark:text-secundarios-light/50 dark:hover:border-principal/50 dark:hover:text-principal"
+            className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce motion-reduce:animate-none rounded-full border p-3 transition-colors border-secundarios-dark/15 text-secundarios-dark/45 hover:border-principal/50 hover:text-principal dark:border-secundarios-light/20 dark:text-secundarios-light/75 dark:hover:border-principal/50 dark:hover:text-principal"
           >
             <ChevronDown size={20} aria-hidden="true" />
           </a>
@@ -83,14 +83,14 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
                 href={doc.href}
                 className="group flex h-full flex-col rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 shadow-anthro-subtle transition-all duration-300 hover:border-principal hover:shadow-anthro-card"
               >
-                <span className="mb-3 font-sans text-xs font-semibold uppercase tracking-wider text-principal">{keepBrandCase(doc.eyebrow)}</span>
+                <span className="mb-3 font-sans text-xs font-semibold uppercase tracking-wider text-principal-texto">{keepBrandCase(doc.eyebrow)}</span>
                 <h3 className="!mb-3 !font-sans !text-2xl !font-semibold !leading-tight text-secundarios-dark dark:text-secundarios-light transition-colors group-hover:text-principal">
                   {emphasizeBrand(doc.title)}
                 </h3>
-                <p className="!mb-6 flex-grow !font-sans !text-sm !leading-relaxed text-secundarios-dark/70 dark:text-secundarios-light/70">
+                <p className="!mb-6 flex-grow !font-sans !text-sm !leading-relaxed text-secundarios-dark/80 dark:text-secundarios-light/80">
                   {emphasizeBrand(doc.description)}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal">
+                <span className="mt-auto inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal-texto">
                   {content.docsLinkLabel}
                   <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
                 </span>

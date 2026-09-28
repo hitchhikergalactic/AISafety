@@ -19,7 +19,7 @@ interface BentoGridProps {
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
   // "Más información" va como texto dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
-  const moreInfoClass = "mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal group-hover:underline";
+  const moreInfoClass = "mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal-texto group-hover:underline";
   const arrowButtonClass = "w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors shrink-0 ml-auto";
   
   // Función auxiliar para extraer de forma segura la URL de la imagen como un string
