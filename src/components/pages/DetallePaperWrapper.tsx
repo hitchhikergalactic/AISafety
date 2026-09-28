@@ -70,7 +70,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
             {/* Botón volver */}
             <div className="mb-8">
               <a 
-                href="/biblioteca-papers" 
+                href={lang === 'es' ? '/biblioteca-papers' : '/en/biblioteca-papers'}
                 className="inline-flex items-center gap-2 text-neutral-500 dark:text-secundarios-light hover:text-principal transition-colors text-sm font-semibold uppercase cursor-pointer font-sans"
               >
                 <ArrowLeft size={16} />
@@ -93,9 +93,9 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
                     )}
                   </div>
                 )}
-                <h2 className="mb-8 my-12 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
+                <h1 className="como-h2 mb-8 my-12 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light text-3xl md:text-4xl lg:text-5xl font-bold font-sans">
                   {title}
-                </h2>
+                </h1>
                 {/* Contenido Markdown Renderizado */}
                 <div className="max-w-none mb-8">
                   <article className="prose dark:prose-invert max-w-none leading-relaxed font-serif">

@@ -73,9 +73,9 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
             
             <h5 className="mb-4 uppercase text-principal"> {tagActivo}</h5>
 
-            <h2 className="mb-8 leading-tight tracking-tight text-balance">
+            <h1 className="como-h2 mb-8 leading-tight tracking-tight text-balance">
               {tituloActivo}
-            </h2>
+            </h1>
 
             {/* Redes e íconos de contacto */}
             <div className="flex gap-6 items-center mb-8 text-2xl">

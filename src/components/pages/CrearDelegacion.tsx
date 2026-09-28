@@ -20,10 +20,10 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
       <main className="pt-36 md:pt-44 px-6 md:px-12 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
         <section className="w-full max-w-5xl mx-auto pb-20 md:pb-32 text-center">
           <h5 className="mb-4 uppercase text-principal">{content.eyebrow}</h5>
-          <h2 className="mb-6 leading-tight tracking-tight text-balance">
+          <h1 className="como-h2 mb-6 leading-tight tracking-tight text-balance">
             <span className="text-secundarios-dark dark:text-secundarios-light">{content.titleDark}</span>{' '}
             <span className="text-principal">{content.titleAccent}</span>
-          </h2>
+          </h1>
           <p className="max-w-2xl mx-auto text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
           </p>

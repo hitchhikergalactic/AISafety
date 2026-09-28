@@ -28,9 +28,9 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
         <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0 pb-20 md:pb-32">
           <div className="max-w-3xl text-left">
             <h5 className="mb-4 uppercase text-principal">{content.eyebrow}</h5>
-            <h2 className="mb-8 leading-tight tracking-tight text-balance">
+            <h1 className="como-h2 mb-8 leading-tight tracking-tight text-balance">
               {content.pageTitle}
-            </h2>
+            </h1>
             <p className="bajadapages mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
               {parseText(content.heroText.before)}
               <a href={content.heroText.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal hover:underline">

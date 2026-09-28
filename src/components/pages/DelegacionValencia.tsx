@@ -98,9 +98,9 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
             <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
           </nav>
 
-          <h2 className="mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
+          <h1 className="como-h2 mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
             {content.title}
-          </h2>
+          </h1>
           <p className="max-w-2xl mx-auto mb-8 text-secundarios-dark/70 dark:text-secundarios-light/70 text-lg md:text-xl leading-relaxed">
             {content.subtitle}
           </p>

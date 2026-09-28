@@ -53,6 +53,8 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-secundarios-dark/15 to-transparent dark:via-secundarios-light/20"
           />
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Título de la página para buscadores y lectores de pantalla; visualmente la página empieza por la misión */}
+            <h1 className="sr-only">{lang === 'es' ? 'Qué hacemos' : 'What we do'}</h1>
             <p className="mx-auto max-w-4xl text-center !mb-0 !font-sans !text-xl !font-bold !leading-relaxed md:!text-2xl md:!leading-8 text-secundarios-dark dark:text-secundarios-light">
               {content.missionText}
             </p>
