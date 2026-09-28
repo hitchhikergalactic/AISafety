@@ -1,0 +1,17 @@
+---
+// src/pages/en/privacidad.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DocumentPage from '../../components/pages/DocumentPage.tsx';
+import { privacidadContent } from '../../data/legal';
+
+const entry = await getEntry('privacidad', 'en');
+const { Content } = await render(entry!);
+const c = privacidadContent.en;
+---
+
+<Layout lang="en" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
+  <DocumentPage lang="en" header={c} subject="Nuevo suscriptor desde Privacidad" client:load>
+    <Content />
+  </DocumentPage>
+</Layout>

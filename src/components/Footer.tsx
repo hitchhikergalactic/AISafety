@@ -111,6 +111,14 @@ const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
           <a href={`${langPrefix}/cookies`} className="hover:text-principal transition-colors">
             Cookies
           </a>
+          <span className="mx-2" aria-hidden="true">·</span>
+          <a href={`${langPrefix}/privacidad`} className="hover:text-principal transition-colors">
+            {lang === 'es' ? 'Privacidad' : 'Privacy'}
+          </a>
+          <span className="mx-2" aria-hidden="true">·</span>
+          <a href={`${langPrefix}/aviso-legal`} className="hover:text-principal transition-colors">
+            {lang === 'es' ? 'Aviso legal' : 'Legal notice'}
+          </a>
         </div>
       </div>
     </footer>

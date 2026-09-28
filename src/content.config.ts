@@ -73,6 +73,22 @@ const queEsLaSeguridadDeLaIaCollection = defineCollection({
   }),
 });
 
+const privacidadCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/privacidad' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
+const avisoLegalCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/aviso-legal' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
@@ -80,4 +96,6 @@ export const collections = {
   teoriaDelCambio: teoriaDelCambioCollection,
   cookies: cookiesCollection,
   queEsLaSeguridadDeLaIa: queEsLaSeguridadDeLaIaCollection,
+  privacidad: privacidadCollection,
+  avisoLegal: avisoLegalCollection,
 };

@@ -1,0 +1,17 @@
+---
+// src/pages/en/aviso-legal.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DocumentPage from '../../components/pages/DocumentPage.tsx';
+import { avisoLegalContent } from '../../data/legal';
+
+const entry = await getEntry('avisoLegal', 'en');
+const { Content } = await render(entry!);
+const c = avisoLegalContent.en;
+---
+
+<Layout lang="en" title={c.seoTitle} description={c.subtitle} ogTitle={c.seoTitle} ogDescription={c.subtitle}>
+  <DocumentPage lang="en" header={c} subject="Nuevo suscriptor desde Aviso legal" client:load>
+    <Content />
+  </DocumentPage>
+</Layout>
