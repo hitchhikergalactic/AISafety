@@ -7,7 +7,7 @@ Effective date: 28 September 2026 · Owner: iaS
 
 ## 1. Website owner
 
-This website, aisafety.es, is managed by Osmani Redondo as the person responsible for the iaS project, based at MAD Tech Campus, Madrid; contact email: [hola@aisafety.es](mailto:hola@aisafety.es).
+This website, aisafety.es, is managed by iaS, based at MAD Tech Campus, Madrid; contact email: [hola@aisafety.es](mailto:hola@aisafety.es).
 
 ## 2. Purpose
 

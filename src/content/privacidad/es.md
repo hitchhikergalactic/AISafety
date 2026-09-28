@@ -7,7 +7,7 @@ Fecha de entrada en vigor: 28 de septiembre de 2026 · Responsable: iaS
 
 ## 1. Quién es el responsable
 
-El responsable del tratamiento de tus datos es iaS, proyecto gestionado por Osmani Redondo con sede en MAD Tech Campus, Madrid; puedes escribirnos a [hola@aisafety.es](mailto:hola@aisafety.es) para cualquier cuestión relacionada con tus datos.
+El responsable del tratamiento de tus datos es iaS, con sede en MAD Tech Campus, Madrid; puedes escribirnos a [hola@aisafety.es](mailto:hola@aisafety.es) para cualquier cuestión relacionada con tus datos.
 
 ## 2. Qué datos recogemos
 

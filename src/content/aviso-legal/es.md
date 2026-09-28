@@ -7,7 +7,7 @@ Fecha de entrada en vigor: 28 de septiembre de 2026 · Titular: iaS
 
 ## 1. Titular de la web
 
-Este sitio web, aisafety.es, es gestionado por Osmani Redondo como responsable del proyecto iaS, con sede en MAD Tech Campus, Madrid; correo de contacto: [hola@aisafety.es](mailto:hola@aisafety.es).
+Este sitio web, aisafety.es, es gestionado por iaS, con sede en MAD Tech Campus, Madrid; correo de contacto: [hola@aisafety.es](mailto:hola@aisafety.es).
 
 ## 2. Objeto
 

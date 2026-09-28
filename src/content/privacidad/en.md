@@ -7,7 +7,7 @@ Effective date: 28 September 2026 · Controller: iaS
 
 ## 1. Who is the controller
 
-The controller of your data is iaS, a project managed by Osmani Redondo and based at MAD Tech Campus, Madrid; you can write to us at [hola@aisafety.es](mailto:hola@aisafety.es) about anything related to your data.
+The controller of your data is iaS, based at MAD Tech Campus, Madrid; you can write to us at [hola@aisafety.es](mailto:hola@aisafety.es) about anything related to your data.
 
 ## 2. What data we collect
 
