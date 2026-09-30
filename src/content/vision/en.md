@@ -82,7 +82,7 @@ iaS offers a structured path from first contact to professional contribution, wi
 | **4** | Structured development | Does a full-time paid fellowship or internship in AI safety |
 | **5** | Professional impact | Works full-time in AI safety, whether in policy, research, industry or civil society, or leads an iaS research project |
 
-iaS focuses mainly on levels 0 to 3, and offers less support for levels 4 and 5, for example through recommendation letters or by introducing people to one another. Our funnel has two critical transitions where people are most likely to disengage:
+iaS supports the whole path: at levels 0 to 3 with its own programs, and at levels 4 and 5 by opening doors through recommendation letters, contacts in the field and its network of partner hubs. The goal is for language not to be a barrier at any point along the way. To achieve this, iaS concentrates its effort on the two transitions that decide the funnel:
 
 1. **From level 0 to 1**: getting someone who is unfamiliar with AI safety to engage for the first time, where events, social media and word of mouth matter most.
 2. **From level 2 to 3**: getting someone who has already learned about AI safety to make a meaningful contribution, and here structured projects and mentorship are essential.
@@ -97,7 +97,7 @@ The four pillars of iaS directly address both: Content and Events lower the barr
 
 *That experience awakens a bigger ambition in her: she explores opportunities in AI policy and sets her sights on the body that oversees AI in her country, and thanks to her demonstrated experience and a recommendation letter, soon afterwards she is part of the team working on its regulation.*
 
-Every pillar, every team member and every chapter helps to widen, strengthen and move people forward along this path. That said, the example above is that of one person going through the iaS funnel from level 0 to level 5, and two important clarifications are in order. First, iaS concentrates its work on levels 0 to 3, which is where it is most needed in Spanish, and for levels 3 to 5 it relies on its network of partner organizations. Second, we firmly believe that those who end up at an earlier stage of the iaS funnel add value, because one of the most important aspects of making the development and integration of AI go well is that society as a whole is adequately literate in AI and its safety, which is in itself a significant result and deserves to be mentioned explicitly.
+Every pillar, every team member and every chapter helps to widen, strengthen and move people forward along this path. Valeria's path, from level 0 to 5, is the one iaS wants to make possible at scale across the Spanish-speaking world. And every stage counts: making AI go well requires a society that understands AI and its risks, and every person who enters the funnel, however far they go, is part of that result.
 
 ---
 

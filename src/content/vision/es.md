@@ -82,7 +82,7 @@ iaS ofrece un camino estructurado desde el primer contacto hasta la contribució
 | **4** | Desarrollo estructurado | Realiza una beca o unas prácticas remuneradas a tiempo completo en seguridad de la IA |
 | **5** | Impacto profesional | Trabaja a tiempo completo en seguridad de la IA, ya sea en política, investigación, industria o sociedad civil, o dirige un proyecto de investigación de iaS |
 
-iaS se centra sobre todo en los niveles 0 a 3, y ofrece un apoyo menor a los niveles 4 y 5, por ejemplo mediante cartas de recomendación o presentando a personas entre sí. Nuestro embudo tiene dos transiciones críticas en las que es más probable que la gente se desvincule:
+iaS acompaña el camino completo: en los niveles 0 a 3 con sus propios programas, y en los niveles 4 y 5 abriendo puertas con cartas de recomendación, contactos con el campo y su red de hubs aliados. El objetivo es que el idioma no sea una barrera en ningún punto del camino. Para lograrlo, iaS concentra su esfuerzo en las dos transiciones que deciden el embudo:
 
 1. **Del nivel 0 al 1**: lograr que alguien que no conoce la seguridad de la IA se implique por primera vez, algo en lo que pesan sobre todo los eventos, las redes sociales y el boca a boca.
 2. **Del nivel 2 al 3**: conseguir que quien ya ha aprendido sobre seguridad de la IA haga una contribución significativa, y aquí resultan esenciales los proyectos estructurados y la mentoría.
@@ -97,7 +97,7 @@ Los cuatro pilares de iaS responden directamente a ambas: Contenidos y Eventos r
 
 *Esa experiencia despierta en ella una ambición mayor: explora oportunidades en política de IA y pone la mira en el organismo que supervisa la IA en su país, y gracias a su experiencia demostrada y a una carta de recomendación, poco después forma parte del equipo que trabaja en su regulación.*
 
-Cada pilar, cada miembro del equipo y cada capítulo contribuye a ampliar, fortalecer y hacer avanzar a las personas por este camino. Ahora bien, el ejemplo anterior es el de una persona que recorre el embudo de iaS del nivel 0 al nivel 5, y conviene hacer dos precisiones importantes. Primero, iaS concentra su trabajo en los niveles 0 a 3, que es donde más falta hace en español, y para los niveles 3 a 5 se apoya en su red de organizaciones aliadas. Segundo, creemos firmemente que quienes terminan en una etapa anterior del embudo de iaS aportan valor, porque uno de los aspectos más importantes para que el desarrollo y la integración de la IA salgan bien es que el conjunto de la sociedad esté adecuadamente alfabetizado en IA y en su seguridad, lo que en sí mismo es un resultado significativo y merece mencionarse de forma explícita.
+Cada pilar, cada miembro del equipo y cada capítulo contribuye a ampliar, fortalecer y hacer avanzar a las personas por este camino. El recorrido de Valeria, del nivel 0 al 5, es el que iaS quiere hacer posible a escala en todo el mundo hispanohablante. Y cada etapa cuenta: para que la IA salga bien hace falta una sociedad que entienda la IA y sus riesgos, y cada persona que entra en el embudo, llegue hasta donde llegue, forma parte de ese resultado.
 
 ---
 
