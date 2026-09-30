@@ -10,12 +10,11 @@ Este documento describe la lógica causal del trabajo de iaS (Inteligencia Artif
 
 ## 1. El problema
 
-El español lo hablan más de 650 millones de personas, unas 520 millones como lengua materna, repartidas por los cinco continentes ([Instituto Cervantes, 2025](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/espanol-crece-30-millones-hablantes-ano-5-anterior)); sin embargo, las decisiones sobre cómo se desarrolla, se despliega y se controla la IA más avanzada se toman mayoritariamente en inglés. Identificamos cuatro brechas que limitan la seguridad de la IA en el mundo hispanohablante:
+El español lo hablan más de 650 millones de personas, unas 520 millones como lengua materna, repartidas por los cinco continentes ([Instituto Cervantes, 2025](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/espanol-crece-30-millones-hablantes-ano-5-anterior)); sin embargo, las decisiones sobre cómo se desarrolla, se despliega y se controla la IA más avanzada se toman mayoritariamente en inglés. Identificamos tres brechas, ordenadas por su peso:
 
-1. **Una brecha de evidencia.** Faltan mediciones propias sobre cómo se comportan los sistemas de IA en español; los estudios multilingües disponibles muestran inconsistencias de seguridad entre idiomas y entre categorías de riesgo (el banco de pruebas [M-ALERT](https://arxiv.org/html/2412.15035) evalúa cinco idiomas, entre ellos el español, con 75.000 indicaciones), y la tabla comparativa ([Leaderboard](https://leaderboard.odesia.uned.es/)) de ODESIA mide una brecha de efectividad media del 20% (±4%) entre español e inglés en tareas de procesamiento del lenguaje, según nuestra consulta del 19 de septiembre de 2026. Ni siquiera la iniciativa de idiomas más ambiciosa de la industria trata la seguridad como una dimensión del problema lingüístico: Google, que en septiembre de 2026 declaraba cubrir ya 300 idiomas y el 86% de la población mundial, concentra todo ese esfuerzo en capacidad y accesibilidad (reconocimiento de voz, traducción, dispositivos sin conexión), sin mencionar una sola vez evaluación de seguridad o alineamiento como parte de ese trabajo ([Google, 2026](https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/)); sin un nodo que documente estos fallos en español y traslade la evidencia a reguladores y desarrolladores, es difícil que alguien los identifique y los corrija.
-2. **Una brecha de formación.** La formación de referencia en seguridad de la IA, incluida la de **BlueDot Impact**, se imparte en inglés; para quien trabaja en política, ingeniería, derecho o periodismo en español, el camino desde la curiosidad hasta una contribución profesional pasa por una barrera idiomática que nada tiene que ver con su capacidad.
-3. **Una brecha de entrada para el público.** La demanda existe (más de 1000 personas han pasado por los encuentros de iaS desde febrero de 2026), pero depende de que alguien ofrezca de forma sostenida, y en español, un lugar donde informarse y debatir sin necesidad de conocimientos técnicos previos.
-4. **Una brecha institucional.** Cuando una administración, una universidad, una empresa o un medio del mundo hispanohablante quiere entender los riesgos de la IA avanzada, necesita una contraparte que hable su idioma y conozca su marco normativo; iaS trabaja para ser esa contraparte y ya ha participado en la consulta pública de la Comisión Europea sobre la clasificación de sistemas de alto riesgo del AI Act.
+1. **Una brecha de talento.** Reducir los riesgos graves de la IA requiere muchas más personas que los entiendan y trabajen en ellos desde la política, la investigación, el derecho, el periodismo y la industria. La formación de referencia, incluida la de **BlueDot Impact**, se imparte en inglés, y en el mundo hispanohablante no existía una puerta de entrada sostenida en español; iaS la ha abierto, y más de 1000 personas han pasado por sus encuentros desde febrero de 2026. Esta es la brecha principal, y la que más directamente abordan nuestras actividades.
+2. **Una brecha de gobernanza.** España aplica el Reglamento de IA de la Unión Europea, que impone obligaciones específicas a los modelos de uso general con riesgo sistémico, y varios países latinoamericanos están legislando sobre IA. Quienes toman esas decisiones necesitan interlocutores en su idioma que conozcan los riesgos de la IA avanzada; iaS ya ha participado en la consulta pública de la Comisión Europea sobre la clasificación de sistemas de alto riesgo del AI Act.
+3. **Una brecha de evidencia.** Las lenguas con muchos recursos, como el español, resisten mucho mejor los ataques por traducción que las minoritarias ([Yong et al., 2023](https://arxiv.org/pdf/2310.02446); [Deng et al., 2023](https://arxiv.org/html/2310.06474v3)). Sin embargo, las evaluaciones de seguridad se diseñan en inglés, estudios como [M-ALERT](https://arxiv.org/html/2412.15035) muestran diferencias según la categoría de riesgo y las variantes regionales del español apenas se han estudiado. Esa pregunta está poco medida, y medirla es parte del trabajo de iaS.
 
 ---
 
@@ -24,6 +23,12 @@ El español lo hablan más de 650 millones de personas, unas 520 millones como l
 iaS sostiene que el cambio duradero en seguridad de la IA en el mundo hispanohablante nace de tres elementos que consideramos insuficientes en español, a saber, evidencia propia, personas que entienden los riesgos y saben actuar, y una organización estable con la que instituciones y medios puedan hablar; la forma más eficaz de construirlos es una infraestructura común que opera íntegramente en español, que informa al público, que acompaña a las personas desde su primera exposición hasta una contribución concreta y que produce por el camino evidencia y contenido citables.
 
 En resumen: **si construimos en español la infraestructura que falta (formación, evidencia, red y presencia institucional) y hacemos fácil entrar en ella, produciremos las personas y el conocimiento que hacen la IA más segura para todos.**
+
+### Supuestos que sostienen la teoría y cómo los comprobamos
+
+- **S1. Una parte relevante del talento hispanohablante no entra al campo por la barrera idiomática o por la falta de una red cercana.** Comprobación: el formulario de entrada pregunta si la persona habría asistido a una actividad equivalente en inglés.
+- **S2. La primera exposición conduce a un compromiso más profundo.** Comprobación: medimos el porcentaje de asistentes que pasa a Discord, al Curso de Estrategia ante la IAG, a un curso de BlueDot, a una beca o a un puesto en el campo.
+- **S3. Las instituciones hispanohablantes recurren a organizaciones locales para entender los riesgos de la IA avanzada.** Comprobación: registramos las consultas, invitaciones y citas institucionales que recibimos.
 
 ---
 
@@ -69,7 +74,7 @@ Cifras del CRM de iaS a 19 de septiembre de 2026; las personas del equipo no se 
 
 ### Resultados esperados
 
-1. **Una base de evidencia en español.** iaS documenta cómo fallan los sistemas de IA en este idioma y traslada esa evidencia a reguladores, desarrolladores y medios, que la citan como fuente.
+1. **Una base de evidencia en español.** iaS mide cómo se comportan los sistemas de IA en este idioma y en sus variantes, y traslada esa evidencia a reguladores, desarrolladores y medios, que la citan como fuente.
 2. **Un itinerario de talento.** Personas que pasan de su primera sesión a formarse, contribuir y trabajar en seguridad de la IA (política, investigación, industria o sociedad civil), sin que el idioma sea una barrera.
 3. **Mayor alfabetización y debate público en español.** La seguridad de la IA entra en la conversación de universidades, empresas y medios del mundo hispanohablante, y quienes participan en ella actúan con más criterio.
 4. **Una red de delegaciones.** El modelo probado en las sesiones en línea se replica en otras ciudades y países del mundo hispanohablante, empezando por Valencia, con marca, materiales y procedimientos compartidos.
@@ -77,23 +82,23 @@ Cifras del CRM de iaS a 19 de septiembre de 2026; las personas del equipo no se 
 
 ### Impacto
 
-**El desarrollo y el despliegue de la IA es seguro y justo también en español, y las personas que lo hablan participan en las decisiones que lo determinan.**
+**Que la transición hacia sistemas de IA avanzada no provoque daños catastróficos ni irreversibles, y que el mundo hispanohablante aporte personas, instituciones y decisiones para evitarlo.**
 
 ### Cómo lo medimos
 
-iaS mide el resultado de sus actividades con las valoraciones de cada encuentro y el seguimiento individual en el CRM, y medirá el cambio que se le puede atribuir con formularios de entrada y de salida en cada sesión (por ejemplo, las horas que cada persona dedica a la seguridad de la IA antes y después) y con testimonios de quienes han cambiado de rumbo gracias a ellas.
+En la actualidad, el CRM de iaS registra las inscripciones, la asistencia y la valoración de cada encuentro, lo que nos permite saber cuántas personas vuelven y cómo valoran las sesiones. Pero el alcance no es el cambio, y hemos empezado a medir el cambio: cada encuentro incluye un formulario de entrada y otro de salida, que recogen las horas semanales que cada persona dedica a la seguridad de la IA y si habría asistido a una actividad equivalente en inglés (supuesto S1). Además, hacemos un seguimiento a los seis meses de quienes asisten a dos o más encuentros, y en el CRM registramos cada paso de una persona al siguiente nivel del itinerario: Discord, Curso de Estrategia ante la IAG, cursos de BlueDot, becas o puestos en el campo.
 
 ---
 
 ## 4. Evidencia y validación
 
-**El problema está documentado.** Los estudios multilingües como M-ALERT y la tabla comparativa de ODESIA (véase la sección 1) muestran diferencias de comportamiento y de efectividad entre idiomas, que varían según la categoría de riesgo.
+**El problema está documentado.** Los estudios multilingües como M-ALERT (véase la sección 1) muestran diferencias de comportamiento entre idiomas, que varían según la categoría de riesgo.
 
 **Hay demanda.** Desde febrero de 2026, más de 1000 personas han pasado por los encuentros abiertos de iaS, con una valoración media de 4,56 sobre 5, con el 95% de las valoraciones en 4 o 5.
 
 **El público vuelve.** 416 personas han asistido a dos o más encuentros.
 
-**Lo siguiente que vamos a medir.** Las transiciones profesionales se ven a medio plazo, así que iaS va a medir el cambio que se le puede atribuir (qué habría hecho cada persona sin iaS) con los formularios de entrada y salida y el seguimiento individual, y evaluará el modelo de delegaciones con los resultados de Valencia.
+**Lo que estamos midiendo.** Las transiciones profesionales se ven a medio plazo; los formularios de entrada y salida y el seguimiento a seis meses comprueban los supuestos S1 a S3 y miden el cambio que se puede atribuir a iaS, y el modelo de delegaciones se evaluará con los resultados de Valencia.
 
 ---
 
