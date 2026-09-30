@@ -32,7 +32,7 @@ iaS was born to close that gap.
 
 ## Who we are
 
-Inteligencia Artificial Segura (iaS) is an AI safety organization that operates entirely in Spanish, based in Madrid and reaching the whole Spanish-speaking world. It works as a virtual hub and, since February 2026, has organized online seminars and a first in-person meetup in Madrid together with BlueDot Impact, with more than 1000 people registered for at least one of its events, in addition to publishing content in its newsletter, on YouTube, on Instagram and on LinkedIn.
+Inteligencia Artificial Segura (iaS) is an AI safety organization that operates entirely in Spanish, based in Madrid and reaching the whole Spanish-speaking world. It works as a virtual hub and, since February 2026, has organized online seminars and a first in-person meetup in Madrid together with BlueDot Impact, attended by more than 1000 people, in addition to publishing content in its newsletter, on YouTube, on Instagram and on LinkedIn.
 
 iaS runs with a team of volunteers and has the mentorship of people from other AI safety organizations; it is building a network of local chapters, with a [first chapter in Valencia](/en/delegaciones/valencia), united under one brand, one mission and a centralized infrastructure. This structure is designed to grow without friction, from a few chapters to many more.
 
@@ -115,7 +115,7 @@ We work closely with the hub in [Mexico](https://www.aismx.org/), with [AI Safet
 
 ## Looking ahead
 
-iaS rests on a base that has already been built: since February 2026, more than 1000 people have registered for its events and 503 have attended, with an average rating of 4.56 out of 5 across 59 ratings, and it has a multidisciplinary team.
+iaS rests on a base that has already been built: since February 2026, more than 1000 people have taken part in its seminars, with an average rating of 4.56 out of 5 across 59 ratings, and it has a multidisciplinary team.
 
 Spanish has hundreds of millions of speakers and there is no reason why AI safety should not have a thriving, authoritative and impactful movement in Spanish.
 

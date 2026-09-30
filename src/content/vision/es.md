@@ -32,7 +32,7 @@ iaS nace para cerrar esa brecha.
 
 ## Quiénes somos
 
-Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 1000 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
+Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, por los que han pasado más de 1000 personas, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
 
 iaS funciona con un equipo de personas voluntarias y cuenta con la mentoría de personas de otras organizaciones de seguridad de la IA; está construyendo una red de capítulos locales, con una [primera delegación en Valencia](/delegaciones/valencia), unidos bajo una misma marca, una misma misión y una infraestructura centralizada. Esta estructura está diseñada para crecer sin fricciones, desde unos pocos capítulos hasta muchos más.
 
@@ -115,7 +115,7 @@ Trabajamos estrechamente con el hub de [México](https://www.aismx.org/), con [A
 
 ## De cara al futuro
 
-iaS se apoya en una base ya construida: desde febrero de 2026, más de 1000 personas se han inscrito en sus eventos y 503 han asistido, con una valoración media de 4,56 sobre 5 en 59 valoraciones, y cuenta con un equipo multidisciplinar.
+iaS se apoya en una base ya construida: desde febrero de 2026, más de 1000 personas han pasado por sus seminarios, con una valoración media de 4,56 sobre 5 en 59 valoraciones, y cuenta con un equipo multidisciplinar.
 
 El español suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
 
