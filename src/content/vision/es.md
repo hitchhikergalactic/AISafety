@@ -32,7 +32,7 @@ iaS nace para cerrar esa brecha.
 
 ## Quiénes somos
 
-Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 400 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
+Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, por los que han pasado más de 1000 personas, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
 
 iaS funciona con un equipo de personas voluntarias y cuenta con la mentoría de personas de otras organizaciones de seguridad de la IA; está construyendo una red de capítulos locales, con una [primera delegación en Valencia](/delegaciones/valencia), unidos bajo una misma marca, una misma misión y una infraestructura centralizada. Esta estructura está diseñada para crecer sin fricciones, desde unos pocos capítulos hasta muchos más.
 
@@ -65,7 +65,7 @@ iaS cumple su misión mediante cuatro pilares integrados que, en conjunto, lleva
 
 **Contenidos y difusión.** iaS ayuda a configurar la narrativa sobre la seguridad de la IA en español mediante la newsletter Semana de la Seguridad de la IA, YouTube, Instagram, LinkedIn y otros canales; a corto plazo, esto canaliza a las personas interesadas hacia nuestros puntos de entrada y, con el tiempo, aspiramos a convertirlo en una presencia mediática más completa.
 
-**Recursos e investigación en español.** iaS construye la infraestructura que falta para trabajar en español, con un glosario bilingüe de 265 entradas, traducciones de documentos de referencia y una base de evidencia técnica sobre el comportamiento de los modelos en nuestro idioma; a gran escala, aspiramos a que funcione como un programa estructurado de investigación y evaluación que abarque desde la seguridad técnica hasta la gobernanza y el análisis de políticas.
+**Recursos e investigación en español.** iaS construye la infraestructura que falta para trabajar en español, con traducciones de documentos de referencia y una base de evidencia técnica sobre el comportamiento de los modelos en nuestro idioma; a gran escala, aspiramos a que funcione como un programa estructurado de investigación y evaluación que abarque desde la seguridad técnica hasta la gobernanza y el análisis de políticas.
 
 ---
 
@@ -82,7 +82,7 @@ iaS ofrece un camino estructurado desde el primer contacto hasta la contribució
 | **4** | Desarrollo estructurado | Realiza una beca o unas prácticas remuneradas a tiempo completo en seguridad de la IA |
 | **5** | Impacto profesional | Trabaja a tiempo completo en seguridad de la IA, ya sea en política, investigación, industria o sociedad civil, o dirige un proyecto de investigación de iaS |
 
-iaS se centra sobre todo en los niveles 0 a 3, y ofrece un apoyo menor a los niveles 4 y 5, por ejemplo mediante cartas de recomendación o presentando a personas entre sí. Nuestro embudo tiene dos transiciones críticas en las que es más probable que la gente se desvincule:
+iaS acompaña el camino completo: en los niveles 0 a 3 con sus propios programas, y en los niveles 4 y 5 abriendo puertas con cartas de recomendación, contactos con el campo y su red de hubs aliados. El objetivo es que el idioma no sea una barrera en ningún punto del camino. Para lograrlo, iaS concentra su esfuerzo en las dos transiciones que deciden el embudo:
 
 1. **Del nivel 0 al 1**: lograr que alguien que no conoce la seguridad de la IA se implique por primera vez, algo en lo que pesan sobre todo los eventos, las redes sociales y el boca a boca.
 2. **Del nivel 2 al 3**: conseguir que quien ya ha aprendido sobre seguridad de la IA haga una contribución significativa, y aquí resultan esenciales los proyectos estructurados y la mentoría.
@@ -97,7 +97,7 @@ Los cuatro pilares de iaS responden directamente a ambas: Contenidos y Eventos r
 
 *Esa experiencia despierta en ella una ambición mayor: explora oportunidades en política de IA y pone la mira en el organismo que supervisa la IA en su país, y gracias a su experiencia demostrada y a una carta de recomendación, poco después forma parte del equipo que trabaja en su regulación.*
 
-Cada pilar, cada miembro del equipo y cada capítulo contribuye a ampliar, fortalecer y hacer avanzar a las personas por este camino. Ahora bien, el ejemplo anterior es el de una persona que recorre el embudo de iaS del nivel 0 al nivel 5, y conviene hacer dos precisiones importantes. Primero, iaS se centra principalmente en los niveles 0 a 3; por ahora podemos ofrecer menos apoyo para llevar a las personas de los niveles 3 a 5, y creemos importante ser lo más transparentes posible al respecto para evitar confusiones. Segundo, creemos firmemente que quienes terminan en una etapa anterior del embudo de iaS aportan valor, porque uno de los aspectos más importantes para que el desarrollo y la integración de la IA salgan bien es que el conjunto de la sociedad esté adecuadamente alfabetizado en IA y en su seguridad, lo que en sí mismo es un resultado significativo y merece mencionarse de forma explícita.
+Cada pilar, cada miembro del equipo y cada capítulo contribuye a ampliar, fortalecer y hacer avanzar a las personas por este camino. El recorrido de Valeria, del nivel 0 al 5, es el que iaS quiere hacer posible a escala en todo el mundo hispanohablante. Y cada etapa cuenta: para que la IA salga bien hace falta una sociedad que entienda la IA y sus riesgos, y cada persona que entra en el embudo, llegue hasta donde llegue, forma parte de ese resultado.
 
 ---
 
@@ -109,14 +109,14 @@ Un capítulo nuevo no necesita montar su propia infraestructura ni desarrollar m
 
 Este equilibrio entre **libertad local y marco compartido** es lo que permite a iaS escalar sin perder la energía de base que hace prosperar a los grupos locales. Cada capítulo nuevo amplía el alcance de iaS, refuerza la marca y demuestra que el modelo es escalable.
 
-Colaboramos con los hubs de [México](https://www.aismx.org/) y [Colombia](https://aisafetycolombia.org/), mantenemos relación con el de [Argentina](https://www.baish.com.ar/es) y queremos ayudar a que los países que aún no tienen el suyo puedan abrirlo.
+Trabajamos estrechamente con el hub de [México](https://www.aismx.org/), con [AI Safety Colombia](https://aisafetycolombia.org/) y con [BAISH](https://www.baish.com.ar/es), en Buenos Aires, y nuestra idea es ayudar a ampliar los nodos en los países hispanohablantes, para que los que aún no tienen el suyo puedan abrirlo.
 
 ---
 
 ## De cara al futuro
 
-iaS está al comienzo de su andadura, pero se apoya en una base ya construida: desde febrero de 2026 ha celebrado eventos regulares con más de 400 personas inscritas, con una valoración media de 4,63 sobre 5 en 51 valoraciones de las encuestas de satisfacción, y ha desarrollado un glosario bilingüe y un equipo de personas voluntarias.
+iaS se apoya en una base ya construida: desde febrero de 2026, más de 1000 personas han pasado por sus seminarios, con una valoración media de 4,56 sobre 5 en 59 valoraciones, y cuenta con un equipo multidisciplinar.
 
-El español suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
+El mundo hispanohablante no es un espectador de la IA: es una fuerza capaz de empujarla hacia la seguridad. El español es lengua oficial en 21 países, lo hablan más de 650 millones de personas y es uno de los seis idiomas oficiales de Naciones Unidas, donde esos países suman una veintena de votos. España creó en 2023 la [primera agencia de supervisión de la IA de la Unión Europea](https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/transformacion-digital-y-funcion-publica/paginas/2024/190624-escriva-aesia-ia.aspx), y los gobiernos de América Latina y el Caribe ya abordan juntos la gobernanza de la IA: la [Declaración de Santiago](https://minciencia.gob.cl/uploads/filer_public/40/2a/402a35a0-1222-4dab-b090-5c81bbf34237/declaracion_de_santiago.pdf) (2023) creó un grupo de trabajo para constituir un consejo intergubernamental de IA en la región, y 17 países adoptaron en 2024 la [Declaración de Cartagena de Indias](https://www.mintic.gov.co/portal/715/w3-article-383990.html) por una IA segura, ética y responsable.
 
-iaS quiere ser ese movimiento.
+Esa fuerza necesita personas formadas, evidencia propia en español y una red que las conecte. Eso es lo que construye iaS: forma a quienes van a decidir, investiga cómo se comportan los modelos en nuestro idioma y une a los hubs y delegaciones del mundo hispanohablante en un mismo movimiento por una IA segura.
