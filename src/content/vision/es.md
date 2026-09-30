@@ -32,7 +32,7 @@ iaS nace para cerrar esa brecha.
 
 ## Quiénes somos
 
-Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 400 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
+Inteligencia Artificial Segura (iaS) es una organización de seguridad de la IA que opera íntegramente en español, con base en Madrid y alcance en todo el mundo hispanohablante. Funciona como un hub virtual y, desde febrero de 2026, ha organizado seminarios en línea y un primer encuentro presencial en Madrid junto con BlueDot Impact, con más de 1000 personas inscritas en alguno de sus eventos, además de publicar contenidos en su newsletter, en YouTube, en Instagram y en LinkedIn.
 
 iaS funciona con un equipo de personas voluntarias y cuenta con la mentoría de personas de otras organizaciones de seguridad de la IA; está construyendo una red de capítulos locales, con una [primera delegación en Valencia](/delegaciones/valencia), unidos bajo una misma marca, una misma misión y una infraestructura centralizada. Esta estructura está diseñada para crecer sin fricciones, desde unos pocos capítulos hasta muchos más.
 
@@ -65,7 +65,7 @@ iaS cumple su misión mediante cuatro pilares integrados que, en conjunto, lleva
 
 **Contenidos y difusión.** iaS ayuda a configurar la narrativa sobre la seguridad de la IA en español mediante la newsletter Semana de la Seguridad de la IA, YouTube, Instagram, LinkedIn y otros canales; a corto plazo, esto canaliza a las personas interesadas hacia nuestros puntos de entrada y, con el tiempo, aspiramos a convertirlo en una presencia mediática más completa.
 
-**Recursos e investigación en español.** iaS construye la infraestructura que falta para trabajar en español, con un glosario bilingüe de 265 entradas, traducciones de documentos de referencia y una base de evidencia técnica sobre el comportamiento de los modelos en nuestro idioma; a gran escala, aspiramos a que funcione como un programa estructurado de investigación y evaluación que abarque desde la seguridad técnica hasta la gobernanza y el análisis de políticas.
+**Recursos e investigación en español.** iaS construye la infraestructura que falta para trabajar en español, con traducciones de documentos de referencia y una base de evidencia técnica sobre el comportamiento de los modelos en nuestro idioma; a gran escala, aspiramos a que funcione como un programa estructurado de investigación y evaluación que abarque desde la seguridad técnica hasta la gobernanza y el análisis de políticas.
 
 ---
 
@@ -115,7 +115,7 @@ Trabajamos estrechamente con el hub de [México](https://www.aismx.org/), con [A
 
 ## De cara al futuro
 
-iaS está al comienzo de su andadura, pero se apoya en una base ya construida: desde febrero de 2026 ha celebrado eventos regulares con más de 400 personas inscritas, con una valoración media de 4,63 sobre 5 en 51 valoraciones de las encuestas de satisfacción, y ha desarrollado un glosario bilingüe y un equipo de personas voluntarias.
+iaS se apoya en una base ya construida: desde febrero de 2026, más de 1000 personas se han inscrito en sus eventos y 503 han asistido, con una valoración media de 4,56 sobre 5 en 59 valoraciones, y cuenta con un equipo multidisciplinar.
 
 El español suma cientos de millones de hablantes y no hay razón para que la seguridad de la IA no tenga en español un movimiento próspero, con autoridad y con impacto.
 

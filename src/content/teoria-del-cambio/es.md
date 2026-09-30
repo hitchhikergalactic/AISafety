@@ -37,7 +37,7 @@ En resumen: **si construimos en español la infraestructura que falta (formació
 | **Modelo operativo propio** | Sesiones abiertas en línea (primer y tercer miércoles de cada mes), agenda en Luma, Discord y un CRM que registra inscripciones, asistencia y valoraciones |
 | **Marca** | iaS, con el lema "Inteligencia Artificial Segura. En español". |
 | **Equipo** | Equipo multidisciplinar que reúne dirección, diseño, redacción, gestión de la red en Discord, traducción y asesoría legal |
-| **Base probatoria y terminológica** | Estudios multilingües sobre seguridad y sesgo, radar de papers y glosario bilingüe propio de términos de seguridad de la IA |
+| **Base probatoria** | Estudios multilingües sobre seguridad y sesgo y radar de papers |
 | **Red internacional** | El hub de [México](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) y [BAISH](https://www.baish.com.ar/es), en Buenos Aires, con los que trabajamos estrechamente; ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
 | **Infraestructura digital** | Sitio web propio, Discord, boletín "Semana iaS", canal de YouTube, LinkedIn e Instagram |
 | **Estatus** | iaS funciona como organización sin ánimo de lucro; el registro formal como ONG está pendiente |
@@ -48,7 +48,7 @@ Organizadas según los bloques de [Qué hacemos](/que-hacemos):
 
 - **Formar**: el [Seminario de seguridad de la IA](/seminario-bluedot-spain), con **BlueDot Impact**, y el [Curso de Estrategia ante la IAG](/curso-estrategia-agi), basado en cohortes y sin requisitos técnicos.
 - **Conectar**: agenda de sesiones abiertas y encuentros sociales en Luma, y debate continuo en el Discord de iaS.
-- **Investigar**: [Radar de papers](/biblioteca-papers), traducción de materiales y mantenimiento del glosario bilingüe.
+- **Investigar**: [Radar de papers](/biblioteca-papers) y traducción de materiales.
 - **Comunicar**: boletín semanal, vídeos y publicaciones en redes que llevan la evidencia y las noticias del campo al español.
 - **Delegaciones**: [iaS Valencia](/delegaciones/valencia) como primera delegación, y un procedimiento para [crear nuevas delegaciones](/delegaciones/crear-una-delegacion).
 - **Incidencia**: participación en consultas públicas y en foros institucionales.
@@ -109,7 +109,7 @@ El modelo produce un **ciclo** central para la teoría:
 - Más credibilidad, más recursos para materiales, programas y delegaciones.
 - Más recursos, más delegaciones interesadas en unirse, y el ciclo se repite.
 
-Este ciclo funciona porque la seguridad de la IA en español combina dos necesidades que ningún grupo local cubre por sí solo: la presencia en cada ciudad, que hace posible el encuentro presencial y el arraigo, y una infraestructura compartida por todo el mundo hispanohablante, que hace posible el idioma común, el glosario, la evidencia, la marca y la interlocución con instituciones y financiadores; el español es, en este sentido, la infraestructura que une a los cinco continentes.
+Este ciclo funciona porque la seguridad de la IA en español combina dos necesidades que ningún grupo local cubre por sí solo: la presencia en cada ciudad, que hace posible el encuentro presencial y el arraigo, y una infraestructura compartida por todo el mundo hispanohablante, que hace posible el idioma común, la evidencia, la marca y la interlocución con instituciones y financiadores; el español es, en este sentido, la infraestructura que une a los cinco continentes.
 
 Para una nueva delegación, iaS aporta la marca, los materiales, el Discord, el formulario de registro y la gestión de las solicitudes de financiación, de modo que quienes la impulsan no tengan que costear los eventos de su bolsillo ni empezar desde cero; en esta primera fase, la marca, la financiación y los datos de asistentes se gestionan de forma centralizada desde iaS, y el modelo se revisará según los resultados de Valencia.
 

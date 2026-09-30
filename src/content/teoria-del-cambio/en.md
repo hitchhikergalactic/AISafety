@@ -37,7 +37,7 @@ In short: **if we build in Spanish the infrastructure that is missing (training,
 | **Own operating model** | Open online sessions (first and third Wednesday of each month), Luma calendar, Discord and a CRM that records registrations, attendance and ratings |
 | **Brand** | iaS, with the tagline "Inteligencia Artificial Segura. En español". |
 | **Team** | Multidisciplinary team that brings together management, design, writing, management of the network on Discord, translation and legal advice |
-| **Evidence and terminology base** | Multilingual studies on safety and bias, a papers radar and a bilingual glossary of AI safety terms of our own |
+| **Evidence base** | Multilingual studies on safety and bias and a papers radar |
 | **International network** | The hub in [Mexico](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) and [BAISH](https://www.baish.com.ar/es) in Buenos Aires, with which we work closely; ENAIS, AISafety.com and local AI safety groups in other countries |
 | **Digital infrastructure** | Own website, Discord, the "Semana iaS" newsletter, YouTube channel, LinkedIn and Instagram |
 | **Status** | iaS operates as a nonprofit organization; formal registration as an NGO is pending |
@@ -48,7 +48,7 @@ Organized according to the blocks of [What we do](/en/que-hacemos):
 
 - **Train**: the [AI safety Seminar](/en/seminario-bluedot-spain), with **BlueDot Impact**, and the [AGI Strategy Course](/en/curso-estrategia-agi), cohort-based and with no technical requirements.
 - **Connect**: a calendar of open sessions and social meetups on Luma, and ongoing discussion on the iaS Discord.
-- **Research**: [Paper digest](/en/biblioteca-papers), translation of materials and maintenance of the bilingual glossary.
+- **Research**: [Paper digest](/en/biblioteca-papers) and translation of materials.
 - **Communicate**: a weekly newsletter, videos and social media posts that bring the evidence and news of the field into Spanish.
 - **Chapters**: [iaS Valencia](/en/delegaciones/valencia) as the first chapter, and a procedure for [starting new chapters](/en/delegaciones/crear-una-delegacion).
 - **Advocacy**: taking part in public consultations and in institutional forums.
@@ -109,7 +109,7 @@ The model produces a **cycle** at the center of the theory:
 - More credibility, more resources for materials, programs and chapters.
 - More resources, more chapters interested in joining, and the cycle repeats.
 
-This cycle works because AI safety in Spanish combines two needs that no local group covers on its own: presence in each city, which makes in-person meetings and local roots possible, and an infrastructure shared across the whole Spanish-speaking world, which makes possible the common language, the glossary, the evidence, the brand and dialogue with institutions and funders; Spanish is, in this sense, the infrastructure that unites the five continents.
+This cycle works because AI safety in Spanish combines two needs that no local group covers on its own: presence in each city, which makes in-person meetings and local roots possible, and an infrastructure shared across the whole Spanish-speaking world, which makes possible the common language, the evidence, the brand and dialogue with institutions and funders; Spanish is, in this sense, the infrastructure that unites the five continents.
 
 For a new chapter, iaS provides the brand, the materials, the Discord, the registration form and the management of funding applications, so that those who lead it do not have to pay for events out of their own pocket or start from scratch; in this first phase, the brand, the funding and the attendee data are managed centrally from iaS, and the model will be reviewed according to the results in Valencia.
 
