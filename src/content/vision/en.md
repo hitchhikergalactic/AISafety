@@ -109,7 +109,7 @@ A new chapter does not need to build its own infrastructure or develop materials
 
 This balance between **local freedom and a shared framework** is what allows iaS to scale without losing the grassroots energy that makes local groups thrive. Each new chapter extends the reach of iaS, strengthens the brand and shows that the model is scalable.
 
-We collaborate with the hubs in [Mexico](https://www.aismx.org/) and [Colombia](https://aisafetycolombia.org/), we keep in touch with the one in [Argentina](https://www.baish.com.ar/es), and we want to help countries that do not yet have their own to be able to open one.
+We work closely with the hub in [Mexico](https://www.aismx.org/), with [AI Safety Bogotá](https://aisafetycolombia.org/) and with [BAISH](https://www.baish.com.ar/es) in Buenos Aires, and our aim is to help expand the nodes across Spanish-speaking countries, so that those that do not yet have their own can open one.
 
 ---
 

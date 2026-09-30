@@ -109,7 +109,7 @@ Un capítulo nuevo no necesita montar su propia infraestructura ni desarrollar m
 
 Este equilibrio entre **libertad local y marco compartido** es lo que permite a iaS escalar sin perder la energía de base que hace prosperar a los grupos locales. Cada capítulo nuevo amplía el alcance de iaS, refuerza la marca y demuestra que el modelo es escalable.
 
-Colaboramos con los hubs de [México](https://www.aismx.org/) y [Colombia](https://aisafetycolombia.org/), mantenemos relación con el de [Argentina](https://www.baish.com.ar/es) y queremos ayudar a que los países que aún no tienen el suyo puedan abrirlo.
+Trabajamos estrechamente con el hub de [México](https://www.aismx.org/), con [AI Safety Bogotá](https://aisafetycolombia.org/) y con [BAISH](https://www.baish.com.ar/es), en Buenos Aires, y nuestra idea es ayudar a ampliar los nodos en los países hispanohablantes, para que los que aún no tienen el suyo puedan abrirlo.
 
 ---
 

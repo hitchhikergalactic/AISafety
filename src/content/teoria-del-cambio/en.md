@@ -38,7 +38,7 @@ In short: **if we build in Spanish the infrastructure that is missing (training,
 | **Brand** | iaS, with the tagline "Inteligencia Artificial Segura. En español". |
 | **Team** | Multidisciplinary team that brings together management, design, writing, management of the network on Discord, translation and legal advice |
 | **Evidence and terminology base** | Multilingual studies on safety and bias, a papers radar and a bilingual glossary of AI safety terms of our own |
-| **International network** | ENAIS, AISafety.com and local AI safety groups in other countries |
+| **International network** | The hub in [Mexico](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) and [BAISH](https://www.baish.com.ar/es) in Buenos Aires, with which we work closely; ENAIS, AISafety.com and local AI safety groups in other countries |
 | **Digital infrastructure** | Own website, Discord, the "Semana iaS" newsletter, YouTube channel, LinkedIn and Instagram |
 | **Status** | iaS operates as a nonprofit organization; formal registration as an NGO is pending |
 
@@ -65,7 +65,7 @@ Organized according to the blocks of [What we do](/en/que-hacemos):
 | Average rating of the events | 4.56 out of 5, with 59 ratings, 95% of them 4 or 5 |
 | People in the iaS contact base | More than 1,000 |
 | AGI Strategy Course | First in-person cohort in Madrid, planned for October 2026 |
-| Chapters | 1 under way (Valencia) and 2 more requests to open, in Uruguay and in Argentina |
+| Chapters | 1 under way (Valencia) and 1 more request to open, in Uruguay |
 
 Figures from the iaS CRM as of September 19, 2026; team members are not counted in the recurrence figures.
 
@@ -112,5 +112,7 @@ The model produces a **cycle** at the center of the theory:
 This cycle works because AI safety in Spanish combines two needs that no local group covers on its own: presence in each city, which makes in-person meetings and local roots possible, and an infrastructure shared across the whole Spanish-speaking world, which makes possible the common language, the glossary, the evidence, the brand and dialogue with institutions and funders; Spanish is, in this sense, the infrastructure that unites the five continents.
 
 For a new chapter, iaS provides the brand, the materials, the Discord, the registration form and the management of funding applications, so that those who lead it do not have to pay for events out of their own pocket or start from scratch; in this first phase, the brand, the funding and the attendee data are managed centrally from iaS, and the model will be reviewed according to the results in Valencia.
+
+Beyond its own chapters, iaS works closely with the hub in Mexico, with AI Safety Bogotá and with BAISH in Buenos Aires, and its aim is to help expand the nodes across Spanish-speaking countries, so that those that do not yet have their own can open one.
 
 The role of iaS is to catalyze and sustain this cycle: to maintain the quality of the central infrastructure, to support chapters through their difficulties and to keep the mission at the center as the organization grows.

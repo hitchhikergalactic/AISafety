@@ -38,7 +38,7 @@ En resumen: **si construimos en español la infraestructura que falta (formació
 | **Marca** | iaS, con el lema "Inteligencia Artificial Segura. En español". |
 | **Equipo** | Equipo multidisciplinar que reúne dirección, diseño, redacción, gestión de la red en Discord, traducción y asesoría legal |
 | **Base probatoria y terminológica** | Estudios multilingües sobre seguridad y sesgo, radar de papers y glosario bilingüe propio de términos de seguridad de la IA |
-| **Red internacional** | ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
+| **Red internacional** | El hub de [México](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) y [BAISH](https://www.baish.com.ar/es), en Buenos Aires, con los que trabajamos estrechamente; ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
 | **Infraestructura digital** | Sitio web propio, Discord, boletín "Semana iaS", canal de YouTube, LinkedIn e Instagram |
 | **Estatus** | iaS funciona como organización sin ánimo de lucro; el registro formal como ONG está pendiente |
 
@@ -65,7 +65,7 @@ Organizadas según los bloques de [Qué hacemos](/que-hacemos):
 | Valoración media de los encuentros | 4,56 sobre 5, con 59 valoraciones, el 95% de ellas de 4 o 5 |
 | Personas en la base de contactos de iaS | Más de 1000 |
 | Curso de Estrategia ante la IAG | Primera cohorte presencial en Madrid, prevista para octubre de 2026 |
-| Delegaciones | 1 en marcha (Valencia) y 2 solicitudes más de apertura, en Uruguay y en Argentina |
+| Delegaciones | 1 en marcha (Valencia) y 1 solicitud más de apertura, en Uruguay |
 
 Cifras del CRM de iaS a 19 de septiembre de 2026; las personas del equipo no se cuentan en las cifras de recurrencia.
 
@@ -112,5 +112,7 @@ El modelo produce un **ciclo** central para la teoría:
 Este ciclo funciona porque la seguridad de la IA en español combina dos necesidades que ningún grupo local cubre por sí solo: la presencia en cada ciudad, que hace posible el encuentro presencial y el arraigo, y una infraestructura compartida por todo el mundo hispanohablante, que hace posible el idioma común, el glosario, la evidencia, la marca y la interlocución con instituciones y financiadores; el español es, en este sentido, la infraestructura que une a los cinco continentes.
 
 Para una nueva delegación, iaS aporta la marca, los materiales, el Discord, el formulario de registro y la gestión de las solicitudes de financiación, de modo que quienes la impulsan no tengan que costear los eventos de su bolsillo ni empezar desde cero; en esta primera fase, la marca, la financiación y los datos de asistentes se gestionan de forma centralizada desde iaS, y el modelo se revisará según los resultados de Valencia.
+
+Más allá de sus propias delegaciones, iaS trabaja estrechamente con el hub de México, con AI Safety Bogotá y con BAISH, en Buenos Aires, y su idea es ayudar a ampliar los nodos en los países hispanohablantes, para que los que aún no tienen el suyo puedan abrirlo.
 
 El papel de iaS es catalizar y sostener este ciclo: mantener la calidad de la infraestructura central, acompañar a las delegaciones en sus dificultades y mantener la misión en el centro a medida que la organización crece.
