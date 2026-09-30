@@ -112,7 +112,7 @@ export const translations = {
     },
     subscribe: {
       title: "Forma parte de iaS",
-      subtitle: "Recibe noticias sobre eventos, recursos y únete a la comunidad.",
+      subtitle: "Recibe noticias sobre eventos, recursos y únete a la red.",
       name: "Nombre",
       email: "Email",
       linkedin: "Linkedin",
@@ -232,7 +232,7 @@ export const translations = {
       subtitle: "Explore our seminars, learn directly from AI safety researchers, and find the guidance and support your career or project needs to make a real impact.",
     },
     biblioteca: {
-      title: "Open access community library",
+      title: "Open access library",
       subtitle: "To keep everyone informed and empowered to act, we democratize access to AI safety research. A dedicated space to empower and train AI safety professionals.",
       originalPaper: "Original Paper",
       readTranslation: "Read Spanish Translation",
@@ -246,7 +246,7 @@ export const translations = {
     },
     subscribe: {
       title: "Join the Hub",
-      subtitle: "Be part of the AI safety Hub. Receive news about events, resources, and join the community.",
+      subtitle: "Be part of the AI safety Hub. Receive news about events, resources, and join the network.",
       name: "Name",
       email: "Email",
       linkedin: "LinkedIn",

@@ -47,7 +47,7 @@ El resultado es que la IA habla un español construido a partir de una represent
 Cuando los datos de internet se usan para entrenar modelos de forma masiva y sin ser curados, las visiones dominantes quedan sobrerrepresentadas y las de los grupos marginalizados son filtradas o silenciadas.[^16]
 
 Muñoz-Basols et al. advierten también de que sin una acción coordinada para desarrollar corpus representativos y modelos que de verdad reflejen la diversidad lingüística, nos arriesgamos a que se consolide lo que llaman “dialectos digitales”: variedades del lenguaje artificiales que los sistemas de IA aprenden a reproducir como si fuera español.[^17]  
-En este sentido, la advertencia de SESGO es una llamada de atención para la comunidad hispanohablante. Una inteligencia artificial verdaderamente global no puede limitarse a traducir el inglés al español; debe ser capaz de comprender las realidades culturales, sociales y lingüísticas de quienes la utilizan. De lo contrario, el riesgo no es solo una tecnología menos precisa, sino también menos justa.
+En este sentido, la advertencia de SESGO es una llamada de atención para el mundo hispanohablante. Una inteligencia artificial verdaderamente global no puede limitarse a traducir el inglés al español; debe ser capaz de comprender las realidades culturales, sociales y lingüísticas de quienes la utilizan. De lo contrario, el riesgo no es solo una tecnología menos precisa, sino también menos justa.
 
 
 
