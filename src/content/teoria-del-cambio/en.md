@@ -38,7 +38,7 @@ In short: **if we build in Spanish the infrastructure that is missing (training,
 | **Brand** | iaS, with the tagline "Inteligencia Artificial Segura. En español". |
 | **Team** | Multidisciplinary team that brings together management, design, writing, management of the network on Discord, translation and legal advice |
 | **Evidence base** | Multilingual studies on safety and bias and a papers radar |
-| **International network** | The hub in [Mexico](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) and [BAISH](https://www.baish.com.ar/es) in Buenos Aires, with which we work closely; ENAIS, AISafety.com and local AI safety groups in other countries |
+| **International network** | The hub in [Mexico](https://www.aismx.org/), [AI Safety Colombia](https://aisafetycolombia.org/) and [BAISH](https://www.baish.com.ar/es) in Buenos Aires, with which we work closely; ENAIS, AISafety.com and local AI safety groups in other countries |
 | **Digital infrastructure** | Own website, Discord, the "Semana iaS" newsletter, YouTube channel, LinkedIn and Instagram |
 | **Status** | iaS operates as a nonprofit organization; formal registration as an NGO is pending |
 
@@ -113,6 +113,6 @@ This cycle works because AI safety in Spanish combines two needs that no local g
 
 For a new chapter, iaS provides the brand, the materials, the Discord, the registration form and the management of funding applications, so that those who lead it do not have to pay for events out of their own pocket or start from scratch; in this first phase, the brand, the funding and the attendee data are managed centrally from iaS, and the model will be reviewed according to the results in Valencia.
 
-Beyond its own chapters, iaS works closely with the hub in Mexico, with AI Safety Bogotá and with BAISH in Buenos Aires, and its aim is to help expand the nodes across Spanish-speaking countries, so that those that do not yet have their own can open one.
+Beyond its own chapters, iaS works closely with the hub in Mexico, with AI Safety Colombia and with BAISH in Buenos Aires, and its aim is to help expand the nodes across Spanish-speaking countries, so that those that do not yet have their own can open one.
 
 The role of iaS is to catalyze and sustain this cycle: to maintain the quality of the central infrastructure, to support chapters through their difficulties and to keep the mission at the center as the organization grows.

@@ -38,7 +38,7 @@ En resumen: **si construimos en español la infraestructura que falta (formació
 | **Marca** | iaS, con el lema "Inteligencia Artificial Segura. En español". |
 | **Equipo** | Equipo multidisciplinar que reúne dirección, diseño, redacción, gestión de la red en Discord, traducción y asesoría legal |
 | **Base probatoria** | Estudios multilingües sobre seguridad y sesgo y radar de papers |
-| **Red internacional** | El hub de [México](https://www.aismx.org/), [AI Safety Bogotá](https://aisafetycolombia.org/) y [BAISH](https://www.baish.com.ar/es), en Buenos Aires, con los que trabajamos estrechamente; ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
+| **Red internacional** | El hub de [México](https://www.aismx.org/), [AI Safety Colombia](https://aisafetycolombia.org/) y [BAISH](https://www.baish.com.ar/es), en Buenos Aires, con los que trabajamos estrechamente; ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
 | **Infraestructura digital** | Sitio web propio, Discord, boletín "Semana iaS", canal de YouTube, LinkedIn e Instagram |
 | **Estatus** | iaS funciona como organización sin ánimo de lucro; el registro formal como ONG está pendiente |
 
@@ -113,6 +113,6 @@ Este ciclo funciona porque la seguridad de la IA en español combina dos necesid
 
 Para una nueva delegación, iaS aporta la marca, los materiales, el Discord, el formulario de registro y la gestión de las solicitudes de financiación, de modo que quienes la impulsan no tengan que costear los eventos de su bolsillo ni empezar desde cero; en esta primera fase, la marca, la financiación y los datos de asistentes se gestionan de forma centralizada desde iaS, y el modelo se revisará según los resultados de Valencia.
 
-Más allá de sus propias delegaciones, iaS trabaja estrechamente con el hub de México, con AI Safety Bogotá y con BAISH, en Buenos Aires, y su idea es ayudar a ampliar los nodos en los países hispanohablantes, para que los que aún no tienen el suyo puedan abrirlo.
+Más allá de sus propias delegaciones, iaS trabaja estrechamente con el hub de México, con AI Safety Colombia y con BAISH, en Buenos Aires, y su idea es ayudar a ampliar los nodos en los países hispanohablantes, para que los que aún no tienen el suyo puedan abrirlo.
 
 El papel de iaS es catalizar y sostener este ciclo: mantener la calidad de la infraestructura central, acompañar a las delegaciones en sus dificultades y mantener la misión en el centro a medida que la organización crece.
