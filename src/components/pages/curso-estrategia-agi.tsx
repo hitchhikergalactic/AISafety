@@ -100,7 +100,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
         onClose={() => setShowModal(false)}
         lang={lang}
         title={lang === 'es' ? 'Forma parte de iaS' : 'Join iaS'}
-        subtitle={lang === 'es' ? 'Recibe noticias sobre eventos, recursos y únete a la comunidad.' : 'Get updates about events, resources, and join the community.'}
+        subtitle={lang === 'es' ? 'Recibe noticias sobre eventos, recursos y únete a la red.' : 'Get updates about events, resources, and join the network.'}
         action="https://formsubmit.co/aisafetymadrid@gmail.com"
         subject={lang === 'es' ? 'Nuevo suscriptor desde Curso Estrategia AGI' : 'New subscriber from AGI Strategy Course'}
         successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
