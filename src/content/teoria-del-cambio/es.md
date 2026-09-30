@@ -14,8 +14,8 @@ El español lo hablan más de 650 millones de personas, unas 520 millones como l
 
 1. **Una brecha de evidencia.** Faltan mediciones propias sobre cómo se comportan los sistemas de IA en español; los estudios multilingües disponibles muestran inconsistencias de seguridad entre idiomas y entre categorías de riesgo (el banco de pruebas [M-ALERT](https://arxiv.org/html/2412.15035) evalúa cinco idiomas, entre ellos el español, con 75.000 indicaciones), y la tabla comparativa ([Leaderboard](https://leaderboard.odesia.uned.es/)) de ODESIA mide una brecha de efectividad media del 20% (±4%) entre español e inglés en tareas de procesamiento del lenguaje, según nuestra consulta del 19 de septiembre de 2026. Ni siquiera la iniciativa de idiomas más ambiciosa de la industria trata la seguridad como una dimensión del problema lingüístico: Google, que en septiembre de 2026 declaraba cubrir ya 300 idiomas y el 86% de la población mundial, concentra todo ese esfuerzo en capacidad y accesibilidad (reconocimiento de voz, traducción, dispositivos sin conexión), sin mencionar una sola vez evaluación de seguridad o alineamiento como parte de ese trabajo ([Google, 2026](https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/)); sin un nodo que documente estos fallos en español y traslade la evidencia a reguladores y desarrolladores, es difícil que alguien los identifique y los corrija.
 2. **Una brecha de formación.** La formación de referencia en seguridad de la IA, incluida la de **BlueDot Impact**, se imparte en inglés; para quien trabaja en política, ingeniería, derecho o periodismo en español, el camino desde la curiosidad hasta una contribución profesional pasa por una barrera idiomática que nada tiene que ver con su capacidad.
-3. **Una brecha de entrada para el público.** La demanda existe, pues en las sesiones de iaS se han inscrito en torno a cien personas por sesión de mayo a julio de 2026, pero depende de que alguien ofrezca de forma sostenida, y en español, un lugar donde informarse y debatir sin necesidad de conocimientos técnicos previos.
-4. **Una brecha institucional.** Cuando una administración, una universidad, una empresa o un medio del mundo hispanohablante quiere entender los riesgos de la IA avanzada, necesita una contraparte que hable su idioma y conozca su marco normativo; iaS aspira a ser esa contraparte, y con ese fin ha participado en la consulta pública de la Comisión Europea sobre la clasificación de sistemas de alto riesgo del AI Act.
+3. **Una brecha de entrada para el público.** La demanda existe (más de 1000 personas han pasado por los encuentros de iaS desde febrero de 2026), pero depende de que alguien ofrezca de forma sostenida, y en español, un lugar donde informarse y debatir sin necesidad de conocimientos técnicos previos.
+4. **Una brecha institucional.** Cuando una administración, una universidad, una empresa o un medio del mundo hispanohablante quiere entender los riesgos de la IA avanzada, necesita una contraparte que hable su idioma y conozca su marco normativo; iaS trabaja para ser esa contraparte y ya ha participado en la consulta pública de la Comisión Europea sobre la clasificación de sistemas de alto riesgo del AI Act.
 
 ---
 
@@ -40,7 +40,7 @@ En resumen: **si construimos en español la infraestructura que falta (formació
 | **Base probatoria** | Estudios multilingües sobre seguridad y sesgo y radar de papers |
 | **Red internacional** | El hub de [México](https://www.aismx.org/), [AI Safety Colombia](https://aisafetycolombia.org/) y [BAISH](https://www.baish.com.ar/es), en Buenos Aires, con los que trabajamos estrechamente; ENAIS, AISafety.com y grupos locales de seguridad de la IA de otros países |
 | **Infraestructura digital** | Sitio web propio, Discord, boletín "Semana iaS", canal de YouTube, LinkedIn e Instagram |
-| **Estatus** | iaS funciona como organización sin ánimo de lucro; el registro formal como ONG está pendiente |
+| **Estatus** | Organización sin ánimo de lucro, en proceso de registro formal como ONG |
 
 ### Actividades
 
@@ -57,9 +57,9 @@ Organizadas según los bloques de [Qué hacemos](/que-hacemos):
 
 | Indicador | Situación en la actualidad |
 | --- | --- |
-| Encuentros abiertos con asistencia registrada | Al menos 13 (12 sesiones y 1 o más encuentros sociales), de febrero a septiembre de 2026 |
+| Encuentros abiertos con asistencia registrada | Más de 12, entre sesiones y encuentros sociales, de febrero a septiembre de 2026 |
 | Personas con inscripción confirmada | Más de 1000 |
-| Personas que han vuelto | 416 han asistido a dos o más encuentros y al menos 30 a tres o más |
+| Personas que han vuelto | 416 han asistido a dos o más encuentros |
 | Valoración media de los encuentros | 4,56 sobre 5, con 59 valoraciones, el 95% de ellas de 4 o 5 |
 | Personas en la base de contactos de iaS | Más de 1000 |
 | Curso de Estrategia ante la IAG | Primera cohorte presencial en Madrid, prevista para octubre de 2026 |
@@ -81,19 +81,19 @@ Cifras del CRM de iaS a 19 de septiembre de 2026; las personas del equipo no se 
 
 ### Cómo lo medimos
 
-iaS prevé medir el cambio atribuible a sus actividades mediante formularios de entrada y de salida en cada sesión (por ejemplo, las horas que cada persona dedica a la seguridad de la IA antes y después), testimonios de quienes han cambiado de rumbo gracias a ellas y seguimiento individual en el CRM.
+iaS mide el resultado de sus actividades con las valoraciones de cada encuentro y el seguimiento individual en el CRM, y medirá el cambio que se le puede atribuir con formularios de entrada y de salida en cada sesión (por ejemplo, las horas que cada persona dedica a la seguridad de la IA antes y después) y con testimonios de quienes han cambiado de rumbo gracias a ellas.
 
 ---
 
 ## 4. Evidencia y validación
 
-**El problema está documentado.** Los estudios multilingües como M-ALERT y la tabla comparativa de ODESIA (véase la sección 1) muestran diferencias de comportamiento y de efectividad entre idiomas; iaS no afirma que los modelos sean menos seguros en español en todos los casos, sino que esas diferencias existen y varían según la categoría de riesgo.
+**El problema está documentado.** Los estudios multilingües como M-ALERT y la tabla comparativa de ODESIA (véase la sección 1) muestran diferencias de comportamiento y de efectividad entre idiomas, que varían según la categoría de riesgo.
 
-**Hay demanda.** Desde febrero de 2026, más de 1000 personas han pasado por los encuentros abiertos de iaS, con en torno a cien inscripciones confirmadas por sesión de mayo a julio y una valoración media de 4,56 sobre 5, con el 95% de las valoraciones en 4 o 5.
+**Hay demanda.** Desde febrero de 2026, más de 1000 personas han pasado por los encuentros abiertos de iaS, con una valoración media de 4,56 sobre 5, con el 95% de las valoraciones en 4 o 5.
 
-**El formato retiene a una parte del público.** 416 personas han asistido a dos o más encuentros y al menos 30 a tres o más, y la asistencia sobre inscripciones confirmadas en las sesiones en línea de febrero a julio ha oscilado entre el 35% y el 54%.
+**El público vuelve.** 416 personas han asistido a dos o más encuentros.
 
-**Lo que aún no sabemos.** iaS lleva en marcha desde febrero de 2026, un plazo demasiado corto para observar transiciones profesionales; todavía no medimos el cambio contrafactual (qué habría hecho cada persona sin iaS), la captación mediante invitaciones directas desde Luma no ha producido asistencia, y la primera delegación, la de Valencia, está en fase inicial y no ofrece aún resultados que evaluar.
+**Lo siguiente que vamos a medir.** Las transiciones profesionales se ven a medio plazo, así que iaS va a medir el cambio que se le puede atribuir (qué habría hecho cada persona sin iaS) con los formularios de entrada y salida y el seguimiento individual, y evaluará el modelo de delegaciones con los resultados de Valencia.
 
 ---
 

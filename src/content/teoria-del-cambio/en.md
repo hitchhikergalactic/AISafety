@@ -14,8 +14,8 @@ Spanish is spoken by more than 650 million people, about 520 million of them as 
 
 1. **An evidence gap.** There are no measurements of our own on how AI systems behave in Spanish; the available multilingual studies show safety inconsistencies across languages and across risk categories (the [M-ALERT](https://arxiv.org/html/2412.15035) benchmark evaluates five languages, Spanish among them, with 75,000 prompts), and the comparison table ([Leaderboard](https://leaderboard.odesia.uned.es/)) from ODESIA measures an average effectiveness gap of 20% (±4%) between Spanish and English on language processing tasks, according to our review on September 19, 2026. Not even the industry's most ambitious language initiative treats safety as a dimension of the language problem: Google, which in September 2026 stated that it already covered 300 languages and 86% of the world's population, concentrates all of that effort on capability and accessibility (speech recognition, translation, offline devices), without once mentioning safety or alignment evaluation as part of that work ([Google, 2026](https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/)); without a hub that documents these failures in Spanish and takes the evidence to regulators and developers, it is hard for anyone to identify and fix them.
 2. **A training gap.** The reference training in AI safety, including that of **BlueDot Impact**, is delivered in English; for those who work in policy, engineering, law or journalism in Spanish, the path from curiosity to a professional contribution runs through a language barrier that has nothing to do with their ability.
-3. **A public entry gap.** The demand exists, since around one hundred people registered per session at iaS sessions from May to July 2026, but it depends on someone offering, consistently and in Spanish, a place to learn and discuss without needing prior technical knowledge.
-4. **An institutional gap.** When an administration, a university, a company or a media outlet in the Spanish-speaking world wants to understand the risks of advanced AI, it needs a counterpart that speaks its language and knows its regulatory framework; iaS aims to be that counterpart, and to that end it has taken part in the European Commission's public consultation on the classification of high-risk systems under the AI Act.
+3. **A public entry gap.** The demand exists (more than 1,000 people have taken part in iaS events since February 2026), but it depends on someone offering, consistently and in Spanish, a place to learn and discuss without needing prior technical knowledge.
+4. **An institutional gap.** When an administration, a university, a company or a media outlet in the Spanish-speaking world wants to understand the risks of advanced AI, it needs a counterpart that speaks its language and knows its regulatory framework; iaS works to be that counterpart and has already taken part in the European Commission's public consultation on the classification of high-risk systems under the AI Act.
 
 ---
 
@@ -40,7 +40,7 @@ In short: **if we build in Spanish the infrastructure that is missing (training,
 | **Evidence base** | Multilingual studies on safety and bias and a papers radar |
 | **International network** | The hub in [Mexico](https://www.aismx.org/), [AI Safety Colombia](https://aisafetycolombia.org/) and [BAISH](https://www.baish.com.ar/es) in Buenos Aires, with which we work closely; ENAIS, AISafety.com and local AI safety groups in other countries |
 | **Digital infrastructure** | Own website, Discord, the "Semana iaS" newsletter, YouTube channel, LinkedIn and Instagram |
-| **Status** | iaS operates as a nonprofit organization; formal registration as an NGO is pending |
+| **Status** | Nonprofit organization, in the process of formal registration as an NGO |
 
 ### Activities
 
@@ -57,9 +57,9 @@ Organized according to the blocks of [What we do](/en/que-hacemos):
 
 | Indicator | Current situation |
 | --- | --- |
-| Open events with recorded attendance | At least 13 (12 sessions and 1 or more social meetups), from February to September 2026 |
+| Open events with recorded attendance | More than 12, between sessions and social meetups, from February to September 2026 |
 | People with confirmed registration | More than 1,000 |
-| People who have come back | 416 have attended two or more events and at least 30 have attended three or more |
+| People who have come back | 416 have attended two or more events |
 | Average rating of the events | 4.56 out of 5, with 59 ratings, 95% of them 4 or 5 |
 | People in the iaS contact base | More than 1,000 |
 | AGI Strategy Course | First in-person cohort in Madrid, planned for October 2026 |
@@ -81,19 +81,19 @@ Figures from the iaS CRM as of September 19, 2026; team members are not counted 
 
 ### How we measure it
 
-iaS plans to measure the change attributable to its activities through entry and exit forms at each session (for example, the hours each person spends on AI safety before and after), testimonials from people who have changed course thanks to them, and individual follow-up in the CRM.
+iaS measures the results of its activities through the ratings of each event and individual follow-up in the CRM, and will measure the change attributable to it through entry and exit forms at each session (for example, the hours each person spends on AI safety before and after) and testimonials from people who have changed course thanks to them.
 
 ---
 
 ## 4. Evidence and validation
 
-**The problem is documented.** Multilingual studies such as M-ALERT and the ODESIA comparison table (see section 1) show differences in behavior and effectiveness across languages; iaS does not claim that models are less safe in Spanish in every case, but that these differences exist and vary by risk category.
+**The problem is documented.** Multilingual studies such as M-ALERT and the ODESIA comparison table (see section 1) show differences in behavior and effectiveness across languages, which vary by risk category.
 
-**There is demand.** Since February 2026, more than 1,000 people have taken part in iaS's open events, with around one hundred confirmed registrations per session from May to July and an average rating of 4.56 out of 5, with 95% of the ratings at 4 or 5.
+**There is demand.** Since February 2026, more than 1,000 people have taken part in iaS's open events, with an average rating of 4.56 out of 5, with 95% of the ratings at 4 or 5.
 
-**The format retains part of the audience.** 416 people have attended two or more events and at least 30 have attended three or more, and attendance over confirmed registrations at the online sessions from February to July has ranged between 35% and 54%.
+**People come back.** 416 people have attended two or more events.
 
-**What we do not yet know.** iaS has been running since February 2026, a period too short to observe career transitions; we do not yet measure the counterfactual change (what each person would have done without iaS), recruitment through direct invitations from Luma has not produced attendance, and the first chapter, Valencia, is at an early stage and does not yet offer results to evaluate.
+**What we will measure next.** Career transitions show up over the medium term, so iaS will measure the change attributable to it (what each person would have done without iaS) through entry and exit forms and individual follow-up, and will evaluate the chapter model with the results from Valencia.
 
 ---
 
