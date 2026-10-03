@@ -3,18 +3,21 @@ export const delegacionesNavLabel = {
   en: '/Chapters',
 } as const;
 
-type Sublink = { separator: true } | { separator?: false; label: string; path: string; highlight?: boolean };
+// `description` e `icon` solo los usa el desplegable del menú.
+type Sublink =
+  | { separator: true }
+  | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'mapa' | 'nueva' };
 
 export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
   es: [
-    { label: 'iaS Valencia (España)', path: '/delegaciones/valencia' },
+    { label: 'iaS Valencia (España)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Delegación local de iaS: eventos, programas y contacto.' },
     { separator: true },
-    { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true },
+    { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Lleva iaS a tu ciudad.' },
   ],
   en: [
-    { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia' },
+    { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Local iaS chapter: events, programs and contact.' },
     { separator: true },
-    { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true },
+    { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Bring iaS to your city.' },
   ],
 };
 
@@ -84,9 +87,10 @@ export const crearDelegacionMailto =
 
 export const delegacionValenciaContent = {
   es: {
-    breadcrumbCurrent: 'Valencia',
-    title: 'iaS Valencia (España)',
-    subtitle: 'El punto de encuentro de la seguridad de la IA en Valencia.',
+    eyebrow: 'Delegación de iaS · Valencia, España',
+    titleDark: 'El punto de encuentro de la seguridad de la IA',
+    titleAccent: 'en Valencia',
+    imageAlt: 'Ilustración: una figura blanca escribe «Valencia» sobre un fondo naranja.',
     discordCtaLabel: 'Únete al Discord de iaS',
     formCtaLabel: 'Regístrate y contacta',
     newsletterCtaLabel: 'Boletín de iaS',
@@ -110,12 +114,12 @@ export const delegacionValenciaContent = {
     joinTitle: 'Únete y contacto',
     joinIntro: 'Entra en la red de iaS, sigue nuestras novedades o escríbenos.',
     contactCardTitle: 'Escríbenos',
-    contactCardText: 'Preguntas, propuestas o colaboraciones.',
   },
   en: {
-    breadcrumbCurrent: 'Valencia',
-    title: 'iaS Valencia (Spain)',
-    subtitle: 'The meeting point for AI safety in Valencia.',
+    eyebrow: 'iaS chapter · Valencia, Spain',
+    titleDark: 'The meeting point for AI safety',
+    titleAccent: 'in Valencia',
+    imageAlt: 'Illustration: a white figure writes “Valencia” on an orange background.',
     discordCtaLabel: 'Join the iaS Discord',
     formCtaLabel: 'Sign up and get in touch',
     newsletterCtaLabel: 'iaS newsletter',
@@ -139,11 +143,11 @@ export const delegacionValenciaContent = {
     joinTitle: 'Join and contact',
     joinIntro: 'Join the iaS network, follow our news or write to us.',
     contactCardTitle: 'Write to us',
-    contactCardText: 'Questions, proposals or collaborations.',
   },
 } as const;
 
-export const contactEmail = 'hola@aisafety.es';
+// Correo propio de la delegación de Valencia: es el único que aparece en su página (cuerpo y pie).
+export const valenciaContactEmail = 'ias.valencia@aisafety.es';
 
 export const discordInviteUrl = 'https://discord.gg/gm6v9Cwa58';
 
@@ -191,7 +195,7 @@ export const valenciaFooterColumns: Record<
         { label: 'LinkedIn', href: linkedinUrl, external: true },
         { label: 'Instagram', href: instagramUrl, external: true },
         { label: 'YouTube', href: youtubeUrl, external: true },
-        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
+        { label: valenciaContactEmail, href: `mailto:${valenciaContactEmail}`, external: true },
       ],
     },
     {
@@ -224,7 +228,7 @@ export const valenciaFooterColumns: Record<
         { label: 'LinkedIn', href: linkedinUrl, external: true },
         { label: 'Instagram', href: instagramUrl, external: true },
         { label: 'YouTube', href: youtubeUrl, external: true },
-        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
+        { label: valenciaContactEmail, href: `mailto:${valenciaContactEmail}`, external: true },
       ],
     },
     {
