@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, X, Menu, ArrowRight } from 'lucide-react';
+import { Moon, Sun, X, Menu, ArrowRight, MapPin, Plus } from 'lucide-react';
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
@@ -63,7 +63,16 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
-  type Sublink = { separator: true; label?: undefined; path?: undefined; highlight?: undefined } | { separator?: false; label: string; path: string; highlight?: boolean };
+  type Sublink =
+    | { separator: true; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
+    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'mapa' | 'nueva' };
+
+  const sublinkIcons = { mapa: MapPin, nueva: Plus };
+
+  const closeMenus = () => {
+    setIsOpen(false);
+    setOpenSubmenu(null);
+  };
 
   const navLinks: { href: string; label: string; sublinks?: Sublink[] }[] = [
     {
@@ -144,34 +153,71 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                 </a>
               )}
               
-              {/* Submenu Dropdown */}
-              {link.sublinks && (
-                <div className="absolute left-0 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="bg-secundarios-light dark:bg-secundarios-dark border border-secundarios-dark/10 rounded-sm overflow-hidden">
-                    {link.sublinks.map((sublink, idx) =>
-                      sublink.separator ? (
-                        <div key={idx} className="h-px my-1 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
-                      ) : (
-                        <a
-                          key={idx}
-                          href={`${langPrefix}${sublink.path}`}
-                          onClick={() => {
-                            setIsOpen(false);
-                            setOpenSubmenu(null);
-                          }}
-                          className={`block px-4 py-2 text-sm transition-colors duration-300 ${
-                            sublink.highlight
-                              ? 'bg-principal text-white font-semibold hover:bg-principal/90'
-                              : 'text-secundarios-dark dark:text-secundarios-light hover:bg-principal hover:text-white'
-                          }`}
-                        >
-                          {sublink.label}
-                        </a>
-                      )
-                    )}
+              {/* Submenu Dropdown. Con descripciones (/DELEGACIONES) es un panel ancho con icono por enlace; si no, una lista.
+                  El pt-3 deja un puente invisible entre la etiqueta y el panel para que el hover no se corte. */}
+              {link.sublinks && (() => {
+                const rich = link.sublinks.some(s => s.description);
+                return (
+                  <div className={`absolute left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-200 z-50 ${rich ? 'w-80' : 'w-64'}`}>
+                    <div className="bg-white dark:bg-secundarios-dark border border-secundarios-dark/10 dark:border-secundarios-light/15 rounded-anthro shadow-anthro-elevated p-2">
+                      {link.sublinks.map((sublink, idx) => {
+                        if (sublink.separator) {
+                          return <div key={idx} className="h-px mx-2 my-2 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />;
+                        }
+                        const href = `${langPrefix}${sublink.path}`;
+                        if (!rich) {
+                          return (
+                            <a
+                              key={idx}
+                              href={href}
+                              onClick={closeMenus}
+                              className={`block px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
+                                sublink.highlight
+                                  ? 'bg-principal/10 text-principal-texto font-semibold hover:bg-principal hover:text-white'
+                                  : 'text-secundarios-dark dark:text-secundarios-light hover:bg-principal/10 hover:text-principal-texto'
+                              }`}
+                            >
+                              {sublink.label}
+                            </a>
+                          );
+                        }
+                        const Icon = sublinkIcons[sublink.icon ?? 'mapa'];
+                        return (
+                          <a
+                            key={idx}
+                            href={href}
+                            onClick={closeMenus}
+                            className={`group/item flex items-start gap-3 p-3 rounded-xl transition-colors duration-200 ${
+                              sublink.highlight
+                                ? 'bg-principal/10 hover:bg-principal/15'
+                                : 'hover:bg-secundarios-dark/5 dark:hover:bg-secundarios-light/5'
+                            }`}
+                          >
+                            <span className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                              sublink.highlight
+                                ? 'bg-principal text-white'
+                                : 'bg-principal/10 text-principal-texto group-hover/item:bg-principal group-hover/item:text-white'
+                            }`}>
+                              <Icon size={18} aria-hidden="true" />
+                            </span>
+                            <span className="min-w-0 flex-1">
+                              <span className={`flex items-center gap-1 text-sm font-semibold ${sublink.highlight ? 'text-principal-texto' : 'text-secundarios-dark dark:text-secundarios-light'}`}>
+                                {sublink.label}
+                                <ArrowRight size={14} aria-hidden="true" className="opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
+                              </span>
+                              {sublink.description && (
+                                <span className="block mt-0.5 text-xs font-normal leading-snug text-secundarios-dark/70 dark:text-secundarios-light/70">
+                                  {sublink.description}
+                                </span>
+                              )}
+                            </span>
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
             </div>
           ))}
         </div>
@@ -257,11 +303,16 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                         }}
                         className={`text-lg font-semibold transition-colors block touch-manipulation ${
                           sublink.highlight
-                            ? 'bg-principal text-white rounded-md px-3 py-2'
+                            ? 'bg-principal text-white rounded-anthro px-4 py-3'
                             : 'text-principal-texto dark:text-principalLight hover:text-principal/80 py-2'
                         }`}
                       >
                         {sublink.label}
+                        {sublink.description && (
+                          <span className={`block text-sm font-normal mt-0.5 ${sublink.highlight ? 'text-white/85' : 'text-secundarios-dark/70 dark:text-secundarios-light/70'}`}>
+                            {sublink.description}
+                          </span>
+                        )}
                       </a>
                     )
                   )}

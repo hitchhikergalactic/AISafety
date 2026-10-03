@@ -1,5 +1,5 @@
 import React from 'react';
-import { LuMail } from 'react-icons/lu';
+import { ArrowRight, ClipboardList, Mail, MessageCircle, Newspaper } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import ProgramDetails from '@components/ProgramDetails';
 import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
@@ -7,13 +7,14 @@ import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
+import ilustracionValencia from '../../assets/valencia-ilustracion.webp';
 import {
-  contactEmail,
   delegacionValenciaContent,
   discordInviteUrl,
   lumaAgendaUrl,
   substackUrl,
   valenciaJoinFormUrl,
+  valenciaContactEmail,
   valenciaLumaCalendarEmbedUrl,
 } from '@data/delegaciones';
 
@@ -33,6 +34,9 @@ const card =
   'bg-white dark:bg-white/5 rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 shadow-anthro-subtle';
 
 const sectionTitle = '!font-bold mb-4 text-secundarios-dark dark:text-secundarios-light';
+
+// Mismo panel gris que agrupa el contenido en «Crear una delegación».
+const panel = 'bg-secundarios-gray dark:bg-white/5 rounded-anthro';
 
 const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
   const content = delegacionValenciaContent[lang];
@@ -72,8 +76,9 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
     },
   ];
 
+  // Botones de la cabecera: Discord como acción principal y el resto como secundarias.
   const actionButtons = (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 w-full max-w-sm md:max-w-none mx-auto">
+    <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-start justify-center gap-3 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
       <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className={primaryButton}>
         {content.discordCtaLabel}
       </a>
@@ -86,57 +91,83 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
     </div>
   );
 
+  // En «Únete y contacto» las mismas vías se presentan como lista con icono, para no repetir la fila de botones.
+  const joinLinks = [
+    { href: discordInviteUrl, label: content.discordCtaLabel, Icon: MessageCircle, external: true },
+    { href: valenciaJoinFormUrl, label: content.formCtaLabel, Icon: ClipboardList, external: true },
+    { href: substackUrl, label: content.newsletterCtaLabel, Icon: Newspaper, external: true },
+    { href: `mailto:${valenciaContactEmail}`, label: content.contactCardTitle, detail: valenciaContactEmail, Icon: Mail, external: false },
+  ];
+
   return (
     <>
       <Navbar lang={lang} />
 
       <main className="pt-36 md:pt-44 px-6 md:px-12 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        <section className="w-full max-w-5xl mx-auto text-center pb-10 md:pb-14">
-          <nav aria-label="breadcrumb" className="mb-6 flex items-center justify-center gap-2 font-sans text-sm font-semibold text-secundarios-dark/75 dark:text-secundarios-light/75">
-            <a href={langPrefix || '/'} className="hover:text-principal transition-colors">iaS</a>
-            <span>/</span>
-            <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
-          </nav>
+        <section className="w-full max-w-6xl mx-auto pb-12 md:pb-16 grid gap-10 md:gap-14 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] items-center">
+          <div className="text-center md:text-left">
+            {/* El antetítulo va en mayúsculas, salvo la marca: «iaS» se escribe siempre así. El «·» lleva márgenes
+                desiguales porque el espaciado del h5 y el propio glifo lo descentran. */}
+            <h5 className="mb-4 uppercase text-principal-texto">
+              {content.eyebrow.split(/(iaS| · )/).map((part, i) =>
+                part === 'iaS' ? (
+                  <span key={i} className="marca-ias">{part}</span>
+                ) : part === ' · ' ? (
+                  <span key={i} className="ml-1.5 mr-2.5" aria-hidden="true">·</span>
+                ) : (
+                  part
+                )
+              )}
+            </h5>
+            <h1 className="como-h2 mb-6 leading-tight tracking-tight text-balance">
+              <span className="text-secundarios-dark dark:text-secundarios-light">{content.titleDark}</span>{' '}
+              <span className="text-principal">{content.titleAccent}</span>
+            </h1>
+            <p className="max-w-xl mx-auto md:mx-0 mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 text-lg md:text-xl leading-relaxed">
+              {content.joinIntro}
+            </p>
+            {actionButtons}
+          </div>
 
-          <h1 className="como-h2 mb-4 leading-tight tracking-tight text-balance text-secundarios-dark dark:text-secundarios-light">
-            {content.title}
-          </h1>
-          <p className="max-w-2xl mx-auto mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 text-lg md:text-xl leading-relaxed">
-            {content.subtitle}
-          </p>
-
-          {actionButtons}
+          <img
+            src={ilustracionValencia.src}
+            width={ilustracionValencia.width}
+            height={ilustracionValencia.height}
+            alt={content.imageAlt}
+            className="order-first md:order-none w-full max-w-[18rem] md:max-w-md mx-auto aspect-square rounded-anthro shadow-anthro-card"
+          />
         </section>
 
         <ValenciaAnchorBar items={anchors} ariaLabel={content.anchorsAriaLabel} />
 
-        {/* Eventos */}
-        <section id="eventos" className="scroll-mt-anchorbar w-full max-w-3xl mx-auto pt-16 md:pt-24 text-center">
-          <h3 className={sectionTitle}>{content.eventsTitle}</h3>
-          <div className="bg-secundarios-gray dark:bg-white/5 rounded-anthro p-4 md:p-10 flex justify-center">
+        {/* Eventos: texto y enlaces a un lado, calendario al otro */}
+        <section id="eventos" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-16 md:pt-24">
+          <div className={`${panel} p-6 md:p-12 grid gap-8 md:gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
+            <div className="text-center md:text-left">
+              <h3 className={sectionTitle}>{content.eventsTitle}</h3>
+              <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">
+                {content.eventsContactText}{' '}
+                <a href={`mailto:${valenciaContactEmail}`} className="font-sans font-semibold text-principal-texto hover:underline break-words">
+                  {valenciaContactEmail}
+                </a>
+              </p>
+              <a href={lumaAgendaUrl} target="_blank" rel="noopener noreferrer" className={`${secondaryButton} mt-2 gap-2`}>
+                {content.eventsArchiveLabel}
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
             <EmbedAlPulsar
               lang={lang}
               proveedor="luma"
               src={valenciaLumaCalendarEmbedUrl}
               title={content.eventsTitle}
-              className="mx-auto w-full max-w-[600px] h-[450px] overflow-hidden rounded-anthro border border-secundarios-dark/15 bg-white dark:bg-white/5"
+              className="w-full h-[450px] overflow-hidden rounded-anthro border border-secundarios-dark/15 bg-white dark:bg-white/5"
             />
-          </div>
-          <div className="mt-6 flex flex-col items-center gap-3">
-            <a href={lumaAgendaUrl} target="_blank" rel="noopener noreferrer" className={`${secondaryButton} md:w-auto`}>
-              {content.eventsArchiveLabel}
-            </a>
-            <p className="!mb-0 text-secundarios-dark/80 dark:text-secundarios-light/80">
-              {content.eventsContactText}{' '}
-              <a href={`mailto:${contactEmail}`} className="font-sans font-semibold text-principal-texto hover:underline">
-                {contactEmail}
-              </a>
-            </p>
           </div>
         </section>
 
         {/* Programas */}
-        <section id="programas" className="scroll-mt-anchorbar w-full max-w-5xl mx-auto pt-20 md:pt-32 text-center">
+        <section id="programas" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-20 md:pt-32 text-center">
           <h3 className={sectionTitle}>{content.programsTitle}</h3>
           <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">
             {content.programsIntro}
@@ -159,42 +190,48 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
           </div>
         </section>
 
-        {/* Sobre nosotros */}
-        <section id="sobre-nosotros" className="scroll-mt-anchorbar w-full max-w-3xl mx-auto pt-20 md:pt-32 text-center">
-          <h3 className={sectionTitle}>{content.aboutTitle}</h3>
-          <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{parseText(t.hero.h2)}</p>
-          <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 w-full max-w-sm md:max-w-none mx-auto">
-            <a href={`${langPrefix}/equipo`} className={secondaryButton}>
-              {content.aboutTeamLabel}
-            </a>
-            <a href={`${langPrefix}/que-hacemos`} className={secondaryButton}>
-              {content.aboutMissionLabel}
-            </a>
-          </div>
-        </section>
+        {/* Sobre nosotros y Únete: un solo panel a dos columnas, como el bloque de «Crear una delegación» */}
+        <section className="w-full max-w-6xl mx-auto pt-20 md:pt-32 pb-20 md:pb-32">
+          <div className={`${panel} p-6 md:p-12 grid gap-12 md:grid-cols-2 md:gap-16`}>
+            <div id="sobre-nosotros" className="scroll-mt-anchorbar">
+              <h3 className={sectionTitle}>{content.aboutTitle}</h3>
+              <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{parseText(t.hero.h2)}</p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href={`${langPrefix}/equipo`} className={secondaryButton}>
+                  {content.aboutTeamLabel}
+                </a>
+                <a href={`${langPrefix}/que-hacemos`} className={secondaryButton}>
+                  {content.aboutMissionLabel}
+                </a>
+              </div>
+            </div>
 
-        {/* Únete y contacto */}
-        <section id="unete" className="scroll-mt-anchorbar w-full max-w-3xl mx-auto pt-20 md:pt-32 pb-20 md:pb-32 text-center">
-          <h3 className={sectionTitle}>{content.joinTitle}</h3>
-          <p className="mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80">{content.joinIntro}</p>
-          {actionButtons}
-          <a
-            href={`mailto:${contactEmail}`}
-            className={`${card} mt-10 mx-auto max-w-md flex items-center gap-4 p-6 text-left hover:shadow-anthro-card hover:border-principal transition-all duration-300`}
-          >
-            <span className="shrink-0 flex h-12 w-12 items-center justify-center rounded-anthro bg-principal/10 text-principal-texto">
-              <LuMail size={24} aria-hidden="true" />
-            </span>
-            <span className="min-w-0">
-              <span className="block font-sans font-bold text-lg text-secundarios-dark dark:text-secundarios-light">
-                {content.contactCardTitle}
-              </span>
-              <span className="block font-sans text-sm text-secundarios-dark/80 dark:text-secundarios-light/80 break-words">
-                {content.contactCardText}
-              </span>
-              <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{contactEmail}</span>
-            </span>
-          </a>
+            <div id="unete" className="scroll-mt-anchorbar">
+              <h3 className={sectionTitle}>{content.joinTitle}</h3>
+              <ul className="space-y-3">
+                {joinLinks.map(({ href, label, detail, Icon, external }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      className={`${card} group flex items-center gap-4 p-4 hover:shadow-anthro-card hover:border-principal transition-all duration-300`}
+                    >
+                      <span className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full bg-principal/10 text-principal-texto group-hover:bg-principal group-hover:text-white transition-colors duration-300">
+                        <Icon size={20} aria-hidden="true" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block font-sans font-bold text-secundarios-dark dark:text-secundarios-light">{label}</span>
+                        {detail && (
+                          <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{detail}</span>
+                        )}
+                      </span>
+                      <ArrowRight size={18} aria-hidden="true" className="shrink-0 text-secundarios-dark/40 dark:text-secundarios-light/40 group-hover:text-principal group-hover:translate-x-0.5 transition-all duration-300" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
       </main>
 
