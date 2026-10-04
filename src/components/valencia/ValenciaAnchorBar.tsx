@@ -16,7 +16,36 @@ const ACTIVE_OFFSET = 180;
 
 const ValenciaAnchorBar: React.FC<ValenciaAnchorBarProps> = ({ items, ariaLabel }) => {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [overflow, setOverflow] = useState({ left: false, right: false });
   const listRef = useRef<HTMLDivElement>(null);
+
+  // Si las píldoras no caben (móvil), el borde por el que queda contenido se difumina
+  // para indicar que la barra se puede deslizar.
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+    const measure = () => {
+      const max = list.scrollWidth - list.clientWidth;
+      setOverflow({ left: list.scrollLeft > 1, right: list.scrollLeft < max - 1 });
+    };
+    measure();
+    list.addEventListener('scroll', measure, { passive: true });
+    const observer = new ResizeObserver(measure);
+    observer.observe(list);
+    return () => {
+      list.removeEventListener('scroll', measure);
+      observer.disconnect();
+    };
+  }, []);
+
+  const fadeMask =
+    overflow.left && overflow.right
+      ? '[mask-image:linear-gradient(to_right,transparent,black_2.5rem,black_calc(100%-2.5rem),transparent)]'
+      : overflow.right
+        ? '[mask-image:linear-gradient(to_right,black_calc(100%-2.5rem),transparent)]'
+        : overflow.left
+          ? '[mask-image:linear-gradient(to_right,transparent,black_2.5rem)]'
+          : '';
 
   useEffect(() => {
     let frame = 0;
@@ -63,7 +92,7 @@ const ValenciaAnchorBar: React.FC<ValenciaAnchorBarProps> = ({ items, ariaLabel 
     >
       <div
         ref={listRef}
-        className="flex md:justify-center gap-2 md:gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className={`flex md:justify-center gap-2 md:gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${fadeMask}`}
       >
         {items.map(({ id, label }) => {
           const isActive = id === activeId;
@@ -73,7 +102,7 @@ const ValenciaAnchorBar: React.FC<ValenciaAnchorBarProps> = ({ items, ariaLabel 
               href={`#${id}`}
               data-anchor={id}
               aria-current={isActive ? 'location' : undefined}
-              className={`shrink-0 whitespace-nowrap rounded-full border px-5 py-2 text-sm font-sans font-semibold transition-all duration-300 ${
+              className={`shrink-0 whitespace-nowrap rounded-full border px-4 md:px-5 py-2 text-sm font-sans font-semibold transition-all duration-300 ${
                 isActive
                   ? 'border-principal bg-principal text-white'
                   : 'border-secundarios-dark/20 dark:border-secundarios-light/30 text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal'
