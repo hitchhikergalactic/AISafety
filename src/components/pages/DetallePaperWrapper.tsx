@@ -65,7 +65,7 @@ const DetallePaperWrapper: React.FC<DetallePaperWrapperProps> = ({ lang, paper, 
       
       <main className="bg-secundarios-light dark:bg-secundarios-dark transition-colors duration-300">
         <section className="w-full max-w-7xl mx-auto pt-30 md:pt-0">
-          <div className="px-6 md:px-12 lg:px-8 pt-60 pb-20 md:py-45">
+          <div className="px-6 md:px-12 lg:px-8 pt-6 pb-20 md:py-45">
             
             {/* Botón volver */}
             <div className="mb-8">

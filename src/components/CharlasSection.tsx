@@ -65,7 +65,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
       {/* ====================================
           SECCIÓN SUPERIOR: CHARLA ACTIVA
           ==================================== */}
-      <div className="px-6 md:px-12 lg:px-8 pt-60 pb-20 md:py-45">
+      <div className="px-6 md:px-12 lg:px-8 pt-6 pb-20 md:py-45">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* COLUMNA IZQUIERDA: DETALLES TEXTUALES */}
