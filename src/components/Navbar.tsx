@@ -262,7 +262,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       </div>
 
       {/* Mobile & Tablet Menu Overlay */}
-      <div className={`xl:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`xl:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-[transform,visibility] duration-500 ease-in-out ${isOpen ? 'translate-y-0 visible' : '-translate-y-full invisible'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
             <div key={link.href}>

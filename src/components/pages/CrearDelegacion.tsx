@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import { crearDelegacionContent, crearDelegacionMailto } from '@data/delegaciones';
 import ilustracionReunion from '../../assets/delegacion-reunion.webp';
+import ilustracionReunionMovil from '../../assets/delegacion-reunion-movil.webp';
 
 type Language = 'es' | 'en';
 
@@ -32,15 +33,24 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
             {content.subtitleHighlight}
           </p>
 
-          <img
-            src={ilustracionReunion.src}
-            width={ilustracionReunion.width}
-            height={ilustracionReunion.height}
-            alt={content.imageAlt}
-            loading="lazy"
-            decoding="async"
-            className="mt-12 w-full h-auto rounded-anthro shadow-anthro-card"
-          />
+          {/* En móvil, recorte más cerrado sobre la mesa para que las personas no queden diminutas */}
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcSet={ilustracionReunionMovil.src}
+              width={ilustracionReunionMovil.width}
+              height={ilustracionReunionMovil.height}
+            />
+            <img
+              src={ilustracionReunion.src}
+              width={ilustracionReunion.width}
+              height={ilustracionReunion.height}
+              alt={content.imageAlt}
+              loading="lazy"
+              decoding="async"
+              className="mt-12 w-full h-auto rounded-anthro shadow-anthro-card"
+            />
+          </picture>
 
           <div className="mt-12 bg-secundarios-gray dark:bg-white/5 rounded-anthro p-6 md:p-12 text-left">
             <div className="mb-10 md:mb-12">
