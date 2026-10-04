@@ -3,6 +3,7 @@ import { Check } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import { crearDelegacionContent, crearDelegacionMailto } from '@data/delegaciones';
+import ilustracionReunion from '../../assets/delegacion-reunion.webp';
 
 type Language = 'es' | 'en';
 
@@ -30,6 +31,16 @@ const CrearDelegacion: React.FC<CrearDelegacionProps> = ({ lang }) => {
           <p className="max-w-2xl mx-auto text-principal-texto font-bold text-lg md:text-xl leading-relaxed">
             {content.subtitleHighlight}
           </p>
+
+          <img
+            src={ilustracionReunion.src}
+            width={ilustracionReunion.width}
+            height={ilustracionReunion.height}
+            alt={content.imageAlt}
+            loading="lazy"
+            decoding="async"
+            className="mt-12 w-full h-auto rounded-anthro shadow-anthro-card"
+          />
 
           <div className="mt-12 bg-secundarios-gray dark:bg-white/5 rounded-anthro p-6 md:p-12 text-left">
             <div className="mb-10 md:mb-12">

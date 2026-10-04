@@ -29,6 +29,8 @@ export const crearDelegacionContent = {
     subtitle:
       'Crear una delegación local de iaS es una de las formas más efectivas de multiplicar el impacto de la seguridad de la IA en el mundo hispanohablante.',
     subtitleHighlight: 'Ponemos a tu disposición todo lo necesario para empezar.',
+    imageAlt:
+      'Ilustración de un grupo diverso de personas que comen, charlan y ríen alrededor de una mesa en una sala de reuniones.',
     aportesTitle: 'Lo que iaS aporta a las nuevas delegaciones',
     aportes: [
       'La marca iaS y su reconocimiento en la organización hispanohablante de seguridad de la IA',
@@ -58,6 +60,8 @@ export const crearDelegacionContent = {
     subtitle:
       'Starting a local iaS chapter is one of the most effective ways to multiply the impact of AI safety across the Spanish-speaking world.',
     subtitleHighlight: 'We give you everything you need to get started.',
+    imageAlt:
+      'Illustration of a diverse group of people eating, chatting and laughing around a table in a meeting room.',
     aportesTitle: 'What iaS brings to new chapters',
     aportes: [
       'The iaS brand and its recognition in the Spanish-speaking AI safety organization',
