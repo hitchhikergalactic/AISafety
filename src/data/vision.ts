@@ -8,7 +8,7 @@ export const visionContent = {
     eyebrow: 'Hacia dónde va iaS',
     title: 'Visión',
     subtitle:
-      'Misión, visión y resumen de Inteligencia Artificial Segura (iaS): conocimiento de referencia en español sobre los riesgos más graves de la IA avanzada.',
+      'Visión y resumen de Inteligencia Artificial Segura (iaS): conocimiento de referencia en español sobre los riesgos más graves de la IA avanzada.',
     canonical: 'https://aisafety.es/vision',
   },
   en: {
@@ -18,7 +18,7 @@ export const visionContent = {
     eyebrow: 'Where iaS is heading',
     title: 'Vision',
     subtitle:
-      'Mission, vision and summary of Inteligencia Artificial Segura (iaS): reference knowledge in Spanish on the most serious risks of advanced AI.',
+      'Vision and summary of Inteligencia Artificial Segura (iaS): reference knowledge in Spanish on the most serious risks of advanced AI.',
     canonical: 'https://aisafety.es/en/vision',
   },
 } as const;

@@ -28,6 +28,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/que-hacemos"/>
   </url>
 
+  <!-- Misión -->
+  <url>
+    <loc>https://aisafety.es/mision</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/mision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/mision"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/mision</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/mision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/mision"/>
+  </url>
+
   <!-- Visión -->
   <url>
     <loc>https://aisafety.es/vision</loc>

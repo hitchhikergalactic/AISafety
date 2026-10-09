@@ -47,6 +47,14 @@ const visionCollection = defineCollection({
   }),
 });
 
+const misionCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/mision' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 const teoriaDelCambioCollection = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/teoria-del-cambio' }),
   schema: z.object({
@@ -92,6 +100,7 @@ const avisoLegalCollection = defineCollection({
 export const collections = {
   papers: papersCollection,
   papersEn: papersEnCollection,
+  mision: misionCollection,
   vision: visionCollection,
   teoriaDelCambio: teoriaDelCambioCollection,
   cookies: cookiesCollection,
