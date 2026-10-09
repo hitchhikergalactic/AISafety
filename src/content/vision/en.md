@@ -1,15 +1,9 @@
 ---
 title: "iaS Vision"
-description: "Mission, vision and summary of Inteligencia Artificial Segura (iaS): reference knowledge in Spanish on the most serious risks of advanced AI."
+description: "Vision and summary of Inteligencia Artificial Segura (iaS): reference knowledge in Spanish on the most serious risks of advanced AI."
 ---
 
 # iaS Vision
-
----
-
-## Mission
-
-That reference knowledge on the most serious risks of advanced AI exists in Spanish, complete, reviewed and openly available, and reaches those who teach, inform and make decisions across the Spanish-speaking world.
 
 ---
 

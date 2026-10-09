@@ -10,7 +10,7 @@ export const teoriaDelCambioContent = {
     eyebrow: 'Cómo se produce el cambio',
     title: 'Teoría del Cambio',
     subtitle:
-      'La lógica causal del trabajo de iaS: problema, teoría, insumos, actividades, resultados, evidencia y dinámica de escala.',
+      'Cómo y por qué el trabajo de iaS reduce los riesgos más graves de la IA avanzada: el problema, lo que hacemos, el cambio que buscamos y nuestros próximos hitos.',
     path: '/teoria-del-cambio',
     canonical: 'https://aisafety.es/teoria-del-cambio',
   },
@@ -21,7 +21,7 @@ export const teoriaDelCambioContent = {
     eyebrow: 'How change happens',
     title: 'Theory of Change',
     subtitle:
-      'The causal logic behind the work of iaS: problem, theory, inputs, activities, outcomes, evidence and scaling dynamics.',
+      'How and why the work of iaS reduces the most serious risks of advanced AI: the problem, what we do, the change we seek and our next milestones.',
     path: '/theory-of-change',
     canonical: 'https://aisafety.es/en/theory-of-change',
   },
