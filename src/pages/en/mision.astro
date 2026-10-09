@@ -1,0 +1,26 @@
+---
+// src/pages/en/mision.astro
+import { getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DocumentPage from '../../components/pages/DocumentPage.tsx';
+import { misionContent } from '../../data/mision';
+
+const entry = await getEntry('mision', 'en');
+const { Content } = await render(entry!);
+const c = misionContent.en;
+const alternates = { es: misionContent.es.canonical, en: misionContent.en.canonical };
+---
+
+<Layout
+  lang="en"
+  title={c.seoTitle}
+  description={c.subtitle}
+  ogTitle={c.seoTitle}
+  ogDescription={c.subtitle}
+  canonicalUrl={c.canonical}
+  alternates={alternates}
+>
+  <DocumentPage lang="en" header={c} subject="Nuevo suscriptor desde Misión" client:load>
+    <Content />
+  </DocumentPage>
+</Layout>

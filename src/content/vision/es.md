@@ -1,15 +1,9 @@
 ---
 title: "Visión de iaS"
-description: "Misión, visión y resumen de Inteligencia Artificial Segura (iaS): conocimiento de referencia en español sobre los riesgos más graves de la IA avanzada."
+description: "Visión y resumen de Inteligencia Artificial Segura (iaS): conocimiento de referencia en español sobre los riesgos más graves de la IA avanzada."
 ---
 
 # Visión de iaS
-
----
-
-## Misión
-
-Que el conocimiento de referencia sobre los riesgos más graves de la IA avanzada exista en español, completo, revisado y en abierto, y llegue a quienes forman, informan y deciden en el mundo hispanohablante.
 
 ---
 

@@ -81,6 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       sublinks: [
         { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
         { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" },
+        { label: lang === 'es' ? "Misión" : "Mission", path: "/mision" },
         { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" },
         { label: lang === 'es' ? "Teoría del Cambio" : "Theory of Change", path: lang === 'es' ? "/teoria-del-cambio" : "/theory-of-change" }
       ]
