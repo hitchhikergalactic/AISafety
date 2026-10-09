@@ -42,7 +42,7 @@ Mientras tanto, las decisiones que nos afectan se toman en español. España est
 Trabajamos por tres caminos a la vez, para que ninguno dependa de los demás:
 
 - **Conocimiento abierto en español**, que seguimos ampliando pase lo que pase.
-- **Formación y debate público**, junto a las universidades, la prensa, las comunidades de Buenos Aires, México y Colombia, y los cursos en español.
+- **Formación y debate público**, junto a las universidades, la prensa, nuestra red en Buenos Aires, México y Colombia, y los cursos en español.
 - **Diálogo con las instituciones que deciden**: el Instituto de Seguridad de la IA, las Cortes y las posiciones españolas en la Unión Europea y en la ONU.
 
 Hasta octubre de 2027 construimos la base con nuestro equipo voluntario: traducciones, encuentros, una web con todo el material en abierto y aportaciones a consultas públicas. El paso siguiente, llevar ese respaldo a los despachos y a las redacciones, necesita personas dedicadas, y para eso buscamos apoyo.

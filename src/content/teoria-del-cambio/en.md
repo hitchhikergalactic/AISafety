@@ -15,7 +15,7 @@ The most serious risks of advanced artificial intelligence are studied and debat
 We work along three paths that do not depend on one another:
 
 1. **Open knowledge.** We translate reference knowledge, with human review, and publish it openly, starting with the complete AI Safety Atlas.
-2. **Training and debate.** We organize events, refer people to courses in Spanish and work with universities, the press and the communities in Buenos Aires, Mexico and Colombia.
+2. **Training and debate.** We organize events, refer people to courses in Spanish and work with universities, the press and our network in Buenos Aires, Mexico and Colombia.
 3. **Advocacy.** We bring that knowledge to decision-makers: the AI Safety Institute, the Spanish Parliament and Spain's positions in the European Union and at the UN.
 
 ---

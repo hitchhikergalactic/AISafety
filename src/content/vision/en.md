@@ -42,7 +42,7 @@ Meanwhile, the decisions that affect us are made in Spanish. Spain is creating a
 We work along three paths at once, so that none depends on the others:
 
 - **Open knowledge in Spanish**, which we keep expanding whatever happens.
-- **Training and public debate**, alongside universities, the press, the communities in Buenos Aires, Mexico and Colombia, and courses in Spanish.
+- **Training and public debate**, alongside universities, the press, our network in Buenos Aires, Mexico and Colombia, and courses in Spanish.
 - **Dialogue with the institutions that decide**: the AI Safety Institute, the Spanish Parliament and Spain's positions in the European Union and at the UN.
 
 Until October 2027 we are building the foundations with our volunteer team: translations, events, a website with all the material openly available, and contributions to public consultations. The next step, bringing that support into government offices and newsrooms, needs dedicated people, and that is why we are seeking support.
