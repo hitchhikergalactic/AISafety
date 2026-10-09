@@ -45,4 +45,4 @@ Hay demanda: 13 encuentros con ponentes de cuatro países, 70 personas en nuestr
 - **Octubre de 2027.** Primer balance público de lo conseguido.
 - **2028.** Que el conocimiento se use en español y entre en las decisiones de al menos una institución.
 
-**Súmate:** como lector, como traductor, como ponente o como financiador.
+**Súmate.** Lo que se decida en los próximos años nos afectará a todos, y hay sitio para cada cual: como lector, como traductor, como ponente o como financiador.

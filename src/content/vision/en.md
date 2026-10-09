@@ -49,4 +49,4 @@ Until October 2027 we are building the foundations with our volunteer team: tran
 
 Our goal for 2028 is for this knowledge to be used in Spanish and for at least one institution to build it into its decisions, as a Spanish-speaking contribution to the global effort to prevent advanced AI from causing a catastrophe.
 
-**Join us:** as a reader, translator, speaker or funder.
+**Join us.** What is decided in the coming years will affect us all, and there is room for everyone: as a reader, translator, speaker or funder.

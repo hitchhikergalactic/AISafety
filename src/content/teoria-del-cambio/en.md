@@ -45,4 +45,4 @@ There is demand: 13 events with speakers from four countries, 70 people at our f
 - **October 2027.** Our first public review of what we have achieved.
 - **2028.** The knowledge is used in Spanish and informs the decisions of at least one institution.
 
-**Join us:** as a reader, translator, speaker or funder.
+**Join us.** What is decided in the coming years will affect us all, and there is room for everyone: as a reader, translator, speaker or funder.

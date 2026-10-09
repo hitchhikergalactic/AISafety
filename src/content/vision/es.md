@@ -49,4 +49,4 @@ Hasta octubre de 2027 construimos la base con nuestro equipo voluntario: traducc
 
 Nuestro objetivo para 2028 es que este conocimiento se use en español y que al menos una institución lo incorpore a sus decisiones, como contribución hispanohablante al esfuerzo global por evitar que la IA avanzada provoque una catástrofe.
 
-**Súmate:** como lector, como traductor, como ponente o como financiador.
+**Súmate.** Lo que se decida en los próximos años nos afectará a todos, y hay sitio para cada cual: como lector, como traductor, como ponente o como financiador.
