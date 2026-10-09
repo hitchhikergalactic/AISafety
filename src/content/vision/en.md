@@ -1,6 +1,6 @@
 ---
 title: "iaS Vision"
-description: "Mission, reach across the Spanish-speaking world, strategic pillars and long-term ambition of Inteligencia Artificial Segura (iaS) on AI safety."
+description: "Mission, vision and summary of Inteligencia Artificial Segura (iaS): reference knowledge in Spanish on the most serious risks of advanced AI."
 ---
 
 # iaS Vision
@@ -9,13 +9,15 @@ description: "Mission, reach across the Spanish-speaking world, strategic pillar
 
 ## Mission
 
-[iaS](/en/) exists to **raise awareness of the full spectrum of existing and potential harms from AI, inform mitigation priorities through ongoing discourse, and support the realization of effective solutions** across the entire Spanish-speaking world, and it does so entirely in Spanish. We address the full range of AI safety concerns, from near-term harms like deepfakes, misinformation and the algorithmic manipulation of mental health, to long-term risks such as the loss of meaningful human control over increasingly capable AI systems, and everything in between.
+That reference knowledge on the most serious risks of advanced AI exists in Spanish, complete, reviewed and openly available, and reaches those who teach, inform and make decisions across the Spanish-speaking world.
 
 ---
 
-## The challenge
+## Vision
 
-Spanish is spoken by [650 million people, 520 million of them as a native language](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/espanol-crece-30-millones-hablantes-ano-5-anterior), and it is an official language in Europe, in the Americas and in Africa, where [Equatorial Guinea is the only country that has it as an official language](https://cervantes.org/es/sobre-nosotros/sala-prensa/notas-prensa/conferencia-del-jefe-del-estado-de-guinea-ecuatorial-en-el); yet the conversation, training and resources on AI safety are produced mostly in English. As AI systems transform everything around us, the risks grow in the same proportion; this is a monumental transition, and it is in our hands whether it is positive or negative, fair or unfair.
+Advanced artificial intelligence is progressing faster than our ability to understand and govern it. The decisions that will determine whether its most serious risks, from loss of control to catastrophic harm, are kept in check are being made now, and almost all the knowledge needed to make them well is written in English.
+
+We believe that the Spanish-speaking world, with more than 635 million speakers and its own voice in Europe, Ibero-America, Africa and the United Nations, is essential to the global effort to prevent advanced AI from causing a catastrophe, and that it cannot take part in that effort on borrowed terms.
 
 <figure class="mapa-idioma">
 <img class="mapa-claro" src="/mapa-espanol-mundo-claro.webp" alt="World map showing Spanish as an official language in Spain, Latin America and Equatorial Guinea, and as an important or significant minority language in countries such as the United States, Canada, Brazil, Morocco and Australia." width="1600" height="821" loading="lazy" decoding="async">
@@ -24,99 +26,33 @@ Spanish is spoken by [650 million people, 520 million of them as a native langua
 <figcaption>Spanish in the world. Data: Instituto Cervantes yearbook, <em>El español en el mundo 2023</em>. Map: El Comandante, Wikimedia Commons (public domain, CC0), recolored by iaS.</figcaption>
 </figure>
 
-AI safety initiatives in Spanish are still few and, for the most part, work separately, so that many talented people who care about these issues do not find a clear path between curiosity and a meaningful contribution in their own language. We believe this language gap is not a matter of representation but a safety failure that can be measured, because AI systems do not behave the same way in every language.
+We imagine a near future in which:
 
-iaS was born to close that gap.
+- someone preparing a decision in a ministry in Madrid, in the Spanish Parliament or in a delegation to the UN finds, in Spanish, complete and reviewed, the reference knowledge on the risks of advanced AI;
+- a journalist in Mexico City or a student in Malabo can train in AI safety without language being a barrier, and their talent joins the field;
+- Spain's AI Safety Institute includes loss of control in its evaluations, and Spanish-speaking countries bring catastrophic risks into their positions in the European Union and at the UN;
+- public debate in Spanish treats these risks rigorously, without alarmism or science fiction.
 
----
-
-## Who we are
-
-Inteligencia Artificial Segura (iaS) is an AI safety organization that operates entirely in Spanish, based in Madrid and reaching the whole Spanish-speaking world. It works as a virtual hub and, since February 2026, has organized online seminars and a first in-person meetup in Madrid together with BlueDot Impact, attended by more than 1000 people, in addition to publishing content in its newsletter, on YouTube, on Instagram and on LinkedIn.
-
-iaS runs with a team of volunteers and has the mentorship of people from other AI safety organizations; it is building a network of local chapters, with a [first chapter in Valencia](/en/delegaciones/valencia), united under one brand, one mission and a centralized infrastructure. This structure is designed to grow without friction, from a few chapters to many more.
+In that future, advanced AI safety is not someone else's conversation that reaches us late and in translation, but an effort in which the Spanish-speaking world takes part with its own knowledge, talent and institutions. We are working for it to begin becoming reality in 2028.
 
 ---
 
-## Our vision
+## Summary
 
-We imagine a Spanish-speaking world where AI safety is not a niche concern, but a recognized priority in universities, in boardrooms, in governments and in public conversation, and where language is not a barrier.
+In July 2026, a panel of forty scientists convened by the UN reached a troubling conclusion: science cannot guarantee that advanced artificial intelligence will not cause catastrophic harm, because its capabilities are growing faster than our ability to understand and govern it. Like almost everything that matters in this field, the warning was written in English.
 
-In concrete terms, we see the following:
+Meanwhile, the decisions that affect us are made in Spanish. Spain is creating an AI Safety Institute. In May 2027, the UN will hold in New York the second session of its Global Dialogue on AI Governance, co-chaired by El Salvador. And from Mexico City to Madrid and Malabo, those preparing these decisions can barely find in their own language the knowledge they need to make them well: of the major international reports, only the summary exists in Spanish.
 
-- A **growing body of research, evaluations, translations and technical resources** in Spanish.
-- **Hundreds of people per year** completing AI safety courses in several countries.
-- **Large international events**, such as conferences, hackathons and expert seminars, alongside accessible local gatherings that welcome first-timers.
-- A **professional content operation** producing high-quality material in Spanish, both for the public and for those who develop and regulate AI.
-- **Thriving local chapters** across the Spanish-speaking world, each with dozens or hundreds of active people.
-- A **talent pipeline** that reliably takes people from initial curiosity to positions of influence in public bodies and technology policy, frontier AI labs, government advisory roles, academia and beyond.
+[iaS](/en) was founded in February 2026 to change that. It started with no funding, no office and no paid staff, and with a simple idea: if the knowledge exists in Spanish and someone puts it in front of decision-makers, decisions improve. In a few months it has organized 13 events with speakers from Spain, Argentina, Colombia and Mexico, and brought together 70 people at its first in-person event, with BlueDot Impact, at Celonis's offices in Madrid. Attendees rate it 4.6 out of 5, and one in four comes back. iaS is also part of the committee translating the AI Safety Atlas into Spanish, an open handbook of more than 600 pages that will be available before the end of 2026.
 
-All with a single goal: to ensure that the development and integration of AI truly benefit all of humanity.
+We work along three paths at once, so that none depends on the others:
 
----
+- **Open knowledge in Spanish**, which we keep expanding whatever happens.
+- **Training and public debate**, alongside universities, the press, the communities in Buenos Aires, Mexico and Colombia, and courses in Spanish.
+- **Dialogue with the institutions that decide**: the AI Safety Institute, the Spanish Parliament and Spain's positions in the European Union and at the UN.
 
-## Strategic framework: four pillars
+Until October 2027 we are building the foundations with our volunteer team: translations, events, a website with all the material openly available, and contributions to public consultations. The next step, bringing that support into government offices and newsrooms, needs dedicated people, and that is why we are seeking support.
 
-iaS fulfils its mission through four integrated pillars that, together, take people from first contact to deep involvement.
+Our goal for 2028 is for this knowledge to be used in Spanish and for at least one institution to build it into its decisions, as a Spanish-speaking contribution to the global effort to prevent advanced AI from causing a catastrophe.
 
-**Education.** iaS offers [courses](/en/curso-estrategia-agi) and discussion groups on AI safety in Spanish; education is the main gateway to the [iaS funnel](#the-ias-funnel).
-
-**Events.** iaS organizes [online seminars](/en/seminario-bluedot-spain) twice a month, on the first and third Wednesday, and aims to add in-person meetups, hackathons and large international events; events attract new people and strengthen the involvement of those already taking part.
-
-**Content and outreach.** iaS helps shape the narrative on AI safety in Spanish through the newsletter Semana de la Seguridad de la IA, YouTube, Instagram, LinkedIn and other channels; in the short term, this channels interested people toward our entry points and, over time, we aim to turn it into a fuller media presence.
-
-**Resources and research in Spanish.** iaS builds the missing infrastructure for working in Spanish, with translations of reference documents and a technical evidence base on how models behave in our language; at scale, we aim for it to operate as a structured research and evaluation program spanning technical safety, governance and policy analysis.
-
----
-
-## The iaS funnel
-
-iaS offers a structured path from first contact to professional contribution, with clear steps and support at every stage.
-
-| Level | Description | Examples |
-| ----- | ----------- | -------- |
-| **0** | No engagement | Has not yet encountered AI safety |
-| **1** | Initial engagement | Attends an iaS event, reads a newsletter post or sees content on social media |
-| **2** | Foundational learning | Completes an iaS course or joins a discussion group |
-| **3** | Active contribution | Joins a research or evaluation project, takes part in a campaign or joins a chapter team |
-| **4** | Structured development | Does a full-time paid fellowship or internship in AI safety |
-| **5** | Professional impact | Works full-time in AI safety, whether in policy, research, industry or civil society, or leads an iaS research project |
-
-iaS supports the whole path: at levels 0 to 3 with its own programs, and at levels 4 and 5 by opening doors through recommendation letters, contacts in the field and its network of partner hubs. The goal is for language not to be a barrier at any point along the way. To achieve this, iaS concentrates its effort on the two transitions that decide the funnel:
-
-1. **From level 0 to 1**: getting someone who is unfamiliar with AI safety to engage for the first time, where events, social media and word of mouth matter most.
-2. **From level 2 to 3**: getting someone who has already learned about AI safety to make a meaningful contribution, and here structured projects and mentorship are essential.
-
-The four pillars of iaS directly address both: Content and Events lower the barrier to entry, Education builds the foundation, and Resources and research and the structured programs support deep contributions.
-
-### A journey through the funnel
-
-*Consider an illustrative case: Valeria, a 22-year-old law student in Bogotá. She sees a LinkedIn post go by about the upcoming iaS introductory course on AI safety and, having recently read Nexus by Yuval Noah Harari, she is curious and signs up.*
-
-*She completes the course, attends a few seminars and earns her certificate; for a while, her internship keeps her busy and she takes part little, but a semester later a class assignment lets her focus on AI, she chooses it and feels more confident thanks to the iaS course. She then discovers a new project evaluating models in Spanish, joins a team of three people and they publish their work a few months later.*
-
-*That experience awakens a bigger ambition in her: she explores opportunities in AI policy and sets her sights on the body that oversees AI in her country, and thanks to her demonstrated experience and a recommendation letter, soon afterwards she is part of the team working on its regulation.*
-
-Every pillar, every team member and every chapter helps to widen, strengthen and move people forward along this path. Valeria's path, from level 0 to 5, is the one iaS wants to make possible at scale across the Spanish-speaking world. And every stage counts: making AI go well requires a society that understands AI and its risks, and every person who enters the funnel, however far they go, is part of that result.
-
----
-
-## A network across the Spanish-speaking world
-
-The chapter model is the vehicle through which our vision scales. A strong central identity provides brand, management infrastructure, shared resources and operating guides, while local chapters carry out their own activities and establish their own partnerships, with the decisive advantage that they *never have to start from scratch*.
-
-A new chapter does not need to build its own infrastructure or develop materials from the beginning, because it adopts the iaS brand and starts with what has already been built.
-
-This balance between **local freedom and a shared framework** is what allows iaS to scale without losing the grassroots energy that makes local groups thrive. Each new chapter extends the reach of iaS, strengthens the brand and shows that the model is scalable.
-
-We work closely with the hub in [Mexico](https://www.aismx.org/), with [AI Safety Colombia](https://aisafetycolombia.org/) and with [BAISH](https://www.baish.com.ar/es) in Buenos Aires, and our aim is to help expand the nodes across Spanish-speaking countries, so that those that do not yet have their own can open one.
-
----
-
-## Looking ahead
-
-iaS rests on a base that has already been built: since February 2026, more than 1000 people have taken part in its seminars, with an average rating of 4.56 out of 5 across 59 ratings, and it has a multidisciplinary team.
-
-The Spanish-speaking world is not a spectator of AI: it is a force capable of pushing it toward safety. Spanish is an official language in 21 countries, it is spoken by more than 650 million people and it is one of the six official languages of the United Nations, where those countries hold some twenty votes. In 2023 Spain created the [first AI supervisory agency in the European Union](https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/transformacion-digital-y-funcion-publica/paginas/2024/190624-escriva-aesia-ia.aspx), and the governments of Latin America and the Caribbean are already tackling AI governance together: the [Santiago Declaration](https://minciencia.gob.cl/uploads/filer_public/40/2a/402a35a0-1222-4dab-b090-5c81bbf34237/declaracion_de_santiago.pdf) (2023) set up a working group to establish an intergovernmental AI council for the region, and in 2024, 17 countries adopted the [Cartagena de Indias Declaration](https://www.mintic.gov.co/portal/715/w3-article-383990.html) for safe, ethical and responsible AI.
-
-That force needs trained people, evidence of its own in Spanish and a network that connects them. That is what iaS builds: it trains those who will make decisions, researches how models behave in our language and brings the hubs and chapters of the Spanish-speaking world together into a single movement for safe AI.
+**Join us:** as a reader, translator, speaker or funder.
