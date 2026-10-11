@@ -42,11 +42,11 @@ Meanwhile, the decisions that affect us are made in Spanish. Spain is creating a
 We work along three paths at once, so that none depends on the others:
 
 - **Open knowledge in Spanish**, which we keep expanding whatever happens.
-- **Training and public debate**, alongside universities, the press, the communities in Buenos Aires, Mexico and Colombia, and courses in Spanish.
+- **Training and public debate**, alongside universities, the press, our network in Buenos Aires, Mexico and Colombia, and courses in Spanish.
 - **Dialogue with the institutions that decide**: the AI Safety Institute, the Spanish Parliament and Spain's positions in the European Union and at the UN.
 
 Until October 2027 we are building the foundations with our volunteer team: translations, events, a website with all the material openly available, and contributions to public consultations. The next step, bringing that support into government offices and newsrooms, needs dedicated people, and that is why we are seeking support.
 
 Our goal for 2028 is for this knowledge to be used in Spanish and for at least one institution to build it into its decisions, as a Spanish-speaking contribution to the global effort to prevent advanced AI from causing a catastrophe.
 
-**Join us:** as a reader, translator, speaker or funder.
+**Join us.** What is decided in the coming years will affect us all, and there is room for everyone: as a reader, translator, speaker or funder.

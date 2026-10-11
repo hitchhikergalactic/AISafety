@@ -42,11 +42,11 @@ Mientras tanto, las decisiones que nos afectan se toman en español. España est
 Trabajamos por tres caminos a la vez, para que ninguno dependa de los demás:
 
 - **Conocimiento abierto en español**, que seguimos ampliando pase lo que pase.
-- **Formación y debate público**, junto a las universidades, la prensa, las comunidades de Buenos Aires, México y Colombia, y los cursos en español.
+- **Formación y debate público**, junto a las universidades, la prensa, nuestra red en Buenos Aires, México y Colombia, y los cursos en español.
 - **Diálogo con las instituciones que deciden**: el Instituto de Seguridad de la IA, las Cortes y las posiciones españolas en la Unión Europea y en la ONU.
 
 Hasta octubre de 2027 construimos la base con nuestro equipo voluntario: traducciones, encuentros, una web con todo el material en abierto y aportaciones a consultas públicas. El paso siguiente, llevar ese respaldo a los despachos y a las redacciones, necesita personas dedicadas, y para eso buscamos apoyo.
 
 Nuestro objetivo para 2028 es que este conocimiento se use en español y que al menos una institución lo incorpore a sus decisiones, como contribución hispanohablante al esfuerzo global por evitar que la IA avanzada provoque una catástrofe.
 
-**Súmate:** como lector, como traductor, como ponente o como financiador.
+**Súmate.** Lo que se decida en los próximos años nos afectará a todos, y hay sitio para cada cual: como lector, como traductor, como ponente o como financiador.

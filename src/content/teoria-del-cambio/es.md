@@ -15,7 +15,7 @@ Los riesgos más graves de la inteligencia artificial avanzada se estudian y se 
 Trabajamos por tres caminos que no dependen unos de otros:
 
 1. **Conocimiento abierto.** Traducimos, con revisión humana, el conocimiento de referencia y lo publicamos en abierto, empezando por el AI Safety Atlas completo.
-2. **Formación y debate.** Organizamos encuentros, derivamos a cursos en español y trabajamos con universidades, prensa y las comunidades de Buenos Aires, México y Colombia.
+2. **Formación y debate.** Organizamos encuentros, derivamos a cursos en español y trabajamos con universidades, prensa y nuestra red en Buenos Aires, México y Colombia.
 3. **Incidencia.** Llevamos ese conocimiento a quienes deciden: el Instituto de Seguridad de la IA, las Cortes y las posiciones españolas en la Unión Europea y en la ONU.
 
 ---
@@ -45,4 +45,4 @@ Hay demanda: 13 encuentros con ponentes de cuatro países, 70 personas en nuestr
 - **Octubre de 2027.** Primer balance público de lo conseguido.
 - **2028.** Que el conocimiento se use en español y entre en las decisiones de al menos una institución.
 
-**Súmate:** como lector, como traductor, como ponente o como financiador.
+**Súmate.** Lo que se decida en los próximos años nos afectará a todos, y hay sitio para cada cual: como lector, como traductor, como ponente o como financiador.
