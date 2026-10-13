@@ -372,6 +372,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Guillem Bas, director de proyectos del AI Risk Explorer (AIRE), explica cómo la recopilación y la síntesis sistemática de evidencia pública permiten monitorear los riesgos de la IA de forma rigurosa.",
     descripcionCortaEn: "Guillem Bas, Head of Projects at the AI Risk Explorer (AIRE), explains how the systematic collection and synthesis of public evidence makes it possible to monitor AI risks rigorously.",
     imagen: "/seminario_disertantes/Guillem_Bas.png",
+    videoYoutube: "https://youtu.be/J9xTbEmGFd0",
     fecha: "2026-09-23",
     tagsEs: ["Gobernanza de la IA", "Riesgos de la IA", "Evidencia pública", "Política europea"],
     tagsEn: ["AI Governance", "AI Risks", "Public Evidence", "European Policy"],
