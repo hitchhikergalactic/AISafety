@@ -376,7 +376,7 @@ export const listaDeCharlas: Charla[] = [
     fecha: "2026-09-23",
     tagsEs: ["Gobernanza de la IA", "Riesgos de la IA", "Evidencia pública", "Política europea"],
     tagsEn: ["AI Governance", "AI Risks", "Public Evidence", "European Policy"],
-    presentacion: "",
+    presentacion: "/material-seminario-guillem-bas.pdf",
     expositor: {
       id: "guillem-bas",
       nombre: "Guillem",
