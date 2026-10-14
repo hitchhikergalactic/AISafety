@@ -3,9 +3,8 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
-import { equipoContent } from '@data/equipo';
+import { equipoContent, miembrosEquipo } from '@data/equipo';
 import { parseText } from '@utils/parseText';
-import osmaniImg from '@assets/osmani.jpeg'; 
 import { FaLinkedin } from "react-icons/fa";
 
 type Language = 'es' | 'en';
@@ -13,6 +12,11 @@ type Language = 'es' | 'en';
 interface EquipoProps {
   lang: Language;
 }
+
+const coordinacion = miembrosEquipo.filter((m) => m.grupo === 'coordinacion');
+
+const iniciales = (nombre: string) =>
+  nombre.split(' ').map((p) => p[0]).slice(0, 2).join('');
 
 const Equipo: React.FC<EquipoProps> = ({ lang }) => {
   const t = translations[lang];
@@ -24,42 +28,58 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
       <Navbar lang={lang} />
       
       <main className="pt-36 md:pt-44 px-8 md:px-20 lg:px-40 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        <div className="max-w-3xl mx-auto text-left w-full">
+        <div className="max-w-5xl mx-auto text-left w-full">
           
-          {/* Foto y Bio */}
-          <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-start">
-            
-            {/* Foto */}
-            <div className="flex flex-col items-center shrink-0 w-full md:w-auto mt-6 md:mt-12">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-md overflow-hidden shadow-lg mb-4">
-                <img 
-                  src={osmaniImg.src || osmaniImg} 
-                  alt="Osmani Redondo" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <a 
-                href="https://www.linkedin.com/in/osmani/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-secundarios-dark/80 dark:text-secundarios-light/80 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2"
-              >
-                <FaLinkedin className="w-7 h-7" />
-              </a>
-            </div>
+          <h1 className="como-h4 text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
+            {content.heroTitle}
+          </h1>
+          <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+            {parseText(content.governance)}
+          </p>
 
-            {/* Texto */}
-            <div className="w-full md:flex-1">
-              <h1 className="como-h4 text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
-                {content.heroTitle}
-              </h1>
-              <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
-                {parseText(content.heroSubtitle)}
-              </p>
-            </div>
-          </div>
+          {/* Equipo de coordinación */}
+          <ul className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+            {coordinacion.map((persona) => (
+              <li key={persona.nombre} className="flex flex-col">
+                <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
+                  {persona.foto ? (
+                    <img
+                      src={persona.foto.src}
+                      alt={persona.nombre}
+                      width={persona.foto.width}
+                      height={persona.foto.height}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="w-full h-full flex items-center justify-center font-sans font-bold text-3xl text-secundarios-dark/50 dark:text-secundarios-light/50"
+                    >
+                      {iniciales(persona.nombre)}
+                    </span>
+                  )}
+                </div>
+                <h2 className="mt-4 !font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
+                  {persona.nombre}
+                </h2>
+                <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+                  {persona.cargo[lang]}
+                </p>
+                <a
+                  href={persona.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn · ${persona.nombre}`}
+                  className="mt-2 -ml-1 p-1 self-start text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+                >
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+              </li>
+            ))}
+          </ul>
 
-          <section className="mb-50 md:mb-52"></section>
+          <section className="mb-24 md:mb-32"></section>
 
           {/* Sección de Contribución */}
           <section className="mt-10 mb-20 md:mb-52 bg-white/30 dark:bg-white/5 p-8 rounded-md border border-secundarios-dark/10 dark:border-white/10">
