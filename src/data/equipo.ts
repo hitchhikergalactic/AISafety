@@ -54,10 +54,11 @@ export const equipoContent: EquipoContent = {
 };
 
 // Personas que aparecen en /equipo. Para añadir a alguien basta con una entrada nueva;
+// `grupo: 'direccion'` se muestra arriba, junto a la biografía; el resto, en la cuadrícula.
 // `grupo` permite sumar más adelante asesores (con su `area`) o delegaciones sin tocar el componente.
 // La foto se importa desde src/assets/equipo (cuadrada); si falta, la ficha muestra las iniciales.
 
-export type GrupoEquipo = 'coordinacion' | 'asesores' | 'delegaciones';
+export type GrupoEquipo = 'direccion' | 'coordinacion' | 'asesores' | 'delegaciones';
 
 export interface MiembroEquipo {
   nombre: string;
@@ -74,7 +75,7 @@ export const miembrosEquipo: MiembroEquipo[] = [
     cargo: { es: 'Directora de iaS', en: 'Director of iaS' },
     linkedin: 'https://www.linkedin.com/in/osmani/',
     foto: osmaniImg,
-    grupo: 'coordinacion',
+    grupo: 'direccion',
   },
   {
     nombre: 'Lucía Kubusch',

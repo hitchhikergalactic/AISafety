@@ -13,6 +13,7 @@ interface EquipoProps {
   lang: Language;
 }
 
+const directora = miembrosEquipo.find((m) => m.grupo === 'direccion');
 const coordinacion = miembrosEquipo.filter((m) => m.grupo === 'coordinacion');
 
 const iniciales = (nombre: string) =>
@@ -33,15 +34,43 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
           <h1 className="como-h4 text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
             {content.heroTitle}
           </h1>
-          <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
-            {parseText(content.heroSubtitle)}
-          </p>
-          <p className="mt-6 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+
+          {/* Directora: foto y biografía */}
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+            {directora?.foto && (
+              <div className="flex flex-col items-center shrink-0">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-anthro overflow-hidden shadow-anthro-subtle mb-2">
+                  <img
+                    src={directora.foto.src}
+                    alt={directora.nombre}
+                    width={directora.foto.width}
+                    height={directora.foto.height}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <a
+                  href={directora.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn · ${directora.nombre}`}
+                  className="p-2 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </a>
+              </div>
+            )}
+            <div className="w-full md:flex-1">
+              <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+                {parseText(content.heroSubtitle)}
+              </p>
+            </div>
+          </div>
+          <p className="mt-10 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
             {parseText(content.bridge)}
           </p>
 
           {/* Equipo de coordinación */}
-          <ul className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+          <ul className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
             {coordinacion.map((persona) => (
               <li key={persona.nombre} className="flex flex-col">
                 <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
@@ -63,21 +92,23 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
                     </span>
                   )}
                 </div>
-                <h2 className="mt-4 !font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
-                  {persona.nombre}
-                </h2>
+                <div className="mt-4 flex items-start justify-between gap-2">
+                  <h2 className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
+                    {persona.nombre}
+                  </h2>
+                  <a
+                    href={persona.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`LinkedIn · ${persona.nombre}`}
+                    className="shrink-0 -mr-1 p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+                  >
+                    <FaLinkedin className="w-5 h-5" />
+                  </a>
+                </div>
                 <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
                   {persona.cargo[lang]}
                 </p>
-                <a
-                  href={persona.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`LinkedIn · ${persona.nombre}`}
-                  className="mt-2 -ml-1 p-1 self-start text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
-                >
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
               </li>
             ))}
           </ul>
