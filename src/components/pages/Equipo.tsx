@@ -34,7 +34,10 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
             {content.heroTitle}
           </h1>
           <p className="text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
-            {parseText(content.governance)}
+            {parseText(content.heroSubtitle)}
+          </p>
+          <p className="mt-6 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+            {parseText(content.bridge)}
           </p>
 
           {/* Equipo de coordinación */}
@@ -78,6 +81,10 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
               </li>
             ))}
           </ul>
+
+          <p className="mt-12 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+            {parseText(content.governance)}
+          </p>
 
           <section className="mb-24 md:mb-32"></section>
 
