@@ -6,6 +6,8 @@ import andresImg from '@assets/equipo/andres-casas.webp';
 export interface EquipoContent {
   es: {
     heroTitle: string;
+    heroSubtitle: string;
+    bridge: string;
     governance: string;
     joinTitle: string;      
     joinSubtitle: string;   
@@ -15,6 +17,8 @@ export interface EquipoContent {
   };
   en: {
     heroTitle: string;
+    heroSubtitle: string;
+    bridge: string;
     governance: string;
     joinTitle: string;      
     joinSubtitle: string;  
@@ -27,6 +31,8 @@ export interface EquipoContent {
 export const equipoContent: EquipoContent = {
   es: {
     heroTitle: "Equipo",
+    heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, quien ha pasado la última década desarrollando teorías del cambio, estrategias de impacto, marcos de comunicación, construcción de coaliciones y sistemas de gestión, primero en la práctica clínica de la odontología, después en la gestión cultural y finalmente en la arquitectura técnica de la inteligencia artificial, tras reconvertirse como desarrolladora de software y certificarse como arquitecta cloud profesional para trabajar con AWS y GCP en Telefónica Tech. Ese mismo conjunto de herramientas es el que hoy sostiene su papel como socia de **OdiseIA**, el Observatorio del Impacto Social y Ético de la IA reconocido por la UNESCO, como directora de los únicos seminarios mensuales de **BlueDot Impact** en habla hispana, y como miembro de la **Red de Mentores de Madrid Emprende**",
+    bridge: "Y no lo hace sola: la acompaña un equipo de coordinación con una persona responsable de cada área.",
     governance: "iaS está dirigida por su equipo de coordinación, formado por la directora y las personas responsables de cada área, que toma las decisiones estratégicas, mientras que las delegaciones locales, como iaS Valencia, organizan sus propios eventos, programas y red local dentro del marco común de iaS.",
     joinTitle: "¿Quieres construir el futuro de la seguridad de la IA en español?",
     joinSubtitle: "**iaS** lleva funcionando solo unos meses, y ya sostiene los únicos seminarios mensuales de BlueDot Impact en habla hispana, la puerta de entrada a un campo que en español está casi entero por construir; unirte ahora es levantar esa infraestructura desde la base, no encajar en una ya terminada.",
@@ -36,6 +42,8 @@ export const equipoContent: EquipoContent = {
   },
   en: {
     heroTitle: "Team",
+    heroSubtitle: "Leading **iaS** is **Osmani Redondo**, who has spent the last decade developing theories of change, impact strategies, communication frameworks, coalition building and management systems, first in clinical dental practice, then in cultural management and finally in the technical architecture of artificial intelligence, after retraining as a software developer and becoming a certified professional cloud architect working with AWS and GCP at Telefónica Tech. That same toolkit is what today underpins her role as a partner at **OdiseIA**, the UNESCO-recognised Observatory for the Social and Ethical Impact of AI, as director of the only monthly **BlueDot Impact** seminars in Spanish, and as a member of the **Madrid Emprende Mentor Network**",
+    bridge: "And she doesn't do it alone: she works alongside a coordination team with a lead for each area.",
     governance: "iaS is led by its coordination team, made up of the director and the leads of each area, who take the strategic decisions, while local chapters such as iaS Valencia run their own events, programmes and local network within the shared iaS framework.",
     joinTitle: "Do you want to build the future of AI safety in Spanish?",
     joinSubtitle: "**iaS** has only been running for a few months, and it already sustains BlueDot Impact's only monthly Spanish-speaking seminars, the entry point to a field that is almost entirely unbuilt in Spanish; joining now means building that infrastructure from the ground up, not fitting into one that's already finished.",
