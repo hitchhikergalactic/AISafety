@@ -113,7 +113,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
             ))}
           </ul>
 
-          <p className="mt-12 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
+          <p className="mt-16 pt-10 border-t border-secundarios-dark/15 dark:border-secundarios-light/15 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
             {parseText(content.governance)}
           </p>
 
