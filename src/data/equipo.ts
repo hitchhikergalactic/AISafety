@@ -2,6 +2,7 @@ import osmaniImg from '@assets/osmani.jpeg';
 import luciaImg from '@assets/equipo/lucia-kubusch.webp';
 import arantxaImg from '@assets/equipo/arantxa-amezua.webp';
 import andresImg from '@assets/equipo/andres-casas.webp';
+import gretelImg from '@assets/equipo/gretel-schaj.webp';
 
 export interface EquipoContent {
   es: {
@@ -96,6 +97,13 @@ export const miembrosEquipo: MiembroEquipo[] = [
     cargo: { es: 'Responsable de Red y Eventos', en: 'Network and Events Manager' },
     linkedin: 'https://www.linkedin.com/in/andrescasass/',
     foto: andresImg,
+    grupo: 'coordinacion',
+  },
+  {
+    nombre: 'Gretel Schaj',
+    cargo: { es: 'Responsable de Proyectos Especiales', en: 'Special Projects Lead' },
+    linkedin: 'https://www.linkedin.com/in/gretel-schaj/',
+    foto: gretelImg,
     grupo: 'coordinacion',
   },
 ];
