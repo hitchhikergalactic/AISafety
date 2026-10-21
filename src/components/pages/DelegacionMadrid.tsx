@@ -7,6 +7,10 @@ import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import ilustracionMadrid from '../../assets/madrid-ilustracion.webp';
+import fotoSala from '../../assets/madrid/primer-evento-sala.webp';
+import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
+import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
+import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
@@ -53,6 +57,14 @@ const equipoSede = [
   ...miembrosEquipo.filter((m) => m.grupo === 'direccion'),
   ...miembrosEquipo.filter((m) => m.grupo === 'coordinacion'),
 ];
+
+// Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
+const fotosPrimerEvento = [
+  { id: 'sala', img: fotoSala },
+  { id: 'bluedot', img: fotoBluedot },
+  { id: 'david', img: fotoDavid },
+  { id: 'guillem', img: fotoGuillem },
+] as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
   const content = delegacionMadridContent[lang];
@@ -247,6 +259,32 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
               {content.eventsArchiveLabel}
               <ArrowRight size={18} aria-hidden="true" />
             </a>
+          </div>
+
+          {/* Galería: fotos reales de la sede, para que se vea que hay gente detrás */}
+          <div className="mt-16 md:mt-20 text-center">
+            <h4 className="!mb-2 text-secundarios-dark dark:text-secundarios-light">{content.galleryTitle}</h4>
+            <p className="mb-4 font-sans text-sm font-semibold text-principal-texto">{content.galleryMeta}</p>
+            <p className="max-w-3xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">{content.galleryText}</p>
+            <ul className="grid gap-6 sm:grid-cols-2 text-left">
+              {fotosPrimerEvento.map(({ id, img }) => (
+                <li key={id}>
+                  <figure>
+                    <img
+                      src={img.src}
+                      width={img.width}
+                      height={img.height}
+                      alt={content.galleryPhotos[id]}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-cover rounded-anthro shadow-anthro-subtle"
+                    />
+                    <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+                      {content.galleryPhotos[id]}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
