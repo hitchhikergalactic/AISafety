@@ -6,15 +6,19 @@ export const delegacionesNavLabel = {
 // `description` e `icon` solo los usa el desplegable del menú.
 type Sublink =
   | { separator: true }
-  | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'mapa' | 'nueva' };
+  | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
 export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
   es: [
+    { label: 'iaS Madrid · Sede (España)', path: '/delegaciones/madrid', icon: 'sede', description: 'Donde nace iaS y desde donde se coordina la red.' },
+    { separator: true },
     { label: 'iaS Valencia (España)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Delegación local de iaS: eventos, programas y contacto.' },
     { separator: true },
     { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Lleva iaS a tu ciudad.' },
   ],
   en: [
+    { label: 'iaS Madrid · Headquarters (Spain)', path: '/delegaciones/madrid', icon: 'sede', description: 'Where iaS began and where the network is coordinated.' },
+    { separator: true },
     { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Local iaS chapter: events, programs and contact.' },
     { separator: true },
     { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Bring iaS to your city.' },
@@ -115,6 +119,8 @@ export const delegacionValenciaContent = {
     aboutTitle: 'Sobre nosotros',
     aboutTeamLabel: 'Conoce al equipo',
     aboutMissionLabel: 'Qué hacemos',
+    aboutHqText: 'iaS Valencia forma parte de la red de iaS, con sede en Madrid.',
+    aboutHqLabel: 'Conoce la sede',
     joinTitle: 'Únete y contacto',
     joinIntro: 'Entra en la red de iaS, sigue nuestras novedades o escríbenos.',
     contactCardTitle: 'Escríbenos',
@@ -144,19 +150,124 @@ export const delegacionValenciaContent = {
     aboutTitle: 'About us',
     aboutTeamLabel: 'Meet the team',
     aboutMissionLabel: 'What we do',
+    aboutHqText: 'iaS Valencia is part of the iaS network, headquartered in Madrid.',
+    aboutHqLabel: 'Visit the headquarters',
     joinTitle: 'Join and contact',
     joinIntro: 'Join the iaS network, follow our news or write to us.',
     contactCardTitle: 'Write to us',
   },
 } as const;
 
+// Página de la sede. Comparte estructura con la de Valencia y añade la red y el equipo,
+// que solo tienen sentido en la sede.
+export const delegacionMadridContent = {
+  es: {
+    eyebrow: 'Sede de iaS · Madrid, España',
+    titleDark: 'Donde nace la red de iaS',
+    titleAccent: 'en Madrid',
+    intro:
+      'Madrid es la sede de iaS: aquí trabaja el equipo, se coordinan los programas y se acompaña a cada nueva delegación.',
+    imageAlt: 'Ilustración: una figura azul celebra haciendo el signo de la victoria junto al texto «Hola Madrid», un guiño al «Hello, world» de la programación.',
+    discordCtaLabel: 'Únete al Discord de iaS',
+    formCtaLabel: 'Regístrate y contacta',
+    newsletterCtaLabel: 'Boletín de iaS',
+    anchorsAriaLabel: 'Secciones de la página',
+    anchors: {
+      red: 'La red',
+      eventos: 'Eventos',
+      programas: 'Programas',
+      equipo: 'Equipo',
+      unete: 'Únete y contacto',
+    },
+    networkTitle: 'La red de iaS',
+    networkIntro:
+      'Desde Madrid coordinamos la red y damos a cada delegación la marca, los materiales y la mentoría que necesita para arrancar.',
+    hqBadge: 'Sede',
+    hqText: 'Equipo, programas y coordinación de la red.',
+    chaptersTitle: 'Delegaciones',
+    hubsTitle: 'Hubs con los que trabajamos estrechamente',
+    eventsTitle: 'Próximos eventos',
+    eventsText: 'Los encuentros de la sede se publican en la agenda de iaS en Luma.',
+    eventsArchiveLabel: 'Ver la agenda en Luma',
+    eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
+    programsTitle: 'Programas',
+    programsIntro:
+      'Formación y recursos de seguridad de la IA en español. La primera cohorte del AGI Strategy Course es presencial, en Madrid.',
+    programCtaLabel: 'Más información',
+    libraryTitle: 'Biblioteca abierta',
+    teamTitle: 'El equipo de la sede',
+    teamCtaLabel: 'Conoce al equipo',
+    aboutMissionLabel: 'Qué hacemos',
+    joinTitle: 'Únete y contacto',
+    joinIntro: 'Entra en la red de iaS, sigue nuestras novedades o escríbenos.',
+    contactCardTitle: 'Escríbenos',
+  },
+  en: {
+    eyebrow: 'iaS headquarters · Madrid, Spain',
+    titleDark: 'Where the iaS network began',
+    titleAccent: 'in Madrid',
+    intro:
+      'Madrid is the headquarters of iaS: this is where the team works, the programs are coordinated and every new chapter gets its support.',
+    imageAlt: 'Illustration: a blue figure celebrates with victory signs next to the words “Hola Madrid”, a nod to programming’s “Hello, world”.',
+    discordCtaLabel: 'Join the iaS Discord',
+    formCtaLabel: 'Sign up and get in touch',
+    newsletterCtaLabel: 'iaS newsletter',
+    anchorsAriaLabel: 'Page sections',
+    anchors: {
+      red: 'The network',
+      eventos: 'Events',
+      programas: 'Programs',
+      equipo: 'Team',
+      unete: 'Join and contact',
+    },
+    networkTitle: 'The iaS network',
+    networkIntro:
+      'From Madrid we coordinate the network and give each chapter the brand, materials and mentorship it needs to get started.',
+    hqBadge: 'Headquarters',
+    hqText: 'Team, programs and network coordination.',
+    chaptersTitle: 'Chapters',
+    hubsTitle: 'Hubs we work closely with',
+    eventsTitle: 'Upcoming events',
+    eventsText: 'Headquarters events are published on the iaS calendar on Luma.',
+    eventsArchiveLabel: 'See the calendar on Luma',
+    eventsContactText: 'Questions about an event? Write to us at',
+    programsTitle: 'Programs',
+    programsIntro:
+      'AI safety training and resources in Spanish. The first cohort of the AGI Strategy Course is in person, in Madrid.',
+    programCtaLabel: 'Learn more',
+    libraryTitle: 'Open library',
+    teamTitle: 'The headquarters team',
+    teamCtaLabel: 'Meet the team',
+    aboutMissionLabel: 'What we do',
+    joinTitle: 'Join and contact',
+    joinIntro: 'Join the iaS network, follow our news or write to us.',
+    contactCardTitle: 'Write to us',
+  },
+} as const;
+
+// Hubs con los que trabaja iaS (mismos enlaces que la portada). BAISH se sitúa en Buenos Aires, no en «Argentina».
+export const hubsAliados = [
+  { name: 'AI Safety México', place: { es: 'México', en: 'Mexico' }, href: 'https://www.aismx.org/' },
+  { name: 'AI Safety Colombia', place: { es: 'Bogotá', en: 'Bogotá' }, href: 'https://aisafetycolombia.org/' },
+  { name: 'BAISH', place: { es: 'Buenos Aires', en: 'Buenos Aires' }, href: 'https://www.baish.com.ar/es' },
+] as const;
+
 // Correo propio de la delegación de Valencia: es el único que aparece en su página (cuerpo y pie).
 export const valenciaContactEmail = 'ias.valencia@aisafety.es';
 
+// Correo propio de la sede de Madrid: es el único que aparece en su página (cuerpo y pie).
+export const madridContactEmail = 'ias.madrid@aisafety.es';
+
 export const discordInviteUrl = 'https://discord.gg/gm6v9Cwa58';
 
-export const valenciaJoinFormUrl =
-  'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form?prefill_City=Valencia';
+// Formulario de la red en Airtable. Cada página preselecciona su opción del campo «Sede o delegación»
+// (desplegable: «Madrid», «Valencia»); el nombre del campo y la opción tienen que coincidir exactamente con Airtable.
+const joinFormBaseUrl = 'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form';
+const joinFormUrlFor = (sedeODelegacion: string) =>
+  `${joinFormBaseUrl}?prefill_${encodeURIComponent('Sede o delegación')}=${encodeURIComponent(sedeODelegacion)}`;
+
+export const valenciaJoinFormUrl = joinFormUrlFor('Valencia');
+export const madridJoinFormUrl = joinFormUrlFor('Madrid');
 
 // Boletín de iaS (Substack). Mismo enlace que usan el pie y la portada del sitio.
 export const substackUrl = 'https://seguridaddelaia.substack.com';
@@ -173,11 +284,11 @@ export const youtubeUrl = 'https://www.youtube.com/@seguridad-de-la-ia';
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
-// Pie de la página de Valencia. Las rutas internas (que empiezan por "/") reciben el prefijo de idioma al pintarlas.
-export const valenciaFooterColumns: Record<
-  'es' | 'en',
-  { title: string; links: FooterLink[] }[]
-> = {
+export type FooterColumns = Record<'es' | 'en', { title: string; links: FooterLink[] }[]>;
+
+// Pie de las páginas de la red (sede y delegaciones). Solo cambia el correo de contacto de cada una.
+// Las rutas internas (que empiezan por "/") reciben el prefijo de idioma al pintarlas.
+const buildFooterColumns = (contactEmail: string): FooterColumns => ({
   es: [
     {
       title: 'Organización',
@@ -199,7 +310,7 @@ export const valenciaFooterColumns: Record<
         { label: 'LinkedIn', href: linkedinUrl, external: true },
         { label: 'Instagram', href: instagramUrl, external: true },
         { label: 'YouTube', href: youtubeUrl, external: true },
-        { label: valenciaContactEmail, href: `mailto:${valenciaContactEmail}`, external: true },
+        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
       ],
     },
     {
@@ -233,7 +344,7 @@ export const valenciaFooterColumns: Record<
         { label: 'LinkedIn', href: linkedinUrl, external: true },
         { label: 'Instagram', href: instagramUrl, external: true },
         { label: 'YouTube', href: youtubeUrl, external: true },
-        { label: valenciaContactEmail, href: `mailto:${valenciaContactEmail}`, external: true },
+        { label: contactEmail, href: `mailto:${contactEmail}`, external: true },
       ],
     },
     {
@@ -246,4 +357,7 @@ export const valenciaFooterColumns: Record<
       ],
     },
   ],
-};
+});
+
+export const valenciaFooterColumns = buildFooterColumns(valenciaContactEmail);
+export const madridFooterColumns = buildFooterColumns(madridContactEmail);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { translations } from '../../locales/translations';
-import { valenciaFooterColumns } from '../../data/delegaciones';
+import { valenciaFooterColumns, type FooterColumns } from '../../data/delegaciones';
 import { parseText } from '../../utils/parseText';
 import logoWhiteLegend from '../../assets/logo_blanco_con_leyenda.svg';
 
@@ -8,6 +8,8 @@ type Language = 'es' | 'en';
 
 interface ValenciaFooterProps {
   lang: Language;
+  // Columnas de enlaces; la sede de Madrid pasa las suyas (con su correo). Por defecto, las de Valencia.
+  columns?: FooterColumns;
 }
 
 // Extrae de forma segura la URL de una imagen importada (string u objeto con .src)
@@ -19,10 +21,10 @@ const getImageSrc = (img: any): string => {
   return '';
 };
 
-const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang }) => {
+const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang, columns: footerColumns = valenciaFooterColumns }) => {
   const t = translations[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
-  const columns = valenciaFooterColumns[lang];
+  const columns = footerColumns[lang];
 
   return (
     <footer className="px-4 md:px-8 bg-secundarios-dark text-secundarios-light/40 py-12 border-t border-white/5">

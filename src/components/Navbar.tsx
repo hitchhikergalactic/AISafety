@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, X, Menu, ArrowRight, MapPin, Plus } from 'lucide-react';
+import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus } from 'lucide-react';
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
@@ -65,9 +65,9 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
   type Sublink =
     | { separator: true; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
-    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'mapa' | 'nueva' };
+    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
-  const sublinkIcons = { mapa: MapPin, nueva: Plus };
+  const sublinkIcons = { sede: Landmark, mapa: MapPin, nueva: Plus };
 
   const closeMenus = () => {
     setIsOpen(false);
@@ -194,8 +194,9 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                                 : 'hover:bg-secundarios-dark/5 dark:hover:bg-secundarios-light/5'
                             }`}
                           >
+                            {/* La sede lleva el icono siempre en naranja lleno, para distinguirla de las delegaciones. */}
                             <span className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 ${
-                              sublink.highlight
+                              sublink.highlight || sublink.icon === 'sede'
                                 ? 'bg-principal text-white'
                                 : 'bg-principal/10 text-principal-texto group-hover/item:bg-principal group-hover/item:text-white'
                             }`}>
