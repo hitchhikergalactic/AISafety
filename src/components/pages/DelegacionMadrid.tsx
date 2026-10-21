@@ -62,13 +62,13 @@ const equipoSede = [
 
 // Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
 // Se muestran en una cinta que avanza sola (ver .cinta en global.css), todas a la misma altura y sin recortar.
+// La foto de grupo va aparte, fija y grande, como cierre del bloque.
 const fotosPrimerEvento = [
   { id: 'publico', img: fotoPublico },
   { id: 'sala', img: fotoSala },
   { id: 'bluedot', img: fotoBluedot },
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
-  { id: 'grupo', img: fotoGrupo },
 ] as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
@@ -296,6 +296,20 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                 })}
               </ul>
             </div>
+
+            <figure className="mt-12 md:mt-16 max-w-4xl mx-auto">
+              <img
+                src={fotoGrupo.src}
+                width={fotoGrupo.width}
+                height={fotoGrupo.height}
+                alt={content.galleryPhotos.grupo}
+                loading="lazy"
+                className="w-full h-auto rounded-anthro shadow-anthro-card"
+              />
+              <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+                {content.galleryPhotos.grupo}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
