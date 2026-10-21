@@ -486,7 +486,8 @@ h5 {
 }
 
 /* Cinta de fotos (página de Madrid): cada foto aparece una sola vez. La pista va de un extremo al otro
-   y vuelve; el recorrido (--cinta-recorrido) lo mide el componente. Se para al pasar el ratón. */
+   y vuelve a velocidad constante, con una pausa breve en cada extremo; el recorrido (--cinta-recorrido)
+   y la duración los calcula el componente. Se para con el botón «Pausar fotos». */
 .cinta {
   overflow: hidden;
   padding-inline: 1.5rem;
@@ -496,28 +497,18 @@ h5 {
 .cinta-pista {
   display: flex;
   width: max-content;
-  animation: cinta var(--cinta-duracion, 40s) ease-in-out infinite alternate;
+  animation: cinta var(--cinta-duracion, 40s) linear infinite;
 }
 
-.cinta:hover .cinta-pista {
+.cinta.is-paused .cinta-pista {
   animation-play-state: paused;
 }
 
 @keyframes cinta {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-1 * var(--cinta-recorrido, 0px))); }
+  0%, 5% { transform: translateX(0); }
+  45%, 55% { transform: translateX(calc(-1 * var(--cinta-recorrido, 0px))); }
+  95%, 100% { transform: translateX(0); }
 }
 
-/* Sin animación para quien la tenga desactivada: la cinta se desliza a mano. */
-@media (prefers-reduced-motion: reduce) {
-  .cinta {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-  .cinta-pista {
-    animation: none;
-  }
-  .cinta-pista > li {
-    scroll-snap-align: start;
-  }
-}
+/* La cinta se mueve también con «reducir movimiento» activado (decisión de iaS): es un desplazamiento lento
+   y el botón «Pausar fotos» permite pararla. */
