@@ -12,6 +12,7 @@ import fotoSala from '../../assets/madrid/primer-evento-sala.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
 import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
 import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
+import fotoGrupo from '../../assets/madrid/primer-evento-grupo.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
@@ -60,13 +61,14 @@ const equipoSede = [
 ];
 
 // Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
-// La primera va a lo ancho, en 16:9: es la que mejor muestra al público.
+// La primera y la última van a lo ancho: el público (16:9) y la foto de grupo (3:2, sin recortar a nadie).
 const fotosPrimerEvento = [
-  { id: 'publico', img: fotoPublico, wide: true },
+  { id: 'publico', img: fotoPublico, wide: 'aspect-[16/9]' },
   { id: 'sala', img: fotoSala },
   { id: 'bluedot', img: fotoBluedot },
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
+  { id: 'grupo', img: fotoGrupo, wide: 'aspect-[3/2]' },
 ] as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
@@ -271,7 +273,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
             <p className="max-w-3xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">{content.galleryText}</p>
             <ul className="grid gap-6 sm:grid-cols-2 text-left">
               {fotosPrimerEvento.map(({ id, img, ...foto }) => {
-                const wide = 'wide' in foto && foto.wide;
+                const wide = 'wide' in foto ? foto.wide : null;
                 return (
                 <li key={id} className={wide ? 'sm:col-span-2' : undefined}>
                   <figure>
@@ -281,7 +283,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                       height={img.height}
                       alt={content.galleryPhotos[id]}
                       loading="lazy"
-                      className={`w-full ${wide ? 'aspect-[16/9]' : 'aspect-[4/3]'} object-cover rounded-anthro shadow-anthro-subtle`}
+                      className={`w-full ${wide ?? 'aspect-[4/3]'} object-cover rounded-anthro shadow-anthro-subtle`}
                     />
                     <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
                       {content.galleryPhotos[id]}

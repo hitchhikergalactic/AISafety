@@ -203,6 +203,7 @@ export const delegacionMadridContent = {
       bluedot: 'Osmani Redondo, directora de iaS, presenta el encuentro, organizado con BlueDot Impact.',
       david: 'David Bravo Comas, director de AI Safety Barcelona: «Cuidado con lo que deseas: los riesgos de crear algo más inteligente que nosotros».',
       guillem: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales: «Riesgos en el radar: señales tempranas desde la evidencia».',
+      grupo: 'Foto de grupo a la salida de Celonis, al terminar el encuentro.',
     },
     programsTitle: 'Programas',
     programsIntro:
@@ -255,6 +256,7 @@ export const delegacionMadridContent = {
       bluedot: 'Osmani Redondo, director of iaS, opens the event, co-hosted with BlueDot Impact.',
       david: 'David Bravo Comas, director of AI Safety Barcelona: “Cuidado con lo que deseas” (Be careful what you wish for: the risks of creating something smarter than us).',
       guillem: 'Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales: “Riesgos en el radar” (Risks on the radar: early signals from the evidence).',
+      grupo: 'Group photo outside Celonis after the event.',
     },
     programsTitle: 'Programs',
     programsIntro:
