@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
   type Sublink =
-    | { separator: true; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
+    | { separator: true; title?: string; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
     | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
   const sublinkIcons = { sede: Landmark, mapa: MapPin, nueva: Plus };
@@ -163,7 +163,14 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                     <div className="bg-white dark:bg-secundarios-dark border border-secundarios-dark/10 dark:border-secundarios-light/15 rounded-anthro shadow-anthro-elevated p-2">
                       {link.sublinks.map((sublink, idx) => {
                         if (sublink.separator) {
-                          return <div key={idx} className="h-px mx-2 my-2 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />;
+                          // Con título es la cabecera de un grupo («Sede», «Delegaciones»); sin título, una línea.
+                          return sublink.title ? (
+                            <div key={idx} className={`px-3 pb-1 ${idx > 0 ? 'mt-2 pt-3 border-t border-secundarios-dark/10 dark:border-secundarios-light/10' : 'pt-1'} font-sans text-[0.6875rem] font-bold uppercase tracking-widest text-label-gray`}>
+                              {sublink.title}
+                            </div>
+                          ) : (
+                            <div key={idx} className="h-px mx-2 my-2 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
+                          );
                         }
                         const href = `${langPrefix}${sublink.path}`;
                         if (!rich) {
@@ -294,7 +301,13 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                 <div className="ml-4 flex flex-col gap-3 pb-4">
                   {link.sublinks.map((sublink, subIdx) =>
                     sublink.separator ? (
-                      <div key={subIdx} className="h-px my-1 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
+                      sublink.title ? (
+                        <span key={subIdx} className={`${subIdx > 0 ? 'mt-1' : ''} font-sans text-xs font-bold uppercase tracking-widest text-label-gray`}>
+                          {sublink.title}
+                        </span>
+                      ) : (
+                        <div key={subIdx} className="h-px my-1 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
+                      )
                     ) : (
                       <a
                         key={subIdx}

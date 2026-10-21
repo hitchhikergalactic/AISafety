@@ -1,24 +1,27 @@
 export const delegacionesNavLabel = {
-  es: '/Delegaciones',
-  en: '/Chapters',
+  es: '/Red',
+  en: '/Network',
 } as const;
 
-// `description` e `icon` solo los usa el desplegable del menú.
+// `description` e `icon` solo los usa el desplegable del menú. Un separador con `title` se pinta como
+// cabecera de grupo («Sede», «Delegaciones»); sin `title`, como una línea.
 type Sublink =
-  | { separator: true }
+  | { separator: true; title?: string }
   | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
 export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
   es: [
-    { label: 'iaS Madrid · Sede (España)', path: '/delegaciones/madrid', icon: 'sede', description: 'Donde nace iaS y desde donde se coordina la red.' },
-    { separator: true },
+    { separator: true, title: 'Sede' },
+    { label: 'iaS Madrid (Sede, España)', path: '/delegaciones/madrid', icon: 'sede', description: 'Donde nace iaS y desde donde se coordina la red.' },
+    { separator: true, title: 'Delegaciones' },
     { label: 'iaS Valencia (España)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Delegación local de iaS: eventos, programas y contacto.' },
     { separator: true },
     { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Lleva iaS a tu ciudad.' },
   ],
   en: [
-    { label: 'iaS Madrid · Headquarters (Spain)', path: '/delegaciones/madrid', icon: 'sede', description: 'Where iaS began and where the network is coordinated.' },
-    { separator: true },
+    { separator: true, title: 'Headquarters' },
+    { label: 'iaS Madrid (Headquarters, Spain)', path: '/delegaciones/madrid', icon: 'sede', description: 'Where iaS began and where the network is coordinated.' },
+    { separator: true, title: 'Chapters' },
     { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Local iaS chapter: events, programs and contact.' },
     { separator: true },
     { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Bring iaS to your city.' },
@@ -298,7 +301,7 @@ const buildFooterColumns = (contactEmail: string): FooterColumns => ({
       ],
     },
     {
-      title: 'Nodos',
+      title: 'Red',
       links: delegacionesSublinks.es.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
     },
     {
@@ -332,7 +335,7 @@ const buildFooterColumns = (contactEmail: string): FooterColumns => ({
       ],
     },
     {
-      title: 'Chapters',
+      title: 'Network',
       links: delegacionesSublinks.en.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
     },
     {
