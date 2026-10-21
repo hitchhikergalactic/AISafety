@@ -12,6 +12,7 @@ import fotoSala from '../../assets/madrid/primer-evento-sala.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
 import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
 import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
+import fotoSorteo from '../../assets/madrid/primer-evento-sorteo.webp';
 import fotoGrupo from '../../assets/madrid/primer-evento-grupo.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
@@ -69,6 +70,7 @@ const fotosPrimerEvento = [
   { id: 'bluedot', img: fotoBluedot },
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
+  { id: 'sorteo', img: fotoSorteo },
 ] as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
