@@ -116,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
 
       {/* Tres columnas (logo, enlaces, acciones): los enlaces se centran entre el logo y las acciones, nunca encima de ellas */}
-      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
+      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2 sm:gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
         <a 
           href={lang === 'es' ? "/" : "/en/"}

@@ -6,6 +6,7 @@ import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
 import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
+import { cortarCorreo } from '@utils/cortarCorreo';
 import ilustracionMadrid from '../../assets/madrid-ilustracion.webp';
 import fotoPublico from '../../assets/madrid/primer-evento-publico.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
@@ -146,7 +147,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
       <Navbar lang={lang} />
 
       <main className="pt-36 md:pt-44 px-6 md:px-12 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        <section className="w-full max-w-6xl mx-auto pb-12 md:pb-16 grid gap-10 md:gap-14 md:grid-cols-2 items-center">
+        <section className="w-full max-w-6xl mx-auto pb-12 md:pb-16 grid grid-cols-1 gap-10 md:gap-14 md:grid-cols-2 items-center">
           <div className="text-center md:text-left">
             {/* Mismo antetítulo que Valencia, pero con «Sede»: es lo que la distingue de las delegaciones. */}
             <h5 className="mb-4 uppercase text-principal-texto">
@@ -213,7 +214,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
             {/* Línea que une la sede con sus nodos */}
             <div className="mx-auto h-10 w-0.5 bg-principal/40" aria-hidden="true" />
 
-            <div className="grid gap-10 md:grid-cols-2 md:gap-8 text-left border-t-2 border-principal/40 pt-8">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 text-left border-t-2 border-principal/40 pt-8">
               <div>
                 <h5 className={columnTitle}>{content.chaptersTitle}</h5>
                 <ul className="space-y-3">
@@ -293,7 +294,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
             <p className="mb-4 font-sans text-sm font-semibold text-principal-texto">{content.galleryMeta}</p>
             <p className="max-w-2xl mx-auto mb-8 text-lg md:text-xl text-secundarios-dark dark:text-secundarios-light">{content.galleryLead}</p>
             {/* Lo más destacado del evento en tres piezas cortas, en vez de un párrafo largo */}
-            <ul className="grid gap-4 md:grid-cols-3 mb-10 text-left">
+            <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-10 text-left">
               {content.galleryHighlights.map(({ label, text }) => (
                 <li key={label} className={`${card} p-5`}>
                   <span className="block mb-2 font-sans text-xs font-bold uppercase tracking-widest text-principal-texto">{label}</span>
@@ -357,7 +358,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
           <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">
             {content.programsIntro}
           </p>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-left">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 text-left">
             {programs.map((program) => (
               <article key={program.id} className={`${card} flex flex-col p-6 md:p-8 hover:shadow-anthro-card transition-all duration-300`}>
                 <h4>{program.title}</h4>
@@ -418,7 +419,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
 
         {/* Únete y contacto */}
         <section id="unete" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-20 md:pt-32 pb-20 md:pb-32">
-          <div className={`${panel} p-6 md:p-12 grid gap-10 md:grid-cols-2 md:gap-16 items-center`}>
+          <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 items-center`}>
             <div className="text-center md:text-left">
               <h3 className={sectionTitle}>{content.joinTitle}</h3>
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{content.joinIntro}</p>
@@ -437,7 +438,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                     <span className="min-w-0 flex-1">
                       <span className="block font-sans font-bold text-secundarios-dark dark:text-secundarios-light">{label}</span>
                       {detail && (
-                        <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{detail}</span>
+                        <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{cortarCorreo(detail)}</span>
                       )}
                     </span>
                     <ArrowRight size={18} aria-hidden="true" className="shrink-0 text-secundarios-dark/40 dark:text-secundarios-light/40 group-hover:text-principal group-hover:translate-x-0.5 transition-all duration-300" />

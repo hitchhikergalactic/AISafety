@@ -2,6 +2,7 @@ import React from 'react';
 import { translations } from '../../locales/translations';
 import { valenciaFooterColumns, type FooterColumns } from '../../data/delegaciones';
 import { parseText } from '../../utils/parseText';
+import { cortarCorreo } from '../../utils/cortarCorreo';
 import logoWhiteLegend from '../../assets/logo_blanco_con_leyenda.svg';
 
 type Language = 'es' | 'en';
@@ -29,7 +30,7 @@ const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang, columns: footerCo
   return (
     <footer className="px-4 md:px-8 bg-secundarios-dark text-secundarios-light/40 py-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)]">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <img
               src={getImageSrc(logoWhiteLegend)}
@@ -58,7 +59,7 @@ const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang, columns: footerCo
                             : {})}
                           className="text-secundarios-light/80 hover:text-principal transition-colors break-words"
                         >
-                          {link.label}
+                          {cortarCorreo(link.label)}
                         </a>
                       </li>
                     );
@@ -71,15 +72,15 @@ const ValenciaFooter: React.FC<ValenciaFooterProps> = ({ lang, columns: footerCo
 
         <div className="pt-8 mt-12 border-t border-white/5 text-center text-xs tracking-widest uppercase text-white/60 font-medium">
           © {t.footer.copyright}.
-          <span className="mx-2" aria-hidden="true">·</span>
+          {' '}<span className="mx-1" aria-hidden="true">·</span>{' '}
           <a href={`${langPrefix}/cookies`} className="hover:text-principal transition-colors">
             Cookies
           </a>
-          <span className="mx-2" aria-hidden="true">·</span>
+          {' '}<span className="mx-1" aria-hidden="true">·</span>{' '}
           <a href={`${langPrefix}/privacidad`} className="hover:text-principal transition-colors">
             {lang === 'es' ? 'Privacidad' : 'Privacy'}
           </a>
-          <span className="mx-2" aria-hidden="true">·</span>
+          {' '}<span className="mx-1" aria-hidden="true">·</span>{' '}
           <a href={`${langPrefix}/aviso-legal`} className="hover:text-principal transition-colors">
             {lang === 'es' ? 'Aviso legal' : 'Legal notice'}
           </a>
