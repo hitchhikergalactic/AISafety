@@ -195,6 +195,8 @@ export const delegacionMadridContent = {
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
     galleryTitle: 'Así fue nuestro primer evento presencial',
     galleryMeta: 'iaS × BlueDot Impact · 28 de abril de 2026 · Celonis, Madrid',
+    galleryPauseLabel: 'Pausar fotos',
+    galleryPlayLabel: 'Reanudar fotos',
     galleryLead: '70 personas en el primer evento presencial de iaS, organizado con BlueDot Impact.',
     galleryHighlights: [
       { label: 'Madrid + Barcelona', text: 'David Bravo Comas, de AI Safety Barcelona, habló de los riesgos de crear algo más inteligente que nosotros.' },
@@ -252,6 +254,8 @@ export const delegacionMadridContent = {
     eventsContactText: 'Questions about an event? Write to us at',
     galleryTitle: 'How our first in-person event went',
     galleryMeta: 'iaS × BlueDot Impact · 28 April 2026 · Celonis, Madrid',
+    galleryPauseLabel: 'Pause photos',
+    galleryPlayLabel: 'Play photos',
     galleryLead: '70 people at the first in-person iaS event, co-hosted with BlueDot Impact.',
     galleryHighlights: [
       { label: 'Madrid + Barcelona', text: 'David Bravo Comas, from AI Safety Barcelona, spoke about the risks of creating something smarter than us.' },

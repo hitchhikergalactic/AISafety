@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight, ClipboardList, Landmark, Mail, MapPin, MessageCircle, Newspaper, Plus } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, ClipboardList, Landmark, Mail, MapPin, MessageCircle, Newspaper, Pause, Play, Plus } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import ProgramDetails from '@components/ProgramDetails';
 import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
@@ -77,6 +77,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
 
   // La cinta se desplaza justo lo que sobresale de su contenedor; se recalcula al cambiar el tamaño de la ventana.
   const cintaRef = useRef<HTMLDivElement>(null);
+  const [cintaPausada, setCintaPausada] = useState(false);
   useEffect(() => {
     const cinta = cintaRef.current;
     const pista = cinta?.firstElementChild as HTMLElement | null;
@@ -84,7 +85,8 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
     const medir = () => {
       const recorrido = Math.max(0, pista.scrollWidth - cinta.clientWidth);
       cinta.style.setProperty('--cinta-recorrido', `${recorrido}px`);
-      cinta.style.setProperty('--cinta-duracion', `${Math.max(12, recorrido / 40)}s`);
+      // Ida y vuelta a ~45 px/s; el 20 % del ciclo son las pausas en los extremos (ver @keyframes cinta).
+      cinta.style.setProperty('--cinta-duracion', `${Math.max(12, (2 * recorrido) / 45 / 0.8)}s`);
     };
     medir();
     const observer = new ResizeObserver(medir);
@@ -299,7 +301,19 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                 </li>
               ))}
             </ul>
-            <div ref={cintaRef} className="cinta -mx-6 md:-mx-12">
+            {/* Botón para parar la cinta: el movimiento continuo debe poder detenerse (WCAG 2.2.2). */}
+            <div className="flex justify-end mb-3">
+              <button
+                type="button"
+                onClick={() => setCintaPausada((v) => !v)}
+                aria-pressed={cintaPausada}
+                className="cinta-control inline-flex items-center gap-1.5 rounded-full border border-secundarios-dark/20 dark:border-secundarios-light/30 px-3 py-1 font-sans text-xs font-semibold text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-colors"
+              >
+                {cintaPausada ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+                {cintaPausada ? content.galleryPlayLabel : content.galleryPauseLabel}
+              </button>
+            </div>
+            <div ref={cintaRef} className={`cinta -mx-6 md:-mx-12${cintaPausada ? ' is-paused' : ''}`}>
               <ul className="cinta-pista text-left">
                 {fotosPrimerEvento.map(({ id, img }, i) => (
                   <li key={id} className={`shrink-0 ${i < fotosPrimerEvento.length - 1 ? 'mr-6' : ''}`}>
