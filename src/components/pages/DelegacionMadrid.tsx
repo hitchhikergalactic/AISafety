@@ -8,7 +8,6 @@ import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import ilustracionMadrid from '../../assets/madrid-ilustracion.webp';
 import fotoPublico from '../../assets/madrid/primer-evento-publico.webp';
-import fotoSala from '../../assets/madrid/primer-evento-sala.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
 import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
 import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
@@ -67,7 +66,6 @@ const equipoSede = [
 // La foto de grupo va aparte, fija y grande, como cierre del bloque.
 const fotosPrimerEvento = [
   { id: 'publico', img: fotoPublico },
-  { id: 'sala', img: fotoSala },
   { id: 'bluedot', img: fotoBluedot },
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
@@ -291,7 +289,16 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
           <div className="mt-16 md:mt-20 text-center">
             <h4 className="!mb-2 text-secundarios-dark dark:text-secundarios-light">{content.galleryTitle}</h4>
             <p className="mb-4 font-sans text-sm font-semibold text-principal-texto">{content.galleryMeta}</p>
-            <p className="max-w-3xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">{content.galleryText}</p>
+            <p className="max-w-2xl mx-auto mb-8 text-lg md:text-xl text-secundarios-dark dark:text-secundarios-light">{content.galleryLead}</p>
+            {/* Lo más destacado del evento en tres piezas cortas, en vez de un párrafo largo */}
+            <ul className="grid gap-4 md:grid-cols-3 mb-10 text-left">
+              {content.galleryHighlights.map(({ label, text }) => (
+                <li key={label} className={`${card} p-5`}>
+                  <span className="block mb-2 font-sans text-xs font-bold uppercase tracking-widest text-principal-texto">{label}</span>
+                  <span className="block font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{text}</span>
+                </li>
+              ))}
+            </ul>
             <div ref={cintaRef} className="cinta -mx-6 md:-mx-12">
               <ul className="cinta-pista text-left">
                 {fotosPrimerEvento.map(({ id, img }, i) => (

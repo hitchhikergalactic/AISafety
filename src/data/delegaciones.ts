@@ -195,11 +195,14 @@ export const delegacionMadridContent = {
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
     galleryTitle: 'Así fue nuestro primer evento presencial',
     galleryMeta: 'iaS × BlueDot Impact · 28 de abril de 2026 · Celonis, Madrid',
-    galleryText:
-      'El primer evento presencial de iaS reunió a 70 personas en Celonis, en Madrid, junto a BlueDot Impact. Unimos Madrid y Barcelona: David Bravo Comas vino desde AI Safety Barcelona para hablar de los riesgos de crear algo más inteligente que nosotros, y contamos con Guillem Bas, del Observatorio de Riesgos Catastróficos Globales, que repasó las señales tempranas de riesgo que ya muestra la evidencia. Cerramos con el sorteo de un ejemplar de «Si alguien la crea, todos moriremos», de Eliezer Yudkowsky y Nate Soares, cortesía de Editorial Destino (Grupo Planeta).',
+    galleryLead: '70 personas en el primer evento presencial de iaS, organizado con BlueDot Impact.',
+    galleryHighlights: [
+      { label: 'Madrid + Barcelona', text: 'David Bravo Comas, de AI Safety Barcelona, habló de los riesgos de crear algo más inteligente que nosotros.' },
+      { label: 'Ponente', text: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales, repasó las señales tempranas de riesgo.' },
+      { label: 'Sorteo', text: '«Si alguien la crea, todos moriremos», de Yudkowsky y Soares, cortesía de Editorial Destino (Grupo Planeta).' },
+    ],
     galleryPhotos: {
       publico: 'El público en Celonis, durante la presentación del encuentro.',
-      sala: '70 personas en Celonis, en Madrid.',
       bluedot: 'Osmani Redondo, directora de iaS, presenta el encuentro, organizado con BlueDot Impact.',
       david: 'David Bravo Comas, de AI Safety Barcelona: «Cuidado con lo que deseas: los riesgos de crear algo más inteligente que nosotros».',
       guillem: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales: «Riesgos en el radar: señales tempranas desde la evidencia».',
@@ -249,11 +252,14 @@ export const delegacionMadridContent = {
     eventsContactText: 'Questions about an event? Write to us at',
     galleryTitle: 'How our first in-person event went',
     galleryMeta: 'iaS × BlueDot Impact · 28 April 2026 · Celonis, Madrid',
-    galleryText:
-      'The first in-person iaS event brought together 70 people at Celonis in Madrid, together with BlueDot Impact. We brought Madrid and Barcelona together: David Bravo Comas came from AI Safety Barcelona to talk about the risks of creating something smarter than us, and Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales, reviewed the early warning signs that the evidence already shows. We closed with a raffle of a copy of «Si alguien la crea, todos moriremos» (If Anyone Builds It, Everyone Dies), by Eliezer Yudkowsky and Nate Soares, courtesy of Editorial Destino (Grupo Planeta).',
+    galleryLead: '70 people at the first in-person iaS event, co-hosted with BlueDot Impact.',
+    galleryHighlights: [
+      { label: 'Madrid + Barcelona', text: 'David Bravo Comas, from AI Safety Barcelona, spoke about the risks of creating something smarter than us.' },
+      { label: 'Speaker', text: 'Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales, reviewed the early warning signs of risk.' },
+      { label: 'Raffle', text: '«Si alguien la crea, todos moriremos» (If Anyone Builds It, Everyone Dies), by Yudkowsky and Soares, courtesy of Editorial Destino (Grupo Planeta).' },
+    ],
     galleryPhotos: {
       publico: 'The audience at Celonis during the opening of the event.',
-      sala: '70 people at Celonis in Madrid.',
       bluedot: 'Osmani Redondo, director of iaS, opens the event, co-hosted with BlueDot Impact.',
       david: 'David Bravo Comas, from AI Safety Barcelona: “Cuidado con lo que deseas” (Be careful what you wish for: the risks of creating something smarter than us).',
       guillem: 'Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales: “Riesgos en el radar” (Risks on the radar: early signals from the evidence).',
