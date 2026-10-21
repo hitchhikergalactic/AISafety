@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, ClipboardList, Landmark, Mail, MapPin, MessageCircle, Newspaper, Plus } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import ProgramDetails from '@components/ProgramDetails';
@@ -8,7 +8,6 @@ import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import ilustracionMadrid from '../../assets/madrid-ilustracion.webp';
 import fotoPublico from '../../assets/madrid/primer-evento-publico.webp';
-import fotoSala from '../../assets/madrid/primer-evento-sala.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
 import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
 import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
@@ -62,11 +61,11 @@ const equipoSede = [
 ];
 
 // Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
-// Se muestran en una cinta que avanza sola (ver .cinta en global.css), todas a la misma altura y sin recortar.
+// Se muestran en una cinta que va de un extremo al otro y vuelve (ver .cinta en global.css), cada foto una sola vez,
+// todas a la misma altura y sin recortar.
 // La foto de grupo va aparte, fija y grande, como cierre del bloque.
 const fotosPrimerEvento = [
   { id: 'publico', img: fotoPublico },
-  { id: 'sala', img: fotoSala },
   { id: 'bluedot', img: fotoBluedot },
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
@@ -75,6 +74,24 @@ const fotosPrimerEvento = [
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
   const content = delegacionMadridContent[lang];
+
+  // La cinta se desplaza justo lo que sobresale de su contenedor; se recalcula al cambiar el tamaño de la ventana.
+  const cintaRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const cinta = cintaRef.current;
+    const pista = cinta?.firstElementChild as HTMLElement | null;
+    if (!cinta || !pista) return;
+    const medir = () => {
+      const recorrido = Math.max(0, pista.scrollWidth - cinta.clientWidth);
+      cinta.style.setProperty('--cinta-recorrido', `${recorrido}px`);
+      cinta.style.setProperty('--cinta-duracion', `${Math.max(12, recorrido / 40)}s`);
+    };
+    medir();
+    const observer = new ResizeObserver(medir);
+    observer.observe(cinta);
+    observer.observe(pista);
+    return () => observer.disconnect();
+  }, []);
   const t = translations[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
 
@@ -272,30 +289,35 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
           <div className="mt-16 md:mt-20 text-center">
             <h4 className="!mb-2 text-secundarios-dark dark:text-secundarios-light">{content.galleryTitle}</h4>
             <p className="mb-4 font-sans text-sm font-semibold text-principal-texto">{content.galleryMeta}</p>
-            <p className="max-w-3xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">{content.galleryText}</p>
-            {/* La serie va dos veces para que el bucle no tenga salto; la copia queda oculta a lectores de pantalla. */}
-            <div className="cinta -mx-6 md:-mx-12">
+            <p className="max-w-2xl mx-auto mb-8 text-lg md:text-xl text-secundarios-dark dark:text-secundarios-light">{content.galleryLead}</p>
+            {/* Lo más destacado del evento en tres piezas cortas, en vez de un párrafo largo */}
+            <ul className="grid gap-4 md:grid-cols-3 mb-10 text-left">
+              {content.galleryHighlights.map(({ label, text }) => (
+                <li key={label} className={`${card} p-5`}>
+                  <span className="block mb-2 font-sans text-xs font-bold uppercase tracking-widest text-principal-texto">{label}</span>
+                  <span className="block font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{text}</span>
+                </li>
+              ))}
+            </ul>
+            <div ref={cintaRef} className="cinta -mx-6 md:-mx-12">
               <ul className="cinta-pista text-left">
-                {[...fotosPrimerEvento, ...fotosPrimerEvento].map(({ id, img }, i) => {
-                  const copia = i >= fotosPrimerEvento.length;
-                  return (
-                    <li key={`${id}-${i}`} aria-hidden={copia || undefined} className="shrink-0 mr-6">
-                      <figure className="w-min">
-                        <img
-                          src={img.src}
-                          width={img.width}
-                          height={img.height}
-                          alt={copia ? '' : content.galleryPhotos[id]}
-                          loading="lazy"
-                          className="h-56 md:h-80 w-auto max-w-none rounded-anthro shadow-anthro-subtle"
-                        />
-                        <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
-                          {content.galleryPhotos[id]}
-                        </figcaption>
-                      </figure>
-                    </li>
-                  );
-                })}
+                {fotosPrimerEvento.map(({ id, img }, i) => (
+                  <li key={id} className={`shrink-0 ${i < fotosPrimerEvento.length - 1 ? 'mr-6' : ''}`}>
+                    <figure className="w-min">
+                      <img
+                        src={img.src}
+                        width={img.width}
+                        height={img.height}
+                        alt={content.galleryPhotos[id]}
+                        loading="lazy"
+                        className="h-56 md:h-80 w-auto max-w-none rounded-anthro shadow-anthro-subtle"
+                      />
+                      <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+                        {content.galleryPhotos[id]}
+                      </figcaption>
+                    </figure>
+                  </li>
+                ))}
               </ul>
             </div>
 
