@@ -198,6 +198,7 @@ export const delegacionMadridContent = {
     galleryText:
       'El primer evento presencial de iaS reunió a 70 personas en Celonis, en Madrid, junto a BlueDot Impact. Unimos Madrid y Barcelona: David Bravo Comas, director de AI Safety Barcelona, habló de los riesgos de crear algo más inteligente que nosotros, y contamos con Guillem Bas, del Observatorio de Riesgos Catastróficos Globales, que repasó las señales tempranas de riesgo que ya muestra la evidencia.',
     galleryPhotos: {
+      publico: 'El público en Celonis, durante la presentación del encuentro.',
       sala: '70 personas en Celonis, en Madrid.',
       bluedot: 'Osmani Redondo, directora de iaS, presenta el encuentro, organizado con BlueDot Impact.',
       david: 'David Bravo Comas, director de AI Safety Barcelona: «Cuidado con lo que deseas: los riesgos de crear algo más inteligente que nosotros».',
@@ -249,6 +250,7 @@ export const delegacionMadridContent = {
     galleryText:
       'The first in-person iaS event brought together 70 people at Celonis in Madrid, together with BlueDot Impact. We brought Madrid and Barcelona together: David Bravo Comas, director of AI Safety Barcelona, spoke about the risks of creating something smarter than us, and Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales, reviewed the early warning signs that the evidence already shows.',
     galleryPhotos: {
+      publico: 'The audience at Celonis during the opening of the event.',
       sala: '70 people at Celonis in Madrid.',
       bluedot: 'Osmani Redondo, director of iaS, opens the event, co-hosted with BlueDot Impact.',
       david: 'David Bravo Comas, director of AI Safety Barcelona: “Cuidado con lo que deseas” (Be careful what you wish for: the risks of creating something smarter than us).',
