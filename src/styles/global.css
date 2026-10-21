@@ -484,3 +484,38 @@ h5 {
   line-height: 1.5;
   opacity: 0.7;
 }
+
+/* Cinta de fotos (página de Madrid): avanza sola en bucle, se para al pasar el ratón y
+   difumina los bordes. La pista lleva la serie dos veces, así que moverla -50% cierra el bucle. */
+.cinta {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.cinta-pista {
+  display: flex;
+  width: max-content;
+  animation: cinta 70s linear infinite;
+}
+
+.cinta:hover .cinta-pista {
+  animation-play-state: paused;
+}
+
+@keyframes cinta {
+  to { transform: translateX(-50%); }
+}
+
+/* Sin animación para quien la tenga desactivada: la cinta se desliza a mano. */
+@media (prefers-reduced-motion: reduce) {
+  .cinta {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .cinta-pista {
+    animation: none;
+  }
+  .cinta-pista > li {
+    scroll-snap-align: start;
+  }
+}
