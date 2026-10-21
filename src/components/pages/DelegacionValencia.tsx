@@ -196,6 +196,13 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
             <div id="sobre-nosotros" className="scroll-mt-anchorbar">
               <h3 className={sectionTitle}>{content.aboutTitle}</h3>
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{parseText(t.hero.h2)}</p>
+              {/* Vínculo con la sede: Valencia es una delegación de la red coordinada desde Madrid. */}
+              <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">
+                {content.aboutHqText}{' '}
+                <a href={`${langPrefix}/delegaciones/madrid`} className="font-sans font-semibold text-principal-texto hover:underline">
+                  {content.aboutHqLabel}
+                </a>
+              </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <a href={`${langPrefix}/equipo`} className={secondaryButton}>
                   {content.aboutTeamLabel}
