@@ -34,6 +34,10 @@ import logoLisboa from '@assets/logos__lisbon_ai_safety_hub.svg';
 import logoLisboaWhite from '@assets/logos__lisbon_ai_safety_hub_white.svg';
 import logoSAIN from '@assets/logos__safe_ai_netherlands.svg';
 import logoSAINWhite from '@assets/logos__safe_ai_netherlands_white.svg';
+import logoCeSIA from '@assets/logos__cesia.svg';
+import logoCeSIAWhite from '@assets/logos__cesia_white.svg';
+import logoCEGIA from '@assets/logos__cegia.svg';
+import logoCEGIAWhite from '@assets/logos__cegia_white.svg';
 import undefinedImgur from '@assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
@@ -153,14 +157,15 @@ export default function Home({ lang }: HomeProps) {
                     </div>
                     <div>
                         <h5 className="text-center">{t.collaborators.international}</h5>
-                        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-2 md:gap-y-10 items-center">
+                        {/* Filas centradas: con 7 logos, la última fila (incompleta) queda en medio */}
+                        <div className="flex flex-wrap justify-center items-center gap-y-2 md:gap-y-10 [&>*]:w-1/2 [&>*]:px-3 md:[&>*]:w-1/4 md:[&>*]:px-4">
                             <CollaborativeCard href="https://www.enais.co/" text="European Network for AI Safety" logo={logoENAIS} logoWhite={logoENAISWhite} />
                             <CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} />
                             <CollaborativeCard href="https://www.women4aisafety.com/" text="Women4AISafety" logo={logow4ias} logoWhite={logow4iaswhite} />
                             <CollaborativeCard href="https://www.lisbonaisafetyhub.org/" text="Lisbon AI Safety Hub" logo={logoLisboa} logoWhite={logoLisboaWhite} />
-                            <div className="col-span-2 md:col-span-1 justify-self-center w-1/2 md:w-full">
-                                <CollaborativeCard href="https://safeainetherlands.org/" text="SAIN (Safe AI Netherlands)" logo={logoSAIN} logoWhite={logoSAINWhite} />
-                            </div>
+                            <CollaborativeCard href="https://safeainetherlands.org/" text="SAIN (Safe AI Netherlands)" logo={logoSAIN} logoWhite={logoSAINWhite} />
+                            <CollaborativeCard href="https://cesia.org/en/" text="CeSIA (Centre pour la Sécurité de l'IA)" logo={logoCeSIA} logoWhite={logoCeSIAWhite} />
+                            <CollaborativeCard href="https://cegia.org.br/" text="CEGIA (Centro de Estudos em Governança de IA)" logo={logoCEGIA} logoWhite={logoCEGIAWhite} />
                         </div>
                     </div>
                 </div>
