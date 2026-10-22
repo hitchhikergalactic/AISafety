@@ -158,7 +158,7 @@ Si este texto te ha despertado el interés, la forma más directa de seguir es u
 | [Seminario de seguridad de la IA](https://aisafety.es/seminario-bluedot-spain) | Sesión en línea de 1 h, primer y tercer miércoles de cada mes, con BlueDot Impact | Hispanohablante |
 | [Substack de iaS](https://seguridaddelaia.substack.com) | Análisis sobre seguridad de la IA en español | Hispanohablante |
 | [Radar de papers](https://aisafety.es/biblioteca-papers) | Investigaciones sobre seguridad de la IA traducidas al español | Hispanohablante |
-| [Curso de Estrategia ante la IA General](https://aisafety.es/curso-estrategia-agi) | 25 h en cohortes, presencial, desde octubre de 2026 | Madrid |
+| [Curso de Estrategia ante la IA General](https://aisafety.es/curso-estrategia-agi) | 25 h en cohortes, en línea, próximamente | Hispanohablante |
 | [Observatorio de Riesgos Catastróficos Globales](https://www.orcg.info/) | Análisis de riesgos y políticas públicas | Hispanohablante |
 | [Informe Internacional sobre la Seguridad de la IA](https://internationalaisafetyreport.org/publications) | Síntesis científica, con traducción al español | Internacional |
 | [BlueDot Impact](https://bluedot.org/) | Cursos de introducción a la alineación y la gobernanza | Internacional, en inglés |
