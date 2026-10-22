@@ -34,6 +34,10 @@ import logoLisboa from '@assets/logos__lisbon_ai_safety_hub.svg';
 import logoLisboaWhite from '@assets/logos__lisbon_ai_safety_hub_white.svg';
 import logoSAIN from '@assets/logos__safe_ai_netherlands.svg';
 import logoSAINWhite from '@assets/logos__safe_ai_netherlands_white.svg';
+import logoCeSIA from '@assets/logos__cesia.svg';
+import logoCeSIAWhite from '@assets/logos__cesia_white.svg';
+import logoCEGIA from '@assets/logos__cegia.svg';
+import logoCEGIAWhite from '@assets/logos__cegia_white.svg';
 import undefinedImgur from '@assets/undefined_imgur.webp';
 
 type Language = 'es' | 'en';
@@ -138,11 +142,33 @@ export default function Home({ lang }: HomeProps) {
                     <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
                     <p>{parseText(t.collaborators.text)}</p>
                 </div>
-                {/* Dos grupos con subtítulo: organizaciones hispanohablantes y aliados internacionales.
+                {/* Mapa del español en el mundo (el mismo de la Visión, con versión clara y oscura) y los 20 países (más Puerto Rico) donde es lengua oficial */}
+                <figure className="mx-auto max-w-4xl mt-6 md:mt-10 mb-12 md:mb-20">
+                    <img src="/mapa-espanol-mundo-claro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto dark:hidden" />
+                    <img src="/mapa-espanol-mundo-oscuro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto hidden dark:block" />
+                    <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-4 text-[0.8125rem] leading-snug font-sans [&>span]:inline-flex [&>span]:items-center [&>span]:gap-2 [&>span]:before:content-[''] [&>span]:before:flex-none [&>span]:before:w-3.5 [&>span]:before:h-3.5 [&>span]:before:rounded">
+                        <span className="before:bg-principal">{t.collaborators.mapLegend.official}</span>
+                        <span className="before:bg-principal/55">{t.collaborators.mapLegend.important}</span>
+                        <span className="before:bg-principal/25">{t.collaborators.mapLegend.significant}</span>
+                    </div>
+                    <figcaption className="mt-8 md:mt-10 text-center">
+                        <h5 className="!font-bold !text-xl md:!text-2xl !mb-4 text-balance">{t.collaborators.countriesTitle}</h5>
+                        <ul className="flex flex-wrap justify-center gap-2 list-none p-0 m-0">
+                            {t.collaborators.countries.map((pais) => (
+                                <li key={pais} className="px-3 py-1 rounded-full border border-secundarios-dark/15 dark:border-white/15 text-sm font-sans">{pais}</li>
+                            ))}
+                        </ul>
+                        <small className="block mt-6 text-xs leading-normal font-sans opacity-70 text-balance">{t.collaborators.mapCredit}</small>
+                    </figcaption>
+                </figure>
+                {/* Dos grupos, contados desde la persona (a quién puedes conocer), como hace ENAIS: hubs en español y resto del mundo.
                     BlueDot no se repite aquí: ya aparece en la franja de patrocinio */}
                 <div className="flex flex-col gap-10 md:gap-16">
                     <div>
-                        <h5 className="text-center">{t.collaborators.spanishSpeaking}</h5>
+                        <div className="mx-auto max-w-xl text-center mb-4 md:mb-6">
+                            <h5 className="!font-bold !text-xl md:!text-2xl !mb-2 text-balance">{t.collaborators.spanishSpeaking}</h5>
+                            <p className="text-balance">{t.collaborators.spanishSpeakingText}</p>
+                        </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-10 items-center">
                             <CollaborativeCard href="https://www.aismx.org/" text="AI Safety México" logo={logoMEXICO} logoWhite={logoMEXICOWhite} />
                             <CollaborativeCard href="https://aisafetycolombia.org/" text="AI Safety Colombia" logo={logoColombia} logoWhite={logoColombiawhite} />
@@ -152,15 +178,19 @@ export default function Home({ lang }: HomeProps) {
                         </div>
                     </div>
                     <div>
-                        <h5 className="text-center">{t.collaborators.international}</h5>
-                        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-2 md:gap-y-10 items-center">
+                        <div className="mx-auto max-w-xl text-center mb-4 md:mb-6">
+                            <h5 className="!font-bold !text-xl md:!text-2xl !mb-2 text-balance">{t.collaborators.international}</h5>
+                            <p className="text-balance">{t.collaborators.internationalText}</p>
+                        </div>
+                        {/* Filas centradas: con 7 logos, la última fila (incompleta) queda en medio */}
+                        <div className="flex flex-wrap justify-center items-center gap-y-2 md:gap-y-10 [&>*]:w-1/2 [&>*]:px-3 md:[&>*]:w-1/4 md:[&>*]:px-4">
                             <CollaborativeCard href="https://www.enais.co/" text="European Network for AI Safety" logo={logoENAIS} logoWhite={logoENAISWhite} />
                             <CollaborativeCard href="https://www.aisafety.com/" text="AISafety.com" logo={logoAISafetyCom} logoWhite={logoAISafetyComWhite} />
                             <CollaborativeCard href="https://www.women4aisafety.com/" text="Women4AISafety" logo={logow4ias} logoWhite={logow4iaswhite} />
                             <CollaborativeCard href="https://www.lisbonaisafetyhub.org/" text="Lisbon AI Safety Hub" logo={logoLisboa} logoWhite={logoLisboaWhite} />
-                            <div className="col-span-2 md:col-span-1 justify-self-center w-1/2 md:w-full">
-                                <CollaborativeCard href="https://safeainetherlands.org/" text="SAIN (Safe AI Netherlands)" logo={logoSAIN} logoWhite={logoSAINWhite} />
-                            </div>
+                            <CollaborativeCard href="https://safeainetherlands.org/" text="SAIN (Safe AI Netherlands)" logo={logoSAIN} logoWhite={logoSAINWhite} />
+                            <CollaborativeCard href="https://cesia.org/en/" text="CeSIA (Centre pour la Sécurité de l'IA)" logo={logoCeSIA} logoWhite={logoCeSIAWhite} />
+                            <CollaborativeCard href="https://cegia.org.br/" text="CEGIA (Centro de Estudos em Governança de IA)" logo={logoCEGIA} logoWhite={logoCEGIAWhite} />
                         </div>
                     </div>
                 </div>
