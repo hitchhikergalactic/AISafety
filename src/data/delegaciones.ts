@@ -1,6 +1,7 @@
+// «Red» se reserva para la red de hubs aliados (bloque «Red iaS» de la portada, como ENAIS); la sede y las delegaciones van aparte
 export const delegacionesNavLabel = {
-  es: '/Red',
-  en: '/Network',
+  es: '/Delegaciones',
+  en: '/Chapters',
 } as const;
 
 // `description` e `icon` solo los usa el desplegable del menú. Un separador con `title` se pinta como
@@ -337,7 +338,7 @@ const buildFooterColumns = (contactEmail: string): FooterColumns => ({
       ],
     },
     {
-      title: 'Red',
+      title: 'Delegaciones',
       links: delegacionesSublinks.es.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
     },
     {
@@ -371,7 +372,7 @@ const buildFooterColumns = (contactEmail: string): FooterColumns => ({
       ],
     },
     {
-      title: 'Network',
+      title: 'Chapters',
       links: delegacionesSublinks.en.flatMap((l) => (l.separator ? [] : [{ label: l.label, href: l.path }])),
     },
     {
