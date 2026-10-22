@@ -91,8 +91,10 @@ export const translations = {
     collaborators: {
       title: "Red iaS",
       text: "Somos parte del ecosistema global de seguridad de la IA y trabajamos estrechamente con la red internacional de hubs locales.",
-      spanishSpeaking: "Organizaciones hispanohablantes",
-      international: "Aliados internacionales",
+      spanishSpeaking: "Hubs en español",
+      spanishSpeakingText: "Grupos locales en Latinoamérica donde conocer, en tu idioma, a personas que investigan, estudian o trabajan en seguridad de la IA.",
+      international: "Hubs y redes en el resto del mundo",
+      internationalText: "Redes de otros países que te ponen en contacto con investigadores, profesionales de políticas públicas y gente que acaba de empezar.",
     },
     seminario: {
       title: "Seminario de seguridad de la IA",
@@ -223,8 +225,10 @@ export const translations = {
     collaborators: {
       title: "iaS Network",
       text: "We are part of the global AI safety ecosystem and work closely with the international network of local hubs.",
-      spanishSpeaking: "Spanish-speaking organizations",
-      international: "International partners",
+      spanishSpeaking: "Spanish-speaking hubs",
+      spanishSpeakingText: "Local groups in Latin America where you can meet, in Spanish, people who research, study or work in AI safety.",
+      international: "Hubs and networks around the world",
+      internationalText: "Networks in other countries that connect you with researchers, policy professionals and people who are just getting started.",
     },
     women4ais: {
       title: "Women4AIS",

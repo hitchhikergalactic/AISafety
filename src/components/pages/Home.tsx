@@ -142,11 +142,14 @@ export default function Home({ lang }: HomeProps) {
                     <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
                     <p>{parseText(t.collaborators.text)}</p>
                 </div>
-                {/* Dos grupos con subtítulo: organizaciones hispanohablantes y aliados internacionales.
+                {/* Dos grupos, contados desde la persona (a quién puedes conocer), como hace ENAIS: hubs en español y resto del mundo.
                     BlueDot no se repite aquí: ya aparece en la franja de patrocinio */}
                 <div className="flex flex-col gap-10 md:gap-16">
                     <div>
-                        <h5 className="text-center">{t.collaborators.spanishSpeaking}</h5>
+                        <div className="mx-auto max-w-xl text-center mb-4 md:mb-6">
+                            <h5 className="!font-bold !text-xl md:!text-2xl !mb-2 text-balance">{t.collaborators.spanishSpeaking}</h5>
+                            <p className="text-balance">{t.collaborators.spanishSpeakingText}</p>
+                        </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-10 items-center">
                             <CollaborativeCard href="https://www.aismx.org/" text="AI Safety México" logo={logoMEXICO} logoWhite={logoMEXICOWhite} />
                             <CollaborativeCard href="https://aisafetycolombia.org/" text="AI Safety Colombia" logo={logoColombia} logoWhite={logoColombiawhite} />
@@ -156,7 +159,10 @@ export default function Home({ lang }: HomeProps) {
                         </div>
                     </div>
                     <div>
-                        <h5 className="text-center">{t.collaborators.international}</h5>
+                        <div className="mx-auto max-w-xl text-center mb-4 md:mb-6">
+                            <h5 className="!font-bold !text-xl md:!text-2xl !mb-2 text-balance">{t.collaborators.international}</h5>
+                            <p className="text-balance">{t.collaborators.internationalText}</p>
+                        </div>
                         {/* Filas centradas: con 7 logos, la última fila (incompleta) queda en medio */}
                         <div className="flex flex-wrap justify-center items-center gap-y-2 md:gap-y-10 [&>*]:w-1/2 [&>*]:px-3 md:[&>*]:w-1/4 md:[&>*]:px-4">
                             <CollaborativeCard href="https://www.enais.co/" text="European Network for AI Safety" logo={logoENAIS} logoWhite={logoENAISWhite} />
