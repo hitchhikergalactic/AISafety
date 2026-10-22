@@ -11,6 +11,8 @@ import { parseText } from '@utils/parseText';
 type Language = 'es' | 'en';
 
 const botonPrincipal = 'inline-flex items-center gap-2 bg-principal text-white font-sans font-bold text-base md:text-lg py-3 px-5 md:px-6 rounded-xl no-underline transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2';
+const etiqueta = 'mb-3 font-sans text-xs font-bold uppercase tracking-widest text-label-gray';
+const tituloTarjeta = '!text-xl md:!text-2xl !leading-tight mb-3 text-balance';
 const botonSecundario = 'inline-flex items-center gap-2 py-3 px-5 md:px-6 rounded-xl border-2 border-principal text-principal-texto font-sans font-bold text-base md:text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2';
 
 interface RedProps {
@@ -72,19 +74,34 @@ const Red: React.FC<RedProps> = ({ lang }) => {
             </section>
           ))}
 
-          {/* Cierre: las dos formas de entrar en la red. Apuntarse al directorio (principal) o crear un nodo si no hay ninguno cerca */}
-          <section className="mt-16 md:mt-28 grid md:grid-cols-2 gap-6 md:gap-8 [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:text-center [&>div]:px-5 [&>div]:py-8 md:[&>div]:p-10 [&>div]:rounded-anthro [&>div]:border [&>div]:border-secundarios-dark/10 dark:[&>div]:border-white/10 [&>div]:bg-white/30 dark:[&>div]:bg-white/5">
+          {/* Cierre: tres formas de entrar en la red, diferenciadas por quién eres. Personas → directorio (acción principal);
+              organizaciones → pedir que las añadamos; si no hay nodo cerca → crear una delegación */}
+          <section className="mt-16 md:mt-28 grid xl:grid-cols-3 gap-6 max-w-xl mx-auto xl:max-w-none [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:text-center [&>div]:px-5 [&>div]:py-8 md:[&>div]:px-6 [&>div]:rounded-anthro [&>div]:border [&>div]:border-secundarios-dark/10 dark:[&>div]:border-white/10 [&>div]:bg-white/30 dark:[&>div]:bg-white/5">
             <div>
-              <h2 className="!text-xl md:!text-3xl !leading-tight mb-3 text-balance">{content.directoryTitle}</h2>
+              <span className={etiqueta}>{content.peopleLabel}</span>
+              <h2 className={tituloTarjeta}>{content.directoryTitle}</h2>
               <p className="text-balance flex-grow">{content.directoryText}</p>
               <a href={directorioFormUrl} target="_blank" rel="noopener noreferrer" className={botonPrincipal}>
                 {content.directoryButton}
                 <ArrowUpRight size={20} aria-hidden="true" />
               </a>
-              <small className="block mt-3 text-xs font-sans opacity-70">{content.directoryNote}</small>
+              <small className="block mt-3 text-xs font-sans opacity-70 text-balance">
+                {content.directoryNote}{' '}
+                <a href={content.privacyHref} className="underline underline-offset-2 hover:no-underline">{content.privacyLink}</a>
+              </small>
             </div>
             <div>
-              <h2 className="!text-xl md:!text-3xl !leading-tight mb-3 text-balance">{content.joinTitle}</h2>
+              <span className={etiqueta}>{content.orgsLabel}</span>
+              <h2 className={tituloTarjeta}>{content.orgTitle}</h2>
+              <p className="text-balance flex-grow">{content.orgText}</p>
+              <a href={content.orgHref} className={botonSecundario}>
+                {content.orgButton}
+              </a>
+              <small className="block mt-3 text-xs font-sans opacity-70 text-balance">{content.orgNote}</small>
+            </div>
+            <div>
+              <span className={etiqueta}>{content.cityLabel}</span>
+              <h2 className={tituloTarjeta}>{content.joinTitle}</h2>
               <p className="text-balance flex-grow">{content.joinText}</p>
               <a href={content.joinHref} className={botonSecundario}>
                 {content.joinButton}
