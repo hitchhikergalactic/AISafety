@@ -90,6 +90,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/que-hacemos"/>
   </url>
 
+  <!-- Red -->
+  <url>
+    <loc>https://aisafety.es/red</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/red"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/network"/>
+  </url>
+  <url>
+    <loc>https://aisafety.es/en/network</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aisafety.es/red"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aisafety.es/en/network"/>
+  </url>
+
   <!-- Equipo -->
   <url>
     <loc>https://aisafety.es/equipo</loc>

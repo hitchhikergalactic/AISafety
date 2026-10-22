@@ -1,0 +1,13 @@
+---
+// src/pages/en/network.astro
+import Layout from '../../layouts/Layout.astro';
+import Red from '../../components/pages/Red.tsx';
+import { redContent } from '../../data/red';
+
+const c = redContent.en;
+const alternates = { es: redContent.es.canonical, en: redContent.en.canonical };
+---
+
+<Layout lang="en" title={c.seoTitle} description={c.description} canonicalUrl={c.canonical} alternates={alternates}>
+  <Red lang="en" client:load />
+</Layout>

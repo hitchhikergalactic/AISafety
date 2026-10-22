@@ -36,7 +36,9 @@ export const CollaborativeCard: React.FC<{
     text: string;
     logo?: any;
     logoWhite?: any;
-}> = ({ href, text, logo, logoWhite }) => {
+    // Versión compacta (franja de la portada): menos alto y logo más pequeño
+    compact?: boolean;
+}> = ({ href, text, logo, logoWhite, compact = false }) => {
     
     // Extractor ultra seguro para blindar las etiquetas <img> nativas
     const getSafeSrc = (img: any): string => {
@@ -49,6 +51,7 @@ export const CollaborativeCard: React.FC<{
     };
 
     const logoSrc = getSafeSrc(logo);
+    const imgSize = compact ? 'max-h-16' : 'max-h-24';
     const logoWhiteSrc = getSafeSrc(logoWhite);
 
     return (
@@ -56,7 +59,7 @@ export const CollaborativeCard: React.FC<{
             href={href} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-center p-4 transition-transform duration-300 hover:scale-110 group min-h-[120px]"
+            className={`flex items-center justify-center transition-transform duration-300 hover:scale-110 group ${compact ? 'p-1 min-h-[64px]' : 'p-4 min-h-[120px]'}`}
         >
             {logoSrc ? (
                 <>
@@ -65,19 +68,19 @@ export const CollaborativeCard: React.FC<{
                             <img 
                                 src={logoSrc} 
                                 alt={text} 
-                                className="max-h-24 max-w-full w-auto dark:hidden"
+                                className={`${imgSize} max-w-full w-auto dark:hidden`}
                             />
                             <img 
                                 src={logoWhiteSrc} 
                                 alt={text} 
-                                className="max-h-24 max-w-full w-auto hidden dark:block"
+                                className={`${imgSize} max-w-full w-auto hidden dark:block`}
                             />
                         </>
                     ) : (
                         <img 
                             src={logoSrc} 
                             alt={text} 
-                            className="max-h-24 max-w-full w-auto"
+                            className={`${imgSize} max-w-full w-auto`}
                         />
                     )}
                 </>

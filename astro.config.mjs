@@ -10,11 +10,12 @@ import { misionContent } from './src/data/mision.ts';
 import { visionContent } from './src/data/vision.ts';
 import { teoriaDelCambioContent } from './src/data/teoria-del-cambio.ts';
 import { queEsLaSeguridadDeLaIaContent } from './src/data/que-es-la-seguridad-de-la-ia.ts';
+import { redContent } from './src/data/red.ts';
 
-// Los documentos fundacionales declaran su canonical sin barra final; el sitemap que genera Astro los lista con barra.
+// Los documentos fundacionales y la página «Red» declaran su canonical sin barra final; el sitemap que genera Astro los lista con barra.
 // Se corrige con las mismas URLs de las que salen los canonicals, para que coincidan siempre.
 const sinBarraFinal = new Map(
-  [misionContent, visionContent, teoriaDelCambioContent, queEsLaSeguridadDeLaIaContent].flatMap((doc) =>
+  [misionContent, visionContent, teoriaDelCambioContent, queEsLaSeguridadDeLaIaContent, redContent].flatMap((doc) =>
     Object.values(doc).map(({ canonical }) => [`${canonical}/`, canonical])
   )
 );

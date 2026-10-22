@@ -74,7 +74,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     setOpenSubmenu(null);
   };
 
-  const navLinks: { href: string; label: string; sublinks?: Sublink[] }[] = [
+  // `path`: la pestaña lleva a una página propia en vez de a una sección de la portada
+  const navLinks: { href: string; label: string; path?: string; sublinks?: Sublink[] }[] = [
     {
       href: "mission",
       label: t.nav.mission,
@@ -96,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]
     },
-    { href: "conectar", label: t.nav.about },
+    { href: "red", label: t.nav.about, path: lang === 'es' ? '/red' : '/en/network' },
     { href: "footer",
       label: t.nav.contact,
       sublinks: [
@@ -146,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                 </span>
               ) : (
                 <a
-                  href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
+                  href={link.path ?? (lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`)}
                   className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer whitespace-nowrap"
                 >
                   {renderNavLabel(link.label)}
@@ -286,7 +287,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                 </button>
               ) : (
                 <a 
-                  href={lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`}
+                  href={link.path ?? (lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`)}
                   onClick={() => setIsOpen(false)}
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
