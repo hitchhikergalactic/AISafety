@@ -35,9 +35,21 @@ const Red: React.FC<RedProps> = ({ lang }) => {
           <section className="mt-12 md:mt-20">
             <h2 className="sr-only">{content.mapTitle}</h2>
             <MapaEspanol lang={lang} />
+            {/* Contexto con fuentes: por qué importa el mundo hispanohablante en el debate sobre la IA */}
+            <p className="max-w-2xl mx-auto mt-10 md:mt-14 text-center text-balance">
+              {content.context.map((parte, i) =>
+                'href' in parte ? (
+                  <a key={i} href={parte.href} target="_blank" rel="noopener noreferrer" className="text-principal-texto underline underline-offset-4 hover:no-underline">
+                    {parte.text}
+                  </a>
+                ) : (
+                  <React.Fragment key={i}>{parte.text}</React.Fragment>
+                )
+              )}
+            </p>
           </section>
 
-          {/* Dos grupos, contados desde la persona (a quién puedes conocer): hubs en español y resto del mundo */}
+          {/* Dos grupos, contados desde la persona (a quién puedes conocer): nodos en español y resto del mundo */}
           {([
             ['espanol', c.spanishSpeaking, c.spanishSpeakingText],
             ['mundo', c.international, c.internationalText],
