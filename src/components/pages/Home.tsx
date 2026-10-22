@@ -142,7 +142,7 @@ export default function Home({ lang }: HomeProps) {
                     <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
                     <p>{parseText(t.collaborators.text)}</p>
                 </div>
-                {/* Mapa del español en el mundo (el mismo de la Visión, con versión clara y oscura) y los 21 países donde es lengua oficial */}
+                {/* Mapa del español en el mundo (el mismo de la Visión, con versión clara y oscura) y los 20 países (más Puerto Rico) donde es lengua oficial */}
                 <figure className="mx-auto max-w-4xl mt-6 md:mt-10 mb-12 md:mb-20">
                     <img src="/mapa-espanol-mundo-claro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto dark:hidden" />
                     <img src="/mapa-espanol-mundo-oscuro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto hidden dark:block" />
