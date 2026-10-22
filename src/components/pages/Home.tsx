@@ -129,7 +129,7 @@ export default function Home({ lang }: HomeProps) {
                     <FranjaHubs />
                 </div>
                 <div className="mt-8 md:mt-12 flex justify-center">
-                    <a href={lang === 'es' ? '/red' : '/en/network'} className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border-2 border-principal text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                    <a href={lang === 'es' ? '/red' : '/en/network'} className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border-2 border-principal text-principal-texto font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
                         {t.collaborators.cta}
                         <ArrowRight size={20} aria-hidden="true" />
                     </a>
