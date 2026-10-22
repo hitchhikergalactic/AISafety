@@ -7,6 +7,7 @@ import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
+import { cortarCorreo } from '@utils/cortarCorreo';
 import ilustracionValencia from '../../assets/valencia-ilustracion.webp';
 import {
   delegacionValenciaContent,
@@ -104,7 +105,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
       <Navbar lang={lang} />
 
       <main className="pt-36 md:pt-44 px-6 md:px-12 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        <section className="w-full max-w-6xl mx-auto pb-12 md:pb-16 grid gap-10 md:gap-14 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] items-center">
+        <section className="w-full max-w-6xl mx-auto pb-12 md:pb-16 grid grid-cols-1 gap-10 md:gap-14 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] items-center">
           <div className="text-center md:text-left">
             {/* El antetítulo va en mayúsculas, salvo la marca: «iaS» se escribe siempre así. El «·» lleva márgenes
                 desiguales porque el espaciado del h5 y el propio glifo lo descentran. */}
@@ -142,7 +143,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
 
         {/* Eventos: texto y enlaces a un lado, calendario al otro */}
         <section id="eventos" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-16 md:pt-24">
-          <div className={`${panel} p-6 md:p-12 grid gap-8 md:gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
+          <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-8 md:gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
             <div className="text-center md:text-left">
               <h3 className={sectionTitle}>{content.eventsTitle}</h3>
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">
@@ -172,7 +173,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
           <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">
             {content.programsIntro}
           </p>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-left">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 text-left">
             {programs.map((program) => (
               <article key={program.id} className={`${card} flex flex-col p-6 md:p-8 hover:shadow-anthro-card transition-all duration-300`}>
                 <h4>{program.title}</h4>
@@ -192,7 +193,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
 
         {/* Sobre nosotros y Únete: un solo panel a dos columnas, como el bloque de «Crear una delegación» */}
         <section className="w-full max-w-6xl mx-auto pt-20 md:pt-32 pb-20 md:pb-32">
-          <div className={`${panel} p-6 md:p-12 grid gap-12 md:grid-cols-2 md:gap-16`}>
+          <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16`}>
             <div id="sobre-nosotros" className="scroll-mt-anchorbar">
               <h3 className={sectionTitle}>{content.aboutTitle}</h3>
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{parseText(t.hero.h2)}</p>
@@ -229,7 +230,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                       <span className="min-w-0 flex-1">
                         <span className="block font-sans font-bold text-secundarios-dark dark:text-secundarios-light">{label}</span>
                         {detail && (
-                          <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{detail}</span>
+                          <span className="block font-sans text-sm font-semibold text-principal-texto break-words">{cortarCorreo(detail)}</span>
                         )}
                       </span>
                       <ArrowRight size={18} aria-hidden="true" className="shrink-0 text-secundarios-dark/40 dark:text-secundarios-light/40 group-hover:text-principal group-hover:translate-x-0.5 transition-all duration-300" />
