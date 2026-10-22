@@ -90,7 +90,9 @@ export const translations = {
     },
     collaborators: {
       title: "Red iaS",
-      text: "Somos parte del ecosistema global de seguridad de la IA, colaborando estrechamente con **BlueDot Impact** y la red internacional de hubs locales.",
+      text: "Somos parte del ecosistema global de seguridad de la IA y trabajamos estrechamente con la red internacional de hubs locales.",
+      spanishSpeaking: "Organizaciones hispanohablantes",
+      international: "Aliados internacionales",
     },
     seminario: {
       title: "Seminario de seguridad de la IA",
@@ -220,7 +222,9 @@ export const translations = {
     },
     collaborators: {
       title: "iaS Network",
-      text: "We are part of the global AI safety ecosystem, collaborating closely with **BlueDot Impact** and the international network of local hubs.",
+      text: "We are part of the global AI safety ecosystem and work closely with the international network of local hubs.",
+      spanishSpeaking: "Spanish-speaking organizations",
+      international: "International partners",
     },
     women4ais: {
       title: "Women4AIS",
