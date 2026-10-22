@@ -142,6 +142,25 @@ export default function Home({ lang }: HomeProps) {
                     <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
                     <p>{parseText(t.collaborators.text)}</p>
                 </div>
+                {/* Mapa del español en el mundo (el mismo de la Visión, con versión clara y oscura) y los 21 países donde es lengua oficial */}
+                <figure className="mx-auto max-w-4xl mt-6 md:mt-10 mb-12 md:mb-20">
+                    <img src="/mapa-espanol-mundo-claro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto dark:hidden" />
+                    <img src="/mapa-espanol-mundo-oscuro.webp" alt={t.collaborators.mapAlt} width={1600} height={821} loading="lazy" decoding="async" className="w-full h-auto hidden dark:block" />
+                    <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-4 text-[0.8125rem] leading-snug font-sans [&>span]:inline-flex [&>span]:items-center [&>span]:gap-2 [&>span]:before:content-[''] [&>span]:before:flex-none [&>span]:before:w-3.5 [&>span]:before:h-3.5 [&>span]:before:rounded">
+                        <span className="before:bg-principal">{t.collaborators.mapLegend.official}</span>
+                        <span className="before:bg-principal/55">{t.collaborators.mapLegend.important}</span>
+                        <span className="before:bg-principal/25">{t.collaborators.mapLegend.significant}</span>
+                    </div>
+                    <figcaption className="mt-8 md:mt-10 text-center">
+                        <h5 className="!font-bold !text-xl md:!text-2xl !mb-4 text-balance">{t.collaborators.countriesTitle}</h5>
+                        <ul className="flex flex-wrap justify-center gap-2 list-none p-0 m-0">
+                            {t.collaborators.countries.map((pais) => (
+                                <li key={pais} className="px-3 py-1 rounded-full border border-secundarios-dark/15 dark:border-white/15 text-sm font-sans">{pais}</li>
+                            ))}
+                        </ul>
+                        <small className="block mt-6 text-xs leading-normal font-sans opacity-70 text-balance">{t.collaborators.mapCredit}</small>
+                    </figcaption>
+                </figure>
                 {/* Dos grupos, contados desde la persona (a quién puedes conocer), como hace ENAIS: hubs en español y resto del mundo.
                     BlueDot no se repite aquí: ya aparece en la franja de patrocinio */}
                 <div className="flex flex-col gap-10 md:gap-16">
