@@ -2,6 +2,7 @@
 // Las rutas van sin barra final.
 export const rutasEsEn: Record<string, string> = {
   '/teoria-del-cambio': '/en/theory-of-change',
+  '/red': '/en/network',
 };
 
 // Páginas que solo existen en español: el selector ES/EN lleva a la portada en inglés.

@@ -104,6 +104,7 @@ export const translations = {
       spanishSpeakingText: "Junto a iaS, grupos locales donde conocer, en español, a personas que investigan, estudian o trabajan en seguridad de la IA.",
       international: "Hubs y redes en el resto del mundo",
       internationalText: "Redes de otros países que te ponen en contacto con investigadores, profesionales de políticas públicas y gente que acaba de empezar.",
+      cta: "Conoce la red",
     },
     seminario: {
       title: "Seminario de seguridad de la IA",
@@ -247,6 +248,7 @@ export const translations = {
       spanishSpeakingText: "Alongside iaS, local groups where you can meet, in Spanish, people who research, study or work in AI safety.",
       international: "Hubs and networks around the world",
       internationalText: "Networks in other countries that connect you with researchers, policy professionals and people who are just getting started.",
+      cta: "Explore the network",
     },
     women4ais: {
       title: "Women4AIS",
