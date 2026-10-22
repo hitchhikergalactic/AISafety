@@ -189,7 +189,7 @@ export const delegacionMadridContent = {
     hqBadge: 'Sede',
     hqText: 'Equipo, programas y coordinación de la red.',
     chaptersTitle: 'Delegaciones',
-    hubsTitle: 'Hubs con los que trabajamos estrechamente',
+    hubsTitle: 'Nodos con los que trabajamos estrechamente',
     eventsTitle: 'Próximos eventos',
     eventsText: 'Los encuentros de la sede se publican en la agenda de iaS en Luma.',
     eventsArchiveLabel: 'Ver la agenda en Luma',
@@ -214,7 +214,7 @@ export const delegacionMadridContent = {
     },
     programsTitle: 'Programas',
     programsIntro:
-      'Formación y recursos de seguridad de la IA en español. La primera cohorte del AGI Strategy Course es presencial, en Madrid.',
+      'Formación y recursos de seguridad de la IA en español. La primera cohorte del AGI Strategy Course será en línea.',
     programCtaLabel: 'Más información',
     libraryTitle: 'Biblioteca abierta',
     teamTitle: 'El equipo de la sede',
@@ -273,7 +273,7 @@ export const delegacionMadridContent = {
     },
     programsTitle: 'Programs',
     programsIntro:
-      'AI safety training and resources in Spanish. The first cohort of the AGI Strategy Course is in person, in Madrid.',
+      'AI safety training and resources in Spanish. The first cohort of the AGI Strategy Course will be online.',
     programCtaLabel: 'Learn more',
     libraryTitle: 'Open library',
     teamTitle: 'The headquarters team',

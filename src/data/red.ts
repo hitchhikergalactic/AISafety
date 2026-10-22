@@ -5,7 +5,7 @@ export const redContent = {
   es: {
     seoTitle: 'Red | iaS',
     description:
-      'La red de iaS: grupos locales donde conocer, en español, a personas que trabajan en seguridad de la IA, y hubs y redes aliadas en el resto del mundo.',
+      'La red de iaS: grupos locales donde conocer, en español, a personas que trabajan en seguridad de la IA, y nodos y redes aliados en el resto del mundo.',
     canonical: 'https://aisafety.es/red',
     mapTitle: 'El español en el mundo',
     joinTitle: '¿No hay un grupo en tu ciudad?',
