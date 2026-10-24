@@ -3,7 +3,7 @@ title: "Política de cookies"
 description: "Qué guarda aisafety.es en tu dispositivo, qué contenidos de terceros se cargan y cómo decides tú."
 ---
 
-Fecha de entrada en vigor: 28 de septiembre de 2026 · Última actualización: 28 de septiembre de 2026
+Fecha de entrada en vigor: 28 de septiembre de 2026 · Última actualización: 24 de octubre de 2026
 
 ## 1. Qué son las cookies
 
@@ -15,7 +15,7 @@ Esta web no utiliza cookies publicitarias ni de seguimiento, y por eso no te mos
 
 ## 3. Contenidos de terceros
 
-Algunos formularios o eventos se abren en servicios externos, como Jotform o Luma, que pueden usar sus propias cookies cuando accedes a ellos; en ese caso se aplican las políticas de esos servicios.
+Algunos formularios o eventos se abren en servicios externos, como Jotform o Luma, que pueden usar sus propias cookies cuando accedes a ellos; en ese caso se aplican las políticas de esos servicios. Los vídeos de YouTube, el calendario de Luma y el directorio de la Red iaS (Airtable) solo se cargan si pulsas el botón para mostrarlos.
 
 ## 4. Cómo gestionar las cookies
 

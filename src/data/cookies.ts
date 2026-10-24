@@ -47,5 +47,17 @@ export const embedsAlPulsar = {
       aviso: 'Showing the calendar loads it from Luma, which stores cookies on your device.',
     },
   },
+  airtable: {
+    es: {
+      boton: 'Mostrar el directorio',
+      miniaturaAlt: '',
+      aviso: 'Al mostrar el directorio, se carga desde Airtable, que guarda cookies en tu dispositivo.',
+    },
+    en: {
+      boton: 'Show the directory',
+      miniaturaAlt: '',
+      aviso: 'Showing the directory loads it from Airtable, which stores cookies on your device.',
+    },
+  },
   masInfo: { es: 'Más información', en: 'More information' },
 } as const;

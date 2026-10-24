@@ -3,7 +3,7 @@ title: "Privacy policy"
 description: "What personal data aisafety.es collects, what we use it for, who we share it with and how to exercise your rights."
 ---
 
-Effective date: 28 September 2026 · Last updated: 23 October 2026 · Controller: iaS
+Effective date: 28 September 2026 · Last updated: 24 October 2026 · Controller: iaS
 
 ## 1. Who is the controller
 
@@ -25,11 +25,11 @@ We do not sell or share your data with third parties for commercial purposes.
 
 ## 4. iaS Network directory
 
-The directory helps people in the network find each other and collaborate. It works on a reciprocal basis:
+The directory helps people in the network find each other and collaborate.
 
-- If you choose a **public** profile, it will be visible to the other people who have also made theirs public, and you will be able to see theirs.
+- If you choose a **public** profile, it will appear in the directory published at [aisafety.es/en/network](/en/network), which anyone can see: name, organization and role, city, country, headquarters or chapter, career stage, areas of expertise, what you are looking for, how you can help and what you want to collaborate on, and your contact links. Your email is never shown.
 - If you choose a **private** profile, only the iaS team will see it.
-- We do not publish your profile outside the directory or share it with third parties without your permission.
+- We do not share your profile with third parties without your permission, beyond what is shown in the public directory.
 - Use the data in other profiles only to contact those people and collaborate, never for bulk or commercial messages.
 - You can switch your profile to private or ask us to delete it at any time by writing to [hola@aisafety.es](mailto:hola@aisafety.es). We keep it for as long as you remain in the directory.
 

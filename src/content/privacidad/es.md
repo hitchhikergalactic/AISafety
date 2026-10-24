@@ -3,7 +3,7 @@ title: "Política de privacidad"
 description: "Qué datos personales recoge aisafety.es, para qué los usamos, con quién los compartimos y cómo ejercer tus derechos."
 ---
 
-Fecha de entrada en vigor: 28 de septiembre de 2026 · Última actualización: 23 de octubre de 2026 · Responsable: iaS
+Fecha de entrada en vigor: 28 de septiembre de 2026 · Última actualización: 24 de octubre de 2026 · Responsable: iaS
 
 ## 1. Quién es el responsable
 
@@ -25,11 +25,11 @@ No vendemos ni cedemos tus datos a terceros con fines comerciales.
 
 ## 4. Directorio de la Red iaS
 
-El directorio sirve para que las personas de la red se encuentren y colaboren. Funciona por reciprocidad:
+El directorio sirve para que las personas de la red se encuentren y colaboren.
 
-- Si eliges que tu perfil sea **público**, lo verán las demás personas que también han hecho público el suyo, y tú podrás ver los suyos.
+- Si eliges que tu perfil sea **público**, aparecerá en el directorio publicado en [aisafety.es/red](/red), que puede ver cualquier persona: nombre, organización y puesto, ciudad, país, sede o delegación, etapa profesional, áreas de experiencia, qué buscas, en qué puedes ayudar y en qué quieres colaborar, y tus enlaces de contacto. Tu correo nunca se muestra.
 - Si eliges que sea **privado**, solo lo verá el equipo de iaS.
-- No publicamos tu perfil fuera del directorio ni lo compartimos con terceros sin tu permiso.
+- No compartimos tu perfil con terceros sin tu permiso, salvo lo que se muestra en el directorio público.
 - Usa los datos de otros perfiles solo para contactar con esas personas y colaborar, nunca para envíos masivos ni comerciales.
 - Puedes cambiar tu perfil a privado o pedirnos que lo borremos en cualquier momento escribiendo a [hola@aisafety.es](mailto:hola@aisafety.es). Lo conservamos mientras sigas en el directorio.
 
