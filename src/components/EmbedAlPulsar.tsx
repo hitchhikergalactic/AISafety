@@ -5,7 +5,7 @@ type Language = 'es' | 'en';
 
 interface EmbedAlPulsarProps {
   lang: Language;
-  proveedor: 'youtube' | 'luma';
+  proveedor: 'youtube' | 'luma' | 'airtable';
   src: string;
   title: string;
   // Tamaño y borde del marco: se aplican igual antes y después de pulsar, para que la página no salte
@@ -15,7 +15,7 @@ interface EmbedAlPulsarProps {
   allow?: string;
 }
 
-// Contenido de terceros (vídeo de YouTube, calendario de Luma) que no se descarga hasta que la persona pulsa.
+// Contenido de terceros (vídeo de YouTube, calendario de Luma, directorio de Airtable) que no se descarga hasta que la persona pulsa.
 // Antes de pulsar, se avisa de que el tercero guardará datos en el dispositivo (Guía de cookies de la AEPD, 3.2.3 d):
 // así no hace falta banner. El aviso enlaza a la política de cookies.
 const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, title, className = '', miniatura, allow }) => {

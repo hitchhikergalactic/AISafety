@@ -1,9 +1,12 @@
 // Página «Red» (/red y /en/network): la red de hubs aliados, como ENAIS. La portada muestra un resumen
 // (bloque «Red iaS») con los mismos logos; los textos compartidos están en `translations.collaborators`.
 // Sin imports de imágenes: astro.config.mjs lee los canonicals de aquí. Los logos están en red-hubs.ts.
-// Formulario del directorio de la red (Airtable). Funciona por reciprocidad: quien hace público su perfil ve los de los demás.
-// En la web solo se enlaza el formulario; el directorio se comparte después de apuntarse.
+// Formulario del directorio de la red (Airtable).
 export const directorioFormUrl = 'https://airtable.com/appjg7pwM6YVmobZ6/pagaXjWme216UK4rV/form';
+
+// Directorio público: vista compartida «REDiaS · web» de la tabla Person (solo perfiles públicos con la casilla
+// de consentimiento marcada, sin correo). Si se cambian sus filtros o campos, revisar la política de privacidad (apartado 4).
+export const directorioEmbedUrl = 'https://airtable.com/embed/appjg7pwM6YVmobZ6/shrgzdbJbcxbHdEJd?viewControls=on';
 
 export const redContent = {
   es: {
@@ -32,7 +35,10 @@ export const redContent = {
     orgHref: 'mailto:hola@aisafety.es?subject=Quiero%20a%C3%B1adir%20mi%20organizaci%C3%B3n%20a%20la%20Red%20iaS&body=Hola%2C%0A%0AMe%20gustar%C3%ADa%20a%C3%B1adir%20mi%20organizaci%C3%B3n%20a%20la%20Red%20iaS.%0A%0ANombre%20de%20la%20organizaci%C3%B3n%3A%20%0AWeb%3A%20%0ACiudad%20y%20pa%C3%ADs%3A%20%0APersona%20de%20contacto%3A%20%0A%C2%BFA%20qu%C3%A9%20se%20dedica%3F%3A%20',
     directoryButton: 'Únete al directorio',
     directoryTitle: 'Únete al directorio de la red',
-    directoryText: 'Comparte tu perfil y encuentra a personas con quienes colaborar. Si lo haces público, podrás ver los perfiles públicos de los demás.',
+    directoryText: 'Comparte tu perfil y encuentra a personas con quienes colaborar. Si lo haces público, aparecerás en el directorio de esta página.',
+    membersTitle: 'Personas de la red',
+    membersText: 'Quienes han hecho público su perfil en el directorio de la red. Busca por país, área o lo que necesitas y escríbeles.',
+    membersFrameTitle: 'Directorio de personas de la Red iaS',
     directoryNote: 'Formulario de Airtable. Se abrirá en una nueva pestaña.',
     joinTitle: '¿No hay un nodo en tu ciudad?',
     joinText: 'Lleva iaS a tu ciudad.',
@@ -64,7 +70,10 @@ export const redContent = {
     orgHref: 'mailto:hola@aisafety.es?subject=I%20want%20to%20add%20my%20organization%20to%20the%20iaS%20Network&body=Hi%2C%0A%0AI%20would%20like%20to%20add%20my%20organization%20to%20the%20iaS%20Network.%0A%0AOrganization%20name%3A%20%0AWebsite%3A%20%0ACity%20and%20country%3A%20%0AContact%20person%3A%20%0AWhat%20does%20it%20do%3F%3A%20',
     directoryButton: 'Join the directory',
     directoryTitle: 'Join the network directory',
-    directoryText: "Share your profile and find people to collaborate with. If you make it public, you'll be able to see other people's public profiles.",
+    directoryText: 'Share your profile and find people to collaborate with. If you make it public, you will appear in the directory on this page.',
+    membersTitle: 'People in the network',
+    membersText: 'Those who have made their profile public in the network directory. Search by country, area or what you need, and write to them.',
+    membersFrameTitle: 'iaS Network people directory',
     directoryNote: 'Airtable form. Opens in a new tab.',
     joinTitle: 'No node in your city?',
     joinText: 'Bring iaS to your city.',

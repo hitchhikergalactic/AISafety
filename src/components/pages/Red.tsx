@@ -5,7 +5,8 @@ import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { GrupoHubs, MapaEspanol } from '@components/RedHubs';
 import { translations } from '@locales/translations';
-import { redContent, directorioFormUrl } from '@data/red';
+import EmbedAlPulsar from '@components/EmbedAlPulsar';
+import { redContent, directorioFormUrl, directorioEmbedUrl } from '@data/red';
 import { parseText } from '@utils/parseText';
 
 type Language = 'es' | 'en';
@@ -73,6 +74,21 @@ const Red: React.FC<RedProps> = ({ lang }) => {
               <GrupoHubs grupo={grupo} />
             </section>
           ))}
+
+          {/* Directorio público de personas (vista compartida de Airtable). Se carga al pulsar: Airtable guarda cookies. */}
+          <section className="mt-16 md:mt-28">
+            <div className="mx-auto max-w-xl text-center mb-4 md:mb-6">
+              <h2 className="!text-2xl md:!text-3xl !leading-tight mb-3 text-balance">{content.membersTitle}</h2>
+              <p className="text-balance">{content.membersText}</p>
+            </div>
+            <EmbedAlPulsar
+              lang={lang}
+              proveedor="airtable"
+              src={directorioEmbedUrl}
+              title={content.membersFrameTitle}
+              className="h-[533px] md:h-[640px] rounded-anthro border border-secundarios-dark/15 dark:border-white/10 bg-white/30 dark:bg-white/5 overflow-hidden"
+            />
+          </section>
 
           {/* Cierre: tres formas de entrar en la red, diferenciadas por quién eres. Personas → directorio (acción principal);
               organizaciones → pedir que las añadamos; si no hay nodo cerca → crear una delegación */}

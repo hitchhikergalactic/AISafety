@@ -3,7 +3,7 @@ title: "Cookie policy"
 description: "What aisafety.es stores on your device, which third-party content it loads and how you decide."
 ---
 
-Effective date: 28 September 2026 · Last updated: 28 September 2026
+Effective date: 28 September 2026 · Last updated: 24 October 2026
 
 ## 1. What cookies are
 
@@ -15,7 +15,7 @@ This website does not use advertising or tracking cookies, which is why we do no
 
 ## 3. Third-party content
 
-Some forms or events open in external services, such as Jotform or Luma, which may use their own cookies when you access them; in that case, those services' policies apply.
+Some forms or events open in external services, such as Jotform or Luma, which may use their own cookies when you access them; in that case, those services' policies apply. YouTube videos, the Luma calendar and the iaS Network directory (Airtable) only load if you press the button to show them.
 
 ## 4. How to manage cookies
 
