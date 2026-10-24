@@ -15,6 +15,9 @@ import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
 import fotoSorteo from '../../assets/madrid/primer-evento-sorteo.webp';
 import fotoGrupo from '../../assets/madrid/primer-evento-grupo.webp';
 import codemeetCharla from '../../assets/madrid/codemeet-charla.webp';
+import codemeetGobernanza from '../../assets/madrid/codemeet-gobernanza.webp';
+import codemeetSala from '../../assets/madrid/codemeet-sala.webp';
+import codemeetSonrisa from '../../assets/madrid/codemeet-sonrisa.webp';
 import drupalcampKeynote from '../../assets/madrid/drupalcamp-keynote.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
@@ -79,6 +82,13 @@ const fotosPrimerEvento = [
 const imagenesEventosExternos = {
   drupalcamp: drupalcampKeynote,
   codemeet: codemeetCharla,
+} as const;
+
+// Miniaturas de la charla de iaS en el #CodeMeet; los pies están en los textos de la página.
+const miniaturasCodemeet = {
+  gobernanza: codemeetGobernanza,
+  sala: codemeetSala,
+  sonrisa: codemeetSonrisa,
 } as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
@@ -387,6 +397,23 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                     <span className="block font-sans text-xl font-bold text-secundarios-dark dark:text-secundarios-light">{evento.name}</span>
                     <span className="block mt-1 mb-3 font-sans text-sm font-semibold text-principal-texto">{evento.meta}</span>
                     <span className="block mb-5 font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{evento.text}</span>
+                    {'gallery' in evento && (
+                      <ul className="grid grid-cols-3 gap-2 mb-5">
+                        {(Object.keys(evento.gallery) as (keyof typeof miniaturasCodemeet)[]).map((foto) => (
+                          <li key={foto}>
+                            <img
+                              src={miniaturasCodemeet[foto].src}
+                              width={miniaturasCodemeet[foto].width}
+                              height={miniaturasCodemeet[foto].height}
+                              alt={evento.gallery[foto]}
+                              title={evento.gallery[foto]}
+                              loading="lazy"
+                              className="w-full aspect-[3/2] object-cover rounded-anthro"
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     {'href' in evento && (
                       <a href={evento.href} target="_blank" rel="noopener noreferrer" className={`${secondaryButton} mt-auto self-start gap-2`}>
                         {evento.linkLabel}

@@ -117,7 +117,7 @@ export const delegacionValenciaContent = {
     eventsArchiveLabel: 'Ver archivo completo',
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
     programsTitle: 'Programas',
-    programsIntro: 'Formación y recursos de seguridad de la IA en español.',
+    programsIntro: 'Formación y recursos de seguridad de la IA en castellano.',
     programCtaLabel: 'Más información',
     libraryTitle: 'Biblioteca abierta',
     aboutTitle: 'Sobre nosotros',
@@ -164,6 +164,10 @@ export const delegacionValenciaContent = {
 
 // Página de la sede. Comparte estructura con la de Valencia y añade la red y el equipo,
 // que solo tienen sentido en la sede.
+// Álbum público de fotos del #CodeMeet Madrid (17/09/2026).
+export const codemeetAlbumUrl =
+  'https://photos.google.com/share/AF1QipNIISZBYYthJcuYwvC5OpUOF4SUsIGfqSQaJQeNcEqYueSPs2IpT40QCV8FOTHw8g?key=WWtzQ1ZuR3JwMi1wNFp2WFVRZEd1Z2c5cEw4b1d3';
+
 export const delegacionMadridContent = {
   es: {
     eyebrow: 'Sede de iaS · Madrid, España',
@@ -235,11 +239,19 @@ export const delegacionMadridContent = {
         meta: '17 de septiembre de 2026 · Celonis, Madrid',
         text: 'Osmani Redondo ha dado la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA».',
         imageAlt: 'Osmani Redondo, de pie junto a la pantalla, durante su charla sobre agentes de IA en el #CodeMeet Madrid.',
+        // Solo fotos de la charla de iaS; el resto del evento queda en el álbum enlazado.
+        gallery: {
+          gobernanza: 'Osmani Redondo ante la diapositiva «Sin gobernanza / Con gobernanza».',
+          sala: 'Osmani Redondo habla a la sala del #CodeMeet en Celonis.',
+          sonrisa: 'Osmani Redondo durante la charla en el #CodeMeet Madrid.',
+        },
+        linkLabel: 'Ver el álbum del #CodeMeet',
+        href: codemeetAlbumUrl,
       },
     ],
     programsTitle: 'Programas',
     programsIntro:
-      'Formación y recursos de seguridad de la IA en español. La primera cohorte del AGI Strategy Course será en línea.',
+      'Formación y recursos de seguridad de la IA en castellano, con la primera cohorte del AGI Strategy Course en línea.',
     programCtaLabel: 'Más información',
     libraryTitle: 'Biblioteca abierta',
     teamTitle: 'El equipo de la sede',
@@ -318,11 +330,18 @@ export const delegacionMadridContent = {
         meta: '17 September 2026 · Celonis, Madrid',
         text: 'Osmani Redondo has given the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI).',
         imageAlt: 'Osmani Redondo, standing next to the screen, during her talk on AI agents at #CodeMeet Madrid.',
+        gallery: {
+          gobernanza: 'Osmani Redondo in front of the “Sin gobernanza / Con gobernanza” (Without / With governance) slide.',
+          sala: 'Osmani Redondo speaks to the #CodeMeet audience at Celonis.',
+          sonrisa: 'Osmani Redondo during the talk at #CodeMeet Madrid.',
+        },
+        linkLabel: 'See the #CodeMeet album',
+        href: codemeetAlbumUrl,
       },
     ],
     programsTitle: 'Programs',
     programsIntro:
-      'AI safety training and resources in Spanish. The first cohort of the AGI Strategy Course will be online.',
+      'AI safety training and resources in Spanish, with the first cohort of the AGI Strategy Course online.',
     programCtaLabel: 'Learn more',
     libraryTitle: 'Open library',
     teamTitle: 'The headquarters team',
