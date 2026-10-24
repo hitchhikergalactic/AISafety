@@ -14,6 +14,10 @@ import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
 import fotoGuillem from '../../assets/madrid/primer-evento-guillem.webp';
 import fotoSorteo from '../../assets/madrid/primer-evento-sorteo.webp';
 import fotoGrupo from '../../assets/madrid/primer-evento-grupo.webp';
+import codemeetAgentes from '../../assets/madrid/codemeet-agentes.webp';
+import codemeetGobernanza from '../../assets/madrid/codemeet-gobernanza.webp';
+import codemeetPublico from '../../assets/madrid/codemeet-publico.webp';
+import codemeetGrupo from '../../assets/madrid/codemeet-grupo.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
@@ -71,6 +75,14 @@ const fotosPrimerEvento = [
   { id: 'david', img: fotoDavid },
   { id: 'guillem', img: fotoGuillem },
   { id: 'sorteo', img: fotoSorteo },
+] as const;
+
+// Fotos del #CodeMeet Madrid (17/09/2026, Celonis), sacadas del álbum público de Codemotion España. Pies en los textos de la página.
+const fotosCodemeet = [
+  { id: 'agentes', img: codemeetAgentes },
+  { id: 'gobernanza', img: codemeetGobernanza },
+  { id: 'publico', img: codemeetPublico },
+  { id: 'grupo', img: codemeetGrupo },
 ] as const;
 
 const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
@@ -349,6 +361,53 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                 {content.galleryPhotos.grupo}
               </figcaption>
             </figure>
+          </div>
+
+          {/* Dónde nos has visto: eventos de otras organizaciones, separados de los nuestros. Los próximos van primero. */}
+          <div className="mt-20 md:mt-28 text-center">
+            <h4 className="!mb-2 text-secundarios-dark dark:text-secundarios-light">{content.elsewhereTitle}</h4>
+            <p className="max-w-2xl mx-auto mb-8 text-lg md:text-xl text-secundarios-dark dark:text-secundarios-light">{content.elsewhereIntro}</p>
+            <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 text-left">
+              {content.elsewhereEvents.map(({ id, upcoming, name, meta, text, linkLabel, href }) => (
+                <li key={id} className={`${card} flex flex-col p-6`}>
+                  <span
+                    className={`self-start mb-3 rounded-full px-3 py-1 font-sans text-xs font-bold uppercase tracking-widest ${
+                      upcoming
+                        ? 'bg-principal text-white'
+                        : 'border border-secundarios-dark/20 dark:border-secundarios-light/30 text-secundarios-dark dark:text-secundarios-light'
+                    }`}
+                  >
+                    {upcoming ? content.elsewhereUpcomingLabel : content.elsewherePastLabel}
+                  </span>
+                  <span className="block font-sans text-xl font-bold text-secundarios-dark dark:text-secundarios-light">{name}</span>
+                  <span className="block mt-1 mb-3 font-sans text-sm font-semibold text-principal-texto">{meta}</span>
+                  <span className="block mb-5 font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{text}</span>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={`${secondaryButton} mt-auto self-start gap-2`}>
+                    {linkLabel}
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10 text-left">
+              {fotosCodemeet.map(({ id, img }) => (
+                <li key={id}>
+                  <figure>
+                    <img
+                      src={img.src}
+                      width={img.width}
+                      height={img.height}
+                      alt={content.codemeetPhotos[id]}
+                      loading="lazy"
+                      className="w-full h-auto rounded-anthro shadow-anthro-subtle"
+                    />
+                    <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark dark:text-secundarios-light">
+                      {content.codemeetPhotos[id]}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

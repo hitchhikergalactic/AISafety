@@ -164,6 +164,10 @@ export const delegacionValenciaContent = {
 
 // Página de la sede. Comparte estructura con la de Valencia y añade la red y el equipo,
 // que solo tienen sentido en la sede.
+// Álbum público de fotos del #CodeMeet Madrid (17/09/2026), compartido por Codemotion España.
+export const codemeetAlbumUrl =
+  'https://photos.google.com/share/AF1QipNIISZBYYthJcuYwvC5OpUOF4SUsIGfqSQaJQeNcEqYueSPs2IpT40QCV8FOTHw8g?key=WWtzQ1ZuR3JwMi1wNFp2WFVRZEd1Z2c5cEw4b1d3';
+
 export const delegacionMadridContent = {
   es: {
     eyebrow: 'Sede de iaS · Madrid, España',
@@ -211,6 +215,37 @@ export const delegacionMadridContent = {
       guillem: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales: «Riesgos en el radar: señales tempranas desde la evidencia».',
       sorteo: 'Sorteo de «Si alguien la crea, todos moriremos», de Eliezer Yudkowsky y Nate Soares, cortesía de Editorial Destino (Grupo Planeta).',
       grupo: 'Foto de grupo a la salida de Celonis, al terminar el encuentro.',
+    },
+    // Eventos de otras organizaciones en los que participa iaS: van aparte de los nuestros para no dar a entender que los organizamos.
+    elsewhereTitle: 'Dónde nos has visto',
+    elsewhereIntro: 'Eventos de otras organizaciones en los que participa iaS.',
+    elsewhereUpcomingLabel: 'Próximamente',
+    elsewherePastLabel: 'Ya celebrado',
+    elsewhereEvents: [
+      {
+        id: 'drupalcamp',
+        upcoming: true,
+        name: 'DrupalCamp Spain 2026',
+        meta: '19–21 de noviembre de 2026 · Talent Garden, Madrid',
+        text: 'Osmani Redondo, directora de iaS, es una de las ponentes.',
+        linkLabel: 'Ver la ponente',
+        href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
+      },
+      {
+        id: 'codemeet',
+        upcoming: false,
+        name: '#CodeMeet Madrid',
+        meta: '17 de septiembre de 2026 · Celonis, Madrid',
+        text: 'Osmani Redondo dio la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA», en el encuentro de Codemotion España.',
+        linkLabel: 'Ver todas las fotos',
+        href: codemeetAlbumUrl,
+      },
+    ],
+    codemeetPhotos: {
+      agentes: 'Osmani Redondo plantea la pregunta que falta sobre los agentes de IA.',
+      gobernanza: 'Sin gobernanza y con gobernanza: lo que cambia para quien despliega agentes.',
+      publico: 'El público del #CodeMeet en Celonis.',
+      grupo: 'Foto de grupo al terminar el #CodeMeet.',
     },
     programsTitle: 'Programas',
     programsIntro:
@@ -270,6 +305,36 @@ export const delegacionMadridContent = {
       guillem: 'Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales: “Riesgos en el radar” (Risks on the radar: early signals from the evidence).',
       sorteo: 'Raffle of «Si alguien la crea, todos moriremos» (If Anyone Builds It, Everyone Dies), by Eliezer Yudkowsky and Nate Soares, courtesy of Editorial Destino (Grupo Planeta).',
       grupo: 'Group photo outside Celonis after the event.',
+    },
+    elsewhereTitle: 'Where you have seen us',
+    elsewhereIntro: 'Events run by other organisations where iaS takes part.',
+    elsewhereUpcomingLabel: 'Coming up',
+    elsewherePastLabel: 'Past event',
+    elsewhereEvents: [
+      {
+        id: 'drupalcamp',
+        upcoming: true,
+        name: 'DrupalCamp Spain 2026',
+        meta: '19–21 November 2026 · Talent Garden, Madrid',
+        text: 'Osmani Redondo, director of iaS, is one of the speakers.',
+        linkLabel: 'See the speaker',
+        href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
+      },
+      {
+        id: 'codemeet',
+        upcoming: false,
+        name: '#CodeMeet Madrid',
+        meta: '17 September 2026 · Celonis, Madrid',
+        text: 'Osmani Redondo gave the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI) at the Codemotion Spain meetup.',
+        linkLabel: 'See all the photos',
+        href: codemeetAlbumUrl,
+      },
+    ],
+    codemeetPhotos: {
+      agentes: 'Osmani Redondo raises the missing question about AI agents.',
+      gobernanza: 'Without governance and with governance: what changes for whoever deploys agents.',
+      publico: 'The #CodeMeet audience at Celonis.',
+      grupo: 'Group photo at the end of the #CodeMeet.',
     },
     programsTitle: 'Programs',
     programsIntro:
