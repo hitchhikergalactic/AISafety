@@ -164,10 +164,6 @@ export const delegacionValenciaContent = {
 
 // Página de la sede. Comparte estructura con la de Valencia y añade la red y el equipo,
 // que solo tienen sentido en la sede.
-// Álbum público de fotos del #CodeMeet Madrid (17/09/2026), compartido por Codemotion España.
-export const codemeetAlbumUrl =
-  'https://photos.google.com/share/AF1QipNIISZBYYthJcuYwvC5OpUOF4SUsIGfqSQaJQeNcEqYueSPs2IpT40QCV8FOTHw8g?key=WWtzQ1ZuR3JwMi1wNFp2WFVRZEd1Z2c5cEw4b1d3';
-
 export const delegacionMadridContent = {
   es: {
     eyebrow: 'Sede de iaS · Madrid, España',
@@ -228,6 +224,7 @@ export const delegacionMadridContent = {
         name: 'DrupalCamp Spain 2026',
         meta: '20 de noviembre de 2026 · Talent Garden, Madrid',
         text: 'Osmani Redondo, directora de iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
+        imageAlt: 'Cartel de la keynote de Osmani Redondo, directora de iaS, en DrupalCamp Spain 2026.',
         linkLabel: 'Ver la ponente',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
       },
@@ -236,17 +233,10 @@ export const delegacionMadridContent = {
         upcoming: false,
         name: '#CodeMeet Madrid',
         meta: '17 de septiembre de 2026 · Celonis, Madrid',
-        text: 'Osmani Redondo dio la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA», en el encuentro de Codemotion España.',
-        linkLabel: 'Ver todas las fotos',
-        href: codemeetAlbumUrl,
+        text: 'Osmani Redondo ha dado la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA».',
+        imageAlt: 'Osmani Redondo, de pie junto a la pantalla, durante su charla sobre agentes de IA en el #CodeMeet Madrid.',
       },
     ],
-    codemeetPhotos: {
-      agentes: 'Osmani Redondo plantea la pregunta que falta sobre los agentes de IA.',
-      gobernanza: 'Sin gobernanza y con gobernanza: lo que cambia para quien despliega agentes.',
-      publico: 'El público del #CodeMeet en Celonis.',
-      grupo: 'Foto de grupo al terminar el #CodeMeet.',
-    },
     programsTitle: 'Programas',
     programsIntro:
       'Formación y recursos de seguridad de la IA en español. La primera cohorte del AGI Strategy Course será en línea.',
@@ -317,6 +307,7 @@ export const delegacionMadridContent = {
         name: 'DrupalCamp Spain 2026',
         meta: '20 November 2026 · Talent Garden, Madrid',
         text: 'Osmani Redondo, director of iaS, gives the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
+        imageAlt: 'Poster for the keynote by Osmani Redondo, director of iaS, at DrupalCamp Spain 2026.',
         linkLabel: 'See the speaker',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
       },
@@ -325,17 +316,10 @@ export const delegacionMadridContent = {
         upcoming: false,
         name: '#CodeMeet Madrid',
         meta: '17 September 2026 · Celonis, Madrid',
-        text: 'Osmani Redondo gave the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI) at the Codemotion Spain meetup.',
-        linkLabel: 'See all the photos',
-        href: codemeetAlbumUrl,
+        text: 'Osmani Redondo has given the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI).',
+        imageAlt: 'Osmani Redondo, standing next to the screen, during her talk on AI agents at #CodeMeet Madrid.',
       },
     ],
-    codemeetPhotos: {
-      agentes: 'Osmani Redondo raises the missing question about AI agents.',
-      gobernanza: 'Without governance and with governance: what changes for whoever deploys agents.',
-      publico: 'The #CodeMeet audience at Celonis.',
-      grupo: 'Group photo at the end of the #CodeMeet.',
-    },
     programsTitle: 'Programs',
     programsIntro:
       'AI safety training and resources in Spanish. The first cohort of the AGI Strategy Course will be online.',
