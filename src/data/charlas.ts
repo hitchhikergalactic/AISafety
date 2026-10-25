@@ -416,7 +416,7 @@ export const listaDeCharlas: Charla[] = [
       imagen: "",
       bioEs: "Comunicador e investigador en seguridad de la IA, trabaja actualmente en el **Machine Intelligence Research Institute (MIRI)**, forma parte del **Digital Media Accelerator** del **Future of Life Institute** e investiga mecanismos de verificación de la IA en **MARS V**. Comparte además contenido educativo sobre seguridad de la IA en español en redes sociales como **@eltechbro**, con más de **4 millones de visualizaciones** y más de **15 000 seguidores**.",
       bioEn: "An AI safety communicator and researcher, he currently works at the **Machine Intelligence Research Institute (MIRI)**, is part of the **Future of Life Institute**'s **Digital Media Accelerator** and researches AI verification mechanisms at **MARS V**. He also shares educational content on AI safety in Spanish on social media as **@eltechbro**, with more than **4 million views** and over **15,000 followers**.",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/tobias-martin/",
       email: "",
       web: "https://www.instagram.com/eltechbro/",
     },
