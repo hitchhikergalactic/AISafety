@@ -77,9 +77,33 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
           />
         </section>
 
-        {/* Espacio reservado para secciones inferiores (CTA / Newsletter) */}
-        <section className="mb-12 md:mb-16 py-12 text-center">
-          {/* Newsletter CTA opcional */}
+        {/* Cierre: suscribirse al calendario de Luma o a la newsletter */}
+        <section className="max-w-2xl mx-auto mb-16 md:mb-24 text-center">
+          <h2 className="font-sans font-bold text-2xl md:text-3xl text-secundarios-dark dark:text-secundarios-light mb-3">
+            {lang === 'es' ? 'No te pierdas la próxima charla' : "Don't miss the next talk"}
+          </h2>
+          <p className="text-lg text-secundarios-dark/80 dark:text-secundarios-light/80 mb-8">
+            {lang === 'es'
+              ? 'Suscríbete al calendario de Luma para recibir cada sesión del seminario, o a nuestra newsletter para estar al día de todo lo que hace iaS.'
+              : 'Subscribe to our Luma calendar to get every seminar session, or to our newsletter to keep up with everything iaS does.'}
+          </p>
+          <div className="flex flex-col md:flex-row gap-4">
+            <a
+              href="https://luma.com/iaS-SeguridadelaIA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 py-4 text-[1.1875rem] rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+            >
+              {lang === 'es' ? 'Suscribirme al calendario' : 'Subscribe to the calendar'}
+            </a>
+            <button
+              type="button"
+              onClick={openModal}
+              className="flex-1 py-4 text-[1.1875rem] rounded-2xl border-2 border-principal bg-transparent text-principal-texto font-bold hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+            >
+              {lang === 'es' ? 'Suscribirme a la newsletter' : 'Subscribe to the newsletter'}
+            </button>
+          </div>
         </section>
       </div>
 
