@@ -418,7 +418,7 @@ export const listaDeCharlas: Charla[] = [
       bioEn: "An AI safety communicator and researcher, he currently works at the **Machine Intelligence Research Institute (MIRI)**, is part of the **Future of Life Institute**'s **Digital Media Accelerator** and researches AI verification mechanisms at **MARS V**. He also shares educational content on AI safety in Spanish on social media as **@eltechbro**, with more than **4 million views** and over **15,000 followers**.",
       linkedin: "https://www.linkedin.com/in/tobias-martin/",
       email: "",
-      web: "https://www.instagram.com/eltechbro/",
+      web: "https://tobiasmart.com/",
     },
   },
 ];
