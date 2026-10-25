@@ -402,7 +402,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Tobias Martin, comunicador e investigador en el MIRI, explica cómo encontrar y crear oportunidades en seguridad de la IA siendo hispanohablante, en un campo tan nuevo que todavía está lleno de huecos por cubrir.",
     descripcionCortaEn: "Tobias Martin, communicator and researcher at MIRI, explains how to find and create opportunities in AI safety as a Spanish speaker, in a field so new that it is still full of gaps to fill.",
     imagen: "/seminario_disertantes/Tobias_Martin.jpg",
-    videoYoutube: "",
+    videoYoutube: "https://youtu.be/Rp4nRPE_rHw",
     fecha: "2026-10-07",
     tagsEs: ["Carrera", "Fieldbuilding", "Divulgación", "Hispanohablantes", "Oportunidades"],
     tagsEn: ["Career", "Fieldbuilding", "Science Communication", "Spanish Speakers", "Opportunities"],
