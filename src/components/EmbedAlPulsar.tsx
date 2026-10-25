@@ -13,12 +13,14 @@ interface EmbedAlPulsarProps {
   // Solo YouTube: imagen de fondo del botón
   miniatura?: string;
   allow?: string;
+  // Luma y Airtable: fondo decorativo detrás del botón (p. ej. un esbozo difuminado del directorio), para que la caja no se vea vacía
+  previa?: React.ReactNode;
 }
 
 // Contenido de terceros (vídeo de YouTube, calendario de Luma, directorio de Airtable) que no se descarga hasta que la persona pulsa.
 // Antes de pulsar, se avisa de que el tercero guardará datos en el dispositivo (Guía de cookies de la AEPD, 3.2.3 d):
 // así no hace falta banner. El aviso enlaza a la política de cookies.
-const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, title, className = '', miniatura, allow }) => {
+const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, title, className = '', miniatura, allow, previa }) => {
   const [cargado, setCargado] = useState(false);
   const textos = embedsAlPulsar[proveedor][lang];
   const langPrefix = lang === 'es' ? '' : '/en';
@@ -57,10 +59,15 @@ const EmbedAlPulsar: React.FC<EmbedAlPulsarProps> = ({ lang, proveedor, src, tit
           </button>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center p-6">
+            {previa && (
+              <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+                {previa}
+              </div>
+            )}
             <button
               type="button"
               onClick={() => setCargado(true)}
-              className="inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-[1.1875rem] text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
+              className="relative inline-flex items-center justify-center rounded-xl bg-principal px-8 py-4 text-[1.1875rem] text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
             >
               {textos.boton}
             </button>
