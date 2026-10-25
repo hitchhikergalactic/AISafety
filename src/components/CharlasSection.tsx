@@ -1,6 +1,6 @@
 import React from 'react';
 import EmbedAlPulsar from '@components/EmbedAlPulsar';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { LuMail, LuGlobe } from 'react-icons/lu';
 import { listaDeCharlas } from '@data/charlas';
 import type { Charla } from '@data/charlas';
@@ -88,6 +88,17 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin />
+                </a>
+              )}
+              {expositor.instagram && (
+                <a
+                  href={expositor.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-principal transition-colors"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
                 </a>
               )}
               {expositor.email.length > 0 && (
