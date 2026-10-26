@@ -22,6 +22,8 @@ import logoBAISH from '@assets/ponentes/baish.webp';
 import logoMexico from '@assets/ponentes/mexico.webp';
 import logoColombia from '@assets/ponentes/colombia.webp';
 import logoBarcelona from '@assets/ponentes/barcelona.webp';
+import logoCEGIA from '@assets/ponentes/cegia.webp';
+import logoW4AIS from '@assets/ponentes/w4ais.webp';
 import logoDLR from '@assets/ponentes/dlr.webp';
 import logoMPG from '@assets/ponentes/mpg.webp';
 import logoIIT from '@assets/ponentes/iit.webp';
@@ -51,6 +53,8 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'SaferAI', logo: logoSaferAI },
   { nombre: 'Pour Demain', logo: logoPourDemain },
   { nombre: 'BlueDot Impact', logo: logoBlueDot, enPortada: false },
+  // El club no tiene logo propio: usa el de BlueDot
+  { nombre: 'AI Governance Club (BlueDot)', logo: logoBlueDot, enPortada: false },
   { nombre: 'Cambridge AI Safety Hub', logo: logoCAISH },
   { nombre: 'ML4Good', logo: logoML4G },
   { nombre: 'Kairos', logo: logoKairos },
@@ -61,6 +65,8 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'AI Safety México', logo: logoMexico, enPortada: false },
   { nombre: 'AI Safety Colombia', logo: logoColombia, enPortada: false },
   { nombre: 'AI Safety Barcelona', logo: logoBarcelona },
+  { nombre: 'CEGIA', logo: logoCEGIA, enPortada: false },
+  { nombre: 'Women4AISafety', logo: logoW4AIS, enPortada: false },
   { nombre: 'DLR', logo: logoDLR },
   { nombre: 'Max Planck', logo: logoMPG },
   { nombre: 'IIT', logo: logoIIT },
