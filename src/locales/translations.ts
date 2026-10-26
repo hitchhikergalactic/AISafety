@@ -52,7 +52,7 @@ export const translations = {
       bluedot: {
         tag: "/ FORMACIÓN",
         title: "Seminario de seguridad de la IA",
-        description:"Junto a **BlueDot Impact** realizamos seminarios mensuales de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
+        description:"Junto a **BlueDot Impact** realizamos seminarios de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes",
         details: [
           { label: "Duración", value: "1 h" },
@@ -201,7 +201,7 @@ export const translations = {
       bluedot: {
         tag: "/ TRAINING",
         title: "AI safety seminar",
-        description: "Together with **BlueDot Impact**, we run monthly AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
+        description: "Together with **BlueDot Impact**, we run AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month",
         details: [
           { label: "Duration", value: "1 h" },
