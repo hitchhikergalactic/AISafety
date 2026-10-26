@@ -121,6 +121,22 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             </p>
           </section>
 
+          {/* Webinar de OdiseIA: explica por qué el español necesita su propia evidencia de seguridad */}
+          <section className="mb-20 md:mb-16">
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light">
+              {content.webinarText}
+            </p>
+            <EmbedAlPulsar
+              lang={lang}
+              proveedor="youtube"
+              src="https://www.youtube-nocookie.com/embed/fZrwGtaS2zA?rel=0&modestbranding=1"
+              title={lang === 'es' ? 'Webinar de OdiseIA: ¿«Piensa» la IA igual en español que en inglés?' : 'OdiseIA webinar: Does AI "think" the same way in Spanish as in English?'}
+              miniatura="https://img.youtube.com/vi/fZrwGtaS2zA/maxresdefault.jpg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="w-full aspect-video rounded-md overflow-hidden"
+            />
+          </section>
+
           {/* Video Section */}
           <section className="mb-20 md:mb-16">
             <EmbedAlPulsar
