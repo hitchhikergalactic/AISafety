@@ -392,9 +392,10 @@ export const madridContactEmail = 'ias.madrid@aisafety.es';
 
 export const discordInviteUrl = 'https://discord.gg/gm6v9Cwa58';
 
-// Formulario de la red en Airtable. Cada página preselecciona su opción del campo «Sede o delegación»
-// (desplegable: «Madrid», «Valencia»); el nombre del campo y la opción tienen que coincidir exactamente con Airtable.
-const joinFormBaseUrl = 'https://airtable.com/appjg7pwM6YVmobZ6/pag9cKugiX3fC5pK0/form';
+// Formulario de la red en Airtable (REDiaS, el mismo que `directorioFormUrl` en red.ts). Cada página preselecciona
+// su opción del campo «Sede o delegación» (desplegable: «Madrid», «Valencia»); el nombre del campo y la opción
+// tienen que coincidir exactamente con Airtable.
+const joinFormBaseUrl = 'https://airtable.com/appjg7pwM6YVmobZ6/pagaXjWme216UK4rV/form';
 const joinFormUrlFor = (sedeODelegacion: string) =>
   `${joinFormBaseUrl}?prefill_${encodeURIComponent('Sede o delegación')}=${encodeURIComponent(sedeODelegacion)}`;
 
