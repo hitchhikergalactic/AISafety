@@ -510,5 +510,28 @@ h5 {
   95%, 100% { transform: translateX(0); }
 }
 
+/* Franja de logos de los ponentes (Seminario y portada): cinta continua sin fin. La lista va dos veces
+   seguida, así que desplazar la pista la mitad de su ancho la deja igual que al empezar. Se para al pasar
+   el ratón y con el botón «Pausar logos»; la duración la fija el componente según el número de logos. */
+.franja-logos {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.franja-logos-pista {
+  display: flex;
+  width: max-content;
+  animation: franja-logos var(--franja-duracion, 80s) linear infinite;
+}
+
+.franja-logos:hover .franja-logos-pista,
+.franja-logos.is-paused .franja-logos-pista {
+  animation-play-state: paused;
+}
+
+@keyframes franja-logos {
+  to { transform: translateX(-50%); }
+}
+
 /* La cinta se mueve también con «reducir movimiento» activado (decisión de iaS): es un desplazamiento lento
    y el botón «Pausar fotos» permite pararla. */
