@@ -25,7 +25,7 @@ export const translations = {
       text4: 'iaS nace para ser ese nodo.',
       impactFigures: {
         title: "Cifras que impactan",
-        item1: { target: 12, prefix: '', suffix: '', animate: true as const },
+        item1: { target: 17, prefix: '', suffix: '', animate: true as const },
         item1_1: "sesiones mensuales de seguridad de la IA en español celebradas desde febrero de 2026",
         item2: { target: 1000, prefix: '+', suffix: '', animate: true as const },
         item2_1: "personas se han inscrito en nuestras sesiones mensuales",
@@ -174,7 +174,7 @@ export const translations = {
         text4: "iaS was born to be that node.",
     impactFigures: {
         title: "Impact Figures",
-        item1: { target: 12, prefix: '', suffix: '', animate: true as const },
+        item1: { target: 17, prefix: '', suffix: '', animate: true as const },
         item1_1: "monthly AI safety sessions in Spanish held since February 2026",
         item2: { target: 1000, prefix: '+', suffix: '', animate: true as const },
         item2_1: "people have registered for our monthly sessions",
