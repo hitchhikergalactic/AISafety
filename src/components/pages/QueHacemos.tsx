@@ -124,7 +124,7 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
           {/* Webinar de OdiseIA: explica por qué el español necesita su propia evidencia de seguridad */}
           <section className="mb-20 md:mb-16">
             <p className="text-small text-secundarios-dark dark:text-secundarios-light">
-              {content.webinarText}
+              {parseText(content.webinarText)}
             </p>
             <EmbedAlPulsar
               lang={lang}

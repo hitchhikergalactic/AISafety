@@ -234,7 +234,7 @@ export const delegacionMadridContent = {
     ],
     galleryPhotos: {
       publico: 'El público en Celonis, durante la presentación del encuentro.',
-      bluedot: 'Osmani Redondo, que dirige iaS, presenta el encuentro, organizado con BlueDot Impact.',
+      bluedot: '**Osmani Redondo**, que dirige iaS, presenta el encuentro, organizado con BlueDot Impact.',
       david: 'David Bravo Comas, de AI Safety Barcelona: «Cuidado con lo que deseas: los riesgos de crear algo más inteligente que nosotros».',
       guillem: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales: «Riesgos en el radar: señales tempranas desde la evidencia».',
       sorteo: 'Sorteo de «Si alguien la crea, todos moriremos», de Eliezer Yudkowsky y Nate Soares, cortesía de Editorial Destino (Grupo Planeta).',
@@ -251,7 +251,7 @@ export const delegacionMadridContent = {
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
         meta: '20 de noviembre de 2026 · Talent Garden, Madrid',
-        text: 'Osmani Redondo, que dirige iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
+        text: '**Osmani Redondo**, que dirige iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
         imageAlt: 'Cartel de la keynote de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
         linkLabel: 'Ver la ponente',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
@@ -261,7 +261,7 @@ export const delegacionMadridContent = {
         upcoming: false,
         name: '#CodeMeet Madrid',
         meta: '17 de septiembre de 2026 · Celonis, Madrid',
-        text: 'Osmani Redondo ha dado la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA».',
+        text: '**Osmani Redondo** ha dado la charla «¿Quién controla a los agentes? Seguridad y gobernanza en la era de la IA».',
         imageAlt: 'Osmani Redondo, de pie junto a la pantalla, durante su charla sobre agentes de IA en el #CodeMeet Madrid.',
         // Solo fotos de la charla de iaS; el resto del evento queda en el álbum enlazado.
         gallery: {
@@ -326,7 +326,7 @@ export const delegacionMadridContent = {
     ],
     galleryPhotos: {
       publico: 'The audience at Celonis during the opening of the event.',
-      bluedot: 'Osmani Redondo, director of iaS, opens the event, co-hosted with BlueDot Impact.',
+      bluedot: '**Osmani Redondo**, director of iaS, opens the event, co-hosted with BlueDot Impact.',
       david: 'David Bravo Comas, from AI Safety Barcelona: “Cuidado con lo que deseas” (Be careful what you wish for: the risks of creating something smarter than us).',
       guillem: 'Guillem Bas, from the Observatorio de Riesgos Catastróficos Globales: “Riesgos en el radar” (Risks on the radar: early signals from the evidence).',
       sorteo: 'Raffle of «Si alguien la crea, todos moriremos» (If Anyone Builds It, Everyone Dies), by Eliezer Yudkowsky and Nate Soares, courtesy of Editorial Destino (Grupo Planeta).',
@@ -342,7 +342,7 @@ export const delegacionMadridContent = {
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
         meta: '20 November 2026 · Talent Garden, Madrid',
-        text: 'Osmani Redondo, director of iaS, gives the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
+        text: '**Osmani Redondo**, director of iaS, gives the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
         imageAlt: 'Poster for the keynote by Osmani Redondo, director of iaS, at DrupalCamp Spain 2026.',
         linkLabel: 'See the speaker',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
@@ -352,7 +352,7 @@ export const delegacionMadridContent = {
         upcoming: false,
         name: '#CodeMeet Madrid',
         meta: '17 September 2026 · Celonis, Madrid',
-        text: 'Osmani Redondo has given the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI).',
+        text: '**Osmani Redondo** has given the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI).',
         imageAlt: 'Osmani Redondo, standing next to the screen, during the talk on AI agents at #CodeMeet Madrid.',
         gallery: {
           gobernanza: 'Osmani Redondo in front of the “Sin gobernanza / Con gobernanza” (Without / With governance) slide.',

@@ -60,6 +60,9 @@ const iconCircle =
 const iniciales = (nombre: string) =>
   nombre.split(' ').map((p) => p[0]).slice(0, 2).join('');
 
+// Los pies de foto llevan **negritas** para parseText; el alt tiene que ir sin ellas
+const sinNegritas = (texto: string) => texto.replace(/\*\*/g, '');
+
 // Equipo de la sede: dirección primero y después coordinación, en el orden de /equipo.
 const equipoSede = [
   ...miembrosEquipo.filter((m) => m.grupo === 'direccion'),
@@ -341,12 +344,12 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                         src={img.src}
                         width={img.width}
                         height={img.height}
-                        alt={content.galleryPhotos[id]}
+                        alt={sinNegritas(content.galleryPhotos[id])}
                         loading="lazy"
                         className="h-56 md:h-80 w-auto max-w-none rounded-anthro shadow-anthro-subtle"
                       />
                       <figcaption className="mt-3 font-sans text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
-                        {content.galleryPhotos[id]}
+                        {parseText(content.galleryPhotos[id])}
                       </figcaption>
                     </figure>
                   </li>
@@ -396,7 +399,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                     </span>
                     <span className="block font-sans text-xl font-bold text-secundarios-dark dark:text-secundarios-light">{evento.name}</span>
                     <span className="block mt-1 mb-3 font-sans text-sm font-semibold text-principal-texto">{evento.meta}</span>
-                    <span className="block mb-5 font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{evento.text}</span>
+                    <span className="block mb-5 font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{parseText(evento.text)}</span>
                     {'gallery' in evento && (
                       <ul className="grid grid-cols-3 gap-2 mb-5">
                         {(Object.keys(evento.gallery) as (keyof typeof miniaturasCodemeet)[]).map((foto) => (
