@@ -435,7 +435,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Andrés Lage Freire, especialista en ingeniería de gobernanza de la IA, explica por qué los modelos probabilísticos necesitan límites deterministas cuando pasan de proponer a actuar, con una separación de poderes inspirada en Montesquieu.",
     descripcionCortaEn: "Andrés Lage Freire, an AI governance engineering specialist, explains why probabilistic models need deterministic boundaries once they move from proposing to acting, through a separation of powers inspired by Montesquieu.",
     imagen: "/seminario_disertantes/Andres_Lage.jpg",
-    videoYoutube: "",
+    videoYoutube: "https://youtu.be/rqEzsLkqW5w",
     fecha: "2026-10-21",
     tagsEs: ["Gobernanza de la IA", "IA agéntica", "Runtime assurance", "Red teaming", "Reglamento de IA de la UE"],
     tagsEn: ["AI Governance", "Agentic AI", "Runtime Assurance", "Red Teaming", "EU AI Act"],
