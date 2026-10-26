@@ -32,9 +32,9 @@ export interface EquipoContent {
 export const equipoContent: EquipoContent = {
   es: {
     heroTitle: "Equipo",
-    heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, quien ha pasado la última década desarrollando teorías del cambio, estrategias de impacto, marcos de comunicación, construcción de coaliciones y sistemas de gestión, primero en la práctica clínica de la odontología, después en la gestión cultural y finalmente en la arquitectura técnica de la inteligencia artificial, tras reconvertirse como desarrolladora de software y certificarse como arquitecta cloud profesional para trabajar con AWS y GCP en Telefónica Tech. Ese mismo conjunto de herramientas es el que hoy sostiene su papel como socia de **OdiseIA**, el Observatorio del Impacto Social y Ético de la IA reconocido por la UNESCO, como directora de los únicos seminarios mensuales de **BlueDot Impact** en habla hispana, y como miembro de la **Red de Mentores de Madrid Emprende**",
+    heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, quien ha pasado la última década desarrollando teorías del cambio, estrategias de impacto, marcos de comunicación, construcción de coaliciones y sistemas de gestión, primero en la práctica clínica de la odontología, después en la gestión cultural y finalmente en la arquitectura técnica de la inteligencia artificial, tras reconvertirse al desarrollo de software y obtener la certificación profesional de arquitectura cloud para trabajar con AWS y GCP en Telefónica Tech. Ese mismo conjunto de herramientas es el que hoy sostiene su papel en **OdiseIA**, el Observatorio del Impacto Social y Ético de la IA reconocido por la UNESCO, del que forma parte; en los únicos seminarios mensuales de **BlueDot Impact** en habla hispana, que dirige, y en la **Red de Mentores de Madrid Emprende**",
     bridge: "Y no lo hace sola: la acompaña un equipo de coordinación con una persona responsable de cada área.",
-    governance: "iaS está dirigida por su equipo de coordinación, formado por la directora y las personas responsables de cada área, que toma las decisiones estratégicas, mientras que las delegaciones locales, como iaS Valencia, organizan sus propios eventos, programas y red local dentro del marco común de iaS.",
+    governance: "iaS está dirigida por su equipo de coordinación, formado por quien dirige iaS y las personas responsables de cada área, que toma las decisiones estratégicas, mientras que las delegaciones locales, como iaS Valencia, organizan sus propios eventos, programas y red local dentro del marco común de iaS.",
     joinTitle: "¿Quieres construir el futuro de la seguridad de la IA en español?",
     joinSubtitle: "**iaS** lleva funcionando solo unos meses, y ya sostiene los únicos seminarios mensuales de BlueDot Impact en habla hispana, la puerta de entrada a un campo que en español está casi entero por construir; unirte ahora es levantar esa infraestructura desde la base, no encajar en una ya terminada.",
     joinContribute: "• Si te interesa la **investigación**, puedes comprobar si una evaluación de riesgo de un modelo funciona igual en español que en inglés.\n• Si te interesa lo **institucional**, puedes sentar las bases de un acuerdo con una universidad o un organismo regulador que todavía no sabe cuánto importa la seguridad de la IA en español.\n• Si te interesa la **comunicación**, puedes ser la voz que haga que ese mensaje llegue a miles de personas que hoy no lo encuentran en su idioma.",
@@ -73,7 +73,7 @@ export interface MiembroEquipo {
 export const miembrosEquipo: MiembroEquipo[] = [
   {
     nombre: 'Osmani Redondo',
-    cargo: { es: 'Directora de iaS', en: 'Director of iaS' },
+    cargo: { es: 'Dirige iaS', en: 'Director of iaS' },
     linkedin: 'https://www.linkedin.com/in/osmani/',
     foto: osmaniImg,
     grupo: 'direccion',
