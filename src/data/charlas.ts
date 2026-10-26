@@ -8,6 +8,7 @@ export interface Expositor {
   bioEs: string;
   bioEn: string;
   linkedin: string;
+  instagram?: string;
   email: string;
   web: string;
 }
@@ -402,7 +403,7 @@ export const listaDeCharlas: Charla[] = [
     descripcionCortaEs: "Tobias Martin, comunicador e investigador en el MIRI, explica cómo encontrar y crear oportunidades en seguridad de la IA siendo hispanohablante, en un campo tan nuevo que todavía está lleno de huecos por cubrir.",
     descripcionCortaEn: "Tobias Martin, communicator and researcher at MIRI, explains how to find and create opportunities in AI safety as a Spanish speaker, in a field so new that it is still full of gaps to fill.",
     imagen: "/seminario_disertantes/Tobias_Martin.jpg",
-    videoYoutube: "",
+    videoYoutube: "https://youtu.be/Rp4nRPE_rHw",
     fecha: "2026-10-07",
     tagsEs: ["Carrera", "Fieldbuilding", "Divulgación", "Hispanohablantes", "Oportunidades"],
     tagsEn: ["Career", "Fieldbuilding", "Science Communication", "Spanish Speakers", "Opportunities"],
@@ -414,11 +415,12 @@ export const listaDeCharlas: Charla[] = [
       tituloEs: "**Comunicador e investigador en seguridad de la IA en el Machine Intelligence Research Institute (MIRI)**",
       tituloEn: "**AI Safety Communicator and Researcher at the Machine Intelligence Research Institute (MIRI)**",
       imagen: "",
-      bioEs: "Comunicador e investigador en seguridad de la IA, trabaja actualmente en el **Machine Intelligence Research Institute (MIRI)**, forma parte del **Digital Media Accelerator** del **Future of Life Institute** e investiga mecanismos de verificación de la IA en **MARS V**. Comparte además contenido educativo sobre seguridad de la IA en español en redes sociales como **@eltechbro**, con más de **4 millones de visualizaciones** y más de **15 000 seguidores**.",
-      bioEn: "An AI safety communicator and researcher, he currently works at the **Machine Intelligence Research Institute (MIRI)**, is part of the **Future of Life Institute**'s **Digital Media Accelerator** and researches AI verification mechanisms at **MARS V**. He also shares educational content on AI safety in Spanish on social media as **@eltechbro**, with more than **4 million views** and over **15,000 followers**.",
+      bioEs: "Comunicador e investigador en seguridad de la IA, trabaja actualmente en el **Machine Intelligence Research Institute (MIRI)**, forma parte del **Digital Media Accelerator** del **Future of Life Institute** e investiga mecanismos de verificación de la IA en **MARS V**. Comparte además contenido educativo sobre seguridad de la IA en español en redes sociales como **@eltechbro**, con más de **4 millones de visualizaciones** y más de **18 000 seguidores**.",
+      bioEn: "An AI safety communicator and researcher, he currently works at the **Machine Intelligence Research Institute (MIRI)**, is part of the **Future of Life Institute**'s **Digital Media Accelerator** and researches AI verification mechanisms at **MARS V**. He also shares educational content on AI safety in Spanish on social media as **@eltechbro**, with more than **4 million views** and over **18,000 followers**.",
       linkedin: "https://www.linkedin.com/in/tobias-martin/",
+      instagram: "https://www.instagram.com/eltechbro/",
       email: "",
-      web: "https://www.instagram.com/eltechbro/",
+      web: "https://tobiasmart.com/",
     },
   },
 ];
