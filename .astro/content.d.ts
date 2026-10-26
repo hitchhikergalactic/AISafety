@@ -120,7 +120,31 @@ declare module 'astro:content' {
 		: any;
 
 	type DataEntryMap = {
-		"papers": Record<string, {
+		"avisoLegal": Record<string, {
+  id: string;
+  body?: string;
+  collection: "avisoLegal";
+  data: InferEntrySchema<"avisoLegal">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"cookies": Record<string, {
+  id: string;
+  body?: string;
+  collection: "cookies";
+  data: InferEntrySchema<"cookies">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"mision": Record<string, {
+  id: string;
+  body?: string;
+  collection: "mision";
+  data: InferEntrySchema<"mision">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"papers": Record<string, {
   id: string;
   body?: string;
   collection: "papers";
@@ -133,6 +157,38 @@ declare module 'astro:content' {
   body?: string;
   collection: "papersEn";
   data: InferEntrySchema<"papersEn">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"privacidad": Record<string, {
+  id: string;
+  body?: string;
+  collection: "privacidad";
+  data: InferEntrySchema<"privacidad">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"queEsLaSeguridadDeLaIa": Record<string, {
+  id: string;
+  body?: string;
+  collection: "queEsLaSeguridadDeLaIa";
+  data: InferEntrySchema<"queEsLaSeguridadDeLaIa">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"teoriaDelCambio": Record<string, {
+  id: string;
+  body?: string;
+  collection: "teoriaDelCambio";
+  data: InferEntrySchema<"teoriaDelCambio">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"vision": Record<string, {
+  id: string;
+  body?: string;
+  collection: "vision";
+  data: InferEntrySchema<"vision">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

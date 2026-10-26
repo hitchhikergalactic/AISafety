@@ -58,7 +58,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
       id: 'seminario',
       title: t.seminario.title,
       description: t.upcoming.bluedot.description,
-      href: `${langPrefix}/seminario-bluedot-spain`,
+      href: `${langPrefix}/seminario-bluedot-impact`,
       details: t.upcoming.bluedot.details,
     },
     {

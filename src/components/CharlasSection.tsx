@@ -195,7 +195,7 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
           {otrasCharlas.map((charla) => (
             <div key={charla.id}>
               <a
-                href={`${langPrefix}/seminario-bluedot-spain/${charla.id}`}
+                href={`${langPrefix}/seminario-bluedot-impact/${charla.id}`}
                 className="group text-left flex flex-col justify-between h-full p-6 rounded-md border border-secundarios-gray dark:border-zinc-800 bg-transparent hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 w-full block"
               >
                 <div>

@@ -15,7 +15,7 @@ interface SeminarioHubProps {
 }
 
 /**
- * Página: aisafety.es/seminario-bluedot-spain
+ * Página: aisafety.es/seminario-bluedot-impact
  * Muestra la grilla principal de charlas del seminario con soporte multi-idioma.
  */
 const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
