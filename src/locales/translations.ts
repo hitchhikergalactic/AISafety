@@ -26,9 +26,9 @@ export const translations = {
       impactFigures: {
         title: "Cifras que impactan",
         item1: { target: 17, prefix: '', suffix: '', animate: true as const },
-        item1_1: "sesiones mensuales de seguridad de la IA en español celebradas desde febrero de 2026",
+        item1_1: "sesiones de seguridad de la IA en español celebradas desde febrero de 2026",
         item2: { target: 1000, prefix: '+', suffix: '', animate: true as const },
-        item2_1: "personas se han inscrito en nuestras sesiones mensuales",
+        item2_1: "personas se han inscrito en nuestras sesiones",
         item3: { target: 416, prefix: '', suffix: '', animate: true as const },
         item3_1: "personas han vuelto a nuestras sesiones más de una vez",
         item4: { display: "1er", animate: false as const },
@@ -175,9 +175,9 @@ export const translations = {
     impactFigures: {
         title: "Impact Figures",
         item1: { target: 17, prefix: '', suffix: '', animate: true as const },
-        item1_1: "monthly AI safety sessions in Spanish held since February 2026",
+        item1_1: "AI safety sessions in Spanish held since February 2026",
         item2: { target: 1000, prefix: '+', suffix: '', animate: true as const },
-        item2_1: "people have registered for our monthly sessions",
+        item2_1: "people have registered for our sessions",
         item3: { target: 416, prefix: '', suffix: '', animate: true as const },
         item3_1: "people have returned to our sessions more than once",
         item4: { display: "1st", animate: false as const },
