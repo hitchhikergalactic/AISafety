@@ -106,6 +106,11 @@ export const translations = {
       internationalText: "Redes de otros países que te ponen en contacto con investigadores, profesionales de políticas públicas y gente que acaba de empezar.",
       cta: "Conoce la red",
     },
+    speakersOrgs: {
+      title: "Nuestros ponentes han trabajado o colaborado con",
+      pause: "Pausar logos",
+      play: "Reanudar logos",
+    },
     seminario: {
       title: "Seminario de seguridad de la IA",
       submenu: "Seminario de seguridad de la IA",
@@ -249,6 +254,11 @@ export const translations = {
       international: "Hubs and networks around the world",
       internationalText: "Networks in other countries that connect you with researchers, policy professionals and people who are just getting started.",
       cta: "Explore the network",
+    },
+    speakersOrgs: {
+      title: "Our speakers have worked or collaborated with",
+      pause: "Pause logos",
+      play: "Resume logos",
     },
     women4ais: {
       title: "Women4AIS",

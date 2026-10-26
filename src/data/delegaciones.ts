@@ -116,6 +116,8 @@ export const delegacionValenciaContent = {
     eventsTitle: 'Próximos eventos',
     eventsArchiveLabel: 'Ver archivo completo',
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
+    eventsFeaturedLabel: 'Próximo encuentro',
+    eventsFeaturedCta: 'Inscríbete en Luma',
     programsTitle: 'Programas',
     programsIntro: 'Formación y recursos de seguridad de la IA en castellano.',
     programCtaLabel: 'Más información',
@@ -147,6 +149,8 @@ export const delegacionValenciaContent = {
     eventsTitle: 'Upcoming events',
     eventsArchiveLabel: 'See the full archive',
     eventsContactText: 'Questions about an event? Write to us at',
+    eventsFeaturedLabel: 'Next event',
+    eventsFeaturedCta: 'Register on Luma',
     programsTitle: 'Programs',
     programsIntro: 'AI safety training and resources in Spanish.',
     programCtaLabel: 'Learn more',
@@ -161,6 +165,26 @@ export const delegacionValenciaContent = {
     contactCardTitle: 'Write to us',
   },
 } as const;
+
+// Encuentros de Valencia que se destacan sobre el calendario de Luma (que solo se carga al pulsar).
+// Cada uno deja de mostrarse al terminar (`finaliza`); el calendario sigue listándolos igualmente.
+export const valenciaEventosDestacados = [
+  {
+    id: 'ai-safety-session-upv',
+    href: 'https://luma.com/45832b15',
+    finaliza: '2026-11-12T20:30:00+01:00',
+    es: {
+      title: 'Sesión de seguridad de la IA',
+      meta: '12 de noviembre de 2026 · 19:00–20:30 · Salón de Actos, Edificio 1E, ETSINF (UPV), Camí de Vera, s/n, València',
+      text: 'Alde González, inversor y consultor en ciberseguridad en Plug and Play, y Johanna Angulo, investigadora en seguridad y gobernanza de la IA, hablan de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo, con entrada libre y networking al final.',
+    },
+    en: {
+      title: 'AI Safety Session',
+      meta: '12 November 2026 · 19:00–20:30 · Assembly Hall, Building 1E, ETSINF (UPV), Camí de Vera, s/n, València',
+      text: 'Alde González, cybersecurity investor and consultant at Plug and Play, and Johanna Angulo, AI safety and governance researcher, talk about evals, alignment and mechanistic interpretability and how to build a career in the field, with free entry and networking afterwards.',
+    },
+  },
+];
 
 // Página de la sede. Comparte estructura con la de Valencia y añade la red y el equipo,
 // que solo tienen sentido en la sede.

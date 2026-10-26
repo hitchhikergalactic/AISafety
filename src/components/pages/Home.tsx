@@ -15,6 +15,7 @@ import SocialFooter from '@components/SocialFooter';
 import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
+import FranjaPonentes from '@components/FranjaPonentes';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
@@ -164,6 +165,11 @@ export default function Home({ lang }: HomeProps) {
                         data={t.why.impactFigures} 
                     />
                 )}
+            </Section>
+
+            {/* Organizaciones de nuestros ponentes, sin las que ya salen arriba */}
+            <Section id="ponentes">
+                <FranjaPonentes lang={lang} portada />
             </Section>
 
             {/* 4. EVENTOS - BENTO GRID */}

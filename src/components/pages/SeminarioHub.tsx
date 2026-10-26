@@ -5,6 +5,7 @@ import SeminarioHero from '@components/SeminarioHero';
 import GrillaSeminario from '@components/GrillaSeminario';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
+import FranjaPonentes from '@components/FranjaPonentes';
 import { listaDeCharlas } from '@data/charlas';
 import headerImg from '@assets/header_bluedot_meetup.jpg';
 
@@ -68,6 +69,11 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
             </a>
           </div>
         </div>
+
+        {/* Organizaciones de nuestros ponentes */}
+        <section className="max-w-6xl mx-auto pt-12 md:pt-16">
+          <FranjaPonentes lang={lang} />
+        </section>
 
         {/* Sección de la Grilla pasando el listado de datos real y el idioma activo */}
         <section className="mb-10 md:mb-16">

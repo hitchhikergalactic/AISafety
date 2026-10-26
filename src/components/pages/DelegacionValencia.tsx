@@ -17,6 +17,7 @@ import {
   valenciaJoinFormUrl,
   valenciaContactEmail,
   valenciaLumaCalendarEmbedUrl,
+  valenciaEventosDestacados,
 } from '@data/delegaciones';
 
 type Language = 'es' | 'en';
@@ -43,6 +44,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
   const content = delegacionValenciaContent[lang];
   const t = translations[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
+  const eventosDestacados = valenciaEventosDestacados.filter((e) => new Date(e.finaliza) > new Date());
 
   const anchors = [
     { id: 'eventos', label: content.anchors.eventos },
@@ -146,6 +148,18 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
           <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-8 md:gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
             <div className="text-center md:text-left">
               <h3 className={sectionTitle}>{content.eventsTitle}</h3>
+              {eventosDestacados.map((evento) => (
+                <article key={evento.id} className={`${card} p-6 mb-6 text-left`}>
+                  <h5 className="mb-2 uppercase text-principal-texto">{content.eventsFeaturedLabel}</h5>
+                  <h4 className="!mb-1">{evento[lang].title}</h4>
+                  <p className="!mb-3 font-sans text-sm font-semibold text-secundarios-dark/70 dark:text-secundarios-light/70">{evento[lang].meta}</p>
+                  <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{evento[lang].text}</p>
+                  <a href={evento.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto">
+                    {content.eventsFeaturedCta}
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </a>
+                </article>
+              ))}
               <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">
                 {content.eventsContactText}{' '}
                 <a href={`mailto:${valenciaContactEmail}`} className="font-sans font-semibold text-principal-texto hover:underline break-words">
