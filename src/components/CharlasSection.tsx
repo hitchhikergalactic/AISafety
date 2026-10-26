@@ -181,6 +181,18 @@ const CharlasSection: React.FC<CharlasSectionProps> = ({ charlaActivaProp, lang 
                 {lang === 'es' ? 'Más información' : 'More information'}
               </a>
             )}
+
+            {/* Segundo documento opcional */}
+            {charlaActiva.materialAdicional && (
+              <a
+                href={charlaActiva.materialAdicional.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 w-full max-w-[420px] text-center px-6 py-3 border border-secundarios-dark dark:border-white rounded-md font-sans text-xs uppercase font-bold hover:bg-principal hover:border-principal hover:text-white transition-all duration-200"
+              >
+                {lang === 'es' ? charlaActiva.materialAdicional.etiquetaEs : charlaActiva.materialAdicional.etiquetaEn}
+              </a>
+            )}
           </div>
 
         </div>
