@@ -18,12 +18,13 @@ const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false }
     const [pausada, setPausada] = useState(false);
     const organizaciones = organizacionesPonentes.filter((o) => !portada || o.enPortada !== false);
 
-    // La segunda copia solo sirve para que la cinta no se corte: se oculta a los lectores de pantalla
+    // La segunda copia solo sirve para que la cinta no se corte: se oculta a los lectores de pantalla.
+    // Sin loading="lazy": los logos entran en pantalla por la animación, no por el scroll, y el navegador no los cargaba
     const elementos = (copia: boolean) =>
         organizaciones.map((o) => (
             <li key={`${copia ? 'b' : 'a'}-${o.nombre}`} aria-hidden={copia || undefined} className="flex w-28 md:w-32 shrink-0 flex-col items-center gap-2 px-2 text-center">
                 <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-white p-1.5 shadow-anthro-subtle">
-                    <img src={o.logo.src} width={160} height={160} alt="" loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                    <img src={o.logo.src} width={160} height={160} alt="" decoding="async" className="h-full w-full object-contain" />
                 </span>
                 <span className="font-sans text-xs md:text-sm font-semibold leading-tight text-secundarios-dark/80 dark:text-secundarios-light/80 text-balance">{o.nombre}</span>
             </li>
