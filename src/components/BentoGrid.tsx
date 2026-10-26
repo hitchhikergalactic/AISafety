@@ -114,7 +114,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 3: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
-              href={`${langPrefix}/seminario-bluedot-spain`}
+              href={`${langPrefix}/seminario-bluedot-impact`}
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
                <div className="flex justify-between items-start mb-4">

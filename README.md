@@ -6,7 +6,7 @@ Sitio web de **AI safety España**: un proyecto en español sobre seguridad de I
 
 - Página principal con propuesta de valor y llamadas a la acción.
 - Sección de equipo y página de “qué hacemos”.
-- Hub del seminario Bluedot con listado de charlas y páginas de detalle.
+- Hub del seminario BlueDot Impact con listado de charlas y páginas de detalle.
 - Versión en español e inglés con rutas separadas.
 - SEO técnico básico: canonical dinámico, `hreflang`, sitemap y redirecciones para URLs antiguas.
 

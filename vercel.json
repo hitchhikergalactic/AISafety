@@ -52,6 +52,16 @@
   ],
   "redirects": [
     {
+      "source": "/seminario-bluedot-spain/:path*",
+      "destination": "/seminario-bluedot-impact/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/en/seminario-bluedot-spain/:path*",
+      "destination": "/en/seminario-bluedot-impact/:path*",
+      "permanent": true
+    },
+    {
       "source": "/que_hacemos",
       "destination": "/que-hacemos",
       "permanent": true

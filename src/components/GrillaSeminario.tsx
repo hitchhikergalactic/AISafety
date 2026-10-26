@@ -33,7 +33,7 @@ const GrillaSeminario: React.FC<GrillaSeminarioProps> = ({ charlas, lang }) => {
 
               return (
                 <a 
-                  href={`${langPrefix}/seminario-bluedot-spain/${charla.id}`} 
+                  href={`${langPrefix}/seminario-bluedot-impact/${charla.id}`} 
                   key={charla.id} 
                   className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 flex flex-col justify-between transition-all hover:shadow-lg bg-white dark:bg-transparent"
                 >

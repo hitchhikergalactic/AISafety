@@ -150,12 +150,12 @@ Fuentes: [Informe Internacional sobre la Seguridad de la IA 2026](https://intern
 
 ## Para seguir: recursos en español
 
-Si este texto te ha despertado el interés, la forma más directa de seguir es unirte a la red de iaS: junto a BlueDot Impact organizamos el [Seminario de seguridad de la IA](https://aisafety.es/seminario-bluedot-spain), una sesión en línea de una hora, abierta y sin preparación previa, el primer y el tercer miércoles de cada mes, y en nuestro [Substack](https://seguridaddelaia.substack.com) publicamos análisis sobre los fallos de seguridad de los modelos de lenguaje en español. Suscríbete al Substack, sigue nuestra [agenda en Luma](https://luma.com/iaS-SeguridadelaIA), entra en nuestro [Discord](https://discord.gg/gm6v9Cwa58) y consulta el [Radar de papers](https://aisafety.es/biblioteca-papers); además, estas son otras puertas de entrada del espacio hispanohablante y algunos recursos internacionales de referencia.
+Si este texto te ha despertado el interés, la forma más directa de seguir es unirte a la red de iaS: junto a BlueDot Impact organizamos el [Seminario de seguridad de la IA](https://aisafety.es/seminario-bluedot-impact), una sesión en línea de una hora, abierta y sin preparación previa, el primer y el tercer miércoles de cada mes, y en nuestro [Substack](https://seguridaddelaia.substack.com) publicamos análisis sobre los fallos de seguridad de los modelos de lenguaje en español. Suscríbete al Substack, sigue nuestra [agenda en Luma](https://luma.com/iaS-SeguridadelaIA), entra en nuestro [Discord](https://discord.gg/gm6v9Cwa58) y consulta el [Radar de papers](https://aisafety.es/biblioteca-papers); además, estas son otras puertas de entrada del espacio hispanohablante y algunos recursos internacionales de referencia.
 
 | Recurso | Qué ofrece | Ámbito |
 | --- | --- | --- |
 | [iaS, seguridad de la IA en español](https://aisafety.es/) | Formación, orientación profesional y red | Hispanohablante |
-| [Seminario de seguridad de la IA](https://aisafety.es/seminario-bluedot-spain) | Sesión en línea de 1 h, primer y tercer miércoles de cada mes, con BlueDot Impact | Hispanohablante |
+| [Seminario de seguridad de la IA](https://aisafety.es/seminario-bluedot-impact) | Sesión en línea de 1 h, primer y tercer miércoles de cada mes, con BlueDot Impact | Hispanohablante |
 | [Substack de iaS](https://seguridaddelaia.substack.com) | Análisis sobre seguridad de la IA en español | Hispanohablante |
 | [Radar de papers](https://aisafety.es/biblioteca-papers) | Investigaciones sobre seguridad de la IA traducidas al español | Hispanohablante |
 | [Curso de Estrategia ante la IA General](https://aisafety.es/curso-estrategia-agi) | 25 h en cohortes, en línea, próximamente | Hispanohablante |
