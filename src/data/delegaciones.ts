@@ -234,7 +234,7 @@ export const delegacionMadridContent = {
     ],
     galleryPhotos: {
       publico: 'El público en Celonis, durante la presentación del encuentro.',
-      bluedot: 'Osmani Redondo, directora de iaS, presenta el encuentro, organizado con BlueDot Impact.',
+      bluedot: 'Osmani Redondo, que dirige iaS, presenta el encuentro, organizado con BlueDot Impact.',
       david: 'David Bravo Comas, de AI Safety Barcelona: «Cuidado con lo que deseas: los riesgos de crear algo más inteligente que nosotros».',
       guillem: 'Guillem Bas, del Observatorio de Riesgos Catastróficos Globales: «Riesgos en el radar: señales tempranas desde la evidencia».',
       sorteo: 'Sorteo de «Si alguien la crea, todos moriremos», de Eliezer Yudkowsky y Nate Soares, cortesía de Editorial Destino (Grupo Planeta).',
@@ -251,8 +251,8 @@ export const delegacionMadridContent = {
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
         meta: '20 de noviembre de 2026 · Talent Garden, Madrid',
-        text: 'Osmani Redondo, directora de iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
-        imageAlt: 'Cartel de la keynote de Osmani Redondo, directora de iaS, en DrupalCamp Spain 2026.',
+        text: 'Osmani Redondo, que dirige iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
+        imageAlt: 'Cartel de la keynote de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
         linkLabel: 'Ver la ponente',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
       },
@@ -353,7 +353,7 @@ export const delegacionMadridContent = {
         name: '#CodeMeet Madrid',
         meta: '17 September 2026 · Celonis, Madrid',
         text: 'Osmani Redondo has given the talk “¿Quién controla a los agentes?” (Who controls the agents? Safety and governance in the age of AI).',
-        imageAlt: 'Osmani Redondo, standing next to the screen, during her talk on AI agents at #CodeMeet Madrid.',
+        imageAlt: 'Osmani Redondo, standing next to the screen, during the talk on AI agents at #CodeMeet Madrid.',
         gallery: {
           gobernanza: 'Osmani Redondo in front of the “Sin gobernanza / Con gobernanza” (Without / With governance) slide.',
           sala: 'Osmani Redondo speaks to the #CodeMeet audience at Celonis.',

@@ -13,7 +13,7 @@ interface EquipoProps {
   lang: Language;
 }
 
-const directora = miembrosEquipo.find((m) => m.grupo === 'direccion');
+const direccion = miembrosEquipo.find((m) => m.grupo === 'direccion');
 const coordinacion = miembrosEquipo.filter((m) => m.grupo === 'coordinacion');
 
 const iniciales = (nombre: string) =>
@@ -35,24 +35,24 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
             {content.heroTitle}
           </h1>
 
-          {/* Directora: foto y biografía */}
+          {/* Dirección: foto y biografía */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-            {directora?.foto && (
+            {direccion?.foto && (
               <div className="flex flex-col items-center shrink-0">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-anthro overflow-hidden shadow-anthro-subtle mb-2">
                   <img
-                    src={directora.foto.src}
-                    alt={directora.nombre}
-                    width={directora.foto.width}
-                    height={directora.foto.height}
+                    src={direccion.foto.src}
+                    alt={direccion.nombre}
+                    width={direccion.foto.width}
+                    height={direccion.foto.height}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <a
-                  href={directora.linkedin}
+                  href={direccion.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`LinkedIn · ${directora.nombre}`}
+                  aria-label={`LinkedIn · ${direccion.nombre}`}
                   className="p-2 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
                 >
                   <FaLinkedin className="w-6 h-6" />
