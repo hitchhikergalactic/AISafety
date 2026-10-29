@@ -247,6 +247,16 @@ export const delegacionMadridContent = {
     elsewherePastLabel: 'Ya celebrado',
     elsewhereEvents: [
       {
+        id: 'apartEpistemics',
+        upcoming: true,
+        name: 'AI x Epistemics Research Sprint',
+        meta: '13–15 de noviembre de 2026 · En línea, grupo de Madrid',
+        text: 'iaS reúne al grupo de Madrid en el sprint de investigación de **Apart Research**: un fin de semana para crear herramientas que nos ayuden a decidir qué creer.',
+        imageAlt: 'Cartel del AI x Epistemics Research Sprint de Apart Research e iaS, con un portátil que muestra una videollamada en grupo.',
+        linkLabel: 'Inscríbete en Luma',
+        href: 'https://luma.com/0epujko1',
+      },
+      {
         id: 'drupalcamp',
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
@@ -337,6 +347,16 @@ export const delegacionMadridContent = {
     elsewhereUpcomingLabel: 'Coming up',
     elsewherePastLabel: 'Past event',
     elsewhereEvents: [
+      {
+        id: 'apartEpistemics',
+        upcoming: true,
+        name: 'AI x Epistemics Research Sprint',
+        meta: '13–15 November 2026 · Online, Madrid group',
+        text: 'iaS brings together the Madrid group for the **Apart Research** sprint: a weekend building tools that help us decide what to believe.',
+        imageAlt: 'Poster for the AI x Epistemics Research Sprint by Apart Research and iaS, with a laptop showing a group video call.',
+        linkLabel: 'Register on Luma',
+        href: 'https://luma.com/0epujko1',
+      },
       {
         id: 'drupalcamp',
         upcoming: true,
