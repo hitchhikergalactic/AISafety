@@ -19,6 +19,7 @@ import codemeetGobernanza from '../../assets/madrid/codemeet-gobernanza.webp';
 import codemeetSala from '../../assets/madrid/codemeet-sala.webp';
 import codemeetSonrisa from '../../assets/madrid/codemeet-sonrisa.webp';
 import drupalcampKeynote from '../../assets/madrid/drupalcamp-keynote.webp';
+import apartEpistemicsSprint from '../../assets/madrid/apart-epistemics-sprint.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
@@ -83,6 +84,7 @@ const fotosPrimerEvento = [
 
 // Una imagen por evento externo, siempre de lo que hace iaS allí (no del evento en general).
 const imagenesEventosExternos = {
+  apartEpistemics: apartEpistemicsSprint,
   drupalcamp: drupalcampKeynote,
   codemeet: codemeetCharla,
 } as const;
