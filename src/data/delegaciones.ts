@@ -199,7 +199,7 @@ export const delegacionMadridContent = {
     titleAccent: 'en Madrid',
     intro:
       'Madrid es la sede de iaS: aquí trabaja el equipo, se coordinan los programas y se acompaña a cada nueva delegación.',
-    imageAlt: 'Ilustración: una figura azul celebra haciendo el signo de la victoria junto al texto «Hola Madrid», un guiño al «Hello, world» de la programación.',
+    imageAlt: 'Ilustración: una figura azul celebra haciendo el signo de la victoria junto al texto «Hola Madrid», con «Madrid» resaltado en rojo, un guiño al «Hello, world» de la programación.',
     discordCtaLabel: 'Únete al Discord de iaS',
     formCtaLabel: 'Regístrate y contacta',
     newsletterCtaLabel: 'Boletín de iaS',
@@ -301,7 +301,7 @@ export const delegacionMadridContent = {
     titleAccent: 'in Madrid',
     intro:
       'Madrid is the headquarters of iaS: this is where the team works, the programs are coordinated and every new chapter gets its support.',
-    imageAlt: 'Illustration: a blue figure celebrates with victory signs next to the words “Hola Madrid”, a nod to programming’s “Hello, world”.',
+    imageAlt: 'Illustration: a blue figure celebrates with victory signs next to the words “Hola Madrid”, with “Madrid” highlighted in red, a nod to programming’s “Hello, world”.',
     discordCtaLabel: 'Join the iaS Discord',
     formCtaLabel: 'Sign up and get in touch',
     newsletterCtaLabel: 'iaS newsletter',
