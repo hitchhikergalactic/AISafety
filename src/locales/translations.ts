@@ -50,7 +50,7 @@ export const translations = {
       detailsTitle: "Detalles del programa",
       moreInfo: "Más información",
       bluedot: {
-        tag: "/ FORMACIÓN",
+        tag: "/ SEMINARIO",
         title: "Seminario de seguridad de la IA",
         description:"Junto a **BlueDot Impact** realizamos seminarios de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes",
@@ -69,7 +69,7 @@ export const translations = {
         description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis sobre los fallos de seguridad de los modelos de lenguaje en español.",
       },
       innovation: {
-        tag: "/ FORMACIÓN",
+        tag: "/ CURSO",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | Próximamente.",
@@ -199,7 +199,7 @@ export const translations = {
       detailsTitle: "Program details",
       moreInfo: "More information",
       bluedot: {
-        tag: "/ TRAINING",
+        tag: "/ SEMINAR",
         title: "AI safety seminar",
         description: "Together with **BlueDot Impact**, we run AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month",
@@ -218,7 +218,7 @@ export const translations = {
         description: "Why would an AI that does not understand Spanish be a systemic risk? Analysis of safety failures in Spanish-language language models.",
       },
       innovation: {
-        tag: "/ TRAINING",
+        tag: "/ COURSE",
         title: "Course on strategy for Artificial General Intelligence",
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | **Online** | Coming soon.",
