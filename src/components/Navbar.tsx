@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus } from 'lucide-react';
 import { translations } from '../locales/translations';
-import { delegacionesNavLabel, delegacionesSublinks } from '../data/delegaciones';
+import { delegacionesNavLabel, delegacionesSublinks, substackUrl } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
@@ -64,10 +64,13 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
   type Sublink =
-    | { separator: true; title?: string; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
-    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
+    | { separator: true; title?: string; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined; external?: undefined }
+    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva'; external?: boolean };
 
   const sublinkIcons = { sede: Landmark, mapa: MapPin, nueva: Plus };
+
+  // `external`: enlace a otro sitio, se abre en otra pestaña
+  const externalProps = (external?: boolean) => external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
   const closeMenus = () => {
     setIsOpen(false);
@@ -75,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   };
 
   // `path`: la pestaña lleva a una página propia en vez de a una sección de la portada
-  const navLinks: { href: string; label: string; path?: string; sublinks?: Sublink[] }[] = [
+  const navLinks: { href: string; label: string; path?: string; external?: boolean; sublinks?: Sublink[] }[] = [
     {
       href: "mission",
       label: t.nav.mission,
@@ -91,11 +94,23 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       href: "eventos",
       label: t.nav.events,
       sublinks: [
-        // Artículo introductorio: solo existe en español. Resaltado como «Crear una delegación» en /DELEGACIONES
-        ...(lang === 'es' ? [{ label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true }] : []),
         { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-impact" },
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]
+    },
+    {
+      href: "leer",
+      label: t.nav.read,
+      // El artículo introductorio solo existe en español (resaltado como «Crear una delegación» en /DELEGACIONES);
+      // en inglés solo queda el Substack, así que la pestaña lleva directamente allí
+      ...(lang === 'es'
+        ? {
+            sublinks: [
+              { label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true },
+              { label: "Semana iaS en Substack", path: substackUrl, external: true }
+            ]
+          }
+        : { path: substackUrl, external: true })
     },
     { href: "red", label: t.nav.about, path: lang === 'es' ? '/red' : '/en/network' },
     { href: "footer",
@@ -148,6 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               ) : (
                 <a
                   href={link.path ?? (lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`)}
+                  {...externalProps(link.external)}
                   className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer whitespace-nowrap"
                 >
                   {renderNavLabel(link.label)}
@@ -173,12 +189,13 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                             <div key={idx} className="h-px mx-2 my-2 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
                           );
                         }
-                        const href = `${langPrefix}${sublink.path}`;
+                        const href = sublink.external ? sublink.path : `${langPrefix}${sublink.path}`;
                         if (!rich) {
                           return (
                             <a
                               key={idx}
                               href={href}
+                              {...externalProps(sublink.external)}
                               onClick={closeMenus}
                               className={`block px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
                                 sublink.highlight
@@ -288,6 +305,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               ) : (
                 <a 
                   href={link.path ?? (lang === 'es' ? `/#${link.href}` : `/en/#${link.href}`)}
+                  {...externalProps(link.external)}
                   onClick={() => setIsOpen(false)}
                   className="text-2xl font-sans font-bold text-secundarios-dark dark:text-secundarios-light hover:text-principal pb-4 flex justify-between items-center group transition-colors duration-300 text-left w-full block touch-manipulation"
                   style={{ transitionDelay: `${idx * 50}ms` }}
@@ -312,7 +330,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                     ) : (
                       <a
                         key={subIdx}
-                        href={`${langPrefix}${sublink.path}`}
+                        href={sublink.external ? sublink.path : `${langPrefix}${sublink.path}`}
+                        {...externalProps(sublink.external)}
                         onClick={() => {
                           setIsOpen(false);
                           setOpenSubmenu(null);
