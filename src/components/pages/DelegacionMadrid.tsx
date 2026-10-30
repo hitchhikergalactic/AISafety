@@ -20,6 +20,7 @@ import codemeetSala from '../../assets/madrid/codemeet-sala.webp';
 import codemeetSonrisa from '../../assets/madrid/codemeet-sonrisa.webp';
 import drupalcampKeynote from '../../assets/madrid/drupalcamp-keynote.webp';
 import apartEpistemicsSprint from '../../assets/madrid/apart-epistemics-sprint.webp';
+import apartGlobalSouthJurado from '../../assets/madrid/apart-global-south-jurado.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
@@ -87,6 +88,7 @@ const imagenesEventosExternos = {
   apartEpistemics: apartEpistemicsSprint,
   drupalcamp: drupalcampKeynote,
   codemeet: codemeetCharla,
+  apartGlobalSouth: apartGlobalSouthJurado,
 } as const;
 
 // Miniaturas de la charla de iaS en el #CodeMeet; los pies están en los textos de la página.
