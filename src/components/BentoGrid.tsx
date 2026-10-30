@@ -109,10 +109,32 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             </a>
           </div>
 
-          {/* --- COLUMNA DERECHA (3 Tarjetas: Horizontal + Apaisada + Research) --- */}
+          {/* --- COLUMNA DERECHA (3 Tarjetas: Apaisada + Horizontal + Research) --- */}
           <div className="flex flex-col gap-5 h-full">
             
-            {/* TARJETA 3: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
+            {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
+            <a 
+              href="https://seguridaddelaia.substack.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <span className="font-sans text-sm text-label-gray uppercase">
+                   {t.upcoming.readingGroup.tag}
+                </span>
+                <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
+                  <ArrowUpRight size={14} />
+                </span>
+              </div>
+              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
+                <img src={getImageSrc(substack)} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+              </div>
+              <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
+              <p className="text-secundarios-dark dark:text-secundarios-light text-small line-clamp-4 flex-grow">{t.upcoming.readingGroup.description}</p>
+            </a>
+
+            {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
               href={`${langPrefix}/seminario-bluedot-impact`}
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
@@ -140,28 +162,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                     <ArrowUpRight size={14} aria-hidden="true" />
                   </span>
                </div>
-            </a>
-
-            {/* TARJETA 4: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
-            <a 
-              href="https://seguridaddelaia.substack.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <span className="font-sans text-sm text-label-gray uppercase">
-                   {t.upcoming.readingGroup.tag}
-                </span>
-                <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
-                  <ArrowUpRight size={14} />
-                </span>
-              </div>
-              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img src={getImageSrc(substack)} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-              </div>
-              <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small line-clamp-4 flex-grow">{t.upcoming.readingGroup.description}</p>
             </a>
 
             {/* TARJETA 5: Research - Texto + Botón */}
