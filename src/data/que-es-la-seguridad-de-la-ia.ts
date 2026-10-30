@@ -4,8 +4,8 @@
 export const queEsLaSeguridadDeLaIaContent = {
   es: {
     seoTitle: 'Introducción a la seguridad de la IA | iaS',
-    breadcrumbParent: 'Inicio',
-    breadcrumbParentHref: '/',
+    breadcrumbParent: 'Formar',
+    breadcrumbParentHref: '/#eventos',
     breadcrumbCurrent: 'Qué es la seguridad de la IA',
     eyebrow: 'Qué es la seguridad de la IA',
     title: 'Introducción a la seguridad de la IA',

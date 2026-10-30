@@ -64,8 +64,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const activeLogo = theme === 'dark' ? getImageSrc(logoWhite) : getImageSrc(logo);
 
   type Sublink =
-    | { separator: true; title?: string; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined; external?: undefined }
-    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva'; external?: boolean };
+    | { separator: true; title?: string; label?: undefined; path?: undefined; highlight?: undefined; description?: undefined; icon?: undefined }
+    | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
   const sublinkIcons = { sede: Landmark, mapa: MapPin, nueva: Plus };
 
@@ -90,27 +90,16 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         { label: lang === 'es' ? "Teoría del Cambio" : "Theory of Change", path: lang === 'es' ? "/teoria-del-cambio" : "/theory-of-change" }
       ]
     },
+    { href: "leer", label: t.nav.read, path: substackUrl, external: true },
     {
       href: "eventos",
       label: t.nav.events,
       sublinks: [
+        // Artículo introductorio: solo existe en español. Resaltado como «Crear una delegación» en /DELEGACIONES
+        ...(lang === 'es' ? [{ label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true }] : []),
         { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-impact" },
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]
-    },
-    {
-      href: "leer",
-      label: t.nav.read,
-      // El artículo introductorio solo existe en español (resaltado como «Crear una delegación» en /DELEGACIONES);
-      // en inglés solo queda el Substack, así que la pestaña lleva directamente allí
-      ...(lang === 'es'
-        ? {
-            sublinks: [
-              { label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true },
-              { label: "Semana iaS en Substack", path: substackUrl, external: true }
-            ]
-          }
-        : { path: substackUrl, external: true })
     },
     { href: "red", label: t.nav.about, path: lang === 'es' ? '/red' : '/en/network' },
     { href: "footer",
@@ -189,13 +178,12 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                             <div key={idx} className="h-px mx-2 my-2 bg-secundarios-dark/10 dark:bg-secundarios-light/10" />
                           );
                         }
-                        const href = sublink.external ? sublink.path : `${langPrefix}${sublink.path}`;
+                        const href = `${langPrefix}${sublink.path}`;
                         if (!rich) {
                           return (
                             <a
                               key={idx}
                               href={href}
-                              {...externalProps(sublink.external)}
                               onClick={closeMenus}
                               className={`block px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
                                 sublink.highlight
@@ -330,8 +318,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                     ) : (
                       <a
                         key={subIdx}
-                        href={sublink.external ? sublink.path : `${langPrefix}${sublink.path}`}
-                        {...externalProps(sublink.external)}
+                        href={`${langPrefix}${sublink.path}`}
                         onClick={() => {
                           setIsOpen(false);
                           setOpenSubmenu(null);
