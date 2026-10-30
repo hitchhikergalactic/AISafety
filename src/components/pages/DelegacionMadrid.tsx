@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { ArrowRight, ClipboardList, Landmark, Mail, MapPin, MessageCircle, Newspaper, Pause, Play, Plus } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import ProgramDetails from '@components/ProgramDetails';
@@ -400,7 +400,19 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                       {evento.upcoming ? content.elsewhereUpcomingLabel : content.elsewherePastLabel}
                     </span>
                     <span className="block font-sans text-xl font-bold text-secundarios-dark dark:text-secundarios-light">{evento.name}</span>
-                    <span className="block mt-1 mb-3 font-sans text-sm font-semibold text-principal-texto">{evento.meta}</span>
+                    <span className="block mt-1 mb-3 font-sans text-sm font-semibold text-principal-texto">
+                      {evento.meta.split(' · ').map((parte, i) => (
+                        <Fragment key={parte}>
+                          {i > 0 && (
+                            <>
+                              <span aria-hidden="true" className="inline-block mx-2 w-1 h-1 align-middle rounded-full bg-current" />
+                              <span className="sr-only">, </span>
+                            </>
+                          )}
+                          {parte}
+                        </Fragment>
+                      ))}
+                    </span>
                     <span className="block mb-5 font-sans text-base leading-snug text-secundarios-dark dark:text-secundarios-light">{parseText(evento.text)}</span>
                     {'gallery' in evento && (
                       <ul className="grid grid-cols-3 gap-2 mb-5">
