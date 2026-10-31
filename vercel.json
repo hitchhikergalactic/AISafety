@@ -52,6 +52,28 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "aisafetymadrid.es"
+        }
+      ],
+      "destination": "https://www.aisafety.es/delegaciones/madrid",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.aisafetymadrid.es"
+        }
+      ],
+      "destination": "https://www.aisafety.es/delegaciones/madrid",
+      "permanent": true
+    },
+    {
       "source": "/seminario-bluedot-spain/:path*",
       "destination": "/seminario-bluedot-impact/:path*",
       "permanent": true
