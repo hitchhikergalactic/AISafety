@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: "Inicio",
       mission: "/Sobre iaS",
-      events: "/Formar",
+      events: "/Aprender",
       read: "/Leer",
       about: "/Red",
       contact: "/Investigar",
@@ -153,7 +153,7 @@ export const translations = {
     nav: {
       home: "Home",
       mission: "/About iaS",
-      events: "/Training",
+      events: "/Learn",
       read: "/Read",
       about: "/Network",
       contact: "/research",
