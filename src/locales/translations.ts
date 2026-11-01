@@ -48,7 +48,7 @@ export const translations = {
       eventTitle: "Actividades iaS: eventos, charlas y cursos",
       eventImageAlt: "Grupo de personas sonriendo en la puerta de un evento de iaS en Madrid.",
       description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. Sigue en **Luma** nuestra agenda para participar de nuestras actividades.",
-      dateShort: "Calendario en luma",
+      cta: "Ver próximas actividades",
       detailsTitle: "Detalles del programa",
       moreInfo: "Más información",
       bluedot: {
@@ -91,6 +91,7 @@ export const translations = {
         tag: "/ DÍA CERO",
         title: "Debate cómo hacer la IA más segura",
         description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
+        cta: "Únete a la conversación",
       }
     },
     collaborators: {
@@ -202,7 +203,7 @@ export const translations = {
       eventTitle: "iaS activities: events, talks & courses",
       eventImageAlt: "A group of people smiling at the entrance of an iaS event in Madrid.",
       description: "Come with a question, a project in progress, or simply curiosity. Follow our **Luma** calendar to take part in our activities.",
-      dateShort: "Calendar on Luma",
+      cta: "See upcoming activities",
       detailsTitle: "Program details",
       moreInfo: "More information",
       bluedot: {
@@ -245,6 +246,7 @@ export const translations = {
         tag: "/ DAY ZERO",
         title: "Debate how to make AI safer",
         description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
+        cta: "Join the conversation",
       }
     },
     collaborators: {

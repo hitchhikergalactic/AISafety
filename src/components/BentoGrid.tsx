@@ -18,9 +18,11 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
-  // "Más información" va como texto dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
-  const moreInfoClass = "mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-principal-texto group-hover:underline";
-  const arrowButtonClass = "w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors shrink-0 ml-auto";
+  // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
+  // Blanco sobre naranja cumple 3:1, suficiente para texto grande en negrita como este.
+  const ctaClass = "mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-center font-sans text-[1.1875rem] font-bold text-white shadow-md transition-all group-hover:shadow-lg group-hover:-translate-y-0.5";
+  // Título neutro: en la portada el naranja queda reservado al botón. El ! vence al color del h4 global.
+  const cardTitleClass = "text-base font-bold tracking-tight !text-secundarios-dark dark:!text-secundarios-light";
   
   // Función auxiliar para extraer de forma segura la URL de la imagen como un string
   const getImageSrc = (img: any) => {
@@ -51,9 +53,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <span className="font-sans text-sm text-label-gray uppercase">
                  {t.upcoming.tag}{lang === 'es' && <span className="normal-case"> iaS</span>}
                 </span>
-                <button className={arrowButtonClass}>
-                  <ArrowUpRight size={14} />
-                </button>
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
@@ -62,15 +61,18 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <h4 className="text-base font-bold  tracking-tight mb-2">
+              <h4 className={`${cardTitleClass} mb-2`}>
                 {t.upcoming.eventTitle}
               </h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
                 {parseText(t.upcoming.description)}
               </p>
-              <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
-                {t.upcoming.dateShort.toUpperCase()}
-              </h5>
+              <div className="mt-auto">
+                <span className={ctaClass}>
+                  {t.upcoming.cta}
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </span>
+              </div>
             </a>
             
             {/* TARJETA 2: Secundaria - Con Imagen y Texto (Curso Estrategia AGI) */}
@@ -82,9 +84,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <span className="font-sans text-sm text-label-gray uppercase block flex-1">
                   {t.upcoming.innovation.tag}
                 </span>
-                <span className={arrowButtonClass}>
-                  <ArrowUpRight size={14} />
-                </span>
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
@@ -93,7 +92,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <h4 className="text-base font-bold tracking-tight mb-1">{t.upcoming.innovation.title}</h4>
+              <h4 className={`${cardTitleClass} mb-1`}>{t.upcoming.innovation.title}</h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-4">
                   {emphasizeBrand(t.upcoming.innovation.description)}</p>
               <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
@@ -101,9 +100,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               </h5>
               <div className="mt-auto pt-6">
                 <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.innovation.details} />
-                <span className={moreInfoClass}>
+                <span className={ctaClass}>
                   {t.upcoming.moreInfo}
-                  <ArrowUpRight size={14} aria-hidden="true" />
+                  <ArrowUpRight size={18} aria-hidden="true" />
                 </span>
               </div>
             </a>
@@ -125,18 +124,15 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <span className="font-sans text-sm text-label-gray uppercase">
                    {t.upcoming.readingGroup.tag}
                 </span>
-                <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
-                  <ArrowUpRight size={14} />
-                </span>
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img src={getImageSrc(lecturaImage)} alt={t.upcoming.readingGroup.imageAlt} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
-              <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
+              <h4 className={`${cardTitleClass} mb-2 leading-tight`}>{t.upcoming.readingGroup.title}</h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small flex-grow">{t.upcoming.readingGroup.description}</p>
-              <span className={moreInfoClass}>
+              <span className={ctaClass}>
                 {t.upcoming.readingGroup.cta}
-                <ArrowUpRight size={14} aria-hidden="true" />
+                <ArrowUpRight size={18} aria-hidden="true" />
               </span>
             </a>
             <a
@@ -156,25 +152,22 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
-                  <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
-                    <ArrowUpRight size={14} />
-                  </span>
                </div>
                <div className="flex flex-col md:flex-row gap-4 flex-1">
                   <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
                     <img src={getImageSrc(rodrigoImage)} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
-                    <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.bluedot.title}</h4>
+                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.bluedot.title}</h4>
                     <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{parseText(t.upcoming.bluedot.description)}</p>
                     <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
                   </div>
                </div>
                <div className="mt-auto pt-6">
                   <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.bluedot.details} />
-                  <span className={moreInfoClass}>
+                  <span className={ctaClass}>
                     {t.upcoming.moreInfo}
-                    <ArrowUpRight size={14} aria-hidden="true" />
+                    <ArrowUpRight size={18} aria-hidden="true" />
                   </span>
                </div>
             </a>
@@ -188,19 +181,20 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
-                  <span className="w-8 h-8 border border-neutral-200 dark:border-neutral-400 flex items-center justify-center rounded-md group-hover:bg-principal group-hover:text-white group-hover:border-principal transition-colors">
-                    <ArrowUpRight size={14} />
-                  </span>
                </div>
                <div className="flex flex-col md:flex-row gap-4 flex-1">
                   <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
                     <img src={getImageSrc(discord)} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="flex flex-col flex-1">
-                    <h4 className="text-base font-bold tracking-tight mb-2">{t.upcoming.research.title}</h4>
+                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.research.title}</h4>
                     <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 flex-grow">{parseText(t.upcoming.research.description)}</p>
                   </div>
                </div>
+               <span className={ctaClass}>
+                 {t.upcoming.research.cta}
+                 <ArrowUpRight size={18} aria-hidden="true" />
+               </span>
             </a>
 
           </div>
