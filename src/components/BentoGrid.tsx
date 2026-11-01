@@ -7,7 +7,7 @@ import ProgramDetails from '@components/ProgramDetails';
 import eventImage from '../assets/portada-grupo.webp';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
-import lecturaImage from '../assets/boletin-lectura.webp';
+import lecturaImage from '../assets/boletin-semana-ias.webp';
 import ultimoBoletin from '../data/ultimo-boletin.json';
 import cursoAgi from '../assets/curso_agi.jpg';
 
@@ -124,7 +124,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                    {t.upcoming.readingGroup.tag}
                 </span>
               </div>
-              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
+              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img src={getImageSrc(lecturaImage)} alt={t.upcoming.readingGroup.imageAlt} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className={`${cardTitleClass} mb-2 leading-tight`}>

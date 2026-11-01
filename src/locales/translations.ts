@@ -70,7 +70,7 @@ export const translations = {
         kicker: "¡Extra, extra!",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Leer gratis",
-        imageAlt: "Mujer leyendo el periódico sentada en un sofá.",
+        imageAlt: "Anuncio en un periódico con un astronauta y el texto: Semana iaS, noticias de seguridad de la IA.",
       },
       innovation: {
         tag: "/ CURSO",
@@ -224,7 +224,7 @@ export const translations = {
         kicker: "Extra, extra!",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Read for free",
-        imageAlt: "A woman reading a newspaper on a sofa.",
+        imageAlt: "Newspaper advertisement with an astronaut and the text: Semana iaS, AI safety news.",
       },
       innovation: {
         tag: "/ COURSE",
