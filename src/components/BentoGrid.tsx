@@ -4,10 +4,10 @@ import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
 import { emphasizeBrand } from '@utils/emphasizeBrand';
 import ProgramDetails from '@components/ProgramDetails';
-import eventImage from '../assets/ias_evento.webp';
+import eventImage from '../assets/portada-grupo.webp';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
-import substack from 'public/biblioteca/imagen_sesgos.jpg';
+import lecturaImage from '../assets/boletin-lectura.webp';
 import cursoAgi from '../assets/curso_agi.jpg';
 
 interface BentoGridProps {
@@ -58,7 +58,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img 
                   src={getImageSrc(eventImage)} 
-                  alt={t.upcoming.eventTitle}
+                  alt={t.upcoming.eventImageAlt}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
               </div>
@@ -113,6 +113,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           <div className="flex flex-col gap-5 h-full">
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
+            {/* El crédito de la foto (CC BY 2.0) va fuera del enlace de la tarjeta: un <a> dentro de otro <a> no es HTML válido. */}
+            <div className="relative flex flex-col flex-1">
             <a 
               href="https://seguridaddelaia.substack.com/subscribe"
               target="_blank"
@@ -128,7 +130,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 </span>
               </div>
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img src={getImageSrc(substack)} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+                <img src={getImageSrc(lecturaImage)} alt={t.upcoming.readingGroup.imageAlt} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small flex-grow">{t.upcoming.readingGroup.description}</p>
@@ -137,6 +139,15 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <ArrowUpRight size={14} aria-hidden="true" />
               </span>
             </a>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Older_woman_reading_a_book_indoors_in_a_cozy_wooden_space.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-1 left-6 md:left-10 font-sans text-[0.6875rem] text-label-gray hover:underline"
+            >
+              {t.upcoming.readingGroup.photoCredit}
+            </a>
+            </div>
 
             {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 

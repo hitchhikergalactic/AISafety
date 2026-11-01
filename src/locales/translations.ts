@@ -46,6 +46,7 @@ export const translations = {
       tag: "/ AGENDA",
       title: "Próximos Eventos",
       eventTitle: "Actividades iaS: eventos, charlas y cursos",
+      eventImageAlt: "Grupo de personas sonriendo en la puerta de un evento de iaS en Madrid.",
       description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. Sigue en **Luma** nuestra agenda para participar de nuestras actividades.",
       dateShort: "Calendario en luma",
       detailsTitle: "Detalles del programa",
@@ -69,6 +70,8 @@ export const translations = {
         title: "La seguridad de la IA, cada semana en tu correo",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Suscríbete gratis",
+        imageAlt: "Mujer leyendo un libro junto a una mesa de madera.",
+        photoCredit: "Foto: Shixart1985, CC BY 2.0",
       },
       innovation: {
         tag: "/ CURSO",
@@ -197,6 +200,7 @@ export const translations = {
       tag: "/ UPCOMING",
       title: "Upcoming events",
       eventTitle: "iaS activities: events, talks & courses",
+      eventImageAlt: "A group of people smiling at the entrance of an iaS event in Madrid.",
       description: "Come with a question, a project in progress, or simply curiosity. Follow our **Luma** calendar to take part in our activities.",
       dateShort: "Calendar on Luma",
       detailsTitle: "Program details",
@@ -220,6 +224,8 @@ export const translations = {
         title: "AI safety, in your inbox every week",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Subscribe for free",
+        imageAlt: "A woman reading a book beside a wooden table.",
+        photoCredit: "Photo: Shixart1985, CC BY 2.0",
       },
       innovation: {
         tag: "/ COURSE",
