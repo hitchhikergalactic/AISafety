@@ -70,8 +70,7 @@ export const translations = {
         title: "La seguridad de la IA, cada semana en tu correo",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Suscríbete gratis",
-        imageAlt: "Mujer leyendo un libro junto a una mesa de madera.",
-        photoCredit: "Foto: Shixart1985, CC BY 2.0",
+        imageAlt: "Mujer leyendo el periódico sentada en un sofá.",
       },
       innovation: {
         tag: "/ CURSO",
@@ -225,8 +224,7 @@ export const translations = {
         title: "AI safety, in your inbox every week",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Subscribe for free",
-        imageAlt: "A woman reading a book beside a wooden table.",
-        photoCredit: "Photo: Shixart1985, CC BY 2.0",
+        imageAlt: "A woman reading a newspaper on a sofa.",
       },
       innovation: {
         tag: "/ COURSE",

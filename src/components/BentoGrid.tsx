@@ -112,8 +112,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           <div className="flex flex-col gap-5 h-full">
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
-            {/* El crédito de la foto (CC BY 2.0) va fuera del enlace de la tarjeta: un <a> dentro de otro <a> no es HTML válido. */}
-            <div className="relative flex flex-col flex-1">
             <a 
               href="https://seguridaddelaia.substack.com/subscribe"
               target="_blank"
@@ -135,15 +133,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <ArrowUpRight size={18} aria-hidden="true" />
               </span>
             </a>
-            <a
-              href="https://commons.wikimedia.org/wiki/File:Older_woman_reading_a_book_indoors_in_a_cozy_wooden_space.jpg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-1 left-6 md:left-10 font-sans text-[0.6875rem] text-label-gray hover:underline"
-            >
-              {t.upcoming.readingGroup.photoCredit}
-            </a>
-            </div>
 
             {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
