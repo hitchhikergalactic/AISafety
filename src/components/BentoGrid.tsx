@@ -8,6 +8,7 @@ import eventImage from '../assets/portada-grupo.webp';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-lectura.webp';
+import ultimoBoletin from '../data/ultimo-boletin.json';
 import cursoAgi from '../assets/curso_agi.jpg';
 
 interface BentoGridProps {
@@ -113,7 +114,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
-              href="https://seguridaddelaia.substack.com/subscribe"
+              href={ultimoBoletin.url}
               target="_blank"
               rel="noopener noreferrer"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
@@ -126,7 +127,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
                 <img src={getImageSrc(lecturaImage)} alt={t.upcoming.readingGroup.imageAlt} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
-              <h4 className={`${cardTitleClass} mb-2 leading-tight`}>{t.upcoming.readingGroup.title}</h4>
+              <h4 className={`${cardTitleClass} mb-2 leading-tight`}>
+                {t.upcoming.readingGroup.kicker} <span lang="es">{ultimoBoletin.titulo}</span>
+              </h4>
               <p className="text-secundarios-dark dark:text-secundarios-light text-small flex-grow">{t.upcoming.readingGroup.description}</p>
               <span className={ctaClass}>
                 {t.upcoming.readingGroup.cta}
