@@ -67,9 +67,9 @@ export const translations = {
       },
       readingGroup: {
         tag: "/ BOLETÍN SEMANAL",
-        title: "La seguridad de la IA, cada semana en tu correo",
+        kicker: "¡Extra, extra!",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
-        cta: "Suscríbete gratis",
+        cta: "Leer gratis",
         imageAlt: "Mujer leyendo el periódico sentada en un sofá.",
       },
       innovation: {
@@ -221,9 +221,9 @@ export const translations = {
       },
       readingGroup: {
         tag: "/ WEEKLY NEWSLETTER",
-        title: "AI safety, in your inbox every week",
+        kicker: "Extra, extra!",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
-        cta: "Subscribe for free",
+        cta: "Read for free",
         imageAlt: "A woman reading a newspaper on a sofa.",
       },
       innovation: {
