@@ -65,9 +65,10 @@ export const translations = {
         ]
       },
       readingGroup: {
-        tag: "/ SUBSTACK",
-        title: "El desafío más grande de todos los tiempos",
-        description: "¿Por qué una IA que no entiende el español es un riesgo sistémico? Análisis sobre los fallos de seguridad de los modelos de lenguaje en español.",
+        tag: "/ BOLETÍN SEMANAL",
+        title: "La seguridad de la IA, cada semana en tu correo",
+        description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
+        cta: "Suscríbete gratis",
       },
       innovation: {
         tag: "/ CURSO",
@@ -215,9 +216,10 @@ export const translations = {
         ]
       },
       readingGroup: {
-        tag: "/ SUBSTACK",
-        title: "The biggest challenge of all time",
-        description: "Why would an AI that does not understand Spanish be a systemic risk? Analysis of safety failures in Spanish-language language models.",
+        tag: "/ WEEKLY NEWSLETTER",
+        title: "AI safety, in your inbox every week",
+        description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
+        cta: "Subscribe for free",
       },
       innovation: {
         tag: "/ COURSE",

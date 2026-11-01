@@ -114,8 +114,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
-              href="https://seguridaddelaia.substack.com" 
-              target="_blank" 
+              href="https://seguridaddelaia.substack.com/subscribe"
+              target="_blank"
               rel="noopener noreferrer"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
             >
@@ -131,7 +131,11 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <img src={getImageSrc(substack)} alt={t.upcoming.readingGroup.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
               </div>
               <h4 className="text-base font-bold tracking-tight mb-2 leading-tight">{t.upcoming.readingGroup.title}</h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small line-clamp-4 flex-grow">{t.upcoming.readingGroup.description}</p>
+              <p className="text-secundarios-dark dark:text-secundarios-light text-small flex-grow">{t.upcoming.readingGroup.description}</p>
+              <span className={moreInfoClass}>
+                {t.upcoming.readingGroup.cta}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </span>
             </a>
 
             {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
