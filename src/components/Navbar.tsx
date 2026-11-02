@@ -19,6 +19,8 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showJoinModal, setShowJoinModal] = useState(false);
+  // Empieza oculto para que no parpadee en la portada, donde el botón ya está en la cabecera
+  const [altaEnPantalla, setAltaEnPantalla] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -42,6 +44,24 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lang]);
+
+  // «¡Quiero formar parte!» no se repite: el del menú se oculta si hay otro a la vista (marcado con data-alta)
+  useEffect(() => {
+    const comprobar = () => {
+      const visible = Array.from(document.querySelectorAll('[data-alta]')).some((boton) => {
+        const { top, bottom, width } = boton.getBoundingClientRect();
+        return width > 0 && top < window.innerHeight && bottom > 0;
+      });
+      setAltaEnPantalla(visible);
+    };
+    comprobar();
+    window.addEventListener('scroll', comprobar, { passive: true });
+    window.addEventListener('resize', comprobar);
+    return () => {
+      window.removeEventListener('scroll', comprobar);
+      window.removeEventListener('resize', comprobar);
+    };
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -247,7 +267,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
           <button
             type="button"
             onClick={() => setShowJoinModal(true)}
-            className="hidden xl:inline-flex cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+            className={`hidden xl:inline-flex ${altaEnPantalla ? 'xl:invisible' : ''} cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2`}
           >
             {t.hero.ctaSecondary}
           </button>

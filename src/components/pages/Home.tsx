@@ -100,7 +100,7 @@ export default function Home({ lang }: HomeProps) {
                         </a>
                         {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
                         {/* Abre la misma ventana de alta que el resto de botones «¡Quiero formar parte!»; no es el formulario de la red (REDiaS) */}
-                        <button type="button" onClick={() => openModal('subscribe')} className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-bold no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                        <button type="button" data-alta onClick={() => openModal('subscribe')} className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-bold no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
                             {t.hero.ctaSecondary}
                         </button>
                     </div>
@@ -197,7 +197,7 @@ export default function Home({ lang }: HomeProps) {
                     </div>
                     <div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
                         <div>
-                            <button onClick={() => openModal('subscribe')} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md cursor-pointer">
+                            <button data-alta onClick={() => openModal('subscribe')} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md cursor-pointer">
                                 {t.hero.ctaSecondary}
                             </button>
                         </div>
@@ -211,7 +211,6 @@ export default function Home({ lang }: HomeProps) {
             <div id="footer">
                 <Footer 
                     lang={lang} 
-                    onSubscribeClick={() => openModal('subscribe')}
                 />
             </div>
         </>
