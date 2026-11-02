@@ -60,7 +60,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
               {lang === 'es' ? 'Inscribirse al seminario' : 'Register for the seminar'}
             </a>
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSetVjkN1vyT4IlbAvPh7Xplas1a7RnecWA6o2QFmq17XP5-oA/viewform"
+              href="https://airtable.com/appjg7pwM6YVmobZ6/pagXrhFIu7e0ltvdj/form"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-4 text-[1.1875rem] rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
