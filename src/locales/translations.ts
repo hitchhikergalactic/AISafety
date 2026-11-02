@@ -7,7 +7,6 @@ export const translations = {
       read: "/Leer",
       about: "/Red",
       contact: "/Investigar",
-      speaker: "Quiero ser ponente",
     },
     hero: {
       location: "",
@@ -161,7 +160,6 @@ export const translations = {
       read: "/Read",
       about: "/Network",
       contact: "/research",
-      speaker: "Become a speaker",
     },
     hero: {
       location: "",

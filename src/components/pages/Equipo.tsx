@@ -148,7 +148,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
         lang={lang}
         title={t.subscribe.title}
         subtitle={t.subscribe.subtitle}
-        action="https://formsubmit.co/aisafetymadrid@gmail.com"
+        action="https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec"
         subject="Nuevo suscriptor desde Equipo"
         successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
       />

@@ -3,11 +3,14 @@ import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus } from 'lucide-r
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks, substackUrl } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
+import JoinModal from './JoinModal';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
 
-// Formulario de Airtable para quien quiera ser ponente
-const SPEAKER_FORM_URL = 'https://airtable.com/appjg7pwM6YVmobZ6/pagXrhFIu7e0ltvdj/form';
+// Destino de «¡Quiero formar parte!»: el mismo Apps Script que usa la ventana de alta de la portada.
+// No es el formulario de la red (REDiaS): son dos cosas distintas.
+const JOIN_FORM_ACTION = 'https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec';
+
 
 interface NavbarProps {
   lang: 'es' | 'en';
@@ -15,6 +18,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showJoinModal, setShowJoinModal] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -116,6 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   ];
 
   return (
+    <>
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out`}>
       {/* Background Layer sin opacidades reflejando tu cambio previo */}
       <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
@@ -239,14 +244,13 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
         {/* Actions (Theme + Lang + Mobile Toggle) */}
         <div className="col-start-3 flex items-center justify-self-end gap-2 md:gap-5">
-          <a
-            href={SPEAKER_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden xl:inline-flex items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+          <button
+            type="button"
+            onClick={() => setShowJoinModal(true)}
+            className="hidden xl:inline-flex cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
           >
-            {t.nav.speaker}
-          </a>
+            {t.hero.ctaSecondary}
+          </button>
 
           <button 
             onClick={toggleTheme}
@@ -342,18 +346,31 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               )}
             </div>
           ))}
-          <a
-            href={SPEAKER_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="self-start mb-8 px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+          <button
+            type="button"
+            onClick={() => {
+              setIsOpen(false);
+              setShowJoinModal(true);
+            }}
+            className="self-start cursor-pointer mb-8 px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
           >
-            {t.nav.speaker}
-          </a>
+            {t.hero.ctaSecondary}
+          </button>
         </div>
       </div>
     </nav>
+    {/* Fuera de <nav>: la ventana debe cubrir toda la pantalla */}
+    <JoinModal
+      isOpen={showJoinModal}
+      onClose={() => setShowJoinModal(false)}
+      lang={lang}
+      title={t.subscribe.title}
+      subtitle={t.subscribe.subtitle}
+      action={JOIN_FORM_ACTION}
+      subject="Nuevo suscriptor"
+      successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
+    />
+    </>
   );
 };
 

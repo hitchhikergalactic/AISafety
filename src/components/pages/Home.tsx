@@ -99,11 +99,17 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaSeminar}
                         </a>
                         {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
-                        {/* En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
-                        <a {...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: 'https://seguridaddelaia.substack.com/', target: '_blank', rel: 'noopener noreferrer' })} className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-bold no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                        {/* Abre la misma ventana de alta que el resto de botones «¡Quiero formar parte!»; no es el formulario de la red (REDiaS) */}
+                        <button type="button" onClick={() => openModal('subscribe')} className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-bold no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                            {t.hero.ctaSecondary}
+                        </button>
+                    </div>
+                    {/* En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
+                    <p className="!mb-0 pt-4 text-center">
+                        <a {...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: 'https://seguridaddelaia.substack.com/', target: '_blank', rel: 'noopener noreferrer' })} className="inline-block py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
                             {t.hero.ctaPrimary}
                         </a>
-                    </div>
+                    </p>
                 </div>
             </Section>
 
