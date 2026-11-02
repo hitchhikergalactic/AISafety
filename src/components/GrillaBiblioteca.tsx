@@ -32,7 +32,7 @@ const GrillaBiblioteca: React.FC<GrillaBibliotecaProps> = ({ papers, lang, t }) 
   return (
     <section id="biblioteca-papers" className="py-8 md:py-16 px-4 md:px-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> 
+        <div className={`grid grid-cols-1 gap-6 ${papers.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2'}`}>
           {papers.length > 0 ? (
             papers.map((paper) => {
               const {

@@ -145,8 +145,8 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
 
         {/* Eventos: texto y enlaces a un lado, calendario al otro */}
         <section id="eventos" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-16 md:pt-24">
-          <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-8 md:gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
-            <div className="text-center md:text-left">
+          <div className={`${panel} p-6 md:p-12 grid grid-cols-1 gap-8 md:gap-12 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-center`}>
+            <div className="text-center xl:text-left">
               <h3 className={sectionTitle}>{content.eventsTitle}</h3>
               {eventosDestacados.map((evento) => (
                 <article key={evento.id} className={`${card} p-6 mb-6 text-left`}>
