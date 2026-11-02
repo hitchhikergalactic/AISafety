@@ -114,7 +114,6 @@ const JoinModal: React.FC<JoinModalProps> = ({
               <input
                 type="text"
                 name="linkedin"
-                required
                 placeholder={t.subscribe.linkedin}
                 className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-secundarios-dark/20 text-secundarios-dark dark:text-white focus:outline-none focus:ring-2 focus:ring-principal/50 transition-all font-sans text-lg"
               />
