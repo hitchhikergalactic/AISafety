@@ -33,12 +33,12 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
       {/* Barra de navegación global */}
       <Navbar lang={lang} />
       
-      {/* Header con imagen responsiva */}
-      <section className="w-full h-[280px] md:h-[375px] lg:h-[375px] overflow-hidden mt-24">
+      {/* Header: en pantallas estrechas la proporción deja ver enteros el portátil y los dos logos */}
+      <section className="w-full aspect-[12/5] lg:aspect-auto lg:h-[375px] overflow-hidden mt-24">
         <img 
           src={headerImageSrc}
           alt="BlueDot Impact Meetup Header" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[45%_50%]"
         />
       </section>
       
