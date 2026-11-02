@@ -59,13 +59,16 @@ const Footer: React.FC<FooterProps> = ({ lang, onSubscribeClick }) => {
               <p className="!text-secundarios-light max-w-xs mb-6 text-center md:text-left mx-auto md:mx-0">
                 {parseText(t.footer.tagline)}
               </p>
+              {onSubscribeClick && (
               <button 
                 onClick={onSubscribeClick}
                 type="button"
+                data-alta
                 className="w-full md:w-auto px-10 py-4 rounded-xl bg-principal text-white font-sans font-bold text-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center md:inline-flex gap-3 mb-8 cursor-pointer"
               >
                 {t.hero.ctaSecondary}
               </button>
+              )}
             </div>
             <div className="w-full md:w-auto flex flex-col items-center md:items-end gap-6">
               {activeLogo && (
