@@ -123,7 +123,7 @@ export const translations = {
     },
     biblioteca: {
       title: "Biblioteca abierta",
-      subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA. Espacio diseñado para formar profesionales en seguridad de la IA.",
+      subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA con un espacio diseñado para formar profesionales.",
       originalPaper: "Investigación publicación oficial",
       readTranslation: "Investigación, traducción al español",
       traslationPaperUrl: "Investigación, traducción al español",
@@ -281,7 +281,7 @@ export const translations = {
     },
     biblioteca: {
       title: "Open access library",
-      subtitle: "To keep everyone informed and empowered to act, we democratize access to AI safety research. A dedicated space to empower and train AI safety professionals.",
+      subtitle: "To keep everyone informed and empowered to act, we democratize access to AI safety research with a dedicated space to train professionals.",
       originalPaper: "Original Paper",
       readTranslation: "Read Spanish Translation",
       translationNotes: "Translation Notes",
