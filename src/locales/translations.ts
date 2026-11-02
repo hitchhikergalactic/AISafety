@@ -122,6 +122,9 @@ export const translations = {
     },
     biblioteca: {
       title: "Biblioteca abierta",
+      masLecturasTitle: "Más lecturas en español",
+      masLecturasText: "Babel Translation traduce artículos de seguridad de la IA de METR, Redwood Research y otras fuentes.",
+      masLecturasCta: "Ver sus traducciones",
       subtitle: "Para que todos podamos estar informados y actuar, democratizamos el acceso a la investigación en seguridad de la IA con un espacio diseñado para formar profesionales.",
       originalPaper: "Investigación publicación oficial",
       readTranslation: "Investigación, traducción al español",
@@ -279,6 +282,9 @@ export const translations = {
     },
     biblioteca: {
       title: "Open access library",
+      masLecturasTitle: "More reading in Spanish",
+      masLecturasText: "Babel Translation translates AI safety articles from METR, Redwood Research and other sources.",
+      masLecturasCta: "See their translations",
       subtitle: "To keep everyone informed and empowered to act, we democratize access to AI safety research with a dedicated space to train professionals.",
       originalPaper: "Original Paper",
       readTranslation: "Read Spanish Translation",

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { translations } from '@locales/translations';
 import Navbar from '@components/Navbar';
 import BibliotecaHero from '@components/BibliotecaHero';
@@ -56,6 +57,21 @@ const BibliotecaHub: React.FC<BibliotecaHubProps> = ({ lang, papers }) => {
           lang={lang} 
           t={t}
         />
+
+        {/* Lecturas externas: se enlazan, no se copian, porque el sitio no indica licencia */}
+        <section className="max-w-2xl mx-auto mb-16 md:mb-24 p-6 md:p-8 bg-secundarios-gray dark:bg-white/5 rounded-anthro text-center">
+          <h4 className="!mb-2">{t.biblioteca.masLecturasTitle}</h4>
+          <p className="!mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80">{t.biblioteca.masLecturasText}</p>
+          <a
+            href="https://aistranslate.org/translations/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 py-2 font-sans font-bold text-principal-texto hover:underline"
+          >
+            {t.biblioteca.masLecturasCta}
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+        </section>
       </div>
 
       <JoinModal
