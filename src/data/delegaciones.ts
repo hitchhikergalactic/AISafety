@@ -206,8 +206,8 @@ export const valenciaEventosDestacados = [
           bio: 'Alde González es Ventures Principal en Plug and Play, donde lidera las inversiones en ciberseguridad y la innovación corporativa en este campo, además de encabezar los esfuerzos de seguridad de la IA en el AI Center of Excellence. Invierte en startups desde pre-seed hasta Serie A en seguridad en la nube, ciberseguridad de la IA y seguridad de la IA, y conecta a corporaciones Fortune 1000 con las startups que resuelven sus mayores desafíos de seguridad.',
         },
         en: {
-          role: 'Investor at Plug and Play',
-          bio: 'Alde González is an Investor at Plug and Play, where he leads cybersecurity investments and corporate innovation and heads AI Safety efforts at the AI Center of Excellence. He backs pre-seed to Series A startups in cloud security, AI security, and AI safety, and connects Fortune 1000 partners with the startups solving their toughest security challenges.',
+          role: 'Ventures Principal at Plug and Play',
+          bio: 'Alde González is a Ventures Principal at Plug and Play, where he leads cybersecurity investments and corporate innovation and heads AI Safety efforts at the AI Center of Excellence. He backs pre-seed to Series A startups in cloud security, AI security, and AI safety, and connects Fortune 1000 partners with the startups solving their toughest security challenges.',
         },
       },
       {
@@ -216,11 +216,11 @@ export const valenciaEventosDestacados = [
         photo: fotoJohannaAngulo,
         es: {
           role: 'Colidera iaS Valencia',
-          bio: 'Johanna Angulo colidera iaS Valencia. Su trabajo se centra en la validez de las evaluaciones de IA: cuándo una evaluación mide realmente lo que dice medir. Investiga la contaminación de benchmarks, la conciencia de evaluación (eval awareness) y el sandbagging, y su trabajo sobre contaminación se presentó en el taller TAE de NeurIPS 2026. Combina investigación académica con experiencia práctica en evaluación de modelos y gobernanza técnica de la IA.',
+          bio: 'Johanna Angulo colidera iaS Valencia. Su trabajo se centra en la validez de las evaluaciones de IA: cuándo una evaluación mide realmente lo que dice medir. Investiga la contaminación de benchmarks, la conciencia de evaluación (eval awareness) y el sandbagging, y su trabajo sobre contaminación ha sido aceptado en el taller TAE de NeurIPS 2026. Combina investigación académica con experiencia práctica en evaluación de modelos y gobernanza técnica de la IA.',
         },
         en: {
           role: 'Co-leads iaS Valencia',
-          bio: 'Johanna Angulo co-leads iaS Valencia. Johanna’s work focuses on the validity of AI evaluations: when an evaluation really measures what it claims to measure. Johanna researches benchmark contamination, eval awareness and sandbagging, and the work on contamination was presented at the TAE workshop at NeurIPS 2026, combining academic research with hands-on experience in model evaluation and technical AI governance.',
+          bio: 'Johanna Angulo co-leads iaS Valencia. Johanna’s work focuses on the validity of AI evaluations: when an evaluation really measures what it claims to measure. Johanna researches benchmark contamination, eval awareness and sandbagging, and the work on contamination has been accepted at the TAE workshop at NeurIPS 2026, combining academic research with hands-on experience in model evaluation and technical AI governance.',
         },
       },
     ],
