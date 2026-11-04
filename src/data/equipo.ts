@@ -66,6 +66,7 @@ export interface MiembroEquipo {
   nombre: string;
   cargo: { es: string; en: string };
   linkedin: string;
+  web?: string;
   foto?: ImageMetadata;
   grupo: GrupoEquipo;
   area?: { es: string; en: string };
@@ -109,8 +110,9 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Franca Velasco',
-    cargo: { es: 'Responsable de Redacción y Corrección', en: 'Copywriting & Editing Lead' },
+    cargo: { es: 'Responsable de Redacción y Edición', en: 'Copywriting & Editing Lead' },
     linkedin: 'https://www.linkedin.com/in/francavelasco/',
+    web: 'https://francavelasco.es/',
     foto: francaImg,
     grupo: 'coordinacion',
   },
