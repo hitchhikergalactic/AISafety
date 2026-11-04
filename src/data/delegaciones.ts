@@ -3,8 +3,8 @@ import fotoJohannaAngulo from '@assets/valencia/johanna-angulo.webp';
 
 // «Red» se reserva para la red de hubs aliados (bloque «Red iaS» de la portada, como ENAIS); la sede y las delegaciones van aparte
 export const delegacionesNavLabel = {
-  es: '/Delegaciones',
-  en: '/Chapters',
+  es: 'Delegaciones',
+  en: 'Chapters',
 } as const;
 
 // `description` e `icon` solo los usa el desplegable del menú. Un separador con `title` se pinta como

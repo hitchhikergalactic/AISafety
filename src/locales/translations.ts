@@ -2,11 +2,11 @@ export const translations = {
   es: {
     nav: {
       home: "Inicio",
-      mission: "/Sobre iaS",
-      events: "/Aprender",
-      read: "/Leer",
-      about: "/Red",
-      contact: "/Investigar",
+      mission: "Sobre iaS",
+      events: "Aprender",
+      read: "Leer",
+      about: "Red",
+      contact: "Investigar",
     },
     hero: {
       location: "",
@@ -158,11 +158,11 @@ export const translations = {
   en: {
     nav: {
       home: "Home",
-      mission: "/About iaS",
-      events: "/Learn",
-      read: "/Read",
-      about: "/Network",
-      contact: "/research",
+      mission: "About iaS",
+      events: "Learn",
+      read: "Read",
+      about: "Network",
+      contact: "Research",
     },
     hero: {
       location: "",
