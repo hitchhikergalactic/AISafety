@@ -5,7 +5,7 @@ import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
 import { equipoContent, miembrosEquipo } from '@data/equipo';
 import { parseText } from '@utils/parseText';
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGlobe } from "react-icons/fa";
 
 type Language = 'es' | 'en';
 
@@ -96,15 +96,28 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
                   <h2 className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
                     {persona.nombre}
                   </h2>
-                  <a
-                    href={persona.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`LinkedIn · ${persona.nombre}`}
-                    className="shrink-0 -mr-1 p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
-                  >
-                    <FaLinkedin className="w-5 h-5" />
-                  </a>
+                  <div className="shrink-0 -mr-1 flex items-center">
+                    {persona.web && (
+                      <a
+                        href={persona.web}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Web · ${persona.nombre}`}
+                        className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+                      >
+                        <FaGlobe className="w-5 h-5" />
+                      </a>
+                    )}
+                    <a
+                      href={persona.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn · ${persona.nombre}`}
+                      className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+                    >
+                      <FaLinkedin className="w-5 h-5" />
+                    </a>
+                  </div>
                 </div>
                 <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
                   {persona.cargo[lang]}
