@@ -13,12 +13,16 @@ type Sublink =
   | { separator: true; title?: string }
   | { separator?: false; label: string; path: string; highlight?: boolean; description?: string; icon?: 'sede' | 'mapa' | 'nueva' };
 
+// AI Safety Barcelona forma parte de iaS pero aún no es «iaS Barcelona»: va en su propio grupo, no entre las delegaciones.
+
 export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
   es: [
     { separator: true, title: 'Sede' },
     { label: 'iaS Madrid (Sede, España)', path: '/delegaciones/madrid', icon: 'sede', description: 'Donde nace iaS y desde donde se coordina la red.' },
     { separator: true, title: 'Delegaciones' },
     { label: 'iaS Valencia (España)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Delegación local de iaS: eventos, programas y contacto.' },
+    { separator: true, title: 'Parte de iaS' },
+    { label: 'AI Safety Barcelona (España)', path: '/delegaciones/barcelona', icon: 'mapa', description: 'Forma parte de iaS desde Barcelona.' },
     { separator: true },
     { label: 'Crear una delegación', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Lleva iaS a tu ciudad.' },
   ],
@@ -27,6 +31,8 @@ export const delegacionesSublinks: Record<'es' | 'en', Sublink[]> = {
     { label: 'iaS Madrid (Headquarters, Spain)', path: '/delegaciones/madrid', icon: 'sede', description: 'Where iaS began and where the network is coordinated.' },
     { separator: true, title: 'Chapters' },
     { label: 'iaS Valencia (Spain)', path: '/delegaciones/valencia', icon: 'mapa', description: 'Local iaS chapter: events, programs and contact.' },
+    { separator: true, title: 'Part of iaS' },
+    { label: 'AI Safety Barcelona (Spain)', path: '/delegaciones/barcelona', icon: 'mapa', description: 'Part of iaS, based in Barcelona.' },
     { separator: true },
     { label: 'Start a chapter', path: '/delegaciones/crear-una-delegacion', highlight: true, icon: 'nueva', description: 'Bring iaS to your city.' },
   ],
@@ -575,3 +581,51 @@ const buildFooterColumns = (contactEmail: string): FooterColumns => ({
 
 export const valenciaFooterColumns = buildFooterColumns(valenciaContactEmail);
 export const madridFooterColumns = buildFooterColumns(madridContactEmail);
+
+// AI Safety Barcelona: forma parte de iaS con su propio nombre (todavía no es «iaS Barcelona»).
+// Sus eventos y altas se gestionan en su web; aquí solo se presenta y se enlaza.
+export const barcelonaWebUrl = { es: 'https://www.aisafetybcn.org/es', en: 'https://www.aisafetybcn.org' } as const;
+export const barcelonaContactEmail = 'aisafetybcn@gmail.com';
+
+export const delegacionBarcelonaContent = {
+  es: {
+    eyebrow: 'Parte de iaS · Barcelona, España',
+    titleDark: 'AI Safety',
+    titleAccent: 'Barcelona',
+    intro:
+      'AI Safety Barcelona forma parte de iaS: acerca a estudiantes, investigadores e instituciones de Barcelona al trabajo global para que la IA de frontera sea segura.',
+    imageAlt: 'Ilustración: una figura blanca escribe «Barcelona» sobre un fondo naranja.',
+    webCtaLabel: 'Visita su web',
+    emailCtaLabel: 'Escríbeles',
+    whatTitle: 'Qué hacen',
+    what: [
+      { title: 'Entender el campo', text: 'Talleres con contexto técnico y de gobernanza, clubes de lectura y presentaciones de artículos, sin requisitos previos.' },
+      { title: 'Conocer a la gente', text: 'Eventos abiertos en Barcelona y contacto con quienes ya trabajan en esto, aquí y en laboratorios e instituciones de fuera.' },
+      { title: 'Hacer trabajo útil', text: 'Hackatones de un fin de semana para pasar de leer sobre seguridad de la IA a producir algo propio, con mentores a mano.' },
+    ],
+    linkTitle: 'Parte de iaS',
+    linkText: 'AI Safety Barcelona forma parte de iaS, con sede en Madrid. En abril de 2026, David Bravo Comas, de AI Safety Barcelona, habló en el primer encuentro presencial de iaS en Madrid.',
+    hqLabel: 'Conoce la sede',
+    logoAlt: 'Logotipo de AI Safety Barcelona: la Sagrada Familia dibujada con nodos.',
+  },
+  en: {
+    eyebrow: 'Part of iaS · Barcelona, Spain',
+    titleDark: 'AI Safety',
+    titleAccent: 'Barcelona',
+    intro:
+      'AI Safety Barcelona is part of iaS: it connects students, researchers and institutions in Barcelona with the global work to make frontier AI safe.',
+    imageAlt: 'Illustration: a white figure writes “Barcelona” on an orange background.',
+    webCtaLabel: 'Visit their website',
+    emailCtaLabel: 'Write to them',
+    whatTitle: 'What they do',
+    what: [
+      { title: 'Understand the field', text: 'Workshops with technical and governance context, reading groups and paper presentations, no prior knowledge needed.' },
+      { title: 'Meet the people', text: 'Open events in Barcelona and contact with people already working on this, here and at labs and institutions abroad.' },
+      { title: 'Do useful work', text: 'Weekend hackathons to go from reading about AI safety to producing something of your own, with mentors on hand.' },
+    ],
+    linkTitle: 'Part of iaS',
+    linkText: 'AI Safety Barcelona is part of iaS, headquartered in Madrid. In April 2026, David Bravo Comas, from AI Safety Barcelona, spoke at the first in-person iaS meetup in Madrid.',
+    hqLabel: 'Visit the headquarters',
+    logoAlt: 'AI Safety Barcelona logo: the Sagrada Família drawn with nodes.',
+  },
+} as const;
