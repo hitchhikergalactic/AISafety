@@ -109,7 +109,7 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Franca Velasco',
-    cargo: { es: 'Responsable de Redacción y Redes', en: 'Copywriting & Social Media Lead' },
+    cargo: { es: 'Responsable de Redacción y Corrección', en: 'Copywriting & Editing Lead' },
     linkedin: 'https://www.linkedin.com/in/francavelasco/',
     foto: francaImg,
     grupo: 'coordinacion',
