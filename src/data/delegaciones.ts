@@ -1,3 +1,6 @@
+import fotoAldeGonzalez from '@assets/valencia/alde-gonzalez.webp';
+import fotoJohannaAngulo from '@assets/valencia/johanna-angulo.webp';
+
 // «Red» se reserva para la red de hubs aliados (bloque «Red iaS» de la portada, como ENAIS); la sede y las delegaciones van aparte
 export const delegacionesNavLabel = {
   es: '/Delegaciones',
@@ -118,6 +121,8 @@ export const delegacionValenciaContent = {
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
     eventsFeaturedLabel: 'Próximo encuentro',
     eventsFeaturedCta: 'Inscríbete en Luma',
+    eventsSpeakersLabel: 'Ponentes',
+    eventsBioLabel: 'Leer biografía',
     programsTitle: 'Programas',
     programsIntro: 'Formación y recursos de seguridad de la IA en castellano.',
     programCtaLabel: 'Más información',
@@ -129,6 +134,9 @@ export const delegacionValenciaContent = {
     aboutHqLabel: 'Conoce la sede',
     joinTitle: 'Únete y contacto',
     joinIntro: 'Entra en la red de iaS, sigue nuestras novedades o escríbenos.',
+    // Declaración de misión de Valencia: va bajo el título de la cabecera.
+    missionStatement:
+      'Valencia ya forma a quienes construyen la IA. Nuestra misión es que también la hagan segura: en inglés, en castellano y en valenciano.',
     contactCardTitle: 'Escríbenos',
   },
   en: {
@@ -151,6 +159,8 @@ export const delegacionValenciaContent = {
     eventsContactText: 'Questions about an event? Write to us at',
     eventsFeaturedLabel: 'Next event',
     eventsFeaturedCta: 'Register on Luma',
+    eventsSpeakersLabel: 'Speakers',
+    eventsBioLabel: 'Read bio',
     programsTitle: 'Programs',
     programsIntro: 'AI safety training and resources in Spanish.',
     programCtaLabel: 'Learn more',
@@ -162,6 +172,8 @@ export const delegacionValenciaContent = {
     aboutHqLabel: 'Visit the headquarters',
     joinTitle: 'Join and contact',
     joinIntro: 'Join the iaS network, follow our news or write to us.',
+    missionStatement:
+      'Valencia already trains the people who build AI. Our mission is to help them make it safe too: in English, Spanish and Valencian.',
     contactCardTitle: 'Write to us',
   },
 } as const;
@@ -176,13 +188,42 @@ export const valenciaEventosDestacados = [
     es: {
       title: 'Sesión de seguridad de la IA',
       meta: '12 de noviembre de 2026 · 19:00–20:30 · Salón de Actos, Edificio 1E, ETSINF (UPV), Camí de Vera, s/n, València',
-      text: 'Alde González, inversor y consultor en ciberseguridad en Plug and Play, y Johanna Angulo, investigadora en seguridad y gobernanza de la IA, hablan de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo, con entrada libre y networking al final.',
+      text: 'Alde González, de Plug and Play, y Johanna Angulo, que colidera iaS Valencia, hablan de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo, con entrada libre y networking al final.',
     },
     en: {
       title: 'AI Safety Session',
       meta: '12 November 2026 · 19:00–20:30 · Assembly Hall, Building 1E, ETSINF (UPV), Camí de Vera, s/n, València',
-      text: 'Alde González, cybersecurity investor and consultant at Plug and Play, and Johanna Angulo, AI safety and governance researcher, talk about evals, alignment and mechanistic interpretability and how to build a career in the field, with free entry and networking afterwards.',
+      text: 'Alde González, from Plug and Play, and Johanna Angulo, who co-leads iaS Valencia, talk about evals, alignment and mechanistic interpretability and how to build a career in the field, with free entry and networking afterwards.',
     },
+    // Ponentes con foto y biografía; las biografías las aportan los propios ponentes.
+    ponentes: [
+      {
+        id: 'alde-gonzalez',
+        name: 'Alde González',
+        photo: fotoAldeGonzalez,
+        es: {
+          role: 'Ventures Principal en Plug and Play',
+          bio: 'Alde González es Ventures Principal en Plug and Play, donde lidera las inversiones en ciberseguridad y la innovación corporativa en este campo, además de encabezar los esfuerzos de seguridad de la IA en el AI Center of Excellence. Invierte en startups desde pre-seed hasta Serie A en seguridad en la nube, ciberseguridad de la IA y seguridad de la IA, y conecta a corporaciones Fortune 1000 con las startups que resuelven sus mayores desafíos de seguridad.',
+        },
+        en: {
+          role: 'Ventures Principal at Plug and Play',
+          bio: 'Alde González is a Ventures Principal at Plug and Play, where he leads cybersecurity investments and corporate innovation and heads AI Safety efforts at the AI Center of Excellence. He backs pre-seed to Series A startups in cloud security, AI security, and AI safety, and connects Fortune 1000 partners with the startups solving their toughest security challenges.',
+        },
+      },
+      {
+        id: 'johanna-angulo',
+        name: 'Johanna Angulo',
+        photo: fotoJohannaAngulo,
+        es: {
+          role: 'Colidera iaS Valencia',
+          bio: 'Johanna Angulo colidera iaS Valencia. Su trabajo se centra en la validez de las evaluaciones de IA: cuándo una evaluación mide realmente lo que dice medir. Investiga la contaminación de benchmarks, la conciencia de evaluación (eval awareness) y el sandbagging, y su trabajo sobre contaminación ha sido aceptado en el taller TAE de NeurIPS 2026. Combina investigación académica con experiencia práctica en evaluación de modelos y gobernanza técnica de la IA.',
+        },
+        en: {
+          role: 'Co-leads iaS Valencia',
+          bio: 'Johanna Angulo co-leads iaS Valencia. Johanna’s work focuses on the validity of AI evaluations: when an evaluation really measures what it claims to measure. Johanna researches benchmark contamination, eval awareness and sandbagging, and the work on contamination has been accepted at the TAE workshop at NeurIPS 2026, combining academic research with hands-on experience in model evaluation and technical AI governance.',
+        },
+      },
+    ],
   },
 ];
 

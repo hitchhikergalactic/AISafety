@@ -127,7 +127,7 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
               <span className="text-principal">{content.titleAccent}</span>
             </h1>
             <p className="max-w-xl mx-auto md:mx-0 mb-8 text-secundarios-dark/80 dark:text-secundarios-light/80 text-lg md:text-xl leading-relaxed">
-              {content.joinIntro}
+              {content.missionStatement}
             </p>
             {actionButtons}
           </div>
@@ -154,6 +154,35 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                   <h4 className="!mb-1">{evento[lang].title}</h4>
                   <p className="!mb-3 font-sans text-sm font-semibold text-secundarios-dark/70 dark:text-secundarios-light/70">{evento[lang].meta}</p>
                   <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{evento[lang].text}</p>
+                  {evento.ponentes?.length > 0 && (
+                    <div className="mb-6">
+                      <h5 className="mb-3 uppercase text-principal-texto">{content.eventsSpeakersLabel}</h5>
+                      <ul className="space-y-4">
+                        {evento.ponentes.map((ponente) => (
+                          <li key={ponente.id} className="flex gap-4 items-start">
+                            <img
+                              src={ponente.photo.src}
+                              width={ponente.photo.width}
+                              height={ponente.photo.height}
+                              alt={ponente.name}
+                              loading="lazy"
+                              className="w-16 h-16 shrink-0 rounded-full object-cover shadow-anthro-card"
+                            />
+                            <div className="min-w-0">
+                              <p className="!mb-0 font-sans font-bold text-secundarios-dark dark:text-secundarios-light">{ponente.name}</p>
+                              <p className="!mb-1 font-sans text-sm font-semibold text-secundarios-dark/70 dark:text-secundarios-light/70">{ponente[lang].role}</p>
+                              <details className="group">
+                                <summary className="cursor-pointer font-sans text-sm font-semibold text-principal-texto hover:underline">
+                                  {content.eventsBioLabel}
+                                </summary>
+                                <p className="mt-2 !mb-0 text-sm text-secundarios-dark/80 dark:text-secundarios-light/80">{ponente[lang].bio}</p>
+                              </details>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   <a href={evento.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto">
                     {content.eventsFeaturedCta}
                     <ArrowRight size={18} aria-hidden="true" />
