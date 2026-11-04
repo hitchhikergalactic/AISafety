@@ -3,6 +3,7 @@ import luciaImg from '@assets/equipo/lucia-kubusch.webp';
 import arantxaImg from '@assets/equipo/arantxa-amezua.webp';
 import andresImg from '@assets/equipo/andres-casas.webp';
 import gretelImg from '@assets/equipo/gretel-schaj.webp';
+import francaImg from '@assets/equipo/franca-velasco.webp';
 
 export interface EquipoContent {
   es: {
@@ -104,6 +105,13 @@ export const miembrosEquipo: MiembroEquipo[] = [
     cargo: { es: 'Responsable de Proyectos Especiales', en: 'Special Projects Lead' },
     linkedin: 'https://www.linkedin.com/in/gretel-schaj/',
     foto: gretelImg,
+    grupo: 'coordinacion',
+  },
+  {
+    nombre: 'Franca Velasco',
+    cargo: { es: 'Responsable de Estilo Editorial y Redes', en: 'Editorial Style & Social Media Lead' },
+    linkedin: 'https://www.linkedin.com/in/francavelasco/',
+    foto: francaImg,
     grupo: 'coordinacion',
   },
 ];
