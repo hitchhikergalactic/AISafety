@@ -7,6 +7,7 @@ import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
 import { listaDeCharlas } from '@data/charlas';
+import ProximosEventos, { eventos, esSeminario, conUtm, CALENDARIO_LUMA } from '@components/ProximosEventos';
 import headerImg from '@assets/header_bluedot_meetup.jpg';
 
 type Language = 'es' | 'en';
@@ -27,6 +28,9 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
   const openModal = () => {
     setShowModal(true);
   };
+
+  // Sesiones del seminario ya publicadas en Luma (las lee scripts/actualizar-eventos.mjs)
+  const sesiones = eventos.filter(esSeminario);
 
   return (
     <>
@@ -52,7 +56,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
         <div className="max-w-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 pt-2 text-center">
             <a 
-              href="https://luma.com/iaS-SeguridadelaIA"
+              href={conUtm(sesiones[0]?.url ?? CALENDARIO_LUMA, 'seminario')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-4 text-[1.1875rem] rounded-2xl bg-principal text-white font-bold hover:bg-principal/90 transition-all shadow-md cursor-pointer"
@@ -69,6 +73,16 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
             </a>
           </div>
         </div>
+
+        {/* Próxima sesión con fecha y hora, antes del archivo: quien llega ve primero lo que viene. Solo si ya está en Luma */}
+        {sesiones.length > 0 && (
+          <section className="max-w-2xl mx-auto pt-10 md:pt-12">
+            <h2 className="font-sans font-bold !text-xl md:!text-2xl text-secundarios-dark dark:text-secundarios-light !mb-4">
+              {lang === 'es' ? 'Próxima sesión' : 'Next session'}
+            </h2>
+            <ProximosEventos lang={lang} campana="seminario" lista={sesiones} limite={1} datosEstructurados />
+          </section>
+        )}
 
         {/* Organizaciones de nuestros ponentes */}
         <section className="max-w-6xl mx-auto pt-12 md:pt-16">

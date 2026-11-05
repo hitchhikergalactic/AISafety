@@ -44,11 +44,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           <div className="flex flex-col gap-4 h-full">
             
             {/* TARJETA 1: Hero - Imagen */}
+            {/* Lleva a la página de eventos de la web (fechas a la vista y un clic a la inscripción), no a Luma */}
             <a
-              href="https://luma.com/iaS-SeguridadelaIA"
+              href={`${langPrefix}/eventos`}
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
