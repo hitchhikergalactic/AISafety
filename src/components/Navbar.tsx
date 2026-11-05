@@ -146,7 +146,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
 
       {/* Tres columnas (logo, enlaces, acciones): los enlaces se centran entre el logo y las acciones, nunca encima de ellas */}
-      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2 sm:gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
+      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 lg:px-8 xl:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2 sm:gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
         <a 
           href={lang === 'es' ? "/" : "/en/"}
@@ -166,7 +166,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden xl:flex flex-nowrap items-center justify-center justify-self-center gap-x-5 2xl:gap-x-6 font-sans font-semibold text-base opacity">
+        <div className="hidden lg:flex flex-nowrap items-center justify-center justify-self-center gap-x-4 xl:gap-x-5 2xl:gap-x-6 font-sans font-semibold text-base opacity">
           {navLinks.map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
@@ -267,7 +267,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
           <button
             type="button"
             onClick={() => setShowJoinModal(true)}
-            className={`hidden xl:inline-flex ${altaEnPantalla ? 'xl:invisible' : ''} cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2`}
+            className={`hidden min-[1180px]:inline-flex ${altaEnPantalla ? 'invisible' : ''} cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2`}
           >
             {t.hero.ctaSecondary}
           </button>
@@ -292,7 +292,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               su preventDefault no impide el clic posterior). */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="xl:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
+            className="lg:hidden text-secundarios-dark dark:text-secundarios-light p-3 -mr-2 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Menu"
           >
             {isOpen ? <X size={24} className="md:w-[28px] md:h-[28px]" /> : <Menu size={24} className="md:w-[28px] md:h-[28px]" />}
@@ -301,7 +301,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       </div>
 
       {/* Mobile & Tablet Menu Overlay */}
-      <div className={`xl:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-[transform,visibility] duration-500 ease-in-out ${isOpen ? 'translate-y-0 visible' : '-translate-y-full invisible'}`}>
+      <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-[transform,visibility] duration-500 ease-in-out ${isOpen ? 'translate-y-0 visible' : '-translate-y-full invisible'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
           {navLinks.map((link, idx) => (
             <div key={link.href}>
