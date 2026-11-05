@@ -42,7 +42,7 @@ export const translations = {
       text: "**Seguridad de la IA** para entender la inteligencia artificial cómo es, cómo podría llegar a ser y cómo nos gustaría que fuera.",
     },
     upcoming: {
-      tag: "/ AGENDA",
+      tag: "AGENDA",
       title: "Próximos Eventos",
       eventTitle: "Actividades iaS: eventos, charlas y cursos",
       eventImageAlt: "Grupo de personas sonriendo en la puerta de un evento de iaS en Madrid.",
@@ -51,7 +51,7 @@ export const translations = {
       detailsTitle: "Detalles del programa",
       moreInfo: "Más información",
       bluedot: {
-        tag: "/ SEMINARIO",
+        tag: "SEMINARIO",
         title: "Seminario de seguridad de la IA",
         description:"Junto a **BlueDot Impact** realizamos seminarios de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes",
@@ -65,14 +65,14 @@ export const translations = {
         ]
       },
       readingGroup: {
-        tag: "/ BOLETÍN SEMANAL",
+        tag: "BOLETÍN SEMANAL",
         kicker: "¡Extra, extra!",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Leer gratis",
         imageAlt: "Anuncio en un periódico con un astronauta y el texto: Semana iaS, noticias de seguridad de la IA.",
       },
       innovation: {
-        tag: "/ CURSO",
+        tag: "CURSO",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | Próximamente.",
@@ -86,7 +86,7 @@ export const translations = {
         ]
       },
       research: {
-        tag: "/ DÍA CERO",
+        tag: "DÍA CERO",
         title: "Debate cómo hacer la IA más segura",
         description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
         cta: "Únete a la conversación",
@@ -198,7 +198,7 @@ export const translations = {
       text: "**AI safety**: understanding AI as it is, as it could be, and as we want it to be",
     },
     upcoming: {
-      tag: "/ UPCOMING",
+      tag: "UPCOMING",
       title: "Upcoming events",
       eventTitle: "iaS activities: events, talks & courses",
       eventImageAlt: "A group of people smiling at the entrance of an iaS event in Madrid.",
@@ -207,7 +207,7 @@ export const translations = {
       detailsTitle: "Program details",
       moreInfo: "More information",
       bluedot: {
-        tag: "/ SEMINAR",
+        tag: "SEMINAR",
         title: "AI safety seminar",
         description: "Together with **BlueDot Impact**, we run AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month",
@@ -221,14 +221,14 @@ export const translations = {
         ]
       },
       readingGroup: {
-        tag: "/ WEEKLY NEWSLETTER",
+        tag: "WEEKLY NEWSLETTER",
         kicker: "Extra, extra!",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Read for free",
         imageAlt: "Newspaper advertisement with an astronaut and the text: Semana iaS, AI safety news.",
       },
       innovation: {
-        tag: "/ COURSE",
+        tag: "COURSE",
         title: "Course on strategy for Artificial General Intelligence",
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | **Online** | Coming soon.",
@@ -242,7 +242,7 @@ export const translations = {
         ]
       },
       research: {
-        tag: "/ DAY ZERO",
+        tag: "DAY ZERO",
         title: "Debate how to make AI safer",
         description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
         cta: "Join the conversation",
