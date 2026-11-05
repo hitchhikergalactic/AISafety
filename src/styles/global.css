@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+/* Ventanas bajas de escritorio (portátil sin pantalla completa): se compacta la cabecera y el hero de la portada
+   para que la franja de patrocinio entre en la primera pantalla */
+@custom-variant bajo (@media (min-width: 48rem) and (max-height: 54rem));
 
 @theme {
   --font-sans: "Overpass", sans-serif;

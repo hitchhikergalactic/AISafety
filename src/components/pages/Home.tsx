@@ -85,16 +85,16 @@ export default function Home({ lang }: HomeProps) {
             <div className="min-h-[100svh] flex flex-col">
             <Section 
                 id="hero" 
-                className="relative flex-1 flex items-center justify-center pt-[clamp(6rem,4rem+6vw,8rem)] md:pt-[clamp(6rem,4rem+6vw,8rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] overflow-hidden"
+                className="relative flex-1 flex items-center justify-center pt-[clamp(6rem,4rem+6vw,8rem)] md:pt-[clamp(6rem,4rem+6vw,8rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] bajo:pt-[clamp(5.5rem,2rem+8vh,7rem)] bajo:pb-[clamp(1rem,2vh,1.5rem)] overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
-                    <h1 className="mb-2 md:mb-4 !text-[clamp(1.25rem,calc(7vw-0.3rem),4.8rem)] text-secundarios-dark dark:text-secundarios-light text-balance">
+                    <h1 className="mb-2 md:mb-4 !text-[clamp(1.25rem,calc(7vw-0.3rem),4.8rem)] bajo:!text-[min(calc(7vw-0.3rem),4.8rem,10vh)] text-secundarios-dark dark:text-secundarios-light text-balance">
                         {t.hero.h1}
                     </h1>
-                    <p className="bajada c !leading-[clamp(1.5rem,0.9rem+2.9vw,2.8rem)] !mb-[clamp(0.75rem,0.25rem+1.5vw,1.8rem)]">{parseText(t.hero.h2)}</p>
+                    <p className="bajada c !leading-[clamp(1.5rem,0.9rem+2.9vw,2.8rem)] !mb-[clamp(0.75rem,0.25rem+1.5vw,1.8rem)] bajo:!text-[clamp(1.2rem,4vh,2rem)] bajo:!leading-[1.35] bajo:!mb-[clamp(0.5rem,2vh,1.8rem)]">{parseText(t.hero.h2)}</p>
                 </div>
                 <div className="max-w-2xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)]">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
                         <a href="https://luma.com/iaS-SeguridadelaIA" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
                             {t.hero.ctaSeminar}
                         </a>
@@ -105,7 +105,7 @@ export default function Home({ lang }: HomeProps) {
                         </button>
                     </div>
                     {/* En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
-                    <p className="!mb-0 pt-4 text-center">
+                    <p className="!mb-0 pt-4 bajo:pt-2 text-center">
                         <a {...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: 'https://seguridaddelaia.substack.com/', target: '_blank', rel: 'noopener noreferrer' })} className="inline-block py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
                             {t.hero.ctaPrimary}
                         </a>
@@ -116,7 +116,7 @@ export default function Home({ lang }: HomeProps) {
             {/* Franja de patrocinio. Logo sin recolorear: versión azul en claro y versión blanca oficial en oscuro.
                 El SVG trae margen transparente (lienzo 261×101), que se compensa con margen negativo */}
             <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
-                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1.2vw,1.5rem)] flex flex-col items-center gap-[clamp(0.35rem,0.2rem+0.5vw,0.6rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
+                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1.2vw,1.5rem)] bajo:py-[clamp(0.6rem,1.5vh,1.5rem)] flex flex-col items-center gap-[clamp(0.35rem,0.2rem+0.5vw,0.6rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
                     <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
                     <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] dark:hidden" />
                     <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] hidden dark:block" />
