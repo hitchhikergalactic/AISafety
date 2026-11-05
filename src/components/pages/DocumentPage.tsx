@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChevronRight } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
@@ -51,7 +52,7 @@ const DocumentPage: React.FC<DocumentPageProps> = ({ lang, header: content, subj
                 <a href={`${langPrefix}${content.breadcrumbParentHref ?? '/que-hacemos'}`} className="hover:text-principal transition-colors">
                   {content.breadcrumbParent}
                 </a>
-                <span>/</span>
+                <ChevronRight size={14} aria-hidden="true" className="shrink-0 opacity-60" />
                 <span className="text-secundarios-dark dark:text-secundarios-light">{content.breadcrumbCurrent}</span>
               </nav>
 
