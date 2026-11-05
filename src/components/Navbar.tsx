@@ -146,7 +146,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       <div className={`absolute inset-0 z-0 transition-all duration-500 ease-in-out ${scrolled ? 'bg-secundarios-light dark:bg-secundarios-dark shadow-sm' : ''}`}></div>
 
       {/* Tres columnas (logo, enlaces, acciones): los enlaces se centran entre el logo y las acciones, nunca encima de ellas */}
-      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 lg:px-8 xl:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2 sm:gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
+      <div className={`max-w-[1400px] mx-auto px-4 md:px-12 lg:px-8 xl:px-12 grid grid-cols-[auto_minmax(0,1fr)_auto] lg:grid-cols-[minmax(max-content,1fr)_auto_minmax(max-content,1fr)] gap-x-2 sm:gap-x-6 items-center relative z-50 transition-all duration-500 ease-in-out ${scrolled ? 'py-3 md:py-4' : 'py-4 md:py-8'}`}>
         {/* Logo */}
         <a 
           href={lang === 'es' ? "/" : "/en/"}
@@ -274,7 +274,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
           <button 
             onClick={toggleTheme}
-            className="p-2 md:p-2.5 rounded-full border border-secundarios-dark/20 text-secundarios-dark dark:text-secundarios-light hover:bg-secundarios-light dark:hover:bg-white/5 transition-all duration-300 cursor-pointer"
+            className="p-2 md:p-2.5 rounded-full border border-secundarios-dark/20 dark:border-secundarios-light/30 text-secundarios-dark dark:text-secundarios-light hover:bg-secundarios-light dark:hover:bg-white/5 transition-all duration-300 cursor-pointer"
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? <Moon size={16} className="md:w-[18px] md:h-[18px]" /> : <Sun size={16} className="md:w-[18px] md:h-[18px]" />}
@@ -282,7 +282,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
           <a 
             href={targetLangPath}
-            className="px-3 md:px-4 py-1.5 rounded-anthro border border-secundarios-dark/20 text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal font-sans font-bold text-[10px] md:text-xs uppercase tracking-[0.15em] transition-all duration-300 inline-block text-center cursor-pointer"
+            className="px-3 md:px-4 py-1.5 rounded-anthro border border-secundarios-dark/20 dark:border-secundarios-light/30 text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal font-sans font-bold text-[10px] md:text-xs uppercase tracking-[0.15em] transition-all duration-300 inline-block text-center cursor-pointer"
           >
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
