@@ -18,7 +18,7 @@ import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
-import ProximosEventos from '@components/ProximosEventos';
+import ProximosEventos, { eventos, vigentes, limpiarNombre, conUtm } from '@components/ProximosEventos';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
@@ -44,6 +44,17 @@ export default function Home({ lang }: HomeProps) {
         if (img.default && typeof img.default === 'string') return img.default;
         return '';
     };
+
+    // Botón principal de la portada: directo a la inscripción del próximo evento en Luma (un clic, sin bajar a la lista).
+    // `ahora` empieza en 0 (igual en servidor y navegador, para que la hidratación coincida) y se fija al cargar.
+    const [ahora, setAhora] = useState(0);
+    useEffect(() => { setAhora(Date.now()); }, []);
+    const proximo = vigentes(eventos, ahora)[0];
+    const fechaProximo = proximo
+        ? new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { timeZone: proximo.zona, weekday: 'short', day: 'numeric', month: 'short' })
+            .format(new Date(proximo.inicio)).replace(/\./g, '').replace(',', '').replace(/^./, (c) => c.toUpperCase())
+        : '';
+    const lugarProximo = proximo ? (proximo.modalidad === 'en-linea' ? (lang === 'es' ? 'En línea' : 'Online') : proximo.ciudad) : null;
 
     const openModal = (type: 'subscribe' | 'event') => {
         setModalType(type);
@@ -98,8 +109,21 @@ export default function Home({ lang }: HomeProps) {
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
-                        <a href="#proximos-eventos" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
-                            {t.hero.ctaEvents}
+                        {/* Con evento próximo: abre su página de Luma (inscripción). Sin eventos: baja a la sección, que invita a seguir el calendario */}
+                        <a
+                            {...(proximo
+                                ? { href: conUtm(proximo.url, 'portada-hero'), target: '_blank', rel: 'noopener noreferrer' }
+                                : { href: '#proximos-eventos' })}
+                            className="flex-1 flex flex-col items-center justify-center text-center px-4 py-[clamp(0.6rem,0.4rem+0.5vw,0.85rem)] text-[1.1875rem] leading-tight rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark"
+                        >
+                            {proximo ? (
+                                <>
+                                    <span>{lang === 'es' ? 'Apúntate al próximo evento' : 'Register for the next event'}</span>
+                                    <span className="block mt-0.5 font-sans text-sm font-semibold opacity-90 line-clamp-1" suppressHydrationWarning>
+                                        {fechaProximo}{lugarProximo ? ` – ${lugarProximo}` : ` – ${limpiarNombre(lang === 'en' && proximo.nombreEn ? proximo.nombreEn : proximo.nombre)}`}
+                                    </span>
+                                </>
+                            ) : t.hero.ctaEvents}
                         </a>
                         {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
                         {/* Abre la misma ventana de alta que el resto de botones «¡Quiero formar parte!»; no es el formulario de la red (REDiaS) */}
@@ -107,9 +131,10 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaSecondary}
                         </button>
                     </div>
-                    {/* Móvil y tableta: el botón «Léenos» de la cabecera solo se ve desde lg, así que aquí ocupa el sitio del enlace */}
+                    {/* Móvil y tableta: el botón «Léenos» de la cabecera solo se ve desde lg, así que aquí ocupa el sitio del enlace.
+                        Va como enlace, no como botón lleno: el único botón lleno es «Ver próximos eventos» (camino a Luma) */}
                     <p className="lg:hidden !mb-0 pt-4 bajo:pt-2 text-center">
-                        <a href={substackUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-anthro border-2 border-principal bg-principal text-white font-sans font-bold text-base whitespace-nowrap no-underline shadow-sm hover:bg-principal/90 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2">
+                        <a href={substackUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
                             <Newspaper size={18} aria-hidden="true" />
                             {lang === 'es' ? 'Léenos' : 'Read us'}
                         </a>
