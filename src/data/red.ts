@@ -8,6 +8,9 @@ export const directorioFormUrl = 'https://airtable.com/appjg7pwM6YVmobZ6/pagaXjW
 // de consentimiento marcada, sin correo). Si se cambian sus filtros o campos, revisar la política de privacidad (apartado 4).
 export const directorioEmbedUrl = 'https://airtable.com/embed/appjg7pwM6YVmobZ6/shrgzdbJbcxbHdEJd?viewControls=on';
 
+// Calendario de Luma de la red (rediaS): sus eventos se leen cada día a src/data/eventos-red.json.
+export const calendarioRedUrl = 'https://luma.com/rediaS';
+
 export const redContent = {
   es: {
     seoTitle: 'Red | iaS',
@@ -34,7 +37,7 @@ export const redContent = {
     orgNote: 'Se abrirá tu correo con los datos que necesitamos.',
     orgHref: 'mailto:hola@aisafety.es?subject=Quiero%20a%C3%B1adir%20mi%20organizaci%C3%B3n%20a%20la%20Red%20iaS&body=Hola%2C%0A%0AMe%20gustar%C3%ADa%20a%C3%B1adir%20mi%20organizaci%C3%B3n%20a%20la%20Red%20iaS.%0A%0ANombre%20de%20la%20organizaci%C3%B3n%3A%20%0AWeb%3A%20%0ACiudad%20y%20pa%C3%ADs%3A%20%0APersona%20de%20contacto%3A%20%0A%C2%BFA%20qu%C3%A9%20se%20dedica%3F%3A%20',
     heroButton: 'Únete a la red',
-    heroSecondaryButton: 'Ver quién está',
+    heroSecondaryButton: 'Ver eventos',
     membersCtaTitle: '¿Quieres aparecer aquí?',
     membersCtaText: 'La red está empezando: sé de las primeras personas del directorio y deja que te encuentre gente que trabaja en lo mismo que tú, en cualquier país.',
     membersCtaButton: 'Añade tu perfil',
@@ -44,6 +47,9 @@ export const redContent = {
     membersTitle: 'Personas de la red',
     membersText: 'Quienes han hecho público su perfil en el directorio de la red. Busca por país, área o lo que necesitas y escríbeles.',
     membersFrameTitle: 'Directorio de personas de la Red iaS',
+    eventsTitle: 'Próximos eventos de la red',
+    eventsText: 'Encuentros de iaS y de las organizaciones de la red, a un clic de la inscripción.',
+    eventsAll: 'Ver calendario',
     directoryNote: 'Formulario de Airtable. Se abrirá en una nueva pestaña.',
     joinTitle: '¿No hay un nodo en tu ciudad?',
     joinText: 'Lleva iaS a tu ciudad.',
@@ -74,7 +80,7 @@ export const redContent = {
     orgNote: 'Your email app will open with the details we need.',
     orgHref: 'mailto:hola@aisafety.es?subject=I%20want%20to%20add%20my%20organization%20to%20the%20iaS%20Network&body=Hi%2C%0A%0AI%20would%20like%20to%20add%20my%20organization%20to%20the%20iaS%20Network.%0A%0AOrganization%20name%3A%20%0AWebsite%3A%20%0ACity%20and%20country%3A%20%0AContact%20person%3A%20%0AWhat%20does%20it%20do%3F%3A%20',
     heroButton: 'Join the network',
-    heroSecondaryButton: "See who's here",
+    heroSecondaryButton: 'See events',
     membersCtaTitle: 'Want to appear here?',
     membersCtaText: 'The network is just getting started: be one of the first people in the directory and let others working on the same things find you, in any country.',
     membersCtaButton: 'Add your profile',
@@ -84,6 +90,9 @@ export const redContent = {
     membersTitle: 'People in the network',
     membersText: 'Those who have made their profile public in the network directory. Search by country, area or what you need, and write to them.',
     membersFrameTitle: 'iaS Network people directory',
+    eventsTitle: 'Upcoming network events',
+    eventsText: 'Events from iaS and the organizations in the network, one click away from registration.',
+    eventsAll: 'See calendar',
     directoryNote: 'Airtable form. Opens in a new tab.',
     joinTitle: 'No node in your city?',
     joinText: 'Bring iaS to your city.',
