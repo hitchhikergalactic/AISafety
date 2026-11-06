@@ -47,8 +47,9 @@ export const translations = {
       title: "Próximos Eventos",
       eventTitle: "Actividades iaS: eventos, charlas y cursos",
       eventImageAlt: "Grupo de personas sonriendo en la puerta de un evento de iaS en Madrid.",
-      description: "​Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad. Sigue en **Luma** nuestra agenda para participar de nuestras actividades.",
-      cta: "Ver próximas actividades",
+      description: "Encuentros presenciales, seminario en línea y sprints de investigación. Ven con una pregunta, un proyecto a medio construir o simplemente curiosidad.",
+      next: "Próximo",
+      cta: "Ver todas las fechas",
       detailsTitle: "Detalles del programa",
       moreInfo: "Más información",
       bluedot: {
@@ -204,8 +205,9 @@ export const translations = {
       title: "Upcoming events",
       eventTitle: "iaS activities: events, talks & courses",
       eventImageAlt: "A group of people smiling at the entrance of an iaS event in Madrid.",
-      description: "Come with a question, a project in progress, or simply curiosity. Follow our **Luma** calendar to take part in our activities.",
-      cta: "See upcoming activities",
+      description: "In-person meetups, an online seminar and research sprints. Come with a question, a project in progress, or simply curiosity.",
+      next: "Next",
+      cta: "See all dates",
       detailsTitle: "Program details",
       moreInfo: "More information",
       bluedot: {
