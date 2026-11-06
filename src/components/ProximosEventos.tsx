@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowUpRight, MapPin, Monitor } from 'lucide-react';
 import eventosJson from '../data/eventos.json';
+import { eventosPropios } from '../data/eventos-propios';
 
 // Próximos eventos de iaS, leídos de src/data/eventos.json (lo actualiza cada día scripts/actualizar-eventos.mjs).
 // Pensado para llegar a la inscripción con un solo clic: cada tarjeta entera es el enlace al evento en Luma.
@@ -18,17 +19,26 @@ export type Evento = {
   lugar: string | null;
   direccion: string | null;
   imagen: string | null;
+  // Solo en los eventos propios (src/data/eventos-propios.ts)
+  nombreEn?: string;
+  porFechas?: boolean;
+  visibleHasta?: string;
+  sinDatosEstructurados?: boolean;
 };
 
-export const eventos = eventosJson as Evento[];
+// Los de Luma y los propios, por orden de fecha
+export const eventos: Evento[] = [...(eventosJson as Evento[]), ...eventosPropios]
+  .sort((a, b) => new Date(a.inicio).getTime() - new Date(b.inicio).getTime());
 export const CALENDARIO_LUMA = 'https://luma.com/iaS-SeguridadelaIA';
 
-// UTM para saber desde qué página llegan las inscripciones
+// UTM para saber desde qué página llegan las inscripciones (solo en Luma; un formulario externo se deja tal cual)
 export const conUtm = (url: string, campana: string) =>
-  `${url}${url.includes('?') ? '&' : '?'}utm_source=aisafety.es&utm_medium=web&utm_campaign=${campana}`;
+  url.startsWith('https://luma.com/')
+    ? `${url}${url.includes('?') ? '&' : '?'}utm_source=aisafety.es&utm_medium=web&utm_campaign=${campana}`
+    : url;
 
 const vigentes = (lista: Evento[], ahora: number) =>
-  lista.filter((e) => new Date(e.fin ?? e.inicio).getTime() > ahora);
+  lista.filter((e) => new Date(e.visibleHasta ?? e.fin ?? e.inicio).getTime() > ahora);
 
 // Próxima sesión del seminario en línea (los meetups en español con BlueDot)
 export const esSeminario = (e: Evento) => e.modalidad !== 'presencial' && /meet\s*-?\s*up|seminario|seminar/i.test(e.nombre);
@@ -62,9 +72,9 @@ const textos = {
   },
 } as const;
 
-// «iaS - Valencia: AI Safety Session.» → sin el punto final; «Sprint | Madrid | iaS» → «Sprint · Madrid»
+// «iaS - Valencia: AI Safety Session.» → sin el punto final; «Sprint | Madrid | iaS» → «Sprint – Madrid» (el «·» de la tipografía se pega a la palabra siguiente)
 const limpiarNombre = (nombre: string) =>
-  nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' · ').trim();
+  nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ').trim();
 
 const ciudadDeZona = (zona: string) => zona.split('/').pop()?.replace(/_/g, ' ') ?? zona;
 
@@ -106,7 +116,7 @@ const ProximosEventos: React.FC<{
   const visibles = limite ? filtrados.slice(0, limite) : filtrados;
 
   const formatear = (e: Evento) => {
-    const local = e.modalidad !== 'presencial' && zonaVisitante;
+    const local = !e.porFechas && e.modalidad !== 'presencial' && zonaVisitante;
     const zona = local ? zonaVisitante : e.zona;
     const fecha = new Date(e.inicio);
     const parte = (opciones: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat(locale, { timeZone: zona, ...opciones }).format(fecha);
@@ -120,11 +130,12 @@ const ProximosEventos: React.FC<{
       semana: parte({ weekday: 'long' }),
       hora: parte({ hour: '2-digit', minute: '2-digit' }),
       hasta: finTexto,
+      desde: parte({ day: 'numeric', month: 'short' }),
       etiquetaZona: local ? tx.tuHora : tx.horaDe(e.ciudad && e.modalidad !== 'en-linea' ? e.ciudad : ciudadDeZona(e.zona)),
     };
   };
 
-  const paraBuscadores = datosEstructurados ? vigentes(lista, Date.now()) : [];
+  const paraBuscadores = datosEstructurados ? vigentes(lista, Date.now()).filter((e) => !e.sinDatosEstructurados) : [];
   const jsonLd = paraBuscadores.length > 0 ? paraBuscadores.map((e) => ({
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -200,11 +211,13 @@ const ProximosEventos: React.FC<{
                     <span className="block mt-1 font-sans text-xs md:text-sm font-bold uppercase tracking-wider text-principal-texto" suppressHydrationWarning>{f.mes}</span>
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-sans text-base md:text-lg font-bold leading-snug">{limpiarNombre(e.nombre)}</span>
+                    <span className="block font-sans text-base md:text-lg font-bold leading-snug">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
                     <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
                       <span className="inline-flex items-center gap-1"><Icono size={14} aria-hidden="true" />{donde}</span>
                       <span suppressHydrationWarning>
-                        <span className="capitalize">{f.semana}</span>, {f.hora}{f.hasta ? ` – ${f.hasta}` : ''} <span className="opacity-80">({f.etiquetaZona})</span>
+                        {e.porFechas
+                          ? <>{f.desde}{f.hasta ? ` – ${f.hasta}` : ''}</>
+                          : <><span className="capitalize">{f.semana}</span>, {f.hora}{f.hasta ? ` – ${f.hasta}` : ''} <span className="opacity-80">({f.etiquetaZona})</span></>}
                       </span>
                     </span>
                   </span>
