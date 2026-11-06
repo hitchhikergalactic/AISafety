@@ -5,6 +5,10 @@ import JoinModal from '@components/JoinModal';
 import { cursoEstrategiaAgiContent } from '@data/cursoEstrategiaAgi';
 import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
+import { ArrowUpRight, CalendarDays } from 'lucide-react';
+
+// Formulario de inscripción a la cohorte (Jotform)
+const FORMULARIO = 'https://form.jotform.com/262144003863046';
 
 type Language = 'es' | 'en';
 
@@ -38,6 +42,29 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               </a>
               {content.heroText.after}
             </p>
+
+            {/* Fechas de la cohorte e inscripción, a la vista nada más llegar (el formulario completo sigue abajo) */}
+            <div className="mb-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 rounded-xl border-2 border-principal/40 bg-principal/5 dark:bg-principal/10 p-5 md:p-6">
+              <span className="flex items-center gap-3 flex-1 min-w-0">
+                <CalendarDays size={28} aria-hidden="true" className="shrink-0 text-principal-texto" />
+                <span>
+                  <span className="block font-sans font-bold text-lg md:text-xl text-secundarios-dark dark:text-white">{content.cohortDates}</span>
+                  <span className="flex flex-wrap gap-x-2 font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
+                    {content.cohortFormat.map((parte, i) => (
+                      <span key={parte}>{i > 0 && <span aria-hidden="true" className="mr-2">·</span>}{parte}</span>
+                    ))}
+                  </span>
+                </span>
+              </span>
+              <a
+                href={FORMULARIO}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 font-sans text-lg font-bold text-white no-underline shadow-md transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+              >
+                {content.heroCta} <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+            </div>
 
             <div className="mb-8">
               <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.whyTitle}</h5>
@@ -81,7 +108,7 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
                 {content.formDescription}
               </p>
               <a
-                href="https://form.jotform.com/262144003863046"
+                href={FORMULARIO}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-principal px-6 py-4 text-[1.1875rem] font-bold text-white transition hover:-translate-y-0.5"

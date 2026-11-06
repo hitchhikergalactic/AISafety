@@ -76,7 +76,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               {proximo && (
                 <p className="!mb-0 mt-1 !font-sans !text-sm font-semibold text-secundarios-dark dark:text-secundarios-light">
                   <span className="text-principal-texto uppercase tracking-wider">{t.upcoming.next}:</span>{' '}
-                  {fechaCorta(proximo.inicio, proximo.zona)} · {proximo.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' · ')}
+                  {fechaCorta(proximo.inicio, proximo.zona)} · {proximo.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ')}
                 </p>
               )}
               <div className="mt-auto">
