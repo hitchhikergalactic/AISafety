@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import {
-    ArrowRight
+    ArrowRight,
+    Newspaper
 } from 'lucide-react';
+import { substackUrl } from '@data/delegaciones';
 import { FaLinkedin } from "react-icons/fa";
 
 // --- Import components ---
@@ -105,8 +107,15 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaSecondary}
                         </button>
                     </div>
-                    {/* En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
-                    <p className="!mb-0 pt-4 bajo:pt-2 text-center">
+                    {/* Móvil y tableta: el botón «Léenos» de la cabecera solo se ve desde lg, así que aquí ocupa el sitio del enlace */}
+                    <p className="lg:hidden !mb-0 pt-4 bajo:pt-2 text-center">
+                        <a href={substackUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-5 py-2 rounded-anthro border-2 border-principal bg-principal text-white font-sans font-bold text-base whitespace-nowrap no-underline shadow-sm hover:bg-principal/90 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2">
+                            <Newspaper size={18} aria-hidden="true" />
+                            {lang === 'es' ? 'Léenos' : 'Read us'}
+                        </a>
+                    </p>
+                    {/* Escritorio. En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
+                    <p className="hidden lg:block !mb-0 pt-4 bajo:pt-2 text-center">
                         <a {...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: 'https://seguridaddelaia.substack.com/', target: '_blank', rel: 'noopener noreferrer' })} className="inline-block py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
                             {t.hero.ctaPrimary}
                         </a>
