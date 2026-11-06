@@ -4,13 +4,12 @@ import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
 import { emphasizeBrand } from '@utils/emphasizeBrand';
 import ProgramDetails from '@components/ProgramDetails';
-import eventImage from '../assets/portada-grupo.webp';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-semana-ias.webp';
 import ultimoBoletin from '../data/ultimo-boletin.json';
+import { substackUrl } from '../data/delegaciones';
 import cursoAgi from '../assets/curso_agi.jpg';
-import { eventos } from '@components/ProximosEventos';
 
 interface BentoGridProps {
   t: any;
@@ -20,11 +19,6 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
-  // Tarjeta de encuentros: solo los presenciales (el seminario y el curso tienen su propia tarjeta en esta misma sección).
-  // Fecha en la zona del evento, sin hora, así no depende de quién visita.
-  const encuentros = eventos.filter((e) => e.modalidad !== 'en-linea').slice(0, 3);
-  const fechaCorta = (iso: string, zona: string) =>
-    new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { timeZone: zona, weekday: 'short', day: 'numeric', month: 'short' }).format(new Date(iso)).replace(/\./g, '');
   // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
   // Blanco sobre naranja cumple 3:1, suficiente para texto grande en negrita como este.
   const ctaClass = "mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-center font-sans text-[1.1875rem] font-bold text-white shadow-md transition-all group-hover:shadow-lg group-hover:-translate-y-0.5";
@@ -46,57 +40,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
         {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           
-          {/* --- COLUMNA IZQUIERDA (2 Tarjetas: Hero + Secundaria) --- */}
+          {/* --- COLUMNA IZQUIERDA (2 Tarjetas: Curso AGI + Discord) --- */}
           <div className="flex flex-col gap-4 h-full">
-            
-            {/* TARJETA 1: Hero - Imagen */}
-            {/* Lleva a la página de eventos de la web (fechas a la vista y un clic a la inscripción), no a Luma */}
-            <a
-              href={`${langPrefix}/eventos`}
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <span className="font-sans text-sm text-label-gray uppercase">
-                 {t.upcoming.tag}{lang === 'es' && <span className="normal-case"> iaS</span>}
-                </span>
-              </div>
-              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img 
-                  src={getImageSrc(eventImage)} 
-                  alt={t.upcoming.eventImageAlt}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h4 className={`${cardTitleClass} mb-2`}>
-                {t.upcoming.eventTitle}
-              </h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
-                {parseText(t.upcoming.description)}
-              </p>
-              {/* Los próximos encuentros reales (de Luma), para que la tarjeta no prometa sin enseñar ninguna fecha */}
-              <div className="mt-1">
-                <p className="!mb-2 !font-sans !text-sm font-bold uppercase tracking-wider text-principal-texto">{t.upcoming.next}</p>
-                {encuentros.length > 0 ? (
-                  <ul className="list-none !p-0 !m-0 space-y-2">
-                    {encuentros.map((e) => (
-                      <li key={e.id} className="!m-0 flex gap-3 font-sans text-sm text-secundarios-dark dark:text-secundarios-light">
-                        <span className="shrink-0 w-20 font-bold">{fechaCorta(e.inicio, e.zona).replace(/^\p{L}/u, (l) => l.toLocaleUpperCase())}</span>
-                        <span className="min-w-0 font-semibold">{e.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ')}{e.ciudad && !e.nombre.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().includes(e.ciudad.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace('valencia', 'valencia'))
-                          ? <span className="font-normal opacity-75"><span aria-hidden="true" className="mx-1.5">·</span>{e.ciudad}</span> : null}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="!mb-0 !font-sans !text-sm">{t.upcoming.none}</p>
-                )}
-              </div>
-              <div className="mt-auto">
-                <span className={ctaClass}>
-                  {t.upcoming.cta}
-                  <ArrowRight size={18} aria-hidden="true" />
-                </span>
-              </div>
-            </a>
             
             {/* TARJETA 2: Secundaria - Con Imagen y Texto (Curso Estrategia AGI) */}
             <a 
@@ -129,14 +74,39 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 </span>
               </div>
             </a>
+
+            {/* TARJETA 5: Research - Texto + Botón */}
+            <a 
+              href="https://discord.gg/gm6v9Cwa58"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+            >
+               <div className="flex justify-between items-start mb-4">
+                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
+               </div>
+               <div className="flex flex-col md:flex-row gap-4 flex-1">
+                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
+                    <img src={getImageSrc(discord)} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                  <div className="flex flex-col flex-1">
+                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.research.title}</h4>
+                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 flex-grow">{parseText(t.upcoming.research.description)}</p>
+                  </div>
+               </div>
+               <span className={ctaClass}>
+                 {t.upcoming.research.cta}
+                 <ArrowUpRight size={18} aria-hidden="true" />
+               </span>
+            </a>
           </div>
 
-          {/* --- COLUMNA DERECHA (3 Tarjetas: Apaisada + Horizontal + Research) --- */}
+          {/* --- COLUMNA DERECHA (2 Tarjetas: Boletín + Seminario BlueDot) --- */}
           <div className="flex flex-col gap-5 h-full">
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
-              href={ultimoBoletin.url}
+              href={substackUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
@@ -185,32 +155,6 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                   </span>
                </div>
             </a>
-
-            {/* TARJETA 5: Research - Texto + Botón */}
-            <a 
-              href="https://discord.gg/gm6v9Cwa58"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
-            >
-               <div className="flex justify-between items-start mb-4">
-                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
-               </div>
-               <div className="flex flex-col md:flex-row gap-4 flex-1">
-                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
-                    <img src={getImageSrc(discord)} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  <div className="flex flex-col flex-1">
-                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.research.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 flex-grow">{parseText(t.upcoming.research.description)}</p>
-                  </div>
-               </div>
-               <span className={ctaClass}>
-                 {t.upcoming.research.cta}
-                 <ArrowUpRight size={18} aria-hidden="true" />
-               </span>
-            </a>
-
           </div>
         </div>
       </div>

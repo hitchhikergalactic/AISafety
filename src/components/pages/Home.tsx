@@ -16,12 +16,12 @@ import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
-import ProximosEventos, { eventos, esSeminario, conUtm, CALENDARIO_LUMA } from '@components/ProximosEventos';
+import ProximosEventos from '@components/ProximosEventos';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
 import logoBlueDotWhite from '@assets/logos__bluedot_impact_white.svg';
-import undefinedImgur from '@assets/undefined_imgur.webp';
+import fotoGrupo from '@assets/portada-grupo.webp';
 
 type Language = 'es' | 'en';
 
@@ -66,10 +66,6 @@ export default function Home({ lang }: HomeProps) {
         return () => document.removeEventListener('click', handleAnchorClick);
     }, []);
 
-    // «Apúntate al seminario» lleva directo a la próxima sesión si ya está en Luma; si no, al calendario
-    const proximaSesion = eventos.find(esSeminario);
-    const enlaceSeminario = conUtm(proximaSesion?.url ?? CALENDARIO_LUMA, 'portada-hero');
-
     return (
         <>
             <Navbar lang={lang} />
@@ -100,8 +96,8 @@ export default function Home({ lang }: HomeProps) {
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
-                        <a href={enlaceSeminario} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
-                            {t.hero.ctaSeminar}
+                        <a href="#proximos-eventos" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                            {t.hero.ctaEvents}
                         </a>
                         {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
                         {/* Abre la misma ventana de alta que el resto de botones «¡Quiero formar parte!»; no es el formulario de la red (REDiaS) */}
@@ -170,14 +166,14 @@ export default function Home({ lang }: HomeProps) {
                         <p className="font-bold">{t.why.text4}</p>
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center">
-                        <div className="relative group w-full aspect-square bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10">
-                            {getImageSrc(undefinedImgur) && (
-                                <img
-                                    src={getImageSrc(undefinedImgur)}
-                                    alt="AI Safety Madrid"
-                                    className="w-full h-full object-cover"
-                                />
-                            )}
+                        {/* Foto real de un encuentro: la portada necesita caras de verdad, no una ilustración genérica */}
+                        <div className="relative group w-full aspect-[3/2] bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10">
+                            <img
+                                src={getImageSrc(fotoGrupo)}
+                                alt={t.upcoming.eventImageAlt}
+                                loading="lazy"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </div>
                 </div>
