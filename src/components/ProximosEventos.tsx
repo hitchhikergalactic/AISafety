@@ -37,7 +37,7 @@ export const conUtm = (url: string, campana: string) =>
     ? `${url}${url.includes('?') ? '&' : '?'}utm_source=aisafety.es&utm_medium=web&utm_campaign=${campana}`
     : url;
 
-const vigentes = (lista: Evento[], ahora: number) =>
+export const vigentes = (lista: Evento[], ahora: number) =>
   lista.filter((e) => new Date(e.visibleHasta ?? e.fin ?? e.inicio).getTime() > ahora);
 
 // Próxima sesión del seminario en línea (los meetups en español con BlueDot)
@@ -73,7 +73,7 @@ const textos = {
 } as const;
 
 // «iaS - Valencia: AI Safety Session.» → sin el punto final; «Sprint | Madrid | iaS» → «Sprint – Madrid» (el «·» de la tipografía se pega a la palabra siguiente)
-const limpiarNombre = (nombre: string) =>
+export const limpiarNombre = (nombre: string) =>
   nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ').trim();
 
 const ciudadDeZona = (zona: string) => zona.split('/').pop()?.replace(/_/g, ' ') ?? zona;
