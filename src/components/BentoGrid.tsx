@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { parseText } from '@utils/parseText';
 import { parseHighlight } from '@utils/parseHighlight';
 import { emphasizeBrand } from '@utils/emphasizeBrand';
@@ -10,6 +10,7 @@ import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-semana-ias.webp';
 import ultimoBoletin from '../data/ultimo-boletin.json';
 import cursoAgi from '../assets/curso_agi.jpg';
+import { eventos } from '@components/ProximosEventos';
 
 interface BentoGridProps {
   t: any;
@@ -19,6 +20,10 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
+  // Próximo evento de iaS para la tarjeta de agenda. Fecha en la zona del evento (sin hora, así no depende de quién visita)
+  const proximo = eventos[0];
+  const fechaCorta = (iso: string, zona: string) =>
+    new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { timeZone: zona, weekday: 'short', day: 'numeric', month: 'short' }).format(new Date(iso)).replace(/\./g, '');
   // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
   // Blanco sobre naranja cumple 3:1, suficiente para texto grande en negrita como este.
   const ctaClass = "mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-center font-sans text-[1.1875rem] font-bold text-white shadow-md transition-all group-hover:shadow-lg group-hover:-translate-y-0.5";
@@ -44,11 +49,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           <div className="flex flex-col gap-4 h-full">
             
             {/* TARJETA 1: Hero - Imagen */}
+            {/* Lleva a la página de eventos de la web (fechas a la vista y un clic a la inscripción), no a Luma */}
             <a
-              href="https://luma.com/iaS-SeguridadelaIA"
+              href={`${langPrefix}/eventos`}
               className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
@@ -68,10 +72,17 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
                 {parseText(t.upcoming.description)}
               </p>
+              {/* El próximo evento real (de Luma), para que la tarjeta no prometa sin enseñar ninguna fecha */}
+              {proximo && (
+                <p className="!mb-0 mt-1 !font-sans !text-sm font-semibold text-secundarios-dark dark:text-secundarios-light">
+                  <span className="text-principal-texto uppercase tracking-wider">{t.upcoming.next}:</span>{' '}
+                  {fechaCorta(proximo.inicio, proximo.zona)} · {proximo.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' · ')}
+                </p>
+              )}
               <div className="mt-auto">
                 <span className={ctaClass}>
                   {t.upcoming.cta}
-                  <ArrowUpRight size={18} aria-hidden="true" />
+                  <ArrowRight size={18} aria-hidden="true" />
                 </span>
               </div>
             </a>

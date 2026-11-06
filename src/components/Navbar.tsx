@@ -125,6 +125,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]
     },
+    // Eventos: pestaña directa (sin desplegable) para llegar a las fechas con un clic
+    { href: "agenda", label: t.nav.agenda, path: `${langPrefix}/eventos` },
     { href: "red", label: t.nav.about, path: lang === 'es' ? '/red' : '/en/network' },
     { href: "footer",
       label: t.nav.contact,

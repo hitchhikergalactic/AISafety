@@ -1,0 +1,11 @@
+---
+// src/pages/eventos.astro
+import Layout from '../layouts/Layout.astro';
+import Eventos, { eventosContent } from '../components/pages/Eventos.tsx';
+
+const c = eventosContent.es;
+---
+
+<Layout lang="es" title={c.seoTitle} description={c.description}>
+  <Eventos lang="es" client:load />
+</Layout>

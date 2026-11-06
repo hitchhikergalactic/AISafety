@@ -16,6 +16,7 @@ import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
+import ProximosEventos, { eventos, esSeminario, conUtm, CALENDARIO_LUMA } from '@components/ProximosEventos';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
@@ -65,6 +66,10 @@ export default function Home({ lang }: HomeProps) {
         return () => document.removeEventListener('click', handleAnchorClick);
     }, []);
 
+    // «Apúntate al seminario» lleva directo a la próxima sesión si ya está en Luma; si no, al calendario
+    const proximaSesion = eventos.find(esSeminario);
+    const enlaceSeminario = conUtm(proximaSesion?.url ?? CALENDARIO_LUMA, 'portada-hero');
+
     return (
         <>
             <Navbar lang={lang} />
@@ -95,7 +100,7 @@ export default function Home({ lang }: HomeProps) {
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
-                        <a href="https://luma.com/iaS-SeguridadelaIA" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
+                        <a href={enlaceSeminario} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center text-center py-[clamp(0.75rem,0.5rem+0.6vw,1rem)] text-[1.1875rem] rounded-2xl bg-principal text-white font-bold no-underline hover:bg-principal/90 transition-all shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
                             {t.hero.ctaSeminar}
                         </a>
                         {/* Secundario: borde en el naranja de la marca; texto en un naranja más oscuro (claro) o más claro (oscuro) para llegar a 4,5:1 */}
@@ -123,6 +128,17 @@ export default function Home({ lang }: HomeProps) {
                 </a>
             </div>
             </div>
+
+            {/* PRÓXIMOS EVENTOS: justo tras la primera pantalla, para llegar a la inscripción con un clic */}
+            <Section id="proximos-eventos" className="!pt-10 md:!pt-16 !pb-0">
+                <div className="flex items-end justify-between gap-4 mb-5 md:mb-6">
+                    <h2 className="!text-2xl md:!text-3xl !leading-tight !mb-0">{lang === 'es' ? 'Próximos eventos' : 'Upcoming events'}</h2>
+                    <a href={lang === 'es' ? '/eventos' : '/en/eventos'} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
+                        {lang === 'es' ? 'Ver todos' : 'See all'} <ArrowRight size={18} aria-hidden="true" />
+                    </a>
+                </div>
+                <ProximosEventos lang={lang} campana="portada" limite={3} />
+            </Section>
 
             {/* 2. COLABORADORES */}
             <Section id="conectar">
