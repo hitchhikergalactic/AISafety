@@ -77,8 +77,9 @@ export const translations = {
         tag: "CURSO",
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
-        dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | Próximamente.",
+        dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | **Del 11 de enero al 14 de febrero**.",
         details: [
+          { label: "Fechas", value: "Del 11 de enero al 14 de febrero de 2027" },
           { label: "Duración", value: "5 semanas (25 h en total)" },
           { label: "Sesiones", value: "2 h en línea a la semana durante 5 semanas" },
           { label: "Estudio personal", value: "unas 3 h a la semana de lecturas y ejercicios" },
@@ -235,8 +236,9 @@ export const translations = {
         tag: "COURSE",
         title: "Course on strategy for Artificial General Intelligence",
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
-        dateShort: "Cohort-based. No technical requirements | **Online** | Coming soon.",
+        dateShort: "Cohort-based. No technical requirements | **Online** | **January 11 to February 14**.",
         details: [
+          { label: "Dates", value: "January 11 to February 14, 2027" },
           { label: "Duration", value: "5 weeks (25 h in total)" },
           { label: "Sessions", value: "2 h online per week for 5 weeks" },
           { label: "Self-study", value: "about 3 h per week of readings and exercises" },

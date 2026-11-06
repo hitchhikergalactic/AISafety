@@ -2,8 +2,34 @@
 // src/pages/curso-estrategia-agi.astro
 import Layout from '../layouts/Layout.astro';
 import CursoEstrategiaAgi from '../components/pages/curso-estrategia-agi.tsx';
+// Datos estructurados del curso (fechas de la primera cohorte) para buscadores
+const cursoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Curso de Estrategia ante la Inteligencia Artificial General",
+  "description": "Programa en español sobre estrategia ante la IA General, basado en el currículo de BlueDot Impact. Cinco semanas en línea, en cohortes, sin requisitos técnicos.",
+  "inLanguage": "es",
+  "url": "https://aisafety.es/curso-estrategia-agi",
+  "provider": {
+    "@type": "Organization",
+    "name": "iaS",
+    "url": "https://www.aisafety.es"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "startDate": "2027-01-11",
+    "endDate": "2027-02-14",
+    "courseWorkload": "PT25H",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://aisafety.es/curso-estrategia-agi"
+    }
+  }
+};
 ---
 
 <Layout lang="es" title="Curso Estrategia AGI | Seguridad de la IA España" description="Fórmate en el curso de estrategia de la IA General en español basado en el currículo de BlueDot Impact">
   <CursoEstrategiaAgi lang="es" client:load />
+  <script type="application/ld+json" set:html={JSON.stringify(cursoJsonLd)} />
 </Layout>

@@ -15,7 +15,11 @@ export const cursoEstrategiaAgiContent = {
       href: 'https://bluedot.org/courses/agi-strategy',
       after: '.',
     },
-    inPersonNote: 'Esta primera cohorte será **en línea**. Fechas próximamente.',
+    // Ficha de la cohorte bajo el título: fechas y formato a la vista, con la inscripción a un clic
+    cohortDates: 'Del 11 de enero al 14 de febrero de 2027',
+    cohortFormat: ['En línea', '5 semanas', 'unas 5 h a la semana'],
+    heroCta: 'Inscríbete',
+    inPersonNote: 'Esta primera cohorte será **en línea**, del **11 de enero al 14 de febrero de 2027**.',
     // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
     startNowNote: {
       before: 'Si quieres empezar ya, BlueDot Impact ofrece ',
@@ -48,7 +52,10 @@ export const cursoEstrategiaAgiContent = {
       href: 'https://bluedot.org/courses/agi-strategy',
       after: ' curriculum.',
     },
-    inPersonNote: 'This first cohort will be **online**. Dates coming soon.',
+    cohortDates: 'January 11 to February 14, 2027',
+    cohortFormat: ['Online', '5 weeks', 'about 5 h per week'],
+    heroCta: 'Apply',
+    inPersonNote: 'This first cohort will be **online**, from **January 11 to February 14, 2027**.',
     startNowNote: {
       before: 'If you want to get started now, BlueDot Impact offers ',
       link: 'The Future of AI',
