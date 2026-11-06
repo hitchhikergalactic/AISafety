@@ -1,0 +1,41 @@
+[
+  {
+    "id": "evt-9OcsLxzj4xqsEES",
+    "nombre": "iaS - Valencia: AI Safety Session.",
+    "url": "https://luma.com/45832b15",
+    "inicio": "2026-11-12T18:00:00.000Z",
+    "fin": "2026-11-12T19:30:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "presencial",
+    "ciudad": "València",
+    "lugar": "UPV - Escuela Técnica Superior de Ingeniería Aeroespacial y Diseño Industrial -ETSIADI",
+    "direccion": "UPV - Escuela Técnica Superior de Ingeniería Aeroespacial y Diseño Industrial -ETSIADI, Cmo. de Vera, s/n, Edificio 7E, Algirós, 46022 València, Valencia, España",
+    "imagen": "https://images.lumacdn.com/uploads/32/c45ed65e-fdb4-495d-a18a-c5b17ecc3579.png"
+  },
+  {
+    "id": "evt-3PGF4GFaaCqzPzC",
+    "nombre": "AI x Epistemics Research Sprint | Madrid | iaS",
+    "url": "https://luma.com/0epujko1",
+    "inicio": "2026-11-13T17:00:00.000Z",
+    "fin": "2026-11-15T18:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "en-linea",
+    "ciudad": "Madrid",
+    "lugar": "Madrid",
+    "direccion": "Madrid, España",
+    "imagen": "https://images.lumacdn.com/uploads/i1/3e43fbfa-9468-4780-93a6-f5746d771b30.png"
+  },
+  {
+    "id": "evt-BcpEAcooXiDOpWJ",
+    "nombre": "Women4AISafety - First Event",
+    "url": "https://luma.com/w4ais-spain",
+    "inicio": "2026-11-24T18:00:00.000Z",
+    "fin": "2026-11-24T20:30:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "presencial",
+    "ciudad": "Madrid",
+    "lugar": "Celonis SL",
+    "direccion": "Celonis SL, Pl. de Manuel Gómez-Moreno, 2, Tetuán, 28020 Madrid, España",
+    "imagen": "https://images.lumacdn.com/uploads/hx/b9862cdf-1476-41db-919b-b6166cdbfb50.png"
+  }
+]

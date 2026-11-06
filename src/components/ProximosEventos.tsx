@@ -87,7 +87,9 @@ const ProximosEventos: React.FC<{
   filtros?: boolean;
   datosEstructurados?: boolean;
   lista?: Evento[];
-}> = ({ lang, campana, limite, filtros = false, datosEstructurados = false, lista = eventos }) => {
+  // Calendario al que se invita a seguir cuando no hay eventos (por defecto, el de iaS)
+  calendario?: string;
+}> = ({ lang, campana, limite, filtros = false, datosEstructurados = false, lista = eventos, calendario = CALENDARIO_LUMA }) => {
   const tx = textos[lang];
   const locale = lang === 'es' ? 'es-ES' : 'en-GB';
 
@@ -188,7 +190,7 @@ const ProximosEventos: React.FC<{
       {visibles.length === 0 ? (
         <div className="rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 p-6 md:p-8 text-center">
           <p className="!mb-4">{tx.vacio}</p>
-          <a href={conUtm(CALENDARIO_LUMA, campana)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 py-3 px-6 rounded-xl bg-principal text-white font-sans font-bold no-underline hover:bg-principal/90 transition-all">
+          <a href={conUtm(calendario, campana)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 py-3 px-6 rounded-xl bg-principal text-white font-sans font-bold no-underline hover:bg-principal/90 transition-all">
             {tx.seguir} <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>

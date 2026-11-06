@@ -6,7 +6,11 @@ import JoinModal from '@components/JoinModal';
 import { GrupoHubs, MapaEspanol } from '@components/RedHubs';
 import { translations } from '@locales/translations';
 import EmbedAlPulsar from '@components/EmbedAlPulsar';
-import { redContent, directorioFormUrl, directorioEmbedUrl } from '@data/red';
+import { redContent, directorioFormUrl, directorioEmbedUrl, calendarioRedUrl } from '@data/red';
+import ProximosEventos, { conUtm, type Evento } from '@components/ProximosEventos';
+import eventosRedJson from '@data/eventos-red.json';
+
+const eventosRed = eventosRedJson as Evento[];
 import { parseText } from '@utils/parseText';
 
 type Language = 'es' | 'en';
@@ -59,7 +63,7 @@ const Red: React.FC<RedProps> = ({ lang }) => {
                 {content.heroButton}
                 <ArrowUpRight size={20} aria-hidden="true" />
               </a>
-              <a href="#personas" className={botonSecundario}>
+              <a href="#eventos-red" className={botonSecundario}>
                 {content.heroSecondaryButton}
                 <ArrowDown size={20} aria-hidden="true" />
               </a>
@@ -91,6 +95,19 @@ const Red: React.FC<RedProps> = ({ lang }) => {
               className="h-[533px] md:h-[640px] rounded-anthro border border-secundarios-dark/15 dark:border-white/10 bg-white/30 dark:bg-white/5 overflow-hidden"
               previa={<EsbozoDirectorio />}
             />
+          </section>
+
+          {/* Eventos del calendario rediaS (iaS y hubs de la red), leídos de Luma cada día: lista propia, sin iframe,
+              para que cada evento esté a un clic de la inscripción y no haga falta cargar nada de terceros */}
+          <section id="eventos-red" className="scroll-mt-navbar mt-16 md:mt-28">
+            <div className="flex items-end justify-between gap-4 mb-3">
+              <h2 className="!text-2xl md:!text-3xl !leading-tight !mb-0 text-balance">{content.eventsTitle}</h2>
+              <a href={conUtm(calendarioRedUrl, 'red')} target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
+                {content.eventsAll} <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+            </div>
+            <p className="mb-5 md:mb-6 text-balance">{content.eventsText}</p>
+            <ProximosEventos lang={lang} campana="red" lista={eventosRed} calendario={calendarioRedUrl} />
           </section>
 
           <section className="mt-16 md:mt-28">
