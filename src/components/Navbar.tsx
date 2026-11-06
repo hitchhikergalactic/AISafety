@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus } from 'lucide-react';
+import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus, Newspaper } from 'lucide-react';
 import { translations } from '../locales/translations';
 import { delegacionesNavLabel, delegacionesSublinks, substackUrl } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
@@ -168,8 +168,9 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </a>
 
         {/* Desktop Navigation */}
+        {/* «Leer» no va entre las pestañas: en escritorio es el botón «Léenos» de la derecha (en el menú móvil sigue en la lista) */}
         <div className="hidden lg:flex flex-nowrap items-center justify-center justify-self-center gap-x-4 xl:gap-x-5 2xl:gap-x-6 font-sans font-semibold text-base opacity">
-          {navLinks.map(link => (
+          {navLinks.filter(link => link.href !== 'leer').map(link => (
             <div key={link.href} className="relative group">
               {link.sublinks ? (
                 <span className="text-secundarios-dark dark:text-secundarios-light hover:text-principal transition-all duration-300 relative overflow-hidden cursor-pointer pb-2 whitespace-nowrap">
@@ -273,6 +274,17 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
           >
             {t.hero.ctaSecondary}
           </button>
+
+          {/* Boletín: botón lleno, siempre visible en escritorio (el de alta se oculta mientras el de la portada está en pantalla) */}
+          <a
+            href={substackUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-anthro border-2 border-principal bg-principal text-white font-sans font-bold text-sm whitespace-nowrap no-underline shadow-sm hover:bg-principal/90 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2"
+          >
+            <Newspaper size={16} aria-hidden="true" />
+            {lang === 'es' ? 'Léenos' : 'Read us'}
+          </a>
 
           <button 
             onClick={toggleTheme}
