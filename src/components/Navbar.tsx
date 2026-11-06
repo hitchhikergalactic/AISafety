@@ -317,7 +317,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       {/* Mobile & Tablet Menu Overlay */}
       <div className={`lg:hidden fixed inset-0 bg-secundarios-light dark:bg-secundarios-dark z-40 flex flex-col pt-24 px-6 transition-[transform,visibility] duration-500 ease-in-out ${isOpen ? 'translate-y-0 visible' : '-translate-y-full invisible'}`}>
         <div className="flex flex-col gap-6 h-full overflow-y-auto w-full">
-          {navLinks.map((link, idx) => (
+          {navLinks.filter(link => link.href !== 'leer').map((link, idx) => (
             <div key={link.href}>
               {link.sublinks ? (
                 <button 
@@ -380,16 +380,29 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
               )}
             </div>
           ))}
+          <div className="mb-8 flex flex-wrap items-center gap-3">
           <button
             type="button"
             onClick={() => {
               setIsOpen(false);
               setShowJoinModal(true);
             }}
-            className="self-start cursor-pointer mb-8 px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+            className="cursor-pointer px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
           >
             {t.hero.ctaSecondary}
           </button>
+          {/* Igual que en escritorio: el boletín como botón lleno, no como pestaña */}
+          <a
+            href={substackUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenus}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border-2 border-principal bg-principal text-white font-sans font-bold text-lg no-underline hover:bg-principal/90 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+          >
+            <Newspaper size={20} aria-hidden="true" />
+            {lang === 'es' ? 'Léenos' : 'Read us'}
+          </a>
+          </div>
         </div>
       </div>
     </nav>
