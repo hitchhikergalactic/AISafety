@@ -20,8 +20,9 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
-  // Próximo evento de iaS para la tarjeta de agenda. Fecha en la zona del evento (sin hora, así no depende de quién visita)
-  const proximo = eventos[0];
+  // Tarjeta de encuentros: solo los presenciales (el seminario y el curso tienen su propia tarjeta en esta misma sección).
+  // Fecha en la zona del evento, sin hora, así no depende de quién visita.
+  const encuentros = eventos.filter((e) => e.modalidad !== 'en-linea').slice(0, 3);
   const fechaCorta = (iso: string, zona: string) =>
     new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { timeZone: zona, weekday: 'short', day: 'numeric', month: 'short' }).format(new Date(iso)).replace(/\./g, '');
   // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
@@ -72,13 +73,23 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5">
                 {parseText(t.upcoming.description)}
               </p>
-              {/* El próximo evento real (de Luma), para que la tarjeta no prometa sin enseñar ninguna fecha */}
-              {proximo && (
-                <p className="!mb-0 mt-1 !font-sans !text-sm font-semibold text-secundarios-dark dark:text-secundarios-light">
-                  <span className="text-principal-texto uppercase tracking-wider">{t.upcoming.next}:</span>{' '}
-                  {fechaCorta(proximo.inicio, proximo.zona)} · {proximo.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ')}
-                </p>
-              )}
+              {/* Los próximos encuentros reales (de Luma), para que la tarjeta no prometa sin enseñar ninguna fecha */}
+              <div className="mt-1">
+                <p className="!mb-2 !font-sans !text-sm font-bold uppercase tracking-wider text-principal-texto">{t.upcoming.next}</p>
+                {encuentros.length > 0 ? (
+                  <ul className="list-none !p-0 !m-0 space-y-2">
+                    {encuentros.map((e) => (
+                      <li key={e.id} className="!m-0 flex gap-3 font-sans text-sm text-secundarios-dark dark:text-secundarios-light">
+                        <span className="shrink-0 w-20 font-bold">{fechaCorta(e.inicio, e.zona).replace(/^\p{L}/u, (l) => l.toLocaleUpperCase())}</span>
+                        <span className="min-w-0 font-semibold">{e.nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ')}{e.ciudad && !e.nombre.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().includes(e.ciudad.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace('valencia', 'valencia'))
+                          ? <span className="font-normal opacity-75"><span aria-hidden="true" className="mx-1.5">·</span>{e.ciudad}</span> : null}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="!mb-0 !font-sans !text-sm">{t.upcoming.none}</p>
+                )}
+              </div>
               <div className="mt-auto">
                 <span className={ctaClass}>
                   {t.upcoming.cta}
@@ -114,7 +125,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                 <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.innovation.details} />
                 <span className={ctaClass}>
                   {t.upcoming.moreInfo}
-                  <ArrowUpRight size={18} aria-hidden="true" />
+                  <ArrowRight size={18} aria-hidden="true" />
                 </span>
               </div>
             </a>
@@ -170,7 +181,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
                   <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.bluedot.details} />
                   <span className={ctaClass}>
                     {t.upcoming.moreInfo}
-                    <ArrowUpRight size={18} aria-hidden="true" />
+                    <ArrowRight size={18} aria-hidden="true" />
                   </span>
                </div>
             </a>
