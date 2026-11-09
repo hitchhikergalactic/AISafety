@@ -21,8 +21,12 @@ export const translations = {
     why: {
       title: "¿Por qué un Hub de seguridad de la IA en español?",
       text1: 'Los laboratorios que desarrollan la IA más avanzada del mundo se encuentran principalmente en EE. UU., Reino Unido y China. Las decisiones sobre cómo se despliega, quién la controla y qué valores incorpora se toman, mayoritariamente, en inglés.',
-      text2: "Esto no es solo un detalle técnico: es un desafío de seguridad.",
+      text2: "Pero no es solo una cuestión de idioma: es un desafío de seguridad.",
       text3: 'Las evaluaciones de seguridad de los modelos de lenguaje se diseñan en inglés, y su comportamiento varía entre idiomas y categorías de riesgo. El español, oficial en 21 países y presente en todos los continentes, carece de un nodo propio que mida estas diferencias, las documente y traslade la evidencia a reguladores y desarrolladores.',
+      quoteBefore: 'No es una preocupación solo nuestra: el ministro para la Transformación Digital, Óscar López, propone una alianza con las potencias medias por una IA confiable y ha defendido que España y México sean ',
+      quoteLink: '«garantes del español frente al inglés o al chino»',
+      quoteAfter: ' en los modelos de lenguaje de IA.',
+      quoteSourceLabel: 'Nota de prensa del Ministerio para la Transformación Digital, 5 de septiembre de 2026',
       text4: 'iaS nace para ser ese nodo.',
       impactFigures: {
         title: "Cifras que impactan",
@@ -179,8 +183,12 @@ export const translations = {
     why: {
         title: "Why an AI safety Hub in Spanish?",
         text1: "The laboratories developing the world's most advanced AI are primarily located in the US, the UK, and China. Decisions about how it is deployed, who controls it, and what values it incorporates are, for the most part, made in english.",
-        text2: "This is not just a technical detail: it is a safety challenge.",
+        text2: "But this is not just a language issue: it is a safety challenge.",
         text3: "Safety evaluations of language models are designed in English, and their behavior varies across languages and risk categories. Spanish, an official language in 21 countries and present on every continent, lacks its own node to measure these differences, document them, and convey the evidence to regulators and developers.",
+        quoteBefore: "This is not only our concern: Spain's Minister for Digital Transformation, Óscar López, is proposing an alliance with middle powers for trustworthy AI and has argued that Spain and Mexico should be ",
+        quoteLink: "“guarantors of Spanish against English or Chinese”",
+        quoteAfter: " in AI language models.",
+        quoteSourceLabel: "Press release from Spain's Ministry for Digital Transformation, 5 September 2026, in Spanish",
         text4: "iaS was born to be that node.",
     impactFigures: {
         title: "Impact Figures",
