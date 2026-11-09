@@ -25,6 +25,9 @@ import logoBlueDot from '@assets/logos__bluedot_impact.svg';
 import logoBlueDotWhite from '@assets/logos__bluedot_impact_white.svg';
 import fotoGrupo from '@assets/portada-grupo.webp';
 
+// Nota de prensa oficial (PDF en digital.gob.es): abre sin banner de cookies ni rastreadores
+const ministerQuoteUrl = 'https://digital.gob.es/content/dam/portal-mtdfp/comunicacion/comunicacion_ministro/2026/09/05-09-26/050926NdP.%C3%93scar%20L%C3%B3pez%20UNAM.pdf';
+
 type Language = 'es' | 'en';
 
 interface HomeProps {
@@ -195,6 +198,11 @@ export default function Home({ lang }: HomeProps) {
                     <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
                         <h4>{t.why.title}</h4>
                         <p className="whitespace-pre-line">{t.why.text1}</p>
+                        <p>
+                            {t.why.quoteBefore}
+                            <a href={ministerQuoteUrl} target="_blank" rel="noopener noreferrer" hrefLang="es" title={t.why.quoteSourceLabel} aria-label={`${t.why.quoteLink} (${t.why.quoteSourceLabel})`} className="text-principal-texto underline underline-offset-4 hover:no-underline">{t.why.quoteLink}</a>
+                            {t.why.quoteAfter}
+                        </p>
                         <p className="bajada font-light">{t.why.text2}</p>
                         <p className="whitespace-pre-line">{t.why.text3}</p>
                         <p className="font-bold">{t.why.text4}</p>
