@@ -13,6 +13,8 @@ Advanced artificial intelligence is progressing faster than our ability to under
 
 We believe that the Spanish-speaking world, with more than 635 million speakers and its own voice in Europe, Ibero-America, Africa and the United Nations, is essential to the global effort to prevent advanced AI from causing a catastrophe, and that it cannot take part in that effort on borrowed terms.
 
+This is not only our concern: Spain's Minister for Digital Transformation, Óscar López, is proposing an alliance with middle powers for trustworthy AI and has argued that Spain and Mexico should be [“guarantors of Spanish against English or Chinese”](https://digital.gob.es/content/dam/portal-mtdfp/comunicacion/comunicacion_ministro/2026/09/05-09-26/050926NdP.%C3%93scar%20L%C3%B3pez%20UNAM.pdf "Press release from Spain's Ministry for Digital Transformation, 5 September 2026, in Spanish") in AI language models.
+
 <figure class="mapa-idioma">
 <img class="mapa-claro" src="/mapa-espanol-mundo-claro.webp" alt="World map showing Spanish as an official language in Spain, Latin America and Equatorial Guinea, and as an important or significant minority language in countries such as the United States, Canada, Brazil, Morocco and Australia." width="1600" height="821" loading="lazy" decoding="async">
 <img class="mapa-oscuro" src="/mapa-espanol-mundo-oscuro.webp" alt="" width="1600" height="821" loading="lazy" decoding="async">
