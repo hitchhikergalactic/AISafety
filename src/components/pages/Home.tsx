@@ -18,12 +18,12 @@ import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
+import MapaHispanohablante from '@components/MapaHispanohablante';
 import ProximosEventos, { eventos, vigentes, limpiarNombre, conUtm } from '@components/ProximosEventos';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
 import logoBlueDotWhite from '@assets/logos__bluedot_impact_white.svg';
-import fotoGrupo from '@assets/portada-grupo.webp';
 
 // Nota de prensa oficial (PDF en digital.gob.es): abre sin banner de cookies ni rastreadores
 const ministerQuoteUrl = 'https://digital.gob.es/content/dam/portal-mtdfp/comunicacion/comunicacion_ministro/2026/09/05-09-26/050926NdP.%C3%93scar%20L%C3%B3pez%20UNAM.pdf';
@@ -208,15 +208,11 @@ export default function Home({ lang }: HomeProps) {
                         <p className="font-bold">{t.why.text4}</p>
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center">
-                        {/* Foto real de un encuentro: la portada necesita caras de verdad, no una ilustración genérica */}
-                        <div className="relative group w-full aspect-[3/2] bg-secundarios-light/40 dark:bg-white/5 rounded-3xl overflow-hidden border border-secundarios-dark/10">
-                            <img
-                                src={getImageSrc(fotoGrupo)}
-                                alt={t.upcoming.eventImageAlt}
-                                loading="lazy"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                        {/* Los 21 países del texto («oficial en 21 países»), con datos de Natural Earth */}
+                        <figure className="w-full m-0 bg-secundarios-light/40 dark:bg-white/5 rounded-3xl border border-secundarios-dark/10 p-[clamp(1rem,0.5rem+2vw,2rem)]">
+                            <MapaHispanohablante titulo={t.why.mapAlt} />
+                            <figcaption className="mt-3 text-center text-sm font-sans text-label-gray">{t.why.mapCaption}</figcaption>
+                        </figure>
                     </div>
                 </div>
                 {t.why.impactFigures && (
