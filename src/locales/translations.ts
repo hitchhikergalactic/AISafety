@@ -28,6 +28,8 @@ export const translations = {
       quoteAfter: ' en los modelos de lenguaje de IA.',
       quoteSourceLabel: 'Nota de prensa del Ministerio para la Transformación Digital, 5 de septiembre de 2026',
       text4: 'iaS nace para ser ese nodo.',
+      mapAlt: 'Mapa de los 21 países con el español como lengua oficial: España, Guinea Ecuatorial, México, Centroamérica, el Caribe hispanohablante y Sudamérica salvo Brasil y las Guayanas.',
+      mapCaption: 'Los 21 países con el español como lengua oficial',
       impactFigures: {
         title: "Cifras que impactan",
         item1: { target: 17, prefix: '', suffix: '', animate: true as const },
@@ -190,6 +192,8 @@ export const translations = {
         quoteAfter: " in AI language models.",
         quoteSourceLabel: "Press release from Spain's Ministry for Digital Transformation, 5 September 2026, in Spanish",
         text4: "iaS was born to be that node.",
+        mapAlt: "Map of the 21 countries where Spanish is an official language: Spain, Equatorial Guinea, Mexico, Central America, the Spanish-speaking Caribbean and South America except Brazil and the Guianas.",
+        mapCaption: "The 21 countries where Spanish is an official language",
     impactFigures: {
         title: "Impact Figures",
         item1: { target: 17, prefix: '', suffix: '', animate: true as const },
