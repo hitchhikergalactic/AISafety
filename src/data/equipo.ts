@@ -115,18 +115,18 @@ export const miembrosEquipo: MiembroEquipo[] = [
     grupo: 'coordinacion',
   },
   {
+    nombre: 'Eduardo Mignot',
+    cargo: { es: 'Comunicación', en: 'Communications' },
+    linkedin: 'https://www.linkedin.com/in/eduardomignot/',
+    foto: eduardoImg,
+    grupo: 'coordinacion',
+  },
+  {
     nombre: 'Franca Velasco',
     cargo: { es: 'Redacción y Edición', en: 'Copywriting & Editing' },
     linkedin: 'https://www.linkedin.com/in/francavelasco/',
     web: 'https://francavelasco.es/',
     foto: francaImg,
-    grupo: 'coordinacion',
-  },
-  {
-    nombre: 'Eduardo Mignot',
-    cargo: { es: 'Comunicación', en: 'Communications' },
-    linkedin: 'https://www.linkedin.com/in/eduardomignot/',
-    foto: eduardoImg,
     grupo: 'coordinacion',
   },
 ];
