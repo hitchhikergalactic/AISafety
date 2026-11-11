@@ -88,14 +88,14 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Lucía Kubusch',
-    cargo: { es: 'Responsable Legal y de Gobernanza de IA', en: 'Legal & AI Governance Lead' },
+    cargo: { es: 'Legal y Gobernanza de IA', en: 'Legal & AI Governance' },
     linkedin: 'https://www.linkedin.com/in/lucia-kubusch/',
     foto: luciaImg,
     grupo: 'coordinacion',
   },
   {
     nombre: 'Arantxa Amezua',
-    cargo: { es: 'Responsable de Operaciones', en: 'Head of Operations' },
+    cargo: { es: 'Operaciones', en: 'Operations' },
     linkedin: 'https://www.linkedin.com/in/arantxa-amezua-809137162/',
     foto: arantxaImg,
     grupo: 'coordinacion',
@@ -109,14 +109,14 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Gretel Schaj',
-    cargo: { es: 'Responsable de Proyectos Especiales', en: 'Special Projects Lead' },
+    cargo: { es: 'Proyectos Especiales', en: 'Special Projects' },
     linkedin: 'https://www.linkedin.com/in/gretel-schaj/',
     foto: gretelImg,
     grupo: 'coordinacion',
   },
   {
     nombre: 'Franca Velasco',
-    cargo: { es: 'Responsable de Redacción y Edición', en: 'Copywriting & Editing Lead' },
+    cargo: { es: 'Redacción y Edición', en: 'Copywriting & Editing' },
     linkedin: 'https://www.linkedin.com/in/francavelasco/',
     web: 'https://francavelasco.es/',
     foto: francaImg,
@@ -127,6 +127,6 @@ export const miembrosEquipo: MiembroEquipo[] = [
     cargo: { es: 'Comunicación', en: 'Communications' },
     linkedin: 'https://www.linkedin.com/in/eduardomignot/',
     foto: eduardoImg,
-    grupo: 'voluntariado',
+    grupo: 'coordinacion',
   },
 ];
