@@ -20,8 +20,11 @@ const voluntariado = miembrosEquipo.filter((m) => m.grupo === 'voluntariado');
 const iniciales = (nombre: string) =>
   nombre.split(' ').map((p) => p[0]).slice(0, 2).join('');
 
-// Ficha de una persona del equipo; el nombre es h2 en coordinación y h3 bajo el título de voluntariado.
-const FichaPersona: React.FC<{ persona: MiembroEquipo; lang: Language; Titulo?: 'h2' | 'h3' }> = ({ persona, lang, Titulo = 'h2' }) => (
+// Título pequeño de cada grupo (Coordinación, Voluntariado).
+const tituloGrupo = '!font-sans !text-xs !font-bold uppercase !tracking-widest !mb-6 text-secundarios-dark/70 dark:text-secundarios-light/70';
+
+// Ficha de una persona del equipo; el nombre es h3 bajo el título de su grupo.
+const FichaPersona: React.FC<{ persona: MiembroEquipo; lang: Language }> = ({ persona, lang }) => (
   <li className="flex flex-col">
     <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
       {persona.foto ? (
@@ -43,9 +46,9 @@ const FichaPersona: React.FC<{ persona: MiembroEquipo; lang: Language; Titulo?: 
       )}
     </div>
     <div className="mt-4 flex items-start justify-between gap-2">
-      <Titulo className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
+      <h3 className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
         {persona.nombre}
-      </Titulo>
+      </h3>
       <div className="shrink-0 -mr-1 flex items-center">
         {persona.web && (
           <a
@@ -121,26 +124,23 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
               </p>
             </div>
           </div>
-          <p className="mt-10 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
-            {parseText(content.bridge)}
-          </p>
-
           {/* Equipo de coordinación */}
-          <ul className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
-            {coordinacion.map((persona) => (
-              <FichaPersona key={persona.nombre} persona={persona} lang={lang} />
-            ))}
-          </ul>
+          <section className="mt-16">
+            <h2 className={tituloGrupo}>{content.coordinacionTitle}</h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
+              {coordinacion.map((persona) => (
+                <FichaPersona key={persona.nombre} persona={persona} lang={lang} />
+              ))}
+            </ul>
+          </section>
 
           {/* Voluntariado: solo aparece si hay alguien */}
           {voluntariado.length > 0 && (
             <section className="mt-16">
-              <h2 className="!font-sans !text-xs !font-bold uppercase !tracking-widest !mb-6 text-secundarios-dark/70 dark:text-secundarios-light/70">
-                {content.voluntariadoTitle}
-              </h2>
+              <h2 className={tituloGrupo}>{content.voluntariadoTitle}</h2>
               <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
                 {voluntariado.map((persona) => (
-                  <FichaPersona key={persona.nombre} persona={persona} lang={lang} Titulo="h3" />
+                  <FichaPersona key={persona.nombre} persona={persona} lang={lang} />
                 ))}
               </ul>
             </section>
