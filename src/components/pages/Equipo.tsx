@@ -3,7 +3,7 @@ import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
 import { translations } from '@locales/translations';
-import { equipoContent, miembrosEquipo } from '@data/equipo';
+import { equipoContent, miembrosEquipo, type MiembroEquipo } from '@data/equipo';
 import { parseText } from '@utils/parseText';
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 
@@ -15,9 +15,65 @@ interface EquipoProps {
 
 const direccion = miembrosEquipo.find((m) => m.grupo === 'direccion');
 const coordinacion = miembrosEquipo.filter((m) => m.grupo === 'coordinacion');
+const voluntariado = miembrosEquipo.filter((m) => m.grupo === 'voluntariado');
 
 const iniciales = (nombre: string) =>
   nombre.split(' ').map((p) => p[0]).slice(0, 2).join('');
+
+// Ficha de una persona del equipo; el nombre es h2 en coordinación y h3 bajo el título de voluntariado.
+const FichaPersona: React.FC<{ persona: MiembroEquipo; lang: Language; Titulo?: 'h2' | 'h3' }> = ({ persona, lang, Titulo = 'h2' }) => (
+  <li className="flex flex-col">
+    <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
+      {persona.foto ? (
+        <img
+          src={persona.foto.src}
+          alt={persona.nombre}
+          width={persona.foto.width}
+          height={persona.foto.height}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <span
+          aria-hidden="true"
+          className="w-full h-full flex items-center justify-center font-sans font-bold text-3xl text-secundarios-dark/50 dark:text-secundarios-light/50"
+        >
+          {iniciales(persona.nombre)}
+        </span>
+      )}
+    </div>
+    <div className="mt-4 flex items-start justify-between gap-2">
+      <Titulo className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
+        {persona.nombre}
+      </Titulo>
+      <div className="shrink-0 -mr-1 flex items-center">
+        {persona.web && (
+          <a
+            href={persona.web}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Web · ${persona.nombre}`}
+            className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+          >
+            <FaGlobe className="w-5 h-5" />
+          </a>
+        )}
+        <a
+          href={persona.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`LinkedIn · ${persona.nombre}`}
+          className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+        >
+          <FaLinkedin className="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+    <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
+      {persona.cargo[lang]}
+    </p>
+  </li>
+);
 
 const Equipo: React.FC<EquipoProps> = ({ lang }) => {
   const t = translations[lang];
@@ -72,59 +128,23 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
           {/* Equipo de coordinación */}
           <ul className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
             {coordinacion.map((persona) => (
-              <li key={persona.nombre} className="flex flex-col">
-                <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
-                  {persona.foto ? (
-                    <img
-                      src={persona.foto.src}
-                      alt={persona.nombre}
-                      width={persona.foto.width}
-                      height={persona.foto.height}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span
-                      aria-hidden="true"
-                      className="w-full h-full flex items-center justify-center font-sans font-bold text-3xl text-secundarios-dark/50 dark:text-secundarios-light/50"
-                    >
-                      {iniciales(persona.nombre)}
-                    </span>
-                  )}
-                </div>
-                <div className="mt-4 flex items-start justify-between gap-2">
-                  <h2 className="!font-sans !text-lg !font-bold !leading-snug text-secundarios-dark dark:text-white">
-                    {persona.nombre}
-                  </h2>
-                  <div className="shrink-0 -mr-1 flex items-center">
-                    {persona.web && (
-                      <a
-                        href={persona.web}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Web · ${persona.nombre}`}
-                        className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
-                      >
-                        <FaGlobe className="w-5 h-5" />
-                      </a>
-                    )}
-                    <a
-                      href={persona.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`LinkedIn · ${persona.nombre}`}
-                      className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
-                    >
-                      <FaLinkedin className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-                <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
-                  {persona.cargo[lang]}
-                </p>
-              </li>
+              <FichaPersona key={persona.nombre} persona={persona} lang={lang} />
             ))}
           </ul>
+
+          {/* Voluntariado: solo aparece si hay alguien */}
+          {voluntariado.length > 0 && (
+            <section className="mt-16">
+              <h2 className="!font-sans !text-xs !font-bold uppercase !tracking-widest !mb-6 text-secundarios-dark/70 dark:text-secundarios-light/70">
+                {content.voluntariadoTitle}
+              </h2>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
+                {voluntariado.map((persona) => (
+                  <FichaPersona key={persona.nombre} persona={persona} lang={lang} Titulo="h3" />
+                ))}
+              </ul>
+            </section>
+          )}
 
           <p className="mt-16 pt-10 border-t border-secundarios-dark/15 dark:border-secundarios-light/15 text-small text-secundarios-dark dark:text-secundarios-light leading-relaxed">
             {parseText(content.governance)}

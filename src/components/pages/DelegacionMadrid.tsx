@@ -65,10 +65,11 @@ const iniciales = (nombre: string) =>
 // Los pies de foto llevan **negritas** para parseText; el alt tiene que ir sin ellas
 const sinNegritas = (texto: string) => texto.replace(/\*\*/g, '');
 
-// Equipo de la sede: dirección primero y después coordinación, en el orden de /equipo.
+// Equipo de la sede: dirección, coordinación y voluntariado, en el orden de /equipo.
 const equipoSede = [
   ...miembrosEquipo.filter((m) => m.grupo === 'direccion'),
   ...miembrosEquipo.filter((m) => m.grupo === 'coordinacion'),
+  ...miembrosEquipo.filter((m) => m.grupo === 'voluntariado'),
 ];
 
 // Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
