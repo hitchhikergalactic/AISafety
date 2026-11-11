@@ -124,9 +124,9 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Eduardo Mignot',
-    cargo: { es: 'Comunicación', en: 'Communications' },
+    cargo: { es: 'Responsable de Comunicación', en: 'Communications Lead' },
     linkedin: 'https://www.linkedin.com/in/eduardomignot/',
     foto: eduardoImg,
-    grupo: 'voluntariado',
+    grupo: 'coordinacion',
   },
 ];
