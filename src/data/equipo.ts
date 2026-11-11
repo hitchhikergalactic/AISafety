@@ -4,6 +4,7 @@ import arantxaImg from '@assets/equipo/arantxa-amezua.webp';
 import andresImg from '@assets/equipo/andres-casas.webp';
 import gretelImg from '@assets/equipo/gretel-schaj.webp';
 import francaImg from '@assets/equipo/franca-velasco.webp';
+import eduardoImg from '@assets/equipo/eduardo-mignot.webp';
 
 export interface EquipoContent {
   es: {
@@ -11,6 +12,7 @@ export interface EquipoContent {
     heroSubtitle: string;
     bridge: string;
     governance: string;
+    voluntariadoTitle: string;
     joinTitle: string;      
     joinSubtitle: string;   
     joinContribute: string;
@@ -22,6 +24,7 @@ export interface EquipoContent {
     heroSubtitle: string;
     bridge: string;
     governance: string;
+    voluntariadoTitle: string;
     joinTitle: string;      
     joinSubtitle: string;  
     joinContribute: string;
@@ -36,6 +39,7 @@ export const equipoContent: EquipoContent = {
     heroSubtitle: "Al frente de **iaS** está **Osmani Redondo**, quien ha pasado la última década desarrollando teorías del cambio, estrategias de impacto, marcos de comunicación, construcción de coaliciones y sistemas de gestión, primero en la práctica clínica de la odontología, después en la gestión cultural y finalmente en la arquitectura técnica de la inteligencia artificial, tras reconvertirse al desarrollo de software y obtener la certificación profesional de arquitectura cloud para trabajar con AWS y GCP en Telefónica Tech. Ese mismo conjunto de herramientas es el que hoy sostiene su papel en **OdiseIA**, el Observatorio del Impacto Social y Ético de la IA reconocido por la UNESCO, del que forma parte; en los únicos seminarios de **BlueDot Impact** en habla hispana, que dirige, y en la **Red de Mentores de Madrid Emprende**. También ha formado parte del jurado del **Global South AI Safety Hackathon** de **Apart Research**.",
     bridge: "Y no es un trabajo en solitario: detrás hay un equipo de coordinación con una persona responsable de cada área.",
     governance: "iaS está dirigida por su equipo de coordinación, formado por quien dirige iaS y las personas responsables de cada área, que toma las decisiones estratégicas, mientras que las delegaciones locales, como iaS Valencia, organizan sus propios eventos, programas y red local dentro del marco común de iaS.",
+    voluntariadoTitle: "Voluntariado",
     joinTitle: "¿Quieres construir el futuro de la seguridad de la IA en español?",
     joinSubtitle: "**iaS** lleva funcionando solo unos meses, y ya sostiene los únicos seminarios de BlueDot Impact en habla hispana, la puerta de entrada a un campo que en español está casi entero por construir; unirte ahora es levantar esa infraestructura desde la base, no encajar en una ya terminada.",
     joinContribute: "• Si te interesa la **investigación**, puedes comprobar si una evaluación de riesgo de un modelo funciona igual en español que en inglés.\n• Si te interesa lo **institucional**, puedes sentar las bases de un acuerdo con una universidad o un organismo regulador que todavía no sabe cuánto importa la seguridad de la IA en español.\n• Si te interesa la **comunicación**, puedes ser la voz que haga que ese mensaje llegue a miles de personas que hoy no lo encuentran en su idioma.",
@@ -47,6 +51,7 @@ export const equipoContent: EquipoContent = {
     heroSubtitle: "Leading **iaS** is **Osmani Redondo**, who has spent the last decade developing theories of change, impact strategies, communication frameworks, coalition building and management systems, first in clinical dental practice, then in cultural management and finally in the technical architecture of artificial intelligence, after retraining as a software developer and becoming a certified professional cloud architect working with AWS and GCP at Telefónica Tech. That same toolkit is what today underpins the role as a partner at **OdiseIA**, the UNESCO-recognised Observatory for the Social and Ethical Impact of AI, as director of the only **BlueDot Impact** seminars in Spanish, and as a member of the **Madrid Emprende Mentor Network**. Osmani has also served on the judging panel of the **Global South AI Safety Hackathon** by **Apart Research**.",
     bridge: "And it isn't solo work: behind it is a coordination team with a lead for each area.",
     governance: "iaS is led by its coordination team, made up of the director and the leads of each area, who take the strategic decisions, while local chapters such as iaS Valencia run their own events, programmes and local network within the shared iaS framework.",
+    voluntariadoTitle: "Volunteers",
     joinTitle: "Do you want to build the future of AI safety in Spanish?",
     joinSubtitle: "**iaS** has only been running for a few months, and it already sustains BlueDot Impact's only Spanish-speaking seminars, the entry point to a field that is almost entirely unbuilt in Spanish; joining now means building that infrastructure from the ground up, not fitting into one that's already finished.",
     joinContribute: "• If you're interested in **research**, you can check whether a model's risk evaluation works the same in Spanish as it does in English.\n• If you're interested in **institutional** work, you can lay the groundwork for an agreement with a university or a regulator that doesn't yet know how much AI safety in Spanish matters.\n• If you're interested in **communication**, you can be the voice that gets that message to thousands of people who can't find it in their language today.",
@@ -57,10 +62,11 @@ export const equipoContent: EquipoContent = {
 
 // Personas que aparecen en /equipo. Para añadir a alguien basta con una entrada nueva;
 // `grupo: 'direccion'` se muestra arriba, junto a la biografía; el resto, en la cuadrícula.
+// `grupo: 'voluntariado'` se muestra debajo de coordinación, con su propio título, solo si hay alguien.
 // `grupo` permite sumar más adelante asesores (con su `area`) o delegaciones sin tocar el componente.
 // La foto se importa desde src/assets/equipo (cuadrada); si falta, la ficha muestra las iniciales.
 
-export type GrupoEquipo = 'direccion' | 'coordinacion' | 'asesores' | 'delegaciones';
+export type GrupoEquipo = 'direccion' | 'coordinacion' | 'voluntariado' | 'asesores' | 'delegaciones';
 
 export interface MiembroEquipo {
   nombre: string;
@@ -96,10 +102,10 @@ export const miembrosEquipo: MiembroEquipo[] = [
   },
   {
     nombre: 'Andrés Casas',
-    cargo: { es: 'Responsable de Red y Eventos', en: 'Network and Events Manager' },
+    cargo: { es: 'Voluntario', en: 'Volunteer' },
     linkedin: 'https://www.linkedin.com/in/andrescasass/',
     foto: andresImg,
-    grupo: 'coordinacion',
+    grupo: 'voluntariado',
   },
   {
     nombre: 'Gretel Schaj',
@@ -115,5 +121,12 @@ export const miembrosEquipo: MiembroEquipo[] = [
     web: 'https://francavelasco.es/',
     foto: francaImg,
     grupo: 'coordinacion',
+  },
+  {
+    nombre: 'Eduardo Mignot',
+    cargo: { es: 'Comunicación', en: 'Communications' },
+    linkedin: 'https://www.linkedin.com/in/eduardomignot/',
+    foto: eduardoImg,
+    grupo: 'voluntariado',
   },
 ];
