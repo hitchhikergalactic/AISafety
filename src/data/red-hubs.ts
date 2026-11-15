@@ -5,6 +5,10 @@ import logoAISafetyCom from '@assets/logos__aisafety_com.svg';
 import logoAISafetyComWhite from '@assets/logos__aisafety_com_white.svg';
 import logoBAISH from '@assets/logos__buenos_aires_AI_safety_hub.svg';
 import logoBAISHWhite from '@assets/logos__buenos_aires_AI_safety_hub_white.svg';
+import logoPAIS from '@assets/logos__peru_ai_safety.svg';
+import logoPAISWhite from '@assets/logos__peru_ai_safety_white.svg';
+import logoCHAIS from '@assets/logos__chais.svg';
+import logoCHAISWhite from '@assets/logos__chais_white.svg';
 import logoMEXICO from '@assets/ai_safety_mexico.svg';
 import logoMEXICOWhite from '@assets/ai_safety_mexico_byn.svg';
 import logow4ias from '@assets/logos__w4ais.svg';
@@ -22,10 +26,14 @@ import logoCEGIAWhite from '@assets/logos__cegia_white.svg';
 
 export type GrupoHub = 'espanol' | 'mundo';
 
-// `text` es también el texto alternativo del logo. BlueDot no está: aparece como patrocinador en la portada.
+// `text` es también el texto alternativo del logo. En «espanol», de norte a sur.
+// CHAIS no publica su logo como archivo: el suyo se ha montado con el símbolo de su web y «CHAIS» en Plus Jakarta Sans, su tipografía.
+// BlueDot no está: aparece como patrocinador en la portada.
 export const hubs: { grupo: GrupoHub; href: string; text: string; logo: any; logoWhite: any }[] = [
   { grupo: 'espanol', href: 'https://www.aismx.org/', text: 'AI Safety México', logo: logoMEXICO, logoWhite: logoMEXICOWhite },
   { grupo: 'espanol', href: 'https://aisafetycolombia.org/', text: 'AI Safety Colombia', logo: logoColombia, logoWhite: logoColombiawhite },
+  { grupo: 'espanol', href: 'https://aisafety.pe/', text: 'PAIS (Perú AI Safety)', logo: logoPAIS, logoWhite: logoPAISWhite },
+  { grupo: 'espanol', href: 'https://chais.cl/', text: 'CHAIS (Chile AI Safety)', logo: logoCHAIS, logoWhite: logoCHAISWhite },
   { grupo: 'espanol', href: 'https://www.baish.com.ar/es', text: 'Buenos Aires AI Safety Hub', logo: logoBAISH, logoWhite: logoBAISHWhite },
   { grupo: 'mundo', href: 'https://www.enais.co/', text: 'European Network for AI Safety', logo: logoENAIS, logoWhite: logoENAISWhite },
   { grupo: 'mundo', href: 'https://www.aisafety.com/', text: 'AISafety.com', logo: logoAISafetyCom, logoWhite: logoAISafetyComWhite },
