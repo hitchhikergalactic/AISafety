@@ -264,7 +264,6 @@ export const delegacionMadridContent = {
     hqBadge: 'Sede',
     hqText: 'Equipo, programas y coordinación de la red.',
     chaptersTitle: 'Delegaciones',
-    hubsTitle: 'Nodos con los que trabajamos estrechamente',
     eventsTitle: 'Próximos eventos',
     eventsText: 'Los encuentros de la sede se publican en la agenda de iaS en Luma.',
     eventsArchiveLabel: 'Ver la agenda en Luma',
@@ -294,16 +293,6 @@ export const delegacionMadridContent = {
     elsewherePastLabel: 'Ya celebrado',
     elsewhereEvents: [
       {
-        id: 'apartEpistemics',
-        upcoming: true,
-        name: 'AI x Epistemics Research Sprint',
-        meta: '13–15 de noviembre de 2026 · En línea',
-        text: 'iaS reúne al grupo de Madrid en el sprint de investigación de **Apart Research**: un fin de semana para crear herramientas que nos ayuden a decidir qué creer.',
-        imageAlt: 'Cartel del AI x Epistemics Research Sprint de Apart Research e iaS, con un portátil que muestra una videollamada en grupo.',
-        linkLabel: 'Inscríbete en Luma',
-        href: 'https://luma.com/0epujko1',
-      },
-      {
         id: 'drupalcamp',
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
@@ -312,6 +301,16 @@ export const delegacionMadridContent = {
         imageAlt: 'Cartel de la keynote de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
         linkLabel: 'Ver la ponente',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
+      },
+      {
+        id: 'apartEpistemics',
+        upcoming: false,
+        name: 'AI x Epistemics Research Sprint',
+        meta: '13–15 de noviembre de 2026 · En línea',
+        text: 'iaS ha reunido al grupo de Madrid en el sprint de investigación de **Apart Research**: un fin de semana creando herramientas que nos ayuden a decidir qué creer.',
+        imageAlt: 'Selfi de cuatro personas del grupo de Madrid de iaS, sonrientes, durante el AI x Epistemics Research Sprint.',
+        linkLabel: 'Ver el evento en Luma',
+        href: 'https://luma.com/0epujko1',
       },
       {
         id: 'codemeet',
@@ -376,7 +375,6 @@ export const delegacionMadridContent = {
     hqBadge: 'Headquarters',
     hqText: 'Team, programs and network coordination.',
     chaptersTitle: 'Chapters',
-    hubsTitle: 'Hubs we work closely with',
     eventsTitle: 'Upcoming events',
     eventsText: 'Headquarters events are published on the iaS calendar on Luma.',
     eventsArchiveLabel: 'See the calendar on Luma',
@@ -405,16 +403,6 @@ export const delegacionMadridContent = {
     elsewherePastLabel: 'Past event',
     elsewhereEvents: [
       {
-        id: 'apartEpistemics',
-        upcoming: true,
-        name: 'AI x Epistemics Research Sprint',
-        meta: '13–15 November 2026 · Online',
-        text: 'iaS brings together the Madrid group for the **Apart Research** sprint: a weekend building tools that help us decide what to believe.',
-        imageAlt: 'Poster for the AI x Epistemics Research Sprint by Apart Research and iaS, with a laptop showing a group video call.',
-        linkLabel: 'Register on Luma',
-        href: 'https://luma.com/0epujko1',
-      },
-      {
         id: 'drupalcamp',
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
@@ -423,6 +411,16 @@ export const delegacionMadridContent = {
         imageAlt: 'Poster for the keynote by Osmani Redondo, director of iaS, at DrupalCamp Spain 2026.',
         linkLabel: 'See the speaker',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
+      },
+      {
+        id: 'apartEpistemics',
+        upcoming: false,
+        name: 'AI x Epistemics Research Sprint',
+        meta: '13–15 November 2026 · Online',
+        text: 'iaS brought together the Madrid group for the **Apart Research** sprint: a weekend building tools that help us decide what to believe.',
+        imageAlt: 'Selfie of four smiling members of the iaS Madrid group during the AI x Epistemics Research Sprint.',
+        linkLabel: 'See the event on Luma',
+        href: 'https://luma.com/0epujko1',
       },
       {
         id: 'codemeet',
@@ -465,12 +463,6 @@ export const delegacionMadridContent = {
 } as const;
 
 // Hubs con los que trabaja iaS (mismos enlaces que la portada). BAISH se sitúa en Buenos Aires, no en «Argentina».
-export const hubsAliados = [
-  { name: 'AI Safety México', place: { es: 'México', en: 'Mexico' }, href: 'https://www.aismx.org/' },
-  { name: 'AI Safety Colombia', place: { es: 'Bogotá', en: 'Bogotá' }, href: 'https://aisafetycolombia.org/' },
-  { name: 'BAISH', place: { es: 'Buenos Aires', en: 'Buenos Aires' }, href: 'https://www.baish.com.ar/es' },
-] as const;
-
 // Correo propio de la delegación de Valencia: es el único que aparece en su página (cuerpo y pie).
 export const valenciaContactEmail = 'ias.valencia@aisafety.es';
 
