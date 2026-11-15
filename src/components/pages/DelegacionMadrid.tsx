@@ -19,14 +19,13 @@ import codemeetGobernanza from '../../assets/madrid/codemeet-gobernanza.webp';
 import codemeetSala from '../../assets/madrid/codemeet-sala.webp';
 import codemeetSonrisa from '../../assets/madrid/codemeet-sonrisa.webp';
 import drupalcampKeynote from '../../assets/madrid/drupalcamp-keynote.webp';
-import apartEpistemicsSprint from '../../assets/madrid/apart-epistemics-sprint.webp';
+import apartEpistemicsSprint from '../../assets/madrid/apart-epistemics-grupo.webp';
 import apartGlobalSouthJurado from '../../assets/madrid/apart-global-south-jurado.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
   delegacionMadridContent,
   delegacionesSublinks,
   discordInviteUrl,
-  hubsAliados,
   lumaAgendaUrl,
   madridContactEmail,
   madridFooterColumns,
@@ -240,7 +239,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
             {/* Línea que une la sede con sus nodos */}
             <div className="mx-auto h-10 w-0.5 bg-principal/40" aria-hidden="true" />
 
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 text-left border-t-2 border-principal/40 pt-8">
+            <div className="max-w-md mx-auto text-left border-t-2 border-principal/40 pt-8">
               <div>
                 <h5 className={columnTitle}>{content.chaptersTitle}</h5>
                 <ul className="space-y-3">
@@ -278,22 +277,6 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                 </ul>
               </div>
 
-              <div>
-                <h5 className={columnTitle}>{content.hubsTitle}</h5>
-                <ul className="space-y-3">
-                  {hubsAliados.map((hub) => (
-                    <li key={hub.href}>
-                      <a href={hub.href} target="_blank" rel="noopener noreferrer" className={`${card} group flex items-center gap-4 p-4 hover:shadow-anthro-card hover:border-principal transition-all duration-300`}>
-                        <span className="min-w-0 flex-1">
-                          <span className="block font-sans font-bold text-secundarios-dark dark:text-secundarios-light">{hub.name}</span>
-                          <span className="block font-sans text-sm text-secundarios-dark/70 dark:text-secundarios-light/70">{hub.place[lang]}</span>
-                        </span>
-                        <ArrowRight size={18} aria-hidden="true" className="shrink-0 -rotate-45 text-secundarios-dark/40 dark:text-secundarios-light/40 group-hover:text-principal transition-colors duration-300" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </section>
