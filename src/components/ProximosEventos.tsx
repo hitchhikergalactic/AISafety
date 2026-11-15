@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowUpRight, MapPin, Monitor } from 'lucide-react';
 import eventosJson from '../data/eventos.json';
 import { eventosPropios } from '../data/eventos-propios';
+import { fotosEventos, fotoPorDefecto } from '../data/eventos-fotos';
 
 // Próximos eventos de iaS, leídos de src/data/eventos.json (lo actualiza cada día scripts/actualizar-eventos.mjs).
 // Pensado para llegar a la inscripción con un solo clic: cada tarjeta entera es el enlace al evento en Luma.
@@ -40,6 +41,10 @@ export const conUtm = (url: string, campana: string) =>
 export const vigentes = (lista: Evento[], ahora: number) =>
   lista.filter((e) => new Date(e.visibleHasta ?? e.fin ?? e.inicio).getTime() > ahora);
 
+// Foto de la tarjeta: la del evento o, si es de iaS, la de Osmani hablando. Los de otros hubs, sin foto.
+const idsIaS = new Set(eventos.map((e) => e.id));
+const fotoDe = (e: Evento) => fotosEventos[e.id] ?? (idsIaS.has(e.id) ? fotoPorDefecto : null);
+
 // Próxima sesión del seminario en línea (los meetups en español con BlueDot)
 export const esSeminario = (e: Evento) => e.modalidad !== 'presencial' && /meet\s*-?\s*up|seminario|seminar/i.test(e.nombre);
 
@@ -48,6 +53,7 @@ const textos = {
     enLinea: 'En línea',
     hibrido: 'Presencial y en línea',
     apuntate: 'Apúntate',
+    con: 'Con',
     tuHora: 'tu hora',
     horaDe: (ciudad: string) => `hora de ${ciudad}`,
     todos: 'Todos',
@@ -61,6 +67,7 @@ const textos = {
     enLinea: 'Online',
     hibrido: 'In person and online',
     apuntate: 'Register',
+    con: 'With',
     tuHora: 'your time',
     horaDe: (ciudad: string) => `${ciudad} time`,
     todos: 'All',
@@ -199,6 +206,7 @@ const ProximosEventos: React.FC<{
           {visibles.map((e) => {
             const f = formatear(e);
             const Icono = e.modalidad === 'en-linea' ? Monitor : MapPin;
+            const foto = fotoDe(e);
             const donde = e.modalidad === 'en-linea' ? tx.enLinea : e.modalidad === 'hibrido' ? `${e.ciudad ?? ''} · ${tx.hibrido}` : (e.ciudad ?? '');
             return (
               <li key={e.id} className="!m-0">
@@ -206,14 +214,28 @@ const ProximosEventos: React.FC<{
                   href={conUtm(e.url, campana)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 md:gap-6 p-4 md:p-5 rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+                  className="group flex items-center gap-3 md:gap-6 p-4 md:p-5 rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
                 >
-                  <span className="shrink-0 w-16 md:w-20 text-center rounded-xl bg-principal/10 py-2 md:py-3">
+                  <span className="shrink-0 w-14 md:w-20 text-center rounded-xl bg-principal/10 py-2 md:py-3">
                     <span className="block font-sans text-2xl md:text-3xl font-bold leading-none text-principal-texto" suppressHydrationWarning>{f.dia}</span>
                     <span className="block mt-1 font-sans text-xs md:text-sm font-bold uppercase tracking-wider text-principal-texto" suppressHydrationWarning>{f.mes}</span>
                   </span>
+                  {foto && (
+                    <img
+                      src={foto.src}
+                      alt={foto.alt[lang]}
+                      width={320}
+                      height={320}
+                      loading="lazy"
+                      decoding="async"
+                      className="shrink-0 w-12 h-12 md:w-20 md:h-20 rounded-xl object-cover"
+                    />
+                  )}
                   <span className="min-w-0 flex-1">
                     <span className="block font-sans text-base md:text-lg font-bold leading-snug">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
+                    {foto?.ponente && (
+                      <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {foto.ponente}</span>
+                    )}
                     <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
                       <span className="inline-flex items-center gap-1"><Icono size={14} aria-hidden="true" />{donde}</span>
                       <span suppressHydrationWarning>
