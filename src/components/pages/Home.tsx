@@ -211,7 +211,7 @@ export default function Home({ lang }: HomeProps) {
                         {/* Los 21 países del texto («oficial en 21 países»), con datos de Natural Earth */}
                         <figure className="w-full m-0 bg-white dark:bg-white/5 rounded-3xl border border-secundarios-dark/5 dark:border-white/10 shadow-anthro-elevated p-[clamp(1rem,0.5rem+2vw,2rem)]">
                             <MapaHispanohablante titulo={t.why.mapAlt} />
-                            <figcaption className="mt-4 text-center text-sm md:text-base font-sans font-semibold text-secundarios-dark dark:text-secundarios-light">{t.why.mapCaption}</figcaption>
+                            <figcaption className="mt-5 text-center font-serif italic text-base md:text-lg leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">{t.why.mapCaption}</figcaption>
                         </figure>
                     </div>
                 </div>
