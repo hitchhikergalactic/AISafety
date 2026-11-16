@@ -104,7 +104,7 @@ const SeminarioHub: React.FC<SeminarioHubProps> = ({ lang }) => {
           </h2>
           <p className="text-lg text-secundarios-dark/80 dark:text-secundarios-light/80 mb-8">
             {lang === 'es'
-              ? 'Suscríbete al calendario de Luma para recibir cada sesión del seminario, o a nuestra newsletter para estar al día de todo lo que hace iaS.'
+              ? 'Suscríbete al calendario de Luma para recibir cada sesión del seminario, o a nuestro boletín para estar al día de todo lo que hace iaS.'
               : 'Subscribe to our Luma calendar to get every seminar session, or to our newsletter to keep up with everything iaS does.'}
           </p>
           <div className="flex flex-col md:flex-row gap-4">

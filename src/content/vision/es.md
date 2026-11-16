@@ -18,7 +18,7 @@ No es una preocupación solo nuestra: el ministro para la Transformación Digita
 <figure class="mapa-idioma">
 <img class="mapa-claro" src="/mapa-espanol-mundo-claro.webp" alt="Mapa del mundo que colorea el español como lengua oficial en España, Hispanoamérica y Guinea Ecuatorial, y como minoría importante o significativa en países como Estados Unidos, Canadá, Brasil, Marruecos y Australia." width="1600" height="821" loading="lazy" decoding="async">
 <img class="mapa-oscuro" src="/mapa-espanol-mundo-oscuro.webp" alt="" width="1600" height="821" loading="lazy" decoding="async">
-<div class="mapa-leyenda"><span class="mapa-oficial">Lengua oficial</span><span class="mapa-importante">Lengua mayoritaria o minoría importante (más del 25%), sin ser oficial</span><span class="mapa-significativa">Minoría significativa (menos del 25%, pero más de 500.000 hablantes)</span></div>
+<div class="mapa-leyenda"><span class="mapa-oficial">Lengua oficial</span><span class="mapa-importante">Lengua mayoritaria o minoría importante (más del 25 %), sin ser oficial</span><span class="mapa-significativa">Minoría significativa (menos del 25 %, pero más de 500.000 hablantes)</span></div>
 <figcaption>El español en el mundo. Datos: Anuario del Instituto Cervantes, <em>El español en el mundo 2023</em>. Mapa: El Comandante, Wikimedia Commons (dominio público, CC0), recolorado por iaS.</figcaption>
 </figure>
 

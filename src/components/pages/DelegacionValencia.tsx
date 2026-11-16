@@ -44,7 +44,9 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
   const content = delegacionValenciaContent[lang];
   const t = translations[lang];
   const langPrefix = lang === 'es' ? '' : '/en';
-  const eventosDestacados = valenciaEventosDestacados.filter((e) => new Date(e.finaliza) > new Date());
+  // Los encuentros ya terminados siguen visibles, pero como «Ya celebrado» y con el texto en pasado.
+  const ahora = new Date();
+  const eventosDestacados = valenciaEventosDestacados.map((e) => ({ ...e, celebrado: new Date(e.finaliza) <= ahora }));
 
   const anchors = [
     { id: 'eventos', label: content.anchors.eventos },
@@ -150,10 +152,10 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
               <h3 className={sectionTitle}>{content.eventsTitle}</h3>
               {eventosDestacados.map((evento) => (
                 <article key={evento.id} className={`${card} p-6 mb-6 text-left`}>
-                  <h5 className="mb-2 uppercase text-principal-texto">{content.eventsFeaturedLabel}</h5>
+                  <h5 className="mb-2 uppercase text-principal-texto">{evento.celebrado ? content.eventsPastLabel : content.eventsFeaturedLabel}</h5>
                   <h4 className="!mb-1">{evento[lang].title}</h4>
                   <p className="!mb-3 font-sans text-sm font-semibold text-secundarios-dark/70 dark:text-secundarios-light/70">{evento[lang].meta}</p>
-                  <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{evento[lang].text}</p>
+                  <p className="text-secundarios-dark/80 dark:text-secundarios-light/80">{evento.celebrado ? evento[lang].textPasado : evento[lang].text}</p>
                   {evento.ponentes?.length > 0 && (
                     <div className="mb-6">
                       <h5 className="mb-3 uppercase text-principal-texto">{content.eventsSpeakersLabel}</h5>
@@ -183,8 +185,8 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                       </ul>
                     </div>
                   )}
-                  <a href={evento.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto">
-                    {content.eventsFeaturedCta}
+                  <a href={evento.href} target="_blank" rel="noopener noreferrer" className={evento.celebrado ? `${secondaryButton} gap-2` : "inline-flex items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-white font-bold hover:bg-principal/90 transition-all shadow-md w-full md:w-auto"}>
+
                     <ArrowRight size={18} aria-hidden="true" />
                   </a>
                 </article>
