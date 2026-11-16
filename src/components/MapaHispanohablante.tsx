@@ -13,7 +13,7 @@ export default function MapaHispanohablante({ titulo }: Props) {
             viewBox={`0 0 ${mapa.w} ${mapa.h}`}
             role="img"
             aria-label={titulo}
-            className="w-full h-full"
+            className="block w-full h-auto"
             preserveAspectRatio="xMidYMid meet"
         >
             <title>{titulo}</title>
