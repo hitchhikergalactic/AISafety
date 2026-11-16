@@ -40,6 +40,7 @@ import logoITK from '@assets/ponentes/itk.webp';
 import logoMercadoLibre from '@assets/ponentes/mercadolibre.webp';
 import logoSezzle from '@assets/ponentes/sezzle.webp';
 import logoTShaped from '@assets/ponentes/tshaped.webp';
+import logoTelefonica from '@assets/ponentes/telefonica.webp';
 
 // `enPortada: false` en las que la portada ya muestra (patrocinio y franja de la Red), para no repetirlas.
 export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPortada?: boolean }[] = [
@@ -83,4 +84,5 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'Mercado Libre', logo: logoMercadoLibre },
   { nombre: 'Sezzle', logo: logoSezzle },
   { nombre: 'TShaped', logo: logoTShaped },
+  { nombre: 'Telefónica Tech', logo: logoTelefonica },
 ];

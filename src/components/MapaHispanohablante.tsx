@@ -17,20 +17,18 @@ export default function MapaHispanohablante({ titulo }: Props) {
             preserveAspectRatio="xMidYMid meet"
         >
             <title>{titulo}</title>
-            {mapa.paises.map((p) => (
-                <path
-                    key={p.id}
-                    d={p.d}
-                    fillRule="evenodd"
-                    strokeWidth={0.6}
-                    strokeLinejoin="round"
-                    className={
-                        p.es
-                            ? 'fill-principal stroke-secundarios-light dark:stroke-secundarios-dark'
-                            : 'fill-secundarios-dark/15 dark:fill-white/15 stroke-secundarios-light dark:stroke-secundarios-dark'
-                    }
-                />
-            ))}
+            {/* Resto del mundo, muy suave, para que los 21 países destaquen */}
+            <g className="fill-secundarios-dark/[0.07] dark:fill-white/10 stroke-white dark:stroke-secundarios-dark">
+                {mapa.paises.filter((p) => !p.es).map((p) => (
+                    <path key={p.id} d={p.d} fillRule="evenodd" strokeWidth={0.6} strokeLinejoin="round" />
+                ))}
+            </g>
+            {/* Países hispanohablantes encima, con sombra naranja */}
+            <g className="fill-principal stroke-white dark:stroke-secundarios-dark drop-shadow-md drop-shadow-principal/40">
+                {mapa.paises.filter((p) => p.es).map((p) => (
+                    <path key={p.id} d={p.d} fillRule="evenodd" strokeWidth={0.6} strokeLinejoin="round" />
+                ))}
+            </g>
         </svg>
     );
 }
