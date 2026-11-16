@@ -122,10 +122,12 @@ export const delegacionValenciaContent = {
       sobreNosotros: 'Sobre nosotros',
       unete: 'Únete y contacto',
     },
-    eventsTitle: 'Próximos eventos',
+    eventsTitle: 'Eventos',
     eventsArchiveLabel: 'Ver archivo completo',
     eventsContactText: '¿Dudas sobre un evento? Escríbenos a',
     eventsFeaturedLabel: 'Próximo encuentro',
+    eventsPastLabel: 'Ya celebrado',
+    eventsPastCta: 'Ver el evento en Luma',
     eventsFeaturedCta: 'Inscríbete en Luma',
     eventsSpeakersLabel: 'Ponentes',
     eventsBioLabel: 'Leer biografía',
@@ -160,10 +162,12 @@ export const delegacionValenciaContent = {
       sobreNosotros: 'About us',
       unete: 'Join and contact',
     },
-    eventsTitle: 'Upcoming events',
+    eventsTitle: 'Events',
     eventsArchiveLabel: 'See the full archive',
     eventsContactText: 'Questions about an event? Write to us at',
     eventsFeaturedLabel: 'Next event',
+    eventsPastLabel: 'Past event',
+    eventsPastCta: 'See the event on Luma',
     eventsFeaturedCta: 'Register on Luma',
     eventsSpeakersLabel: 'Speakers',
     eventsBioLabel: 'Read bio',
@@ -185,7 +189,7 @@ export const delegacionValenciaContent = {
 } as const;
 
 // Encuentros de Valencia que se destacan sobre el calendario de Luma (que solo se carga al pulsar).
-// Cada uno deja de mostrarse al terminar (`finaliza`); el calendario sigue listándolos igualmente.
+// Al terminar (`finaliza`) pasan a «Ya celebrado» con `textPasado`; el calendario sigue listándolos igualmente.
 export const valenciaEventosDestacados = [
   {
     id: 'ai-safety-session-upv',
@@ -194,12 +198,14 @@ export const valenciaEventosDestacados = [
     es: {
       title: 'Sesión de seguridad de la IA',
       meta: '12 de noviembre de 2026 · 19:00–20:30 · Salón de Actos, Edificio 1E, ETSINF (UPV), Camí de Vera, s/n, València',
-      text: 'Alde González, de Plug and Play, y Johanna Angulo, que colidera iaS Valencia, hablan de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo, con entrada libre y networking al final.',
+      text: 'Alde González, de Plug and Play, y Johanna Angulo, que colidera iaS Valencia, hablan de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo, con entrada libre y tiempo para conversar al final.',
+      textPasado: 'Alde González, de Plug and Play, y Johanna Angulo, que colidera iaS Valencia, han hablado de evaluaciones, alineamiento e interpretabilidad mecanicista y de cómo hacer carrera en el campo.',
     },
     en: {
       title: 'AI Safety Session',
       meta: '12 November 2026 · 19:00–20:30 · Assembly Hall, Building 1E, ETSINF (UPV), Camí de Vera, s/n, València',
       text: 'Alde González, from Plug and Play, and Johanna Angulo, who co-leads iaS Valencia, talk about evals, alignment and mechanistic interpretability and how to build a career in the field, with free entry and networking afterwards.',
+      textPasado: 'Alde González, from Plug and Play, and Johanna Angulo, who co-leads iaS Valencia, talked about evals, alignment and mechanistic interpretability and how to build a career in the field.',
     },
     // Ponentes con foto y biografía; las biografías las aportan los propios ponentes.
     ponentes: [
@@ -297,9 +303,9 @@ export const delegacionMadridContent = {
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
         meta: '20 de noviembre de 2026 · Talent Garden, Madrid',
-        text: '**Osmani Redondo**, que dirige iaS, da la keynote «Capacidad crítica y la responsabilidad en la era de la IA».',
-        imageAlt: 'Cartel de la keynote de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
-        linkLabel: 'Ver la ponente',
+        text: '**Osmani Redondo**, que dirige iaS, pronunciará la conferencia principal: «Capacidad crítica y la responsabilidad en la era de la IA».',
+        imageAlt: 'Cartel de la conferencia principal de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
+        linkLabel: 'Ver en DrupalCamp',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
       },
       {
@@ -333,9 +339,9 @@ export const delegacionMadridContent = {
         upcoming: false,
         name: 'Global South AI Safety Hackathon',
         meta: '19–21 de junio de 2026 · En línea',
-        text: '**Osmani Redondo**, que dirige iaS, ha formado parte del jurado del hackathon de **Apart Research**.',
+        text: '**Osmani Redondo**, que dirige iaS, ha formado parte del jurado del hackatón de **Apart Research**.',
         imageAlt: 'Cartel del Global South AI Safety Hackathon de Apart Research e iaS, con la foto de Osmani Redondo y la etiqueta «Jurado».',
-        linkLabel: 'Ver el hackathon',
+        linkLabel: 'Ver el hackatón',
         href: 'https://apartresearch.com/sprints/global-south-ais-hackathon-2026-06-19-to-2026-06-21',
       },
     ],
@@ -407,9 +413,9 @@ export const delegacionMadridContent = {
         upcoming: true,
         name: 'DrupalCamp Spain 2026',
         meta: '20 November 2026 · Talent Garden, Madrid',
-        text: '**Osmani Redondo**, director of iaS, gives the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
+        text: '**Osmani Redondo**, director of iaS, will give the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
         imageAlt: 'Poster for the keynote by Osmani Redondo, director of iaS, at DrupalCamp Spain 2026.',
-        linkLabel: 'See the speaker',
+        linkLabel: 'See on DrupalCamp',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
       },
       {
