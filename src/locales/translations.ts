@@ -32,8 +32,8 @@ export const translations = {
       mapCaption: 'Los 21 países con el español como lengua oficial',
       impactFigures: {
         title: "Cifras que impactan",
-        item1: { target: 17, prefix: '', suffix: '', animate: true as const },
-        item1_1: "sesiones de seguridad de la IA en español desde marzo de 2026",
+        item1: { target: 18, prefix: '', suffix: '', animate: true as const },
+        item1_1: "eventos de seguridad de la IA en español desde marzo de 2026",
         item2: { target: 611, prefix: '', suffix: '', animate: true as const },
         item2_1: "personas de más de 20 países se han inscrito",
         item3: { display: "1 de cada 3", animate: false as const },
@@ -196,8 +196,8 @@ export const translations = {
         mapCaption: "The 21 countries where Spanish is an official language",
     impactFigures: {
         title: "Impact Figures",
-        item1: { target: 17, prefix: '', suffix: '', animate: true as const },
-        item1_1: "AI safety sessions in Spanish since March 2026",
+        item1: { target: 18, prefix: '', suffix: '', animate: true as const },
+        item1_1: "AI safety events in Spanish since March 2026",
         item2: { target: 611, prefix: '', suffix: '', animate: true as const },
         item2_1: "people from more than 20 countries have registered",
         item3: { display: "1 in 3", animate: false as const },
