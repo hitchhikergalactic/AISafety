@@ -17,7 +17,19 @@ export const translations = {
       ctaSecondary: "¡Quiero formar parte!",
       ctaEvents: "Ver próximos eventos",
       sponsoredBy: "Con el patrocinio de",
+      // Portada: etiqueta, promesa y frase de datos ({eventos} y {personas} salen de las cifras de impacto)
+      eyebrow: "Hub de seguridad de la IA en español",
+      promesa: "Conocimiento en español sobre los riesgos más graves de la IA",
+      bajadaPortada: "Formamos, informamos y llevamos ese conocimiento a quienes deciden en España y en el mundo hispanohablante: {eventos} eventos y {personas} personas de más de 20 países desde marzo de 2026.",
     }, 
+    // Portada: puertas de entrada según quién visita
+    empezar: {
+      title: "¿Por dónde empiezas?",
+      nuevo: { q: "¿Acabas de llegar?", cta: "Qué es la seguridad de la IA" },
+      formarte: { q: "¿Quieres formarte o reorientar tu carrera?", cta: "Curso y seminario" },
+      colaborar: { q: "¿Quieres traducir, dar una charla o financiar?", cta: "Forma parte de iaS" },
+      instituciones: { q: "¿Prensa, universidad o institución?", cta: "Escríbenos" },
+    },
     why: {
       title: "¿Por qué un Hub de seguridad de la IA en español?",
       text1: 'Los laboratorios que desarrollan la IA más avanzada del mundo se encuentran principalmente en EE. UU., Reino Unido y China. Las decisiones sobre cómo se despliega, quién la controla y qué valores incorpora se toman, mayoritariamente, en inglés.',
@@ -63,6 +75,9 @@ export const translations = {
         description:"Junto a **BlueDot Impact** realizamos seminarios de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes",
         meta: "En línea · 1 h · primer y tercer miércoles del mes",
+        verbo: "Aprender",
+        nombre: "Seminario de seguridad de la IA",
+        paraQuien: "Para cualquiera con ganas de aprender de investigadores en seguridad de la IA, sin preparación previa.",
         details: [
           { label: "Duración", value: "1 h" },
           { label: "Frecuencia", value: "Primer y tercer miércoles de cada mes" },
@@ -78,6 +93,9 @@ export const translations = {
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Leer gratis",
         meta: "Gratis · cada semana",
+        verbo: "Estar al día",
+        nombre: "Semana iaS",
+        paraQuien: "Para quien quiera entender, en castellano, qué está pasando en la IA y por qué le afecta.",
         imageAlt: "Anuncio en un periódico con un astronauta y el texto: Semana iaS, noticias de seguridad de la IA.",
       },
       innovation: {
@@ -86,6 +104,9 @@ export const translations = {
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | **Del 11 de enero al 14 de febrero**.",
         meta: "En línea · del 11 de enero al 14 de febrero · sin requisitos técnicos",
+        verbo: "Formarse",
+        nombre: "Curso de Estrategia ante la IA General",
+        paraQuien: "Para perfiles de política, seguridad, operaciones o ingeniería que quieren reorientarse, y para quien empieza en el campo.",
         details: [
           { label: "Fechas", value: "Del 11 de enero al 14 de febrero de 2027" },
           { label: "Duración", value: "5 semanas (25 h en total)" },
@@ -102,6 +123,9 @@ export const translations = {
         description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
         cta: "Únete a la conversación",
         meta: "Gratis · en español",
+        verbo: "Debatir",
+        nombre: "Discord de iaS",
+        paraQuien: "Para debatir en español con otras personas sobre cómo hacer la IA más segura.",
       }
     },
     collaborators: {
@@ -185,6 +209,16 @@ export const translations = {
       ctaSecondary: "I want to be part of it!",
       ctaEvents: "See upcoming events",
       sponsoredBy: "Sponsored by",
+      eyebrow: "Spanish-language AI safety hub",
+      promesa: "Spanish-language knowledge on the most serious risks of AI",
+      bajadaPortada: "We train, inform and bring that knowledge to decision-makers in Spain and across the Spanish-speaking world: {eventos} events and {personas} people from more than 20 countries since March 2026.",
+    },
+    empezar: {
+      title: "Where do you want to start?",
+      nuevo: { q: "New to AI safety?", cta: "Read our newsletter" },
+      formarte: { q: "Want to train or change careers?", cta: "Course and seminar" },
+      colaborar: { q: "Want to translate, give a talk or fund us?", cta: "Join iaS" },
+      instituciones: { q: "Press, university or institution?", cta: "Write to us" },
     },
     why: {
         title: "Why an AI safety Hub in Spanish?",
@@ -231,6 +265,9 @@ export const translations = {
         description: "Together with **BlueDot Impact**, we run AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month",
         meta: "Online · 1 h · first and third Wednesday of the month",
+        verbo: "Learn",
+        nombre: "AI safety seminar",
+        paraQuien: "For anyone keen to learn from AI safety researchers, no preparation needed.",
         details: [
           { label: "Duration", value: "1 h" },
           { label: "Frequency", value: "First and third Wednesday of each month" },
@@ -246,6 +283,9 @@ export const translations = {
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Read for free",
         meta: "Free · every week",
+        verbo: "Stay informed",
+        nombre: "Semana iaS",
+        paraQuien: "For anyone who wants to understand, in Spanish, what is happening in AI and why it matters to them.",
         imageAlt: "Newspaper advertisement with an astronaut and the text: Semana iaS, AI safety news.",
       },
       innovation: {
@@ -254,6 +294,9 @@ export const translations = {
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | **Online** | **January 11 to February 14**.",
         meta: "Online · January 11 to February 14 · no technical requirements",
+        verbo: "Train",
+        nombre: "Course on strategy for AGI",
+        paraQuien: "For people from policy, security, operations or engineering who want to change direction, and for newcomers to the field.",
         details: [
           { label: "Dates", value: "January 11 to February 14, 2027" },
           { label: "Duration", value: "5 weeks (25 h in total)" },
@@ -270,6 +313,9 @@ export const translations = {
         description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
         cta: "Join the conversation",
         meta: "Free · in Spanish",
+        verbo: "Discuss",
+        nombre: "iaS Discord",
+        paraQuien: "To discuss with other people, in Spanish, how to make AI safer.",
       }
     },
     collaborators: {
