@@ -120,7 +120,10 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
       label: t.nav.events,
       sublinks: [
         // Artículo introductorio: solo existe en español. Resaltado como «Crear una delegación» en /DELEGACIONES
-        ...(lang === 'es' ? [{ label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true }] : []),
+        ...(lang === 'es' ? [
+          { label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true },
+          { label: "Mapa conceptual", path: "/mapa-conceptual" },
+        ] : []),
         { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-impact" },
         { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
       ]

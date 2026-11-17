@@ -20,7 +20,7 @@ La dificultad de fondo es esta: todavía no sabemos especificar de forma fiable 
 
 Hay varias formas de dividir los riesgos de la IA, pero la más extendida, que se remonta a Zwetsloot y Dafoe en 2019 y que recogen la agenda de seguridad de DeepMind y el Informe Internacional sobre la Seguridad de la IA, distingue entre uso malintencionado, desalineación y riesgo sistémico. La pregunta que los separa es sencilla: ¿quién o qué ha fallado?
 
-Son coordenadas para la discusión más que una clasificación cerrada, y muchos casos reales quedan en la frontera. La clasificación completa, con los conceptos y artículos de base, está en el [mapa conceptual de Safe AI Germany](https://safeaigermany.org/concept-map/ "Mapa conceptual de la seguridad de la IA (en inglés)").
+Son coordenadas para la discusión más que una clasificación cerrada, y muchos casos reales quedan en la frontera. La clasificación completa, con los conceptos y artículos de base, está en nuestro [mapa conceptual de la seguridad de la IA](/mapa-conceptual).
 
 - **Uso malintencionado:** la intención dañina es de una persona con acceso al modelo.
 - **Desalineación:** la intención viene del modelo, no de una persona.
@@ -64,7 +64,7 @@ La automejora recursiva, que sistemas de IA automaticen la propia investigación
 
 ### Qué hacer con esto
 
-Una clasificación te dice qué podría salir mal, pero no en qué trabajar. El paso siguiente es [elegir problemas de investigación](https://safetyapprentice.com/choosing-research-problems.html "Choosing Research Problems, The Safety Apprentice (en inglés)"): cuál de estas categorías concentra el riesgo de catástrofe, qué separa un desastre del que podemos recuperarnos de uno irreversible y cómo trazar la cadena que va desde tu trabajo hasta un riesgo que de verdad se reduce.
+Una clasificación te dice qué podría salir mal, pero no en qué trabajar. El paso siguiente es elegir en qué investigar: cuál de estas categorías concentra el riesgo de catástrofe, qué separa un desastre del que podemos recuperarnos de uno irreversible y cómo trazar la cadena que va desde tu trabajo hasta un riesgo que de verdad se reduce.
 
 ## No eres la única persona a quien le preocupa
 
@@ -84,7 +84,7 @@ Una potencia media no compite por tener el modelo más grande, sino que influye 
 
 ## Para seguir leyendo
 
-- **[The Safety Apprentice: un mapa conceptual de la seguridad de la IA](https://safeaigermany.org/concept-map/ "En inglés")** (en inglés). El paso siguiente a esta página: los conceptos clave del campo en cinco ramas, desde los fundamentos y los modelos de amenaza hasta los enfoques de alineación, la evaluación y la gobernanza. Cada entrada da una definición práctica, los artículos clave y los problemas abiertos donde puede aportar nueva investigación.
+- **[Mapa conceptual de la seguridad de la IA](/mapa-conceptual)**. El paso siguiente a esta página: los conceptos clave del campo en cinco ramas, desde los fundamentos y los modelos de amenaza hasta los enfoques de alineación, la evaluación y la gobernanza. Cada entrada da una definición práctica, los artículos clave y los problemas abiertos donde puede aportar nueva investigación.
 - **[Wait But Why: *The AI Revolution: The Road to Superintelligence*](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html "En inglés")** (en inglés). La famosa serie en dos partes de Tim Urban que dio a conocer la idea de superinteligencia a millones de personas. Se escribió en 2015 y sus argumentos sobre el ritmo del progreso y la dificultad de la alineación no han hecho más que ganar vigencia. Larga, accesible y todavía una de las mejores introducciones al panorama general.
 - **[AI Futures Project: *AI 2040: Plan A*](https://ai-2040.com/ "En inglés")** (en inglés). Un escenario detallado hasta 2040 sobre cómo esto podría salir bien: acuerdos internacionales de transparencia, plazos más lentos y capacidades repartidas entre varios países en lugar de concentradas. Es del equipo de *AI 2027* y su contrapunto deliberado: el mismo rigor aplicado a un futuro al que aspirar en vez de a uno que evitar, algo raro y valioso, porque casi todo lo que se escribe en el campo describe el fracaso.
 - **[A Narrow Path: *How to Secure Our Future*](https://www.narrowpath.co/ "En inglés")** (en inglés). Un recorrido interactivo por los retos que vienen y el estrecho camino que la humanidad debe recorrer para manejar con seguridad la IA avanzada. Una guía visual convincente de por qué el margen de error es pequeño y por qué este trabajo importa.

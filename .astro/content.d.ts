@@ -136,6 +136,14 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
+"mapaConceptual": Record<string, {
+  id: string;
+  body?: string;
+  collection: "mapaConceptual";
+  data: InferEntrySchema<"mapaConceptual">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
 "mision": Record<string, {
   id: string;
   body?: string;

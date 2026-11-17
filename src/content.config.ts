@@ -81,6 +81,15 @@ const queEsLaSeguridadDeLaIaCollection = defineCollection({
   }),
 });
 
+const mapaConceptualCollection = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/mapa-conceptual' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    canonical: z.string().url(),
+  }),
+});
+
 const privacidadCollection = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/privacidad' }),
   schema: z.object({
@@ -105,6 +114,7 @@ export const collections = {
   teoriaDelCambio: teoriaDelCambioCollection,
   cookies: cookiesCollection,
   queEsLaSeguridadDeLaIa: queEsLaSeguridadDeLaIaCollection,
+  mapaConceptual: mapaConceptualCollection,
   privacidad: privacidadCollection,
   avisoLegal: avisoLegalCollection,
 };
