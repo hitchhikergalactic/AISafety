@@ -6,7 +6,7 @@ canonical: https://aisafety.es/en/theory-of-change
 
 ## The problem
 
-The labs developing the most advanced AI are in the United States, the United Kingdom and China, and almost everything known about its most serious risks is studied and debated in English: of the major international reports, only the summary exists in Spanish. Meanwhile, the Spanish-speaking world is making decisions that will last for years, such as the creation of Spain's AI Safety Institute or the positions for the UN Global Dialogue in May 2027, and those preparing them can barely find that knowledge in their own language.
+The labs developing the most advanced AI are in the United States, the United Kingdom and China, and almost everything known about its most serious risks is studied and debated in English: of the major international reports, only the summary exists in Spanish. Meanwhile, the Spanish-speaking world is making decisions that will last for years, such as the creation of the AI Safety Institute planned in Spain's [IA360 Plan](https://www.lamoncloa.gob.es/presidente/actividades/Documents/2026/20260920%20Plan%20IA360.pdf "IA360 Plan, Spanish Prime Minister's Office (PDF, in Spanish)"), which will evaluate the most advanced models before and after they reach the market, or the positions for the UN Global Dialogue in May 2027, and those preparing them can barely find that knowledge in their own language.
 
 ---
 
@@ -14,7 +14,7 @@ The labs developing the most advanced AI are in the United States, the United Ki
 
 Spain and the Spanish-speaking countries do not develop the most advanced models, but they are middle powers with a voice of their own where the rules are set: Spain in the European Union, which already has an AI regulation, and in Ibero-America; Mexico, Argentina, Colombia or Chile in their regions; and, together, some twenty states with a vote at the UN, where El Salvador co-chairs the Global Dialogue. The Spanish government already [proposes an alliance with middle powers for trustworthy AI](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "elEconomista article, in Spanish").
 
-A middle power does not compete to have the biggest model: it gains influence by joining forces with others, setting safety conditions for anyone who wants access to its market and bringing common positions to international forums. To do this well it needs its own knowledge of the most serious risks, in its own language and within reach of decision-makers, and that is the gap iaS fills.
+A middle power does not compete to have the biggest model: it gains influence by joining forces with others, setting safety conditions for anyone who wants access to its market and bringing common positions to international forums. To do this well it needs its own knowledge of the most serious risks, in its own language and within reach of decision-makers, and trained people to evaluate them, which the IA360 Plan itself identifies as Spain's weakest point. That is the gap iaS fills.
 
 ---
 

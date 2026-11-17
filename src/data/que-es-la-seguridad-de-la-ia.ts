@@ -33,6 +33,7 @@ export const queEsLaSeguridadDeLaIaContent = {
       'jailbreak',
       'gobernanza',
       'potencias medias',
+      'Plan IA360',
       'Instituto de Seguridad de la IA',
     ],
   },

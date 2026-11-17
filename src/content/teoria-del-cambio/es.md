@@ -6,7 +6,7 @@ canonical: https://aisafety.es/teoria-del-cambio
 
 ## El problema
 
-Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, el Reino Unido y China, y casi todo lo que se sabe sobre sus riesgos más graves se estudia y se debate en inglés: de los grandes informes internacionales solo existe en español el resumen. Mientras tanto, en el mundo hispanohablante se están tomando decisiones que durarán años, como la creación del Instituto de Seguridad de la IA en España o las posiciones ante el Diálogo Global de la ONU de mayo de 2027, y quienes las preparan apenas encuentran ese conocimiento en su lengua.
+Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, el Reino Unido y China, y casi todo lo que se sabe sobre sus riesgos más graves se estudia y se debate en inglés: de los grandes informes internacionales solo existe en español el resumen. Mientras tanto, en el mundo hispanohablante se están tomando decisiones que durarán años, como la creación del Instituto de Seguridad de la IA que prevé el [Plan IA360](https://www.lamoncloa.gob.es/presidente/actividades/Documents/2026/20260920%20Plan%20IA360.pdf "Plan IA360, Presidencia del Gobierno (PDF)"), que evaluará los modelos más avanzados antes y después de llegar al mercado, o las posiciones ante el Diálogo Global de la ONU de mayo de 2027, y quienes las preparan apenas encuentran ese conocimiento en su lengua.
 
 ---
 
@@ -14,7 +14,7 @@ Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, e
 
 España y los países hispanohablantes no desarrollan los modelos más avanzados, pero son potencias medias con voz propia allí donde se fijan las reglas: España en la Unión Europea, que ya cuenta con un reglamento de IA, y en Iberoamérica; México, Argentina, Colombia o Chile en sus regiones, y todos juntos, una veintena de Estados con voto en la ONU, donde El Salvador copreside el Diálogo Global. El Gobierno de España ya [propone una alianza con las potencias medias por una IA confiable](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "Noticia de elEconomista").
 
-Una potencia media no compite por tener el modelo más grande: influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y ese es el hueco que cubre iaS.
+Una potencia media no compite por tener el modelo más grande: influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y personas formadas para evaluarlos, que es lo que el propio Plan IA360 señala como el punto más débil de España. Ese es el hueco que cubre iaS.
 
 ---
 
