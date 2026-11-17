@@ -30,6 +30,25 @@ const ministerQuoteUrl = 'https://digital.gob.es/content/dam/portal-mtdfp/comuni
 
 type Language = 'es' | 'en';
 
+// Sistema de la portada: todas las secciones comparten el mismo ancho (el de <Section>), el mismo borde izquierdo
+// y el mismo encabezado (título grande en tinta, enlace secundario a la derecha). El naranja queda para la acción.
+export const tituloSeccion = "!text-[clamp(1.75rem,1.2rem+1.6vw,2.5rem)] !leading-tight !mb-0 !font-bold text-secundarios-dark dark:text-secundarios-light text-balance";
+export const tarjeta = "rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5";
+
+const EncabezadoSeccion: React.FC<{ titulo: string; enlace?: { href: string; texto: string }; children?: React.ReactNode }> = ({ titulo, enlace, children }) => (
+    <div className="mb-6 md:mb-10">
+        <div className="flex items-end justify-between gap-4">
+            <h2 className={tituloSeccion}>{titulo}</h2>
+            {enlace && (
+                <a href={enlace.href} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
+                    {enlace.texto} <ArrowRight size={18} aria-hidden="true" />
+                </a>
+            )}
+        </div>
+        {children && <div className="mt-4 max-w-2xl [&>p]:!mb-0">{children}</div>}
+    </div>
+);
+
 interface HomeProps {
     lang: Language;
 }
@@ -164,39 +183,28 @@ export default function Home({ lang }: HomeProps) {
 
             {/* PRÓXIMOS EVENTOS: justo tras la primera pantalla, para llegar a la inscripción con un clic */}
             <Section id="proximos-eventos" className="!pt-10 md:!pt-16 !pb-0">
-                <div className="flex items-end justify-between gap-4 mb-5 md:mb-6">
-                    <h2 className="!text-2xl md:!text-3xl !leading-tight !mb-0">{lang === 'es' ? 'Próximos eventos' : 'Upcoming events'}</h2>
-                    <a href={lang === 'es' ? '/eventos' : '/en/eventos'} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
-                        {lang === 'es' ? 'Ver todos' : 'See all'} <ArrowRight size={18} aria-hidden="true" />
-                    </a>
-                </div>
+                <EncabezadoSeccion
+                    titulo={lang === 'es' ? 'Próximos eventos' : 'Upcoming events'}
+                    enlace={{ href: lang === 'es' ? '/eventos' : '/en/eventos', texto: lang === 'es' ? 'Ver todos' : 'See all' }}
+                />
                 <ProximosEventos lang={lang} campana="portada" limite={3} />
             </Section>
 
             {/* 2. COLABORADORES */}
             <Section id="conectar">
-                <div className='mx-auto max-w-2xl text-center'>
-                    <h4 className="mb-2 md:mb-8">{t.collaborators.title}</h4>
+                <EncabezadoSeccion titulo={t.collaborators.title} enlace={{ href: lang === 'es' ? '/red' : '/en/network', texto: t.collaborators.cta }}>
                     <p>{parseText(t.collaborators.text)}</p>
-                </div>
+                </EncabezadoSeccion>
                 {/* Resumen de la red: logos en franja compacta y enlace a la página «Red» (mapa, países y grupos).
                     BlueDot no se repite aquí: ya aparece en la franja de patrocinio */}
-                <div className="mt-6 md:mt-10">
-                    <FranjaHubs />
-                </div>
-                <div className="mt-8 md:mt-12 flex justify-center">
-                    <a href={lang === 'es' ? '/red' : '/en/network'} className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border-2 border-principal text-principal-texto font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2 focus-visible:ring-offset-secundarios-light dark:focus-visible:ring-offset-secundarios-dark">
-                        {t.collaborators.cta}
-                        <ArrowRight size={20} aria-hidden="true" />
-                    </a>
-                </div>
+                <FranjaHubs />
             </Section>
 
             {/* 3. WHY HUB SECTION */}
             <Section id="mission">
-                <div className="w-full flex flex-col md:flex-row gap-8 items-center justify-center">
+                <EncabezadoSeccion titulo={t.why.title} />
+                <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                     <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
-                        <h4>{t.why.title}</h4>
                         <p className="whitespace-pre-line">{t.why.text1}</p>
                         <p>
                             {t.why.quoteBefore}
@@ -209,27 +217,31 @@ export default function Home({ lang }: HomeProps) {
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center">
                         {/* Los 21 países del texto («oficial en 21 países»), con datos de Natural Earth */}
-                        <figure className="w-full m-0 bg-white dark:bg-white/5 rounded-3xl border border-secundarios-dark/5 dark:border-white/10 shadow-anthro-elevated p-[clamp(1rem,0.5rem+2vw,2rem)]">
+                        <figure className={`w-full m-0 ${tarjeta} p-[clamp(1rem,0.5rem+2vw,2rem)]`}>
                             <MapaHispanohablante titulo={t.why.mapAlt} />
                             <figcaption className="mt-5 text-center font-serif italic text-base md:text-lg leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">{t.why.mapCaption}</figcaption>
                         </figure>
                     </div>
                 </div>
                 {t.why.impactFigures && (
-                    <ImpactFigures 
-                        key={lang}
-                        data={t.why.impactFigures} 
-                    />
+                    <div className="mt-16 md:mt-24">
+                        <EncabezadoSeccion titulo={t.why.impactFigures.title} />
+                        <ImpactFigures key={lang} data={t.why.impactFigures} sinTitulo />
+                    </div>
                 )}
             </Section>
 
             {/* Organizaciones de nuestros ponentes, sin las que ya salen arriba */}
-            <Section id="ponentes">
+            <Section id="ponentes" className="!py-8 md:!py-12">
                 <FranjaPonentes lang={lang} portada />
             </Section>
 
             {/* 4. EVENTOS - BENTO GRID */}
             <Section id="eventos">
+                <EncabezadoSeccion
+                    titulo={lang === 'es' ? 'Qué hacemos' : 'What we do'}
+                    enlace={{ href: lang === 'es' ? '/que-hacemos' : '/en/que-hacemos', texto: lang === 'es' ? 'Ver todo' : 'See all' }}
+                />
                 <BentoGrid 
                     t={t}
                     lang={lang}
@@ -238,19 +250,17 @@ export default function Home({ lang }: HomeProps) {
             </Section>
 
             {/* 6. MANIFIESTO */}
-            <Section id="manifiesto">
+            <Section id="manifiesto" className="md:!pt-12">
                 <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="flex-[2] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-16 min-h-[400px] flex items-center">
+                    <div className={`flex-[2] ${tarjeta} p-8 md:p-16 flex items-center`}>
                         <h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
                             {parseText(t.mission.text)}
                         </h3>
                     </div>
-                    <div className="flex-[1] bg-secundarios-gray dark:bg-white/5 rounded-[40px] p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
-                        <div>
-                            <button data-alta onClick={() => openModal('subscribe')} className="w-full py-4 rounded-2xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all shadow-md cursor-pointer">
-                                {t.hero.ctaSecondary}
-                            </button>
-                        </div>
+                    <div className={`flex-[1] ${tarjeta} p-8 md:p-12 flex flex-col justify-center gap-8`}>
+                        <button data-alta onClick={() => openModal('subscribe')} className="w-full py-4 rounded-xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all cursor-pointer">
+                            {t.hero.ctaSecondary}
+                        </button>
                         <div className="flex justify-center">
                             <SocialFooter />
                         </div>

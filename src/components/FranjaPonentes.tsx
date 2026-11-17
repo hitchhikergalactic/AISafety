@@ -32,7 +32,7 @@ const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false }
 
     return (
         <div className="text-center">
-            <p className="!font-sans !text-base md:!text-lg font-semibold !mb-6 text-secundarios-dark dark:text-secundarios-light">{t.title}</p>
+            <p className={`!font-sans font-semibold !mb-6 text-secundarios-dark dark:text-secundarios-light ${portada ? 'text-left !text-xl md:!text-2xl' : '!text-base md:!text-lg'}`}>{t.title}</p>
             <div className={`franja-logos${pausada ? ' is-paused' : ''}`}>
                 <ul className="franja-logos-pista" style={{ '--franja-duracion': `${organizaciones.length * 2.5}s` } as React.CSSProperties}>
                     {elementos(false)}

@@ -20,8 +20,8 @@ interface BentoGridProps {
 const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
   // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
-  // Blanco sobre naranja cumple 3:1, suficiente para texto grande en negrita como este.
-  const ctaClass = "mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-principal px-6 py-3 text-center font-sans text-[1.1875rem] font-bold text-white shadow-md transition-all group-hover:shadow-lg group-hover:-translate-y-0.5";
+    // Enlace de texto con flecha, no botón lleno: en la portada el botón naranja queda para la inscripción a eventos.
+  const ctaClass = "mt-6 inline-flex self-start items-center gap-1.5 font-sans text-[1.0625rem] font-bold text-principal-texto underline underline-offset-4 group-hover:no-underline";
   // Título neutro: en la portada el naranja queda reservado al botón. El ! vence al color del h4 global.
   const cardTitleClass = "text-base font-bold tracking-tight !text-secundarios-dark dark:!text-secundarios-light";
   
@@ -35,8 +35,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
   };
 
   return (
-    <section id="eventos" className="py-4 md:py-10 px-5">
-      <div className="">
+    <div>
+      <div>
         {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           
@@ -46,7 +46,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             {/* TARJETA 2: Secundaria - Con Imagen y Texto (Curso Estrategia AGI) */}
             <a 
               href={`${langPrefix}/curso-estrategia-agi`}
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg dark:bg-transparent cursor-pointer text-left flex-1"
+              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card cursor-pointer text-left flex-1"
             >
               <div className="flex items-start justify-between gap-3 mb-4 w-full">
                 <span className="font-sans text-sm text-label-gray uppercase block flex-1">
@@ -80,7 +80,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
               href="https://discord.gg/gm6v9Cwa58"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
@@ -102,14 +102,14 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           </div>
 
           {/* --- COLUMNA DERECHA (2 Tarjetas: Boletín + Seminario BlueDot) --- */}
-          <div className="flex flex-col gap-5 h-full">
+          <div className="flex flex-col gap-4 h-full">
             
             {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
             <a 
               href={substackUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="font-sans text-sm text-label-gray uppercase">
@@ -132,7 +132,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
             {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
             <a 
               href={`${langPrefix}/seminario-bluedot-impact`}
-              className="group border border-neutral-300 dark:border-neutral-800 rounded-md p-6 md:p-10 flex flex-col transition-all hover:shadow-lg flex-1"
+              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
             >
                <div className="flex justify-between items-start mb-4">
                   <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
@@ -158,7 +158,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

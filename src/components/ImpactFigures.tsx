@@ -65,7 +65,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ figure, duration = 15
   }, [target, duration]);
 
   return (
-    <div ref={containerRef} className="text-4xl md:text-5xl font-black text-principal">
+    <div ref={containerRef} className="text-4xl md:text-5xl font-black text-secundarios-dark dark:text-secundarios-light">
       {prefix}
       {displayValue}
       {suffix && suffix !== 'M' && <sup>{suffix}</sup>}
@@ -121,7 +121,7 @@ const FadeInMilestone: React.FC<FadeInMilestoneProps> = ({ figure, delay = 0 }) 
   return (
     <div
       ref={ref}
-      className={`text-4xl md:text-5xl font-black text-principal transform transition-all duration-700 ${
+      className={`text-4xl md:text-5xl font-black text-secundarios-dark dark:text-secundarios-light transform transition-all duration-700 ${
         isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}
     >
@@ -137,9 +137,11 @@ interface ImpactFiguresData {
 
 interface ImpactFiguresProps {
   data: ImpactFiguresData;
+  // La portada pone el título con su encabezado de sección común
+  sinTitulo?: boolean;
 }
 
-const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
+const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data, sinTitulo = false }) => {
   const items: { value: FigureValue; description: string }[] = [];
 
   // Extract item1/item1_1, item2/item2_1, ..., item5/item5_1 pairs
@@ -161,8 +163,8 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
   }
 
   return (
-    <div className="mt-16 md:mt-24 space-y-6 w-full">
-      <h4 className="text-secundarios-dark dark:text-secundarios-light">{data.title}</h4>
+    <div className={`${sinTitulo ? '' : 'mt-16 md:mt-24 space-y-6'} w-full`}>
+      {!sinTitulo && <h4 className="text-secundarios-dark dark:text-secundarios-light">{data.title}</h4>}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, idx) => {
@@ -171,7 +173,7 @@ const ImpactFigures: React.FC<ImpactFiguresProps> = ({ data }) => {
           return (
             <div
               key={idx}
-              className={`p-6 rounded-md bg-white/40 dark:bg-white/5 border border-secundarios-dark/10 space-y-3 ${
+              className={`p-6 rounded-anthro bg-white dark:bg-white/5 border border-secundarios-dark/15 dark:border-secundarios-light/15 space-y-3 ${
                 isLastItem ? 'md:col-span-2' : ''
               }`}
             >
