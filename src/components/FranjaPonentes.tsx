@@ -11,16 +11,24 @@ interface FranjaPonentesProps {
     lang: Language;
     // En la portada se quitan las que ya aparecen en el patrocinio y en la franja de la Red
     portada?: boolean;
+    // Dentro de la franja de credibilidad bajo la cabecera: sin título propio (lo pone la franja), logos en gris y más bajos
+    enFranja?: boolean;
 }
 
-const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false }) => {
+const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false, enFranja = false }) => {
     const t = translations[lang].speakersOrgs;
     const [pausada, setPausada] = useState(false);
-    const organizaciones = organizacionesPonentes.filter((o) => !portada || o.enPortada !== false);
+    const organizaciones = organizacionesPonentes.filter((o) => !(portada || enFranja) || o.enPortada !== false);
 
     // La segunda copia solo sirve para que la cinta no se corte: se oculta a los lectores de pantalla.
     // Sin loading="lazy": los logos entran en pantalla por la animación, no por el scroll, y el navegador no los cargaba
     const elementos = (copia: boolean) =>
+        enFranja ? organizaciones.map((o) => (
+            <li key={`${copia ? 'b' : 'a'}-${o.nombre}`} aria-hidden={copia || undefined} title={o.nombre} className="flex w-24 md:w-28 shrink-0 flex-col items-center gap-1 px-2 text-center grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition">
+                <img src={o.logo.src} width={160} height={160} alt="" decoding="async" className="h-9 w-9 md:h-10 md:w-10 object-contain rounded-md" />
+                <span className="font-sans text-[0.6875rem] font-semibold leading-tight text-secundarios-dark dark:text-secundarios-light text-balance">{o.nombre}</span>
+            </li>
+        )) :
         organizaciones.map((o) => (
             <li key={`${copia ? 'b' : 'a'}-${o.nombre}`} aria-hidden={copia || undefined} className="flex w-28 md:w-32 shrink-0 flex-col items-center gap-2 px-2 text-center">
                 <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-white p-1.5 shadow-anthro-subtle">
@@ -29,6 +37,30 @@ const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false }
                 <span className="font-sans text-xs md:text-sm font-semibold leading-tight text-secundarios-dark/80 dark:text-secundarios-light/80 text-balance">{o.nombre}</span>
             </li>
         ));
+
+    if (enFranja) {
+        return (
+            <div className="flex items-center gap-2 min-w-0">
+                <div className={`franja-logos flex-1 min-w-0${pausada ? ' is-paused' : ''}`}>
+                    <ul className="franja-logos-pista" aria-label={t.title} style={{ '--franja-duracion': `${organizaciones.length * 2.5}s` } as React.CSSProperties}>
+                        {elementos(false)}
+                        {elementos(true)}
+                    </ul>
+                </div>
+                {/* El movimiento continuo debe poder detenerse (WCAG 2.2.2) */}
+                <button
+                    type="button"
+                    onClick={() => setPausada((v) => !v)}
+                    aria-pressed={pausada}
+                    aria-label={pausada ? t.play : t.pause}
+                    title={pausada ? t.play : t.pause}
+                    className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-secundarios-dark/20 dark:border-secundarios-light/30 text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:text-principal transition-colors"
+                >
+                    {pausada ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+                </button>
+            </div>
+        );
+    }
 
     return (
         <div className="text-center">

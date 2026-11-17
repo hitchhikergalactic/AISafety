@@ -3,6 +3,7 @@ import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import {
     ArrowRight,
+    ArrowUpRight,
     Newspaper
 } from 'lucide-react';
 import { substackUrl } from '@data/delegaciones';
@@ -34,13 +35,13 @@ type Language = 'es' | 'en';
 export const tituloSeccion = "!text-[clamp(1.75rem,1.2rem+1.6vw,2.5rem)] !leading-tight !mb-0 !font-bold text-secundarios-dark dark:text-secundarios-light text-balance";
 export const tarjeta = "rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5";
 
-const EncabezadoSeccion: React.FC<{ titulo: string; enlace?: { href: string; texto: string }; children?: React.ReactNode }> = ({ titulo, enlace, children }) => (
+const EncabezadoSeccion: React.FC<{ titulo: string; enlace?: { href: string; texto: string; externo?: boolean }; children?: React.ReactNode }> = ({ titulo, enlace, children }) => (
     <div className="mb-6 md:mb-10">
         <div className="flex items-end justify-between gap-4">
             <h2 className={tituloSeccion}>{titulo}</h2>
             {enlace && (
-                <a href={enlace.href} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
-                    {enlace.texto} <ArrowRight size={18} aria-hidden="true" />
+                <a href={enlace.href} {...(enlace.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
+                    {enlace.texto} {enlace.externo ? <ArrowUpRight size={18} aria-hidden="true" /> : <ArrowRight size={18} aria-hidden="true" />}
                 </a>
             )}
         </div>
@@ -76,6 +77,12 @@ export default function Home({ lang }: HomeProps) {
             .format(new Date(proximo.inicio)).replace(/\./g, '').replace(',', '').replace(/^./, (c) => c.toUpperCase())
         : '';
     const lugarProximo = proximo ? (proximo.modalidad === 'en-linea' ? (lang === 'es' ? 'En línea' : 'Online') : proximo.ciudad) : null;
+
+    // Cifras de la cabecera tomadas de las de impacto, para que no se desajusten al actualizarlas
+    const cifra = (clave: string) => {
+        const v: any = (t.why.impactFigures as any)?.[clave];
+        return v?.animate ? v.target : (v?.display ?? '');
+    };
 
     const openModal = (type: 'subscribe' | 'event') => {
         setModalType(type);
@@ -123,10 +130,14 @@ export default function Home({ lang }: HomeProps) {
                 className="relative flex-1 flex items-center justify-center pt-[clamp(6rem,4rem+6vw,8rem)] md:pt-[clamp(6rem,4rem+6vw,8rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] bajo:pt-[clamp(5.5rem,2rem+8vh,7rem)] bajo:pb-[clamp(1rem,2vh,1.5rem)] overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
-                    <h1 className="mb-2 md:mb-4 !text-[clamp(1.25rem,calc(7vw-0.3rem),4.8rem)] bajo:!text-[min(calc(7vw-0.3rem),4.8rem,10vh)] text-secundarios-dark dark:text-secundarios-light text-balance">
-                        {t.hero.h1}
+                    {/* Como BAISH: etiqueta (qué es iaS), promesa (qué consigue) y una frase con datos (cómo y cuánto) */}
+                    <p className="!font-sans !text-sm md:!text-base font-bold uppercase tracking-[0.12em] text-principal-texto !mb-3 md:!mb-5 bajo:!mb-2 bajo:!text-sm">{t.hero.eyebrow}</p>
+                    <h1 className="max-w-[18ch] mx-auto mb-3 md:mb-6 !leading-[1.1] !text-[clamp(1.9rem,1rem+4.2vw,4.25rem)] bajo:!text-[min(calc(1rem+4.2vw),4.25rem,6.6vh)] bajo:mb-3 text-secundarios-dark dark:text-secundarios-light text-balance">
+                        {t.hero.promesa}
                     </h1>
-                    <p className="bajada c !leading-[clamp(1.5rem,0.9rem+2.9vw,2.8rem)] !mb-[clamp(0.75rem,0.25rem+1.5vw,1.8rem)] bajo:!text-[clamp(1.2rem,4vh,2rem)] bajo:!leading-[1.35] bajo:!mb-[clamp(0.5rem,2vh,1.8rem)]">{parseText(t.hero.h2)}</p>
+                    <p className="max-w-3xl mx-auto !font-serif !text-[clamp(1.1rem,0.9rem+0.8vw,1.5rem)] !leading-snug !mb-[clamp(0.75rem,0.25rem+1.5vw,1.8rem)] bajo:!text-[clamp(1rem,2.6vh,1.35rem)] bajo:!mb-2 text-secundarios-dark/90 dark:text-secundarios-light/90 text-balance">
+                        {t.hero.bajadaPortada.replace('{eventos}', String(cifra('item1'))).replace('{personas}', String(cifra('item2')))}
+                    </p>
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
@@ -169,14 +180,23 @@ export default function Home({ lang }: HomeProps) {
                 </div>
             </Section>
 
-            {/* Franja de patrocinio. Logo sin recolorear: versión azul en claro y versión blanca oficial en oscuro.
-                El SVG trae margen transparente (lienzo 261×101), que se compensa con margen negativo */}
+            {/* Franja de credibilidad, como la de mentores de SAIGE: quién nos respalda (patrocinio) y de dónde vienen
+                quienes dan las charlas (ponentes). Es la prueba que sostiene la acción de al lado (los eventos), no lleva
+                botón propio. Logo de BlueDot sin recolorear: versión azul en claro y blanca oficial en oscuro; el SVG trae
+                margen transparente (lienzo 261×101), que se compensa con margen negativo */}
             <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
-                <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1.2vw,1.5rem)] bajo:py-[clamp(0.6rem,1.5vh,1.5rem)] flex flex-col items-center gap-[clamp(0.35rem,0.2rem+0.5vw,0.6rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
-                    <span className="text-xs md:text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
-                    <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] dark:hidden" />
-                    <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[clamp(210px,170px+6vw,260px)] h-auto -my-[clamp(25px,20px+0.7vw,31px)] hidden dark:block" />
-                </a>
+                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="shrink-0 flex flex-col items-center md:items-start gap-[clamp(0.35rem,0.2rem+0.5vw,0.5rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
+                        <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
+                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[190px] h-auto -my-[23px] -mx-[10px] dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[190px] h-auto -my-[23px] -mx-[10px] hidden dark:block" />
+                    </a>
+                    <div className="hidden md:block self-stretch w-px bg-[#dcdcdc] dark:bg-white/10" aria-hidden="true" />
+                    <div className="flex-1 min-w-0 flex flex-col gap-2">
+                        <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70 text-center md:text-left text-secundarios-dark dark:text-secundarios-light">{t.speakersOrgs.title}</span>
+                        <FranjaPonentes lang={lang} enFranja />
+                    </div>
+                </div>
             </div>
             </div>
 
@@ -189,6 +209,37 @@ export default function Home({ lang }: HomeProps) {
                 <ProximosEventos lang={lang} campana="portada" limite={3} />
             </Section>
 
+            {/* ¿POR DÓNDE EMPIEZAS?: una puerta por tipo de visitante, como BAISH. Cada una lleva a su acción */}
+            <Section id="empezar" className="!pb-0">
+                <EncabezadoSeccion titulo={t.empezar.title} />
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none !p-0 !m-0">
+                    {[
+                        { q: t.empezar.nuevo.q, cta: t.empezar.nuevo.cta, ...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: substackUrl, externo: true }) },
+                        { q: t.empezar.formarte.q, cta: t.empezar.formarte.cta, href: '#eventos' },
+                        { q: t.empezar.colaborar.q, cta: t.empezar.colaborar.cta, alta: true },
+                        { q: t.empezar.instituciones.q, cta: t.empezar.instituciones.cta, href: `mailto:${t.footer.email}` },
+                    ].map((p: any) => {
+                        const clase = `group flex flex-col justify-between gap-6 w-full h-full p-5 md:p-6 text-left no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal ${tarjeta}`;
+                        const contenido = (
+                            <>
+                                <span className="font-sans text-lg md:text-xl font-bold leading-snug text-balance">{p.q}</span>
+                                <span className="font-sans font-bold text-principal-texto">
+                                    <span className="underline underline-offset-4 group-hover:no-underline">{p.cta}</span>
+                                    {p.externo ? <ArrowUpRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" /> : <ArrowRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" />}
+                                </span>
+                            </>
+                        );
+                        return (
+                            <li key={p.q} className="!m-0 flex">
+                                {p.alta
+                                    ? <button type="button" data-alta onClick={() => openModal('subscribe')} className={clase}>{contenido}</button>
+                                    : <a href={p.href} {...(p.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={clase}>{contenido}</a>}
+                            </li>
+                        );
+                    })}
+                </ul>
+            </Section>
+
             {/* QUÉ HACEMOS: justo después de los eventos, responde a qué ofrecemos, para quién y cuándo */}
             <Section id="eventos" className="!pb-0">
                 <EncabezadoSeccion
@@ -199,18 +250,18 @@ export default function Home({ lang }: HomeProps) {
             </Section>
 
             {/* CIFRAS Y PONENTES: la prueba de que funciona, justo después de qué hacemos */}
-            <Section id="cifras" className="!pb-0">
+            <Section id="cifras">
                 {t.why.impactFigures && (
                     <>
-                        <EncabezadoSeccion titulo={t.why.impactFigures.title} />
+                        <EncabezadoSeccion
+                            titulo={t.why.impactFigures.title}
+                            enlace={proximo
+                                ? { href: conUtm(proximo.url, 'portada-cifras'), texto: lang === 'es' ? 'Apúntate al próximo evento' : 'Register for the next event', externo: true }
+                                : { href: lang === 'es' ? '/eventos' : '/en/eventos', texto: lang === 'es' ? 'Ver la agenda' : 'See the agenda' }}
+                        />
                         <ImpactFigures key={lang} data={t.why.impactFigures} sinTitulo />
                     </>
                 )}
-            </Section>
-
-            {/* Organizaciones de nuestros ponentes, sin las que ya salen arriba */}
-            <Section id="ponentes" className="!py-8 md:!py-12">
-                <FranjaPonentes lang={lang} portada />
             </Section>
 
             {/* 2. COLABORADORES */}
@@ -225,7 +276,12 @@ export default function Home({ lang }: HomeProps) {
 
             {/* 3. WHY HUB SECTION */}
             <Section id="mission">
-                <EncabezadoSeccion titulo={t.why.title} />
+                <EncabezadoSeccion
+                    titulo={t.why.title}
+                    enlace={lang === 'es'
+                        ? { href: '/que-es-la-seguridad-de-la-ia', texto: t.hero.ctaPrimary }
+                        : { href: 'https://seguridaddelaia.substack.com/', texto: t.hero.ctaPrimary, externo: true }}
+                />
                 <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                     <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
                         <p className="whitespace-pre-line">{t.why.text1}</p>

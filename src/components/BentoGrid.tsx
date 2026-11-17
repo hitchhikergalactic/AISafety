@@ -1,11 +1,8 @@
 import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { parseText } from '@utils/parseText';
-import { emphasizeBrand } from '@utils/emphasizeBrand';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-semana-ias.webp';
-import ultimoBoletin from '../data/ultimo-boletin.json';
 import { substackUrl } from '../data/delegaciones';
 import cursoAgi from '../assets/curso_agi.jpg';
 
@@ -29,12 +26,13 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
     return '';
   };
 
+  // Etiqueta = verbo (qué haces), título = nombre del producto, texto = para quién (como BAISH y SAIGE)
   const tarjetas = [
-    { href: `${langPrefix}/curso-estrategia-agi`, externo: false, img: cursoAgi, alt: u.innovation.title, tag: u.innovation.tag, titulo: u.innovation.title, texto: emphasizeBrand(u.innovation.description), meta: u.innovation.meta, cta: u.moreInfo },
-    { href: `${langPrefix}/seminario-bluedot-impact`, externo: false, img: rodrigoImage, alt: u.bluedot.title, tag: u.bluedot.tag, titulo: u.bluedot.title, texto: parseText(u.bluedot.description), meta: u.bluedot.meta, cta: u.moreInfo },
-    { href: substackUrl, externo: true, img: lecturaImage, alt: u.readingGroup.imageAlt, tag: u.readingGroup.tag, titulo: <>{u.readingGroup.kicker} <span lang="es">{ultimoBoletin.titulo}</span></>, texto: u.readingGroup.description, meta: u.readingGroup.meta, cta: u.readingGroup.cta },
-    { href: 'https://discord.com/invite/gm6v9Cwa58', externo: true, img: discord, alt: u.research.title, tag: u.research.tag, titulo: u.research.title, texto: parseText(u.research.description), meta: u.research.meta, cta: u.research.cta },
-  ];
+    { href: `${langPrefix}/curso-estrategia-agi`, externo: false, img: cursoAgi, alt: u.innovation.title, item: u.innovation, cta: u.moreInfo },
+    { href: `${langPrefix}/seminario-bluedot-impact`, externo: false, img: rodrigoImage, alt: u.bluedot.title, item: u.bluedot, cta: u.moreInfo },
+    { href: substackUrl, externo: true, img: lecturaImage, alt: u.readingGroup.imageAlt, item: u.readingGroup, cta: u.readingGroup.cta },
+    { href: 'https://discord.com/invite/gm6v9Cwa58', externo: true, img: discord, alt: u.research.title, item: u.research, cta: u.research.cta },
+  ].map((c) => ({ ...c, tag: c.item.verbo, titulo: c.item.nombre, texto: c.item.paraQuien, meta: c.item.meta }));
 
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none !p-0 !m-0">
@@ -50,7 +48,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
             </div>
             <span className="font-sans text-xs font-semibold uppercase tracking-wider text-label-gray">{c.tag}</span>
             <h3 className="!text-lg !font-bold !leading-snug !mt-1 !mb-2 text-balance">{c.titulo}</h3>
-            <p className="!text-base !leading-normal !mb-4 line-clamp-4">{c.texto}</p>
+            <p className="!text-base !leading-normal !mb-4">{c.texto}</p>
             <div className="mt-auto">
               {/* Separador «·» dibujado como punto centrado: el glifo de Overpass queda descentrado y pegado a la palabra siguiente */}
               {c.meta && (
@@ -61,7 +59,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
                 </span>
               )}
               {/* En línea (no flex): si el texto parte en dos líneas, la flecha sigue pegada a la última palabra */}
-              <span className="font-sans font-bold text-principal-texto">
+              <span className="font-sans text-base font-bold text-principal-texto">
                 <span className="underline underline-offset-4 group-hover:no-underline">{c.cta}</span>
                 {c.externo ? <ArrowUpRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" /> : <ArrowRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" />}
               </span>
