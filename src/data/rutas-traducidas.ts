@@ -6,7 +6,7 @@ export const rutasEsEn: Record<string, string> = {
 };
 
 // Páginas que solo existen en español: el selector ES/EN lleva a la portada en inglés.
-const soloEnEspanol = new Set<string>(['/que-es-la-seguridad-de-la-ia']);
+const soloEnEspanol = new Set<string>(['/que-es-la-seguridad-de-la-ia', '/mapa-conceptual']);
 
 const rutasEnEs: Record<string, string> = Object.fromEntries(Object.entries(rutasEsEn).map(([es, en]) => [en, es]));
 

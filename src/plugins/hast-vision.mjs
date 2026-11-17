@@ -12,7 +12,8 @@
 //  5. "BlueDot Impact" va en <strong class="font-bold">, el mismo elemento que los ** manuales del resto del sitio.
 //     Es idempotente: no vuelve a envolver lo que ya está dentro de <strong> o <b>.
 //
-// En el artículo "Qué es la seguridad de la IA" (src/content/que-es-la-seguridad-de-la-ia/), además:
+// En el artículo "Qué es la seguridad de la IA" (src/content/que-es-la-seguridad-de-la-ia/) y en el "Mapa conceptual"
+// (src/content/mapa-conceptual/), además:
 //  - El "# Título" se quita: la página ya lo muestra como <h1> en la cabecera.
 //  - Los h2 y h3 llevan un id sin tildes, con guiones (el mismo que usa el índice de la página).
 //  - Los enlaces a aisafety.es se abren en la misma pestaña, como el resto de enlaces internos.
@@ -24,8 +25,8 @@ const BRAND = 'BlueDot Impact';
 // Caracteres a partir de los cuales un elemento de lista cuenta como largo
 const umbralLiLargo = 200;
 
-const isVisionFile = (ctx) => /[\\/]content[\\/](mision|vision|teoria-del-cambio|cookies|privacidad|aviso-legal|que-es-la-seguridad-de-la-ia)[\\/]/.test(ctx.fileURL?.pathname ?? '');
-const isArticuloFile = (ctx) => /[\\/]content[\\/]que-es-la-seguridad-de-la-ia[\\/]/.test(ctx.fileURL?.pathname ?? '');
+const isVisionFile = (ctx) => /[\\/]content[\\/](mision|vision|teoria-del-cambio|cookies|privacidad|aviso-legal|que-es-la-seguridad-de-la-ia|mapa-conceptual)[\\/]/.test(ctx.fileURL?.pathname ?? '');
+const isArticuloFile = (ctx) => /[\\/]content[\\/](que-es-la-seguridad-de-la-ia|mapa-conceptual)[\\/]/.test(ctx.fileURL?.pathname ?? '');
 
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
