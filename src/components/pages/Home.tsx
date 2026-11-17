@@ -13,7 +13,6 @@ import Navbar from '@components/Navbar';
 import { Section } from '@components/UI';
 import { FranjaHubs } from '@components/RedHubs';
 import BentoGrid from '@components/BentoGrid';
-import SocialFooter from '@components/SocialFooter';
 import Footer from '@components/Footer';
 import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
@@ -190,6 +189,30 @@ export default function Home({ lang }: HomeProps) {
                 <ProximosEventos lang={lang} campana="portada" limite={3} />
             </Section>
 
+            {/* QUÉ HACEMOS: justo después de los eventos, responde a qué ofrecemos, para quién y cuándo */}
+            <Section id="eventos" className="!pb-0">
+                <EncabezadoSeccion
+                    titulo={lang === 'es' ? 'Qué hacemos' : 'What we do'}
+                    enlace={{ href: lang === 'es' ? '/que-hacemos' : '/en/que-hacemos', texto: lang === 'es' ? 'Ver todo' : 'See all' }}
+                />
+                <BentoGrid t={t} lang={lang} onModalOpen={() => openModal('event')} />
+            </Section>
+
+            {/* CIFRAS Y PONENTES: la prueba de que funciona, justo después de qué hacemos */}
+            <Section id="cifras" className="!pb-0">
+                {t.why.impactFigures && (
+                    <>
+                        <EncabezadoSeccion titulo={t.why.impactFigures.title} />
+                        <ImpactFigures key={lang} data={t.why.impactFigures} sinTitulo />
+                    </>
+                )}
+            </Section>
+
+            {/* Organizaciones de nuestros ponentes, sin las que ya salen arriba */}
+            <Section id="ponentes" className="!py-8 md:!py-12">
+                <FranjaPonentes lang={lang} portada />
+            </Section>
+
             {/* 2. COLABORADORES */}
             <Section id="conectar">
                 <EncabezadoSeccion titulo={t.collaborators.title} enlace={{ href: lang === 'es' ? '/red' : '/en/network', texto: t.collaborators.cta }}>
@@ -223,48 +246,17 @@ export default function Home({ lang }: HomeProps) {
                         </figure>
                     </div>
                 </div>
-                {t.why.impactFigures && (
-                    <div className="mt-16 md:mt-24">
-                        <EncabezadoSeccion titulo={t.why.impactFigures.title} />
-                        <ImpactFigures key={lang} data={t.why.impactFigures} sinTitulo />
-                    </div>
-                )}
             </Section>
 
-            {/* Organizaciones de nuestros ponentes, sin las que ya salen arriba */}
-            <Section id="ponentes" className="!py-8 md:!py-12">
-                <FranjaPonentes lang={lang} portada />
-            </Section>
-
-            {/* 4. EVENTOS - BENTO GRID */}
-            <Section id="eventos">
-                <EncabezadoSeccion
-                    titulo={lang === 'es' ? 'Qué hacemos' : 'What we do'}
-                    enlace={{ href: lang === 'es' ? '/que-hacemos' : '/en/que-hacemos', texto: lang === 'es' ? 'Ver todo' : 'See all' }}
-                />
-                <BentoGrid 
-                    t={t}
-                    lang={lang}
-                    onModalOpen={() => openModal('event')} 
-                />
-            </Section>
-
-            {/* 6. MANIFIESTO */}
-            <Section id="manifiesto" className="md:!pt-12">
-                <div className="flex flex-col lg:flex-row gap-6">
-                    <div className={`flex-[2] ${tarjeta} p-8 md:p-16 flex items-center`}>
-                        <h3 className="bajada !text-secundarios-dark dark:!text-white !mb-0 text-left">
-                            {parseText(t.mission.text)}
-                        </h3>
-                    </div>
-                    <div className={`flex-[1] ${tarjeta} p-8 md:p-12 flex flex-col justify-center gap-8`}>
-                        <button data-alta onClick={() => openModal('subscribe')} className="w-full py-4 rounded-xl bg-secundarios-dark text-white font-bold hover:bg-principal transition-all cursor-pointer">
-                            {t.hero.ctaSecondary}
-                        </button>
-                        <div className="flex justify-center">
-                            <SocialFooter />
-                        </div>
-                    </div>
+            {/* CIERRE: una frase y una acción. Las redes ya están en el pie */}
+            <Section id="manifiesto">
+                <div className={`${tarjeta} p-8 md:p-12 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16`}>
+                    <h3 className="bajada flex-1 !text-secundarios-dark dark:!text-white !mb-0 text-left">
+                        {parseText(t.mission.text)}
+                    </h3>
+                    <button data-alta onClick={() => openModal('subscribe')} className="shrink-0 px-10 py-4 rounded-xl bg-secundarios-dark dark:bg-secundarios-light text-white dark:text-secundarios-dark font-bold hover:bg-principal dark:hover:bg-principal dark:hover:text-white transition-all cursor-pointer">
+                        {t.hero.ctaSecondary}
+                    </button>
                 </div>
             </Section>
 

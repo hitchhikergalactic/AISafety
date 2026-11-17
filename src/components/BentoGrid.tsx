@@ -1,9 +1,7 @@
 import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { parseText } from '@utils/parseText';
-import { parseHighlight } from '@utils/parseHighlight';
 import { emphasizeBrand } from '@utils/emphasizeBrand';
-import ProgramDetails from '@components/ProgramDetails';
 import rodrigoImage from '../assets/rodrigo.jpg';
 import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-semana-ias.webp';
@@ -17,15 +15,12 @@ interface BentoGridProps {
   onModalOpen: () => void;
 }
 
-const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
+// Programas de la portada: cuatro tarjetas iguales que responden de un vistazo a qué es, para quién y cuándo
+// (etiqueta, título, dos o tres líneas y una línea de datos). La ficha completa vive en la página de cada programa.
+const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
   const langPrefix = lang === 'es' ? '' : '/en';
-  // El botón es un <span> dentro del enlace de la tarjeta (que ya lleva al mismo destino): un <a> dentro de otro <a> no es HTML válido.
-    // Enlace de texto con flecha, no botón lleno: en la portada el botón naranja queda para la inscripción a eventos.
-  const ctaClass = "mt-6 inline-flex self-start items-center gap-1.5 font-sans text-[1.0625rem] font-bold text-principal-texto underline underline-offset-4 group-hover:no-underline";
-  // Título neutro: en la portada el naranja queda reservado al botón. El ! vence al color del h4 global.
-  const cardTitleClass = "text-base font-bold tracking-tight !text-secundarios-dark dark:!text-secundarios-light";
-  
-  // Función auxiliar para extraer de forma segura la URL de la imagen como un string
+  const u = t.upcoming;
+
   const getImageSrc = (img: any) => {
     if (!img) return '';
     if (typeof img === 'string') return img;
@@ -34,131 +29,47 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang, onModalOpen }) => {
     return '';
   };
 
+  const tarjetas = [
+    { href: `${langPrefix}/curso-estrategia-agi`, externo: false, img: cursoAgi, alt: u.innovation.title, tag: u.innovation.tag, titulo: u.innovation.title, texto: emphasizeBrand(u.innovation.description), meta: u.innovation.meta, cta: u.moreInfo },
+    { href: `${langPrefix}/seminario-bluedot-impact`, externo: false, img: rodrigoImage, alt: u.bluedot.title, tag: u.bluedot.tag, titulo: u.bluedot.title, texto: parseText(u.bluedot.description), meta: u.bluedot.meta, cta: u.moreInfo },
+    { href: substackUrl, externo: true, img: lecturaImage, alt: u.readingGroup.imageAlt, tag: u.readingGroup.tag, titulo: <>{u.readingGroup.kicker} <span lang="es">{ultimoBoletin.titulo}</span></>, texto: u.readingGroup.description, meta: u.readingGroup.meta, cta: u.readingGroup.cta },
+    { href: 'https://discord.com/invite/gm6v9Cwa58', externo: true, img: discord, alt: u.research.title, tag: u.research.tag, titulo: u.research.title, texto: parseText(u.research.description), meta: u.research.meta, cta: u.research.cta },
+  ];
+
   return (
-    <div>
-      <div>
-        {/* GRID PRINCIPAL: 2 Columnas en Desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          
-          {/* --- COLUMNA IZQUIERDA (2 Tarjetas: Curso AGI + Discord) --- */}
-          <div className="flex flex-col gap-4 h-full">
-            
-            {/* TARJETA 2: Secundaria - Con Imagen y Texto (Curso Estrategia AGI) */}
-            <a 
-              href={`${langPrefix}/curso-estrategia-agi`}
-              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card cursor-pointer text-left flex-1"
-            >
-              <div className="flex items-start justify-between gap-3 mb-4 w-full">
-                <span className="font-sans text-sm text-label-gray uppercase block flex-1">
-                  {t.upcoming.innovation.tag}
+    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none !p-0 !m-0">
+      {tarjetas.map((c) => (
+        <li key={c.href} className="!m-0 flex">
+          <a
+            href={c.href}
+            {...(c.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="group flex flex-col w-full rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-5 no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+          >
+            <div className="aspect-[16/10] overflow-hidden rounded-md bg-neutral-100 mb-4">
+              <img src={getImageSrc(c.img)} alt={c.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-label-gray">{c.tag}</span>
+            <h3 className="!text-lg !font-bold !leading-snug !mt-1 !mb-2 text-balance">{c.titulo}</h3>
+            <p className="!text-base !leading-normal !mb-4 line-clamp-4">{c.texto}</p>
+            <div className="mt-auto">
+              {/* Separador «·» dibujado como punto centrado: el glifo de Overpass queda descentrado y pegado a la palabra siguiente */}
+              {c.meta && (
+                <span className="block font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75 mb-3">
+                  {c.meta.split(' · ').map((parte: string, i: number) => (
+                    <React.Fragment key={parte}>{i > 0 && <span aria-hidden="true" className="inline-block w-[3px] h-[3px] rounded-full bg-current mx-2 align-middle" />}{i > 0 && <span className="sr-only"> · </span>}{parte}</React.Fragment>
+                  ))}
                 </span>
-              </div>
-              <div className="w-full h-40 md:h-auto md:aspect-[3/2] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img 
-                  src={getImageSrc(cursoAgi)}
-                  alt={t.upcoming.innovation.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h4 className={`${cardTitleClass} mb-1`}>{t.upcoming.innovation.title}</h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-4">
-                  {emphasizeBrand(t.upcoming.innovation.description)}</p>
-              <h5 className="text-label-gray dark:text-secundarios-gray mt-6">
-                {parseHighlight(t.upcoming.innovation.dateShort.toUpperCase())}
-              </h5>
-              <div className="mt-auto pt-6">
-                <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.innovation.details} />
-                <span className={ctaClass}>
-                  {t.upcoming.moreInfo}
-                  <ArrowRight size={18} aria-hidden="true" />
-                </span>
-              </div>
-            </a>
-
-            {/* TARJETA 5: Research - Texto + Botón */}
-            <a 
-              href="https://discord.gg/gm6v9Cwa58"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
-            >
-               <div className="flex justify-between items-start mb-4">
-                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.research.tag}</span>
-               </div>
-               <div className="flex flex-col md:flex-row gap-4 flex-1">
-                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
-                    <img src={getImageSrc(discord)} alt={t.upcoming.research.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  <div className="flex flex-col flex-1">
-                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.research.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-5 flex-grow">{parseText(t.upcoming.research.description)}</p>
-                  </div>
-               </div>
-               <span className={ctaClass}>
-                 {t.upcoming.research.cta}
-                 <ArrowUpRight size={18} aria-hidden="true" />
-               </span>
-            </a>
-          </div>
-
-          {/* --- COLUMNA DERECHA (2 Tarjetas: Boletín + Seminario BlueDot) --- */}
-          <div className="flex flex-col gap-4 h-full">
-            
-            {/* TARJETA 3: Apaisada - Imagen Arriba, Texto Abajo (ReadingGroup) */}
-            <a 
-              href={substackUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <span className="font-sans text-sm text-label-gray uppercase">
-                   {t.upcoming.readingGroup.tag}
-                </span>
-              </div>
-              <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden rounded-md mb-4">
-                <img src={getImageSrc(lecturaImage)} alt={t.upcoming.readingGroup.imageAlt} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-              </div>
-              <h4 className={`${cardTitleClass} mb-2 leading-tight`}>
-                {t.upcoming.readingGroup.kicker} <span lang="es">{ultimoBoletin.titulo}</span>
-              </h4>
-              <p className="text-secundarios-dark dark:text-secundarios-light text-small flex-grow">{t.upcoming.readingGroup.description}</p>
-              <span className={ctaClass}>
-                {t.upcoming.readingGroup.cta}
-                <ArrowUpRight size={18} aria-hidden="true" />
+              )}
+              {/* En línea (no flex): si el texto parte en dos líneas, la flecha sigue pegada a la última palabra */}
+              <span className="font-sans font-bold text-principal-texto">
+                <span className="underline underline-offset-4 group-hover:no-underline">{c.cta}</span>
+                {c.externo ? <ArrowUpRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" /> : <ArrowRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" />}
               </span>
-            </a>
-
-            {/* TARJETA 4: Horizontal - Imagen Izq + Texto Der (BlueDot) */}
-            <a 
-              href={`${langPrefix}/seminario-bluedot-impact`}
-              className="group rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-6 md:p-10 flex flex-col transition-all hover:border-principal hover:shadow-anthro-card flex-1"
-            >
-               <div className="flex justify-between items-start mb-4">
-                  <span className="font-sans text-sm text-label-gray uppercase">{t.upcoming.bluedot.tag}</span>
-               </div>
-               <div className="flex flex-col md:flex-row gap-4 flex-1">
-                  <div className="w-full md:w-32 md:h-32 h-40 bg-neutral-100 overflow-hidden md:flex-shrink-0 rounded-md">
-                    <img src={getImageSrc(rodrigoImage)} alt={t.upcoming.bluedot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  <div className="flex flex-col flex-1">
-                    <h4 className={`${cardTitleClass} mb-2`}>{t.upcoming.bluedot.title}</h4>
-                    <p className="text-secundarios-dark dark:text-secundarios-light text-small leading-relaxed line-clamp-6 flex-grow">{parseText(t.upcoming.bluedot.description)}</p>
-                    <h5 className="text-label-gray dark:text-secundarios-gray mt-6">{t.upcoming.bluedot.dateShort.toUpperCase()}</h5>
-                  </div>
-               </div>
-               <div className="mt-auto pt-6">
-                  <ProgramDetails title={t.upcoming.detailsTitle} rows={t.upcoming.bluedot.details} />
-                  <span className={ctaClass}>
-                    {t.upcoming.moreInfo}
-                    <ArrowRight size={18} aria-hidden="true" />
-                  </span>
-               </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };
 

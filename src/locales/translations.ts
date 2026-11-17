@@ -62,6 +62,7 @@ export const translations = {
         title: "Seminario de seguridad de la IA",
         description:"Junto a **BlueDot Impact** realizamos seminarios de seguridad de la IA, un espacio para conectar con expertos de todo el mundo y tener conversaciones esenciales sobre el futuro de la tecnología en nuestro idioma.",
         dateShort: "Primer y tercer miércoles del mes",
+        meta: "En línea · 1 h · primer y tercer miércoles del mes",
         details: [
           { label: "Duración", value: "1 h" },
           { label: "Frecuencia", value: "Primer y tercer miércoles de cada mes" },
@@ -76,6 +77,7 @@ export const translations = {
         kicker: "¡Extra, extra!",
         description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Leer gratis",
+        meta: "Gratis · cada semana",
         imageAlt: "Anuncio en un periódico con un astronauta y el texto: Semana iaS, noticias de seguridad de la IA.",
       },
       innovation: {
@@ -83,6 +85,7 @@ export const translations = {
         title: "Curso de Estrategia ante la Inteligencia Artificial General",
         description:"Programa especializado en estrategia de Inteligencia Artificial General basado en el currículo de BlueDot Impact.",
         dateShort: "Basado en cohortes. Sin requisitos técnicos | **En línea** | **Del 11 de enero al 14 de febrero**.",
+        meta: "En línea · del 11 de enero al 14 de febrero · sin requisitos técnicos",
         details: [
           { label: "Fechas", value: "Del 11 de enero al 14 de febrero de 2027" },
           { label: "Duración", value: "5 semanas (25 h en total)" },
@@ -98,6 +101,7 @@ export const translations = {
         title: "Debate cómo hacer la IA más segura",
         description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
         cta: "Únete a la conversación",
+        meta: "Gratis · en español",
       }
     },
     collaborators: {
@@ -226,6 +230,7 @@ export const translations = {
         title: "AI safety seminar",
         description: "Together with **BlueDot Impact**, we run AI safety seminars, a space to connect with experts from around the world and have essential conversations about the future of technology in our language.",
         dateShort: "First and third Wednesday of the month",
+        meta: "Online · 1 h · first and third Wednesday of the month",
         details: [
           { label: "Duration", value: "1 h" },
           { label: "Frequency", value: "First and third Wednesday of each month" },
@@ -240,6 +245,7 @@ export const translations = {
         kicker: "Extra, extra!",
         description: "Semana iaS is our free newsletter, with analysis in Spanish of what is happening in AI and why it matters to you.",
         cta: "Read for free",
+        meta: "Free · every week",
         imageAlt: "Newspaper advertisement with an astronaut and the text: Semana iaS, AI safety news.",
       },
       innovation: {
@@ -247,6 +253,7 @@ export const translations = {
         title: "Course on strategy for Artificial General Intelligence",
         description: "Specialized program on Artificial General Intelligence (AGI) strategy, based on the BlueDot Impact curriculum.",
         dateShort: "Cohort-based. No technical requirements | **Online** | **January 11 to February 14**.",
+        meta: "Online · January 11 to February 14 · no technical requirements",
         details: [
           { label: "Dates", value: "January 11 to February 14, 2027" },
           { label: "Duration", value: "5 weeks (25 h in total)" },
@@ -262,6 +269,7 @@ export const translations = {
         title: "Debate how to make AI safer",
         description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
         cta: "Join the conversation",
+        meta: "Free · in Spanish",
       }
     },
     collaborators: {

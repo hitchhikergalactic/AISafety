@@ -38,7 +38,9 @@ export const CollaborativeCard: React.FC<{
     logoWhite?: any;
     // Versión compacta (franja de la portada): menos alto y logo más pequeño
     compact?: boolean;
-}> = ({ href, text, logo, logoWhite, compact = false }) => {
+    // Logos en gris que recuperan su color al pasar por encima (franja de la portada: menos ruido visual)
+    monocromo?: boolean;
+}> = ({ href, text, logo, logoWhite, compact = false, monocromo = false }) => {
     
     // Extractor ultra seguro para blindar las etiquetas <img> nativas
     const getSafeSrc = (img: any): string => {
@@ -51,7 +53,7 @@ export const CollaborativeCard: React.FC<{
     };
 
     const logoSrc = getSafeSrc(logo);
-    const imgSize = compact ? 'max-h-16' : 'max-h-24';
+    const imgSize = `${compact ? 'max-h-16' : 'max-h-24'}${monocromo ? ' grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 transition' : ''}`;
     const logoWhiteSrc = getSafeSrc(logoWhite);
 
     return (
