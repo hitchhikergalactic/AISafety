@@ -32,6 +32,8 @@ export const queEsLaSeguridadDeLaIaContent = {
       'inteligencia artificial general',
       'jailbreak',
       'gobernanza',
+      'potencias medias',
+      'Instituto de Seguridad de la IA',
     ],
   },
 } as const;

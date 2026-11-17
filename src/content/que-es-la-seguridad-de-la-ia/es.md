@@ -6,8 +6,6 @@ canonical: https://aisafety.es/que-es-la-seguridad-de-la-ia
 
 # Por qué importa la seguridad de la IA
 
-Por David Williams-King, de [The Safety Apprentice](https://safetyapprentice.com/why-ai-safety.html "The Safety Apprentice (en inglés)") · Traducción al castellano de iaS
-
 ## Por qué hay que tomárselo en serio
 
 La inteligencia artificial avanza más deprisa de lo que casi nadie predijo. Sistemas que hace pocos años eran curiosidades de laboratorio hoy escriben código, investigan y razonan sobre problemas complejos. La distancia entre la IA actual y un sistema capaz de superar a los humanos en la mayoría de las tareas cognitivas puede medirse en años, no en décadas.
@@ -76,6 +74,14 @@ Esa es la Declaración sobre la Superinteligencia completa, publicada por el Fut
 
 No hace falta que suscribas lo que pide. Muchos investigadores serios creen que una prohibición es el instrumento equivocado o imposible de hacer cumplir, o que el trabajo de verdad es técnico y no normativo. Lo útil es lo que la declaración descarta: la idea de que preocuparse por la IA avanzada es una postura marginal de gente que no entiende la tecnología. Si llevas tiempo preocupándote en silencio y pensabas que pecabas de ingenuidad, estás en muy buena compañía. [Lee la declaración](https://superintelligence-statement.org/ "Statement on Superintelligence (en inglés)").
 
+## En España y en el mundo hispanohablante
+
+Casi todo lo que se sabe sobre estos riesgos se estudia y se debate en inglés, y de los grandes informes internacionales solo existe en español el resumen. Mientras tanto, en el mundo hispanohablante se toman decisiones que durarán años, como la creación del Instituto de Seguridad de la IA en España, la aplicación del reglamento de IA de la Unión Europea o las posiciones ante el Diálogo Global de la ONU de mayo de 2027.
+
+España y los países hispanohablantes no desarrollan los modelos más avanzados, pero son potencias medias con voz propia allí donde se fijan las reglas: España en la Unión Europea y en Iberoamérica, México, Argentina, Colombia o Chile en sus regiones, y todos juntos, una veintena de Estados con voto en la ONU. El Gobierno de España ya [propone una alianza con las potencias medias por una IA confiable](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "Noticia de elEconomista"), y hay propuestas para que estos países [unan fuerzas antes de la cumbre de Ginebra de junio de 2027](https://www.project-syndicate.org/commentary/middle-powers-must-lead-ai-safety-frontier-development-by-gordon-laforge-1-and-robert-c-orr-2026-10 "Gordon LaForge y Robert C. Orr, Project Syndicate (en inglés)").
+
+Una potencia media no compite por tener el modelo más grande, sino que influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Eso toca de lleno los tres riesgos de esta página: el uso malintencionado se frena con controles de acceso que puede exigir, la desalineación con evaluaciones que puede pedir antes de aceptar un modelo, y la concentración de poder es justo lo que una alianza de potencias medias puede contrapesar. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y ese es el trabajo de iaS. Lo contamos en nuestra [Teoría del Cambio](/teoria-del-cambio).
+
 ## Para seguir leyendo
 
 - **[The Safety Apprentice: un mapa conceptual de la seguridad de la IA](https://safeaigermany.org/concept-map/ "En inglés")** (en inglés). El paso siguiente a esta página: los conceptos clave del campo en cinco ramas, desde los fundamentos y los modelos de amenaza hasta los enfoques de alineación, la evaluación y la gobernanza. Cada entrada da una definición práctica, los artículos clave y los problemas abiertos donde puede aportar nueva investigación.
@@ -85,4 +91,4 @@ No hace falta que suscribas lo que pide. Muchos investigadores serios creen que 
 
 ---
 
-Texto de David Williams-King, de [The Safety Apprentice](https://safetyapprentice.com/why-ai-safety.html "The Safety Apprentice (en inglés)"), un recurso abierto que él creó, publicado con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es "Creative Commons Atribución 4.0") a partir de la versión de [Safe AI Germany](https://safeaigermany.org/why-ai-safety/ "Safe AI Germany (en inglés)"). Traducción al castellano de iaS.
+Todas las secciones salvo «En España y en el mundo hispanohablante», que es de iaS, son una adaptación al castellano del texto de David Williams-King en [The Safety Apprentice](https://safetyapprentice.com/why-ai-safety.html "The Safety Apprentice (en inglés)"), un recurso abierto que él creó, a partir de la versión de [Safe AI Germany](https://safeaigermany.org/why-ai-safety/ "Safe AI Germany (en inglés)"), con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es "Creative Commons Atribución 4.0").
