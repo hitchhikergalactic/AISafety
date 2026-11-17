@@ -185,7 +185,7 @@ export default function Home({ lang }: HomeProps) {
                 botón propio. Logo de BlueDot sin recolorear: versión azul en claro y blanca oficial en oscuro; el SVG trae
                 margen transparente (lienzo 261×101), que se compensa con margen negativo */}
             <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
-                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
                     <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="shrink-0 flex flex-col items-center md:items-start gap-[clamp(0.35rem,0.2rem+0.5vw,0.5rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
                         <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
                         <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[190px] h-auto -my-[23px] -mx-[10px] dark:hidden" />
