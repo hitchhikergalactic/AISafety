@@ -43,6 +43,18 @@ Hay demanda: 18 eventos de seguridad de la IA en español desde marzo de 2026, 6
 
 ---
 
+## Lo que tiene que ser cierto
+
+Esta teoría se apoya en tres supuestos que ponemos a prueba, no que damos por hechos:
+
+1. **Que el idioma sea una barrera real.** Quien prepara las decisiones en el mundo hispanohablante deja de usar el conocimiento sobre los riesgos más graves cuando solo existe en inglés, y no es solo una cuestión de preferencia.
+2. **Que España tenga margen para influir.** Sus posiciones pesan en la Unión Europea y en la ONU cuando se apoyan en conocimiento sólido y en alianzas con otras potencias medias.
+3. **Que las salvaguardas reduzcan el riesgo.** Las exigencias de seguridad en España y en la Unión Europea hacen más seguro el desarrollo de la IA avanzada, en lugar de llevarlo a países con menos exigencias.
+
+Si alguno resulta falso, cambiaremos de camino y lo contaremos en nuestro balance público.
+
+---
+
 ## Nuestra trayectoria y próximos hitos
 
 - **Febrero de 2026.** Nace iaS, impulsada por un equipo voluntario.

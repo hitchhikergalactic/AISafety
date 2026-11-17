@@ -43,6 +43,18 @@ There is demand: 18 AI safety events in Spanish since March 2026, 611 people reg
 
 ---
 
+## What has to be true
+
+This theory rests on three assumptions that we test rather than take for granted:
+
+1. **That language is a real barrier.** People preparing decisions in the Spanish-speaking world stop using knowledge about the most serious risks when it only exists in English, and it is not just a matter of preference.
+2. **That Spain has room to influence.** Its positions carry weight in the European Union and at the UN when they rest on solid knowledge and on alliances with other middle powers.
+3. **That safeguards reduce risk.** Safety requirements in Spain and the European Union make the development of advanced AI safer, rather than pushing it to countries with fewer requirements.
+
+If any of them proves false, we will change course and say so in our public review.
+
+---
+
 ## Our track record and next milestones
 
 - **February 2026.** iaS is founded, driven by a volunteer team.
