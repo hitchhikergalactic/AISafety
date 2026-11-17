@@ -97,7 +97,7 @@ export const translations = {
         ]
       },
       research: {
-        tag: "DÍA CERO",
+        tag: "DISCORD",
         title: "Debate cómo hacer la IA más segura",
         description: "Entra al **Discord** de iaS y debate con otras personas sobre seguridad de la IA en español; aquí es donde nacen ideas y colaboraciones, y la próxima puede salir de tu conversación.",
         cta: "Únete a la conversación",
@@ -265,7 +265,7 @@ export const translations = {
         ]
       },
       research: {
-        tag: "DAY ZERO",
+        tag: "DISCORD",
         title: "Debate how to make AI safer",
         description: "Join iaS's **Discord** and discuss AI safety in Spanish with other people; this is where ideas and collaborations are born, and the next one could come from your conversation.",
         cta: "Join the conversation",
