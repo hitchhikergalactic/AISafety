@@ -65,6 +65,14 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
                 {content.heroCta} <ArrowUpRight size={18} aria-hidden="true" />
               </a>
             </div>
+            {/* «¿Quieres empezar ya?» justo debajo de la ficha: quien no puede esperar a la cohorte tiene las lecturas a un clic */}
+            <p className="-mt-6 mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
+              {parseText(content.startNowNote.before)}
+              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto underline underline-offset-4 hover:no-underline">
+                {content.startNowNote.link}
+              </a>
+              {content.startNowNote.after}
+            </p>
 
             <div className="mb-8">
               <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.whyTitle}</h5>
@@ -94,13 +102,6 @@ const CursoEstrategiaAgi: React.FC<CursoEstrategiaAgiProps> = ({ lang }) => {
               {content.formatNote}
             </p>
 
-            <p className="mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80 leading-relaxed">
-              {parseText(content.startNowNote.before)}
-              <a href={content.startNowNote.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto hover:underline">
-                {content.startNowNote.link}
-              </a>
-              {content.startNowNote.after}
-            </p>
 
             <div className="mt-4 rounded-xl border border-secundarios-dark/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
               <h5 className="!text-principal-texto texto-medium !font-bold mb-3">{content.formTitle}</h5>

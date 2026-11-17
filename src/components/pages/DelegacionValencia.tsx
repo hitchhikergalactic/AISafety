@@ -6,6 +6,7 @@ import ValenciaAnchorBar from '@components/valencia/ValenciaAnchorBar';
 import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import EmbedAlPulsar from '@components/EmbedAlPulsar';
 import { translations } from '@locales/translations';
+import { empezarYaCurso } from '@data/cursoEstrategiaAgi';
 import { parseText } from '@utils/parseText';
 import { cortarCorreo } from '@utils/cortarCorreo';
 import ilustracionValencia from '../../assets/valencia-ilustracion.webp';
@@ -227,6 +228,13 @@ const DelegacionValencia: React.FC<DelegacionValenciaProps> = ({ lang }) => {
                 </p>
                 {program.details && (
                   <ProgramDetails title={t.upcoming.detailsTitle} rows={program.details} className="mb-6" />
+                )}
+                {program.id === 'curso' && lang === 'es' && (
+                  <p className="!text-sm mb-4 text-secundarios-dark/80 dark:text-secundarios-light/80">
+                    {empezarYaCurso.antes}
+                    <a href={empezarYaCurso.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto underline underline-offset-4 hover:no-underline">{empezarYaCurso.enlace}</a>
+                    {empezarYaCurso.despues}
+                  </p>
                 )}
                 <a href={program.href} className={`${secondaryButton} md:w-full`}>
                   {content.programCtaLabel}

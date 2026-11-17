@@ -1,4 +1,5 @@
 import type { Evento } from '@components/ProximosEventos';
+import { empezarYaCurso } from '@data/cursoEstrategiaAgi';
 
 // Eventos de iaS que NO están en el calendario de Luma de iaS (por ejemplo, un curso con formulario propio, o un
 // evento que coorganizamos y que vive en otro calendario). Se juntan con los de Luma (src/data/eventos.json) en la portada y en /eventos. Si un evento se crea también en Luma, hay que quitarlo de aquí
@@ -33,6 +34,7 @@ export const eventosPropios: Evento[] = [
     visibleHasta: '2027-01-11T00:00:00+01:00',
     porFechas: true,
     sinDatosEstructurados: true,
+    extraEs: empezarYaCurso,
     zona: 'Europe/Madrid',
     modalidad: 'en-linea',
     ciudad: null,

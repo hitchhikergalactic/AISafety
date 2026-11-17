@@ -4,6 +4,15 @@ export const cursoEstrategiaAgiNavLabels = {
   en: 'AGI Strategy Course',
 } as const;
 
+// «¿Quieres empezar ya?»: las lecturas del curso en español (Altruismo Eficaz). Va en todos los sitios que
+// presentan el curso en español: su página, la tarjeta de la portada, la de próximos eventos y las de Madrid y Valencia.
+export const empezarYaCurso = {
+  antes: '¿Quieres empezar ya? Lee en español ',
+  enlace: 'las lecturas del curso',
+  despues: '.',
+  url: 'https://altruismoeficaz.net/colecciones/estrategia-para-la-iag',
+} as const;
+
 export const cursoEstrategiaAgiContent = {
   es: {
     eyebrow: 'FORMACIÓN',
@@ -22,10 +31,10 @@ export const cursoEstrategiaAgiContent = {
     inPersonNote: 'Esta primera cohorte será **en línea**, del **11 de enero al 14 de febrero de 2027**.',
     // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
     startNowNote: {
-      before: 'Si quieres empezar ya, tienes en español los ',
-      link: 'materiales de lectura del curso',
+      before: '¿Quieres empezar ya? Lee en español ',
+      link: 'las lecturas del curso',
       href: 'https://altruismoeficaz.net/colecciones/estrategia-para-la-iag',
-      after: ', traducidos por Altruismo Eficaz.',
+      after: ', traducidas por Altruismo Eficaz.',
     },
     formatNote: 'Cinco semanas, unas cinco horas por semana: unas tres horas de lectura y ejercicios por tu cuenta y una sesión en grupo de dos horas, en línea, para debatir el contenido.',
     formTitle: 'Inscripción AGI Strategy',
