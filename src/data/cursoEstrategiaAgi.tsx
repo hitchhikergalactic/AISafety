@@ -22,10 +22,10 @@ export const cursoEstrategiaAgiContent = {
     inPersonNote: 'Esta primera cohorte será **en línea**, del **11 de enero al 14 de febrero de 2027**.',
     // Párrafo con enlace: el texto de «link» es el que se enlaza a «href»
     startNowNote: {
-      before: 'Si quieres empezar ya, BlueDot Impact ofrece ',
-      link: 'The Future of AI',
-      href: 'https://bluedot.org/courses/future-of-ai',
-      after: ', un curso gratuito y a tu ritmo, en inglés, que se completa en unas dos horas y no requiere solicitud.',
+      before: 'Si quieres empezar ya, tienes en español los ',
+      link: 'materiales de lectura del curso',
+      href: 'https://altruismoeficaz.net/colecciones/estrategia-para-la-iag',
+      after: ', traducidos por Altruismo Eficaz.',
     },
     formatNote: 'Cinco semanas, unas cinco horas por semana: unas tres horas de lectura y ejercicios por tu cuenta y una sesión en grupo de dos horas, en línea, para debatir el contenido.',
     formTitle: 'Inscripción AGI Strategy',

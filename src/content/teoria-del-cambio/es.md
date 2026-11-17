@@ -39,7 +39,7 @@ Trabajamos por tres caminos que no dependen unos de otros:
 
 ## Por qué creemos que funciona
 
-Hay demanda: 18 eventos de seguridad de la IA en español desde marzo de 2026, 611 personas inscritas de más de 20 países, 70 personas en nuestro primer encuentro presencial, una valoración de 4,6 sobre 5 y una de cada tres personas que vuelve. Hace falta hacerlo bien, porque la traducción automática ayuda pero sigue fallando en la terminología especializada. Y el momento es ahora: el papel de las potencias medias en la seguridad de la IA se está debatiendo, con propuestas para que [unan fuerzas antes de la cumbre de Ginebra de junio de 2027](https://www.project-syndicate.org/commentary/middle-powers-must-lead-ai-safety-frontier-development-by-gordon-laforge-1-and-robert-c-orr-2026-10 "Gordon LaForge y Robert C. Orr, Project Syndicate (en inglés)").
+Hay demanda: 18 eventos de seguridad de la IA en español desde marzo de 2026, 611 personas inscritas de más de 20 países, 70 personas en nuestro primer encuentro presencial, una valoración de 4,6 sobre 5 y una de cada tres personas que vuelve. Hace falta hacerlo bien, porque la traducción automática ayuda pero sigue fallando en la terminología especializada. Y el momento es ahora: el papel de las potencias medias en la seguridad de la IA se está debatiendo, con propuestas para que [unan fuerzas antes de la cumbre de Ginebra de junio de 2027](https://www.project-syndicate.org/commentary/middle-powers-must-lead-ai-safety-frontier-development-by-gordon-laforge-1-and-robert-c-orr-2026-10/spanish "Gordon LaForge y Robert C. Orr, «Las potencias intermedias pueden liderar la seguridad en materia de IA», Project Syndicate").
 
 ---
 
