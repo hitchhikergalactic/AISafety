@@ -19,7 +19,7 @@ export const GrupoHubs: React.FC<{ grupo: GrupoHub }> = ({ grupo }) => (
 export const FranjaHubs: React.FC = () => (
     <div className="flex flex-wrap justify-center items-center gap-y-1 [&>*]:w-1/2 [&>*]:px-3 sm:[&>*]:w-1/3 md:[&>*]:w-1/5 md:[&>*]:px-4">
         {hubs.map((h) => (
-            <CollaborativeCard key={h.href} compact href={h.href} text={h.text} logo={h.logo} logoWhite={h.logoWhite} />
+            <CollaborativeCard key={h.href} compact monocromo href={h.href} text={h.text} logo={h.logo} logoWhite={h.logoWhite} />
         ))}
     </div>
 );
