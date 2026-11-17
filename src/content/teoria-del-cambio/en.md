@@ -6,7 +6,7 @@ canonical: https://aisafety.es/en/theory-of-change
 
 ## The problem
 
-The labs developing the most advanced AI are in the United States, the United Kingdom and China, and almost everything known about its most serious risks is studied and debated in English: of the major international reports, only the summary exists in Spanish. Meanwhile, the Spanish-speaking world is making decisions that will last for years, such as the creation of Spain's AI Safety Institute or the positions for the UN Global Dialogue in May 2027, and those preparing them can barely find that knowledge in their own language.
+The labs developing the most advanced AI are in the United States, the United Kingdom and China, and almost everything known about its most serious risks is studied and debated in English: of the major international reports, only the summary exists in Spanish. Meanwhile, the Spanish-speaking world is making decisions that will last for years, such as the creation of the AI Safety Institute planned in Spain's [IA360 Plan](https://www.lamoncloa.gob.es/presidente/actividades/Documents/2026/20260920%20Plan%20IA360.pdf "IA360 Plan, Spanish Prime Minister's Office (PDF, in Spanish)"), which will evaluate the most advanced models before and after they reach the market, or the positions for the UN Global Dialogue in May 2027, and those preparing them can barely find that knowledge in their own language.
 
 ---
 
@@ -14,7 +14,7 @@ The labs developing the most advanced AI are in the United States, the United Ki
 
 Spain and the Spanish-speaking countries do not develop the most advanced models, but they are middle powers with a voice of their own where the rules are set: Spain in the European Union, which already has an AI regulation, and in Ibero-America; Mexico, Argentina, Colombia or Chile in their regions; and, together, some twenty states with a vote at the UN, where El Salvador co-chairs the Global Dialogue. The Spanish government already [proposes an alliance with middle powers for trustworthy AI](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "elEconomista article, in Spanish").
 
-A middle power does not compete to have the biggest model: it gains influence by joining forces with others, setting safety conditions for anyone who wants access to its market and bringing common positions to international forums. To do this well it needs its own knowledge of the most serious risks, in its own language and within reach of decision-makers, and that is the gap iaS fills.
+A middle power does not compete to have the biggest model: it gains influence by joining forces with others, setting safety conditions for anyone who wants access to its market and bringing common positions to international forums. To do this well it needs its own knowledge of the most serious risks, in its own language and within reach of decision-makers, and trained people to evaluate them, which the IA360 Plan itself identifies as Spain's weakest point. That is the gap iaS fills.
 
 ---
 
@@ -40,6 +40,18 @@ We work along three paths that do not depend on one another:
 ## Why we believe it works
 
 There is demand: 18 AI safety events in Spanish since March 2026, 611 people registered from more than 20 countries, 70 people at our first in-person event, a rating of 4.6 out of 5, and one in three attendees coming back. It has to be done well, because machine translation helps but still fails on specialist terminology. And the time is now: the role of middle powers in AI safety is under debate, with proposals for them to [join forces ahead of the Geneva summit in June 2027](https://www.project-syndicate.org/commentary/middle-powers-must-lead-ai-safety-frontier-development-by-gordon-laforge-1-and-robert-c-orr-2026-10 "Gordon LaForge and Robert C. Orr, Project Syndicate").
+
+---
+
+## What has to be true
+
+This theory rests on three assumptions that we test rather than take for granted:
+
+1. **That language is a real barrier.** People preparing decisions in the Spanish-speaking world stop using knowledge about the most serious risks when it only exists in English, and it is not just a matter of preference.
+2. **That Spain has room to influence.** Its positions carry weight in the European Union and at the UN when they rest on solid knowledge and on alliances with other middle powers.
+3. **That safeguards reduce risk.** Safety requirements in Spain and the European Union make the development of advanced AI safer, rather than pushing it to countries with fewer requirements.
+
+If any of them proves false, we will change course and say so in our public review.
 
 ---
 

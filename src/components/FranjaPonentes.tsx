@@ -25,7 +25,10 @@ const FranjaPonentes: React.FC<FranjaPonentesProps> = ({ lang, portada = false, 
     const elementos = (copia: boolean) =>
         enFranja ? organizaciones.map((o) => (
             <li key={`${copia ? 'b' : 'a'}-${o.nombre}`} aria-hidden={copia || undefined} title={o.nombre} className="flex w-24 md:w-28 shrink-0 flex-col items-center gap-1 px-2 text-center grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition">
-                <img src={o.logo.src} width={160} height={160} alt="" decoding="async" className="h-9 w-9 md:h-10 md:w-10 object-contain rounded-md" />
+                {/* Recuadro blanco igual para todos: sin él, los logos oscuros (MIRI, LASR) desaparecen en modo oscuro y los que traen fondo propio desentonan */}
+                <span className="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-md bg-white p-1 ring-1 ring-black/5">
+                    <img src={o.logo.src} width={160} height={160} alt="" decoding="async" className="h-full w-full object-contain" />
+                </span>
                 <span className="font-sans text-[0.6875rem] font-semibold leading-tight text-secundarios-dark dark:text-secundarios-light text-balance">{o.nombre}</span>
             </li>
         )) :

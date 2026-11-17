@@ -6,7 +6,7 @@ canonical: https://aisafety.es/teoria-del-cambio
 
 ## El problema
 
-Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, el Reino Unido y China, y casi todo lo que se sabe sobre sus riesgos más graves se estudia y se debate en inglés: de los grandes informes internacionales solo existe en español el resumen. Mientras tanto, en el mundo hispanohablante se están tomando decisiones que durarán años, como la creación del Instituto de Seguridad de la IA en España o las posiciones ante el Diálogo Global de la ONU de mayo de 2027, y quienes las preparan apenas encuentran ese conocimiento en su lengua.
+Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, el Reino Unido y China, y casi todo lo que se sabe sobre sus riesgos más graves se estudia y se debate en inglés: de los grandes informes internacionales solo existe en español el resumen. Mientras tanto, en el mundo hispanohablante se están tomando decisiones que durarán años, como la creación del Instituto de Seguridad de la IA que prevé el [Plan IA360](https://www.lamoncloa.gob.es/presidente/actividades/Documents/2026/20260920%20Plan%20IA360.pdf "Plan IA360, Presidencia del Gobierno (PDF)"), que evaluará los modelos más avanzados antes y después de llegar al mercado, o las posiciones ante el Diálogo Global de la ONU de mayo de 2027, y quienes las preparan apenas encuentran ese conocimiento en su lengua.
 
 ---
 
@@ -14,7 +14,7 @@ Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, e
 
 España y los países hispanohablantes no desarrollan los modelos más avanzados, pero son potencias medias con voz propia allí donde se fijan las reglas: España en la Unión Europea, que ya cuenta con un reglamento de IA, y en Iberoamérica; México, Argentina, Colombia o Chile en sus regiones, y todos juntos, una veintena de Estados con voto en la ONU, donde El Salvador copreside el Diálogo Global. El Gobierno de España ya [propone una alianza con las potencias medias por una IA confiable](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "Noticia de elEconomista").
 
-Una potencia media no compite por tener el modelo más grande: influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y ese es el hueco que cubre iaS.
+Una potencia media no compite por tener el modelo más grande: influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y personas formadas para evaluarlos, que es lo que el propio Plan IA360 señala como el punto más débil de España. Ese es el hueco que cubre iaS.
 
 ---
 
@@ -40,6 +40,18 @@ Trabajamos por tres caminos que no dependen unos de otros:
 ## Por qué creemos que funciona
 
 Hay demanda: 18 eventos de seguridad de la IA en español desde marzo de 2026, 611 personas inscritas de más de 20 países, 70 personas en nuestro primer encuentro presencial, una valoración de 4,6 sobre 5 y una de cada tres personas que vuelve. Hace falta hacerlo bien, porque la traducción automática ayuda pero sigue fallando en la terminología especializada. Y el momento es ahora: el papel de las potencias medias en la seguridad de la IA se está debatiendo, con propuestas para que [unan fuerzas antes de la cumbre de Ginebra de junio de 2027](https://www.project-syndicate.org/commentary/middle-powers-must-lead-ai-safety-frontier-development-by-gordon-laforge-1-and-robert-c-orr-2026-10 "Gordon LaForge y Robert C. Orr, Project Syndicate (en inglés)").
+
+---
+
+## Lo que tiene que ser cierto
+
+Esta teoría se apoya en tres supuestos que ponemos a prueba, no que damos por hechos:
+
+1. **Que el idioma sea una barrera real.** Quien prepara las decisiones en el mundo hispanohablante deja de usar el conocimiento sobre los riesgos más graves cuando solo existe en inglés, y no es solo una cuestión de preferencia.
+2. **Que España tenga margen para influir.** Sus posiciones pesan en la Unión Europea y en la ONU cuando se apoyan en conocimiento sólido y en alianzas con otras potencias medias.
+3. **Que las salvaguardas reduzcan el riesgo.** Las exigencias de seguridad en España y en la Unión Europea hacen más seguro el desarrollo de la IA avanzada, en lugar de llevarlo a países con menos exigencias.
+
+Si alguno resulta falso, cambiaremos de camino y lo contaremos en nuestro balance público.
 
 ---
 

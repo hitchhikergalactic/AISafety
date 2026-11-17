@@ -29,7 +29,9 @@ const articuloJsonLd = {
   mainEntityOfPage: c.canonical,
   url: c.canonical,
   keywords: c.keywords.join(', '),
-  author: { '@type': 'Organization', name: 'iaS', url: 'https://aisafety.es' },
+  author: { '@type': 'Person', name: c.autor.nombre, url: c.autor.url },
+  translator: { '@type': 'Organization', name: 'iaS', url: 'https://aisafety.es' },
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   publisher: { '@type': 'Organization', name: 'iaS', url: 'https://aisafety.es' },
 };
 ---
