@@ -50,7 +50,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
             </div>
             <span className="font-sans text-xs font-semibold uppercase tracking-wider text-label-gray">{c.tag}</span>
             <h3 className="!text-lg !font-bold !leading-snug !mt-1 !mb-2 text-balance">{c.titulo}</h3>
-            <p className="!text-base !leading-normal !mb-4 line-clamp-4">{c.texto}</p>
+            <p className="!text-base !leading-normal !mb-4">{c.texto}</p>
             <div className="mt-auto">
               {/* Separador «·» dibujado como punto centrado: el glifo de Overpass queda descentrado y pegado a la palabra siguiente */}
               {c.meta && (
@@ -61,7 +61,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
                 </span>
               )}
               {/* En línea (no flex): si el texto parte en dos líneas, la flecha sigue pegada a la última palabra */}
-              <span className="font-sans font-bold text-principal-texto">
+              <span className="font-sans text-base font-bold text-principal-texto">
                 <span className="underline underline-offset-4 group-hover:no-underline">{c.cta}</span>
                 {c.externo ? <ArrowUpRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" /> : <ArrowRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" />}
               </span>
