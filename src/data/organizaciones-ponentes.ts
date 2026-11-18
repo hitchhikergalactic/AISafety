@@ -2,8 +2,9 @@
 // (biografías de src/data/charlas.ts y ponentes del encuentro presencial de Madrid). Las usa la franja de logos
 // del Seminario y de la portada. Los logos son el símbolo de cada organización, recortado y encajado en 160×160.
 // Fuera a propósito: el Barcelona Supercomputing Center (su web no deja descargar el logo) y The Workshop.
+// Fuera también, para no inflar la franja: empresas sin relación con la seguridad de la IA (Mercado Libre, Sezzle,
+// TShaped, Telefónica Tech, ITK Engineering, DLR) y Google DeepMind (el ponente colabora con sus investigadores, no trabaja allí).
 import logoApart from '@assets/ponentes/apart.webp';
-import logoDeepMind from '@assets/ponentes/deepmind.webp';
 import logoOpenAI from '@assets/ponentes/openai.webp';
 import logoMIRI from '@assets/ponentes/miri.webp';
 import logoFLI from '@assets/ponentes/fli.webp';
@@ -24,7 +25,6 @@ import logoColombia from '@assets/ponentes/colombia.webp';
 import logoBarcelona from '@assets/ponentes/barcelona.webp';
 import logoCEGIA from '@assets/ponentes/cegia.webp';
 import logoW4AIS from '@assets/ponentes/w4ais.webp';
-import logoDLR from '@assets/ponentes/dlr.webp';
 import logoMPG from '@assets/ponentes/mpg.webp';
 import logoIIT from '@assets/ponentes/iit.webp';
 import logoPrinceton from '@assets/ponentes/princeton.webp';
@@ -36,16 +36,10 @@ import logoUBA from '@assets/ponentes/uba.webp';
 import logoUniandes from '@assets/ponentes/uniandes.webp';
 import logoUNAM from '@assets/ponentes/unam.webp';
 import logoUPY from '@assets/ponentes/upy.webp';
-import logoITK from '@assets/ponentes/itk.webp';
-import logoMercadoLibre from '@assets/ponentes/mercadolibre.webp';
-import logoSezzle from '@assets/ponentes/sezzle.webp';
-import logoTShaped from '@assets/ponentes/tshaped.webp';
-import logoTelefonica from '@assets/ponentes/telefonica.webp';
 
 // `enPortada: false` en las que la portada ya muestra (patrocinio y franja de la Red), para no repetirlas.
 export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPortada?: boolean }[] = [
   { nombre: 'Apart Research', logo: logoApart },
-  { nombre: 'Google DeepMind', logo: logoDeepMind },
   { nombre: 'OpenAI', logo: logoOpenAI },
   { nombre: 'MIRI', logo: logoMIRI },
   { nombre: 'Future of Life Institute', logo: logoFLI },
@@ -68,7 +62,6 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'AI Safety Barcelona', logo: logoBarcelona },
   { nombre: 'CEGIA', logo: logoCEGIA, enPortada: false },
   { nombre: 'Women4AISafety', logo: logoW4AIS, enPortada: false },
-  { nombre: 'DLR', logo: logoDLR },
   { nombre: 'Max Planck', logo: logoMPG },
   { nombre: 'IIT', logo: logoIIT },
   { nombre: 'Princeton', logo: logoPrinceton },
@@ -80,9 +73,4 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'Universidad de los Andes', logo: logoUniandes },
   { nombre: 'UNAM', logo: logoUNAM },
   { nombre: 'Universidad Politécnica de Yucatán', logo: logoUPY },
-  { nombre: 'ITK Engineering', logo: logoITK },
-  { nombre: 'Mercado Libre', logo: logoMercadoLibre },
-  { nombre: 'Sezzle', logo: logoSezzle },
-  { nombre: 'TShaped', logo: logoTShaped },
-  { nombre: 'Telefónica Tech', logo: logoTelefonica },
 ];

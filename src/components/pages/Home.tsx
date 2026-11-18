@@ -3,8 +3,7 @@ import { translations } from '@locales/translations';
 import { parseText } from '@utils/parseText';
 import {
     ArrowRight,
-    ArrowUpRight,
-    Newspaper
+    ArrowUpRight
 } from 'lucide-react';
 import { substackUrl } from '@data/delegaciones';
 import { FaLinkedin } from "react-icons/fa";
@@ -141,6 +140,7 @@ export default function Home({ lang }: HomeProps) {
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
+                        {/* Solo dos llamadas: la principal (Luma) y la secundaria (alta). «Léenos» ya está en el menú y «¿Qué es…?» en «¿Por dónde empiezas?» */}
                         {/* Con evento próximo: abre su página de Luma (inscripción). Sin eventos: baja a la sección, que invita a seguir el calendario */}
                         <a
                             {...(proximo
@@ -163,20 +163,6 @@ export default function Home({ lang }: HomeProps) {
                             {t.hero.ctaSecondary}
                         </button>
                     </div>
-                    {/* Móvil y tableta: el botón «Léenos» de la cabecera solo se ve desde lg, así que aquí ocupa el sitio del enlace.
-                        Va como enlace, no como botón lleno: el único botón lleno es «Ver próximos eventos» (camino a Luma) */}
-                    <p className="lg:hidden !mb-0 pt-4 bajo:pt-2 text-center">
-                        <a href={substackUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
-                            <Newspaper size={18} aria-hidden="true" />
-                            {lang === 'es' ? 'Léenos' : 'Read us'}
-                        </a>
-                    </p>
-                    {/* Escritorio. En español lleva al artículo «Qué es la seguridad de la IA» (misma pestaña); en inglés, al Substack */}
-                    <p className="hidden lg:block !mb-0 pt-4 bajo:pt-2 text-center">
-                        <a {...(lang === 'es' ? { href: '/que-es-la-seguridad-de-la-ia' } : { href: 'https://seguridaddelaia.substack.com/', target: '_blank', rel: 'noopener noreferrer' })} className="inline-block py-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
-                            {t.hero.ctaPrimary}
-                        </a>
-                    </p>
                 </div>
             </Section>
 
@@ -207,6 +193,36 @@ export default function Home({ lang }: HomeProps) {
                     enlace={{ href: lang === 'es' ? '/eventos' : '/en/eventos', texto: lang === 'es' ? 'Ver todos' : 'See all' }}
                 />
                 <ProximosEventos lang={lang} campana="portada" limite={3} />
+            </Section>
+
+            {/* ¿POR QUÉ EN ESPAÑOL?: lo que distingue a iaS, justo después de los eventos */}
+            <Section id="mission" className="!pb-0">
+                <EncabezadoSeccion
+                    titulo={t.why.title}
+                    enlace={lang === 'es'
+                        ? { href: '/que-es-la-seguridad-de-la-ia', texto: t.hero.ctaPrimary }
+                        : { href: 'https://seguridaddelaia.substack.com/', texto: t.hero.ctaPrimary, externo: true }}
+                />
+                <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+                    <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
+                        <p className="whitespace-pre-line">{t.why.text1}</p>
+                        <p>
+                            {t.why.quoteBefore}
+                            <a href={ministerQuoteUrl} target="_blank" rel="noopener noreferrer" hrefLang="es" title={t.why.quoteSourceLabel} aria-label={`${t.why.quoteLink} (${t.why.quoteSourceLabel})`} className="text-principal-texto underline underline-offset-4 hover:no-underline">{t.why.quoteLink}</a>
+                            {t.why.quoteAfter}
+                        </p>
+                        <p className="bajada font-light">{t.why.text2}</p>
+                        <p className="whitespace-pre-line">{t.why.text3}</p>
+                        <p className="font-bold">{t.why.text4}</p>
+                    </div>
+                    <div className="w-full md:w-1/2 flex justify-center">
+                        {/* Los 21 países del texto («oficial en 21 países»), con datos de Natural Earth */}
+                        <figure className={`w-full m-0 ${tarjeta} p-[clamp(1rem,0.5rem+2vw,2rem)]`}>
+                            <MapaHispanohablante titulo={t.why.mapAlt} />
+                            <figcaption className="mt-5 text-center font-serif italic text-base md:text-lg leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">{t.why.mapCaption}</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </Section>
 
             {/* ¿POR DÓNDE EMPIEZAS?: una puerta por tipo de visitante, como BAISH. Cada una lleva a su acción */}
@@ -272,36 +288,6 @@ export default function Home({ lang }: HomeProps) {
                 {/* Resumen de la red: logos en franja compacta y enlace a la página «Red» (mapa, países y grupos).
                     BlueDot no se repite aquí: ya aparece en la franja de patrocinio */}
                 <FranjaHubs />
-            </Section>
-
-            {/* 3. WHY HUB SECTION */}
-            <Section id="mission">
-                <EncabezadoSeccion
-                    titulo={t.why.title}
-                    enlace={lang === 'es'
-                        ? { href: '/que-es-la-seguridad-de-la-ia', texto: t.hero.ctaPrimary }
-                        : { href: 'https://seguridaddelaia.substack.com/', texto: t.hero.ctaPrimary, externo: true }}
-                />
-                <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center">
-                    <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
-                        <p className="whitespace-pre-line">{t.why.text1}</p>
-                        <p>
-                            {t.why.quoteBefore}
-                            <a href={ministerQuoteUrl} target="_blank" rel="noopener noreferrer" hrefLang="es" title={t.why.quoteSourceLabel} aria-label={`${t.why.quoteLink} (${t.why.quoteSourceLabel})`} className="text-principal-texto underline underline-offset-4 hover:no-underline">{t.why.quoteLink}</a>
-                            {t.why.quoteAfter}
-                        </p>
-                        <p className="bajada font-light">{t.why.text2}</p>
-                        <p className="whitespace-pre-line">{t.why.text3}</p>
-                        <p className="font-bold">{t.why.text4}</p>
-                    </div>
-                    <div className="w-full md:w-1/2 flex justify-center">
-                        {/* Los 21 países del texto («oficial en 21 países»), con datos de Natural Earth */}
-                        <figure className={`w-full m-0 ${tarjeta} p-[clamp(1rem,0.5rem+2vw,2rem)]`}>
-                            <MapaHispanohablante titulo={t.why.mapAlt} />
-                            <figcaption className="mt-5 text-center font-serif italic text-base md:text-lg leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">{t.why.mapCaption}</figcaption>
-                        </figure>
-                    </div>
-                </div>
             </Section>
 
             {/* CIERRE: una frase y una acción. Las redes ya están en el pie */}

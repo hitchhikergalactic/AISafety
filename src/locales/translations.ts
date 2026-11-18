@@ -147,7 +147,7 @@ export const translations = {
       cta: "Conoce la red",
     },
     speakersOrgs: {
-      title: "Nuestros ponentes han trabajado o colaborado con",
+      title: "Nuestros ponentes vienen de",
       pause: "Pausar logos",
       play: "Reanudar logos",
     },
@@ -337,7 +337,7 @@ export const translations = {
       cta: "Explore the network",
     },
     speakersOrgs: {
-      title: "Our speakers have worked or collaborated with",
+      title: "Our speakers come from",
       pause: "Pause logos",
       play: "Resume logos",
     },
