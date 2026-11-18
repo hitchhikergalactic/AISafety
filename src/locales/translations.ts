@@ -147,7 +147,7 @@ export const translations = {
       cta: "Conoce la red",
     },
     speakersOrgs: {
-      title: "Nuestros ponentes vienen de",
+      title: "Trayectoria de nuestros ponentes",
       pause: "Pausar logos",
       play: "Reanudar logos",
     },
