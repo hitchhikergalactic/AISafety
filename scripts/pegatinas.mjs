@@ -15,34 +15,42 @@ const SALIDA = 'marca/pegatinas';
 const svg = (archivo) =>
   readFileSync(`src/assets/${archivo}`, 'utf8').replace(/<\?xml[^>]*\?>/, '').replace(/id="logos"/, '');
 
-const logoColor = svg('logo-ias-color.svg');
-const logoBlanco = svg('logo-ias-blanco.svg');
 const leyendaColor = svg('logo_color_con_leyenda.svg');
 const leyendaBlanco = svg('logo_blanco_con_leyenda.svg');
+
+// Logo con leyenda y, debajo, la web; en blanco, para fondos de color. Medidas pensadas para un círculo de 50 mm
+const circuloConWeb = (logo) => `<div style="display:flex;flex-direction:column;align-items:center;margin-top:2mm">
+    <div style="width:38mm">${logo}</div>
+    <div style="margin-top:1.5mm;font:800 4.2mm/1 Overpass,sans-serif;color:#fff;letter-spacing:0.02em">aisafety.es</div>
+  </div>`;
 
 // ancho y alto: tamaño final en mm (sin sangrado). forma: 'rect' (esquinas de radio `radio` mm) o 'circulo'.
 const pegatinas = [
   {
     nombre: '01-logo-con-leyenda-blanco',
     ancho: 80, alto: 45, forma: 'rect', radio: 4, fondo: '#ffffff',
-    contenido: `<div style="width:66mm">${leyendaColor}</div>`,
+    contenido: `<div style="display:flex;flex-direction:column;align-items:center">
+        <div style="width:58mm">${leyendaColor}</div>
+        <div style="margin-top:-2mm;font:800 5mm/1 Overpass,sans-serif;color:#ff4500;letter-spacing:0.02em">aisafety.es</div>
+      </div>`,
   },
+  // Todas llevan la leyenda y la web: un «iaS» suelto no le dice nada a quien no nos conoce
   {
     nombre: '02-circulo-naranja',
     ancho: 50, alto: 50, forma: 'circulo', fondo: '#ff4500',
-    contenido: `<div style="width:38mm">${logoBlanco}</div>`,
+    contenido: circuloConWeb(leyendaBlanco),
   },
   {
-    nombre: '03-circulo-oscuro-con-leyenda',
+    nombre: '03-circulo-oscuro',
     ancho: 50, alto: 50, forma: 'circulo', fondo: '#333333',
-    contenido: `<div style="width:40mm">${leyendaBlanco}</div>`,
+    contenido: circuloConWeb(leyendaBlanco),
   },
   {
     nombre: '04-logo-y-web',
     ancho: 60, alto: 40, forma: 'rect', radio: 4, fondo: '#f2f2f2',
     contenido: `<div style="display:flex;flex-direction:column;align-items:center">
-        <div style="width:44mm">${logoColor}</div>
-        <div style="margin-top:0.5mm;font:800 6mm/1 Overpass,sans-serif;color:#333;letter-spacing:0.02em">aisafety.es</div>
+        <div style="width:44mm">${leyendaColor}</div>
+        <div style="margin-top:1mm;font:800 5mm/1 Overpass,sans-serif;color:#333;letter-spacing:0.02em">aisafety.es</div>
       </div>`,
   },
 ];

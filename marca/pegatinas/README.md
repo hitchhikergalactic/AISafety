@@ -6,8 +6,10 @@ Archivos listos para mandar a imprenta. Se generan con `node scripts/pegatinas.m
 |---|---|---|---|
 | `01-logo-con-leyenda-blanco.pdf` | 80 × 45 mm | Rectángulo, esquinas de 4 mm | Blanco |
 | `02-circulo-naranja.pdf` | Ø 50 mm | Círculo | Naranja de la marca |
-| `03-circulo-oscuro-con-leyenda.pdf` | Ø 50 mm | Círculo | Gris oscuro |
+| `03-circulo-oscuro.pdf` | Ø 50 mm | Círculo | Gris oscuro |
 | `04-logo-y-web.pdf` | 60 × 40 mm | Rectángulo, esquinas de 4 mm | Gris claro |
+
+Todas dicen qué es iaS (la leyenda «Hub de seguridad de la IA») y dónde encontrarnos (aisafety.es): quien vea la pegatina en un portátil ajeno tiene que poder entenderla y buscarnos.
 
 ## Qué decirle a la imprenta
 
