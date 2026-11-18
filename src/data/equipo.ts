@@ -5,6 +5,7 @@ import andresImg from '@assets/equipo/andres-casas.webp';
 import gretelImg from '@assets/equipo/gretel-schaj.webp';
 import francaImg from '@assets/equipo/franca-velasco.webp';
 import eduardoImg from '@assets/equipo/eduardo-mignot.webp';
+import jessImg from '@assets/equipo/jess-bergs.webp';
 
 export interface EquipoContent {
   es: {
@@ -133,11 +134,12 @@ export const miembrosEquipo: MiembroEquipo[] = [
     foto: francaImg,
     grupo: 'coordinacion',
   },
-  // PENDIENTE: cargo y organización exactos y foto cuadrada sin texto encima
+  // Cargo con sus palabras exactas (titular de LinkedIn), igual en los dos idiomas
   {
     nombre: 'Jess Bergs',
-    cargo: { es: 'Asesora de iaS', en: 'iaS Advisor' },
+    cargo: { es: 'R&D Engineering Lead | Human-AI Interaction @ UK AISI, Research Unit', en: 'R&D Engineering Lead | Human-AI Interaction @ UK AISI, Research Unit' },
     linkedin: 'https://www.linkedin.com/in/jbergs/',
+    foto: jessImg,
     grupo: 'asesores',
   },
 ];
