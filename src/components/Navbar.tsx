@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, X, Menu, ArrowRight, Landmark, MapPin, Plus, Newspaper } from 'lucide-react';
 import { translations } from '../locales/translations';
-import { delegacionesNavLabel, delegacionesSublinks, substackUrl } from '../data/delegaciones';
+import { delegacionesSublinks, substackUrl } from '../data/delegaciones';
 import { rutaEnOtroIdioma } from '../data/rutas-traducidas';
-import JoinModal from './JoinModal';
 import logo from '../assets/logo-ias-color.svg';
 import logoWhite from '../assets/logo-ias-blanco.svg';
 
-// Destino de «¡Quiero formar parte!»: el mismo Apps Script que usa la ventana de alta de la portada.
-// No es el formulario de la red (REDiaS): son dos cosas distintas.
-const JOIN_FORM_ACTION = 'https://script.google.com/macros/s/AKfycbwYyiRXPZdeFNO1ybtrnd5xa9ndfNvIfXr-e7rF0HsfKcz4eWckOsswSD9yoEO_87w63g/exec';
 
 
 interface NavbarProps {
@@ -18,9 +14,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showJoinModal, setShowJoinModal] = useState(false);
-  // Empieza oculto para que no parpadee en la portada, donde el botón ya está en la cabecera
-  const [altaEnPantalla, setAltaEnPantalla] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -45,23 +38,6 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lang]);
 
-  // «¡Quiero formar parte!» no se repite: el del menú se oculta si hay otro a la vista (marcado con data-alta)
-  useEffect(() => {
-    const comprobar = () => {
-      const visible = Array.from(document.querySelectorAll('[data-alta]')).some((boton) => {
-        const { top, bottom, width } = boton.getBoundingClientRect();
-        return width > 0 && top < window.innerHeight && bottom > 0;
-      });
-      setAltaEnPantalla(visible);
-    };
-    comprobar();
-    window.addEventListener('scroll', comprobar, { passive: true });
-    window.addEventListener('resize', comprobar);
-    return () => {
-      window.removeEventListener('scroll', comprobar);
-      window.removeEventListener('resize', comprobar);
-    };
-  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -101,46 +77,46 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
     setOpenSubmenu(null);
   };
 
-  // `path`: la pestaña lleva a una página propia en vez de a una sección de la portada
+  // `path`: la pestaña lleva a una página propia en vez de a una sección de la portada.
+  // Cuatro entradas, ordenadas por lo que busca quien llega (aprender, ir a un evento, conocer la red) y, al final, quiénes somos.
+  // Las delegaciones van dentro de «Sobre iaS», sin descripciones ni iconos, para que el desplegable sea una lista sencilla.
+  // Un solo grupo, «Ciudades»: tres cabeceras con un enlace cada una no aclaraban nada, y así AI Safety Barcelona
+  // no aparece como delegación (forma parte de iaS, pero no lo es). Cada nombre ya dice si es la sede.
+  const delegacionesEnLista: Sublink[] = [
+    { separator: true, title: lang === 'es' ? 'Ciudades' : 'Cities' },
+    ...delegacionesSublinks[lang].flatMap((l): Sublink[] =>
+      l.separator ? [] : [{ label: l.label, path: l.path, highlight: l.highlight }]),
+  ];
   const navLinks: { href: string; label: string; path?: string; external?: boolean; sublinks?: Sublink[] }[] = [
-    {
-      href: "mission",
-      label: t.nav.mission,
-      sublinks: [
-        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
-        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" },
-        { label: lang === 'es' ? "Misión" : "Mission", path: "/mision" },
-        { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" },
-        { label: lang === 'es' ? "Teoría del Cambio" : "Theory of Change", path: lang === 'es' ? "/teoria-del-cambio" : "/theory-of-change" }
-      ]
-    },
-    { href: "leer", label: t.nav.read, path: substackUrl, external: true },
     {
       href: "eventos",
       label: t.nav.events,
       sublinks: [
-        // Artículo introductorio: solo existe en español. Resaltado como «Crear una delegación» en /DELEGACIONES
+        // Artículo introductorio: solo existe en español
         ...(lang === 'es' ? [
           { label: "Qué es la seguridad de la IA", path: "/que-es-la-seguridad-de-la-ia", highlight: true },
           { label: "Mapa conceptual", path: "/mapa-conceptual" },
         ] : []),
         { label: t.seminario?.submenu || "Seminario BlueDot", path: "/seminario-bluedot-impact" },
-        { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" }
+        { label: lang === 'es' ? "Curso Estrategia AGI" : "AGI Strategy Course", path: "/curso-estrategia-agi" },
+        { label: lang === 'es' ? "Radar de papers" : "Paper digest", path: "/biblioteca-papers" }
       ]
     },
     // Eventos: pestaña directa (sin desplegable) para llegar a las fechas con un clic
     { href: "agenda", label: t.nav.agenda, path: `${langPrefix}/eventos` },
     { href: "red", label: t.nav.about, path: lang === 'es' ? '/red' : '/en/network' },
-    { href: "footer",
-      label: t.nav.contact,
-      sublinks: [
-        { label: lang === 'es' ? "Radar de papers" : "Paper digest", path: "/biblioteca-papers" }
-      ]
-    },
     {
-      href: "delegaciones",
-      label: delegacionesNavLabel[lang],
-      sublinks: delegacionesSublinks[lang]
+      href: "mission",
+      label: t.nav.mission,
+      sublinks: [
+        { separator: true, title: lang === 'es' ? 'Organización' : 'Organization' },
+        { label: lang === 'es' ? "Qué hacemos" : "What we do", path: "/que-hacemos" },
+        { label: lang === 'es' ? "Equipo" : "Team", path: "/equipo" },
+        { label: lang === 'es' ? "Misión" : "Mission", path: "/mision" },
+        { label: lang === 'es' ? "Visión" : "Vision", path: "/vision" },
+        { label: lang === 'es' ? "Teoría del Cambio" : "Theory of Change", path: lang === 'es' ? "/teoria-del-cambio" : "/theory-of-change" },
+        ...delegacionesEnLista,
+      ]
     },
   ];
 
@@ -270,15 +246,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
 
         {/* Actions (Theme + Lang + Mobile Toggle) */}
         <div className="col-start-3 flex items-center justify-self-end gap-2 md:gap-5">
-          <button
-            type="button"
-            onClick={() => setShowJoinModal(true)}
-            className={`hidden min-[1180px]:inline-flex ${altaEnPantalla ? 'invisible' : ''} cursor-pointer items-center px-4 py-1.5 rounded-anthro border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-sm whitespace-nowrap no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal focus-visible:ring-offset-2`}
-          >
-            {t.hero.ctaSecondary}
-          </button>
 
-          {/* Boletín: botón lleno, siempre visible en escritorio (el de alta se oculta mientras el de la portada está en pantalla) */}
+          {/* Boletín: único botón de la cabecera, para que nada compita con el camino a los eventos */}
           <a
             href={substackUrl}
             target="_blank"
@@ -384,16 +353,6 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
             </div>
           ))}
           <div className="mb-8 flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={() => {
-              setIsOpen(false);
-              setShowJoinModal(true);
-            }}
-            className="cursor-pointer px-5 py-2.5 rounded-2xl border-2 border-principal bg-transparent text-[#c23500] dark:text-[#ff7a45] font-sans font-bold text-lg no-underline hover:bg-principal/10 dark:hover:bg-principal/15 transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
-          >
-            {t.hero.ctaSecondary}
-          </button>
           {/* Igual que en escritorio: el boletín como botón lleno, no como pestaña */}
           <a
             href={substackUrl}
@@ -409,17 +368,6 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         </div>
       </div>
     </nav>
-    {/* Fuera de <nav>: la ventana debe cubrir toda la pantalla */}
-    <JoinModal
-      isOpen={showJoinModal}
-      onClose={() => setShowJoinModal(false)}
-      lang={lang}
-      title={t.subscribe.title}
-      subtitle={t.subscribe.subtitle}
-      action={JOIN_FORM_ACTION}
-      subject="Nuevo suscriptor"
-      successMessage={lang === 'es' ? 'Te hemos registrado correctamente.' : 'You have been successfully registered.'}
-    />
     </>
   );
 };
