@@ -235,11 +235,11 @@ const ProximosEventos: React.FC<{
                       height={320}
                       loading="lazy"
                       decoding="async"
-                      className="shrink-0 w-12 h-12 md:w-20 md:h-20 rounded-xl object-cover"
+                      className="hidden min-[360px]:block shrink-0 w-12 h-12 md:w-20 md:h-20 rounded-xl object-cover"
                     />
                   )}
                   <span className="min-w-0 flex-1">
-                    <span className="block font-sans text-base md:text-lg font-bold leading-snug">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
+                    <span className="block font-sans text-base md:text-lg font-bold leading-snug [overflow-wrap:anywhere]">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
                     {foto?.ponente && (
                       <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {foto.ponente}</span>
                     )}
@@ -247,7 +247,7 @@ const ProximosEventos: React.FC<{
                     {e.organizador && (
                       <span className="block font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">{tx.organiza} <span className="font-semibold text-secundarios-dark dark:text-secundarios-light">{e.organizador}</span></span>
                     )}
-                    <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
+                    <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 [overflow-wrap:anywhere] font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
                       <span className="inline-flex items-center gap-1"><Icono size={14} aria-hidden="true" />{donde}</span>
                       <span suppressHydrationWarning>
                         {e.porFechas
