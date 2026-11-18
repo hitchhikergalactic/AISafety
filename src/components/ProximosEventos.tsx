@@ -25,6 +25,8 @@ export type Evento = {
   porFechas?: boolean;
   visibleHasta?: string;
   sinDatosEstructurados?: boolean;
+  // Línea bajo la tarjeta, solo en español (p. ej., «¿Quieres empezar ya?» del curso). Va fuera del enlace de la tarjeta
+  extraEs?: { antes: string; enlace: string; despues: string; url: string };
 };
 
 // Los de Luma y los propios, por orden de fecha
@@ -250,6 +252,13 @@ const ProximosEventos: React.FC<{
                   </span>
                   <ArrowUpRight size={20} aria-hidden="true" className="sm:hidden shrink-0 text-principal-texto" />
                 </a>
+                {lang === 'es' && e.extraEs && (
+                  <p className="!mt-2 !mb-0 px-4 md:px-5 !font-sans !text-sm text-secundarios-dark/80 dark:text-secundarios-light/80">
+                    {e.extraEs.antes}
+                    <a href={e.extraEs.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto underline underline-offset-4 hover:no-underline">{e.extraEs.enlace}</a>
+                    {e.extraEs.despues}
+                  </p>
+                )}
               </li>
             );
           })}

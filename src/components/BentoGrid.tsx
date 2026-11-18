@@ -5,6 +5,7 @@ import discord from '../assets/discord.webp';
 import lecturaImage from '../assets/boletin-semana-ias.webp';
 import { substackUrl } from '../data/delegaciones';
 import cursoAgi from '../assets/curso_agi.jpg';
+import { empezarYaCurso } from '@data/cursoEstrategiaAgi';
 
 interface BentoGridProps {
   t: any;
@@ -28,7 +29,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
 
   // Etiqueta = verbo (qué haces), título = nombre del producto, texto = para quién (como BAISH y SAIGE)
   const tarjetas = [
-    { href: `${langPrefix}/curso-estrategia-agi`, externo: false, img: cursoAgi, alt: u.innovation.title, item: u.innovation, cta: u.moreInfo },
+    { href: `${langPrefix}/curso-estrategia-agi`, externo: false, img: cursoAgi, alt: u.innovation.title, item: u.innovation, cta: u.moreInfo, extra: lang === 'es' ? empezarYaCurso : undefined },
     { href: `${langPrefix}/seminario-bluedot-impact`, externo: false, img: rodrigoImage, alt: u.bluedot.title, item: u.bluedot, cta: u.moreInfo },
     { href: substackUrl, externo: true, img: lecturaImage, alt: u.readingGroup.imageAlt, item: u.readingGroup, cta: u.readingGroup.cta },
     { href: 'https://discord.com/invite/gm6v9Cwa58', externo: true, img: discord, alt: u.research.title, item: u.research, cta: u.research.cta },
@@ -38,17 +39,30 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none !p-0 !m-0">
       {tarjetas.map((c) => (
         <li key={c.href} className="!m-0 flex">
-          <a
-            href={c.href}
-            {...(c.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="group flex flex-col w-full rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-5 no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
-          >
+          {/* Tarjeta con enlace extendido: el enlace del título cubre toda la tarjeta (after:inset-0), y así puede llevar
+              dentro un segundo enlace propio (las lecturas del curso) sin anidar <a> */}
+          <div className="group relative flex flex-col w-full rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 p-5 text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-within:ring-2 focus-within:ring-principal">
             <div className="aspect-[16/10] overflow-hidden rounded-md bg-neutral-100 mb-4">
               <img src={getImageSrc(c.img)} alt={c.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             <span className="font-sans text-xs font-semibold uppercase tracking-wider text-label-gray">{c.tag}</span>
-            <h3 className="!text-lg !font-bold !leading-snug !mt-1 !mb-2 text-balance">{c.titulo}</h3>
+            <h3 className="!text-lg !font-bold !leading-snug !mt-1 !mb-2 text-balance">
+              <a
+                href={c.href}
+                {...(c.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="no-underline text-inherit after:absolute after:inset-0 after:rounded-anthro focus-visible:outline-none"
+              >
+                {c.titulo}
+              </a>
+            </h3>
             <p className="!text-base !leading-normal !mb-4">{c.texto}</p>
+            {c.extra && (
+              <p className="relative z-10 !text-sm !leading-normal !mb-4">
+                {c.extra.antes}
+                <a href={c.extra.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-principal-texto underline underline-offset-4 hover:no-underline">{c.extra.enlace}</a>
+                {c.extra.despues}
+              </p>
+            )}
             <div className="mt-auto">
               {/* Separador «·» dibujado como punto centrado: el glifo de Overpass queda descentrado y pegado a la palabra siguiente */}
               {c.meta && (
@@ -64,7 +78,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ t, lang }) => {
                 {c.externo ? <ArrowUpRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" /> : <ArrowRight size={18} aria-hidden="true" className="inline ml-1 align-[-3px]" />}
               </span>
             </div>
-          </a>
+          </div>
         </li>
       ))}
     </ul>
