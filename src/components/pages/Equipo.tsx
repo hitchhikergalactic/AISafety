@@ -93,7 +93,7 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
       <main className="pt-36 md:pt-44 px-8 md:px-20 lg:px-40 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
         <div className="max-w-5xl mx-auto text-left w-full">
           
-          <h1 className="como-h4 text-secundarios-dark dark:text-white mb-6 text-balance font-bold">
+          <h1 className="como-h2 text-secundarios-dark dark:text-white !mb-6">
             {content.heroTitle}
           </h1>
 

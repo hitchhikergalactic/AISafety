@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import JoinModal from '@components/JoinModal';
@@ -36,42 +36,17 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
       <Navbar lang={lang} />
       
       <main className="pt-36 md:pt-44 px-8 md:px-20 lg:px-40 bg-secundarios-light dark:bg-secundarios-dark min-h-screen transition-colors duration-300">
-        {/* Misión: primer bloque de la página, a pantalla completa y con el texto centrado (misma estructura que Safe AI Netherlands).
-            Los márgenes negativos anulan el relleno de <main> para que el bloque empiece arriba del todo y ocupe todo el ancho;
-            el margen inferior devuelve al contenido de debajo el espacio que tenía. */}
-        <section
-          id="mision"
-          className="relative -mx-8 md:-mx-20 lg:-mx-40 -mt-36 md:-mt-44 mb-16 md:mb-20 flex min-h-[100svh] items-center overflow-hidden"
-        >
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.04] text-secundarios-dark dark:text-secundarios-light"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }}
-          />
-          <div
-            aria-hidden="true"
-            className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-secundarios-dark/15 to-transparent dark:via-secundarios-light/20"
-          />
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Título de la página para buscadores y lectores de pantalla; visualmente la página empieza por la misión */}
-            <h1 className="sr-only">{lang === 'es' ? 'Qué hacemos' : 'What we do'}</h1>
-            <p className="mx-auto max-w-4xl text-center !mb-0 !font-sans !text-xl !font-bold !leading-relaxed md:!text-2xl md:!leading-8 text-secundarios-dark dark:text-secundarios-light">
-              {content.missionText}
-            </p>
-          </div>
-          <a
-            href={`#${content.docsSectionId}`}
-            aria-label={content.scrollHintLabel}
-            className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce motion-reduce:animate-none rounded-full border p-3 transition-colors border-secundarios-dark/15 text-secundarios-dark/45 hover:border-principal/50 hover:text-principal dark:border-secundarios-light/20 dark:text-secundarios-light/75 dark:hover:border-principal/50 dark:hover:text-principal"
-          >
-            <ChevronDown size={20} aria-hidden="true" />
-          </a>
-        </section>
+        {/* Cabecera: título visible con el mismo estilo que el resto de páginas y la misión como entradilla.
+            Antes la misión ocupaba sola una pantalla entera y quien llegaba no veía qué hacemos hasta bajar */}
+        <header className="mx-auto mb-16 md:mb-20 w-full max-w-3xl">
+          <h1 className="como-h2 text-secundarios-dark dark:text-white !mb-6">{lang === 'es' ? 'Qué hacemos' : 'What we do'}</h1>
+          <p className="bajada !mb-0 text-secundarios-dark dark:text-secundarios-light">{content.missionText}</p>
+        </header>
 
         {/* Documentos fundacionales: debajo de la misión, como en Safe AI Netherlands. Una tarjeta por documento. */}
         <section
           id={content.docsSectionId}
-          className="scroll-mt-navbar mx-auto mb-20 md:mb-24 w-full max-w-3xl border-t border-secundarios-dark/15 dark:border-secundarios-light/15 pt-16"
+          className="scroll-mt-navbar mx-auto mb-20 md:mb-24 w-full max-w-3xl border-t border-secundarios-dark/15 dark:border-secundarios-light/15 pt-12"
         >
           <h2 className="!mb-10 text-center !text-2xl md:!text-3xl !leading-tight !font-bold text-secundarios-dark dark:text-secundarios-light">
             {content.docsTitle}
@@ -156,13 +131,18 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             />
           </section>
 
-          {/* Video Section */}
+          {/* Vídeo del primer evento: con su propio texto, como el seminario web de arriba */}
           <section className="mb-20 md:mb-16">
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light">
+              {lang === 'es'
+                ? 'Así fue el primer evento de seguridad de la IA en español, en Madrid.'
+                : 'This was the first AI safety event in Spanish, in Madrid.'}
+            </p>
             <EmbedAlPulsar
               lang={lang}
               proveedor="youtube"
               src="https://www.youtube-nocookie.com/embed/SCLpMS6f1CE?rel=0&modestbranding=1"
-              title="YouTube video player"
+              title={lang === 'es' ? 'Primer evento de seguridad de la IA en español, en Madrid' : 'First AI safety event in Spanish, in Madrid'}
               miniatura="https://img.youtube.com/vi/SCLpMS6f1CE/maxresdefault.jpg"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               className="w-full aspect-video rounded-md overflow-hidden"

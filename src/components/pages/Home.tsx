@@ -198,12 +198,8 @@ export default function Home({ lang }: HomeProps) {
 
             {/* ¿POR QUÉ EN ESPAÑOL?: lo que distingue a iaS, justo después de los eventos */}
             <Section id="mission" className="!pb-0">
-                <EncabezadoSeccion
-                    titulo={t.why.title}
-                    enlace={lang === 'es'
-                        ? { href: '/que-es-la-seguridad-de-la-ia', texto: t.hero.ctaPrimary }
-                        : { href: 'https://seguridaddelaia.substack.com/', texto: t.hero.ctaPrimary, externo: true }}
-                />
+                {/* Sin enlace: «¿Qué es la seguridad de la IA?» ya es la primera tarjeta de «¿Por dónde empiezas?», justo debajo */}
+                <EncabezadoSeccion titulo={t.why.title} />
                 <div className="w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                     <div className="animate-fade-in-up w-full md:w-1/2 space-y-4 text-left">
                         <p className="whitespace-pre-line">{t.why.text1}</p>
@@ -267,7 +263,7 @@ export default function Home({ lang }: HomeProps) {
             </Section>
 
             {/* CIFRAS Y PONENTES: la prueba de que funciona, justo después de qué hacemos */}
-            <Section id="cifras">
+            <Section id="cifras" className="!pb-0">
                 {t.why.impactFigures && (
                     <>
                         <EncabezadoSeccion
@@ -282,7 +278,7 @@ export default function Home({ lang }: HomeProps) {
             </Section>
 
             {/* 2. COLABORADORES */}
-            <Section id="conectar">
+            <Section id="conectar" className="!pb-0">
                 <EncabezadoSeccion titulo={t.collaborators.title} enlace={{ href: lang === 'es' ? '/red' : '/en/network', texto: t.collaborators.cta }}>
                     <p>{parseText(t.collaborators.text)}</p>
                 </EncabezadoSeccion>
