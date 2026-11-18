@@ -36,7 +36,8 @@ export const tarjeta = "rounded-anthro border border-secundarios-dark/15 dark:bo
 
 const EncabezadoSeccion: React.FC<{ titulo: string; enlace?: { href: string; texto: string; externo?: boolean }; children?: React.ReactNode }> = ({ titulo, enlace, children }) => (
     <div className="mb-6 md:mb-10">
-        <div className="flex items-end justify-between gap-4">
+        {/* flex-wrap: en móvil, un enlace largo («Apúntate al próximo evento») baja de línea en vez de ensanchar la página */}
+        <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
             <h2 className={tituloSeccion}>{titulo}</h2>
             {enlace && (
                 <a href={enlace.href} {...(enlace.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
