@@ -18,7 +18,7 @@ import ImpactFigures from '@components/ImpactFigures';
 import JoinModal from '@components/JoinModal';
 import FranjaPonentes from '@components/FranjaPonentes';
 import MapaHispanohablante from '@components/MapaHispanohablante';
-import ProximosEventos, { eventos, vigentes, limpiarNombre, conUtm } from '@components/ProximosEventos';
+import ProximosEventos, { eventos, vigentes, nombreDe, conUtm } from '@components/ProximosEventos';
 
 // --- Import assets (logo del patrocinador; los de la red están en src/data/red.ts) ---
 import logoBlueDot from '@assets/logos__bluedot_impact.svg';
@@ -153,7 +153,7 @@ export default function Home({ lang }: HomeProps) {
                                 <>
                                     <span>{lang === 'es' ? 'Apúntate al próximo evento' : 'Register for the next event'}</span>
                                     <span className="block mt-0.5 font-sans text-sm font-semibold opacity-90 line-clamp-1" suppressHydrationWarning>
-                                        {fechaProximo}{lugarProximo ? ` – ${lugarProximo}` : ` – ${limpiarNombre(lang === 'en' && proximo.nombreEn ? proximo.nombreEn : proximo.nombre)}`}
+                                        {fechaProximo}{lugarProximo ? ` – ${lugarProximo}` : ` – ${nombreDe(proximo, lang)}`}
                                     </span>
                                 </>
                             ) : t.hero.ctaEvents}
