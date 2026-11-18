@@ -133,10 +133,11 @@ export const miembrosEquipo: MiembroEquipo[] = [
     foto: francaImg,
     grupo: 'coordinacion',
   },
-  // PENDIENTE: cargo y organización exactos, LinkedIn y foto cuadrada sin texto encima
+  // PENDIENTE: cargo y organización exactos y foto cuadrada sin texto encima
   {
     nombre: 'Jess Bergs',
     cargo: { es: 'Asesora de iaS', en: 'iaS Advisor' },
+    linkedin: 'https://www.linkedin.com/in/jbergs/',
     grupo: 'asesores',
   },
 ];
