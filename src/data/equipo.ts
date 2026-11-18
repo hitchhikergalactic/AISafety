@@ -5,6 +5,7 @@ import andresImg from '@assets/equipo/andres-casas.webp';
 import gretelImg from '@assets/equipo/gretel-schaj.webp';
 import francaImg from '@assets/equipo/franca-velasco.webp';
 import eduardoImg from '@assets/equipo/eduardo-mignot.webp';
+import jessImg from '@assets/equipo/jess-bergs.webp';
 
 export interface EquipoContent {
   es: {
@@ -13,6 +14,7 @@ export interface EquipoContent {
     coordinacionTitle: string;
     governance: string;
     voluntariadoTitle: string;
+    asesoriaTitle: string;
     joinTitle: string;      
     joinSubtitle: string;   
     joinContribute: string;
@@ -25,6 +27,7 @@ export interface EquipoContent {
     coordinacionTitle: string;
     governance: string;
     voluntariadoTitle: string;
+    asesoriaTitle: string;
     joinTitle: string;      
     joinSubtitle: string;  
     joinContribute: string;
@@ -40,6 +43,7 @@ export const equipoContent: EquipoContent = {
     coordinacionTitle: "Coordinación",
     governance: "Las decisiones estratégicas de iaS las toma el equipo de coordinación, formado por quien dirige iaS y las personas responsables de cada área. En cada ciudad, las delegaciones, como iaS Valencia, y los grupos que forman parte de iaS, como AI Safety Barcelona, organizan sus propios eventos, programas y red local dentro del marco común de iaS.",
     voluntariadoTitle: "Voluntariado",
+    asesoriaTitle: "Asesoría",
     joinTitle: "¿Quieres construir el futuro de la seguridad de la IA en español?",
     joinSubtitle: "**iaS** lleva funcionando solo unos meses, y ya sostiene los únicos seminarios de BlueDot Impact en habla hispana, la puerta de entrada a un campo que en español está casi entero por construir; unirte ahora es levantar esa infraestructura desde la base, no encajar en una ya terminada.",
     joinContribute: "• Si te interesa la **investigación**, puedes comprobar si una evaluación de riesgo de un modelo funciona igual en español que en inglés.\n• Si te interesa lo **institucional**, puedes sentar las bases de un acuerdo con una universidad o un organismo regulador que todavía no sabe cuánto importa la seguridad de la IA en español.\n• Si te interesa la **comunicación**, puedes poner en marcha y moderar los grupos de iaS en Signal y WhatsApp, y animar el Discord, para que quien llega encuentre conversación y respuestas en su idioma.",
@@ -52,6 +56,7 @@ export const equipoContent: EquipoContent = {
     coordinacionTitle: "Coordination",
     governance: "iaS's strategic decisions are made by its coordination team, made up of the director and the lead of each area. In each city, chapters such as iaS Valencia and groups that are part of iaS such as AI Safety Barcelona run their own events, programmes and local network within the shared iaS framework.",
     voluntariadoTitle: "Volunteers",
+    asesoriaTitle: "Advisors",
     joinTitle: "Do you want to build the future of AI safety in Spanish?",
     joinSubtitle: "**iaS** has only been running for a few months, and it already sustains BlueDot Impact's only Spanish-speaking seminars, the entry point to a field that is almost entirely unbuilt in Spanish; joining now means building that infrastructure from the ground up, not fitting into one that's already finished.",
     joinContribute: "• If you're interested in **research**, you can check whether a model's risk evaluation works the same in Spanish as it does in English.\n• If you're interested in **institutional** work, you can lay the groundwork for an agreement with a university or a regulator that doesn't yet know how much AI safety in Spanish matters.\n• If you're interested in **communication**, you can set up and moderate iaS's Signal and WhatsApp groups and keep the Discord lively, so that whoever arrives finds conversation and answers in their own language.",
@@ -71,7 +76,7 @@ export type GrupoEquipo = 'direccion' | 'coordinacion' | 'voluntariado' | 'aseso
 export interface MiembroEquipo {
   nombre: string;
   cargo: { es: string; en: string };
-  linkedin: string;
+  linkedin?: string;
   web?: string;
   foto?: ImageMetadata;
   grupo: GrupoEquipo;
@@ -128,5 +133,13 @@ export const miembrosEquipo: MiembroEquipo[] = [
     web: 'https://francavelasco.es/',
     foto: francaImg,
     grupo: 'coordinacion',
+  },
+  // Cargo con sus palabras exactas (titular de LinkedIn), igual en los dos idiomas
+  {
+    nombre: 'Jess Bergs',
+    cargo: { es: 'R&D Engineering Lead | Human-AI Interaction @ UK AISI, Research Unit', en: 'R&D Engineering Lead | Human-AI Interaction @ UK AISI, Research Unit' },
+    linkedin: 'https://www.linkedin.com/in/jbergs/',
+    foto: jessImg,
+    grupo: 'asesores',
   },
 ];
