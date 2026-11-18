@@ -126,7 +126,7 @@ export default function Home({ lang }: HomeProps) {
             <div className="min-h-[100svh] flex flex-col">
             <Section 
                 id="hero" 
-                className="relative flex-1 flex items-center justify-center pt-[clamp(6rem,4rem+6vw,8rem)] md:pt-[clamp(6rem,4rem+6vw,8rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] bajo:pt-[clamp(5.5rem,2rem+8vh,7rem)] bajo:pb-[clamp(1rem,2vh,1.5rem)] overflow-hidden"
+                className="relative flex-1 flex items-center justify-center pt-[clamp(5.5rem,3.5rem+5vw,6.5rem)] md:pt-[clamp(5.5rem,3.5rem+5vw,6.5rem)] pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] md:pb-[clamp(1.5rem,0.5rem+1.5vw,2.5rem)] bajo:pt-[clamp(5.5rem,2rem+8vh,7rem)] bajo:pb-[clamp(1rem,2vh,1.5rem)] overflow-hidden"
             >
                 <div className="text-center z-10 animate-fade-in-up w-full">
                     {/* Como BAISH: etiqueta (qué es iaS), promesa (qué consigue) y una frase con datos (cómo y cuánto) */}
@@ -139,7 +139,7 @@ export default function Home({ lang }: HomeProps) {
                     </p>
                 </div>
                 <div className="max-w-2xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,3rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-[clamp(0.75rem,-0.25rem+3.5vw,2rem)] bajo:pt-[clamp(0.5rem,3vh,3rem)]">
                         {/* Solo dos llamadas: la principal (Luma) y la secundaria (alta). «Léenos» ya está en el menú y «¿Qué es…?» en «¿Por dónde empiezas?» */}
                         {/* Con evento próximo: abre su página de Luma (inscripción). Sin eventos: baja a la sección, que invita a seguir el calendario */}
                         <a
@@ -171,15 +171,16 @@ export default function Home({ lang }: HomeProps) {
                 botón propio. Logo de BlueDot sin recolorear: versión azul en claro y blanca oficial en oscuro; el SVG trae
                 margen transparente (lienzo 261×101), que se compensa con margen negativo */}
             <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
-                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="shrink-0 flex flex-col items-center md:items-start gap-[clamp(0.35rem,0.2rem+0.5vw,0.5rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
+                {/* Jerarquía en dos pisos, también en escritorio: primero el patrocinio (BlueDot), centrado, y debajo los ponentes.
+                    Lado a lado competían por la atención */}
+                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col items-center gap-[clamp(0.75rem,0.5rem+0.5vw,0.875rem)] bajo:gap-2">
+                    <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-[clamp(0.35rem,0.2rem+0.5vw,0.5rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
                         <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
-                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[400px] h-auto -my-[36px] -mx-[16px] md:-my-[48px] md:-mx-[22px] dark:hidden" />
-                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[400px] h-auto -my-[36px] -mx-[16px] md:-my-[48px] md:-mx-[22px] hidden dark:block" />
+                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[340px] h-auto -my-[36px] -mx-[16px] md:-my-[41px] md:-mx-[18px] dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[340px] h-auto -my-[36px] -mx-[16px] md:-my-[41px] md:-mx-[18px] hidden dark:block" />
                     </a>
-                    <div className="hidden md:block self-stretch w-px bg-[#dcdcdc] dark:bg-white/10" aria-hidden="true" />
-                    <div className="flex-1 min-w-0 flex flex-col gap-2">
-                        <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70 text-center md:text-left text-secundarios-dark dark:text-secundarios-light">{t.speakersOrgs.title}</span>
+                    <div className="w-full min-w-0 flex flex-col gap-2 pt-[clamp(0.75rem,0.5rem+0.5vw,0.875rem)] bajo:pt-2 border-t border-[#dcdcdc] dark:border-white/10">
+                        <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70 text-center text-secundarios-dark dark:text-secundarios-light">{t.speakersOrgs.title}</span>
                         <FranjaPonentes lang={lang} enFranja />
                     </div>
                 </div>
