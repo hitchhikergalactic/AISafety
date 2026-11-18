@@ -90,12 +90,12 @@ export const translations = {
       readingGroup: {
         tag: "BOLETÍN SEMANAL",
         kicker: "¡Extra, extra!",
-        description: "Semana iaS es nuestro boletín gratuito con análisis en castellano sobre lo que está pasando en la IA y por qué te afecta.",
+        description: "Semana iaS es nuestro boletín gratuito con análisis en español sobre lo que está pasando en la IA y por qué te afecta.",
         cta: "Leer gratis",
         meta: "Gratis · cada semana",
         verbo: "Estar al día",
         nombre: "Semana iaS",
-        paraQuien: "Para quien quiera entender, en castellano, qué está pasando en la IA y por qué le afecta.",
+        paraQuien: "Para quien quiera entender, en español, qué está pasando en la IA y por qué le afecta.",
         imageAlt: "Anuncio en un periódico con un astronauta y el texto: Semana iaS, noticias de seguridad de la IA.",
       },
       innovation: {

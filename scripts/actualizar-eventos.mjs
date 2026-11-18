@@ -42,6 +42,7 @@ if (datos?.calendar?.api_id !== CALENDARIO) throw new Error(`La página no corre
 // Cada evento va envuelto en un objeto que trae también las etiquetas del calendario («En Linea», «En Persona»).
 const vistos = new Map();
 const etiquetas = new Map();
+const calendarios = new Map(); // calendario de Luma que organiza cada evento (para «Organiza …» en /red)
 const recorrer = (nodo) => {
   if (Array.isArray(nodo)) return nodo.forEach(recorrer);
   if (!nodo || typeof nodo !== 'object') return;
@@ -50,6 +51,7 @@ const recorrer = (nodo) => {
     if (!vistos.has(ev.api_id)) vistos.set(ev.api_id, ev);
     const nombres = (Array.isArray(nodo.tags) ? nodo.tags : []).map((t) => t?.name).filter(Boolean);
     if (nombres.length) etiquetas.set(ev.api_id, nombres);
+    if (nodo.calendar?.name && !calendarios.has(ev.api_id)) calendarios.set(ev.api_id, nodo.calendar);
   }
   Object.values(nodo).forEach(recorrer);
 };
@@ -67,6 +69,14 @@ const modalidadDe = (ev) => {
   return ev.location_type === 'offline' ? 'presencial' : 'en-linea';
 };
 recorrer(datos);
+
+// Nombre de quien organiza: el del calendario de Luma donde se creó el evento, sin el «Events» final que algunos añaden.
+// Los de iaS salen como «iaS». Solo se guarda en rediaS: en la portada todos los eventos son de iaS.
+const organizadorDe = (ev) => {
+  if (ev.calendar_api_id === CALENDARIOS[0].id) return 'iaS';
+  const nombreCal = calendarios.get(ev.api_id)?.name?.trim();
+  return nombreCal ? nombreCal.replace(/\s+events$/i, '') : null;
+};
 
 const ahora = Date.now();
 const eventos = [...vistos.values()]
@@ -90,6 +100,7 @@ const eventos = [...vistos.values()]
       lugar: conLugar ? (es.address ?? lugar.address ?? null) : null,
       direccion: conLugar ? (es.full_address ?? lugar.full_address ?? null) : null,
       imagen: ev.cover_url ?? null,
+      ...(soloPropios ? {} : { organizador: organizadorDe(ev) }),
     };
   })
   .sort((a, b) => a.inicio.localeCompare(b.inicio));

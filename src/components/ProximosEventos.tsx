@@ -20,6 +20,8 @@ export type Evento = {
   lugar: string | null;
   direccion: string | null;
   imagen: string | null;
+  // Solo en los de la red (src/data/eventos-red.json): calendario de Luma que lo organiza; «iaS» si es nuestro
+  organizador?: string | null;
   // Solo en los eventos propios (src/data/eventos-propios.ts)
   nombreEn?: string;
   porFechas?: boolean;
@@ -56,6 +58,7 @@ const textos = {
     hibrido: 'Presencial y en línea',
     apuntate: 'Apúntate',
     con: 'Con',
+    organiza: 'Organiza',
     tuHora: 'hora de tu país',
     horaDe: (ciudad: string) => `hora de ${ciudad}`,
     todos: 'Todos',
@@ -70,6 +73,7 @@ const textos = {
     hibrido: 'In person and online',
     apuntate: 'Register',
     con: 'With',
+    organiza: 'Hosted by',
     tuHora: 'your local time',
     horaDe: (ciudad: string) => `${ciudad} time`,
     todos: 'All',
@@ -81,9 +85,10 @@ const textos = {
   },
 } as const;
 
-// «iaS - Valencia: AI Safety Session.» → sin el punto final; «Sprint | Madrid | iaS» → «Sprint – Madrid» (el «·» de la tipografía se pega a la palabra siguiente)
+// «iaS - Valencia: AI Safety Session.» → sin el punto final; «Sprint | Madrid | iaS» → «Sprint – Madrid».
+// El «·» también pasa a «–»: en Overpass se pega a la palabra siguiente («campo ·Primer»)
 export const limpiarNombre = (nombre: string) =>
-  nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*\|\s*/g, ' – ').trim();
+  nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*[|·]\s*/g, ' – ').trim();
 
 const ciudadDeZona = (zona: string) => zona.split('/').pop()?.replace(/_/g, ' ') ?? zona;
 
@@ -237,6 +242,10 @@ const ProximosEventos: React.FC<{
                     <span className="block font-sans text-base md:text-lg font-bold leading-snug">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
                     {foto?.ponente && (
                       <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {foto.ponente}</span>
+                    )}
+                    {/* En /red: quién organiza, para que no se confundan los eventos de otras organizaciones con los de iaS */}
+                    {e.organizador && (
+                      <span className="block font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">{tx.organiza} <span className="font-semibold text-secundarios-dark dark:text-secundarios-light">{e.organizador}</span></span>
                     )}
                     <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
                       <span className="inline-flex items-center gap-1"><Icono size={14} aria-hidden="true" />{donde}</span>
