@@ -91,4 +91,4 @@ Una potencia media no compite por tener el modelo más grande, sino que influye 
 
 ---
 
-Todas las secciones salvo «En España y en el mundo hispanohablante», que es de iaS, son una adaptación al castellano del texto de David Williams-King en [The Safety Apprentice](https://safetyapprentice.com/why-ai-safety.html "The Safety Apprentice (en inglés)"), un recurso abierto que él creó, a partir de la versión de [Safe AI Germany](https://safeaigermany.org/why-ai-safety/ "Safe AI Germany (en inglés)"), con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es "Creative Commons Atribución 4.0").
+Todas las secciones salvo «En España y en el mundo hispanohablante», que es de iaS, son una adaptación al español del texto de David Williams-King en [The Safety Apprentice](https://safetyapprentice.com/why-ai-safety.html "The Safety Apprentice (en inglés)"), un recurso abierto que él creó, a partir de la versión de [Safe AI Germany](https://safeaigermany.org/why-ai-safety/ "Safe AI Germany (en inglés)"), con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es "Creative Commons Atribución 4.0").

@@ -10,7 +10,8 @@
     "ciudad": null,
     "lugar": null,
     "direccion": null,
-    "imagen": "https://images.lumacdn.com/uploads/50/d2b5cf45-29ea-4781-9e3f-8e90c360dbad.png"
+    "imagen": "https://images.lumacdn.com/uploads/50/d2b5cf45-29ea-4781-9e3f-8e90c360dbad.png",
+    "organizador": "iaS"
   },
   {
     "id": "evt-gvTA6b6FhFVA3Pc",
@@ -23,7 +24,36 @@
     "ciudad": "Madrid",
     "lugar": "Puerta del Sol",
     "direccion": "Puerta del Sol, Centro, Madrid, España",
-    "imagen": "https://images.lumacdn.com/uploads/en/e2c87a46-8f98-4b29-9fbc-7927cb854edd.jpg"
+    "imagen": "https://images.lumacdn.com/uploads/en/e2c87a46-8f98-4b29-9fbc-7927cb854edd.jpg",
+    "organizador": "PauseAI en Español"
+  },
+  {
+    "id": "evt-IHrRCDfYXGCY1hz",
+    "nombre": "AI tools for AI safety: A workshop and social",
+    "url": "https://luma.com/xh6zm2jc",
+    "inicio": "2026-11-22T11:00:00.000Z",
+    "fin": "2026-11-22T13:30:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "presencial",
+    "ciudad": "Barcelona",
+    "lugar": "Escultura Deesa",
+    "direccion": "Escultura Deesa, Ciutat Vella, 08003 Barcelona, España",
+    "imagen": "https://images.lumacdn.com/uploads/74/121683ae-a23f-4a93-b980-1314bd41f6ed.jpg",
+    "organizador": "AI Safety Barcelona"
+  },
+  {
+    "id": "evt-zXWHFsGQfS97XtJ",
+    "nombre": "Making the switch: transitioning into AI safety",
+    "url": "https://luma.com/juag29f9",
+    "inicio": "2026-11-23T17:30:00.000Z",
+    "fin": "2026-11-23T19:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "presencial",
+    "ciudad": "Barcelona",
+    "lugar": "Campus de la Ciutadella - UPF",
+    "direccion": "Campus de la Ciutadella - UPF, Carrer de Ramon Trias Fargas, 25, 27, Sant Martí, 08005 Barcelona, España",
+    "imagen": "https://images.lumacdn.com/uploads/uv/ec9f4efd-994e-4edf-ad6a-fe53b3caa47e.jpg",
+    "organizador": "AI Safety Barcelona"
   },
   {
     "id": "evt-BcpEAcooXiDOpWJ",
@@ -36,6 +66,21 @@
     "ciudad": "Madrid",
     "lugar": "Celonis SL",
     "direccion": "Celonis SL, Pl. de Manuel Gómez-Moreno, 2, Tetuán, 28020 Madrid, España",
-    "imagen": "https://images.lumacdn.com/uploads/hx/b9862cdf-1476-41db-919b-b6166cdbfb50.png"
+    "imagen": "https://images.lumacdn.com/uploads/hx/b9862cdf-1476-41db-919b-b6166cdbfb50.png",
+    "organizador": "BlueDot Impact"
+  },
+  {
+    "id": "evt-vS3UoEeMDOBbWTs",
+    "nombre": "Women4AISafety",
+    "url": "https://luma.com/510ucpyo",
+    "inicio": "2026-11-25T18:00:00.000Z",
+    "fin": "2026-11-25T19:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "en-linea",
+    "ciudad": null,
+    "lugar": null,
+    "direccion": null,
+    "imagen": "https://images.lumacdn.com/uploads/zv/6d02e4eb-b576-453a-a6e4-787a0a621e88.png",
+    "organizador": "Women4AISafety"
   }
 ]
