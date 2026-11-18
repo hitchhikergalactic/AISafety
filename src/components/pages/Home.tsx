@@ -171,11 +171,11 @@ export default function Home({ lang }: HomeProps) {
                 botón propio. Logo de BlueDot sin recolorear: versión azul en claro y blanca oficial en oscuro; el SVG trae
                 margen transparente (lienzo 261×101), que se compensa con margen negativo */}
             <div className="bg-white dark:bg-[#3b3b3b] border-y border-[#dcdcdc] dark:border-white/10">
-                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                <div className="max-w-[1100px] mx-auto px-8 py-[clamp(0.9rem,0.5rem+1vw,1.25rem)] bajo:py-[clamp(0.5rem,1.2vh,1.25rem)] flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                     <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="shrink-0 flex flex-col items-center md:items-start gap-[clamp(0.35rem,0.2rem+0.5vw,0.5rem)] text-secundarios-dark dark:text-secundarios-light no-underline transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal">
                         <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-70">{t.hero.sponsoredBy}</span>
-                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[240px] md:w-[290px] h-auto -my-[29px] -mx-[13px] md:-my-[35px] md:-mx-[15px] dark:hidden" />
-                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[240px] md:w-[290px] h-auto -my-[29px] -mx-[13px] md:-my-[35px] md:-mx-[15px] hidden dark:block" />
+                        <img src={getImageSrc(logoBlueDot)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[400px] h-auto -my-[36px] -mx-[16px] md:-my-[48px] md:-mx-[22px] dark:hidden" />
+                        <img src={getImageSrc(logoBlueDotWhite)} alt="BlueDot Impact" width={261} height={101} className="w-[300px] md:w-[400px] h-auto -my-[36px] -mx-[16px] md:-my-[48px] md:-mx-[22px] hidden dark:block" />
                     </a>
                     <div className="hidden md:block self-stretch w-px bg-[#dcdcdc] dark:bg-white/10" aria-hidden="true" />
                     <div className="flex-1 min-w-0 flex flex-col gap-2">
