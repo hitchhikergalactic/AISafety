@@ -16,6 +16,7 @@ interface EquipoProps {
 const direccion = miembrosEquipo.find((m) => m.grupo === 'direccion');
 const coordinacion = miembrosEquipo.filter((m) => m.grupo === 'coordinacion');
 const voluntariado = miembrosEquipo.filter((m) => m.grupo === 'voluntariado');
+const asesores = miembrosEquipo.filter((m) => m.grupo === 'asesores');
 
 const iniciales = (nombre: string) =>
   nombre.split(' ').map((p) => p[0]).slice(0, 2).join('');
@@ -61,15 +62,17 @@ const FichaPersona: React.FC<{ persona: MiembroEquipo; lang: Language }> = ({ pe
             <FaGlobe className="w-5 h-5" />
           </a>
         )}
-        <a
-          href={persona.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`LinkedIn · ${persona.nombre}`}
-          className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
-        >
-          <FaLinkedin className="w-5 h-5" />
-        </a>
+        {persona.linkedin && (
+          <a
+            href={persona.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`LinkedIn · ${persona.nombre}`}
+            className="p-1 text-secundarios-dark/70 dark:text-secundarios-light/70 hover:text-principal dark:hover:text-principal transition-colors"
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </a>
+        )}
       </div>
     </div>
     <p className="mt-1 text-sm leading-snug text-secundarios-dark/80 dark:text-secundarios-light/80">
@@ -133,6 +136,18 @@ const Equipo: React.FC<EquipoProps> = ({ lang }) => {
               ))}
             </ul>
           </section>
+
+          {/* Asesoría: personas que asesoran a iaS desde fuera del equipo; solo aparece si hay alguien */}
+          {asesores.length > 0 && (
+            <section id="asesoria" className="mt-16 scroll-mt-navbar">
+              <h2 className={tituloGrupo}>{content.asesoriaTitle}</h2>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
+                {asesores.map((persona) => (
+                  <FichaPersona key={persona.nombre} persona={persona} lang={lang} />
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* Voluntariado: solo aparece si hay alguien */}
           {voluntariado.length > 0 && (

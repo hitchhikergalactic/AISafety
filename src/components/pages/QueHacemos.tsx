@@ -111,6 +111,25 @@ const QueHacemos: React.FC<QueHacemosProps> = ({ lang }) => {
             </p>
           </section>
 
+          {/* Universidades: destacado, como el de Safe AI Germany. Está en preparación, por eso va en futuro */}
+          <section id="universidades" className="scroll-mt-navbar mb-20 md:mb-16 rounded-anthro border-2 border-principal bg-white dark:bg-white/5 p-6 md:p-8">
+            <p className="!mb-3 font-sans text-xs font-bold uppercase tracking-[0.12em] text-principal-texto">
+              {lang === 'es' ? 'Próximamente' : 'Coming soon'}
+            </p>
+            <h2 className="!mb-4 !font-sans !text-2xl md:!text-3xl !font-bold !leading-tight text-secundarios-dark dark:text-white text-balance">
+              {lang === 'es' ? 'Llevamos la seguridad de la IA a las universidades' : 'Bringing AI safety to universities'}
+            </h2>
+            <p className="text-small text-secundarios-dark dark:text-secundarios-light">
+              {lang === 'es'
+                ? 'En los próximos meses daremos charlas de introducción a la seguridad de la IA en universidades, para ayudar a estudiantes a encontrar su camino en este campo.'
+                : 'In the coming months we will give introductory AI safety talks at universities to help students find their way into the field.'}
+            </p>
+            <a href={`mailto:${t.footer.email}`} className="inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline">
+              {lang === 'es' ? '¿Quieres una charla en tu universidad? Escríbenos' : 'Want a talk at your university? Write to us'}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          </section>
+
           {/* Impact Section */}
           <section className="mb-20 md:mb-16">
             <h4 className="text-secundarios-dark dark:text-secundarios-light mb-6 text-balance">
