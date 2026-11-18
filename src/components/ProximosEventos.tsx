@@ -90,6 +90,18 @@ const textos = {
 export const limpiarNombre = (nombre: string) =>
   nombre.replace(/\s*\|\s*iaS\s*$/i, '').replace(/\.\s*$/, '').replace(/\s*[|·]\s*/g, ' – ').trim();
 
+// Los nombres de Luma que llegan en inglés y se repiten: en las páginas en español salen siempre en español.
+// En inglés se deja el nombre de Luma (o el `nombreEn` de los eventos propios).
+const nombresEnEspanol: [RegExp, string][] = [
+  [/^spanish[\s-]*speaking\s+ai\s+safety\s+meet\s*-?\s*up$/i, 'Encuentro en español sobre seguridad de la IA'],
+];
+
+export const nombreDe = (e: Pick<Evento, 'nombre' | 'nombreEn'>, lang: 'es' | 'en') => {
+  if (lang === 'en') return limpiarNombre(e.nombreEn ?? e.nombre);
+  const limpio = limpiarNombre(e.nombre);
+  return nombresEnEspanol.find(([patron]) => patron.test(limpio))?.[1] ?? limpio;
+};
+
 const ciudadDeZona = (zona: string) => zona.split('/').pop()?.replace(/_/g, ' ') ?? zona;
 
 type Filtro = 'todos' | 'en-linea' | 'presencial' | `ciudad:${string}`;
@@ -155,7 +167,7 @@ const ProximosEventos: React.FC<{
   const jsonLd = paraBuscadores.length > 0 ? paraBuscadores.map((e) => ({
     '@context': 'https://schema.org',
     '@type': 'Event',
-    name: limpiarNombre(e.nombre),
+    name: nombreDe(e, lang),
     startDate: e.inicio,
     ...(e.fin ? { endDate: e.fin } : {}),
     eventStatus: 'https://schema.org/EventScheduled',
@@ -239,7 +251,7 @@ const ProximosEventos: React.FC<{
                     />
                   )}
                   <span className="min-w-0 flex-1">
-                    <span className="block font-sans text-base md:text-lg font-bold leading-snug [overflow-wrap:anywhere]">{limpiarNombre(lang === 'en' && e.nombreEn ? e.nombreEn : e.nombre)}</span>
+                    <span className="block font-sans text-base md:text-lg font-bold leading-snug [overflow-wrap:anywhere]">{nombreDe(e, lang)}</span>
                     {foto?.ponente && (
                       <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {foto.ponente}</span>
                     )}
