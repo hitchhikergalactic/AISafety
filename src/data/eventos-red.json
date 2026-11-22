@@ -1,33 +1,5 @@
 [
   {
-    "id": "evt-gvTA6b6FhFVA3Pc",
-    "nombre": "Concentración contra la extinción por IA",
-    "url": "https://luma.com/c969qkzo",
-    "inicio": "2026-11-21T16:00:00.000Z",
-    "fin": "2026-11-21T18:00:00.000Z",
-    "zona": "Europe/Madrid",
-    "modalidad": "presencial",
-    "ciudad": "Madrid",
-    "lugar": "Puerta del Sol",
-    "direccion": "Puerta del Sol, Centro, Madrid, España",
-    "imagen": "https://images.lumacdn.com/uploads/en/e2c87a46-8f98-4b29-9fbc-7927cb854edd.jpg",
-    "organizador": "PauseAI en Español"
-  },
-  {
-    "id": "evt-IHrRCDfYXGCY1hz",
-    "nombre": "AI tools for AI safety: A workshop and social",
-    "url": "https://luma.com/xh6zm2jc",
-    "inicio": "2026-11-22T11:00:00.000Z",
-    "fin": "2026-11-22T13:30:00.000Z",
-    "zona": "Europe/Madrid",
-    "modalidad": "presencial",
-    "ciudad": "Barcelona",
-    "lugar": "Escultura Deesa",
-    "direccion": "Escultura Deesa, Ciutat Vella, 08003 Barcelona, España",
-    "imagen": "https://images.lumacdn.com/uploads/74/121683ae-a23f-4a93-b980-1314bd41f6ed.jpg",
-    "organizador": "AI Safety Barcelona"
-  },
-  {
     "id": "evt-zXWHFsGQfS97XtJ",
     "nombre": "Making the switch: transitioning into AI safety",
     "url": "https://luma.com/juag29f9",
