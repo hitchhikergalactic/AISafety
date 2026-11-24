@@ -24,6 +24,7 @@ import logoMexico from '@assets/ponentes/mexico.webp';
 import logoColombia from '@assets/ponentes/colombia.webp';
 import logoBarcelona from '@assets/ponentes/barcelona.webp';
 import logoCEGIA from '@assets/ponentes/cegia.webp';
+import logoSAIN from '@assets/ponentes/sain.webp';
 import logoW4AIS from '@assets/ponentes/w4ais.webp';
 import logoMPG from '@assets/ponentes/mpg.webp';
 import logoIIT from '@assets/ponentes/iit.webp';
@@ -61,6 +62,7 @@ export const organizacionesPonentes: { nombre: string; logo: ImageMetadata; enPo
   { nombre: 'AI Safety Colombia', logo: logoColombia, enPortada: false },
   { nombre: 'AI Safety Barcelona', logo: logoBarcelona },
   { nombre: 'CEGIA', logo: logoCEGIA, enPortada: false },
+  { nombre: 'Safe AI Netherlands', logo: logoSAIN, enPortada: false },
   { nombre: 'Women4AISafety', logo: logoW4AIS, enPortada: false },
   { nombre: 'Max Planck', logo: logoMPG },
   { nombre: 'IIT', logo: logoIIT },
