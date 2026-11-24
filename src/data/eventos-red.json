@@ -1,19 +1,5 @@
 [
   {
-    "id": "evt-zXWHFsGQfS97XtJ",
-    "nombre": "Making the switch: transitioning into AI safety",
-    "url": "https://luma.com/juag29f9",
-    "inicio": "2026-11-23T17:30:00.000Z",
-    "fin": "2026-11-23T19:00:00.000Z",
-    "zona": "Europe/Madrid",
-    "modalidad": "presencial",
-    "ciudad": "Barcelona",
-    "lugar": "Campus de la Ciutadella - UPF",
-    "direccion": "Campus de la Ciutadella - UPF, Carrer de Ramon Trias Fargas, 25, 27, Sant Martí, 08005 Barcelona, España",
-    "imagen": "https://images.lumacdn.com/uploads/uv/ec9f4efd-994e-4edf-ad6a-fe53b3caa47e.jpg",
-    "organizador": "AI Safety Barcelona"
-  },
-  {
     "id": "evt-BcpEAcooXiDOpWJ",
     "nombre": "Seguridad de la IA: cómo entrar en el campo · Primer encuentro Women4AISafety en Madrid",
     "url": "https://luma.com/w4ais-spain",
@@ -40,5 +26,19 @@
     "direccion": null,
     "imagen": "https://images.lumacdn.com/uploads/zv/6d02e4eb-b576-453a-a6e4-787a0a621e88.png",
     "organizador": "Women4AISafety"
+  },
+  {
+    "id": "evt-ryZg5jJ40Gqx7Tw",
+    "nombre": "Transitioning into AI safety under short timelines",
+    "url": "https://luma.com/2r92akos",
+    "inicio": "2026-12-01T18:00:00.000Z",
+    "fin": "2026-12-01T19:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "en-linea",
+    "ciudad": null,
+    "lugar": null,
+    "direccion": null,
+    "imagen": "https://images.lumacdn.com/uploads/at/a7e8fccf-2058-4353-917a-8ced31f131eb.jpg",
+    "organizador": "AI Safety Barcelona"
   }
 ]
