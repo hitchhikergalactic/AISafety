@@ -1,8 +1,9 @@
-// Guarda los próximos eventos de dos calendarios de Luma. Lo ejecuta cada día .github/workflows/actualizar-eventos.yml;
+// Guarda los próximos eventos de varios calendarios de Luma. Lo ejecuta cada día .github/workflows/actualizar-eventos.yml;
 // si un calendario falla, su archivo se queda como estaba.
 //
 // - iaS (src/data/eventos.json): solo los eventos CREADOS en el calendario de iaS; los que otros hubs envían o destacan se descartan.
 // - rediaS (src/data/eventos-red.json, página /red): todos los eventos públicos que muestra el calendario, también los de otros hubs.
+// - AI Safety Barcelona (src/data/eventos-barcelona.json, /delegaciones/barcelona): solo los creados en su calendario.
 //
 // Se lee la página pública del calendario (no hace falta la API de pago de Luma).
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -10,6 +11,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const CALENDARIOS = [
   { nombre: 'iaS', id: 'cal-F2GQeMRijaLsJDp', pagina: 'https://luma.com/iaS-SeguridadelaIA', destino: '../src/data/eventos.json', soloPropios: true },
   { nombre: 'rediaS', id: 'cal-0smJtNYwjDUsHJD', pagina: 'https://luma.com/rediaS', destino: '../src/data/eventos-red.json', soloPropios: false },
+  { nombre: 'AI Safety Barcelona', id: 'cal-dsuIFYHvZpbHDSF', pagina: 'https://luma.com/ai-safety-bcn', destino: '../src/data/eventos-barcelona.json', soloPropios: true },
 ];
 
 // Modalidad de los eventos de iaS según las etiquetas de su calendario: en rediaS no llevan esas etiquetas,
@@ -86,7 +88,7 @@ const eventos = [...vistos.values()]
     const lugar = ev.geo_address_info ?? {};
     const es = lugar.localized?.es ?? {};
     const modalidad = soloPropios ? modalidadDe(ev) : (modalidadIas.get(ev.api_id) ?? modalidadDe(ev));
-    if (soloPropios) modalidadIas.set(ev.api_id, modalidad);
+    if (CALENDARIO === CALENDARIOS[0].id) modalidadIas.set(ev.api_id, modalidad);
     const conLugar = ev.location_type === 'offline';
     return {
       id: ev.api_id,

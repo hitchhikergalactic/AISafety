@@ -620,6 +620,8 @@ export const delegacionBarcelonaContent = {
     webCtaLabel: 'Visita su web',
     emailCtaLabel: 'Escríbeles',
     allEventsLabel: 'Todos sus eventos en su web',
+    eventsTitle: 'Próximos eventos',
+    eventsText: 'Los organiza AI Safety Barcelona y están abiertos a todo el mundo.',
     whatTitle: 'Qué hacen',
     what: [
       { title: 'Entender el campo', text: 'Talleres con contexto técnico y de gobernanza, clubes de lectura y presentaciones de artículos, sin requisitos previos.' },
@@ -642,6 +644,8 @@ export const delegacionBarcelonaContent = {
     webCtaLabel: 'Visit their website',
     emailCtaLabel: 'Write to them',
     allEventsLabel: 'All their events on their website',
+    eventsTitle: 'Upcoming events',
+    eventsText: 'Run by AI Safety Barcelona and open to everyone.',
     whatTitle: 'What they do',
     what: [
       { title: 'Understand the field', text: 'Workshops with technical and governance context, reading groups and paper presentations, no prior knowledge needed.' },

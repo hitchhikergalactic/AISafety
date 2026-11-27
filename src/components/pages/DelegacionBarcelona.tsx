@@ -1,5 +1,7 @@
 import React from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Mail } from 'lucide-react';
+import ProximosEventos, { type Evento } from '@components/ProximosEventos';
+import eventosBarcelonaJson from '@data/eventos-barcelona.json';
 import Navbar from '@components/Navbar';
 import ValenciaFooter from '@components/valencia/ValenciaFooter';
 import ilustracionBarcelona from '../../assets/barcelona-ilustracion.webp';
@@ -15,6 +17,9 @@ import {
 } from '@data/delegaciones';
 
 type Language = 'es' | 'en';
+
+// Próximos eventos de su calendario de Luma, leídos cada día por scripts/actualizar-eventos.mjs (sin iframe).
+const eventosBarcelona = eventosBarcelonaJson as Evento[];
 
 interface DelegacionBarcelonaProps {
   lang: Language;
@@ -67,7 +72,7 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
               {content.intro}
             </p>
             <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-start justify-center gap-3 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
-              <a href={barcelonaLumaUrl} target="_blank" rel="noopener noreferrer" className={primaryButton}>
+              <a href="#eventos" className={primaryButton}>
                 {content.eventsCtaLabel}
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -93,7 +98,24 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
           />
         </section>
 
-        <section className="w-full max-w-6xl mx-auto pt-12 md:pt-20">
+        {/* Sus próximos eventos, justo después de la cabecera: cada uno a un clic de la inscripción en Luma */}
+        <section id="eventos" className="scroll-mt-navbar w-full max-w-6xl mx-auto pt-12 md:pt-20">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-3">
+            <h3 className={`${sectionTitle} !mb-0 text-center md:text-left`}>{content.eventsTitle}</h3>
+            <a
+              href={barcelonaEventsUrl[lang]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="self-center md:self-auto shrink-0 inline-flex items-center gap-1 font-sans font-bold text-principal-texto underline underline-offset-4 hover:no-underline"
+            >
+              {content.allEventsLabel} <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+          <p className="mb-5 md:mb-6 text-center md:text-left text-secundarios-dark/80 dark:text-secundarios-light/80">{content.eventsText}</p>
+          <ProximosEventos lang={lang} campana="barcelona" lista={eventosBarcelona} calendario={barcelonaLumaUrl} />
+        </section>
+
+        <section className="w-full max-w-6xl mx-auto pt-16 md:pt-24">
           <h3 className={`${sectionTitle} text-center md:text-left`}>{content.whatTitle}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {content.what.map((item) => (
@@ -102,12 +124,6 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
                 <p className="!mb-0 text-secundarios-dark/80 dark:text-secundarios-light/80">{item.text}</p>
               </article>
             ))}
-          </div>
-          <div className="mt-8 text-center md:text-left">
-            <a href={barcelonaEventsUrl[lang]} target="_blank" rel="noopener noreferrer" className={secondaryButton}>
-              {content.allEventsLabel}
-              <ArrowRight size={16} aria-hidden="true" />
-            </a>
           </div>
         </section>
 
