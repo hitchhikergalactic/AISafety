@@ -59,7 +59,6 @@ const textos = {
     apuntate: 'Apúntate',
     con: 'Con',
     organiza: 'Organiza',
-    tuHora: 'hora de tu país',
     horaDe: (ciudad: string) => `hora de ${ciudad}`,
     todos: 'Todos',
     presencial: 'Presencial',
@@ -74,7 +73,6 @@ const textos = {
     apuntate: 'Register',
     con: 'With',
     organiza: 'Hosted by',
-    tuHora: 'your local time',
     horaDe: (ciudad: string) => `${ciudad} time`,
     todos: 'All',
     presencial: 'In person',
@@ -162,7 +160,8 @@ const ProximosEventos: React.FC<{
       hora: parte({ hour: '2-digit', minute: '2-digit' }),
       hasta: finTexto,
       desde: parte({ day: 'numeric', month: 'short' }),
-      etiquetaZona: local ? tx.tuHora : tx.horaDe(e.ciudad && e.modalidad !== 'en-linea' ? e.ciudad : ciudadDeZona(e.zona)),
+      // Los en línea van ya en la hora de quien visita (lo explica el aviso de abajo), sin coletilla; solo los presenciales dicen de dónde es la hora
+      etiquetaZona: e.modalidad === 'presencial' ? tx.horaDe(e.ciudad ?? ciudadDeZona(e.zona)) : null,
     };
   };
 
@@ -248,7 +247,7 @@ const ProximosEventos: React.FC<{
                       <span suppressHydrationWarning>
                         {e.porFechas
                           ? <>{f.desde}{f.hasta ? ` – ${f.hasta}` : ''}</>
-                          : <><span className="capitalize">{f.semana}</span> {f.desde}, {f.hora} <span className="opacity-80">({f.etiquetaZona})</span></>}
+                          : <><span className="capitalize">{f.semana}</span> {f.desde}, {f.hora}{f.etiquetaZona && <> <span className="opacity-80">({f.etiquetaZona})</span></>}</>}
                       </span>
                     </span>
                     <span className="mt-auto self-start inline-flex items-center gap-1 py-2 px-4 rounded-xl bg-principal text-white font-sans font-bold text-sm shadow-md group-hover:-translate-y-0.5 transition-transform">
@@ -304,7 +303,7 @@ const ProximosEventos: React.FC<{
                       <span suppressHydrationWarning>
                         {e.porFechas
                           ? <>{f.desde}{f.hasta ? ` – ${f.hasta}` : ''}</>
-                          : <><span className="capitalize">{f.semana}</span>, {f.hora}{f.hasta ? ` – ${f.hasta}` : ''} <span className="opacity-80">({f.etiquetaZona})</span></>}
+                          : <><span className="capitalize">{f.semana}</span>, {f.hora}{f.hasta ? ` – ${f.hasta}` : ''}{f.etiquetaZona && <> <span className="opacity-80">({f.etiquetaZona})</span></>}</>}
                       </span>
                     </span>
                   </span>
