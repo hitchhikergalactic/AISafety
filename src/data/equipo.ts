@@ -6,6 +6,7 @@ import gretelImg from '@assets/equipo/gretel-schaj.webp';
 import francaImg from '@assets/equipo/franca-velasco.webp';
 import eduardoImg from '@assets/equipo/eduardo-mignot.webp';
 import jessImg from '@assets/equipo/jess-bergs.webp';
+import silviaImg from '@assets/equipo/silvia-santano.webp';
 
 export interface EquipoContent {
   es: {
@@ -81,6 +82,8 @@ export interface MiembroEquipo {
   foto?: ImageMetadata;
   grupo: GrupoEquipo;
   area?: { es: string; en: string };
+  // Personas que trabajan en Madrid y salen en el equipo de la sede (/delegaciones/madrid), además de la dirección
+  sede?: 'madrid';
 }
 
 export const miembrosEquipo: MiembroEquipo[] = [
@@ -141,5 +144,13 @@ export const miembrosEquipo: MiembroEquipo[] = [
     linkedin: 'https://www.linkedin.com/in/jbergs/',
     foto: jessImg,
     grupo: 'asesores',
+  },
+  {
+    nombre: 'Silvia Santano',
+    cargo: { es: 'Investigación', en: 'Research' },
+    linkedin: 'https://www.linkedin.com/in/silviasantano/',
+    foto: silviaImg,
+    grupo: 'coordinacion',
+    sede: 'madrid',
   },
 ];

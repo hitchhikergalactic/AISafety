@@ -21,6 +21,7 @@ import codemeetSala from '../../assets/madrid/codemeet-sala.webp';
 import codemeetSonrisa from '../../assets/madrid/codemeet-sonrisa.webp';
 import drupalcampKeynote from '../../assets/madrid/drupalcamp-keynote.webp';
 import apartEpistemicsSprint from '../../assets/madrid/apart-epistemics-grupo.webp';
+import w4aisEncuentro from '../../assets/madrid/w4ais-encuentro.webp';
 import apartGlobalSouthJurado from '../../assets/madrid/apart-global-south-jurado.webp';
 import { miembrosEquipo } from '@data/equipo';
 import {
@@ -65,11 +66,10 @@ const iniciales = (nombre: string) =>
 // Los pies de foto llevan **negritas** para parseText; el alt tiene que ir sin ellas
 const sinNegritas = (texto: string) => texto.replace(/\*\*/g, '');
 
-// Equipo de la sede: dirección, coordinación y voluntariado, en el orden de /equipo.
+// Equipo de la sede: solo quien está en Madrid (la dirección y quien lleve `sede: 'madrid'`); el resto, en /equipo.
 const equipoSede = [
   ...miembrosEquipo.filter((m) => m.grupo === 'direccion'),
-  ...miembrosEquipo.filter((m) => m.grupo === 'coordinacion'),
-  ...miembrosEquipo.filter((m) => m.grupo === 'voluntariado'),
+  ...miembrosEquipo.filter((m) => m.grupo !== 'direccion' && m.sede === 'madrid'),
 ];
 
 // Fotos del primer evento presencial (28/04/2026, Celonis Madrid; Luma h54rmkib). El pie de cada una está en los textos de la página.
@@ -86,6 +86,7 @@ const fotosPrimerEvento = [
 
 // Una imagen por evento externo, siempre de lo que hace iaS allí (no del evento en general).
 const imagenesEventosExternos = {
+  w4ais: w4aisEncuentro,
   apartEpistemics: apartEpistemicsSprint,
   drupalcamp: drupalcampKeynote,
   codemeet: codemeetCharla,
@@ -466,9 +467,10 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
         <section id="equipo" className="scroll-mt-anchorbar w-full max-w-6xl mx-auto pt-20 md:pt-32 text-center">
           <h3 className={sectionTitle}>{content.teamTitle}</h3>
           <p className="max-w-2xl mx-auto mb-10 text-secundarios-dark/80 dark:text-secundarios-light/80">{parseText(t.hero.h2)}</p>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 text-left">
+          {/* Flex centrado y no grid: con pocas personas, las fichas quedan en el centro y no pegadas a la izquierda */}
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-10 text-left">
             {equipoSede.map((persona) => (
-              <li key={persona.nombre} className="flex flex-col">
+              <li key={persona.nombre} className="flex flex-col basis-[calc((100%-1.5rem)/2)] sm:basis-[calc((100%-3rem)/3)] lg:basis-[calc((100%-6rem)/5)]">
                 <div className="aspect-square w-full rounded-anthro overflow-hidden shadow-anthro-subtle bg-secundarios-gray dark:bg-white/10">
                   {persona.foto ? (
                     <img

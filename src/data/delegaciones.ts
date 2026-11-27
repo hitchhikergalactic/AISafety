@@ -299,11 +299,21 @@ export const delegacionMadridContent = {
     elsewherePastLabel: 'Ya celebrado',
     elsewhereEvents: [
       {
+        id: 'w4ais',
+        upcoming: false,
+        name: 'Primer encuentro Women4AISafety en Madrid',
+        meta: '24 de noviembre de 2026 · Celonis, Madrid',
+        text: '**Osmani Redondo**, que dirige iaS y forma parte de **Women4AISafety**, ha liderado su primer encuentro en Madrid: «Seguridad de la IA: cómo entrar en el campo».',
+        imageAlt: 'Osmani Redondo, de espaldas y con micrófono, habla a la sala llena del encuentro de Women4AISafety en Celonis.',
+        linkLabel: 'Ver el evento en Luma',
+        href: 'https://luma.com/w4ais-spain',
+      },
+      {
         id: 'drupalcamp',
-        upcoming: true,
+        upcoming: false,
         name: 'DrupalCamp Spain 2026',
         meta: '20 de noviembre de 2026 · Talent Garden, Madrid',
-        text: '**Osmani Redondo**, que dirige iaS, pronunciará la conferencia principal: «Capacidad crítica y la responsabilidad en la era de la IA».',
+        text: '**Osmani Redondo**, que dirige iaS, ha dado la conferencia principal: «Capacidad crítica y la responsabilidad en la era de la IA».',
         imageAlt: 'Cartel de la conferencia principal de Osmani Redondo, que dirige iaS, en DrupalCamp Spain 2026.',
         linkLabel: 'Ver en DrupalCamp',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
@@ -409,11 +419,21 @@ export const delegacionMadridContent = {
     elsewherePastLabel: 'Past event',
     elsewhereEvents: [
       {
+        id: 'w4ais',
+        upcoming: false,
+        name: 'First Women4AISafety meetup in Madrid',
+        meta: '24 November 2026 · Celonis, Madrid',
+        text: '**Osmani Redondo**, director of iaS and part of **Women4AISafety**, has led its first meetup in Madrid: “Seguridad de la IA: cómo entrar en el campo” (AI safety: how to get into the field).',
+        imageAlt: 'Osmani Redondo, seen from behind and holding a microphone, speaks to the full room at the Women4AISafety meetup at Celonis.',
+        linkLabel: 'See the event on Luma',
+        href: 'https://luma.com/w4ais-spain',
+      },
+      {
         id: 'drupalcamp',
-        upcoming: true,
+        upcoming: false,
         name: 'DrupalCamp Spain 2026',
         meta: '20 November 2026 · Talent Garden, Madrid',
-        text: '**Osmani Redondo**, director of iaS, will give the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
+        text: '**Osmani Redondo**, director of iaS, has given the keynote “Capacidad crítica y la responsabilidad en la era de la IA” (Critical thinking and responsibility in the age of AI).',
         imageAlt: 'Poster for the keynote by Osmani Redondo, director of iaS, at DrupalCamp Spain 2026.',
         linkLabel: 'See on DrupalCamp',
         href: 'https://2026.drupalcamp.es/es/ponentes/osmani-redondo',
@@ -584,6 +604,9 @@ export const madridFooterColumns = buildFooterColumns(madridContactEmail);
 // Sus eventos y altas se gestionan en su web; aquí solo se presenta y se enlaza.
 export const barcelonaWebUrl = { es: 'https://www.aisafetybcn.org/es', en: 'https://www.aisafetybcn.org' } as const;
 export const barcelonaContactEmail = 'aisafetybcn@gmail.com';
+// Su calendario de Luma (para inscribirse) y la página de eventos de su web (todo el historial)
+export const barcelonaLumaUrl = 'https://luma.com/ai-safety-bcn';
+export const barcelonaEventsUrl = { es: 'https://www.aisafetybcn.org/es/events', en: 'https://www.aisafetybcn.org/events' } as const;
 
 export const delegacionBarcelonaContent = {
   es: {
@@ -593,8 +616,10 @@ export const delegacionBarcelonaContent = {
     intro:
       'AI Safety Barcelona forma parte de iaS: acerca a estudiantes, investigadores e instituciones de Barcelona al trabajo global para que la IA de frontera sea segura.',
     imageAlt: 'Ilustración: una figura blanca escribe «Barcelona» sobre un fondo naranja.',
+    eventsCtaLabel: 'Próximos eventos',
     webCtaLabel: 'Visita su web',
     emailCtaLabel: 'Escríbeles',
+    allEventsLabel: 'Todos sus eventos en su web',
     whatTitle: 'Qué hacen',
     what: [
       { title: 'Entender el campo', text: 'Talleres con contexto técnico y de gobernanza, clubes de lectura y presentaciones de artículos, sin requisitos previos.' },
@@ -613,8 +638,10 @@ export const delegacionBarcelonaContent = {
     intro:
       'AI Safety Barcelona is part of iaS: it connects students, researchers and institutions in Barcelona with the global work to make frontier AI safe.',
     imageAlt: 'Illustration: a white figure writes “Barcelona” on an orange background.',
+    eventsCtaLabel: 'Upcoming events',
     webCtaLabel: 'Visit their website',
     emailCtaLabel: 'Write to them',
+    allEventsLabel: 'All their events on their website',
     whatTitle: 'What they do',
     what: [
       { title: 'Understand the field', text: 'Workshops with technical and governance context, reading groups and paper presentations, no prior knowledge needed.' },

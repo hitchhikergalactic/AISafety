@@ -8,6 +8,8 @@ import logoBarcelonaBlanco from '../../assets/logos__ai_safety_barcelona_white.s
 import {
   barcelonaContactEmail,
   barcelonaWebUrl,
+  barcelonaLumaUrl,
+  barcelonaEventsUrl,
   delegacionBarcelonaContent,
   madridFooterColumns,
 } from '@data/delegaciones';
@@ -65,14 +67,20 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
               {content.intro}
             </p>
             <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-start justify-center gap-3 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
-              <a href={barcelonaWebUrl[lang]} target="_blank" rel="noopener noreferrer" className={primaryButton}>
-                {content.webCtaLabel}
+              <a href={barcelonaLumaUrl} target="_blank" rel="noopener noreferrer" className={primaryButton}>
+                {content.eventsCtaLabel}
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
-              <a href={`mailto:${barcelonaContactEmail}`} className={secondaryButton}>
-                <Mail size={16} aria-hidden="true" />
-                {content.emailCtaLabel}
-              </a>
+              {/* Los dos secundarios van juntos: si no caben al lado del principal, bajan los dos y no uno suelto */}
+              <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                <a href={barcelonaWebUrl[lang]} target="_blank" rel="noopener noreferrer" className={secondaryButton}>
+                  {content.webCtaLabel}
+                </a>
+                <a href={`mailto:${barcelonaContactEmail}`} className={secondaryButton}>
+                  <Mail size={16} aria-hidden="true" />
+                  {content.emailCtaLabel}
+                </a>
+              </div>
             </div>
           </div>
 
@@ -94,6 +102,12 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
                 <p className="!mb-0 text-secundarios-dark/80 dark:text-secundarios-light/80">{item.text}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-8 text-center md:text-left">
+            <a href={barcelonaEventsUrl[lang]} target="_blank" rel="noopener noreferrer" className={secondaryButton}>
+              {content.allEventsLabel}
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </section>
 
