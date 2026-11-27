@@ -8,7 +8,7 @@ import { translations } from '@locales/translations';
 import { empezarYaCurso } from '@data/cursoEstrategiaAgi';
 import { parseText } from '@utils/parseText';
 import { cortarCorreo } from '@utils/cortarCorreo';
-import ilustracionMadrid from '../../assets/madrid-ilustracion.webp';
+import fotoCabecera from '../../assets/madrid/w4ais-sala-cabecera.webp';
 import fotoPublico from '../../assets/madrid/primer-evento-publico.webp';
 import fotoBluedot from '../../assets/madrid/primer-evento-bluedot.webp';
 import fotoDavid from '../../assets/madrid/primer-evento-david.webp';
@@ -92,6 +92,11 @@ const imagenesEventosExternos = {
   codemeet: codemeetCharla,
   apartGlobalSouth: apartGlobalSouthJurado,
 } as const;
+
+// Encuadre de la imagen en la tarjeta (5:2) cuando el centro corta la cara; por defecto, centrada.
+const encuadreEventosExternos: Partial<Record<keyof typeof imagenesEventosExternos, string>> = {
+  w4ais: 'object-top',
+};
 
 // Miniaturas de la charla de iaS en el #CodeMeet; los pies están en los textos de la página.
 const miniaturasCodemeet = {
@@ -205,13 +210,15 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
             </div>
           </div>
 
-          {/* La ilustración es apaisada (con el «Hola Madrid» dentro), a diferencia del cuadrado de Valencia. */}
+          {/* Madrid es la única con foto real (la sede, donde pasan cosas); las delegaciones llevan ilustración.
+              Sala llena del primer encuentro de Women4AISafety en Madrid (24-11-2026), con la directora hablando. */}
           <img
-            src={ilustracionMadrid.src}
-            width={ilustracionMadrid.width}
-            height={ilustracionMadrid.height}
+            src={fotoCabecera.src}
+            width={fotoCabecera.width}
+            height={fotoCabecera.height}
             alt={content.imageAlt}
-            className="order-first md:order-none w-full max-w-md md:max-w-none mx-auto rounded-anthro shadow-anthro-card"
+            fetchPriority="high"
+            className="order-first md:order-none w-full max-w-md md:max-w-none mx-auto aspect-[3/2] object-cover rounded-anthro shadow-anthro-card"
           />
         </section>
 
@@ -375,7 +382,7 @@ const DelegacionMadrid: React.FC<DelegacionMadridProps> = ({ lang }) => {
                     height={imagenesEventosExternos[evento.id].height}
                     alt={evento.imageAlt}
                     loading="lazy"
-                    className="w-full aspect-[5/2] object-cover"
+                    className={`w-full aspect-[5/2] object-cover ${encuadreEventosExternos[evento.id] ?? ''}`}
                   />
                   <div className="flex flex-1 flex-col p-6">
                     <span
