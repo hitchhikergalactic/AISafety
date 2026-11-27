@@ -293,7 +293,7 @@ const ProximosEventos: React.FC<{
                   <span className="min-w-0 flex-1">
                     <span className="block font-sans text-base md:text-lg font-bold leading-snug [overflow-wrap:anywhere]">{nombreDe(e, lang)}</span>
                     {foto?.ponente && (
-                      <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {foto.ponente}</span>
+                      <span className="block font-sans text-sm font-semibold text-principal-texto">{tx.con} {typeof foto.ponente === 'string' ? foto.ponente : foto.ponente[lang]}</span>
                     )}
                     {/* En /red: quién organiza, para que no se confundan los eventos de otras organizaciones con los de iaS */}
                     {e.organizador && (
