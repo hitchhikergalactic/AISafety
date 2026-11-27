@@ -115,7 +115,10 @@ const ProximosEventos: React.FC<{
   lista?: Evento[];
   // Calendario al que se invita a seguir cuando no hay eventos (por defecto, el de iaS)
   calendario?: string;
-}> = ({ lang, campana, limite, filtros = false, datosEstructurados = false, lista = eventos, calendario = CALENDARIO_LUMA }) => {
+  // Tarjetas con la portada de Luma arriba, en grande (para calendarios ajenos, como el de AI Safety Barcelona,
+  // cuyas portadas son carteles con texto que no se leerían en miniatura). Sin portada, la tarjeta va sin imagen.
+  portadas?: boolean;
+}> = ({ lang, campana, limite, filtros = false, datosEstructurados = false, lista = eventos, calendario = CALENDARIO_LUMA, portadas = false }) => {
   const tx = textos[lang];
   const locale = lang === 'es' ? 'es-ES' : 'en-GB';
 
@@ -220,6 +223,43 @@ const ProximosEventos: React.FC<{
             {tx.seguir} <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
+      ) : portadas ? (
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 list-none !p-0 !m-0">
+          {visibles.map((e) => {
+            const f = formatear(e);
+            const Icono = e.modalidad === 'en-linea' ? Monitor : MapPin;
+            const donde = e.modalidad === 'en-linea' ? tx.enLinea : e.modalidad === 'hibrido' ? `${e.ciudad ?? ''} · ${tx.hibrido}` : (e.ciudad ?? '');
+            return (
+              <li key={e.id} className="!m-0">
+                <a
+                  href={conUtm(e.url, campana)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group h-full flex flex-col overflow-hidden rounded-anthro border border-secundarios-dark/15 dark:border-secundarios-light/15 bg-white dark:bg-white/5 no-underline text-secundarios-dark dark:text-secundarios-light hover:border-principal hover:shadow-anthro-card transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-principal"
+                >
+                  {/* La portada repite el nombre y la fecha que van debajo: es decorativa */}
+                  {e.imagen && (
+                    <img src={e.imagen} alt="" width={1200} height={1200} loading="lazy" decoding="async" className="w-full aspect-square object-cover border-b border-secundarios-dark/10 dark:border-secundarios-light/10" />
+                  )}
+                  <span className="flex flex-1 flex-col p-4 md:p-5">
+                    <span className="block font-sans text-base md:text-lg font-bold leading-snug [overflow-wrap:anywhere]">{nombreDe(e, lang)}</span>
+                    <span className="mt-1 mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 [overflow-wrap:anywhere] font-sans text-sm text-secundarios-dark/75 dark:text-secundarios-light/75">
+                      <span className="inline-flex items-center gap-1"><Icono size={14} aria-hidden="true" />{donde}</span>
+                      <span suppressHydrationWarning>
+                        {e.porFechas
+                          ? <>{f.desde}{f.hasta ? ` – ${f.hasta}` : ''}</>
+                          : <><span className="capitalize">{f.semana}</span> {f.desde}, {f.hora} <span className="opacity-80">({f.etiquetaZona})</span></>}
+                      </span>
+                    </span>
+                    <span className="mt-auto self-start inline-flex items-center gap-1 py-2 px-4 rounded-xl bg-principal text-white font-sans font-bold text-sm shadow-md group-hover:-translate-y-0.5 transition-transform">
+                      {tx.apuntate} <ArrowUpRight size={16} aria-hidden="true" />
+                    </span>
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       ) : (
         <ul className="grid gap-3 md:gap-4 list-none !p-0 !m-0">
           {visibles.map((e) => {

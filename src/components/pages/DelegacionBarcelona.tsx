@@ -112,7 +112,7 @@ const DelegacionBarcelona: React.FC<DelegacionBarcelonaProps> = ({ lang }) => {
             </a>
           </div>
           <p className="mb-5 md:mb-6 text-center md:text-left text-secundarios-dark/80 dark:text-secundarios-light/80">{content.eventsText}</p>
-          <ProximosEventos lang={lang} campana="barcelona" lista={eventosBarcelona} calendario={barcelonaLumaUrl} />
+          <ProximosEventos lang={lang} campana="barcelona" lista={eventosBarcelona} calendario={barcelonaLumaUrl} portadas />
         </section>
 
         <section className="w-full max-w-6xl mx-auto pt-16 md:pt-24">
