@@ -9,6 +9,21 @@ import { empezarYaCurso } from '@data/cursoEstrategiaAgi';
 // - `visibleHasta`: hasta cuándo se anuncia (por defecto, hasta que termina). Para un curso, hasta que empieza.
 // - `sinDatosEstructurados`: no se publica como `Event` de schema.org (el curso ya tiene su `Course` en su página).
 export const eventosPropios: Evento[] = [
+  // Preguntas y respuestas del curso AGI Strategy: lo presentan Osmani y Dani, pero está en el calendario de BlueDot Impact
+  {
+    id: 'evt-ioU95fxGqRjA9gd',
+    nombre: 'AGI Strategy Course · Preguntas y respuestas',
+    nombreEn: 'AGI Strategy Course · Q&A',
+    url: 'https://luma.com/etu8pslk',
+    inicio: '2026-12-02T18:00:00+01:00',
+    fin: '2026-12-02T19:00:00+01:00',
+    zona: 'Europe/Madrid',
+    modalidad: 'en-linea',
+    ciudad: null,
+    lugar: null,
+    direccion: null,
+    imagen: 'https://images.lumacdn.com/uploads/o5/0f9990d7-00a5-4b23-a200-c1e58a3aef35.png',
+  },
   // Women4AISafety en Madrid: lo coorganiza iaS (Osmani es anfitrión), pero está en el calendario rediaS
   {
     id: 'evt-BcpEAcooXiDOpWJ',

@@ -4,9 +4,10 @@
 import anaCastillo from '@assets/eventos/ana-castillo.webp';
 import osmaniHablando from '@assets/eventos/osmani-hablando.webp';
 import cursoVideollamada from '@assets/eventos/curso-videollamada.webp';
+import osmaniDani from '@assets/eventos/osmani-dani-agi-strategy.webp';
 
 // `ponente`: si se pone, sale «Con …» bajo el título.
-export type FotoEvento = { src: string; alt: { es: string; en: string }; ponente?: string };
+export type FotoEvento = { src: string; alt: { es: string; en: string }; ponente?: string | { es: string; en: string } };
 
 export const fotoPorDefecto: FotoEvento = {
   src: osmaniHablando.src,
@@ -19,6 +20,12 @@ export const fotosEventos: Record<string, FotoEvento> = {
     src: anaCastillo.src,
     alt: { es: 'Ana Castillo, ponente del encuentro.', en: 'Ana Castillo, the speaker.' },
     ponente: 'Ana Castillo',
+  },
+  // AGI Strategy Course · Preguntas y respuestas, 2 dic 2026
+  'evt-ioU95fxGqRjA9gd': {
+    src: osmaniDani.src,
+    alt: { es: 'Osmani Redondo y Dani Lupión.', en: 'Osmani Redondo and Dani Lupión.' },
+    ponente: { es: 'Osmani Redondo y Dani Lupión', en: 'Osmani Redondo and Dani Lupión' },
   },
   'curso-estrategia-agi-2027-1': {
     src: cursoVideollamada.src,
