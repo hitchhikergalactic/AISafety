@@ -14,6 +14,13 @@ Los laboratorios que desarrollan la IA más avanzada están en Estados Unidos, e
 
 España y los países hispanohablantes no desarrollan los modelos más avanzados, pero son potencias medias con voz propia allí donde se fijan las reglas: España en la Unión Europea, que ya cuenta con un reglamento de IA, y en Iberoamérica; México, Argentina, Colombia o Chile en sus regiones, y todos juntos, una veintena de Estados con voto en la ONU, donde El Salvador copreside el Diálogo Global. El Gobierno de España ya [propone una alianza con las potencias medias por una IA confiable](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "Noticia de elEconomista").
 
+<figure class="video-doc">
+<video controls preload="none" playsinline poster="/video/potencias-medias-stewart-sanchez.webp" width="1280" height="720">
+<source src="/video/potencias-medias-stewart-sanchez-es.mp4" type="video/mp4">
+</video>
+<figcaption>El debate sobre las potencias medias, en la conversación pública: Jon Stewart y Pedro Sánchez en <em>The Weekly Show with Jon Stewart</em>. Subtítulos en español de iaS.</figcaption>
+</figure>
+
 Una potencia media no compite por tener el modelo más grande: influye uniendo fuerzas con otras, poniendo condiciones de seguridad a quien quiera acceder a su mercado y llevando posiciones comunes a los foros internacionales. Para hacerlo bien necesita conocimiento propio sobre los riesgos más graves, en su lengua y al alcance de quien decide, y personas formadas para evaluarlos, que es lo que el propio Plan IA360 señala como el punto más débil de España. Ese es el hueco que cubre iaS.
 
 ---
