@@ -480,6 +480,21 @@ h5 {
 .doc-prose .mapa-significativa {
   --color-leyenda: color-mix(in srgb, var(--color-principal) 26%, transparent);
 }
+/* Vídeo dentro de un documento (Teoría del Cambio): alojado en la web, sin servicios de terceros; mismo ancho que el mapa */
+.doc-prose .video-doc {
+  margin-block: 2rem;
+}
+.doc-prose .video-doc video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-anthro);
+}
+@media (min-width: 55rem) {
+  .doc-prose .video-doc {
+    margin-inline: -6.5rem;
+  }
+}
 .doc-prose figcaption {
   margin-top: 0.75rem;
   font-family: var(--font-sans);

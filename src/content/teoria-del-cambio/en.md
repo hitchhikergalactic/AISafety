@@ -14,6 +14,14 @@ The labs developing the most advanced AI are in the United States, the United Ki
 
 Spain and the Spanish-speaking countries do not develop the most advanced models, but they are middle powers with a voice of their own where the rules are set: Spain in the European Union, which already has an AI regulation, and in Ibero-America; Mexico, Argentina, Colombia or Chile in their regions; and, together, some twenty states with a vote at the UN, where El Salvador co-chairs the Global Dialogue. The Spanish government already [proposes an alliance with middle powers for trustworthy AI](https://www.eleconomista.es/tecnologia/noticias/13921084/05/26/espana-propone-una-alianza-de-europa-con-potencias-medianas-para-crear-una-ia-confiable.html "elEconomista article, in Spanish").
 
+<figure class="video-doc">
+<video controls preload="none" playsinline poster="/video/potencias-medias-stewart-sanchez.webp" width="1280" height="720">
+<source src="/video/potencias-medias-stewart-sanchez-en.mp4" type="video/mp4">
+<track kind="captions" src="/video/potencias-medias-stewart-sanchez-en.vtt" srclang="en" label="English">
+</video>
+<figcaption>The middle-powers debate in the public conversation: Jon Stewart and Pedro Sánchez on <em>The Weekly Show with Jon Stewart</em>.</figcaption>
+</figure>
+
 A middle power does not compete to have the biggest model: it gains influence by joining forces with others, setting safety conditions for anyone who wants access to its market and bringing common positions to international forums. To do this well it needs its own knowledge of the most serious risks, in its own language and within reach of decision-makers, and trained people to evaluate them, which the IA360 Plan itself identifies as Spain's weakest point. That is the gap iaS fills.
 
 ---
