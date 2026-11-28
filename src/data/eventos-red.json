@@ -14,6 +14,34 @@
     "organizador": "AI Safety Barcelona"
   },
   {
+    "id": "evt-ioU95fxGqRjA9gd",
+    "nombre": "Spanish Speaking AI Safety MeetUp",
+    "url": "https://luma.com/etu8pslk",
+    "inicio": "2026-12-02T17:00:00.000Z",
+    "fin": "2026-12-02T18:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "en-linea",
+    "ciudad": null,
+    "lugar": null,
+    "direccion": null,
+    "imagen": "https://images.lumacdn.com/uploads/o5/0f9990d7-00a5-4b23-a200-c1e58a3aef35.png",
+    "organizador": "BlueDot Impact"
+  },
+  {
+    "id": "evt-kj2UxfUkGpdLpd3",
+    "nombre": "Human Challenges of AI #2: The Human Equation",
+    "url": "https://luma.com/qkd9q5sb",
+    "inicio": "2026-12-02T17:30:00.000Z",
+    "fin": "2026-12-02T20:00:00.000Z",
+    "zona": "Europe/Madrid",
+    "modalidad": "presencial",
+    "ciudad": "Barcelona",
+    "lugar": null,
+    "direccion": null,
+    "imagen": "https://images.lumacdn.com/uploads/a7/b70c45fe-d301-489c-bf7c-9af9ccb8add6.png",
+    "organizador": "Terms of Creation"
+  },
+  {
     "id": "evt-2evbJuBVHA9WCm2",
     "nombre": "AI Safety Lightning Talks: Projects from Barcelona — December 2026",
     "url": "https://luma.com/ggxnfy5f",
